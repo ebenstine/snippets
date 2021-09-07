@@ -19,7 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import AddSong from '../AddSong/AddSong';
+import NewSongForm from '../AddSong/AddSong';
 
 import './App.css';
 
@@ -120,7 +120,7 @@ function App() {
               <Redirect to="/user" />
               :
               // Otherwise, show the addSong page
-              <AddSong />
+              <NewSongForm />
             }
           </Route>
 
