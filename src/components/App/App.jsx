@@ -19,6 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import AddSong from '../AddSong/AddSong';
 
 import './App.css';
 
@@ -109,6 +110,20 @@ function App() {
               <LandingPage />
             }
           </Route>
+          <Route
+            exact
+            path="/addSong"
+          >
+            {user.id ?
+              // If the user is already logged in, 
+              // redirect to the /user page
+              <Redirect to="/user" />
+              :
+              // Otherwise, show the addSong page
+              <AddSong />
+            }
+          </Route>
+
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
