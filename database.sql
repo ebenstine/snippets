@@ -25,5 +25,6 @@ CREATE TABLE "songs" (
 CREATE TABLE "recordings" (
 	"id" serial PRIMARY KEY,
 	"song_id" INT NOT NULL REFERENCES "songs",
+    "description", TEXT NOT NULL,
 	"url_path" TEXT NOT NULL
-)
+);
