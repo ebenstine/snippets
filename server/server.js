@@ -9,6 +9,8 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
+const songRouter = require('./routes/song.router');
+const recordingRouter = require('./routes/recording.router');
 const s3Uploader = require('react-s3-uploader/s3router')
 
 // Body parser middleware
@@ -24,8 +26,10 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
+app.use('/api/song', songRouter);
+app.use('/api/recording', recordingRouter);
 app.use('/s3', s3Uploader({
-  bucket: 'snippetsbucket',                           // required
+  bucket: "snippetsbucket",                           // required
   region: 'us-east-2',                           // optional
   headers: {'Access-Control-Allow-Origin': '*'},  		    // optional
   ACL: 'private',                                 // this is the default - set to `public-read` to let anyone view uploads
