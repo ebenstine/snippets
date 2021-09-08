@@ -1,7 +1,7 @@
 import React from 'react';
 import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
 
-function Uploader() {
+const Uploader = ({uploadComplete}) => {
 
 const uploadOptions = {
 server: 'http://localhost:5000'
@@ -21,4 +21,5 @@ server: 'http://localhost:5000'
     />
   );
 }
+
 export default Uploader;
