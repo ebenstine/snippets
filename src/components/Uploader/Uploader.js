@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from '@material-ui/core';
 import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
 
 const Uploader = ({uploadComplete}) => {
@@ -14,12 +15,20 @@ const Uploader = ({uploadComplete}) => {
       console.log('Access at', info.publicUrl);
       uploadComplete(info.publicUrl);
   }
+    const innerElement = (
+        <div
+            style={{paddingTop: '.25rem'}} >
+            <Button>Click or Drag Files to Upload</Button>
+            </div>
+    )
   return (
     <DropzoneS3Uploader
       onFinish={handleFinishedUpload}
       s3Url={s3Url}
+      placeholder='drag and drop song file here'
       maxSize={1024 * 1024 * 5}
       upload={uploadOptions}
+      children={innerElement}
     />
   );
 }

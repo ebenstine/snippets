@@ -6,6 +6,7 @@ import Uploader from '../Uploader/Uploader';
 
 const AddSong = () => {
   const dispatch = useDispatch();
+  const [url, setUrl] = useState ('no file dropped')
   const [newSong, setNewSong] = useState({
     title: '',
     tuning:'',
@@ -19,7 +20,7 @@ const AddSong = () => {
 
   const addNewSong = (event) => {
     event.preventDefault();
-    dispatch({ type: 'ADD_SONG', payload: newSong });
+    dispatch({ type: 'ADD_NEW_SONG', payload: newSong });
     setNewSong({
         title: '',
         tuning:'',
@@ -30,6 +31,10 @@ const AddSong = () => {
   };
 
   console.log(newSong);
+
+  const uploadComplete = (publicUrl) => {
+      setUrl(`${publicUrl}`)
+  }
   
   return (
     <Box display="flex">
@@ -81,7 +86,7 @@ const AddSong = () => {
           
           <Grid item>
             <Button type="submit" value="Add New Song" variant="contained" color="primary" >
-              Add new song
+              Enter Song Details
             </Button>
           </Grid>
           <Grid item>

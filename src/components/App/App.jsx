@@ -20,8 +20,6 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddSong from '../AddSong/AddSong';
-import EditSong from '../EditSong/EditSong';
-
 import './App.css';
 
 function App() {
@@ -69,6 +67,7 @@ function App() {
           >
             <InfoPage />
           </ProtectedRoute>
+
           <ProtectedRoute
            //logged in shows addSong page else shows LoginPage
             exact 
@@ -76,15 +75,7 @@ function App() {
            >
           <AddSong />
           </ProtectedRoute>
-          
-          <ProtectedRoute
-           //logged in shows workingSong page else shows LoginPage
-            exact 
-            path="/editSong"
-           >
-          <EditSong />
 
-           </ProtectedRoute>
 
           <Route
             exact
@@ -127,7 +118,7 @@ function App() {
               <LandingPage />
             }
           </Route>
-          
+
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
@@ -141,3 +132,4 @@ function App() {
 }
 
 export default App;
+
