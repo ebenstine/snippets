@@ -20,7 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddSong from '../AddSong/AddSong';
-import DevelopingSong from '../DevelopingSong/DevelopingSong';
+import EditSong from '../EditSong/EditSong';
 
 import './App.css';
 
@@ -80,9 +80,9 @@ function App() {
           <ProtectedRoute
            //logged in shows workingSong page else shows LoginPage
             exact 
-            path="/developingSong"
+            path="/editSong"
            >
-          <DevelopingSong />
+          <EditSong />
 
            </ProtectedRoute>
 
