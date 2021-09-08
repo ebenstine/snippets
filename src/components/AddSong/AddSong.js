@@ -4,7 +4,7 @@ import { Box, Button, Typography, Input, Grid } from '@material-ui/core';
 import { connect } from 'react-redux';
 import Uploader from '../Uploader/Uploader';
 
-const NewSongForm = () => {
+const AddSong = () => {
   const dispatch = useDispatch();
   const [newSong, setNewSong] = useState({
     title: '',
@@ -85,7 +85,7 @@ const NewSongForm = () => {
             </Button>
           </Grid>
           <Grid item>
-            <Uploader />
+            <Uploader uploadComplete={uploadComplete} />
           </Grid>
         </Grid>
       </form>
@@ -93,4 +93,4 @@ const NewSongForm = () => {
   );
 };
 
-export default connect() (NewSongForm);
+export default connect() (AddSong);

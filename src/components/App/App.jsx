@@ -19,7 +19,8 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import NewSongForm from '../AddSong/AddSong';
+import AddSong from '../AddSong/AddSong';
+import DevelopingSong from '../DevelopingSong/DevelopingSong';
 
 import './App.css';
 
@@ -68,6 +69,22 @@ function App() {
           >
             <InfoPage />
           </ProtectedRoute>
+          <ProtectedRoute
+           //logged in shows addSong page else shows LoginPage
+            exact 
+            path="/addSong"
+           >
+          <AddSong />
+          </ProtectedRoute>
+          
+          <ProtectedRoute
+           //logged in shows workingSong page else shows LoginPage
+            exact 
+            path="/developingSong"
+           >
+          <DevelopingSong />
+
+           </ProtectedRoute>
 
           <Route
             exact
@@ -110,20 +127,7 @@ function App() {
               <LandingPage />
             }
           </Route>
-          <Route
-            exact
-            path="/addSong"
-          >
-            {user.id ?
-              // If the user is already logged in, 
-              // redirect to the /user page
-              <Redirect to="/user" />
-              :
-              // Otherwise, show the addSong page
-              <NewSongForm />
-            }
-          </Route>
-
+          
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
