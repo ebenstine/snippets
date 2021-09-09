@@ -27,5 +27,5 @@ CREATE TABLE "recordings" (
 	"id" SERIAL PRIMARY KEY,
 	"song_id" INT NOT NULL REFERENCES "songs",
     "description" TEXT,
-	"url_path" TEXT 
+	"src" TEXT 
 );

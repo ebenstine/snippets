@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddSong from '../AddSong/AddSong';
+import SongsList from '../SongsList/SongsList';
 import './App.css';
 
 function App() {
@@ -66,6 +67,14 @@ function App() {
             path="/info"
           >
             <InfoPage />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/songsList"
+          >
+            <SongsList />
           </ProtectedRoute>
 
           <ProtectedRoute

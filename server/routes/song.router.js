@@ -5,7 +5,7 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 //route to get all songs
 router.get('/', rejectUnauthenticated, (req, res) => {
     const queryText = 
-    `SELECT song_id, title, date, tuning, performance_notes, priority, lyrics, preview_audio
+    `SELECT song_id, title, date, tuning, performance_notes, priority, lyrics, preview_audio,
         ARRAY_AGG (src)
         FROM songs
         JOIN "recordings" ON "recordings".song_id = "songs".id
@@ -50,7 +50,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
 router.post('/', rejectUnauthenticated, async (req, res) => {
     const client = await pool.connect();
     const userId = req.user.id;
-    const { title, tuning, performance_notes, priority, lyrics, url_path, description } = req.body;
+    const { title, tuning, performance_notes, priority, lyrics, src, description } = req.body;
 
     try {
         await client.query('BEGIN');
@@ -61,15 +61,15 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
                             VALUES($1, $2, $3, $4, $5, $6, $7)
                             RETURNING "id"`;
 
-        const result = await client.query(firstQuery, [userId, title, tuning, performance_notes, priority, lyrics, url_path]);
+        const result = await client.query(firstQuery, [userId, title, tuning, performance_notes, priority, lyrics, src]);
 
         const newSongId = result.rows[0].id;
         const secondQuery = `
-                            INSERT INTO "recordings" ("song_id", "url_path", "description")
+                            INSERT INTO "recordings" (song_id, src, description)
                             VALUES ($1, $2, $3)
         
                             `;
-        await client.query(secondQuery, [newSongId, url_path, description]);
+        await client.query(secondQuery, [newSongId, src, description]);
 
         await client.query('COMMIT'); 
 

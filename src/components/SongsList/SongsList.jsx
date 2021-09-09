@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
-import './MovieList.css'
+
 import { Grid, Typography, Button } from '@material-ui/core';
 function SongsList() {
 
@@ -36,7 +36,7 @@ function SongsList() {
             <Grid container justifyContent="center" spacing={4}>
             <Button onClick={handleNext}>Add a New Song!</Button>
             <section className="songs">
-            {movies.map((song) => {
+            {songs.map((song) => {
                     return (
                         <Grid item md={3} key={song.id} >
                             <div>

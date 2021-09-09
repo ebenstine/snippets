@@ -23,11 +23,12 @@ const Uploader = ({uploadComplete}) => {
     )
   return (
     <DropzoneS3Uploader
+
       onFinish={handleFinishedUpload}
       s3Url={s3Url}
-      placeholder='drag and drop song file here'
       maxSize={1024 * 1024 * 5}
       upload={uploadOptions}
+      accept="audio/*"
       children={innerElement}
     />
   );

@@ -32,7 +32,8 @@ app.use('/s3', s3Uploader({
   bucket: "snippetsbucket",                           // required
   region: 'us-east-2',                           // optional
   headers: {'Access-Control-Allow-Origin': '*'},  		    // optional
-  ACL: 'private',                                 // this is the default - set to `public-read` to let anyone view uploads
+  ACL: 'private',   
+  uniquePrefix: true                              // this is the default - set to `public-read` to let anyone view uploads
 }));
 
 // Serve static files
@@ -46,4 +47,4 @@ app.listen(PORT, () => {
   console.log(`Listening on port: ${PORT}`);
 });
 
-console.log(process.env.AWS_S3_BUCKET);
+

@@ -11,7 +11,9 @@ const AddSong = () => {
     title: '',
     tuning:'',
     performance_notes: '',
+    priority: '',
     lyrics: '',
+    url_path: ''
   });
 
   const enterNewSong = (key) => (event) => {
@@ -25,8 +27,10 @@ const AddSong = () => {
         title: '',
         tuning:'',
         performance_notes: '',
+        priority:'',
         lyrics: '',
-        priority:''
+        url_path:''
+        
     });
   };
 
@@ -82,20 +86,26 @@ const AddSong = () => {
                 onChange={enterNewSong('priority')}
                 >
                 <option default value=''>priority to finish-</option>
-                <option value='1'>Tier One</option>
-                <option value='2'>Tier Two</option>
-                <option value='3'>Tier Three</option>
+                <option value='1'>First</option>
+                <option value='2'>Second</option>
+                <option value='3'>Third</option>
                 </select>
+          </Grid>
+
+          <Grid item>
+            <Uploader 
+                
+                uploadComplete={uploadComplete}
+
+                />
           </Grid>
           
           <Grid item>
             <Button type="submit" value="Add New Song" variant="contained" color="primary" >
-              Enter Song Details
+              Add Song
             </Button>
           </Grid>
-          <Grid item>
-            <Uploader uploadComplete={uploadComplete} />
-          </Grid>
+          
         </Grid>
       </form>
     </Box>
