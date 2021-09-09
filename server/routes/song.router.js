@@ -61,7 +61,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
                             VALUES($1, $2, $3, $4, $5, $6, $7)
                             RETURNING "id"`;
 
-        const result = await client.query(firstQuery, [userId, title, tuning, url_path, performance_notes, priority, lyrics]);
+        const result = await client.query(firstQuery, [userId, title, tuning, performance_notes, priority, lyrics, url_path]);
 
         const newSongId = result.rows[0].id;
         const secondQuery = `
