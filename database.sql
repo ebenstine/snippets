@@ -12,19 +12,20 @@ CREATE TABLE "user" (
 );
 
 CREATE TABLE "songs" (
-	"id" serial PRIMARY KEY,
+	"id" SERIAL PRIMARY KEY,
 	"user_id" INT NOT NULL REFERENCES "user",
 	"date" DATE DEFAULT CURRENT_DATE,
 	"title" TEXT NOT NULL,
     "tuning" TEXT NOT NULL,
-	"performanceNotes" TEXT DEFAULT 'no notes added',
+	"performance_notes" TEXT DEFAULT 'no notes added',
+    "priority" VARCHAR (10)
 	"lyrics" TEXT DEFAULT 'no lyrics added',
 	"preview_audio" TEXT
 );
 
 CREATE TABLE "recordings" (
-	"id" serial PRIMARY KEY,
+	"id" SERIAL PRIMARY KEY,
 	"song_id" INT NOT NULL REFERENCES "songs",
-    "description", TEXT NOT NULL,
-	"url_path" TEXT NOT NULL
+    "description" TEXT,
+	"url_path" TEXT 
 );

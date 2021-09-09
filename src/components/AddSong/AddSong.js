@@ -20,7 +20,7 @@ const AddSong = () => {
 
   const addNewSong = (event) => {
     event.preventDefault();
-    dispatch({ type: 'ADD_NEW_SONG', payload: newSong });
+    dispatch({ type: 'POST_NEW_SONG', payload: newSong });
     setNewSong({
         title: '',
         tuning:'',
@@ -35,10 +35,14 @@ const AddSong = () => {
   const uploadComplete = (publicUrl) => {
       setUrl(`${publicUrl}`)
   }
+
+  const toUserHome = () => {
+    history.push('/user')
+}
   
   return (
     <Box display="flex">
-      <Typography>Add a new song:</Typography>
+      <Typography>Input song details:</Typography>
       <form onSubmit={addNewSong}>
         <Grid container spacing={3} alignItems="center">
           <Grid item>
@@ -77,7 +81,7 @@ const AddSong = () => {
               <select
                 onChange={enterNewSong('priority')}
                 >
-                <option selected value=''>priority to finish-</option>
+                <option default value=''>priority to finish-</option>
                 <option value='1'>Tier One</option>
                 <option value='2'>Tier Two</option>
                 <option value='3'>Tier Three</option>
@@ -96,6 +100,7 @@ const AddSong = () => {
       </form>
     </Box>
   );
-};
+
+  }
 
 export default connect() (AddSong);

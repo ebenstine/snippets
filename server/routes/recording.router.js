@@ -15,7 +15,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
       console.log(result.rows);
       res.send(result.rows)
     })
-    .catch(err =>{ 
+    .catch(err => { 
       console.log('Error complete select song', err);
     })
   })
