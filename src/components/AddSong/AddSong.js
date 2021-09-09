@@ -10,7 +10,7 @@ const AddSong = () => {
   const [newSong, setNewSong] = useState({
     title: '',
     tuning:'',
-    performanceNotes: '',
+    performance_notes: '',
     lyrics: '',
   });
 
@@ -24,7 +24,7 @@ const AddSong = () => {
     setNewSong({
         title: '',
         tuning:'',
-        performanceNotes: '',
+        performance_notes: '',
         lyrics: '',
         priority:''
     });
@@ -63,10 +63,10 @@ const AddSong = () => {
           </Grid>
           <Grid item>
             <Input
-              onChange={enterNewSong('performanceNotes')}
+              onChange={enterNewSong('performance_notes')}
               placeholder="Enter performance notes"
               type="text"
-              value={newSong.performanceNotes}
+              value={newSong.performance_notes}
             />
           </Grid>
           <Grid item>
