@@ -7,7 +7,7 @@ const Uploader = ({uploadComplete}) => {
     const [progressTitle, setProgressTitle] = useState('')
 
     const uploadOptions = {
-    server: 'https://enigmatic-castle-06579.herokuapp.com/'
+    server: 'https://enigmatic-castle-06579.herokuapp.com '
     }
     const s3Url = 'https://snippetsbucket.s3.amazonaws.com'
     const handleFinishedUpload = info => {
