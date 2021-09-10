@@ -7,13 +7,13 @@ const Uploader = ({uploadComplete}) => {
     const [progressTitle, setProgressTitle] = useState('')
 
     const uploadOptions = {
-    server: 'https://enigmatic-castle-06579.herokuapp.com '
+    server: 'http://localhost:5000'
     }
     const s3Url = 'https://snippetsbucket.s3.amazonaws.com'
     const handleFinishedUpload = info => {
       console.log(info);
-      console.log('Access at', info.publicUrl);
-      uploadComplete(info.publicUrl);
+      console.log('Access at', info.fileUrl);
+      uploadComplete(info.fileUrl);
   }
     const innerElement = (
         <div

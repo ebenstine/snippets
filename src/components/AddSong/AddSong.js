@@ -36,8 +36,8 @@ const AddSong = () => {
 
   console.log(newSong);
 
-  const uploadComplete = (publicUrl) => {
-      setUrl(`${publicUrl}`)
+  const uploadComplete = (fileUrl) => {
+      setUrl(`${fileUrl}`)
   }
 
   const toUserHome = () => {
