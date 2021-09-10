@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import { Card, CardContent, CardActions } from '@material-ui/core';
@@ -52,7 +53,11 @@ function SongsList() {
                             <div>
                             <Typography variant="caption">Lyrics: {song.lyrics}</Typography>
                             </div>
-                            <Typography variant="overline">Source: {song.preview_audio}</Typography>
+                            <AudioPlayer
+                            
+                            audioFiles={[{src: song.preview_audio}]}
+
+                            />
                             
                         
                         </Grid>
