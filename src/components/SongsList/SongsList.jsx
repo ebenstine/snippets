@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
-
-import { Grid, Typography, Button } from '@material-ui/core';
+import { Card, CardContent, CardActions } from '@material-ui/core';
+import { Grid, Typography, TextField, Button } from '@material-ui/core';
+import createTypography from '@material-ui/core/styles/createTypography';
 function SongsList() {
 
     const dispatch = useDispatch();
@@ -40,14 +41,20 @@ function SongsList() {
                     return (
                         <Grid item md={3} key={song.id} >
                             <div>
-                            <Typography variant="overline">{song.title}</Typography>
+                            <Typography variant="overline">"{song.title}"</Typography>
                             </div>
                             <div>
-                            <img onClick={() => handleClick(song)} 
-                            src={song.url} 
-                            alt={song.title}
-                            />
-                        </div>
+                            <Typography variant="caption"> Tuning: {song.tuning}</Typography>
+                            </div>
+                            <div>
+                            <Typography variant="caption">Performance Notes: {song.performance_notes}</Typography>
+                            </div>
+                            <div>
+                            <Typography variant="caption">Lyrics: {song.lyrics}</Typography>
+                            </div>
+                            <Typography variant="overline">Source: {song.src}</Typography>
+                            
+                        
                         </Grid>
                     );
                 })}

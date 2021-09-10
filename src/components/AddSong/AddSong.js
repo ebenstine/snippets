@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Box, Button, Typography, Input, Grid } from '@material-ui/core';
 import { connect } from 'react-redux';
@@ -13,11 +13,11 @@ const AddSong = () => {
     performance_notes: '',
     priority: '',
     lyrics: '',
-    url_path: ''
+    url: ''
   });
 
   const enterNewSong = (key) => (event) => {
-    setNewSong({ ...newSong, [key]: event.target.value });
+    setNewSong({ ...newSong, src: url, [key]: event.target.value });
   };
 
   const addNewSong = (event) => {
@@ -29,7 +29,7 @@ const AddSong = () => {
         performance_notes: '',
         priority:'',
         lyrics: '',
-        url_path:''
+        url:''
         
     });
   };
@@ -96,7 +96,7 @@ const AddSong = () => {
             <Uploader 
                 
                 uploadComplete={uploadComplete}
-
+              
                 />
           </Grid>
           

@@ -30,6 +30,7 @@ const Uploader = ({uploadComplete}) => {
       upload={uploadOptions}
       accept="audio/*"
       children={innerElement}
+      
     />
   );
 }
