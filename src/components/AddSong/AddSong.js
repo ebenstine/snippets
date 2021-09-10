@@ -13,7 +13,7 @@ const AddSong = () => {
     performance_notes: '',
     priority: '',
     lyrics: '',
-    url: ''
+    preview_audio: ''
   });
 
   const enterNewSong = (key) => (event) => {
@@ -29,7 +29,7 @@ const AddSong = () => {
         performance_notes: '',
         priority:'',
         lyrics: '',
-        url:''
+        preview_audio:''
         
     });
   };
