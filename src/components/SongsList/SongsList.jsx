@@ -52,7 +52,7 @@ function SongsList() {
                             <div>
                             <Typography variant="caption">Lyrics: {song.lyrics}</Typography>
                             </div>
-                            <Typography variant="overline">Source: {song.src}</Typography>
+                            <Typography variant="overline">Source: {song.preview_audio}</Typography>
                             
                         
                         </Grid>

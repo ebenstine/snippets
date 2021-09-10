@@ -2,10 +2,24 @@ import React, { useState } from 'react';
 import { Button } from '@material-ui/core';
 import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
 
+
+const dropStyles = {
+  width: "200px",
+  height: "75px",
+  border: "1px solid black",
+  "background-color": "#dddddd"
+}
+
+
+
+
 const Uploader = ({uploadComplete}) => {
+
+
     const [progress, setProgress] = useState(0);
     const [progressTitle, setProgressTitle] = useState('')
 
+    
     const uploadOptions = {
     server: 'http://localhost:5000'
     }
@@ -26,10 +40,11 @@ const Uploader = ({uploadComplete}) => {
 
       onFinish={handleFinishedUpload}
       s3Url={s3Url}
+      style={dropStyles}
       maxSize={1024 * 1024 * 5}
       upload={uploadOptions}
       accept="audio/*"
-      children={innerElement}
+      children={innerElement} 
       
     />
   );
