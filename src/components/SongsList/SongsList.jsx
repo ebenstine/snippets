@@ -9,7 +9,7 @@ function SongsList() {
 
     const dispatch = useDispatch();
     const history = useHistory();
-    const songs = useSelector(store => store.songs);
+    const songs = useSelector((store) => store.songs);
     const recordings = useSelector((store) => store.recordings);
 
     //get db info on page load
@@ -24,7 +24,7 @@ function SongsList() {
             payload: song,
         });
 
-        history.push('/details')
+        history.push('/songDetails')
     }
 //push forward to the form
     const handleNext = () => {
@@ -45,13 +45,7 @@ function SongsList() {
                             <Typography variant="overline">"{song.title}"</Typography>
                             </div>
                             <div>
-                            <Typography variant="caption"> Tuning: {song.tuning}</Typography>
-                            </div>
-                            <div>
-                            <Typography variant="caption">Performance Notes: {song.performance_notes}</Typography>
-                            </div>
-                            <div>
-                            <Typography variant="caption">Lyrics: {song.lyrics}</Typography>
+                            <Button variant="text" onClick={() => handleClick(song)}>See Song Details</Button>
                             </div>
                             <AudioPlayer
                             

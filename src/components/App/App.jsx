@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddSong from '../AddSong/AddSong';
 import SongsList from '../SongsList/SongsList';
+import SongDetails from '../SongDetails/SongDetails';
 import './App.css';
 
 function App() {
@@ -83,6 +84,14 @@ function App() {
             path="/addSong"
            >
           <AddSong />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          //logged in shows songDetails page else shows LoginPage
+          exact
+          path="/songDetails"
+          >
+          <SongDetails />
           </ProtectedRoute>
 
 
