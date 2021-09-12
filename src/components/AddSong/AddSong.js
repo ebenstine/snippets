@@ -105,9 +105,8 @@ const AddSong = () => {
           
           <FormControl>
             <section>
-            <Button type="submit" value="Add New Song" variant="contained" color="primary" >
-              Add Song
-            </Button>
+            <Button variant="contained" onClick={toUserHome} className={inputs} > CANCEL </Button>
+            <Button variant="contained" type="submit" className={inputs}> SAVE </Button>
             </section>
           </FormControl>
           
