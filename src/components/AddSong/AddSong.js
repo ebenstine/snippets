@@ -1,15 +1,19 @@
 import React, { useLayoutEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Box, Button, Typography, Input, Grid } from '@material-ui/core';
+import { useForm } from 'react-hook-form';
+import { Paper, TextField, Button, Typography, Select, FormControl } from '@material-ui/core';
 import { connect } from 'react-redux';
+import useStyles from './AddSongStyles'
 import Uploader from '../Uploader/Uploader';
 
 const AddSong = () => {
   const dispatch = useDispatch();
+  const { root, inputs, paper, textField, cardContent, title, titleField } = useStyles();
+  const { handleSubmit, reset, register } = useForm();
   const [url, setUrl] = useState ('no file dropped')
   const [newSong, setNewSong] = useState({
     title: '',
-    tuning:'',
+    instrument_notes:'',
     performance_notes: '',
     priority: '',
     lyrics: '',
@@ -25,7 +29,7 @@ const AddSong = () => {
     dispatch({ type: 'POST_NEW_SONG', payload: newSong });
     setNewSong({
         title: '',
-        tuning:'',
+        instrument_notes:'',
         performance_notes: '',
         priority:'',
         lyrics: '',
@@ -45,72 +49,74 @@ const AddSong = () => {
 }
   
   return (
-    <Box display="flex">
-      <Typography>Input song details:</Typography>
-      <form onSubmit={addNewSong}>
-        <Grid container spacing={3} alignItems="center">
-          <Grid item>
-            <Input
+    <div onDoubleClick={toUserHome}>
+      <Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>
+        <FormControl >
+          <form className={root} onSubmit={addNewSong} noValidate autoComplete="off" >
+            <div className={cardContent}>
+            <Typography variant = "h4" component="h5" className={title}>Add A Song</Typography>
+            <TextField
+              label="Title"
               onChange={enterNewSong('title')}
-              placeholder="Enter title"
-              type="text"
               value={newSong.title}
+              multiline className={textField}
             />
-          </Grid>
-          <Grid item>
-            <Input
-              onChange={enterNewSong('tuning')}
-              placeholder="Enter tuning"
-              type="text"
-              value={newSong.tuning}
+          
+            <TextField
+              label="Instrument Notes"
+              onChange={enterNewSong('instrument_notes')}
+              value={newSong.instrument_notes}
+              multiline className={textField}
+
             />
-          </Grid>
-          <Grid item>
-            <Input
+         
+          <TextField
+              label="Performance Notes"
               onChange={enterNewSong('performance_notes')}
-              placeholder="Enter performance notes"
-              type="text"
               value={newSong.performance_notes}
+              multiline className={textField}
+
             />
-          </Grid>
-          <Grid item>
-            <Input
+          
+          <TextField
+              label="Lyrics"
               onChange={enterNewSong('lyrics')}
-              placeholder="Enter lyrics"
-              type="text"
               value={newSong.lyrics}
+              multiline className={textField}
             />
-          </Grid>
-          <Grid item>
-              <select
-                onChange={enterNewSong('priority')}
+          
+          <Select
+              label="Priority"
+              name="priority"
+              onChange={enterNewSong('priority')}
+              
                 >
                 <option default value=''>priority to finish-</option>
                 <option value='1'>First</option>
                 <option value='2'>Second</option>
                 <option value='3'>Third</option>
-                </select>
-          </Grid>
-
-          <Grid item>
-            <Uploader 
+          </Select>
+          <Uploader 
                 
-                uploadComplete={uploadComplete}
+            uploadComplete={uploadComplete}
               
-                />
-          </Grid>
+          />
+         
           
-          <Grid item>
+          <FormControl>
+            <section>
             <Button type="submit" value="Add New Song" variant="contained" color="primary" >
               Add Song
             </Button>
-          </Grid>
+            </section>
+          </FormControl>
           
-        </Grid>
+        </div>
       </form>
-    </Box>
+    </FormControl>
+   </Paper>
+  </div>
   );
-
-  }
+}
 
 export default connect() (AddSong);

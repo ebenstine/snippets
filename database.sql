@@ -16,7 +16,7 @@ CREATE TABLE "songs" (
 	"user_id" INT NOT NULL REFERENCES "user",
 	"date" DATE DEFAULT CURRENT_DATE,
 	"title" TEXT NOT NULL,
-    "tuning" TEXT NOT NULL,
+    "instrument_notes" TEXT NOT NULL,
 	"performance_notes" TEXT DEFAULT 'no notes added',
     "priority" VARCHAR (10)
 	"lyrics" TEXT DEFAULT 'no lyrics added',
