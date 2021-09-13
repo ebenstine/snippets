@@ -6,8 +6,7 @@ import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
 const dropStyles = {
   width: "200px",
   height: "75px",
-  border: "1px solid black",
-  "backgroundColor": "#dddddd"
+ 
 }
 
 

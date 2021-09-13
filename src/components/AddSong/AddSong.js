@@ -10,7 +10,7 @@ const AddSong = () => {
   const dispatch = useDispatch();
   const { root, inputs, paper, textField, cardContent, title, titleField } = useStyles();
   const { handleSubmit, reset, register } = useForm();
-  const [url, setUrl] = useState ('no file dropped')
+  const [url, setUrl] = useState ('no file dropped');
   const [newSong, setNewSong] = useState({
     title: '',
     instrument_notes:'',
@@ -91,10 +91,10 @@ const AddSong = () => {
               onChange={enterNewSong('priority')}
               
                 >
-                <option default value=''>priority to finish-</option>
-                <option value='1'>First</option>
-                <option value='2'>Second</option>
-                <option value='3'>Third</option>
+                <option defaultValue={''}>priority to finish</option>
+                <option value={'1'}>First</option>
+                <option value={'2'}>Second</option>
+                <option value={'3'}>Third</option>
           </Select>
           <Uploader 
                 

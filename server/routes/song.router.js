@@ -113,14 +113,14 @@ router.delete('/:id', rejectUnauthenticated, (req, res) => {
     console.log('in delete song', id);
     let queryText = `DELETE FROM recordings
                     WHERE song_id = $1
-                    `;
+                    ;`;
     pool.query(queryText, [id])
     .then(result => {
         console.log(result);
         
         let queryText = `DELETE FROM songs
                         WHERE id = $1
-                        `;
+                        ;`;
 
     pool.query(queryText, [id])
     .then(result => {

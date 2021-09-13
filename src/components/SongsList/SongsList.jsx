@@ -5,6 +5,9 @@ import { useHistory } from 'react-router-dom'
 import { Card, CardContent, CardActions } from '@material-ui/core';
 import { Grid, Typography, TextField, Button } from '@material-ui/core';
 import createTypography from '@material-ui/core/styles/createTypography';
+import axios from 'axios';
+import songState from '../../redux/reducers/settingSong.reducer';
+import { connect } from 'react-redux';
 function SongsList() {
 
     const dispatch = useDispatch();
@@ -14,7 +17,8 @@ function SongsList() {
 
     //get db info on page load
     useEffect(() => {
-        dispatch({ type: 'FETCH_SONGS' });
+        dispatch({ 
+            type: 'FETCH_SONGS' });
     }, []);
     //push forward to details page on click
     const handleClick = (song) => {
@@ -31,22 +35,23 @@ function SongsList() {
         console.log('clicked add song');
         history.push('/addSong')
     }
+
+    
 //basic material ui setup in return, plan to revisit this
     return (
         <>
             
             <Grid container justifyContent="center" spacing={4}>
-            <Button onClick={handleNext}>Add a New Song!</Button>
             <section className="songs">
             {songs.map((song) => {
                     return (
                         <Grid item md={3} key={song.id} >
                             <div>
                             <Typography variant="overline">"{song.title}"</Typography>
-                            </div>
-                            <div>
                             <Button variant="text" onClick={() => handleClick(song)}>See Song Details</Button>
+                            
                             </div>
+                        
                             <AudioPlayer
                             
                             audioFiles={[{src: song.preview_audio}]}
@@ -64,4 +69,4 @@ function SongsList() {
     );
 }
 
-export default SongsList;
+export default connect() (SongsList);
