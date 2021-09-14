@@ -40,7 +40,7 @@ const Uploader = ({uploadComplete}) => {
       onFinish={handleFinishedUpload}
       s3Url={s3Url}
       style={dropStyles}
-      maxSize={1024 * 1024 * 5}
+      maxSize={1024 * 1024 * 100}
       upload={uploadOptions}
       accept="audio/*"
       children={innerElement} 

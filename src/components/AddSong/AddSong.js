@@ -24,7 +24,7 @@ const AddSong = () => {
   });
 
   const enterNewSong = (key) => (event) => {
-    setNewSong({ ...newSong, src: url, [key]: event.target.value });
+    setNewSong({ ...newSong, [key]: event.target.value });
   };
 
   const handleSave = (event) => {
@@ -41,7 +41,7 @@ const AddSong = () => {
 
   const uploadComplete = (fileUrl) => {
     console.log('fileUrl upload complete', fileUrl);
-      setUrl(`${fileUrl}`)
+      setNewSong({...newSong, src: fileUrl})
   }
 
   const toUserHome = () => {
