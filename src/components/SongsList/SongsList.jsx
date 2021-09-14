@@ -7,7 +7,7 @@ import { Grid, Typography, TextField, Button } from '@material-ui/core';
 import createTypography from '@material-ui/core/styles/createTypography';
 import axios from 'axios';
 import songState from '../../redux/reducers/settingSong.reducer';
-import { connect } from 'react-redux';
+
 function SongsList() {
 
     const dispatch = useDispatch();
@@ -48,9 +48,13 @@ function SongsList() {
                         <Grid item md={3} key={song.id} >
                             <div>
                             <Typography variant="overline">"{song.title}"</Typography>
-                            <Button variant="text" onClick={() => handleClick(song)}>See Song Details</Button>
-                            
                             </div>
+                            
+                            <div>
+                            <Button variant="text" onClick={() => handleClick(song)}>See Song Details</Button>
+                            </div>
+                                                        
+
                         
                             <AudioPlayer
                             
@@ -69,4 +73,4 @@ function SongsList() {
     );
 }
 
-export default connect() (SongsList);
+export default SongsList;

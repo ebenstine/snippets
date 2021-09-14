@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from '@material-ui/core';
-import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
+import  DropzoneS3Uploader from 'react-dropzone-s3-uploader';
 
 
 const dropStyles = {
-  width: "200px",
-  height: "75px",
+  width: "300px",
+  height: "200px",
  
 }
 
@@ -36,7 +36,7 @@ const Uploader = ({uploadComplete}) => {
     )
   return (
     <DropzoneS3Uploader
-
+      onError={(error) => console.log('upload failed', error)}
       onFinish={handleFinishedUpload}
       s3Url={s3Url}
       style={dropStyles}

@@ -2,45 +2,45 @@ import React, { useLayoutEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { Paper, TextField, Button, Typography, Select, FormControl } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import useStyles from './AddSongStyles'
 import Uploader from '../Uploader/Uploader';
 
+
 const AddSong = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
-  const { root, inputs, paper, textField, cardContent, title, titleField } = useStyles();
-  const { handleSubmit, reset, register } = useForm();
-  const [url, setUrl] = useState ('no file dropped');
+  const { root, inputs, paper, textField, cardContent, title } = useStyles();
+  //const { handleSubmit, reset, register } = useForm();
+  const [url, setUrl] = useState ('no file was dropped');
   const [newSong, setNewSong] = useState({
-    title: '',
+    /*title: '',
     instrument_notes:'',
     performance_notes: '',
     priority: '',
     lyrics: '',
-    preview_audio: ''
+    preview_audio: ''*/
   });
 
   const enterNewSong = (key) => (event) => {
     setNewSong({ ...newSong, src: url, [key]: event.target.value });
   };
 
-  const addNewSong = (event) => {
+  const handleSave = (event) => {
     event.preventDefault();
-    dispatch({ type: 'POST_NEW_SONG', payload: newSong });
-    setNewSong({
-        title: '',
-        instrument_notes:'',
-        performance_notes: '',
-        priority:'',
-        lyrics: '',
-        preview_audio:''
-        
+    dispatch({ 
+      
+      type: 'POST_NEW_SONG', 
+      payload: newSong 
+      
     });
-  };
+   };
 
   console.log(newSong);
 
   const uploadComplete = (fileUrl) => {
+    console.log('fileUrl upload complete', fileUrl);
       setUrl(`${fileUrl}`)
   }
 
@@ -52,7 +52,7 @@ const AddSong = () => {
     <div onDoubleClick={toUserHome}>
       <Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>
         <FormControl >
-          <form className={root} onSubmit={addNewSong} noValidate autoComplete="off" >
+          <form className={root} onSubmit={handleSave} noValidate autoComplete="off" >
             <div className={cardContent}>
             <Typography variant = "h4" component="h5" className={title}>Add A Song</Typography>
             <TextField
@@ -86,12 +86,10 @@ const AddSong = () => {
             />
           
           <Select
-              label="Priority"
               name="priority"
               onChange={enterNewSong('priority')}
-              
-                >
-                <option defaultValue={''}>priority to finish</option>
+              >
+                <option defaultValue={''}>Select Completion Priority</option>
                 <option value={'1'}>First</option>
                 <option value={'2'}>Second</option>
                 <option value={'3'}>Third</option>
