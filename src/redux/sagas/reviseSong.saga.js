@@ -21,7 +21,7 @@ function* reviseSong(action) {
 }
 
 function* songRevise() {
-    yield takeLatest('EDIT_SONG', reviseSong);
+    yield takeLatest('REVISE_SONG', reviseSong);
 }
 
 export default songRevise;

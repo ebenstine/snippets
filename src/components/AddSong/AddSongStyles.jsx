@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { FullscreenTwoTone } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,7 +24,8 @@ const useStyles = makeStyles((theme) => ({
         margin: '4em auto',
         backgroundColor: '#14342B50',
         paddingBottom: '6em',
-        width: 600,
+        width: 700
+
     },
     textField: {
         margin: theme.spacing(1),

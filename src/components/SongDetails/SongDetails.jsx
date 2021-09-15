@@ -42,20 +42,32 @@ function SongDetails(){
             payload: songId
         })
     }
+
+    const handleRevise = (songToRevise) => {
+        console.log(songToRevise);
+        dispatch ({
+            type: 'REVISE_SONG',
+            payload: songToRevise 
+        })
+    }
+
     //button to go back, map through details with id
     return (
         <div>
-            <Button onClick={handleBack}>Back to List</Button>
+            
 
             <section className="songs">
             {songDetails.map((song) => {
                 return (
                     <div key={song.id}>
-                    <h4>{song.title}</h4>
-                    <p>{song.lyrics}</p>
-                    <p>{song.instrument_notes}</p>
-                    <p>{song.performance_notes}</p>
-                    <Button variant="text" onClick={() => handleDelete(song.id)}>Delete Song</Button>
+                    <h4>"{song.title}"</h4>
+                    <p>Lyrics: 
+                        {song.lyrics}</p>
+                    <p>Instrumentation notes: 
+                        {song.instrument_notes}</p>
+                    <p>Performance notes: 
+                        {song.performance_notes}</p>
+                    
                     <AddRecording
 
 
@@ -65,6 +77,11 @@ function SongDetails(){
                 )
             })}
 
+            </section>
+            <section>
+            <Button onClick={handleBack}>Back to List</Button>
+            <Button variant="text" onClick={() => handleDelete(song.id)}>Delete Song</Button>
+            <Button variant="text" onClick={() => handleRevise(song.id)}>Edit Song</Button>
             </section>
         </div>
     )
