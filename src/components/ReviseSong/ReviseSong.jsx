@@ -1,175 +1,122 @@
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import {
-  TextField,
-  Button,
-  makeStyles,
-  Chip,
-  Box,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  DialogActions,
-  Collapse,
-  IconButton,
-} from '@material-ui/core';
-import { Alert } from '@material-ui/lab';
-import { Close } from '@material-ui/icons';
+import { Paper, TextField, Button, Typography, Select, FormControl } from '@material-ui/core';
+import useStyles from './ReviseSongStyles'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(0.5),
-    },
-  },
-}));
+function ReviseSong() {
+    const songDetails = useSelector(store => store.songDetails);
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const { root, inputs, paper, textField, cardContent, title } = useStyles();
 
-function ReviseSong({
-  reviseOpen,
-  setReviseOpen,
-  reviseSong,
-  setReviseSong,
-  reviseRecording,
-  setReviseRecording,
-  id,
-}) {
-  const history = useHistory();
-  const dispatch = useDispatch();
-  const classes = useStyles();
-  const genres = useSelector((state) => state.genresReducer);
-  const [alertOpen, setAlertOpen] = useState(false);
+    let song = {
+        title: songDetails.title,
+        instrument_notes: songDetails.instrument_notes,
+        performance_notes: songDetails.performance_notes,
+        lyrics: songDetails.lyrics,
+        priority: songDetails.priority
+        
+    };
 
-  const handleSubmit = () => {
-    if (
-      reviseSong.title &&
-      reviseSong.poster &&
-      reviseSong.description &&
-      editGenre[0]
-    ) {
-      dispatch({
-        type: 'EDIT_MOVIE',
-        payload: { ...reviseSong, genreArray: editGenre },
-      });
-      setEditGenre([]);
-      setEditMovie({ id: null, title: '', poster: '', description: '' });
-      setEditOpen(false);
-      history.push(`/details/${id}`);
-    } else {
-      setAlertOpen(true);
+    const [reviseDetails, setReviseDetails] = useState(song);
+
+
+    const handleChange = (event) =>{
+        setReviseDetails({...reviseDetails, [event.target.name]:event.target.value })
+      };
+
+    
+
+    const handleCancel = () => {
+        history.push('/home');
     }
-  };
 
-  const handleTextChange = (key) => (event) => {
-    setEditMovie({ ...editMovie, [key]: event.target.value });
-  };
-
-  const handleGenreAddition = (id) => {
-    if (editGenre.indexOf(id) === -1) {
-      setEditGenre([...editGenre, id]);
-    } else {
-      setEditGenre(editGenre.filter((entry) => entry !== id));
+    const test = () => {
+        console.log('editDetails', revisedSong);
     }
-  };
 
-  const handleCancel = () => {
-    setEditOpen(false);
-    setEditGenre([]);
-    setEditMovie({ title: '', poster: '', description: '' });
-  };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        let revisedSong= reviseDetails;
+        revisedSong = {...revisedSong};
+        console.log('new song revisions made in', revisedSong);
+        dispatch({
+            type: 'REVISE_SONG',
+            payload: revisedSong
+        });
+        history.push('/songDetails/:id');
+    }
 
-  console.log(editMovie);
-  console.log(editGenre);
 
-  return (
-    <Dialog open={editOpen} onClose={() => setEditOpen(false)}>
-      <Box p={3}>
-        <DialogTitle align="center">Edit Movie</DialogTitle>
-        <DialogContent>
-          <Box display="flex" justifyContent="center">
-            <Box width="50%" p={1}>
-              <TextField
-                fullWidth
-                variant="outlined"
-                label="Movie Title"
-                onChange={handleTextChange('title')}
-                value={editMovie.title}
-              />
-            </Box>
-            <Box width="50%" p={1}>
-              <TextField
-                fullWidth
-                variant="outlined"
-                label="Poster Image Link"
-                onChange={handleTextChange('poster')}
-                value={editMovie.poster}
-              />
-            </Box>
-          </Box>
-          <Box display="flex" justifyContent="center">
-            <Box width="50%" p={1}>
-              <TextField
-                fullWidth
-                variant="outlined"
-                multiline
-                label="Movie Description"
-                onChange={handleTextChange('description')}
-                value={editMovie.description}
-                rows={10}
-              />
-            </Box>
-            <Box className={classes.root} width="50%" p={1}>
-              {editGenre &&
-                genres.map((entry) => {
-                  return (
-                    <Chip
-                      key={entry.id}
-                      label={entry.name}
-                      color={
-                        editGenre.indexOf(entry.id) === -1
-                          ? 'default'
-                          : 'primary'
-                      }
-                      onClick={() => handleGenreAddition(entry.id)}
-                    />
-                  );
-                })}
-            </Box>
-          </Box>
-        </DialogContent>
-        <Box display="flex" justifyContent="center">
-          <DialogActions>
-            <Button
-              variant="contained"
-              color="default"
-              onClick={handleCancel}
-            >
-              Cancel
-            </Button>
-            <Button variant="contained" color="secondary" onClick={handleSubmit}>
-              Submit
-            </Button>
-          </DialogActions>
-        </Box>
-      </Box>
-      <Collapse in={alertOpen}>
-        <Alert
-          severity="error"
-          action={
-            <IconButton
-              color="inherit"
-              size="small"
-              onClick={() => setAlertOpen(false)}
-            >
-              <Close />
-            </IconButton>
-          }
-        >
-          Please fill out all fields!
-        </Alert>
-      </Collapse>
-    </Dialog>
+
+    return (
+    <div>
+      <Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>
+        <FormControl >
+          <form className={root} onSubmit={handleSubmit} noValidate autoComplete="off" >
+            <div className={cardContent}>
+            <Typography variant = "h4" component="h5" className={title}>Revise Details Here</Typography>
+            <TextField
+              label="Title"
+              onChange={handleChange}
+              value={reviseDetails.title}
+              multiline className={textField}
+            />
+          
+            <TextField
+              label="Instrument Notes"
+              onChange={handleChange}
+              value={reviseDetails.instrument_notes}
+              multiline className={textField}
+
+            />
+         
+          <TextField
+              label="Performance Notes"
+              onChange={handleChange}
+              value={reviseDetails.performance_notes}
+              multiline className={textField}
+
+            />
+          
+          <TextField
+              label="Lyrics"
+              onChange={handleChange}
+              value={reviseDetails.lyrics}
+              multiline className={textField}
+            />
+          
+          <Select
+              name="priority"
+              onChange={handleChange}
+              value={reviseDetails.priority}
+              >
+                <option defaultValue={''}>Select Completion Priority</option>
+                <option value={'1'}>First</option>
+                <option value={'2'}>Second</option>
+                <option value={'3'}>Third</option>
+          </Select>
+          {/*<Uploader 
+                
+            uploadComplete={uploadComplete}
+              
+          />*/}
+         
+          
+          <FormControl>
+            <section>
+            <Button variant="contained" onClick={handleCancel} className={inputs} > CANCEL </Button>
+            <Button variant="contained" type="submit" className={inputs}> SAVE </Button>
+            </section>
+          </FormControl>
+          
+        </div>
+      </form>
+    </FormControl>
+   </Paper>
+  </div>
   );
 }
 
-export default EditMovie;
+export default ReviseSong;

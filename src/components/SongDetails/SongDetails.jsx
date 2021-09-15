@@ -17,7 +17,7 @@ function SongDetails(){
 
     const songDetails = useSelector((store) => store.songDetails)
     console.log(songDetails);
-    console.log('*****\n*****\n*****');
+    
     console.log(params);
 
     useEffect(() => {
@@ -49,6 +49,7 @@ function SongDetails(){
             type: 'REVISE_SONG',
             payload: songToRevise 
         })
+        history.push(`/reviseSong/${songToRevise}`)
     }
 
     //button to go back, map through details with id
@@ -72,17 +73,21 @@ function SongDetails(){
 
 
                     />
-
+                    <Button variant="text" onClick={() => handleRevise(song.id)}>Revise Details</Button>
+                    <Button variant="text" onClick={() => handleDelete(song.id)}>Delete Song</Button>
+                    
                     </div>
+                    
+                    
+                    
                 )
             })}
 
             </section>
-            <section>
+            
             <Button onClick={handleBack}>Back to List</Button>
-            <Button variant="text" onClick={() => handleDelete(song.id)}>Delete Song</Button>
-            <Button variant="text" onClick={() => handleRevise(song.id)}>Edit Song</Button>
-            </section>
+            
+            
         </div>
     )
 }

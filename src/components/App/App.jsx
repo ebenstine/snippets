@@ -22,6 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import AddSong from '../AddSong/AddSong';
 import SongsList from '../SongsList/SongsList';
 import SongDetails from '../SongDetails/SongDetails';
+import ReviseSong from '../ReviseSong/ReviseSong';
 import './App.css';
 
 function App() {
@@ -93,6 +94,15 @@ function App() {
           >
           <SongDetails />
           </ProtectedRoute>
+
+          <ProtectedRoute
+          //logged in shows songDetails page else shows LoginPage
+          exact
+          path="/reviseSong/:id"
+          >
+          <ReviseSong />
+          </ProtectedRoute>
+
 
 
           <Route
