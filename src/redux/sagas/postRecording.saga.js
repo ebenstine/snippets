@@ -16,7 +16,7 @@ function* postRecording(action) {
     }
 }
 function* addRecording() {
-    yield takeLatest('ADD_RECORDING', postRecording);
+    yield takeLatest('POST_NEW_RECORDING', postRecording);
 }
 
 export default addRecording;

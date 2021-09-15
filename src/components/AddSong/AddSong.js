@@ -15,12 +15,7 @@ const AddSong = () => {
   //const { handleSubmit, reset, register } = useForm();
   const [url, setUrl] = useState ('no file was dropped');
   const [newSong, setNewSong] = useState({
-    /*title: '',
-    instrument_notes:'',
-    performance_notes: '',
-    priority: '',
-    lyrics: '',
-    preview_audio: ''*/
+
   });
 
   const enterNewSong = (key) => (event) => {
