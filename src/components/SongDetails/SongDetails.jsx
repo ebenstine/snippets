@@ -31,7 +31,8 @@ function SongDetails(){
     const handleDelete = (songId) => {
         console.log(songId)
         dispatch ({
-            type: 'DELETE_SONG'
+            type: 'DELETE_SONG',
+            payload: songId
         })
     }
     //button to go back, map through details with id
