@@ -89,7 +89,7 @@ function App() {
           <ProtectedRoute
           //logged in shows songDetails page else shows LoginPage
           exact
-          path="/songDetails"
+          path="/songDetails/:id"
           >
           <SongDetails />
           </ProtectedRoute>

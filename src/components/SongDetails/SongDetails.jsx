@@ -1,109 +1,60 @@
-import React, { useEffect, useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { connect } from 'react-redux';
-import { Card, CardContent, CardActions, Button } from '@material-ui/core';
+import { useHistory, useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { Button } from '@material-ui/core';
+import { useEffect } from 'react';
 
-import SongTitle from './SongDetailsComponents/SongTitle';
-import SongLyrics from './SongDetailsComponents/SongLyrics';
-import SongPerformanceNotes from './SongDetailsComponents/SongPerformanceNotes';
-import SongInstrumentNotes from './SongDetailsComponents/SongInstrumentNotes'
+function SongDetails(){
+    const params = useParams();
+    const dispatch = useDispatch();
+    const history = useHistory();
 
+    const songDetails = useSelector((store) => store.songDetails)
+    console.log(songDetails);
+    console.log('*****\n*****\n*****');
+    console.log(params);
 
-
-
-const useStyles = makeStyles((theme) => ({
-    card: {
-        width: 700,
-        marginBottom: '1em',
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'column',
-    },
-    root: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        marginTop: '4em',
-        marginBottom: '3em',
-    },
-    emptyCard: {
-        marginTop: '20em',
-        marginBottom: '35em'
-    },
-    noCard: {
-        marginBottom: '20em'
-    }
-}));
+    useEffect(() => {
+        
+        dispatch ({
+            type: 'FETCH_SONG_DETAILS',
+            payload: params.id,
+        });
+    }, [params.id]);
 
 
-const SongDetails = ({ song, history, dispatch, recordings }) => {
-    const { card, root, emptyCard, noCard } = useStyles();
-    const [updated, setUpdated] = useState(false);
-
-    const directUserHome = () => {
-        dispatch({type: 'CLEAR_SELECTED_SONG'})
-        history.push('/user');
-    }
-
-
+    //back button path home
     const handleBack = () => {
-        console.log('back to movies')
+        console.log('back to songs')
         history.goBack();
     }
 
-    useEffect(() => {
-        if (song.id === oldSongId) {
-            setUpdated(true)
-
-        } else if (song.id !== oldSongId) {
-            setOldSongId(song.id);
-            setUpdated(false);
-            dispatch({ type: 'FETCH_RECORDINGS', payload: song.id })
-        }
-        return () => {
-            setUpdated(false)
-        };
-    }, [song.id, oldSongId, dispatch, updated, recordings]);
+    const handleDelete = (songId) => {
+        console.log(songId)
+        dispatch ({
+            type: 'DELETE_SONG'
+        })
+    }
     //button to go back, map through details with id
     return (
-        <>
+        <div>
             <Button onClick={handleBack}>Back to List</Button>
 
-              
+            <section className="songs">
+            {songDetails.map((song) => {
+                return (
+                    <div key={song.id}>
+                    <h4>{song.title}</h4>
+                    <p>{song.lyrics}</p>
+                    <p>{song.instrument_notes}</p>
+                    <p>{song.performance_notes}</p>
+                    <Button variant="text" onClick={() => handleDelete(song.id)}>Delete Song</Button>
 
-            {  (updated) ?
-                <div className={root} onDoubleClick={directUserHome}>
-                    <div onDoubleClick={e => e.stopPropagation()}>
-                        <Card style={{ backgroundColor: song.color }} raised={true}>
-                            <WorkingCardMenu /*directUserHome={directUserHome} directOriginalSong={directOriginalSong}*/ />
-                            <section >
-                                <CardContent className={card}>
-                                    <SongTitle />
-                                    <SongLyrics />
-                                    <SongInstrumentNotes />
-                                    <SongPerformanceNotes />
-                                </CardContent>
-                            </section>
-                            <AudioPlayer />
-                            <CardActions>
-                            </CardActions>
-                        </Card>
                     </div>
-                </div>
+                )
+            })}
 
-            :<div className={emptyCard} > </div>}
-            {song.id === 1.1 && <div className={noCard} > </div>}
-            
-        </>
-    );
-
+            </section>
+        </div>
+    )
 }
-
-const mapStoreToProps = (reduxState) => {
-    return {
-        song: reduxState.song,
-        recordings: reduxState.recordings,
-    };
-};
-export default connect(mapStoreToProps)(SongDetails);
+export default SongDetails;

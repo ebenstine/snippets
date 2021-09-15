@@ -8,7 +8,7 @@ function* getSongDetails(action) {
             withCredentials: true,
         };
 
-        const response = yield axios.get(`/api/song/${action.payload.id}`, config);
+        const response = yield axios.get(`/api/song/${action.payload}`, config);
     
         yield put({ type: 'SET_SONG_DETAILS', payload: response.data})
 

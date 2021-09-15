@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { Card, CardContent, CardActions } from '@material-ui/core';
 import { Grid, Typography, TextField, Button } from '@material-ui/core';
 import createTypography from '@material-ui/core/styles/createTypography';
 import axios from 'axios';
 import songState from '../../redux/reducers/settingSong.reducer';
+import songDetails from '../../redux/reducers/songDetails.reducer';
+
 
 function SongsList() {
 
+    
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
@@ -23,13 +26,9 @@ function SongsList() {
     }, []);
     //push forward to details page on click
     const handleClick = (songId) => {
-        console.log('you clicked on:', songId);
-        dispatch ({
-            type: 'FETCH_SONG_DETAILS',
-            payload: songId,
-        });
+        
 
-        history.push('/songDetails')
+        history.push(`/songDetails/${songId}`)
     }
 //push forward to the form
     const handleNext = () => {
@@ -56,7 +55,7 @@ function SongsList() {
 
                             </div>
                             
-                            <Button variant="text" onClick={() => dispatch ({type: 'DELETE_SONG'})}>Delete Song</Button>                          
+                                                      
 
                         
                             <AudioPlayer
