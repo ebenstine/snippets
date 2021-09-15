@@ -1,23 +1,24 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
-function* songDelete(action) {
+function* audioDelete(action) {
     try {
         const config = {
             headers: { 'Content-Type': 'application/json' },
             withCredentials: true,
         };
-        
-        yield axios.delete(`/api/song/${action.payload}`, config);
-        yield put({ type: 'FETCH_SONGS'})
+        let id = (action.payload.id);
+ 
+        yield axios.delete(`/api/recording/${id}`, config);
+        yield put({ type: 'FETCH_RECORDINGS', payload: action.payload.song_id});
         
     } catch (error) {
         console.log('Song DELETE request failed', error)
     }
 }
 
-function* deleteSong() {
-    yield takeLatest('DELETE_SONG', songDelete);
+function* deleteAudio() {
+    yield takeLatest('DELETE_AUDIO', audioDelete);
 }
 
-export default deleteSong;
+export default deleteAudio;

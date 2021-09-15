@@ -13,6 +13,7 @@ function SongsList() {
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
+    console.log(songs);
     const recordings = useSelector((store) => store.recordings);
 
     //get db info on page load
@@ -21,11 +22,11 @@ function SongsList() {
             type: 'FETCH_SONGS' });
     }, []);
     //push forward to details page on click
-    const handleClick = (song) => {
-        console.log('you clicked on:', song);
+    const handleClick = (songId) => {
+        console.log('you clicked on:', songId);
         dispatch ({
-            type: 'GET_DETAILS',
-            payload: song,
+            type: 'FETCH_SONG_DETAILS',
+            payload: songId,
         });
 
         history.push('/songDetails')
@@ -45,15 +46,17 @@ function SongsList() {
             <section className="songs">
             {songs.map((song) => {
                     return (
-                        <Grid item md={3} key={song.id} >
+                        <Grid item md={3} key={song} >
                             <div>
                             <Typography variant="overline">"{song.title}"</Typography>
                             </div>
                             
                             <div>
-                            <Button variant="text" onClick={() => handleClick(song)}>See Song Details</Button>
+                            <Button variant="text" onClick={() => handleClick(song.song_id)}>See Details</Button>
+
                             </div>
-                                                        
+                            
+                            <Button variant="text" onClick={() => dispatch ({type: 'DELETE_SONG'})}>Delete Song</Button>                          
 
                         
                             <AudioPlayer
