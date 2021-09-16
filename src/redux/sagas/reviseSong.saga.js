@@ -8,15 +8,13 @@ function* reviseSong(action) {
             withCredentials: true,
         };
         
-        const songId = action.payload.id;
-        console.log(action.payload);
-        
-        const response = yield axios.put(`/api/song/${songId}`, action.payload, config);
-        console.log(response);
-        yield put ({type: 'SETTING_SONG', payload: songId})
-        yield put({ type: 'FETCH_SONGS'})
+        yield axios.put(`api/song/${action.payload}`, config);
+
+        yield put({
+            type: 'FETCH_SONG_DETAILS'
+        })
     } catch (error) {
-        console.log('Song POST request failed', error)
+        console.log('Song PUT request failed', error)
     }
 }
 

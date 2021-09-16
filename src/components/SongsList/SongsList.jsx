@@ -44,8 +44,9 @@ function SongsList() {
     return (
         <>
             <Paper>
-            <Card className={card} container justifyContent="center" spacing={4}>
+            
             <section className="songs">
+            <Card className={card} container justifyContent="center" spacing={4}>
             {songs.map((song) => {
                     return (
                         <>
@@ -72,8 +73,9 @@ function SongsList() {
                         
                     );
                 })}
-            </section>
+            
             </Card>
+            </section>
             </Paper>
         
         </>
