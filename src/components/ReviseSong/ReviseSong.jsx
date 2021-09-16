@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Paper, TextField, Button, Typography, Select, FormControl } from '@material-ui/core';
+import { Paper, TextField, MenuItem, Button, Typography, Select, FormControl } from '@material-ui/core';
 import useStyles from './ReviseSongStyles'
 
 function ReviseSong() {
@@ -49,7 +49,7 @@ function ReviseSong() {
     }
 
 
-
+    ///GOTTA ADD NAME TO THOSE TEXTFIELDS BRO???????/////
     return (
     <div>
       <Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>
@@ -59,6 +59,7 @@ function ReviseSong() {
             <Typography variant = "h4" component="h5" className={title}>Revise Details Here</Typography>
             <TextField
               label="Title"
+              name="title"
               onChange={handleChange}
               value={reviseDetails.title}
               multiline className={textField}
@@ -66,6 +67,7 @@ function ReviseSong() {
           
             <TextField
               label="Instrument Notes"
+              name="instrument_notes"
               onChange={handleChange}
               value={reviseDetails.instrument_notes}
               multiline className={textField}
@@ -74,6 +76,7 @@ function ReviseSong() {
          
           <TextField
               label="Performance Notes"
+              name="performance_notes"
               onChange={handleChange}
               value={reviseDetails.performance_notes}
               multiline className={textField}
@@ -82,6 +85,7 @@ function ReviseSong() {
           
           <TextField
               label="Lyrics"
+              name="lyrics"
               onChange={handleChange}
               value={reviseDetails.lyrics}
               multiline className={textField}
@@ -92,10 +96,10 @@ function ReviseSong() {
               onChange={handleChange}
               value={reviseDetails.priority}
               >
-                <option defaultValue={''}>Select Completion Priority</option>
-                <option value={'1'}>First</option>
-                <option value={'2'}>Second</option>
-                <option value={'3'}>Third</option>
+                <MenuItem defaultValue={''}>Select Completion Priority</MenuItem>
+                <MenuItem value={'1'}>First</MenuItem>
+                <MenuItem value={'2'}>Second</MenuItem>
+                <MenuItem value={'3'}>Third</MenuItem>
           </Select>
           {/*<Uploader 
                 

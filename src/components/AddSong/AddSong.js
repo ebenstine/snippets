@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { Paper, TextField, Button, Typography, Select, FormControl } from '@material-ui/core';
+import { Paper, MenuItem, TextField, Button, Typography, Select, FormControl } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import useStyles from './AddSongStyles'
@@ -84,10 +84,10 @@ const AddSong = () => {
               name="priority"
               onChange={enterNewSong('priority')}
               >
-                <option defaultValue={''}>Select Completion Priority</option>
-                <option value={'1'}>First</option>
-                <option value={'2'}>Second</option>
-                <option value={'3'}>Third</option>
+                <MenuItem defaultValue={''}>Select Completion Priority</MenuItem>
+                <MenuItem value={'1'}>First</MenuItem>
+                <MenuItem value={'2'}>Second</MenuItem>
+                <MenuItem value={'3'}>Third</MenuItem>
           </Select>
           <Uploader 
                 

@@ -3,12 +3,12 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* reviseSong(action) {
     try {
-        const config = {
+        /*const config = {
             headers: { 'Content-Type': 'application/json' },
-            withCredentials: true,
-        };
+            withCredentials: true,*/
+       // };
         
-        yield axios.put(`api/song/${action.payload}`, config);
+        yield axios.put(`/api/song/${action.payload}`);
 
         yield put({
             type: 'FETCH_SONG_DETAILS'
