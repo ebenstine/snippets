@@ -1,4 +1,4 @@
-const initialSongState = {
+/*const initialSongState = {
     id: 1.1,
     date: '', 
     song_title: '',
@@ -23,4 +23,4 @@ const songState = (state = initialSongState, action) => {
     }
 }
 
-export default songState;
+export default songState;*/

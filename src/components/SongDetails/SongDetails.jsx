@@ -43,13 +43,9 @@ function SongDetails(){
         })
     }
 
-    const handleRevise = (songToRevise) => {
-        console.log(songToRevise);
-        dispatch ({
-            type: 'REVISE_SONG',
-            payload: songToRevise 
-        })
-        history.push(`/reviseSong/${songToRevise}`)
+    const handleRevise = (songId) => {
+       
+    history.push(`/reviseSong/${songId}`)
     }
 
     //button to go back, map through details with id

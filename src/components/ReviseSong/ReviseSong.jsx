@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { Paper, TextField, MenuItem, Button, Typography, Select, FormControl } from '@material-ui/core';
 import useStyles from './ReviseSongStyles'
 
 function ReviseSong() {
     const songDetails = useSelector(store => store.songDetails);
     const dispatch = useDispatch();
+    const params = useParams(); 
     const history = useHistory();
     const { root, inputs, paper, textField, cardContent, title } = useStyles();
-
+    console.log(params);
     let song = {
         title: songDetails.title,
         instrument_notes: songDetails.instrument_notes,
@@ -32,20 +33,17 @@ function ReviseSong() {
         history.push('/home');
     }
 
-    const test = () => {
-        console.log('editDetails', revisedSong);
-    }
-
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         let revisedSong= reviseDetails;
-        revisedSong = {...revisedSong};
+        revisedSong = {...revisedSong, id:params.id};
         console.log('new song revisions made in', revisedSong);
         dispatch({
             type: 'REVISE_SONG',
             payload: revisedSong
         });
-        history.push('/songDetails/:id');
+        history.push(`/songDetails/${params.id}`);
     }
 
 

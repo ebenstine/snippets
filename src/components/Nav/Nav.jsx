@@ -29,10 +29,6 @@ function Nav() {
               Home
             </Link>
 
-            <Link className="navLink" to="/info">
-              Info Page
-            </Link>
-
             <LogOutButton className="navLink" />
             
             <Link className="navLink" to="/addSong">

@@ -15,7 +15,7 @@ import songDetails from '../../redux/reducers/songDetails.reducer';
 
 function SongsList() {
 
-    const { root, card, player, } = useStyles();
+    const { root, card, } = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);

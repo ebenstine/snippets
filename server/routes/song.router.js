@@ -2,6 +2,7 @@ const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
 const { rejectUnauthenticated } = require('../modules/authentication-middleware');
+const { PoolRounded } = require('@material-ui/icons');
 //route to get all songs
 router.get('/', rejectUnauthenticated, (req, res) => {
     const queryText = 
@@ -87,25 +88,37 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
 
 //put route to edit a song
 router.put('/:id', rejectUnauthenticated, (req, res) => {
+    console.log("****\n*****\n*****");
     const id = req.params.id;
-    const songDetails = req.body
-    const songValuePairs = Object.entries(songDetails);
+    console.log(req.params);
+    
+    console.log(req.body);
 
-    for (let [key, value] of songValuePairs) {
-        let queryText = `UPDATE songs
-                         SET ${key} = $2
-                         WHERE id = $1`
 
-        pool.query(queryText, [id, value])
-        .then(result => {
+    const { title, instrument_notes, performance_notes, lyrics, priority } = req.body
+    
+    const queryText = `
+
+    UPDATE songs
+    SET
+        title = $1,
+        instrument_notes = $2,
+        performance_notes = $3,
+        lyrics = $4,
+        priority = $5
+    WHERE id = $6;
+    `;
+
+    pool.query(queryText, [title, instrument_notes, performance_notes, lyrics, priority, id])
+            .then(result => {
             console.log(result);
             res.sendStatus(201);
-        }).catch(error => {
+        })
+        .catch(error => {
             console.log('error updating song', error);
             res.sendStatus(500);
         })
-    }
-})
+});
 
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
     const id = req.params.id;

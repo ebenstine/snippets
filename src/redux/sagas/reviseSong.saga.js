@@ -7,8 +7,8 @@ function* reviseSong(action) {
             headers: { 'Content-Type': 'application/json' },
             withCredentials: true,*/
        // };
-        
-        yield axios.put(`/api/song/${action.payload}`);
+        console.log('**action.payload is:', action.payload);
+        yield axios.put(`/api/song/${action.payload.id}`, action.payload);
 
         yield put({
             type: 'FETCH_SONG_DETAILS'
@@ -23,3 +23,4 @@ function* songRevise() {
 }
 
 export default songRevise;
+
