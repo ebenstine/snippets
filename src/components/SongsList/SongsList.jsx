@@ -3,7 +3,7 @@ import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom'
 import { Card, CardContent, CardActions } from '@material-ui/core';
-import { Paper, Grid, Typography, TextField, Button } from '@material-ui/core';
+import { Box, Paper, Grid, Typography, TextField, Button } from '@material-ui/core';
 import createTypography from '@material-ui/core/styles/createTypography';
 import useStyles from './SongsListStyles';
 import axios from 'axios';
@@ -50,18 +50,21 @@ function SongsList() {
             {songs.map((song) => {
                     return (
                         <>
-                        <Card container justifyContent="center" spacing={1} raised={true}>
+                        <Card container justifyContent="center" spacing={1} raised={true}
+                        
+                        >
                         <section>
-                        <CardContent className={card} item xs={1} key={song} >
+                        <CardContent className={card} item xs={1} key={song} 
+                        onClick={() => handleClick(song.song_id)}>
                             <div>
                             <Typography variant="h4" className={title}>{song.title}</Typography>
                             </div>
+                            <Box>
                             
-                            <div>
-                            <Button variant="text" onClick={() => handleClick(song.song_id)}>See Details</Button>
-
-                            </div>
+                            {/*<Button variant="text" onClick={() => handleClick(song.song_id)}>Check Song Details</Button>*/}
                             
+                            
+                            </Box>
                         </CardContent>                              
                         </section>
                         
@@ -74,7 +77,8 @@ function SongsList() {
                         <CardActions >
                         </CardActions>    
                         </Card>
-                        <br></br>
+                       <br></br>
+                       <br></br>
                         </>
                         
                     );

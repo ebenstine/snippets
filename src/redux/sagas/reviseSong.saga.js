@@ -11,7 +11,8 @@ function* reviseSong(action) {
         yield axios.put(`/api/song/${action.payload.id}`, action.payload);
 
         yield put({
-            type: 'FETCH_SONG_DETAILS'
+            type: 'FETCH_SONG_DETAILS',
+            payload: action.payload.id
         })
     } catch (error) {
         console.log('Song PUT request failed', error)

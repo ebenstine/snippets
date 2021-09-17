@@ -6,11 +6,12 @@ const useStyles = makeStyles(() => ({
         marginLeft: '1.5em',
         marginRight: '1.5em',
         width: 350,
-        maxHeight: 50,
-        minHeight: 50,
+        maxHeight: 400,
+        minHeight: 400,
         flexDirection: 'column',
         position: 'relative',
-        zIndex: 0.5
+        zIndex: 0.5,
+        alignItems: 'center'
     },
 
     cardContent: {
@@ -47,7 +48,7 @@ const useStyles = makeStyles(() => ({
     },
     title: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 20,
+        fontSize: 16,
         marginLeft: 'auto',
         marginTop: 'auto'
     }

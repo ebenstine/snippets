@@ -92,14 +92,15 @@ const AddSong = () => {
           <Uploader 
                 
             uploadComplete={uploadComplete}
-              
+            multiline className={textField}  
           />
          
           
           <FormControl>
             <section>
             <Button variant="contained" onClick={toUserHome} className={inputs} > CANCEL </Button>
-            <Button variant="contained" type="submit" onClick={toUserHome} className={inputs}> SAVE </Button>
+            <br></br>
+            <Button variant="contained" type="submit" /*onClick={toUserHome}*/ className={inputs}> SAVE </Button>
             </section>
           </FormControl>
           
@@ -112,3 +113,4 @@ const AddSong = () => {
 }
 
 export default connect() (AddSong);
+

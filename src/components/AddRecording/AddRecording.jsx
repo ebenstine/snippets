@@ -51,7 +51,7 @@ const AddRecording = () => {
             <div className={cardContent}>
             <Typography variant = "h4" component="h5" className={title}>Add a Recording to this Song</Typography>
             <TextField
-              label="Describe this Recording"
+              label="Describe New Recording"
               onChange={enterNewRecording('description')}
               value={newRecording.description}
               multiline className={textField}

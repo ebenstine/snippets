@@ -46,8 +46,11 @@ const useStyles = makeStyles((theme) => ({
     wrapper: {
         display: 'flex',
         
+    },
+    buttons: {
+        display: 'flex',
+        alignItems: 'center'
     }
-
 }));
 
 export default useStyles;

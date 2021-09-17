@@ -6,7 +6,7 @@ import ProgressBar from './ProgressBar';
 const dropStyles = {
   width: "300px",
   height: "200px",
- 
+  
 }
 
 
@@ -42,8 +42,10 @@ const Uploader = ({uploadComplete}) => {
     
     const innerElement = (
         <div
-            style={{paddingTop: '.25em'}} >
-            <Button>Click or Drag Files to Upload</Button>
+            style={{paddingTop: '.25em'}} 
+            alignItems="center"
+            >
+            <Button>Click Here or Drag File to Upload</Button>
             </div>
     )
   return (
