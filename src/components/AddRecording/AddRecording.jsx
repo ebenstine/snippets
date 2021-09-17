@@ -40,7 +40,7 @@ const AddRecording = () => {
   }
 
   const toUserHome = () => {
-    history.push('/user')
+    history.push('/songsList')
 }
   
   return (

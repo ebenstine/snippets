@@ -65,10 +65,13 @@ function SongDetails(){
                     <p>Performance notes: 
                         {song.performance_notes}</p>
                     
+                    
+                    {/*Will pull in the form from AddRecording component, but it is currently non-functional
                     <AddRecording
 
+                    />*/}
 
-                    />
+
                     <Button variant="text" onClick={() => handleRevise(song.id)}>Revise Details</Button>
                     <Button variant="text" onClick={() => handleDelete(song.id)}>Delete Song</Button>
                     

@@ -30,7 +30,7 @@ function ReviseSong() {
     
 
     const handleCancel = () => {
-        history.push('/home');
+        history.push('/songsList');
     }
 
     

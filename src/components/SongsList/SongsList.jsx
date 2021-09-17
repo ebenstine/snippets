@@ -15,7 +15,7 @@ import songDetails from '../../redux/reducers/songDetails.reducer';
 
 function SongsList() {
 
-    const { root, card, } = useStyles();
+    const { grid, root, card, paper, Item  } = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
@@ -43,14 +43,16 @@ function SongsList() {
 //basic material ui setup in return, plan to revisit this
     return (
         <>
-            <Paper>
+            <Paper className={paper}>
             
-            <section className="songs">
-            <Card className={card} container justifyContent="center" spacing={4}>
+            
+            
             {songs.map((song) => {
                     return (
                         <>
-                        <CardContent item md={3} key={song} >
+                        <Card container justifyContent="center" spacing={1} raised={true}>
+                        <section>
+                        <CardContent className={card} item xs={1} key={song} >
                             <div>
                             <Typography variant="overline">"{song.title}"</Typography>
                             </div>
@@ -61,21 +63,25 @@ function SongsList() {
                             </div>
                             
                         </CardContent>                              
-
-                        <CardActions >
+                        </section>
+                        
                             <AudioPlayer
                             
                             audioFiles={[{src: song.preview_audio}]}
 
                             />
+                           
+                        <CardActions >
                         </CardActions>    
+                        </Card>
+                        <br></br>
                         </>
                         
                     );
                 })}
             
-            </Card>
-            </section>
+           
+            
             </Paper>
         
         </>

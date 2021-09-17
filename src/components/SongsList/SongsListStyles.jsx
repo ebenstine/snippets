@@ -2,16 +2,25 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
     card: {
-        marginTop: '2em',
+        marginTop: '.5em',
         marginLeft: '1.5em',
         marginRight: '1.5em',
         width: 350,
-        maxHeight: 350,
-        minHeight: 270,
+        maxHeight: 50,
+        minHeight: 50,
         flexDirection: 'column',
         position: 'relative',
         zIndex: 0.5
     },
+
+    cardContent: {
+        display: 'flex',
+        flexDirection : 'column', 
+        alignItems: "center", 
+        marginLeft: '9em',
+        paddingTop: '3em'
+    },
+
     text: {
         display: 'flex',
         width: 295,
@@ -22,7 +31,16 @@ const useStyles = makeStyles(() => ({
         whiteSpace: 'pre-line',
         fontSize: 14.5,
         paddingBottom: '2em',
+
     },
+
+    paper: {
+        margin: '4em auto',
+        backgroundColor: '#14342B50',
+        paddingBottom: '6em',
+        width: 900
+    },
+
     player: {
         position: 'absolute',
         bottom: '0em'

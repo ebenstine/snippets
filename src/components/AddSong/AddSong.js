@@ -40,11 +40,11 @@ const AddSong = () => {
   }
 
   const toUserHome = () => {
-    history.push('/user')
+    history.push('/songsList')
 }
   
   return (
-    <div onDoubleClick={toUserHome}>
+    <div>
       <Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>
         <FormControl >
           <form className={root} onSubmit={handleSave} noValidate autoComplete="off" >
@@ -99,7 +99,7 @@ const AddSong = () => {
           <FormControl>
             <section>
             <Button variant="contained" onClick={toUserHome} className={inputs} > CANCEL </Button>
-            <Button variant="contained" type="submit" className={inputs}> SAVE </Button>
+            <Button variant="contained" type="submit" onClick={toUserHome} className={inputs}> SAVE </Button>
             </section>
           </FormControl>
           
