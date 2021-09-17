@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
     card: {
-        marginTop: '.5em',
+        marginTop: '2em',
         marginLeft: '1.5em',
         marginRight: '1.5em',
         width: 350,
@@ -46,7 +46,10 @@ const useStyles = makeStyles(() => ({
         bottom: '0em'
     },
     title: {
-        fontFamily: 'Lato, sansSerif',
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 16,
+        marginLeft: 'auto',
+        marginTop: 'auto'
     }
 }));
 export default useStyles;

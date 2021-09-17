@@ -41,8 +41,7 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: '3em'
     },  
     title: {
-        fontFamily: 'Lato, sansSerif',
-        fontSize: 25,
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif'
     },
     wrapper: {
         display: 'flex',

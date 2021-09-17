@@ -15,7 +15,7 @@ import songDetails from '../../redux/reducers/songDetails.reducer';
 
 function SongsList() {
 
-    const { grid, root, card, paper, Item  } = useStyles();
+    const { grid, title, root, card, paper, Item  } = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
@@ -54,7 +54,7 @@ function SongsList() {
                         <section>
                         <CardContent className={card} item xs={1} key={song} >
                             <div>
-                            <Typography variant="overline">"{song.title}"</Typography>
+                            <Typography variant="h4" className={title}>{song.title}</Typography>
                             </div>
                             
                             <div>

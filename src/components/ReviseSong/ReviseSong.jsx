@@ -54,7 +54,7 @@ function ReviseSong() {
         <FormControl >
           <form className={root} onSubmit={handleSubmit} noValidate autoComplete="off" >
             <div className={cardContent}>
-            <Typography variant = "h4" component="h5" className={title}>Revise Details Here</Typography>
+            <Typography variant = "h5" component="h5" className={title}>Revise Details Here</Typography>
             <TextField
               label="Title"
               name="title"
