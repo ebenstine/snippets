@@ -34,6 +34,11 @@ const useStyles = makeStyles(() => ({
         paddingBottom: '2em',
 
     },
+    root: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
 
     paper: {
         margin: '4em auto',
@@ -48,7 +53,7 @@ const useStyles = makeStyles(() => ({
     },
     title: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 16,
+        fontSize: 20,
         marginLeft: 'auto',
         marginTop: 'auto'
     }

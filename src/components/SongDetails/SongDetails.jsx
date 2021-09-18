@@ -1,18 +1,13 @@
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Paper, Card, CardContent, Grid, Typography, Button } from '@material-ui/core';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import { useEffect, useState } from 'react';
-import Uploader from '../Uploader/Uploader';
 import AddRecording from '../AddRecording/AddRecording';
 import useStyles from './SongDetailsComponents/SongDetailsStyles';
 
 function SongDetails(){
     
-    const { grid, title, root, card, paper,  } = useStyles();
+    const { title, root, card, paper,  } = useStyles();
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -57,30 +52,31 @@ function SongDetails(){
         <div>
             <Paper className={paper}>
 
-            <section className="songs">
+            <section className={root}>
             {songDetails.map((song) => {
                 return (
                     <Card spacing={1} raised={true}>
                     <CardContent className={card}>
                     
                     <div key={song.id}>
-                    <h4>"{song.title}"</h4>
-                    <Typography><em>Lyrics:</em> 
+                    <Typography variant="overline" className={title}>{song.title}</Typography>
+                    <Typography>▶ LYRICS: </Typography>
                             
-                        {song.lyrics}</Typography> 
+                    <Typography variant="body1"> {song.lyrics}</Typography>  
                         <br></br>
-                    <Typography><em>Instrumentation notes: </em>
+                    <Typography> ▶ INSTRUMENTATION NOTES: </Typography>
+                        <br></br>
 
-                        {song.instrument_notes}</Typography>
+                    <Typography variant="body1">{song.instrument_notes}</Typography>
                         <br></br>
-                    <Typography><em>Performance notes: </em>
+                    <Typography> ▶ PERFORMANCE NOTES: </Typography>
                     
-                        {song.performance_notes}</Typography>
+                    <Typography variant="body1">{song.performance_notes}</Typography>
                     
                     
                     {/*Will pull in the form from AddRecording component, but it is currently non-functional
                     <AddRecording
-
+▶
                     />*/}
 
 
