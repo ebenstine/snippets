@@ -10,7 +10,6 @@ const useStyles = makeStyles(() => ({
         minHeight: 400,
         flexDirection: 'column',
         position: 'relative',
-        zIndex: 0.5,
         alignItems: 'center'
     },
 
@@ -19,7 +18,8 @@ const useStyles = makeStyles(() => ({
         flexDirection : 'column', 
         alignItems: "center", 
         marginLeft: '9em',
-        paddingTop: '3em'
+        paddingTop: '3em',
+        marginTop: '5em'
     },
 
     text: {
@@ -38,13 +38,17 @@ const useStyles = makeStyles(() => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
+        marginTop: '2em'
     },
 
     paper: {
         margin: '4em auto',
         backgroundColor: '#14342B50',
         paddingBottom: '6em',
-        width: 900
+        paddingTop: '6em',
+        width: 900,
+        alignItems: 'center'
+       
     },
 
     player: {
@@ -56,6 +60,13 @@ const useStyles = makeStyles(() => ({
         fontSize: 20,
         marginLeft: 'auto',
         marginTop: 'auto'
+    },
+    cardText: {
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 12
+    },
+    buttons: {
+        marginLeft: '2em'
     }
 }));
 export default useStyles;

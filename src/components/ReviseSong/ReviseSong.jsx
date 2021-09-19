@@ -54,13 +54,13 @@ function ReviseSong() {
         <FormControl >
           <form className={root} onSubmit={handleSubmit} noValidate autoComplete="off" >
             <div className={cardContent}>
-            <Typography variant = "h5" component="h5" className={title}>Revise Details Here</Typography>
+            <Typography variant = "h5" component="h5" className={title}>Update Song Details</Typography>
             <TextField
-              label="Title"
+              label="Title" 
               name="title"
               onChange={handleChange}
               value={reviseDetails.title}
-              multiline className={textField}
+              multiline className={textField} 
             />
           
             <TextField

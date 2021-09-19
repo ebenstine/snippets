@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { Paper, MenuItem, TextField, Button, Typography, Select, FormControl } from '@material-ui/core';
@@ -12,7 +12,6 @@ const AddSong = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { root, inputs, paper, textField, cardContent, title } = useStyles();
-  //const { handleSubmit, reset, register } = useForm();
   const [url, setUrl] = useState ('no file was dropped');
   const [newSong, setNewSong] = useState({
 
@@ -30,6 +29,7 @@ const AddSong = () => {
       payload: newSong 
       
     });
+    history.push('/songsList')
    };
 
   console.log(newSong);

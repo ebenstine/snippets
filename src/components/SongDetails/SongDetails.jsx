@@ -7,15 +7,10 @@ import useStyles from './SongDetailsComponents/SongDetailsStyles';
 
 function SongDetails(){
     
-    const { title, root, card, paper,  } = useStyles();
+    const { title, root, card, paper, cardText, buttons } = useStyles();
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
-    
-
-    
-    
-    
     console.log(params);
 
     useEffect(() => {
@@ -28,10 +23,7 @@ function SongDetails(){
     const songDetails = useSelector((store) => store.songDetails)
 
     //back button path home
-    const handleBack = () => {
-        console.log('back to songs')
-        history.goBack();
-    }
+    
     
     const handleDelete = (songId) => {
         console.log(songId)
@@ -41,6 +33,7 @@ function SongDetails(){
         })
         history.push('/songsList')
     }
+    
 
     const handleRevise = (songId) => {
        
@@ -60,42 +53,47 @@ function SongDetails(){
                     
                     <div key={song.id}>
                     <Typography variant="overline" className={title}>{song.title}</Typography>
-                    <Typography>▶ LYRICS: </Typography>
-                            
-                    <Typography variant="body1"> {song.lyrics}</Typography>  
+                    <Typography className={cardText}> 
                         <br></br>
-                    <Typography> ▶ INSTRUMENTATION NOTES: </Typography>
+                        {song.lyrics}</Typography>
                         <br></br>
-
-                    <Typography variant="body1">{song.instrument_notes}</Typography>
                         <br></br>
-                    <Typography> ▶ PERFORMANCE NOTES: </Typography>
+                    <Typography className={cardText}> ▶ Instrumentation Notes:   
+                        
+                        {song.instrument_notes}</Typography>
+                        <br></br>
+                    <Typography className={cardText}> ▶ Performance Notes:
                     
-                    <Typography variant="body1">{song.performance_notes}</Typography>
-                    
+                        {song.performance_notes}</Typography>
+                        <br></br>
                     
                     {/*Will pull in the form from AddRecording component, but it is currently non-functional
                     <AddRecording
 ▶
                     />*/}
+                     
+      
 
-
-                    <Button variant="text" onClick={() => handleRevise(song.id)}>Update Details</Button>
-                    <Button variant="text" onClick={() => handleDelete(song.id)}>Delete Song</Button>
-                    <Button onClick={handleBack}>Back to List</Button>
+                    
                     </div>
+                    
                     </CardContent>
+                    <section className={buttons}>
+                    <Button variant="text" className={buttons} onClick={() => handleRevise(song.id)}>Update Details</Button>
+                    <Button variant="text" className={buttons} onClick={() => handleDelete(song.id)}>Delete Song</Button> 
+                    </section>   
                     </Card>
                     
                 )
             })}
-
+                    
+                    
             </section>
-            
             
             
             </Paper> 
         </div>
+        
     )
 }
 export default SongDetails;
