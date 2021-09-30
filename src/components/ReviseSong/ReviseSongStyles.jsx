@@ -7,12 +7,13 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
     },
-    inputs: {
+    buttons: {
         margin: theme.spacing(1),
         width: '12ch',
         marginBottom: '1em',
         marginTop: '1.5em',
-        background: '#EBEBEB'
+        background: '#EBEBEB',
+        color: '#2a4f64'
     },
     titleField: {
         margin: theme.spacing(1),
@@ -42,7 +43,8 @@ const useStyles = makeStyles((theme) => ({
     },  
     title: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 25,
+        fontSize: 22,
+        color: '#2a4f64'
     },
     wrapper: {
         display: 'flex',

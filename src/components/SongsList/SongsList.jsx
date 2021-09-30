@@ -15,7 +15,7 @@ import songDetails from '../../redux/reducers/songDetails.reducer';
 
 function SongsList() {
 
-    const { grid, title, root, card, paper, Item  } = useStyles();
+    const {  title, player, card, paper } = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
@@ -33,49 +33,40 @@ function SongsList() {
 
         history.push(`/songDetails/${songId}`)
     }
-//push forward to the form
-    const handleNext = () => {
-        console.log('clicked add song');
-        history.push('/addSong')
-    }
+
+
 
     
 //basic material ui setup in return, plan to revisit this
     return (
         <>
-            <Paper className={paper}>
+            <Paper className={paper} elevation={10}>
             
             
             
             {songs.map((song) => {
                     return (
                         <>
-                        <Card container justifyContent="center" spacing={1} raised={true}
+                        <Card className={card} container justifyContent="right" spacing={1} raised={true}
                         
                         >
                         <section>
-                        <CardContent className={card} item xs={1} key={song} 
+                        <CardContent item xs={1} key={song} 
                         onClick={() => handleClick(song.song_id)}>
                             <div>
                             <Typography variant="h4" className={title}>{song.title}</Typography>
                             </div>
-                            <Box>
-                            
-                            {/*<Button variant="text" onClick={() => handleClick(song.song_id)}>Check Song Details</Button>*/}
-                            
-                            
-                            </Box>
+                           
                         </CardContent>                              
                         </section>
-                        
+                            <section className={player}>
                             <AudioPlayer
                             
                             audioFiles={[{src: song.preview_audio}]}
 
                             />
-                           
-                        <CardActions >
-                        </CardActions>    
+                            </section>
+                       
                         </Card>
                        <br></br>
                        <br></br>

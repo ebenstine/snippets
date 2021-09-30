@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { Paper, TextField, MenuItem, Button, Typography, Select, FormControl } from '@material-ui/core';
 import useStyles from './ReviseSongStyles'
+import AddRecording from '../AddRecording/AddRecording';
 
 function ReviseSong() {
     const songDetails = useSelector(store => store.songDetails);
     const dispatch = useDispatch();
     const params = useParams(); 
     const history = useHistory();
-    const { root, inputs, paper, textField, cardContent, title } = useStyles();
+    const { root, buttons, paper, textField, cardContent, title } = useStyles();
     console.log(params);
     let song = {
         title: songDetails.title,
@@ -99,17 +100,14 @@ function ReviseSong() {
                 <MenuItem value={'2'}>Second</MenuItem>
                 <MenuItem value={'3'}>Third</MenuItem>
           </Select>
-          {/*<Uploader 
-                
-            uploadComplete={uploadComplete}
-              
-          />*/}
+          {/*<AddRecording/>*/}
          
           
           <FormControl>
             <section>
-            <Button variant="contained" onClick={handleCancel} className={inputs} > CANCEL </Button>
-            <Button variant="contained" type="submit" className={inputs}> SAVE </Button>
+            <Button variant="contained" onClick={handleCancel} className={buttons} > CANCEL </Button>
+            <br></br>
+            <Button variant="contained" type="submit" className={buttons}> SAVE </Button>
             </section>
           </FormControl>
           

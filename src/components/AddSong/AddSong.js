@@ -11,7 +11,7 @@ import Uploader from '../Uploader/Uploader';
 const AddSong = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const { root, inputs, paper, textField, cardContent, title } = useStyles();
+  const { root, inputs, paper, textField, cardContent, title, priority } = useStyles();
   const [url, setUrl] = useState ('no file was dropped');
   const [newSong, setNewSong] = useState({
 
@@ -83,6 +83,7 @@ const AddSong = () => {
           <Select
               name="priority"
               onChange={enterNewSong('priority')}
+              className={priority}
               >
                 <MenuItem defaultValue={''}>Select Completion Priority</MenuItem>
                 <MenuItem value={'1'}>First</MenuItem>
@@ -90,7 +91,7 @@ const AddSong = () => {
                 <MenuItem value={'3'}>Third</MenuItem>
           </Select>
           <Uploader 
-                
+            elevated={10}  
             uploadComplete={uploadComplete}
             multiline className={textField}  
           />

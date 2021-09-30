@@ -12,7 +12,12 @@ const useStyles = makeStyles((theme) => ({
         width: '12ch',
         marginBottom: '1em',
         marginTop: '1.5em',
-        background: '#EBEBEB'
+        background: '#EBEBEB',
+        color: '#2a4f64'
+    },
+    priority: {
+        borderRadius: '3px'
+
     },
     titleField: {
         margin: theme.spacing(1),
@@ -41,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: '3em'
     },  
     title: {
-        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif'
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        color: '#2a4f64'
     },
     wrapper: {
         display: 'flex',

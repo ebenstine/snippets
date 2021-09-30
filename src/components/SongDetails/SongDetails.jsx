@@ -7,7 +7,7 @@ import useStyles from './SongDetailsComponents/SongDetailsStyles';
 
 function SongDetails(){
     
-    const { title, root, card, paper, cardText, buttons } = useStyles();
+    const { title, root, card, paper, cardText, cardContent, buttons } = useStyles();
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -40,16 +40,19 @@ function SongDetails(){
     history.push(`/reviseSong/${songId}`)
     }
 
+    
+
     //button to go back, map through details with id
     return (
+        
         <div>
-            <Paper className={paper}>
+            <Paper className={paper} elevation={10}>
 
             <section className={root}>
             {songDetails.map((song) => {
                 return (
-                    <Card spacing={1} raised={true}>
-                    <CardContent className={card}>
+                    <Card spacing={1} className={card}  raised={true}>
+                    <CardContent className={cardContent}>
                     
                     <div key={song.id}>
                     <Typography variant="overline" className={title}>{song.title}</Typography>
@@ -58,19 +61,22 @@ function SongDetails(){
                         {song.lyrics}</Typography>
                         <br></br>
                         <br></br>
-                    <Typography className={cardText}> ▶ Instrumentation Notes:   
+                        <br></br>
+                        <br></br>
+                        
+                        
+                    <Typography className={cardText}> ▶ Instrumentation Notes:{'  '}
                         
                         {song.instrument_notes}</Typography>
                         <br></br>
-                    <Typography className={cardText}> ▶ Performance Notes:
-                    
+                    <Typography className={cardText}> ▶ Performance Notes:{'  '}
+                        
                         {song.performance_notes}</Typography>
                         <br></br>
+                        
                     
                     {/*Will pull in the form from AddRecording component, but it is currently non-functional
-                    <AddRecording
-▶
-                    />*/}
+                    <AddRecording/>*/}
                      
       
 
@@ -80,6 +86,7 @@ function SongDetails(){
                     </CardContent>
                     <section className={buttons}>
                     <Button variant="text" className={buttons} onClick={() => handleRevise(song.id)}>Update Details</Button>
+                  
                     <Button variant="text" className={buttons} onClick={() => handleDelete(song.id)}>Delete Song</Button> 
                     </section>   
                     </Card>
