@@ -4,9 +4,10 @@
   justify-content: space-between;
   align-items: center;
 
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   background-color: #2a4f64;
   overflow: hidden;
+  box-shadow: 2px 2px 15px rgb(145, 145, 145);
 }
 
 .nav a {
@@ -14,8 +15,8 @@
 }
 
 .nav-title {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 600;
   color: #f5fdff;
   padding-left: 10px;
   margin: 0;
@@ -30,10 +31,6 @@
   padding: 24px 10px;
   text-decoration: none;
   font-size: 15px;
-  
- 
-  
-
   /* these last two make the logout button in
   the nav bar look like another link */
   border: none;
