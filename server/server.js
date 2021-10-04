@@ -29,11 +29,11 @@ app.use('/api/user', userRouter);
 app.use('/api/song', songRouter);
 app.use('/api/recording', recordingRouter);
 app.use('/s3', s3Uploader({
-  bucket: "snippetsbucket",                           // required
-  region: 'us-east-2',                           // optional
-  headers: {'Access-Control-Allow-Origin': '*'},  		    // optional
+  bucket: "snippetsbucket", // required
+  region: 'us-east-2',      // optional
+  headers: {'Access-Control-Allow-Origin': '*'}, // optional
   ACL: 'private',   
-  uniquePrefix: true                              // this is the default - set to `public-read` to let anyone view uploads
+  uniquePrefix: true        // this is the default - set to `public-read` to let anyone view uploads
 }));
 
 // Serve static files

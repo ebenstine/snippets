@@ -62,6 +62,7 @@ const useStyles = makeStyles(() => ({
         //backgroundColor: '#77a9b6',
         //backgroundColor: '#d3f6ff',
         marginBottom: '.5em',
+        marginLeft: '.85em'
         
     },
 

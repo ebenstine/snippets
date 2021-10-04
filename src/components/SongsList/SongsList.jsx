@@ -6,9 +6,8 @@ import { Card, CardContent, CardActions } from '@material-ui/core';
 import { Box, Paper, Grid, Typography, TextField, Button } from '@material-ui/core';
 import createTypography from '@material-ui/core/styles/createTypography';
 import useStyles from './SongsListStyles';
-import axios from 'axios';
-import songState from '../../redux/reducers/settingSong.reducer';
-import songDetails from '../../redux/reducers/songDetails.reducer';
+
+//import songDetails from '../../redux/reducers/songDetails.reducer';
 
 
 
