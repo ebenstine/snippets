@@ -8,8 +8,7 @@ const dropStyles = {
   height: "200px",
   backgroundColor: '#2a4f64',
   borderRadius: '3px',
-  border: '1px',
-  borderStyle: 'dashed',
+  border: '1px solid',
   boxShadow: '7px 7px 10px grey'
   
   
@@ -49,10 +48,10 @@ const Uploader = ({uploadComplete}) => {
     
     const innerElement = (
         <div
-            style={{paddingTop: '4em'}}
+            style={{paddingTop: '4em', paddingLeft: '1.5em', paddingRight: '1.5em'}}
             alignItems="center"
             >
-            <Button style={{color: 'snow'}}>Click Here or Drag File to Upload</Button>
+            <Button variant="outlined" style={{color: 'snow', paddingLeft: '3em', paddingRight: '3em'}}>Click Here or Drag File to Upload</Button>
             </div>
     )
   return (
