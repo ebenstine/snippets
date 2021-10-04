@@ -45,7 +45,7 @@ const AddRecording = () => {
   
   return (
     <div onDoubleClick={toUserHome}>
-      <Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>
+      {/*<Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>*/}
         <FormControl >
           <form className={root} onSubmit={handleSave} noValidate autoComplete="off" >
             <div className={cardContent}>
@@ -73,7 +73,7 @@ const AddRecording = () => {
         </div>
       </form>
     </FormControl>
-   </Paper>
+   {/*</Paper>*/}
   </div>
   );
 }

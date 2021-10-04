@@ -75,8 +75,8 @@ function SongDetails(){
                         <br></br>
                         
                     
-                    {/*Will pull in the form from AddRecording component, but it is currently non-functional
-                    <AddRecording/>*/}
+                    {/*Will pull in the form from AddRecording component, but it is currently non-functional*/}
+                    {/*<AddRecording/>*/}
                      
       
 

@@ -100,7 +100,7 @@ function ReviseSong() {
                 <MenuItem value={'2'}>Second</MenuItem>
                 <MenuItem value={'3'}>Third</MenuItem>
           </Select>
-          {/*<AddRecording/>*/}
+          <AddRecording/>
          
           
           <FormControl>

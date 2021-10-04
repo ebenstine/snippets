@@ -84,6 +84,7 @@ const AddSong = () => {
               name="priority"
               onChange={enterNewSong('priority')}
               className={priority}
+              value={newSong.priority}
               >
                 <MenuItem defaultValue={''}>Select Completion Priority</MenuItem>
                 <MenuItem value={'1'}>First</MenuItem>

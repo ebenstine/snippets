@@ -1,4 +1,4 @@
-const AWS = require("aws-sdk");
+/*const AWS = require("aws-sdk");
 
 const s3 = new AWS.S3({
   signatureVersion: "v4",
@@ -15,4 +15,4 @@ const getSignedUrl = (key) => {
   return signedUrl;
 };
 
-module.exports = { getSignedUrl };
+module.exports = { getSignedUrl };*/

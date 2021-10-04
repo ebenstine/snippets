@@ -56,7 +56,7 @@ function SongsList() {
                             <div>
                             <Typography variant="h4" className={title}>{song.title}</Typography>
                             </div>
-                           
+                          
                         </CardContent>                              
                         </section>
                             <section className={player}>

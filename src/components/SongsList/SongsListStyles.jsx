@@ -60,7 +60,7 @@ const useStyles = makeStyles(() => ({
         //position: 'absolute',
         //bottom: '0em',
         //backgroundColor: '#77a9b6',
-        color: '#77a9b6',
+        //backgroundColor: '#d3f6ff',
         marginBottom: '.5em',
         
     },
