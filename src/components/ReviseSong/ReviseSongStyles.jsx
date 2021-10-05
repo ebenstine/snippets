@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '1.5em',
     },
     paper: {
-        margin: 'auto',
+        margin: '4em auto',
         backgroundColor: '#14342B50',
         paddingBottom: '6em',
         width: 650
