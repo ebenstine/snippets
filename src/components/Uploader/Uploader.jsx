@@ -10,9 +10,6 @@ const dropStyles = {
   borderRadius: '3px',
   border: '1px solid',
   boxShadow: '7px 7px 10px grey'
-  
-  
-  
 }
 
 
@@ -48,16 +45,34 @@ const Uploader = ({uploadComplete}) => {
     
     const innerElement = (
         <div
-            style={{paddingTop: '4em', paddingLeft: '1.5em', paddingRight: '1.5em'}}
-            alignItems="center"
+            style={{
+
+                    paddingTop: '4em', 
+                    paddingLeft: '1.5em', 
+                    paddingRight: '1.5em'
+
+                  }}
+          
             >
-            <Button variant="outlined" style={{color: 'snow', paddingLeft: '3em', paddingRight: '3em'}}>Click Here or Drag File to Upload</Button>
+            <Button variant="outlined" 
+                    style={{
+
+                      color: '#EBEBEB', 
+                      paddingLeft: '3em', 
+                      paddingRight: '3em', 
+                      border: '1px dashed'
+
+                      }}
+                  >Click Here or Drag File to Upload</Button>
             </div>
     )
   return (
     <div style={{ paddingTop: '2em'}}>
+      
     <ProgressBar progress={progress} progressTitle={progressTitle} />
+
     <DropzoneS3Uploader
+
       onError={(error) => console.log('upload failed', error)}
       onProgress={onProgress}
       onFinish={handleFinishedUpload}

@@ -45,7 +45,7 @@ const useStyles = makeStyles(() => ({
         backgroundColor: '#14342B50',
         paddingBottom: '6em',
         paddingTop: '6em',
-        width: 900,
+        width: 625,
         alignItems: 'center'
        
     },
@@ -58,7 +58,7 @@ const useStyles = makeStyles(() => ({
     title: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 20,
-        color: '#3a555c',
+        color: '#1a313f',
         marginLeft: 'auto',
         marginTop: 'auto',
         borderBottom: '1px solid #6ca0ad'

@@ -2,9 +2,10 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles(() => ({
+    
     card: {
         
-        //marginTop: '2em',
+        
         //marginLeft: '1em',
         //marginRight: '1em',
         //width: 350,
@@ -24,7 +25,7 @@ const useStyles = makeStyles(() => ({
         marginLeft: '1em',
         paddingTop: '3em',
         backgroundColor: '#77a9b6',
-        color: '#2a4f64'
+        color: '#1a313f'
 
        
         
@@ -61,8 +62,10 @@ const useStyles = makeStyles(() => ({
         //bottom: '0em',
         //backgroundColor: '#77a9b6',
         //backgroundColor: '#d3f6ff',
+        fontWeight: '700',
         marginBottom: '.5em',
-        marginLeft: '.85em'
+        marginLeft: '.85em',
+        color: '#1a313f'
         
     },
 
@@ -71,7 +74,7 @@ const useStyles = makeStyles(() => ({
         fontSize: 16,
         marginLeft: 'auto',
         marginTop: 'auto',
-        color: '#2a4f64',
+        color: '#1a313f',
         
     
        

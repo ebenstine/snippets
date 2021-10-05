@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
+        margin: 'auto'
     },
     buttons: {
         margin: theme.spacing(1),
@@ -22,10 +22,10 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '1.5em',
     },
     paper: {
-        margin: '4em auto',
+        margin: 'auto',
         backgroundColor: '#14342B50',
         paddingBottom: '6em',
-        width: 700
+        width: 650
 
     },
     textField: {
@@ -44,7 +44,8 @@ const useStyles = makeStyles((theme) => ({
     title: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 22,
-        color: '#2a4f64'
+        color: '#2a4f64',
+        margin: 'auto'
     },
     wrapper: {
         display: 'flex',
