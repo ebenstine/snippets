@@ -56,7 +56,7 @@ function SongDetails(){
                     
                     <div key={song.id}>
                     <Typography variant="overline" className={title}>{song.title}</Typography>
-                    <Typography className={cardText}> 
+                    <Typography className={cardText} component="p"> 
                         <br></br>
                         {song.lyrics}</Typography>
                         <br></br>
@@ -85,9 +85,9 @@ function SongDetails(){
                     
                     </CardContent>
                     <section className={buttons}>
-                    <Button variant="text" className={buttons} onClick={() => handleRevise(song.id)}>Update Details</Button>
+                    <Button variant="outlined" className={buttons} onClick={() => handleRevise(song.id)}>Update Details</Button>
                   
-                    <Button variant="text" className={buttons} onClick={() => handleDelete(song.id)}>Delete Song</Button> 
+                    <Button variant="outlined" className={buttons} onClick={() => handleDelete(song.id)}>Delete Song</Button> 
                     </section>   
                     </Card>
                     

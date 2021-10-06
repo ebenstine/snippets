@@ -45,7 +45,7 @@ const useStyles = makeStyles(() => ({
         backgroundColor: '#14342B50',
         paddingBottom: '6em',
         paddingTop: '6em',
-        width: 625,
+        width: 650,
         alignItems: 'center'
        
     },
@@ -67,12 +67,14 @@ const useStyles = makeStyles(() => ({
     },
     cardText: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 12,
-        borderBottom: '1px solid #6ca0ad'
+        fontSize: 10.5,
+        borderBottom: '1px solid #6ca0ad',
+        whiteSpace: 'pre-wrap'
     },
     buttons: {
-        marginLeft: '2em',
-        color: '#3a555c'
+        marginLeft: '1.75em',
+        marginBottom: '.3em',
+        color: '#1a313f'
     }
 }));
 export default useStyles;

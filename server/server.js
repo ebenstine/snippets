@@ -11,7 +11,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const songRouter = require('./routes/song.router');
 const recordingRouter = require('./routes/recording.router');
-const s3Uploader = require('react-s3-uploader/s3router')
+const s3Uploader = require('react-s3-uploader/s3router');
 
 // Body parser middleware
 app.use(bodyParser.json());

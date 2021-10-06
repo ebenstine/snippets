@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
         margin: '4em auto',
         backgroundColor: '#14342B50',
         paddingBottom: '6em',
-        width: 700
+        width: 650
 
     },
     textField: {

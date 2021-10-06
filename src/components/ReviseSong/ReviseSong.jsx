@@ -93,6 +93,7 @@ function ReviseSong() {
                 name="lyrics"
                 onChange={handleChange}
                 value={reviseDetails.lyrics}
+                component="p"
                 multiline className={textField}
               />
 

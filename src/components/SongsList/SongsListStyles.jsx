@@ -53,7 +53,7 @@ const useStyles = makeStyles(() => ({
         paddingTop: '6em',
         paddingLeft: '3em',
         paddingRight: '3em',
-        width: 600
+        width: 650
         
     },
 
@@ -75,9 +75,8 @@ const useStyles = makeStyles(() => ({
         marginLeft: 'auto',
         marginTop: 'auto',
         color: '#1a313f',
-        
-    
-       
     }
+
+    
 }));
 export default useStyles;
