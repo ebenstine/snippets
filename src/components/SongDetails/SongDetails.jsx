@@ -7,7 +7,7 @@ import useStyles from './SongDetailsComponents/SongDetailsStyles';
 
 function SongDetails(){
     
-    const { title, root, card, paper, cardText, cardContent, buttons } = useStyles();
+    const { title, root, card, paper, cardText, cardContent, buttons, notes } = useStyles();
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -54,7 +54,7 @@ function SongDetails(){
                     <Card spacing={1} className={card}  raised={true}>
                     <CardContent className={cardContent}>
                     
-                    <div key={song.id}>
+                    <div key={song.id}> 
                     <Typography variant="overline" className={title}>{song.title}</Typography>
                     <Typography className={cardText} component="p"> 
                         <br></br>
@@ -62,17 +62,16 @@ function SongDetails(){
                         <br></br>
                         <br></br>
                         <br></br>
-                        <br></br>
                         
                         
-                    <Typography className={cardText}> ▶ Instrumentation Notes:{'  '}
+                    <Typography className={notes}> ▶ Instrumentation Notes:{'  '}
                         
                         {song.instrument_notes}</Typography>
                         <br></br>
-                    <Typography className={cardText}> ▶ Performance Notes:{'  '}
+                    <Typography className={notes}> ▶ Performance Notes:{'  '}
                         
                         {song.performance_notes}</Typography>
-                        <br></br>
+                       
                         
                     
                     {/*Will pull in the form from AddRecording component, but it is currently non-functional*/}

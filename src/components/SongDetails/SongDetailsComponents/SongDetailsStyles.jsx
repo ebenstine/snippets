@@ -6,8 +6,8 @@ const useStyles = makeStyles(() => ({
         marginLeft: '1.5em',
         marginRight: '1.5em',
         width: 350,
-        maxHeight: 400,
-        minHeight: 400,
+        maxHeight: 500,
+        minHeight: 200,
         flexDirection: 'column',
         position: 'relative',
         alignItems: 'center',
@@ -67,10 +67,18 @@ const useStyles = makeStyles(() => ({
     },
     cardText: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 10.5,
+        fontSize: 9.5,
         borderBottom: '1px solid #6ca0ad',
         whiteSpace: 'pre-wrap'
     },
+
+    notes: {
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 9.5,
+        borderBottom: '1px solid #6ca0ad',
+        whiteSpace: 'pre-wrap'
+    },
+
     buttons: {
         marginLeft: '1.75em',
         marginBottom: '.3em',

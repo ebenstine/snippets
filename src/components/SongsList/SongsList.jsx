@@ -49,10 +49,10 @@ function SongsList() {
                                 container justifyContent="right"
                                 spacing={1}
                                 raised={true}
-
+                                
                             >
                                 <section>
-                                    <CardContent item xs={1} key={song}
+                                    <CardContent item xs={1} key={song} 
                                         onClick={() => handleClick(song.song_id)}>
                                         <div>
                                             <Typography variant="h4" className={title}>{song.title}</Typography>

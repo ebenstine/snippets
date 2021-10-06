@@ -4,18 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
     
     card: {
-        
-        
-        //marginLeft: '1em',
-        //marginRight: '1em',
-        //width: 350,
-        //maxHeight: 200,
-        //minHeight: 200,
         flexDirection: 'column',
-        //position: 'relative',
-        backgroundColor: '#c8ecf5'
-        
-        
+        backgroundColor: '#c8ecf5' 
     },
 
     cardContent: {
@@ -27,9 +17,6 @@ const useStyles = makeStyles(() => ({
         backgroundColor: '#77a9b6',
         color: '#1a313f'
 
-       
-        
-        
     },
 
     text: {
@@ -58,11 +45,7 @@ const useStyles = makeStyles(() => ({
     },
 
     player: {
-        //position: 'absolute',
-        //bottom: '0em',
-        //backgroundColor: '#77a9b6',
-        //backgroundColor: '#d3f6ff',
-        fontWeight: '700',
+       
         marginBottom: '.5em',
         marginLeft: '.85em',
         color: '#1a313f'
