@@ -58,6 +58,10 @@ const useStyles = makeStyles(() => ({
         marginLeft: 'auto',
         marginTop: 'auto',
         color: '#1a313f',
+    },
+
+    heading: {
+
     }
 
     

@@ -71,7 +71,7 @@ function SongDetails(){
                     <Typography className={notes}> ▶ Performance Notes:{'  '}
                         
                         {song.performance_notes}</Typography>
-                       
+                        <br></br>
                         
                     
                     {/*Will pull in the form from AddRecording component, but it is currently non-functional*/}
@@ -83,11 +83,7 @@ function SongDetails(){
                     </div>
                     
                     </CardContent>
-                    <section className={buttons}>
-                    <Button variant="outlined" className={buttons} onClick={() => handleRevise(song.id)}>Update Details</Button>
-                  
-                    <Button variant="outlined" className={buttons} onClick={() => handleDelete(song.id)}>Delete Song</Button> 
-                    </section>   
+                    
                     </Card>
                     
                 )
@@ -95,7 +91,11 @@ function SongDetails(){
                     
                     
             </section>
-            
+            <section className={buttons}>
+                    <Button variant="contained" className={buttons} onClick={() => handleRevise(song.id)}>Update Details</Button>
+                  
+                    <Button variant="contained" className={buttons} onClick={() => handleDelete(song.id)}>Delete Song</Button> 
+                    </section>   
             
             </Paper> 
         </div>

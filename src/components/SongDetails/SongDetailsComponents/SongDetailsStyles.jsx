@@ -80,8 +80,9 @@ const useStyles = makeStyles(() => ({
     },
 
     buttons: {
-        marginLeft: '1.75em',
-        marginBottom: '.3em',
+        marginLeft: '4em',
+        marginRight: '4em',
+        marginTop: '4em',
         color: '#1a313f'
     }
 }));
