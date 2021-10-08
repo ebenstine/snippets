@@ -6,8 +6,6 @@ import { Card, CardContent, CardActions } from '@material-ui/core';
 import { Box, Paper, Grid, Typography, TextField, Button } from '@material-ui/core';
 import createTypography from '@material-ui/core/styles/createTypography';
 import useStyles from './SongsListStyles';
-import { CallMissedSharp } from '@material-ui/icons';
-import { mergeClasses } from '@material-ui/styles';
 
 //import songDetails from '../../redux/reducers/songDetails.reducer';
 
@@ -16,7 +14,7 @@ import { mergeClasses } from '@material-ui/styles';
 
 function SongsList() {
 
-    const { title, player, card, paper } = useStyles();
+    const { title, player, card, paper, button } = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
@@ -34,6 +32,12 @@ function SongsList() {
     const handleClick = (songId) => {
         history.push(`/songDetails/${songId}`)
     }
+
+    const handleAdd = () => {
+        history.push('/addSong')
+    }
+
+    
 
 
 
@@ -82,7 +86,7 @@ function SongsList() {
                     );
                 })}
 
-
+            <Button variant='outlined' className={button} onClick={() => handleAdd()}> + </Button>
 
             </Paper>
 

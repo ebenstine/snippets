@@ -7,7 +7,7 @@ import useStyles from './SongDetailsComponents/SongDetailsStyles';
 
 function SongDetails(){
     
-    const { title, root, card, paper, cardText, cardContent, buttons, notes } = useStyles();
+    const { title, root, card, paper, cardText, cardContent, buttons } = useStyles();
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -62,13 +62,14 @@ function SongDetails(){
                         <br></br>
                         <br></br>
                         <br></br>
+                        <br></br>
                         
                         
-                    <Typography className={notes}> ▶ Instrumentation Notes:{'  '}
+                    <Typography className={cardText}> ▶ Instrumentation Notes:{'  '}
                         
                         {song.instrument_notes}</Typography>
                         <br></br>
-                    <Typography className={notes}> ▶ Performance Notes:{'  '}
+                    <Typography className={cardText}> ▶ Performance Notes:{'  '}
                         
                         {song.performance_notes}</Typography>
                         <br></br>
@@ -79,24 +80,25 @@ function SongDetails(){
                      
       
 
-                    
                     </div>
-                    
                     </CardContent>
+                    <section className={buttons}>
+                    <Button variant="outlined" className={buttons} onClick={() => handleRevise(song.id)}>Update Details</Button>
+                    
+                    <Button variant="outlined" className={buttons} onClick={() => handleDelete(song.id)}>Delete Song</Button> 
+                    </section>   
+                    
+                    
                     
                     </Card>
-                    
+                   
                 )
             })}
                     
                     
-            </section>
-            <section className={buttons}>
-                    <Button variant="contained" className={buttons} onClick={() => handleRevise(song.id)}>Update Details</Button>
-                  
-                    <Button variant="contained" className={buttons} onClick={() => handleDelete(song.id)}>Delete Song</Button> 
-                    </section>   
             
+                    </section>
+
             </Paper> 
         </div>
         

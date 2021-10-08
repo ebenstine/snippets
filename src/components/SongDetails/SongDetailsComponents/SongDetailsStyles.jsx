@@ -21,7 +21,7 @@ const useStyles = makeStyles(() => ({
 
     text: {
         display: 'flex',
-        width: 295,
+        //width: 295,
         overflow: 'hidden',
         textOverflow: 'ellipsis',
         maxHeight: '7.4em',
@@ -80,9 +80,8 @@ const useStyles = makeStyles(() => ({
     },
 
     buttons: {
-        marginLeft: '4em',
-        marginRight: '4em',
-        marginTop: '4em',
+        marginLeft: '1.75em',
+        marginBottom: '.3em',
         color: '#1a313f'
     }
 }));

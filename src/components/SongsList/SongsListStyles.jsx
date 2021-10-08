@@ -60,10 +60,15 @@ const useStyles = makeStyles(() => ({
         color: '#1a313f',
     },
 
-    heading: {
+    button: {
+        border: '1px solid #1a313f',
+        fontSize: 15,
+        color: '#1a313f',
+        backgroundColor:'#ccdbdf'
 
     }
 
+    
     
 }));
 export default useStyles;
