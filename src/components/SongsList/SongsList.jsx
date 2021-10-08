@@ -6,7 +6,7 @@ import { Card, CardContent, CardActions } from '@material-ui/core';
 import { Box, Paper, Grid, Typography, TextField, Button } from '@material-ui/core';
 import createTypography from '@material-ui/core/styles/createTypography';
 import useStyles from './SongsListStyles';
-import { TrendingUpOutlined } from '@material-ui/icons';
+;
 
 //import songDetails from '../../redux/reducers/songDetails.reducer';
 
@@ -15,7 +15,7 @@ import { TrendingUpOutlined } from '@material-ui/icons';
 
 function SongsList() {
 
-    const { title, player, card, paper, button } = useStyles();
+    const { title, player, card, paper, button, classes } = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
@@ -51,25 +51,24 @@ function SongsList() {
                 {songs.map((song) => {
                     return (
                         <>
-                            {}
                             <Card
                                 className={card}
                                 raised={true}
-                                
-                                
-                                
-                            
+                    
                             >
                                 <section>
-                                    <CardContent item xs={1} key={song} 
-                                        onClick={() => handleClick(song.song_id)}>
-                                        
+                                    <CardContent 
+                                        item xs={1} key={song} 
+                                        onClick={() => handleClick(song.song_id)} 
+                                    >
+                                       
                                         <div>
                                             <Typography variant="h4" className={title}>{song.title}</Typography>
                                             
                                         </div>
 
                                     </CardContent>
+                                    
                                 </section>
                                 <section className={player}>
                                     <AudioPlayer
@@ -80,6 +79,7 @@ function SongsList() {
                                 </section>
 
                             </Card>
+                            
                             <br></br>
                             <br></br>
                         </>
@@ -87,7 +87,7 @@ function SongsList() {
                     );
                 })}
 
-            <Button variant='outlined' className={button} onClick={() => handleAdd()}> + </Button>
+            <Button variant='contained' className={button} onClick={() => handleAdd()}> + </Button>
 
             </Paper>
 

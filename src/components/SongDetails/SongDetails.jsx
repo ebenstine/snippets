@@ -51,10 +51,11 @@ function SongDetails(){
             <section className={root}>
             {songDetails.map((song) => {
                 return (
+                    <div key={song.id}>
                     <Card spacing={1} className={card}  raised={true}>
                     <CardContent className={cardContent}>
                     
-                    <div key={song.id}> 
+                     
                     <Typography variant="overline" className={title}>{song.title}</Typography>
                     <Typography className={cardText} component="p"> 
                         <br></br>
@@ -80,18 +81,21 @@ function SongDetails(){
                      
       
 
-                    </div>
-                    </CardContent>
-                    <section className={buttons}>
-                    <Button variant="outlined" className={buttons} onClick={() => handleRevise(song.id)}>Update Details</Button>
                     
-                    <Button variant="outlined" className={buttons} onClick={() => handleDelete(song.id)}>Delete Song</Button> 
-                    </section>   
+                    </CardContent>
+                       
                     
                     
                     
                     </Card>
-                   
+                    <br></br>
+                    <br></br>
+                    <section className={buttons}>
+                    <Button variant="contained" className={buttons} onClick={() => handleRevise(song.id)}>Update Details</Button>
+                    
+                    <Button variant="contained" className={buttons} onClick={() => handleDelete(song.id)}>Delete Song</Button> 
+                    </section>
+                    </div>
                 )
             })}
                     
