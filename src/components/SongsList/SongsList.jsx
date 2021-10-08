@@ -6,6 +6,7 @@ import { Card, CardContent, CardActions } from '@material-ui/core';
 import { Box, Paper, Grid, Typography, TextField, Button } from '@material-ui/core';
 import createTypography from '@material-ui/core/styles/createTypography';
 import useStyles from './SongsListStyles';
+import { TrendingUpOutlined } from '@material-ui/icons';
 
 //import songDetails from '../../redux/reducers/songDetails.reducer';
 

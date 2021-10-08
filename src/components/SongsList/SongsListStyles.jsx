@@ -61,10 +61,12 @@ const useStyles = makeStyles(() => ({
     },
 
     button: {
-        border: '1px solid #1a313f',
-        fontSize: 15,
+        //border: '1px solid #1a313f',
+        fontSize: 16,
         color: '#1a313f',
-        backgroundColor:'#ccdbdf'
+        backgroundColor:'#ccdbdf',
+        boxShadow: '1px 1px 10px grey'
+        
 
     }
 
