@@ -90,7 +90,7 @@ function SongDetails(){
                     </Card>
                     <br></br>
                     <br></br>
-                    <section className={buttons}>
+                    <section>
                     <Button variant="contained" className={buttons} onClick={() => handleRevise(song.id)}>Update Details</Button>
                     
                     <Button variant="contained" className={buttons} onClick={() => handleDelete(song.id)}>Delete Song</Button> 

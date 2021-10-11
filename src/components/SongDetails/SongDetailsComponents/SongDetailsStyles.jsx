@@ -53,7 +53,7 @@ const useStyles = makeStyles(() => ({
     player: {
         position: 'absolute',
         bottom: '4em',
-        borderBottom:'#14342B50'
+        border: '1px solid snow'
     },
     title: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
@@ -80,10 +80,10 @@ const useStyles = makeStyles(() => ({
     },
 
     buttons: {
-        marginLeft: '1.75em',
-        marginBottom: '1em',
-        color: '#1a313f'
-
+        marginLeft: '3em',
+        marginBottom: '.3em',
+        color: '#1a313f',
+        border: '1px solid #c8ecf5'
     }
 }));
 export default useStyles;

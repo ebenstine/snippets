@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '1em',
         marginTop: '1.5em',
         background: '#EBEBEB',
-        color: '#2a4f64'
+        color: '#2a4f64',
+        border: '1px solid #c8ecf5'
     },
     priority: {
         borderRadius: '3px'
@@ -56,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
     buttons: {
         display: 'flex',
         alignItems: 'center'
+
     }
 }));
 

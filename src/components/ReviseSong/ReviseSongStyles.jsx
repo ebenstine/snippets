@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '1em',
         marginTop: '1.5em',
         background: '#EBEBEB',
-        color: '#2a4f64'
+        color: '#2a4f64',
+        border: '1.5px solid #c8ecf5'
     },
     titleField: {
         margin: theme.spacing(1),

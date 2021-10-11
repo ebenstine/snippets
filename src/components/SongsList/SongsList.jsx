@@ -51,10 +51,12 @@ function SongsList() {
                 {songs.map((song) => {
                     return (
                         <>
+                            <div>
                             <Card
-                                className={card}
+                                
                                 raised={true}
-                    
+                                className={card}
+                                
                             >
                                 <section>
                                     <CardContent 
@@ -79,7 +81,7 @@ function SongsList() {
                                 </section>
 
                             </Card>
-                            
+                            </div>
                             <br></br>
                             <br></br>
                         </>
@@ -87,7 +89,7 @@ function SongsList() {
                     );
                 })}
 
-            <Button variant='contained' className={button} onClick={() => handleAdd()}> + </Button>
+            <Button variant='contained' className={button} onClick={() => handleAdd()}> +  </Button>
 
             </Paper>
 

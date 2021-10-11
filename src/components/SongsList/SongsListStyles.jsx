@@ -48,7 +48,13 @@ const useStyles = makeStyles(() => ({
        
         marginBottom: '.5em',
         marginLeft: '.85em',
-        color: '#1a313f'
+        marginRight: '19.5em',
+        color: '#1a313f',
+        border: '1.35px solid #14342B50',
+        borderRadius: '.25em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em',
+        
         
     },
 
