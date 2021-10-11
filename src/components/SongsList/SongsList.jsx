@@ -15,7 +15,7 @@ import useStyles from './SongsListStyles';
 
 function SongsList() {
 
-    const { title, player, card, paper, button, classes } = useStyles();
+    const { title, player, card1, card2, paper, button, classes } = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
@@ -52,18 +52,18 @@ function SongsList() {
                     return (
                         <>
                             <div>
+                            {song.priority === '1' ? 
                             <Card
-                                
                                 raised={true}
-                                className={card}
-                                
-                            >
-                                <section>
+                                className={card1}
+                            > 
+                                <section> 
                                     <CardContent 
+                                        
                                         item xs={1} key={song} 
                                         onClick={() => handleClick(song.song_id)} 
-                                    >
-                                       
+                                    
+                                     >  
                                         <div>
                                             <Typography variant="h4" className={title}>{song.title}</Typography>
                                             
@@ -80,8 +80,39 @@ function SongsList() {
                                     />
                                 </section>
 
-                            </Card>
-                            </div>
+                            </Card> : 
+                            
+                            <Card
+                                raised={true}
+                                className={card2}
+                            > 
+                                <section> 
+                                    <CardContent 
+        
+                                        item xs={1} key={song} 
+                                        onClick={() => handleClick(song.song_id)} 
+    
+                                    >  
+        
+                                        <div>
+                                            <Typography variant="h4" className={title}>{song.title}</Typography>
+            
+                                        </div>
+
+                                    </CardContent>
+    
+                                </section>
+                                <section className={player}>
+                                    <AudioPlayer
+
+                                        audioFiles={[{ src: song.preview_audio }]}
+
+                                    />
+                                    </section>
+
+                            </Card> }
+                
+                            </div> 
                             <br></br>
                             <br></br>
                         </>

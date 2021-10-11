@@ -3,9 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
     
-    card: {
+    card1: {
         flexDirection: 'column',
         backgroundColor: '#c8ecf5' 
+    },
+
+    card2: {
+        flexDirection: 'column',
+        backgroundColor: 'rgb(250, 250, 175)'
     },
 
     cardContent: {
