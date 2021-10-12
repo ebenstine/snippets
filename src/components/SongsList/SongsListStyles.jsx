@@ -12,6 +12,11 @@ const useStyles = makeStyles(() => ({
         flexDirection: 'column',
         backgroundColor: 'rgb(250, 250, 175)'
     },
+    
+    card3: {
+        flexDirection: 'column',
+        backgroundColor: '#e6b754'
+    },
 
     cardContent: {
         display: 'flex',
