@@ -12,11 +12,22 @@ const useStyles = makeStyles(() => ({
         position: 'relative',
         alignItems: 'center',
         paddingTop: '3em',
-        backgroundColor: '#c8ecf5'
+        //backgroundColor: '#c8ecf5'
+    },
+    
+    card1: {
+   
+        backgroundColor: '#c8ecf5' 
     },
 
-    card: {
-        backgroundColor:'#c8ecf5'
+    card2: {
+      
+        backgroundColor: 'rgb(250, 250, 175)'
+    },
+    
+    card3: {
+      
+        backgroundColor: '#fdd377'
     },
 
     text: {
@@ -58,7 +69,7 @@ const useStyles = makeStyles(() => ({
     title: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 20,
-        color: '#1a313f',
+        color: '#233d4d',
         marginLeft: 'auto',
         marginTop: 'auto',
         borderBottom: '1px solid #6ca0ad'
@@ -80,10 +91,14 @@ const useStyles = makeStyles(() => ({
     },
 
     buttons: {
-        marginLeft: '3em',
+        marginLeft: '1em',
         marginBottom: '.3em',
-        color: '#1a313f',
-        border: '1px solid #c8ecf5'
+        marginRight: '2em',
+        color: '#233d4d',
+        border: '1px solid #c8ecf5',
+        paddingLeft: '1em',
+        paddingRight: '1em'
+        
     }
 }));
 export default useStyles;

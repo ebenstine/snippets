@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '1.5em',
         background: '#EBEBEB',
         color: '#2a4f64',
-        border: '1.5px solid #c8ecf5'
+        border: '1px solid #c8ecf5'
     },
     titleField: {
         margin: theme.spacing(1),
@@ -48,10 +48,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#2a4f64',
         margin: 'auto'
     },
-    wrapper: {
-        display: 'flex',
-        
-    }
+    
 
 }));
 

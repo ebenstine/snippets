@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
     
     card3: {
         flexDirection: 'column',
-        backgroundColor: '#e6b754'
+        backgroundColor: '#fdd377'
     },
 
     cardContent: {
@@ -73,7 +73,7 @@ const useStyles = makeStyles(() => ({
         fontSize: 16,
         marginLeft: 'auto',
         marginTop: 'auto',
-        color: '#1a313f',
+        color: ' #233d4d',
     },
 
     button: {
