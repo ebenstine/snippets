@@ -77,7 +77,7 @@ const useStyles = makeStyles(() => ({
         fontSize: 16,
         marginLeft: 'auto',
         marginTop: 'auto',
-        color: ' #233d4d',
+        color: '#233d4d',
     },
 
     button: {

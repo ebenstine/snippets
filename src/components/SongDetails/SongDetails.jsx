@@ -7,7 +7,7 @@ import useStyles from './SongDetailsComponents/SongDetailsStyles';
 
 function SongDetails(){
     
-    const { title, root, card1, card2, card3, paper, cardText, cardContent, buttons } = useStyles();
+    const { title, root, card, card1, card2, card3, paper, cardText, cardContent, buttons } = useStyles();
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -128,7 +128,10 @@ function SongDetails(){
                     
                     </Card> :
                     song.priority === '3' ?
-                    <Card spacing={1} className={card3}  raised={true}>
+                    <Card 
+                        spacing={1} 
+                        className={card3}  
+                        raised={true}>
                     <CardContent className={cardContent}>
                     
                      
@@ -166,8 +169,46 @@ function SongDetails(){
                     
                     
                     </Card> :
-                    <Card>
-                    {className=card1}
+                    <Card
+                        className={card}
+                        spacing={1} 
+                        raised={true}>
+                    <CardContent className={cardContent}>
+                    
+                     
+                    <Typography variant="overline" className={title}>{song.title}</Typography>
+                    <Typography className={cardText} component="p"> 
+                        <br></br>
+                        {song.lyrics}</Typography>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        
+                        
+                    <Typography className={cardText}> ▶ Instrumentation Notes:{'  '}
+                        
+                        {song.instrument_notes}</Typography>
+                        
+                        <br></br>
+                    <Typography className={cardText}> ▶ Performance Notes:{'  '}
+                        
+                        {song.performance_notes}</Typography>
+                        
+                        <br></br>
+                        
+                    
+                    {/*Will pull in the form from AddRecording component, but it is currently non-functional*/}
+                    {/*<AddRecording/>*/}
+                     
+      
+
+                    
+                    </CardContent>
+                       
+                    
+                    
+                    
                     </Card> }
                     </div>
                     <br></br>

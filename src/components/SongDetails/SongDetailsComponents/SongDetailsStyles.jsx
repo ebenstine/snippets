@@ -14,6 +14,11 @@ const useStyles = makeStyles(() => ({
         paddingTop: '3em',
         //backgroundColor: '#c8ecf5'
     },
+
+    card: {
+        
+        backgroundColor:  '#f0a1a1'
+    },
     
     card1: {
    
