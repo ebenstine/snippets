@@ -5,12 +5,14 @@ import { Paper, TextField, MenuItem, Button, Typography, Select, FormControl } f
 import useStyles from './ReviseSongStyles'
 import AddRecording from '../AddRecording/AddRecording';
 
+
+
 function ReviseSong() {
   const songDetails = useSelector(store => store.songDetails);
   const dispatch = useDispatch();
   const params = useParams();
   const history = useHistory();
-  const { root, buttons, paper, textField, cardContent, title } = useStyles();
+  const { classes, root, buttons, paper, textField, cardContent, title } = useStyles();
   console.log(params);
   let song = {
     title: songDetails.title,
