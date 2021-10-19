@@ -1,4 +1,4 @@
-# PROJECT NAME
+# SNIPPETS
 
 ## Description
 
