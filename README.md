@@ -40,7 +40,7 @@ The application is built on file-uploading to Amazon Web Services.  The 'Add Son
 HTML, CSS, Javascript, Node.js, Express.js, AWS S3, PostgreSQL, Material-UI, Passport, React, Redux, Redux-Sagas, React-Dropzone-S3-Uploader, React-Modular-Audio-Player.
 
 ## Coming Features
-A broader goal of this project is to store many audio files under one song project.  I also plan to add a genre field so that the user can organize their projects according to that criteria.
+A broader goal of this project is to store many audio files under one song project.  I also plan to add a genre field which will create another mode of organization for the user's projects. 
 
 ## Acknowledgement
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. A very special thanks to my instructors Edan Schwartz and Matt Black.
