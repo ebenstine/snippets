@@ -6,8 +6,9 @@ _Duration: 2 Week Sprint_
 
 I created Snippets to help me keep all the different details and moving parts of my unfinished songs centralized in a single concisely organized location.  It's so easy to forget a good idea when writing a song -  be it a great random idea for a lyric, an unexpected utilization of an inventive guitar tuning, or a melodic idea. The homepage is a list of songs the user has added, organized in a patterned column list that color-codes the columns according to a pre-established set of priority tiers (this is keeping track of unfinished work, after all).  The user can click on a song to view all lyrics and notes for that project, and edit them as needed, making it much easier to remember an idea that was worth remembering.
 ## Screen Shots
+<img width="1392" alt="Screen Shot 2021-10-18 at 9 03 43 PM" src="https://user-images.githubusercontent.com/81579996/137836801-edf536ad-c6ac-475e-a757-2fe17a0545b4.png">
 
-<img width="1402" alt="Screen Shot 2021-10-18 at 9 03 43 PM" src="https://user-images.githubusercontent.com/81579996/137836588-f92870e3-26ec-455f-bcf7-726f354937f8.png">
+
 <img width="1422" alt="Screen Shot 2021-10-18 at 9 04 04 PM" src="https://user-images.githubusercontent.com/81579996/137836605-1b0c2349-5551-4a41-b4c4-a0097c96011f.png">
 
 <img width="1220" alt="Screen Shot 2021-10-18 at 9 04 37 PM" src="https://user-images.githubusercontent.com/81579996/137836639-4d638805-f8ff-42e7-8dad-fd9eac0537a1.png">
