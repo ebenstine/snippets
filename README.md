@@ -14,8 +14,8 @@ Include one or two screen shots of your project here (optional). Remove if unuse
 Link to software that is required to install the app (e.g. node).
 
 - [Node.js](https://nodejs.org/en/)
-- List other prerequisites here
-
+- Postgres
+- AWS
 ## Installation
 
 How do you get your application up and running? This is a step by step list for how another developer could get this project up and running. The good target audience in terms of knowledge, would be a fellow Primer from another cohort being able to spin up this project. Note that you do not need a paragraph here to intro Installation. It should be step-by-step.
