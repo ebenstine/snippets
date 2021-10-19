@@ -6,13 +6,13 @@ _Duration: 2 Week Sprint_
 
 I created Snippets to help me keep all the different details and moving parts of my unfinished songs centralized in a single concisely organized location.  It's so easy to forget a good idea when writing a song -  be it a great random idea for a lyric, an unexpected utilization of an inventive guitar tuning, or a melodic idea. The homepage is a list of songs the user has added, organized in a patterned column list that color-codes the columns according to a pre-established set of priority tiers (this is keeping track of unfinished work, after all).  The user can click on a song to view all lyrics and notes for that project, and edit them as needed, making it much easier to remember an idea that was worth remembering.
 ## Screen Shots
-<img width="1402" alt="Screen Shot 2021-10-18 at 9 03<img width="1422" alt="Screen Shot 2021-10-18 at 9 04 04 PM" src="https://user-images.githubusercontent.com/81579996/137836387-a3255433-c1bc-43b1-b69b-aa132ae59602.png">
- 43 PM" src="https://user-images.githubusercontent.com/81579996/137836375-d62ad41f-e041-44<img width="1220" alt="Screen Shot 2021-10-18 at 9 04 37 PM" src="https://user-images.githubusercontent.com/81579996/137836397-b4177434-c4af-4a60-aeca-7574e76f9fef.png"><img width="1053" alt="Screen Shot 2021-10-18 at 9 35 37 PM" src="https://user-images.githubusercontent.com/81579996/137836406-47c3abcc-b971-401a-b492-0ccf6079c26e.png">
 
-6d-b517-c0b693375059.png">
+<img width="1402" alt="Screen Shot 2021-10-18 at 9 03 43 PM" src="https://user-images.githubusercontent.com/81579996/137836588-f92870e3-26ec-455f-bcf7-726f354937f8.png">
+<img width="1422" alt="Screen Shot 2021-10-18 at 9 04 04 PM" src="https://user-images.githubusercontent.com/81579996/137836605-1b0c2349-5551-4a41-b4c4-a0097c96011f.png">
 
+<img width="1220" alt="Screen Shot 2021-10-18 at 9 04 37 PM" src="https://user-images.githubusercontent.com/81579996/137836639-4d638805-f8ff-42e7-8dad-fd9eac0537a1.png">
+<img width="1053" alt="Screen Shot 2021-10-18 at 9 35 37 PM" src="https://user-images.githubusercontent.com/81579996/137836649-565ff156-da4b-44f4-a591-530a3ef0b162.png">
 
-Include one or two screen shots of your project here (optional). Remove if unused.
 
 ### Prerequisites
 
