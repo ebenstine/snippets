@@ -1,53 +1,32 @@
 
-Description
-Duration: 2 Week Sprint
-
-Directly above this is how long it took you to develop the project. Your project description goes here. What problem did you solve? How did you solve it?
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam at massa in faucibus. Etiam volutpat, risus non mollis convallis, velit nisi pulvinar mi, eu faucibus orci nisi eget nibh. Integer a velit pretium, volutpat arcu eleifend, fringilla elit. Cras erat sapien, convallis venenatis tellus vitae, feugiat dictum felis.
-
-Suspendisse euismod volutpat aliquet. Maecenas vulputate mauris in pellentesque facilisis. Phasellus varius malesuada semper. Cras sollicitudin diam mollis maximus aliquam.
-
-To see the fully functional site, please visit: DEPLOYED VERSION OF APP
-
-Screen Shot
-Include one or two screen shots of your project here (optional). Remove if unused.
-
 Prerequisites
-Link to software that is required to install the app (e.g. node).
+Before you get started, make sure you have the following software installed on your computer:
 
 Node.js
-List other prerequisites here
-Installation
-How do you get your application up and running? This is a step by step list for how another developer could get this project up and running. The good target audience in terms of knowledge, would be a fellow Primer from another cohort being able to spin up this project. Note that you do not need a paragraph here to intro Installation. It should be step-by-step.
-
-If your application has secret keys (for example -- Twilio), make sure you tell them how to set that up, both in getting the key and then what to call it in the .env file.
-
-Create a database named Snippets,
-The queries in the tables.sql file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on Postgres, so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries,
+PostrgeSQL
+Nodemon
+Setup Instructions
+Run the statements in database.sql file.
 Open up your editor of choice and run an npm install
+Create a .env file at the root of the project and contact the author at: jpmzurk@gmail.com for environment variables or create your own AWS account and bucket and alter the server.js file accordingly.
 Run npm run server in your terminal
 Run npm run client in your terminal
-The npm run client command will open up a new browser tab for you!
-Usage
-How does someone use this application? Tell a user story here.
+Navigate to localhost:3000
+How to Use Songly
+The features of Songly are meant to be intuitive. The main navigation tools are the drawer menu in the upper left hand corner and card pop-up menus. I used icons that modern users would hopefully recognize. Too add a song, navigate to upper left drawer and select "Add a Song". From here the user can enter recognizable song items like: title, lyrics, notes and audio recording. The user also has the ability to pick the card color by clicking on the color picker in the "Pick A Color". Saving or Canceling returns the user to the home screen. Double clicking on any existing card takes the user to the "Working Song Card". Here the user can edit the title, lyrics or notes by double clicking and then clicking "Save". To add or delete a file the user may click the vertical more icon in the upper left corner. From here the user may delete a song by selecting "Delete Audio File" and use the radio buttons to delete one song at a time. Similarly, The user may add one song at a time by selecting "Add New Audio File" and using the Drag and Drop tool (or click on it) to upload a song. Lastly, a foundational piece of an artist's work is built into the app--a way to remind the user of where the idea originated. The user may select "Go to Original Idea" and listen to their original audio recording and view their original lyrics. This feature allows the artist to use the original idea as a source of inspiration if they find themselves stuck at some point in the songwriting process.
 
-xxx
-xxx
-xxx
-xxx
-xxx
-xxx
+Features Yet To Be Integrated
+This web-specific project will eventually include to the ability to record and edit new audio files with system specified devices. These are some but not all features for next release:
+
+Ability to place cards in any order. Ability to place cards anywhere in the browser. Ability to group songs by album, styles or influences.
+
+This project will inevitably evolve into a react-native iOS project with the ability to record and edit new audio recordings directly.
+
 Built With
-List technologies and frameworks here
+Javascript, React, Node.js, Express.js, AWS S3, PostgreSQL, Material-UI, HTML5, CSS, Passport, Redux, Redux-Sagas, Axios, React-Color, React-Dropzone-S3-Uploader, React-Hook-Form, React-Modular-Audio-Player.
 
-License
-MIT
-
-Note, include this only if you have a license file. GitHub will generate one for you if you want!
-
-Acknowledgement
-Thanks to Prime Digital Academy who equipped and helped me to make this application a reality. (Thank your people)
-
-Support
-If you have suggestions or issues, please email me at youremail@whatever.com
+Acknowledgements
+I would like to thank Prime Digital Academy for the opportunity to put my skills into action with a real world project.
+A special thanks to my instructors, Dane Smith and Kris Szafranksi, for providing the tools and knowledge to build this application.
+Support:
+If you have suggestions or issues, please contact me at jpmzurk@gmail.com
