@@ -21,7 +21,7 @@ Link to software that is required to install the app (e.g. node).
 
 - [Node.js](https://nodejs.org/en/)
 - [Postgres](https://www.postgresql.org/)
-- [Amazon Web Services](https://aws.amazon.com/)
+
 ## Installation
 
 1. Create a database named Snippets,
