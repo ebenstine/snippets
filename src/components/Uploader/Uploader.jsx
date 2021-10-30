@@ -49,7 +49,8 @@ const Uploader = ({uploadComplete}) => {
 
                     paddingTop: '4em', 
                     paddingLeft: '1.5em', 
-                    paddingRight: '1.5em'
+                    paddingRight: '1.5em',
+                    
 
                   }}
           

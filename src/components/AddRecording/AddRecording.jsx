@@ -1,81 +1,71 @@
-import React, { useLayoutEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useForm } from 'react-hook-form';
-import { Paper, TextField, Button, Typography, Select, FormControl } from '@material-ui/core';
-import { useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import { connect } from 'react-redux';
-import useStyles from './AddRecordingStyles';
-import Uploader from '../Uploader/Uploader';
+import MenuItem from '@material-ui/core/MenuItem';
+import Uploader from '../Uploader/Uploader'
+// import AudioUploader from '../../AudioUpload/AudioUpload';
 
+function AddAudioDialog({song, handleMenuClose, dispatch }) {
+  const [open, setOpen] = useState(false);
+  const [fileUrl, setFileUrl] = useState('')
+  const [newAudio, setNewAudio] = useState ({})
+  
 
-const AddRecording = () => {
-  const history = useHistory();
-  const dispatch = useDispatch();
-  const { root, inputs, paper, textField, cardContent, title } = useStyles();
-
-  const [url, setUrl] = useState ('no file was dropped');
-  const [newRecording, setNewRecording] = useState({
-    
-  });
-
-  const enterNewRecording = (key) => (event) => {
-    setNewRecording({ ...newRecording, [key]: event.target.value });
+  const handleClickOpen = () => {
+    if (song === null){
+      setOpen(false)
+    } else
+    setOpen(true);
   };
 
-  const handleSave = (event) => {
-    event.preventDefault();
-    dispatch({ 
-      
-      type: 'POST_NEW_RECORDING', 
-      payload: newRecording
-      
-    });
-   };
+  const handleSave = () => {
+    let newTitle = fileUrl.split("_").pop();
+    newTitle = newTitle.split(".mp3").shift();
+    newTitle = newTitle.split(".m4a").shift();
+    let newAudio = {song_id : song.id, src: fileUrl, title: newTitle}
+    dispatch({ type: 'SETTING_SONG', payload: song.song_id })
+    dispatch({ type: 'POST_NEW_RECORDING', payload: newAudio})   
+    handleMenuClose();
+    setOpen(false);
+    setFileUrl('');
+  };
 
-  console.log(newRecording);
+  const handleCancel = () => {
+    setOpen(false);
+    handleMenuClose();
+    setFileUrl('');
+  };
 
   const uploadComplete = (fileUrl) => {
     console.log('fileUrl upload complete', fileUrl);
-      setNewRecording({...newRecording, src: fileUrl})
+      setNewAudio({...newAudio, src: fileUrl})
   }
 
-  const toUserHome = () => {
-    history.push('/songsList')
-}
-  
+
   return (
-    <div onDoubleClick={toUserHome}>
-      {/*<Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>*/}
-        <FormControl >
-          <form className={root} onSubmit={handleSave} noValidate autoComplete="off" >
-            <div className={cardContent}>
-            <Typography variant = "h4" component="h5" className={title}>Add a Recording to this Song</Typography>
-            <TextField
-              label="Describe New Recording"
-              onChange={enterNewRecording('description')}
-              value={newRecording.description}
-              multiline className={textField}
-            />
-            <Uploader 
-                
-            uploadComplete={uploadComplete}
-              
-            />
-         
-          
-          <FormControl>
-            <section>
-            <Button variant="contained" onClick={toUserHome} className={inputs} > CANCEL </Button>
-            <Button variant="contained" type="submit" className={inputs}> SAVE </Button>
-            </section>
-          </FormControl>
-          
-        </div>
-      </form>
-    </FormControl>
-   {/*</Paper>*/}
-  </div>
+    <div>
+      <MenuItem onClick={handleClickOpen}> Add New Audio File </MenuItem>
+      <Dialog open={open} onClose={handleCancel} aria-labelledby="Rename song title input">
+        <DialogTitle id="newAudio">Select a file to upload </DialogTitle>
+        <DialogContent>
+        <Uploader uploadComplete={uploadComplete}/>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCancel}>
+            Cancel
+          </Button>
+          { /*publicUrl.length > 0 &&*/  <Button onClick={handleSave} >
+            Save
+          </Button>}
+        </DialogActions>
+      </Dialog>
+    </div>
   );
 }
 
-export default connect() (AddRecording);
+
+export default AddAudioDialog;

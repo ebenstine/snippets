@@ -23,13 +23,14 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
   
   
   router.post('/', rejectUnauthenticated, (req, res) => {
-    const recording = req.body;
+    const recording= req.body;
   
     const queryText = `INSERT INTO "recordings" (
-                          song_id, description, src, 
+                          song_id, description, src 
                        )
                        VALUES ($1, $2, $3)`;
-    pool.query(queryText, [recording.song_id, recording.description, recording.src, ])
+    pool.query(queryText, [recording.song_id, recording.description, recording.src])
+   
   
       .then(result => {
         res.sendStatus(201);

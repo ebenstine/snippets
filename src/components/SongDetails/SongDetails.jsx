@@ -79,12 +79,13 @@ function SongDetails(){
                         
                     
                     {/*Will pull in the form from AddRecording component, but it is currently non-functional*/}
-                    {/*<AddRecording/>*/}
+                    
                      
       
 
                     
                     </CardContent>
+                    <AddRecording/>
                        
                     
                     
@@ -122,7 +123,7 @@ function SongDetails(){
 
                     
                     </CardContent>
-                       
+                      
                     
                     
                     

@@ -66,11 +66,11 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
 
         const newSongId = result.rows[0].id;
         const secondQuery = `
-                            INSERT INTO "recordings" (song_id, src, description)
+                            INSERT INTO "recordings" (song_id, description, src)
                             VALUES ($1, $2, $3)
         
                             `;
-        await client.query(secondQuery, [newSongId, src, description]);
+        await client.query(secondQuery, [newSongId, description, src]);
 
         await client.query('COMMIT'); 
 

@@ -1,5 +1,5 @@
 let initialState = [{
-    src: '', title: ''
+    description: '', src: ''
 }]
 
 
