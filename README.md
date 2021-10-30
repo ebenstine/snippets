@@ -1,121 +1,50 @@
+# SNIPPETS
 
-# EDA Project
-This version uses React, Redux, Express, Passport, and PostgreSQL (a full list of dependencies can be found in `package.json`).
+## Description
 
-We **STRONGLY** recommend following these instructions carefully. It's a lot, and will take some time to set up, but your life will be much easier this way in the long run.
+_Duration: 2 Week Sprint_
 
-## Use the Template for This Repository (Don't Clone)
+I created Snippets to help me keep all the different details and moving parts of my unfinished songs centralized in a single concisely organized location.  It's so easy to forget a good idea when writing a song -  be it a great random idea for a lyric, an unexpected utilization of an inventive guitar tuning, or a melodic inspiration. The homepage is a list of songs the user has added, organized in a patterned column list that color-codes the columns according to a pre-established set of priority tiers (this is keeping track of unfinished work, after all).  The user can click on a song to view all lyrics and notes for that project, and edit them as needed, making it much easier to remember an idea that was worth remembering.
+## Screen Shots
+<img width="1392" alt="Screen Shot 2021-10-18 at 9 03 43 PM" src="https://user-images.githubusercontent.com/81579996/137836801-edf536ad-c6ac-475e-a757-2fe17a0545b4.png">
 
-- Don't Fork or Clone. Instead, click the `Use this Template` button, and make a copy to your personal account.
+
+<img width="1422" alt="Screen Shot 2021-10-18 at 9 04 04 PM" src="https://user-images.githubusercontent.com/81579996/137836605-1b0c2349-5551-4a41-b4c4-a0097c96011f.png">
+
+<img width="1220" alt="Screen Shot 2021-10-18 at 9 04 37 PM" src="https://user-images.githubusercontent.com/81579996/137836639-4d638805-f8ff-42e7-8dad-fd9eac0537a1.png">
+<img width="1053" alt="Screen Shot 2021-10-18 at 9 35 37 PM" src="https://user-images.githubusercontent.com/81579996/137836649-565ff156-da4b-44f4-a591-530a3ef0b162.png">
 
 
-## Prerequisites
+### Prerequisites
 
-Before you get started, make sure you have the following software installed on your computer:
+Link to software that is required to install the app (e.g. node).
 
 - [Node.js](https://nodejs.org/en/)
-- [PostrgeSQL](https://www.postgresql.org/)
-- [Nodemon](https://nodemon.io/)
+- [Postgres](https://www.postgresql.org/)
 
-## Create database and table
+## Installation
 
-Create a new database called `prime_app` and create a `user` table:
+1. Create a database named Snippets,
+2. Run the statements in database.sql
+3. Open up your editor of choice and run an `npm install`
+4. Create a .env file and contact ebenstine@gmail.com for access keys, or create your own AWS S3 bucket and adjust the server file to match
+5. Run `npm run server` in your terminal
+6. Run `npm run client` in your terminal
+7. The `npm run client` command will open up a new browser tab for you!
 
-```SQL
-CREATE TABLE "user" (
-    "id" SERIAL PRIMARY KEY,
-    "username" VARCHAR (80) UNIQUE NOT NULL,
-    "password" VARCHAR (1000) NOT NULL
-);
-```
+## Usage
+The application is built on file-uploading to Amazon Web Services.  The 'Add Song' page allows the user to upload an audio file and all relevant details in an open-ended conceptual form, and this action generates a new song column to the home page.  From there, the user can play the audio file, or click the column to view, edit or delete all relevant details on a separate page.
 
-If you would like to name your database something else, you will need to change `prime_app` to the name of your new database name in `server/modules/pool.js`
+## Built With
 
-## Development Setup Instructions
+HTML, CSS, Javascript, Node.js, Express.js, AWS S3, PostgreSQL, Material-UI, Passport, React, Redux, Redux-Sagas, React-Dropzone-S3-Uploader, React-Modular-Audio-Player.
 
-- Run `npm install`
-- Create a `.env` file at the root of the project and paste this line into the file:
-  ```
-  SERVER_SESSION_SECRET=superDuperSecret
-  ```
-  While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
-- Start postgres if not running already by using `brew services start postgresql`
-- Run `npm run server`
-- Run `npm run client`
-- Navigate to `localhost:3000`
+## Coming Features
+A broader goal of this project is to store many audio files under one song project.  I also plan to add a genre field which will create another mode of organization for the user's projects. 
 
-## Debugging
+## Acknowledgement
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. A very special thanks to my instructors Edan Schwartz and Matt Black.
 
-To debug, you will need to run the client-side separately from the server. Start the client by running the command `npm run client`. Start the debugging server by selecting the Debug button.
+## Support
+If you have suggestions or issues, please email me at ebenstine@gmail.com
 
-![VSCode Toolbar](documentation/images/vscode-toolbar.png)
-
-Then make sure `Launch Program` is selected from the dropdown, then click the green play arrow.
-
-![VSCode Debug Bar](documentation/images/vscode-debug-bar.png)
-
-## Testing Routes with Postman
-
-To use Postman with this repo, you will need to set up requests in Postman to register a user and login a user at a minimum.
-
-Keep in mind that once you using the login route, Postman will manage your session cookie for you just like a browser, ensuring it is sent with each subsequent request. If you delete the `localhost` cookie in Postman, it will effectively log you out.
-
-1. Start the server - `npm run server`
-2. Import the sample routes JSON file [v2](./PostmanPrimeSoloRoutesv2.json) by clicking `Import` in Postman. Select the file.
-3. Click `Collections` and `Send` the following three calls in order:
-   1. `POST /api/user/register` registers a new user, see body to change username/password
-   2. `POST /api/user/login` will login a user, see body to change username/password
-   3. `GET /api/user` will get user information, by default it's not very much
-
-After running the login route above, you can try any other route you've created that requires a logged in user!
-
-## Production Build
-
-Before pushing to Heroku, run `npm run build` in terminal. This will create a build folder that contains the code Heroku will be pointed at. You can test this build by typing `npm start`. Keep in mind that `npm start` will let you preview the production build but will **not** auto update.
-
-- Start postgres if not running already by using `brew services start postgresql`
-- Run `npm start`
-- Navigate to `localhost:5000`
-
-## Lay of the Land
-
-There are a few videos linked below that show a walkthrough the client and sever setup to help acclimatize to the boilerplate. Please take some time to watch the videos in order to get a better understanding of what the boilerplate is like.
-
-- [Initial Set](https://vimeo.com/453297271)
-- [Server Walkthrough](https://vimeo.com/453297212)
-- [Client Walkthrough](https://vimeo.com/453297124)
-
-Directory Structure:
-
-- `src/` contains the React application
-- `public/` contains static assets for the client-side
-- `build/` after you build the project, contains the transpiled code from `src/` and `public/` that will be viewed on the production site
-- `server/` contains the Express App
-
-This code is also heavily commented. We recommend reading through the comments, getting a lay of the land, and becoming comfortable with how the code works before you start making too many changes. If you're wondering where to start, consider reading through component file comments in the following order:
-
-- src/components
-  - App/App
-  - Footer/Footer
-  - Nav/Nav
-  - AboutPage/AboutPage
-  - InfoPage/InfoPage
-  - UserPage/UserPage
-  - LoginPage/LoginPage
-  - RegisterPage/RegisterPage
-  - LogOutButton/LogOutButton
-  - ProtectedRoute/ProtectedRoute
-
-## Deployment
-
-1. Create a new Heroku project
-1. Link the Heroku project to the project GitHub Repo
-1. Create an Heroku Postgres database
-1. Connect to the Heroku Postgres database from Postico
-1. Create the necessary tables
-1. Add an environment variable for `SERVER_SESSION_SECRET` with a nice random string for security
-1. In the deploy section, select manual deploy
-
-## Update Documentation
-
-Customize this ReadMe and the code comments in this project to read less like a starter repo and more like a project. Here is an example: https://gist.github.com/PurpleBooth/109311bb0361f32d87a2

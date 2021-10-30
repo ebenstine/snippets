@@ -16,7 +16,7 @@ function AddAudioDialog({song, handleMenuClose, dispatch }) {
   
 
   const handleClickOpen = () => {
-    if (song === null){
+    if (song === null){pu
       setOpen(false)
     } else
     setOpen(true);
