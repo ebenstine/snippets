@@ -39,8 +39,7 @@ const useStyles = makeStyles((theme) => ({
     },
     priority: {
         borderRadius: '5px',
-        paddingLeft: '2px',
-        paddingRight: '2px'
+        
 
     },
     titleField: {

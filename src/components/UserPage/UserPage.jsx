@@ -6,14 +6,14 @@ import useStyles from '../UserPage/UserPageStyles'
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
-  const { paper, welcome } = useStyles();
+  const { paper, welcome, yourId } = useStyles();
   return (
     <>
     <Paper className={paper} elevation={10}>
     <div className="container">
 
       <Typography variant = "h4" className = {welcome} >Hi, {user.username}!</Typography>
-      <Typography variant = "h6" className = {welcome}>Your ID is: {user.id}</Typography>
+      <Typography variant = "h6" className = {yourId}>Your ID is: {user.id}</Typography>
       <br></br>
       <LogOutButton className="btn" />
     </div>

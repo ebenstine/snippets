@@ -45,7 +45,17 @@ const useStyles = makeStyles((theme) => ({
     wrapper: {
         display: 'flex',
         
+    },
+    welcome: {
+        color: '#233d4d',
+        borderBottom: '1px solid #6ca0ad'
+        
+    },
+    yourId: {
+        color: '#2a4f64',
+        borderBottom: '1px solid #6ca0ad'
     }
+
 
 }));
 
