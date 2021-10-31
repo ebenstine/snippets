@@ -26,6 +26,8 @@ const useStyles = makeStyles((theme) => ({
                 borderColor: '#2a4f64',
                 borderRadius: '8px'
             },
+            
+
         },
     },
     inputs: {
@@ -38,8 +40,9 @@ const useStyles = makeStyles((theme) => ({
         border: '1px solid #c8ecf5'
     },
     priority: {
-        borderRadius: '5px',
-        
+        borderColor: '#2a4f64',
+        borderRadius: '2px',
+        background: '#EBEBEB'
 
     },
     titleField: {
