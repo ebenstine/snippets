@@ -1,24 +1,37 @@
-import React, { useLayoutEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useForm } from 'react-hook-form';
-import { Paper, TextField, Button, Typography, Select, FormControl } from '@material-ui/core';
+import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { connect } from 'react-redux';
-import useStyles from './AddRecordingStyles';
-import Uploader from '../Uploader/Uploader';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import { TextField } from '@material-ui/core';
+import { connect, useDispatch } from 'react-redux';
+import MenuItem from '@material-ui/core/MenuItem';
+import Uploader from '../Uploader/Uploader'
 
-
-const AddRecording = () => {
+const AddRecording = ({ song, handleMenuClose }) => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const { root, inputs, paper, textField, cardContent, title } = useStyles();
+  //const { root, inputs, paper, textField, cardContent, title } = useStyles();
   const params = useParams();
   console.log(params);
-  const [url, setUrl] = useState ('no file was dropped');
+  const [fileUrl, setFileUrl] = useState ('no file was dropped');
+  const [open, setOpen] = useState(false);
   const [newRecording, setNewRecording] = useState({
 
   });
-
+  const handleClickOpen = () => {
+    if (song === null){
+      setOpen(false)
+    } else
+    setOpen(true);
+  };
+  const handleCancel = () => {
+    setOpen(false);
+    //handleMenuClose();
+    setFileUrl('');
+  }
   const enterNewRecording = (key) => (event) => {
     setNewRecording({ ...newRecording, id:params.id, [key]: event.target.value });
   };
@@ -45,37 +58,29 @@ const AddRecording = () => {
 }
 
   return (
-    <div onDoubleClick={toUserHome}>
-      {/*<Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>*/}
-        <FormControl >
-          <form className={root} onSubmit={handleSave} noValidate autoComplete="off" >
-            <div className={cardContent}>
-            <Typography variant = "h4" component="h5" className={title}>Add a Recording to this Song</Typography>
-            <TextField
+    <div>
+      <MenuItem onClick={handleClickOpen}> Add New Audio File </MenuItem>
+      <Dialog open={open} onClose={handleCancel} aria-labelledby="Rename song title input">
+        <DialogTitle id="newAudio">Select a file to upload </DialogTitle>
+        <DialogContent>
+        <TextField
               label="Describe New Recording"
               onChange={enterNewRecording('description')}
               value={newRecording.description}
-              multiline className={textField}
+             
             />
-            <Uploader 
-
-            uploadComplete={uploadComplete}
-
-            />
-
-
-          <FormControl>
-            <section>
-            <Button variant="contained" onClick={toUserHome} className={inputs} > CANCEL </Button>
-            <Button variant="contained" type="submit" className={inputs}> SAVE </Button>
-            </section>
-          </FormControl>
-
-        </div>
-      </form>
-    </FormControl>
-   {/*</Paper>*/}
-  </div>
+        <Uploader uploadComplete={uploadComplete}/>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCancel}>
+            Cancel
+          </Button>
+          { /*publicUrl.length > 0 &&*/  <Button onClick={handleSave} >
+            Save
+          </Button>}
+        </DialogActions>
+      </Dialog>
+    </div>
   );
 }
 
