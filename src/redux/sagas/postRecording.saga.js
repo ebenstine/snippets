@@ -9,7 +9,7 @@ function* postRecording(action) {
         };*/}
 
         yield axios.post('/api/recording', action.payload);
-        yield put({ type: 'FETCH_RECORDINGS', payload: action.payload.song_id})
+        yield put({ type: 'FETCH_RECORDINGS', payload: action.payload.id})
 
     } catch (error) {
         console.log('Song POST request failed', error)
