@@ -28,8 +28,10 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     const queryText = `INSERT INTO "recordings" (
                           song_id, description, src 
                        )
-                       VALUES ($1, $2, $3)`;
-    pool.query(queryText, [recording.song_id, recording.description, recording.src])
+                       VALUES ($1, $2, $3);
+                       
+                       `;
+    pool.query(queryText, [recording.id, recording.description, recording.src])
    
   
       .then(result => {

@@ -123,6 +123,7 @@ function SongDetails(){
 
                     
                     </CardContent>
+                    <AddRecording/>
                       
                     
                     
@@ -165,7 +166,7 @@ function SongDetails(){
 
                     
                     </CardContent>
-                       
+                    <AddRecording/>
                     
                     
                     
@@ -206,6 +207,7 @@ function SongDetails(){
 
                     
                     </CardContent>
+                    <AddRecording/>
                        
                     
                     

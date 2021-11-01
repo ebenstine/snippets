@@ -81,7 +81,9 @@ const AddSong = () => {
             />
           
           <Select
+
               name="priority"
+              
               onChange={enterNewSong('priority')}
               className={priority}
               value={newSong.priority}

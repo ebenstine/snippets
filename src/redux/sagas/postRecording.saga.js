@@ -3,12 +3,12 @@ import { put, takeLatest } from 'redux-saga/effects';
 
 function* postRecording(action) {
     try {
-        const config = {
+        {/*const config = {
             headers: { 'Content-Type': 'application/json' },
             withCredentials: true,
-        };
+        };*/}
 
-        yield axios.post('/api/recording', action.payload, config);
+        yield axios.post('/api/recording', action.payload);
         yield put({ type: 'FETCH_RECORDINGS', payload: action.payload.song_id})
 
     } catch (error) {
