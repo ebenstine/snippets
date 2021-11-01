@@ -15,12 +15,11 @@ const AddRecording = ({ song, handleMenuClose }) => {
   const dispatch = useDispatch();
   //const { root, inputs, paper, textField, cardContent, title } = useStyles();
   const params = useParams();
-  console.log(params);
+ 
   const [fileUrl, setFileUrl] = useState ('no file was dropped');
   const [open, setOpen] = useState(false);
-  const [newRecording, setNewRecording] = useState({
+  const [newRecording, setNewRecording] = useState({});
 
-  });
   const handleClickOpen = () => {
     if (song === null){
       setOpen(false)
@@ -44,6 +43,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
       payload: newRecording
 
     });
+   setOpen(false);
    };
 
   console.log(newRecording);
@@ -59,15 +59,15 @@ const AddRecording = ({ song, handleMenuClose }) => {
 
   return (
     <div>
-      <MenuItem onClick={handleClickOpen}> Add New Audio File </MenuItem>
+      <MenuItem onClick={handleClickOpen}> + New Recording </MenuItem>
       <Dialog open={open} onClose={handleCancel} aria-labelledby="Rename song title input">
-        <DialogTitle id="newAudio">Select a file to upload </DialogTitle>
+        <DialogTitle id="newAudio">Select a New Recording </DialogTitle>
         <DialogContent>
         <TextField
-              label="Describe New Recording"
+              label="Description"
               onChange={enterNewRecording('description')}
               value={newRecording.description}
-             
+              
             />
         <Uploader uploadComplete={uploadComplete}/>
         </DialogContent>
