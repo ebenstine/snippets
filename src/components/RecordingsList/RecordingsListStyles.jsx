@@ -4,12 +4,16 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
     card: {
         flexDirection: 'column',
-        backgroundColor:  '#f0a1a1'
+        backgroundColor:  '#f0a1a1',
+        width: 100 
     },
     
     card1: {
         flexDirection: 'column',
-        backgroundColor: '#c8ecf5' 
+        backgroundColor: '#c8ecf5',
+     
+        marginLeft: '.5em',
+        marginRight: '.5em'
     },
 
     card2: {
@@ -48,13 +52,13 @@ const useStyles = makeStyles(() => ({
     },
 
     paper: {
-        margin: '4em auto',
+       
         backgroundColor: '#14342B50',
         paddingBottom: '6em',
         paddingTop: '6em',
-        paddingLeft: '3em',
-        paddingRight: '3em',
-        width: 650
+        paddingLeft: '1.5em',
+        paddingRight: '1.5em',
+        width: 400
         
     },
 
@@ -89,8 +93,9 @@ const useStyles = makeStyles(() => ({
         border: '1.25px solid #c8ecf5'
         
 
-    }
+    },
 
+    
     
     
 }));

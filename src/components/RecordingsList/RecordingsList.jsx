@@ -9,7 +9,7 @@ import AudioPlayer from "react-modular-audio-player";
 import useStyles from './RecordingsListStyles';
 
 const RecordingsList = () => {
-    const { paper, description, player, card1 } = useStyles();
+    const { paper, description, player, card1, drawer, background } = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const recordings = useSelector((store) => store.recordings);
@@ -28,9 +28,11 @@ const RecordingsList = () => {
         dispatch({
             type: 'FETCH_RECORDINGS',
             payload: params.id
+           
         });
+        
     };
-
+    
     const handleCancel = () => {
         setIsDrawerOpen(false);
     }
@@ -39,17 +41,22 @@ const RecordingsList = () => {
         <>
             <MenuItem onClick={handleClickOpen}>See Recordings History</MenuItem>
             <Drawer
+                className={drawer}
                 variant="temporary"
                 anchor="left"
                 open={isDrawerOpen}
                 onClose={handleCancel}
             >
+            
+            
             <Paper className= {paper} elevation={10}>
                 {recordings.map((recording) => {
                     
+                    
                     return (
                         <>
-                            <div>
+                            
+                            <div className={background}>
                                 <Card
                                     raised={true}
                                     className={card1}
@@ -62,7 +69,8 @@ const RecordingsList = () => {
                                     
                                     >
                                         <div>
-                                            <Typography variant="h5" className={description}>{recording.description}</Typography>
+                                            <Typography variant="h6" className={description}>{recording.description}</Typography>
+                                            
                                         </div>
 
                                     </CardContent>
@@ -77,10 +85,13 @@ const RecordingsList = () => {
 
                                 </Card>
                             </div>
+                            
+                            <br></br>
                         </>
                     )
                 })}
             </Paper>
+            
             </Drawer>
 
 

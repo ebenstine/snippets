@@ -9,7 +9,8 @@ const useStyles = makeStyles(() => ({
     
     card1: {
         flexDirection: 'column',
-        backgroundColor: '#c8ecf5' 
+        backgroundColor: '#c8ecf5',
+        
     },
 
     card2: {
