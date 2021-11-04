@@ -7,36 +7,28 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Paper, Typography, MenuItem, FormControl, InputLabel, Select, Card, Drawer, CardContent, Box, ListItemText, TextField } from '@material-ui/core';
 import AudioPlayer from "react-modular-audio-player";
 import useStyles from './RecordingsListStyles';
-;
-
-
-
-
-
-
-
 
 const RecordingsList = () => {
-    const { paper, description, player, card } = useStyles();
+    const { paper, description, player, card1 } = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const recordings = useSelector((store) => store.recordings);
-
+    const params = useParams();
     let [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
     
 
-    useEffect(() => {
-        dispatch({
-            type: 'FETCH_RECORDINGS'
-        });
-    }, []);
+    
 
-    const handleClickOpen = () => {
+    const handleClickOpen = (recordings) => {
         if (recordings === null) {
             setIsDrawerOpen(false)
         } else 
         setIsDrawerOpen(true);
+        dispatch({
+            type: 'FETCH_RECORDINGS',
+            payload: params.id
+        });
     };
 
     const handleCancel = () => {
@@ -54,12 +46,13 @@ const RecordingsList = () => {
             >
             <Paper className= {paper} elevation={10}>
                 {recordings.map((recording) => {
+                    
                     return (
                         <>
                             <div>
                                 <Card
                                     raised={true}
-                                    className={card}
+                                    className={card1}
                                 
                                 >
                                 <section>
@@ -77,7 +70,7 @@ const RecordingsList = () => {
                                 <section className={player}>
                                     <AudioPlayer
 
-                                        audioFiles={[{ src: recording.src}]}
+                                        audioFiles={[{ src:recording.src}]}
 
                                     />
                                 </section>

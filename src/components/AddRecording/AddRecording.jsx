@@ -25,7 +25,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
       setOpen(false)
     } else
     setOpen(true);
-  };
+};
   const handleCancel = () => {
     setOpen(false);
     //handleMenuClose();
