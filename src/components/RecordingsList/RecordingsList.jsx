@@ -3,8 +3,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
-import { connect, useDispatch, useSelector } from 'react-redux';
-import { Paper, Typography, MenuItem, FormControl, InputLabel, Select, MenuItem, Card, Drawer, CardContent, Box, ListItemText, TextField } from '@material-ui/core';
+import { useDispatch, useSelector } from 'react-redux';
+import { Paper, Typography, MenuItem, FormControl, InputLabel, Select, Card, Drawer, CardContent, Box, ListItemText, TextField } from '@material-ui/core';
+import AudioPlayer from "react-modular-audio-player";
+import useStyles from './RecordingsListStyles';
+;
 
 
 
@@ -13,9 +16,8 @@ import { Paper, Typography, MenuItem, FormControl, InputLabel, Select, MenuItem,
 
 
 
-
-function RecordingsList () {
-
+const RecordingsList = () => {
+    const { paper, description, player, card } = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const recordings = useSelector((store) => store.recordings);
@@ -31,7 +33,7 @@ function RecordingsList () {
     }, []);
 
     const handleClickOpen = () => {
-        if (recording === null) {
+        if (recordings === null) {
             setIsDrawerOpen(false)
         } else 
         setIsDrawerOpen(true);
@@ -93,7 +95,9 @@ function RecordingsList () {
 
     )
 }
-    export default connect() (RecordingsList);
+            
+
+export default RecordingsList;
 
 
 
@@ -125,5 +129,3 @@ function RecordingsList () {
 
 
 
-}
-export default connect() (RecordingsList);
