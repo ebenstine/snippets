@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Paper, Card, CardContent, Grid, Typography, Button } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import AddRecording from '../AddRecording/AddRecording';
+import RecordingsList from '../RecordingsList/RecordingsList';
 import useStyles from './SongDetailsComponents/SongDetailsStyles';
 
 function SongDetails(){
@@ -85,7 +86,9 @@ function SongDetails(){
 
                     
                     </CardContent>
+                    
                     <AddRecording/>
+                    <RecordingsList/>
                        
                     
                     
@@ -124,6 +127,7 @@ function SongDetails(){
                     
                     </CardContent>
                     <AddRecording/>
+                    <RecordingsList/>
                       
                     
                     
@@ -167,6 +171,7 @@ function SongDetails(){
                     
                     </CardContent>
                     <AddRecording/>
+                    <RecordingsList/>
                     
                     
                     
@@ -208,6 +213,7 @@ function SongDetails(){
                     
                     </CardContent>
                     <AddRecording/>
+                    <RecordingsList/>
                        
                     
                     
