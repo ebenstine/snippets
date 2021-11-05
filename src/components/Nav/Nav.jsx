@@ -4,6 +4,9 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import { Drawer } from '@material-ui/core';
 import './Nav.css';
 import { useSelector } from 'react-redux';
+import QueueMusic from '@material-ui/icons/QueueMusic';
+import PlaylistAdd from '@material-ui/icons/PlaylistAdd';
+import Info from '@material-ui/icons/Info';
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -26,19 +29,19 @@ function Nav() {
         {user.id && (
           <>
             <Link className="navLink" to="/songsList">
-              Home
+            <QueueMusic/>
             </Link>
 
-            <LogOutButton className="navLink" />
+        {/*<LogOutButton className="navLink" />*/}
             
             <Link className="navLink" to="/addSong">
-             Add a New Song
+            <PlaylistAdd/>
             </Link>
           </>
         )}
 
         <Link className="navLink" to="/about">
-          About
+          <Info/>
         </Link>
       </div>
     </div>

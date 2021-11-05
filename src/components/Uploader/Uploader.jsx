@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@material-ui/core';
 import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
 import ProgressBar from './ProgressBar';
+import Done from '@material-ui/icons/Done'
 
 const dropStyles = {
   width: "300px",
@@ -26,6 +27,7 @@ const Uploader = ({uploadComplete}) => {
       console.log(info);
       console.log('Access at', info.fileUrl);
       uploadComplete(info.fileUrl);
+      
 
   }
 
@@ -71,7 +73,7 @@ const Uploader = ({uploadComplete}) => {
     <div style={{ paddingTop: '2em'}}>
       
     <ProgressBar progress={progress} progressTitle={progressTitle} />
-
+    
     <DropzoneS3Uploader
 
       onError={(error) => console.log('upload failed', error)}
@@ -85,6 +87,7 @@ const Uploader = ({uploadComplete}) => {
       children={innerElement} 
       
     />
+    
     </div>
   );
 }

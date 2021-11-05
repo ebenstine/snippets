@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import AddRecording from '../AddRecording/AddRecording';
 import RecordingsList from '../RecordingsList/RecordingsList';
 import useStyles from './SongDetailsComponents/SongDetailsStyles';
+import IconButton from "@material-ui/core/IconButton";
+import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 function SongDetails(){
     
@@ -48,7 +50,10 @@ function SongDetails(){
         
         <div>
             <Paper className={paper} elevation={10}>
-
+            <IconButton aria-controls="simple-menu" aria-haspopup="true" >
+                    <MoreVertIcon fontSize={'inherit'}>
+                    </MoreVertIcon>
+                </IconButton>
             <section className={root}>
             {songDetails.map((song) => {
                 return (
@@ -56,8 +61,14 @@ function SongDetails(){
                     <div key={song.id}>
                     {song.priority === '1' ?
                     <Card spacing={1} className={card1}  raised={true}>
+                        
                     <CardContent className={cardContent}>
-                    
+                    <div>
+                    <IconButton aria-controls="simple-menu" aria-haspopup="true" >
+                    <MoreVertIcon fontSize={'inherit'}>
+                    </MoreVertIcon>
+                    </IconButton>
+                    </div>
                      
                     <Typography variant="overline" className={title}>{song.title}</Typography>
                     <Typography className={cardText} component="p"> 

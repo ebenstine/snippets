@@ -5,6 +5,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { Card, CardContent, CardActions } from '@material-ui/core';
 import { Box, Paper, Grid, Typography, TextField, Button } from '@material-ui/core';
 import createTypography from '@material-ui/core/styles/createTypography';
+import PlaylistAdd from '@material-ui/icons/PlaylistAdd';
 import useStyles from './SongsListStyles';
 ;
 
@@ -184,7 +185,7 @@ function SongsList() {
                     );
                 })}
 
-            <Button variant='contained' className={button} onClick={() => handleAdd()}> +  </Button>
+            <Button variant='contained' className={button} onClick={() => handleAdd()}><PlaylistAdd/></Button>
 
             </Paper>
 
