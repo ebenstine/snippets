@@ -6,12 +6,14 @@ import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import useStyles from './AddSongStyles'
 import Uploader from '../Uploader/Uploader';
+import Backup from '@material-ui/icons/Backup';
+import Cancel from '@material-ui/icons/Cancel';
 
 
 const AddSong = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const { root, inputs, paper, textField, cardContent, title, priority } = useStyles();
+  const { root, inputs, paper, textField, cardContent, title, priority, setPriority } = useStyles();
   const [url, setUrl] = useState ('no file was dropped');
   const [newSong, setNewSong] = useState({
 
@@ -88,10 +90,11 @@ const AddSong = () => {
               className={priority}
               value={newSong.priority}
               >
-                <MenuItem defaultValue={''}>Select Completion Priority</MenuItem>
-                <MenuItem value={'1'}>First</MenuItem>
-                <MenuItem value={'2'}>Second</MenuItem>
-                <MenuItem value={'3'}>Third</MenuItem>
+                <MenuItem defaultValue={''} className="setPriority">Select Completion Priority</MenuItem>
+                <MenuItem value={'1'}>first</MenuItem>
+                <MenuItem value={'2'}>second</MenuItem>
+                <MenuItem value={'3'}>third</MenuItem>
+            
           </Select>
           <Uploader 
             elevated={10}  
@@ -102,9 +105,9 @@ const AddSong = () => {
           
           <FormControl>
             <section>
-            <Button variant="contained" onClick={toUserHome} className={inputs} > CANCEL </Button>
+            <Button variant="contained" onClick={toUserHome} className={inputs} ><Cancel/></Button>
             <br></br>
-            <Button variant="contained" type="submit" /*onClick={toUserHome}*/ className={inputs}> SAVE </Button>
+            <Button variant="contained" type="submit" /*onClick={toUserHome}*/ className={inputs}><Backup/></Button>
             </section>
           </FormControl>
           

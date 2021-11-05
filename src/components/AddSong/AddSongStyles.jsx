@@ -40,9 +40,15 @@ const useStyles = makeStyles((theme) => ({
         border: '1px solid #c8ecf5'
     },
     priority: {
-        borderColor: '#2a4f64',
+        
+        border: '1px solid #c8ecf5',
+        borderBottom: '1 px solid #c8ecf5',
+        
         borderRadius: '2px',
-        background: '#EBEBEB'
+        background: "#EBEBEB",
+        color: '#2a4f64',
+        
+        
 
     },
     titleField: {
@@ -83,6 +89,10 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center'
 
+    },
+    setPriority: {
+        paddingLeft: '5em',
+        
     }
 }));
 
