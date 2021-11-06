@@ -5,7 +5,7 @@ const useStyles = makeStyles(() => ({
         marginTop: '-2em',
         marginLeft: '1.5em',
         marginRight: '1.5em',
-        width: 350,
+        width: 380,
         maxHeight: 700,
         minHeight: 200,
         flexDirection: 'column',
@@ -110,8 +110,12 @@ const useStyles = makeStyles(() => ({
     },
 
     menuDots: {
-        paddingLeft: '23em',
+        paddingLeft: '25em',
         color: '#233d4d'
+    },
+
+    more: {
+        paddingLeft: '1em'
     }
 }));
 export default useStyles;
