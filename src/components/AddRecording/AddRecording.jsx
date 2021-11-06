@@ -59,12 +59,12 @@ const AddRecording = ({ song, handleMenuClose }) => {
 
   return (
     <div>
-      <MenuItem onClick={handleClickOpen}> + New Recording </MenuItem>
+      <MenuItem onClick={handleClickOpen}>Upload</MenuItem>
       <Dialog open={open} onClose={handleCancel} aria-labelledby="Rename song title input">
-        <DialogTitle id="newAudio">Select a New Recording </DialogTitle>
+        <DialogTitle id="newAudio">What's in Here?</DialogTitle>
         <DialogContent>
         <TextField
-              label="Description"
+              label="description"
               onChange={enterNewRecording('description')}
               value={newRecording.description}
               

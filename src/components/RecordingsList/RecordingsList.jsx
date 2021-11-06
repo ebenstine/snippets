@@ -39,7 +39,7 @@ const RecordingsList = () => {
 
     return (
         <>
-            <MenuItem onClick={handleClickOpen}>See Recordings History</MenuItem>
+            <MenuItem onClick={handleClickOpen}>View All</MenuItem>
             <Drawer
                 className={drawer}
                 variant="temporary"
