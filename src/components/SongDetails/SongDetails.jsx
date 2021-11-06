@@ -196,8 +196,6 @@ function SongDetails(){
 
                     
                     </CardContent>
-                    <AddRecording/>
-                    <RecordingsList/>
                     
                     
                     
@@ -207,13 +205,9 @@ function SongDetails(){
                         spacing={1} 
                         raised={true}>
                             <div className={menuDots}>
-                    <IconButton aria-controls="simple-menu" aria-haspopup="true" >
-                    <MoreHorizIcon 
-                        fontSize={'inherit'}
-                    >
-                    </MoreHorizIcon>
+                    
                     <SongDetailsMenu/>
-                    </IconButton>
+                    
                     </div>
                     <CardContent className={cardContent}>
                     
@@ -247,8 +241,7 @@ function SongDetails(){
 
                     
                     </CardContent>
-                    <AddRecording/>
-                    <RecordingsList/>
+                    
                        
                     
                     
