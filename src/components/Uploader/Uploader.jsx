@@ -9,7 +9,7 @@ const dropStyles = {
   height: "200px",
   backgroundColor: '#2a4f64',
   borderRadius: '3px',
-  border: '1px solid',
+  border: '1px solid #c8ecf5',
   boxShadow: '7px 7px 10px grey'
 }
 
