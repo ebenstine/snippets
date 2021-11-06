@@ -6,7 +6,7 @@ const useStyles = makeStyles(() => ({
         marginLeft: '1.5em',
         marginRight: '1.5em',
         width: 350,
-        maxHeight: 500,
+        maxHeight: 700,
         minHeight: 200,
         flexDirection: 'column',
         position: 'relative',
@@ -17,22 +17,25 @@ const useStyles = makeStyles(() => ({
 
     card: {
         
-        backgroundColor:  '#f0a1a1'
+        backgroundColor:  '#f0a1a1',
+        
     },
     
     card1: {
-   
-        backgroundColor: '#c8ecf5' 
+        
+        backgroundColor: '#c8ecf5', 
     },
 
     card2: {
-      
-        backgroundColor: 'rgb(250, 250, 175)'
+        
+        backgroundColor: 'rgb(250, 250, 175)',
+        
     },
     
     card3: {
-      
-        backgroundColor: '#fdd377'
+        
+        backgroundColor: '#fdd377',
+        
     },
 
     text: {
@@ -59,8 +62,8 @@ const useStyles = makeStyles(() => ({
     paper: {
         margin: '4em auto',
         backgroundColor: '#14342B50',
-        paddingBottom: '6em',
-        paddingTop: '6em',
+        paddingBottom: '1em',
+        paddingTop: '1em',
         width: 650,
         alignItems: 'center'
        
@@ -104,6 +107,11 @@ const useStyles = makeStyles(() => ({
         paddingLeft: '1em',
         paddingRight: '1em'
         
+    },
+
+    menuDots: {
+        paddingLeft: '23em',
+        color: '#233d4d'
     }
 }));
 export default useStyles;

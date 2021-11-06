@@ -63,7 +63,7 @@ const Uploader = ({uploadComplete}) => {
                       color: '#EBEBEB', 
                       paddingLeft: '3em', 
                       paddingRight: '3em', 
-                      border: '1px dashed'
+                      border: '1px dashed #c8ecf5'
 
                       }}
                   >Click Here or Drag File to Upload</Button>

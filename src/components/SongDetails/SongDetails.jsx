@@ -6,11 +6,12 @@ import AddRecording from '../AddRecording/AddRecording';
 import RecordingsList from '../RecordingsList/RecordingsList';
 import useStyles from './SongDetailsComponents/SongDetailsStyles';
 import IconButton from "@material-ui/core/IconButton";
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
+import SongDetailsMenu from './SongDetailsComponents/SongDetailsMenu';
 
 function SongDetails(){
     
-    const { title, root, card, card1, card2, card3, paper, cardText, cardContent, buttons } = useStyles();
+    const { title, root, card, card1, card2, card3, paper, cardText, cardContent, buttons, menuDots } = useStyles();
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -50,10 +51,7 @@ function SongDetails(){
         
         <div>
             <Paper className={paper} elevation={10}>
-            <IconButton aria-controls="simple-menu" aria-haspopup="true" >
-                    <MoreVertIcon fontSize={'inherit'}>
-                    </MoreVertIcon>
-                </IconButton>
+            
             <section className={root}>
             {songDetails.map((song) => {
                 return (
@@ -62,13 +60,19 @@ function SongDetails(){
                     {song.priority === '1' ?
                     <Card spacing={1} className={card1}  raised={true}>
                         
-                    <CardContent className={cardContent}>
-                    <div>
+                    
+                    <div className={menuDots}>
                     <IconButton aria-controls="simple-menu" aria-haspopup="true" >
-                    <MoreVertIcon fontSize={'inherit'}>
-                    </MoreVertIcon>
+                    <MoreHorizIcon 
+                        
+                        fontSize={'inherit'}
+                    >
+                        
+                    </MoreHorizIcon>
+                    <SongDetailsMenu/>
                     </IconButton>
                     </div>
+                    <CardContent className={cardContent}>
                      
                     <Typography variant="overline" className={title}>{song.title}</Typography>
                     <Typography className={cardText} component="p"> 
@@ -107,6 +111,14 @@ function SongDetails(){
                     </Card> : 
                     song.priority === '2' ?
                     <Card spacing={1} className={card2}  raised={true}>
+                    <div className={menuDots}>
+                    <IconButton aria-controls="simple-menu" aria-haspopup="true" >
+                    <MoreHorizIcon 
+                        fontSize={'inherit'}
+                    >
+                    </MoreHorizIcon>
+                    </IconButton>
+                    </div>
                     <CardContent className={cardContent}>
                     
                      
@@ -149,6 +161,14 @@ function SongDetails(){
                         spacing={1} 
                         className={card3}  
                         raised={true}>
+                            <div className={menuDots}>
+                    <IconButton aria-controls="simple-menu" aria-haspopup="true" >
+                    <MoreHorizIcon 
+                        fontSize={'inherit'}
+                    >
+                    </MoreHorizIcon>
+                    </IconButton>
+                    </div>
                     <CardContent className={cardContent}>
                     
                      
@@ -191,6 +211,14 @@ function SongDetails(){
                         className={card}
                         spacing={1} 
                         raised={true}>
+                            <div className={menuDots}>
+                    <IconButton aria-controls="simple-menu" aria-haspopup="true" >
+                    <MoreHorizIcon 
+                        fontSize={'inherit'}
+                    >
+                    </MoreHorizIcon>
+                    </IconButton>
+                    </div>
                     <CardContent className={cardContent}>
                     
                      
