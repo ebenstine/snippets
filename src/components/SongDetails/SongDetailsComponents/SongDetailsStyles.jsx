@@ -61,7 +61,7 @@ const useStyles = makeStyles(() => ({
 
     paper: {
         margin: '4em auto',
-        backgroundColor: '#14342B50',
+        backgroundColor: '#bdbdbd',
         paddingBottom: '1em',
         paddingTop: '1em',
         width: 650,

@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
         margin: '0 1.5em',
         width: 650,
         justifyContent: 'center',
-        background: '#14342B50',
+        background: '#bdbdbd',
         marginTop: '5em'
     },
     text: {
