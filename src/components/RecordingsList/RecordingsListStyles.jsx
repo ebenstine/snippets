@@ -10,10 +10,11 @@ const useStyles = makeStyles(() => ({
     
     card1: {
         flexDirection: 'column',
-        backgroundColor: '#c8ecf5',
-     
+        backgroundColor: '#ffcdd2',
+        color: '#233d4d',
         marginLeft: '.5em',
-        marginRight: '.5em'
+        marginRight: '.5em',
+        
     },
 
     card2: {
@@ -53,7 +54,7 @@ const useStyles = makeStyles(() => ({
 
     paper: {
        
-        backgroundColor: '#14342B50',
+        backgroundColor: '#bdbdbd',
         paddingBottom: '6em',
         paddingTop: '6em',
         paddingLeft: '1.5em',
@@ -76,7 +77,7 @@ const useStyles = makeStyles(() => ({
         
     },
 
-    title: {
+    description: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 16,
         marginLeft: 'auto',

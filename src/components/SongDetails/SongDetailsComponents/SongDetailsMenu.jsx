@@ -36,7 +36,7 @@ const SongDetailsMenu = ({song}) => {
         </IconButton>
         <MenuItem onClick={handleClickOpen}></MenuItem>
         <Dialog open={open} onClose={handleCancel} aria-labelledby="Rename song title input">
-          <DialogTitle id="newAudio">Add a Voice Memo</DialogTitle>
+          <DialogTitle id="newAudio">Add a Recording</DialogTitle>
           <DialogContent>
           <AddRecording/>
           <RecordingsList/>
