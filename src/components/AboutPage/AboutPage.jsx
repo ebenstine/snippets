@@ -15,7 +15,8 @@ const useStyles = makeStyles(() => ({
         width: 650,
         justifyContent: 'center',
         background: '#bdbdbd',
-        marginTop: '5em'
+        marginTop: '5em',
+        color: '#1a313f'
     },
     text: {
         margin: '0, auto',
@@ -52,18 +53,22 @@ const AboutPage = () => {
                                 voice memos become cluttered and wildly disorganized very quickly, and because the only indication of 
                                 what one might contain is offered in its title, the context or concept nested within that recording can 
                                 easily be lost.  
-                                <br></br>
-                                <br></br>
+                                </p>
+                               
+                                
+                                <p>
                                 How did I play that part again?  Why does this sound like a different tuning than I've previously used?
                                 Wait, what was that melody even going to be used for?  Where is that one that has that great lyric I thought of while riding the bus? 
-                                <br></br>
-                                <br></br>
+                                </p>
+                                
+                                
+                                <p>
                                 I created Snippets to help me keep all the different details and moving parts of my unfinished songs centralized in a single concisely organized location. 
                                 The homepage is a list of songs the user has added, organized in a patterned column list that color-codes the columns according 
-                                to a pre-established set of priority tiers, so the user can group the songs according to when they hope to finish them. 
+                                to a priority designation, so the user can group the songs according to when they hope to finish them. 
                                 Finally, the user can route specific recordings into a details page for a given song - in addition to including this history of recordings for a given song, the details page contains all the relevant notes the user 
                                 has added that will help them connect the dots when they return to work on the song.  The user can update these details as they prefer.
-                                <br></br>
+                                
                                 </p>
                             </Typography>
                          </CardContent>

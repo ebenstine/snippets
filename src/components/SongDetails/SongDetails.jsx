@@ -2,13 +2,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Paper, Card, CardContent, Grid, Typography, Button } from '@material-ui/core';
 import { useEffect, useState } from 'react';
-import AddRecording from '../AddRecording/AddRecording';
-import RecordingsList from '../RecordingsList/RecordingsList';
 import useStyles from './SongDetailsComponents/SongDetailsStyles';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
-import IconButton from "@material-ui/core/IconButton";
-import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import SongDetailsMenu from './SongDetailsComponents/SongDetailsMenu';
 
 function SongDetails(){

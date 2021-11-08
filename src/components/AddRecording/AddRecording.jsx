@@ -9,11 +9,14 @@ import { TextField } from '@material-ui/core';
 import { connect, useDispatch } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
 import Uploader from '../Uploader/Uploader'
+import useStyles from './AddRecordingStyles'
+import Cancel from '@material-ui/icons/Cancel';
+import Backup from '@material-ui/icons/Backup';
 
 const AddRecording = ({ song, handleMenuClose }) => {
   const history = useHistory();
   const dispatch = useDispatch();
-  //const { root, inputs, paper, textField, cardContent, title } = useStyles();
+  const { dialog, root, actionDiv, dialogTitle, dialogButtons  } = useStyles();
   const params = useParams();
  
   const [fileUrl, setFileUrl] = useState ('no file was dropped');
@@ -60,24 +63,25 @@ const AddRecording = ({ song, handleMenuClose }) => {
   return (
     <div>
       <MenuItem onClick={handleClickOpen}>Upload</MenuItem>
-      <Dialog open={open} onClose={handleCancel} aria-labelledby="Rename song title input">
-        <DialogTitle id="newAudio">What's in Here?</DialogTitle>
-        <DialogContent>
+      <Dialog open={open} onClose={handleCancel}>
+        <DialogTitle className={dialogTitle} >Add a Recording</DialogTitle>
+        <DialogContent   className={dialog}>
         <TextField
               label="description"
               onChange={enterNewRecording('description')}
               value={newRecording.description}
-              
+              className={root}
             />
         <Uploader uploadComplete={uploadComplete}/>
         </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCancel}>
-            Cancel
+        
+        <DialogActions className={actionDiv}>
+          <Button onClick={handleCancel} variant="contained" className={dialogButtons}>
+            <Cancel/>
           </Button>
-          { /*publicUrl.length > 0 &&*/  <Button onClick={handleSave} >
-            Save
-          </Button>}
+          <Button onClick={handleSave} variant="contained" className={dialogButtons}>
+            <Backup/>
+          </Button>
         </DialogActions>
       </Dialog>
     </div>
