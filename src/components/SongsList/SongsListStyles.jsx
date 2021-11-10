@@ -79,7 +79,13 @@ const useStyles = makeStyles(() => ({
         marginLeft: 'auto',
         marginTop: 'auto',
         color: '#233d4d',
+        '&:hover': {
+            color:'#4d8aaa'
+        }
+        
     },
+
+    
 
     button: {
         

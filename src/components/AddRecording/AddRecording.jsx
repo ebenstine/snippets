@@ -62,7 +62,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
 
   return (
     <div>
-      <MenuItem onClick={handleClickOpen}>Upload</MenuItem>
+      <MenuItem onClick={handleClickOpen}>Upload New</MenuItem>
       <Dialog open={open} onClose={handleCancel}>
         <DialogTitle className={dialogTitle} >Add a Recording</DialogTitle>
         <DialogContent   className={dialog}>

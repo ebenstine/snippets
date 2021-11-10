@@ -17,14 +17,14 @@ const useStyles = makeStyles({
 
     heading: {
         color: '#2a4f64',
-        background: '#bdbdbd'
+        background: '#faffd1'
     }
 
 })
 
 
 const SongDetailsMenu = ({song}) => {
-    const {heading} = useStyles
+    const {heading} = useStyles();
     const [open, setOpen] = useState(false);
    
   
@@ -52,12 +52,12 @@ const SongDetailsMenu = ({song}) => {
                 aria-labelledby="Rename song title input"
                 
                 >
-          <DialogTitle className={heading}>Audio Recordings</DialogTitle>
-          <DialogContent>
+          <DialogTitle className={heading}>Audio Files Menu</DialogTitle>
+          <DialogContent className={heading}>
           <AddRecording/>
           <RecordingsList/>
           </DialogContent>
-          <DialogActions>
+          <DialogActions className={heading}>
             
           </DialogActions>
         </Dialog>

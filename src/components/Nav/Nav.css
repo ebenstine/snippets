@@ -20,12 +20,10 @@
   color: #f5fdff;
   padding-left: 10px;
   margin: 0;
-  
-  
+}
 
-
-
- 
+.nav-title:hover {
+  background-color:#254658 ;
 }
 
 .navLink {

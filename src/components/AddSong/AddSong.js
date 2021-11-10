@@ -91,9 +91,9 @@ const AddSong = () => {
               value={newSong.priority}
               >
                 <MenuItem defaultValue={''} className="setPriority">Select Completion Priority</MenuItem>
-                <MenuItem value={'1'}>first</MenuItem>
-                <MenuItem value={'2'}>second</MenuItem>
-                <MenuItem value={'3'}>third</MenuItem>
+                <MenuItem value={'1'}>  first</MenuItem>
+                <MenuItem value={'2'}>  second</MenuItem>
+                <MenuItem value={'3'}>  third</MenuItem>
             
           </Select>
           <Uploader 

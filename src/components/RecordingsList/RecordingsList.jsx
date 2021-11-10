@@ -8,7 +8,7 @@ import { Paper, Typography, MenuItem, FormControl, InputLabel, Select, Card, Dra
 import AudioPlayer from "react-modular-audio-player";
 import useStyles from './RecordingsListStyles';
 
-const RecordingsList = () => {
+const RecordingsList = ({song}) => {
     const { paper, description, player, card1, drawer, background } = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -50,19 +50,23 @@ const RecordingsList = () => {
             
             
             <Paper className= {paper} elevation={10}>
+                
                 {recordings.map((recording) => {
                     
-                    
+                   
                     return (
                         <>
                             
                             <div className={background}>
+                            
                                 <Card
                                     raised={true}
                                     className={card1}
                                 
                                 >
+                                
                                 <section>
+                                    
                                     <CardContent
 
                                     item xs={1} key={recording}
