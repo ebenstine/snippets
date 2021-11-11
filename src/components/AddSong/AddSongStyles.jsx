@@ -49,14 +49,53 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '2px',
         background: "#EBEBEB",
         color: '#2a4f64',
-        '&.MuiSelect': {
-            paddingLeft: '1em'
-        }
+        
+        
+        },
+    priority1: {
+        
+        border: '1px solid #c8ecf5',
+        borderBottom: '1 px solid #c8ecf5',
+        alignItems: 'center',
+        margin: '1ch',
+        borderRadius: '2px',
+        background: "#c8ecf5",
+        color: '#2a4f64',
+            
+            
+        },
+    priority2: {
+        
+        border: '1px solid #c8ecf5',
+        borderBottom: '1 px solid #c8ecf5',
+        alignItems: 'center',
+        margin: '1ch',
+        borderRadius: '2px',
+        background: "rgb(250, 250, 175)",
+        color: '#2a4f64'
+            
+                
+        },
+
+    priority3: {
+        
+        border: '1px solid #c8ecf5',
+        borderBottom: '1 px solid #c8ecf5',
+        alignItems: 'center',
+        margin: '1ch',
+        borderRadius: '2px',
+        background: "#fdd377",
+        color: '#2a4f64',
+                    
+                    
+        },
+    
+        
         
         
         
 
-    },
+    
     titleField: {
         margin: theme.spacing(1),
         width: '16em',

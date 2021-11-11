@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         margin: '4em auto',
         backgroundColor: '#c8ecf5',
         paddingBottom: '6em',
-        width: 600,
+        width: 300,
     },
     textField: {
         margin: theme.spacing(1),
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         
     },
     yourId: {
-        color: '#2a4f64',
+        color: '#233d4d',
         borderBottom: '1px solid #6ca0ad'
     }
 

@@ -13,7 +13,20 @@ import Cancel from '@material-ui/icons/Cancel';
 const AddSong = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const { root, inputs, paper, textField, cardContent, title, priority, setPriority } = useStyles();
+  const { root, 
+          inputs, 
+          paper, 
+          textField, 
+          cardContent, 
+          title, 
+          priority, 
+          priority1,
+          priority2,
+          priority3,
+          setPriority } 
+          
+          = useStyles();
+
   const [url, setUrl] = useState ('no file was dropped');
   const [newSong, setNewSong] = useState({
 
@@ -82,11 +95,12 @@ const AddSong = () => {
               multiline className={textField}
             />
           <br></br>
+          {newSong.priority ==='1' ?
           <Select
 
               name="priority"
               onChange={enterNewSong('priority')}
-              className={priority}
+              className={priority1}
               value={newSong.priority}
               >
                 <MenuItem defaultValue={''} className={setPriority} >Select Completion Priority</MenuItem>
@@ -94,7 +108,51 @@ const AddSong = () => {
                 <MenuItem value={'2'} className={setPriority} > second</MenuItem>
                 <MenuItem value={'3'} className={setPriority} > third</MenuItem>
             
-          </Select>
+          </Select> :
+          newSong.priority ==='2' ?
+          <Select
+
+              name="priority"
+              onChange={enterNewSong('priority')}
+              className={priority2}
+              value={newSong.priority}
+              >
+                <MenuItem defaultValue={''} className={setPriority} >Select Completion Priority</MenuItem>
+                <MenuItem value={'1'} className={setPriority} > first</MenuItem>
+                <MenuItem value={'2'} className={setPriority} > second</MenuItem>
+                <MenuItem value={'3'} className={setPriority} > third</MenuItem>
+            
+          </Select> :
+          newSong.priority ==='3' ?
+          <Select
+
+              name="priority"
+              onChange={enterNewSong('priority')}
+              className={priority3}
+              value={newSong.priority}
+              >
+                <MenuItem defaultValue={''} className={setPriority} >Select Completion Priority</MenuItem>
+                <MenuItem value={'1'} className={setPriority} > first</MenuItem>
+                <MenuItem value={'2'} className={setPriority} > second</MenuItem>
+                <MenuItem value={'3'} className={setPriority} > third</MenuItem>
+            
+          </Select> :
+          <Select
+
+          name="priority"
+          onChange={enterNewSong('priority')}
+          className={priority}
+          value={newSong.priority}
+          >
+            <MenuItem defaultValue={''} className={setPriority} >Select Completion Priority</MenuItem>
+            <MenuItem value={'1'} className={setPriority} > first</MenuItem>
+            <MenuItem value={'2'} className={setPriority} > second</MenuItem>
+            <MenuItem value={'3'} className={setPriority} > third</MenuItem>
+        
+      </Select>}
+          
+          
+
           <Uploader 
             elevated={10}  
             uploadComplete={uploadComplete}
