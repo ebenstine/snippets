@@ -18,23 +18,27 @@ const useStyles = makeStyles(() => ({
     card: {
         
         backgroundColor:  '#f0a1a1',
+        border: '1px solid #4d8aaa'
         
     },
     
     card1: {
         
         backgroundColor: '#c8ecf5', 
+        border: '1px solid #4d8aaa'
     },
 
     card2: {
         
         backgroundColor: 'rgb(250, 250, 175)',
+        border: '1px solid #4d8aaa'
         
     },
     
     card3: {
         
         backgroundColor: '#fdd377',
+        border: '1px solid #4d8aaa'
         
     },
 
@@ -65,7 +69,8 @@ const useStyles = makeStyles(() => ({
         paddingBottom: '1em',
         paddingTop: '1em',
         width: 650,
-        alignItems: 'center'
+        alignItems: 'center',
+        border: '1px solid #ffcdd2'
        
     },
 
