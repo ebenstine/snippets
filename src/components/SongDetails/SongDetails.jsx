@@ -2,6 +2,8 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Paper, Card, CardContent, Grid, Typography, Button } from '@material-ui/core';
 import { useEffect, useState } from 'react';
+import Edit from '@material-ui/icons/Edit';
+import Delete from '@material-ui/icons/Delete';
 import useStyles from './SongDetailsComponents/SongDetailsStyles';
 import SongDetailsMenu from './SongDetailsComponents/SongDetailsMenu';
 
@@ -245,9 +247,9 @@ function SongDetails(){
                     <br></br>
                     <br></br>
                     <section>
-                    <Button variant="contained" className={buttons} onClick={() => handleRevise(song.id)}>Update Details</Button>
+                    <Button variant="contained" className={buttons} onClick={() => handleRevise(song.id)}><Edit/></Button>
                     
-                    <Button variant="contained" className={buttons} onClick={() => handleDelete(song.id)}>Delete Song</Button> 
+                    <Button variant="contained" className={buttons} onClick={() => handleDelete(song.id)}><Delete/></Button> 
                     </section>
                     
                 </>

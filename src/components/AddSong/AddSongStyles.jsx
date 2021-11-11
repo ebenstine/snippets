@@ -24,7 +24,8 @@ const useStyles = makeStyles((theme) => ({
             },
             '&.MuiSelect fieldset': {
                 borderColor: '#2a4f64',
-                borderRadius: '8px'
+                borderRadius: '8px',
+                paddingLeft: '3em'
             },
             
 
@@ -43,10 +44,15 @@ const useStyles = makeStyles((theme) => ({
         
         border: '1px solid #c8ecf5',
         borderBottom: '1 px solid #c8ecf5',
-        
+        alignItems: 'center',
+        margin: '1ch',
         borderRadius: '2px',
         background: "#EBEBEB",
         color: '#2a4f64',
+        '&.MuiSelect': {
+            paddingLeft: '1em'
+        }
+        
         
         
 
@@ -61,7 +67,8 @@ const useStyles = makeStyles((theme) => ({
         margin: '4em auto',
         backgroundColor: '#bdbdbd',
         paddingBottom: '6em',
-        width: 650
+        width: 650,
+        border: '1px solid #fdd377'
 
     },
     textField: {
@@ -90,8 +97,8 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center'
 
     },
-    setPriority: {
-        paddingLeft: '5em',
+  setPriority: {
+        paddingLeft: '1em'
         
     }
 }));

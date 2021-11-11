@@ -4,23 +4,28 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
     card: {
         flexDirection: 'column',
-        backgroundColor:  '#f0a1a1'
+        backgroundColor:  '#f0a1a1',
+        border: '1px solid #4d8aaa'
+        
     },
     
     card1: {
         flexDirection: 'column',
         backgroundColor: '#c8ecf5',
+        border: '1px solid #4d8aaa'
         
     },
 
     card2: {
         flexDirection: 'column',
-        backgroundColor: 'rgb(250, 250, 175)'
+        backgroundColor: 'rgb(250, 250, 175)',
+        border: '1px solid #4d8aaa'
     },
     
     card3: {
         flexDirection: 'column',
-        backgroundColor: '#fdd377'
+        backgroundColor: '#fdd377',
+        border: '1px solid #4d8aaa'
     },
 
     cardContent: {
@@ -55,7 +60,8 @@ const useStyles = makeStyles(() => ({
         paddingTop: '6em',
         paddingLeft: '3em',
         paddingRight: '3em',
-        width: 650
+        width: 650,
+        border: '1px solid #fdd377'
         
     },
 
@@ -65,7 +71,7 @@ const useStyles = makeStyles(() => ({
         marginLeft: '.85em',
         marginRight: '19.5em',
         color: '#1a313f',
-        border: '1.35px solid #6ca0ad',
+        border: '1.35px solid #4d8aaa',
         borderRadius: '.25em',
         paddingTop: '.5em',
         paddingBottom: '.5em',
@@ -80,8 +86,9 @@ const useStyles = makeStyles(() => ({
         marginTop: 'auto',
         color: '#233d4d',
         '&:hover': {
-            color:'#4d8aaa'
-        }
+            color:'#4d8aaa',
+            cursor: 'pointer' 
+    }
         
     },
 

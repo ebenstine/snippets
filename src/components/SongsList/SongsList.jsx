@@ -58,21 +58,21 @@ function SongsList() {
                                 raised={true}
                                 className={card1}
                             > 
-                                <section> 
+                                
                                     <CardContent 
                                         
                                         item xs={1} key={song} 
                                         onClick={() => handleClick(song.song_id)} 
                                     
                                      >  
-                                        <div>
+                                        
                                             <Typography variant="h4" className={title}>{song.title}</Typography>
                                             
-                                        </div>
+                                        
 
                                     </CardContent>
                                     
-                                </section>
+                                
                                 <section className={player}>
                                     <AudioPlayer
 

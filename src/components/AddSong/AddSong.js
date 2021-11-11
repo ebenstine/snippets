@@ -85,15 +85,14 @@ const AddSong = () => {
           <Select
 
               name="priority"
-              
               onChange={enterNewSong('priority')}
               className={priority}
               value={newSong.priority}
               >
-                <MenuItem defaultValue={''} className="setPriority">Select Completion Priority</MenuItem>
-                <MenuItem value={'1'}>  first</MenuItem>
-                <MenuItem value={'2'}>  second</MenuItem>
-                <MenuItem value={'3'}>  third</MenuItem>
+                <MenuItem defaultValue={''} className={setPriority} >Select Completion Priority</MenuItem>
+                <MenuItem value={'1'} className={setPriority} > first</MenuItem>
+                <MenuItem value={'2'} className={setPriority} > second</MenuItem>
+                <MenuItem value={'3'} className={setPriority} > third</MenuItem>
             
           </Select>
           <Uploader 
