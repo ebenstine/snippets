@@ -6,6 +6,7 @@ import Edit from '@material-ui/icons/Edit';
 import Delete from '@material-ui/icons/Delete';
 import useStyles from './SongDetailsComponents/SongDetailsStyles';
 import SongDetailsMenu from './SongDetailsComponents/SongDetailsMenu';
+import SongTitle from './SongDetailsComponents/SongTitle';
 
 function SongDetails(){
     
@@ -72,8 +73,8 @@ function SongDetails(){
                    
 
                     <CardContent className={cardContent}>
-                     
-                    <Typography variant="overline" className={title}>{song.title}</Typography>
+                    <SongTitle/>
+                    {/*<Typography variant="overline" className={title}>{song.title}</Typography>*/}
                     <Typography className={cardText} component="p"> 
                         <br></br>
                         {song.lyrics}</Typography>

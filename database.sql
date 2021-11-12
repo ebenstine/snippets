@@ -16,7 +16,7 @@ CREATE TABLE "songs" (
 	"user_id" INT NOT NULL REFERENCES "user",
 	"date" DATE DEFAULT CURRENT_DATE,
 	"title" TEXT NOT NULL,
-    "instrument_notes" TEXT NOT NULL,
+    "instrument_notes" TEXT DEFAULT 'no notes added',
 	"performance_notes" TEXT DEFAULT 'no notes added',
     "priority" VARCHAR (10)
 	"lyrics" TEXT DEFAULT 'no lyrics added',
@@ -26,6 +26,6 @@ CREATE TABLE "songs" (
 CREATE TABLE "recordings" (
 	"id" SERIAL PRIMARY KEY,
 	"song_id" INT NOT NULL REFERENCES "songs",
-    "description" TEXT,
+    "description" TEXT DEFAULT 'no description added',
 	"src" TEXT 
 );
