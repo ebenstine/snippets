@@ -1,9 +1,8 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { Typography, TextField, FormControl, Button } from '@material-ui/core'
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory, useParams } from 'react-router-dom';
+import { Paper, TextField, MenuItem, Button, Typography, Select, FormControl } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { connect, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -28,33 +27,64 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const SongTitle = ({ title, song }) => {
+function SongTitle() {
+    const songDetails = useSelector(store => store.songDetails);
+    const dispatch = useDispatch();
+    const params = useParams();
+    const history = useHistory();
     const { textField, buttons, titleTitle } = useStyles();
     const [ editable, setEditable] = useState(false);
-    const { handleSubmit } = useForm();
-    const params = useParams();
-    const dispatch = useDispatch();
+    console.log(params);
+    let song = {
+      title: songDetails.title,
+  
+    };
+  
+    const [reviseDetails, setReviseDetails] = useState(song);
+  
+  
+    const handleChange = (event) => {
+      setReviseDetails({ ...reviseDetails, [event.target.name]: event.target.value })
+    };
 
     const handleEditable = () => {
         setEditable(editable => !editable)
     }
-
-    const onSubmit = (data) => {
-        data = {...data, id:params.id}
-        dispatch({ 
-            type: 'REVISE_SONG', 
-            payload: data 
-        })
-        setEditable(editable => !editable);
+  
+  
+  
+    const handleCancel = () => {
+      history.push('/songsList');
     }
+  
+  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      let revisedSong = reviseDetails;
+      revisedSong = { ...revisedSong, id: params.id };
+      console.log('new song revisions made in', revisedSong);
+      dispatch({
+        type: 'REVISE_SONG',
+        payload: revisedSong
+      });
+      setEditable(editable => !editable);
+    }
+  
     return (
         <>
             {editable ?
                 <FormControl  >
-                    <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" >
+                    <form onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
-                            label="Title" name="song_title" defaultValue={`${title}`} onDoubleClick={handleEditable}
-                            margin="dense" multiline className={textField} />
+                            label="Title" 
+                            name="title" 
+                            value={`${reviseDetails.title}`} 
+                            onDoubleClick={handleEditable}
+                            margin="dense" 
+                            multiline className={textField} 
+                            onChange={handleChange}
+                            
+                            />
                         <div className={buttons}> 
                         <Button onClick={handleEditable}> CANCEL </Button>
                         <Button variant="filled" type="submit"> SAVE </Button>
@@ -64,7 +94,7 @@ const SongTitle = ({ title, song }) => {
                 :
                 <div onDoubleClick={handleEditable}>
                     <Typography variant="h5" component="h5" className={titleTitle}>
-                        {`${title}`}
+                    {`${reviseDetails.title}`}
                     </Typography>
                 </div>
             }
@@ -73,4 +103,7 @@ const SongTitle = ({ title, song }) => {
    
     )
 }
+
+
+
 export default SongTitle;
