@@ -20,7 +20,7 @@ function* reviseSong(action) {
 }
 
 function* songRevise() {
-    yield takeLatest('REVISE_SONG', reviseSong);
+    yield takeLatest('REVISE_SONG', reviseSong);git 
 }
 
 export default songRevise;

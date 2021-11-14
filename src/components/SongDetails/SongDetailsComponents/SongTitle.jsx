@@ -78,7 +78,7 @@ function SongTitle() {
                         <TextField 
                             label="Title" 
                             name="title" 
-                            value={`${reviseDetails.title}`} 
+                            defaultValue={`${reviseDetails.title}`} 
                             onDoubleClick={handleEditable}
                             margin="dense" 
                             multiline className={textField} 

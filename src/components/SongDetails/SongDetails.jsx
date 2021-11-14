@@ -73,8 +73,8 @@ function SongDetails(){
                    
 
                     <CardContent className={cardContent}>
-                    <SongTitle/>
-                    {/*<Typography variant="overline" className={title}>{song.title}</Typography>*/}
+                    <Typography variant="overline" className={title}>{song.title}</Typography>
+                    
                     <Typography className={cardText} component="p"> 
                         <br></br>
                         {song.lyrics}</Typography>
