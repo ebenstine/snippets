@@ -26,7 +26,7 @@
 
 .nav-title:hover {
   
-  color: #c8ecf5;
+  color: #3b95ac;
 }
 
 .navLink {
@@ -45,5 +45,5 @@
 }
 
 .navLink:hover {
-  background-color: #254658;
+  color: #3b95ac;
 }

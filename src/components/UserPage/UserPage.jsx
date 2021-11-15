@@ -1,23 +1,36 @@
 import React from 'react';
-import LogOutButton from '../LogOutButton/LogOutButton';
-import {useSelector} from 'react-redux';
+//import LogOutButton from '../LogOutButton/LogOutButton';
+import { useHistory } from 'react-router-dom';
+import {useSelector, useDispatch } from 'react-redux';
 import { Paper, Button, Typography } from '@material-ui/core'
 import useStyles from '../UserPage/UserPageStyles'
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
-  const { paper, welcome, yourId } = useStyles();
+  const { paper, welcome, yourId, button, explore } = useStyles();
+
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const handleExplore = () => {
+    history.push('/songsList')
+  }
   return (
     <>
+    
     <Paper className={paper} elevation={10}>
     <div className="container">
 
       <Typography variant = "h4" className = {welcome} >Hi, {user.username}!</Typography>
       <Typography variant = "h6" className = {yourId}>Your ID is: {user.id}</Typography>
       <br></br>
-      <LogOutButton className="btn" />
     </div>
+    
+      <Button variant="contained" className={button} onClick={() => handleExplore()}>Enter</Button>
+      <Button variant="contained" className={button} onClick={() => dispatch({ type: 'LOGOUT' })}>Log Out</Button>
+      
     </Paper>
+    
     </>
   );
 }

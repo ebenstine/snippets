@@ -161,11 +161,11 @@ const AddSong = () => {
          
           
           <FormControl>
-            <section>
+            <div>
             <Button variant="contained" onClick={toUserHome} className={inputs} ><Cancel/></Button>
-            <br></br>
+            
             <Button variant="contained" type="submit" /*onClick={toUserHome}*/ className={inputs}><Backup/></Button>
-            </section>
+            </div>
           </FormControl>
           
         </div>

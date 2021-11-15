@@ -6,15 +6,9 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         alignItems: 'center',
     },
-    inputs: {
-        margin: theme.spacing(1),
-        width: '12ch',
-        marginBottom: '1em',
-        marginTop: '1.5em',
-        background: '#EBEBEB'
-    },
+   
     titleField: {
-        margin: theme.spacing(1),
+        margin: 'auto',
         width: '16em',
         marginBottom: '1em',
         marginTop: '1.5em',
@@ -22,11 +16,12 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         margin: '4em auto',
         backgroundColor: '#c8ecf5',
-        paddingBottom: '6em',
+        paddingBottom: '0em',
         width: 300,
+        
     },
     textField: {
-        margin: theme.spacing(1),
+        margin: 'auto',
         width: '40ch',
         marginBottom: '1em',
         marginTop: '1em'
@@ -48,12 +43,34 @@ const useStyles = makeStyles((theme) => ({
     },
     welcome: {
         color: '#233d4d',
-        borderBottom: '1px solid #6ca0ad'
+        borderBottom: '1px solid #6ca0ad',
+        paddingRight: '.5em',
+        paddingLeft: '.75em'
         
     },
     yourId: {
         color: '#233d4d',
-        borderBottom: '1px solid #6ca0ad'
+        borderBottom: '1px solid #6ca0ad',
+        paddingRight: '2em',
+        paddingLeft: '3.5em'
+    },
+
+    button: {
+        marginLeft: '1em',
+        marginBottom: '.3em',
+        marginRight: '2em',
+        color: '#233d4d',
+        border: '1px solid #6ca0ad',
+        paddingLeft: '1em',
+        paddingRight: '1em'
+   
+        
+    },
+
+    explore: {
+        paddingRight: '3.5em',
+        paddingLeft: '5.5em',
+
     }
 
 

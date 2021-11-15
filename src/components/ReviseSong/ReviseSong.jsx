@@ -68,7 +68,7 @@ function ReviseSong() {
                 label="Title"
                 name="title"
                 onChange={handleChange}
-                value={reviseDetails.title}
+                defaultValue={reviseDetails.title}
                 multiline className={textField}
               />
 
@@ -76,7 +76,7 @@ function ReviseSong() {
                 label="Instrument Notes"
                 name="instrument_notes"
                 onChange={handleChange}
-                value={reviseDetails.instrument_notes}
+                defaultValue={reviseDetails.instrument_notes}
                 multiline className={textField}
 
               />
@@ -85,7 +85,7 @@ function ReviseSong() {
                 label="Performance Notes"
                 name="performance_notes"
                 onChange={handleChange}
-                value={reviseDetails.performance_notes}
+                defaultValue={reviseDetails.performance_notes}
                 multiline className={textField}
 
               />
@@ -94,7 +94,7 @@ function ReviseSong() {
                 label="Lyrics"
                 name="lyrics"
                 onChange={handleChange}
-                value={reviseDetails.lyrics}
+                defaultValue={reviseDetails.lyrics}
                 component="p"
                 multiline className={textField}
               />
@@ -102,7 +102,7 @@ function ReviseSong() {
               <Select
                 name="priority"
                 onChange={handleChange}
-                value={reviseDetails.priority}
+                defaultValue={reviseDetails.priority}
               >
                 <MenuItem defaultValue={''}>Select Completion Priority</MenuItem>
                 <MenuItem value={'1'}>First</MenuItem>

@@ -11,19 +11,19 @@ const useStyles = makeStyles((theme) => ({
             color: '#2a4f64',
         },
         '& .MuiInput-underline:after': {
-            borderBottomColor: '#2a4f64',
+            borderBottomColor: '#3b95ac',
         },
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
-                borderColor: '#2a4f64',
+                borderColor: '#3b95ac',
                 
             },
             '&:hover fieldset': {
-                borderColor: '#2a4f64',
+                borderColor: '#3b95ac',
                 
             },
             '&.MuiSelect fieldset': {
-                borderColor: '#2a4f64',
+                borderColor: '#3b95ac',
                 borderRadius: '8px',
                 paddingLeft: '3em'
             },

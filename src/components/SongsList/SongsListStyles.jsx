@@ -86,7 +86,7 @@ const useStyles = makeStyles(() => ({
         marginTop: 'auto',
         color: '#233d4d',
         '&:hover': {
-            color:'#4d8aaa',
+            color:'#3b95ac',
             cursor: 'pointer' 
     }
         
