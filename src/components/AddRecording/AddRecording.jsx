@@ -5,7 +5,7 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { TextField } from '@material-ui/core';
+import { TextField, FormControl } from '@material-ui/core';
 import { connect, useDispatch } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
 import Uploader from '../Uploader/Uploader'
@@ -64,22 +64,27 @@ const AddRecording = ({ song, handleMenuClose }) => {
     <div>
       <MenuItem onClick={handleClickOpen}>Upload New</MenuItem>
       <Dialog open={open} onClose={handleCancel}>
+      <FormControl>
+        <form className={root}>
         <DialogTitle className={dialogTitle} >Add a Recording</DialogTitle>
         <DialogContent   className={dialog}>
         <TextField
               label="description"
               onChange={enterNewRecording('description')}
               value={newRecording.description}
-              className={root}
+              
             />
+        
         <Uploader uploadComplete={uploadComplete}/>
         </DialogContent>
+        </form>
+        </FormControl>
         
         <DialogActions className={actionDiv}>
-          <Button onClick={handleCancel} variant="contained" className={dialogButtons}>
+          <Button onClick={handleCancel} variant="contained" size="small" className={dialogButtons}>
             <Cancel/>
           </Button>
-          <Button onClick={handleSave} variant="contained" className={dialogButtons}>
+          <Button onClick={handleSave} variant="contained" size="small" className={dialogButtons}>
             <Backup/>
           </Button>
         </DialogActions>

@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
             margin: theme.spacing(1),
+            color: 'white'
             //width: '25ch'
         },
         '& label.Mui-focused': {
@@ -12,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
         },
         '& .MuiInput-underline:after': {
             borderBottomColor: '#3b95ac',
+            
         },
         '& .MuiOutlinedInput-root': {
             '& fieldset': {

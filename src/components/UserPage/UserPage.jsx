@@ -7,7 +7,7 @@ import useStyles from '../UserPage/UserPageStyles'
 function UserPage() {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
-  const { paper, welcome, yourId, button, explore } = useStyles();
+  const { paper, welcome, yourId, buttons } = useStyles();
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -26,8 +26,8 @@ function UserPage() {
       <br></br>
     </div>
     
-      <Button variant="contained" className={button} onClick={() => handleExplore()}>Enter</Button>
-      <Button variant="contained" className={button} onClick={() => dispatch({ type: 'LOGOUT' })}>Log Out</Button>
+      <Button variant="contained" size="small" className={buttons} onClick={() => handleExplore()}>Enter</Button>
+      <Button variant="contained" size="small" className={buttons} onClick={() => dispatch({ type: 'LOGOUT' })}>Log Out</Button>
       
     </Paper>
     

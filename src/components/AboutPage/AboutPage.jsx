@@ -25,6 +25,7 @@ const useStyles = makeStyles(() => ({
         lineHeight: '1.8em',
         fontSize: 14.5,
         padding: '1em 0',
+        borderBottom: "1.6px solid #6ca0ad"
     },
     title: {
         paddingTop: '1em',
@@ -44,7 +45,7 @@ const AboutPage = () => {
                     <Card className={card} raised={true} >
                         <CardContent >
                             <Typography gutterBottom variant="h5" component="h5" align="center"  className={title} >
-                                About Snippets:
+                                About Snippets
                             </Typography>
                             <Typography variant="body2" component="p" className={text} paragraph={true}>
                                 <p>

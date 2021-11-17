@@ -45,6 +45,7 @@ const RecordingsList = ({song}) => {
                 variant="temporary"
                 anchor="left"
                 open={isDrawerOpen}
+                
                 onClose={handleCancel}
             >
             

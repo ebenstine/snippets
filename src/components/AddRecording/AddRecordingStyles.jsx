@@ -4,14 +4,14 @@ const useStyles = makeStyles((theme) => ({
 
     root: {
         '& .MuiTextField-root': {
-            margin: theme.spacing(1),
-            //width: '25ch'
+            marginLeft: '4em',
+            
         },
         '& label.Mui-focused': {
             color: '#2a4f64',
         },
         '& .MuiInput-underline:after': {
-            borderBottomColor: '#2a4f64',
+            borderBottomColor: '#3b95ac',
         },
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
@@ -32,13 +32,14 @@ const useStyles = makeStyles((theme) => ({
     },
 
     dialog: {
-       background: "#faffd1" 
-
+       background: "#faffd1",
+       alignItems: "center"
     },
 
     dialogTitle: {
         background: "#faffd1",
-        color: "#2a4f64"
+        color: "#2a4f64",
+        paddingLeft: "6em"
     },
 
     actionDiv: {
@@ -52,7 +53,8 @@ const useStyles = makeStyles((theme) => ({
     dialogButtons: {
         background: "#EBEBEB",
         color: "#2a4f64",
-        border: "1px solid #c8ecf5"
+        border: "1px solid #c8ecf5",
+       
 
 
     }

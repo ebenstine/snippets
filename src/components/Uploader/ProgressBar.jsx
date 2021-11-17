@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import Typography from "@material-ui/core/Typography";
-// import { black } from '@material-ui/core/colors';
+
 import { createTheme} from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
 
@@ -11,13 +11,13 @@ const useStyles = makeStyles({
         width: '100%',
         marginBottom: '2em'
     },
-});
+}); 
 
 const theme = createTheme({
     palette: {
         primary: {
-            //dark grey
-            main: "#2a4f64",
+            //brightish blue
+            main: "#3b95ac",
         },
           secondary: {
             //lighter grey
@@ -47,4 +47,4 @@ const ProgressBar = ({ progress, progressTitle }) => {
     )
 }
 
-export default ProgressBar
+export default ProgressBar;

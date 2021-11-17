@@ -66,7 +66,7 @@ const Uploader = ({uploadComplete}) => {
                       border: '1px dashed #c8ecf5'
 
                       }}
-                  >Click Here or Drag File to Upload</Button>
+                  >Click to Add, or Drag and Drop File</Button>
             </div>
     )
   return (
