@@ -14,10 +14,15 @@ const useStyles = makeStyles({
   btn: {
     marginTop: 30,
     marginBottom: 25,
+    background: '#EBEBEB',
+    border: '1px solid #3b95ac',
+    paddingLeft: '1em',
+    paddingRight: '1em'
   },
-  signin: {
+  signIn: {
     marginBottom: 15,
-    color: '#2a4f64'
+    color: '#2a4f64',
+    
     
   },
   password: {
@@ -31,7 +36,7 @@ const useStyles = makeStyles({
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#F49D0C'
+      main: '#EBEBEB'
     
     }
   }
@@ -83,7 +88,7 @@ function LoginForm() {
 
           <Grid item lg={2} xs={6} sm={3} md={3}>
             {/* login inputs / button */}
-            <Typography variant="h5" className={classes.signin}>Sign In</Typography>
+            <Typography variant="h5" className={classes.signIn}>Sign In</Typography>
           </Grid>
           {errors.loginMessage && (
             <h3 className="alert" role="alert">
@@ -101,7 +106,7 @@ function LoginForm() {
           </Grid>
           <ThemeProvider theme={theme}>
             <Grid item lg={2} xs={6} sm={3} md={3}>
-              <Button variant="contained" className={classes.btn} color="primary" align="center" onClick={login}>Sign In</Button>
+              <Button variant="contained" className={classes.btn} color="primary" align="center" onClick={login}>Go!</Button>
             </Grid>
           </ThemeProvider>
 
