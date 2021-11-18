@@ -1,23 +1,39 @@
 import React from 'react';
-import { Button } from '@material-ui/core'
+import { Button, Typography, makeStyles } from '@material-ui/core'
 import { useHistory } from 'react-router-dom';
 import RegisterForm from '../RegisterForm/RegisterForm';
 
+const useStyles = makeStyles({
+
+  prompt: {
+    color: '#2a4f64',
+
+  },
+
+  signIn: {
+    background: '#EBEBEB'
+  }
+
+})
+
+
+
 function RegisterPage() {
   const history = useHistory();
+  const {prompt, signIn} = useStyles();
 
   return (
     <div>
       <RegisterForm />
 
       <center>
-        <center>
+        <Typography className={prompt}>
         Already have an account?
-        </center>
+        </Typography>
         <br></br>
         <Button
-          
-          className="btn btn_asLink"
+          variant="contained"
+          className={signIn}
           onClick={() => {
             history.push('/login');
           }}

@@ -8,6 +8,7 @@ const UserPage = () => {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const songs = useSelector((store) => store.songs);
+  const recordings = useSelector((store) => store.recordings)
   const { paper, welcome, yourId, button1, button2 } = useStyles();
 
   const history = useHistory();
@@ -19,6 +20,7 @@ const UserPage = () => {
 
   useEffect(() => {
     dispatch({ type: 'FETCH_SONGS' })
+    dispatch({ type: 'FETCH_RECORDINGS '})
 }, [dispatch]);
 
   return (
@@ -29,6 +31,7 @@ const UserPage = () => {
 
       <Typography align="center" variant = "h4" className = {welcome} >Hi, {user.username}!</Typography>
       <Typography align="center" variant = "h6" className = {yourId}>Currently, you have saved {songs.length} songs in progress.</Typography>
+      <Typography align="center" variant = "h6" className = {yourId}>The total count of all recordings is {recordings.length}</Typography>
       <br></br>
     </div>
 

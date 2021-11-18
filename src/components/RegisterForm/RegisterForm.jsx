@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Grid, Container, Typography, TextField, makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core';
+import { Button, Grid, Container, Typography, TextField, makeStyles, createTheme, ThemeProvider } from '@material-ui/core';
 
 // change styling for MUI components
 const useStyles = makeStyles({
@@ -12,9 +12,11 @@ const useStyles = makeStyles({
   btn: {
     marginTop: 30,
     marginBottom: 25,
+    background: "#EBEBEB"
   },
-  signup: {
-    marginBottom: 15
+  signUp: {
+    marginBottom: 15,
+    color: '#2a4f64'
   },
   password: {
     marginTop: 15,
@@ -22,10 +24,10 @@ const useStyles = makeStyles({
 
 })
 // change default themes of specific MUI components 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
-      main: '#F49D0C'
+      main: '#EBEBEB'
     }
   }
 })
@@ -59,7 +61,7 @@ function RegisterForm() {
       <Grid noValidate autoComplete="off" onSubmit={registerUser}>
         {/* MUI input fields and button for registration form  */}
         <Grid item lg={2} xs={6} sm={3} md={3}>
-          <Typography variant="h5" className={classes.signup}>Create Account</Typography>
+          <Typography variant="h5" className={classes.signUp}>Create Account</Typography>
         </Grid>
         {errors.registrationMessage && (
           <h3 className="alert" role="alert">

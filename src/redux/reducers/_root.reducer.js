@@ -3,7 +3,8 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import songs from './songs.reducer'
 import songState from './settingSong.reducer'
-import recordings from './selectedRecording.reducer';
+//import recordings from './selectedRecording.reducer';
+import recordings from './recordings.reducer'
 import songDetails from './songDetails.reducer';
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.

@@ -14,8 +14,9 @@ const useStyles = makeStyles({
   btn: {
     marginTop: 30,
     marginBottom: 25,
+    border: '1px solid #3b95ac'
   },
-  signin: {
+  signIn: {
     marginBottom: 15,
     color: '#2a4f64'
     
@@ -31,7 +32,7 @@ const useStyles = makeStyles({
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#F49D0C'
+      main: '#EBEBEB'
     
     }
   }
@@ -83,7 +84,7 @@ function LoginForm() {
 
           <Grid item lg={2} xs={6} sm={3} md={3}>
             {/* login inputs / button */}
-            <Typography variant="h5" className={classes.signin}>Sign In</Typography>
+            <Typography variant="h5" className={classes.signIn}>Sign In</Typography>
           </Grid>
           {errors.loginMessage && (
             <h3 className="alert" role="alert">
