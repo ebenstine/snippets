@@ -14,7 +14,8 @@ const useStyles = makeStyles({
     background: '#EBEBEB',
     border: '1px solid #3b95ac',
     paddingLeft: '1em',
-    paddingRight: '1em'
+    paddingRight: '1em',
+    color: '#2a4f64'
   }
 
 })

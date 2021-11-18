@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
-import { Button, Grid, Container, Typography, TextField, Card, CardHeader, CardContent, makeStyles, createTheme, ThemeProvider } from '@material-ui/core';
+import { Button, Grid, Container, Typography, TextField, Card, CardHeader, CardContent, makeStyles, ThemeProvider } from '@material-ui/core';
 
 //change of styling with MUI components
 const useStyles = makeStyles({
@@ -17,7 +17,8 @@ const useStyles = makeStyles({
     background: '#EBEBEB',
     border: '1px solid #3b95ac',
     paddingLeft: '1em',
-    paddingRight: '1em'
+    paddingRight: '1em',
+    color: '#2a4f64' 
   },
   signIn: {
     marginBottom: 15,
@@ -32,15 +33,7 @@ const useStyles = makeStyles({
 
 })
 
-//changing default theme colors
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#EBEBEB'
-    
-    }
-  }
-})
+
 
 
 function LoginForm() {
@@ -104,11 +97,11 @@ function LoginForm() {
             <TextField className={classes.password} required label="Password" variant="standard" color="primary"  value={password}
               type="password" noValidate autoComplete="off" onChange={(event) => setPassword(event.target.value)} />
           </Grid>
-          <ThemeProvider theme={theme}>
+          
             <Grid item lg={2} xs={6} sm={3} md={3}>
-              <Button variant="contained" className={classes.btn} color="primary" align="center" onClick={login}>Go!</Button>
+              <Button variant="contained" className={classes.btn} align="center" onClick={login}>Go!</Button>
             </Grid>
-          </ThemeProvider>
+          
 
         </Grid>
       </Container>
@@ -118,3 +111,7 @@ function LoginForm() {
 }
 
 export default LoginForm;
+
+
+
+

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Grid, Container, Typography, TextField, makeStyles, createTheme, ThemeProvider } from '@material-ui/core';
+import { Button, Grid, Container, Typography, TextField, makeStyles, ThemeProvider } from '@material-ui/core';
 
 // change styling for MUI components
 const useStyles = makeStyles({
@@ -26,13 +26,7 @@ const useStyles = makeStyles({
 
 })
 // change default themes of specific MUI components 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#EBEBEB'
-    }
-  }
-})
+
 function RegisterForm() {
   // declare variable to use styles function
   const classes = useStyles();
@@ -76,11 +70,11 @@ function RegisterForm() {
           <TextField className={classes.password} required label="Password" variant="standard" color="primary" value={password}
             type="password" noValidate autoComplete="off" onChange={(event) => setPassword(event.target.value)} />
         </Grid>
-        <ThemeProvider theme={theme}>
+        
           <Grid item lg={2} xs={6} sm={3} md={3}>
-            <Button variant="contained" className={classes.btn} color="primary" align="center" onClick={registerUser}>Sign Up</Button>
+            <Button variant="contained" className={classes.btn} align="center" onClick={registerUser}>Sign Up</Button>
           </Grid>
-        </ThemeProvider>
+        
 
       </Grid>
     </Container>
