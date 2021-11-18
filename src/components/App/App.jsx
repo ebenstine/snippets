@@ -15,8 +15,8 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
-import InfoPage from '../InfoPage/InfoPage';
-import LandingPage from '../LandingPage/LandingPage';
+
+
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddSong from '../AddSong/AddSong';
@@ -135,7 +135,7 @@ function App() {
               // redirect them to the /user page
               <Redirect to="/user" />
               :
-              // Otherwise, show the Landing page
+              // Otherwise, show the Login page
               <LoginPage/>
             }
           </Route>

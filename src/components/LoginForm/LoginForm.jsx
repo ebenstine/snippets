@@ -31,7 +31,7 @@ const useStyles = makeStyles({
 const theme = createTheme({
   palette: {
     primary: {
-      main: 'rgb(230, 252, 255)'
+      main: '#F49D0C'
     
     }
   }

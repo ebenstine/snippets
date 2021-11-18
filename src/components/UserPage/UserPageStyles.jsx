@@ -5,18 +5,16 @@ const useStyles = makeStyles((theme) => ({
     
     paper: {
         margin: '4em auto',
-        backgroundColor: '#c8ecf5',
-        paddingBottom: '0em',
-        width: 300,
-        
+        backgroundColor: '#bdbdbd',
+        paddingBottom: '2em',
+        width: 650
     },
     
     
     welcome: {
         color: '#233d4d',
         borderBottom: '1px solid #6ca0ad',
-        paddingRight: '.5em',
-        paddingLeft: '.75em'
+        
         
     },
     yourId: {
@@ -26,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: '3.5em'
     },
 
-    buttons: {
-        marginLeft: '3em',
+    button1: {
+      
         marginBottom: '1em',
-        marginRight: '2em',
+       
         color: '#233d4d',
         border: '1px solid #6ca0ad',
         paddingLeft: '1em',
@@ -37,6 +35,18 @@ const useStyles = makeStyles((theme) => ({
    
         
     },
+
+    button2: {
+        
+        marginBottom: '1em',
+       
+        color: '#233d4d',
+        border: '1px solid #6ca0ad',
+        paddingLeft: '1em',
+        paddingRight: '1em'
+
+
+    }
 
     
 

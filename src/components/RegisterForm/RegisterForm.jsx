@@ -59,7 +59,7 @@ function RegisterForm() {
       <Grid noValidate autoComplete="off" onSubmit={registerUser}>
         {/* MUI input fields and button for registration form  */}
         <Grid item lg={2} xs={6} sm={3} md={3}>
-          <Typography variant="h5" className={classes.signup}>Sign Up</Typography>
+          <Typography variant="h5" className={classes.signup}>Create Account</Typography>
         </Grid>
         {errors.registrationMessage && (
           <h3 className="alert" role="alert">
