@@ -5,12 +5,43 @@ import { useHistory } from 'react-router-dom'
 import { Button, Grid, Container, Typography, TextField, Card, CardHeader, CardContent, makeStyles, ThemeProvider } from '@material-ui/core';
 
 //change of styling with MUI components
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
 
-  login: {
-    marginTop: 100,
+  root: {
+   paddingTop: '8em',
+    '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        color: 'white'
+        //width: '25ch'
+    },
+    '& label.Mui-focused': {
+        color: '#2a4f64',
+        
+    },
+    '& .MuiInput-underline:after': {
+        borderBottomColor: '#3b95ac',
+        
+        
+    },
+    '& .MuiOutlinedInput-root': {
+        '& fieldset': {
+            borderColor: '#3b95ac',
+            
+        },
+        '&:hover fieldset': {
+            borderColor: '#3b95ac',
+            
+        },
+        '&.MuiSelect fieldset': {
+            borderColor: '#3b95ac',
+            borderRadius: '8px',
+            paddingLeft: '3em'
+        },
+        
 
-  },
+    },
+},
+
   btn: {
     marginTop: 30,
     marginBottom: 25,
@@ -29,9 +60,12 @@ const useStyles = makeStyles({
   password: {
     marginTop: 15,
     
-  }
+    
+  },
 
-})
+  
+
+}))
 
 
 
@@ -75,7 +109,8 @@ function LoginForm() {
   return (
     <>
       {/* mui container for side margins */}
-      <Container align="center" className={classes.login}>
+    
+      <Container align="center" className={classes.root}>
         {/* grid for responsive design */}
         <Grid noValidate autoComplete="off" onSubmit={login}>
 
@@ -90,11 +125,11 @@ function LoginForm() {
           )}
 
           <Grid item lg={2} xs={6} sm={3} md={3}>
-            <TextField noValidate autoComplete="off" required variant="standard" label="Username" color="primary" value={username}
+            <TextField noValidate autoComplete="off" required variant="standard" label="Username"  value={username}
               onChange={(event) => setUsername(event.target.value)} />
           </Grid>
           <Grid item lg={2} xs={6} sm={3} md={3}>
-            <TextField className={classes.password} required label="Password" variant="standard" color="primary"  value={password}
+            <TextField className={classes.password} required label="Password" variant="standard"  value={password}
               type="password" noValidate autoComplete="off" onChange={(event) => setPassword(event.target.value)} />
           </Grid>
           
@@ -105,6 +140,7 @@ function LoginForm() {
 
         </Grid>
       </Container>
+      
 
     </>
   );

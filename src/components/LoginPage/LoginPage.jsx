@@ -16,17 +16,26 @@ const useStyles = makeStyles({
     paddingLeft: '1em',
     paddingRight: '1em',
     color: '#2a4f64'
-  }
+  },
+
+  /*paper: {
+    margin: '4em auto',
+    backgroundColor: '#bdbdbd',
+    paddingBottom: '2em',
+    width: 650
+},*/
+
 
 })
 
 
 function LoginPage() {
   const history = useHistory();
-  const {invite, signUp} = useStyles();
+  const {invite, signUp, paper} = useStyles();
 
   return (
-    <div>
+    <>
+    {/*<Paper className={paper}>*/}
       <LoginForm />
       <Typography align="center" className={invite}>
       No account yet?
@@ -44,7 +53,8 @@ function LoginPage() {
           Make One!
         </Button>
       </center>
-    </div>
+     {/* </Paper> */}
+    </>
   );
 }
 
