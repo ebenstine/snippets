@@ -40,7 +40,7 @@ function LoginPage() {
             history.push('/registration');
           }}
         >
-          Sign Up
+          Make One!
         </Button>
       </center>
     </div>
