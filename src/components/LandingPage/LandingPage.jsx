@@ -1,3 +1,4 @@
+//THIS NONSENSE CAN'T BE ACCESSED ANYWHERE 
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './LandingPage.css';
