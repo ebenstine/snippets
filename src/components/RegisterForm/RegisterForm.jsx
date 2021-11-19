@@ -1,12 +1,45 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Grid, Container, Typography, TextField, makeStyles, ThemeProvider } from '@material-ui/core';
+import { Button, Grid, Container, Typography, TextField, makeStyles } from '@material-ui/core';
 
 // change styling for MUI components
-const useStyles = makeStyles({
-  register: {
-    marginTop: 100,
-  },
+const useStyles = makeStyles((theme) => ({
+
+  root: {
+    paddingTop: '5em',
+     '& .MuiTextField-root': {
+         margin: theme.spacing(1),
+         color: 'white'
+         //width: '25ch'
+     },
+     '& label.Mui-focused': {
+         color: '#3b95ac',
+         
+     },
+     '& .MuiInput-underline:after': {
+         borderBottomColor: '#ffab5c',
+         
+         
+     },
+     '& .MuiOutlinedInput-root': {
+         '& fieldset': {
+             borderColor: '#ffab5c',
+             
+         },
+         '&:hover fieldset': {
+             borderColor: '#ffab5c',
+             
+         },
+         '&.MuiSelect fieldset': {
+             borderColor: '#ffab5c',
+             borderRadius: '8px',
+             paddingLeft: '3em'
+         },
+         
+ 
+     },
+ },
+  
   btn: {
     marginTop: 30,
     marginBottom: 25,
@@ -24,7 +57,7 @@ const useStyles = makeStyles({
     marginTop: 15,
   }
 
-})
+}))
 // change default themes of specific MUI components 
 
 function RegisterForm() {
@@ -50,7 +83,7 @@ function RegisterForm() {
   return (
     
     // MUI container for side margins
-    <Container align="center" className={classes.register}>
+    <Container align="center" className={classes.root}>
       {/* grid for responsive design */}
       <Grid noValidate autoComplete="off" onSubmit={registerUser}>
         {/* MUI input fields and button for registration form  */}

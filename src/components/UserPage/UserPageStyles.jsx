@@ -13,13 +13,22 @@ const useStyles = makeStyles((theme) => ({
     
     welcome: {
         color: '#233d4d',
-        borderBottom: '1px solid #6ca0ad',
+        borderBottom: '1.5px solid #6ca0ad',
         
         
     },
-    yourId: {
+    songCount: {
         color: '#233d4d',
-        borderBottom: '1px solid #6ca0ad',
+        borderBottom: '1.5px solid #f0a1a1',
+        
+        paddingRight: '2em',
+        paddingLeft: '3.5em',
+        
+    },
+
+    recordingCount: {
+        color: '#233d4d',
+        borderBottom: '1px solid #fdd377',
         paddingRight: '2em',
         paddingLeft: '3.5em'
     },
@@ -30,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
        
         color: '#233d4d',
         border: '1px solid #6ca0ad',
-        paddingLeft: '1em',
-        paddingRight: '1em'
+        paddingLeft: '.5em',
+        paddingRight: '.5em'
    
         
     },

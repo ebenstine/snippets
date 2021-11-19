@@ -8,32 +8,32 @@ import { Button, Grid, Container, Typography, TextField, Card, CardHeader, CardC
 const useStyles = makeStyles((theme) => ({
 
   root: {
-   paddingTop: '8em',
+   paddingTop: '5em',
     '& .MuiTextField-root': {
         margin: theme.spacing(1),
         color: 'white'
         //width: '25ch'
     },
     '& label.Mui-focused': {
-        color: '#2a4f64',
+        color: '#3b95ac',
         
     },
     '& .MuiInput-underline:after': {
-        borderBottomColor: '#3b95ac',
+        borderBottomColor: '#ffab5c',
         
         
     },
     '& .MuiOutlinedInput-root': {
         '& fieldset': {
-            borderColor: '#3b95ac',
+            borderColor: '#ffab5c',
             
         },
         '&:hover fieldset': {
-            borderColor: '#3b95ac',
+            borderColor: '#ffab5c',
             
         },
         '&.MuiSelect fieldset': {
-            borderColor: '#3b95ac',
+            borderColor: '#ffab5c',
             borderRadius: '8px',
             paddingLeft: '3em'
         },

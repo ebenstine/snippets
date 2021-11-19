@@ -9,7 +9,7 @@ const UserPage = () => {
   const user = useSelector((store) => store.user);
   const songs = useSelector((store) => store.songs);
   const recordings = useSelector((store) => store.recordings)
-  const { paper, welcome, yourId, button1, button2 } = useStyles();
+  const { paper, welcome, songCount, recordingCount, button1, button2 } = useStyles();
 
   const history = useHistory();
   const dispatch = useDispatch();
@@ -30,8 +30,9 @@ const UserPage = () => {
     <div className="container">
 
       <Typography align="center" variant = "h4" className = {welcome} >Hi, {user.username}!</Typography>
-      <Typography align="center" variant = "h6" className = {yourId}>Currently, you have saved {songs.length} songs in progress.</Typography>
-      <Typography align="center" variant = "h6" className = {yourId}>The total count of all recordings is {recordings.length}</Typography>
+      <br></br>
+      <Typography align="center" variant = "h6" className = {songCount}>You are working on {songs.length} different songs right now.</Typography>
+      <Typography align="center" variant = "h6" className = {recordingCount}>The total count of all recordings is {recordings.length}</Typography>
       <br></br>
     </div>
 
