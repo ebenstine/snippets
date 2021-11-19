@@ -9,7 +9,8 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     `SELECT song_id, title, date, instrument_notes, performance_notes, priority, lyrics, preview_audio,
         ARRAY_AGG (src)
         FROM songs
-        JOIN "recordings" ON "recordings".song_id = "songs".id
+        JOIN "recordings" 
+        ON "recordings".song_id = "songs".id
         WHERE user_id = $1
         GROUP BY song_id, title, date, instrument_notes, performance_notes, priority, lyrics, preview_audio 
         ORDER BY song_id ASC

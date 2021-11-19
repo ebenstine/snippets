@@ -28,6 +28,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     const queryText = `INSERT INTO "recordings" (
                           song_id, description, src 
                        )
+                       
                        VALUES ($1, $2, $3);
                        
                        `;

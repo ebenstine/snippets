@@ -39,7 +39,8 @@ const useStyles = makeStyles((theme) => ({
     dialogTitle: {
         background: "#faffd1",
         color: "#2a4f64",
-        paddingLeft: "6em"
+        paddingLeft: "6em",
+        
     },
 
     actionDiv: {
@@ -54,9 +55,10 @@ const useStyles = makeStyles((theme) => ({
         background: "#EBEBEB",
         color: "#2a4f64",
         border: "1px solid #c8ecf5",
-       
+    },
 
-
+    upload: {
+        paddingLeft: '2em'
     }
 
 }));

@@ -16,7 +16,7 @@ import Backup from '@material-ui/icons/Backup';
 const AddRecording = ({ song, handleMenuClose }) => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const { dialog, root, actionDiv, dialogTitle, dialogButtons  } = useStyles();
+  const { dialog, root, actionDiv, dialogTitle, dialogButtons, upload  } = useStyles();
   const params = useParams();
  
   const [fileUrl, setFileUrl] = useState ('no file was dropped');
@@ -62,7 +62,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
 
   return (
     <div>
-      <MenuItem onClick={handleClickOpen}>Upload New</MenuItem>
+      <MenuItem onClick={handleClickOpen} className={upload}>Upload New</MenuItem>
       <Dialog open={open} onClose={handleCancel}>
       <FormControl>
         <form className={root}>

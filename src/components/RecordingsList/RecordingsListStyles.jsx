@@ -97,6 +97,10 @@ const useStyles = makeStyles(() => ({
 
     },
 
+    view: {
+        paddingLeft: '3em'
+    }
+
     
     
     

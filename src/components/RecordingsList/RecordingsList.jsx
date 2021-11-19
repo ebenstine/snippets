@@ -4,18 +4,19 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Paper, Typography, MenuItem, FormControl, InputLabel, Select, Card, Drawer, CardContent, Box, ListItemText, TextField } from '@material-ui/core';
+import { Accordion, AccordionSummary, Paper, Typography, MenuItem, FormControl, InputLabel, Select, Card, Drawer, CardContent, Box, ListItemText, TextField } from '@material-ui/core';
 import AudioPlayer from "react-modular-audio-player";
 import useStyles from './RecordingsListStyles';
 
-const RecordingsList = ({song}) => {
-    const { paper, description, player, card1, drawer, background } = useStyles();
+const RecordingsList = () => {
+    const { paper, description, player, card1, drawer, background, view} = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const recordings = useSelector((store) => store.recordings);
+   
     const params = useParams();
     let [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
+    let [isAccordionOpen, setIsAccordionOpen] = useState(false);
     
 
     
@@ -33,13 +34,14 @@ const RecordingsList = ({song}) => {
         
     };
     
+
     const handleCancel = () => {
         setIsDrawerOpen(false);
     }
 
     return (
         <>
-            <MenuItem onClick={handleClickOpen}>View All</MenuItem>
+            <MenuItem onClick={handleClickOpen} className={view}>View All</MenuItem>
             <Drawer
                 className={drawer}
                 variant="temporary"
@@ -59,36 +61,42 @@ const RecordingsList = ({song}) => {
                         <>
                             
                             <div className={background}>
-                            
-                                <Card
+                                
+                                <Accordion
+                                    
                                     raised={true}
                                     className={card1}
                                 
                                 >
+                               
                                 
-                                <section>
                                     
-                                    <CardContent
+                                    <AccordionSummary
+
+                                    
 
                                     item xs={1} key={recording}
-                                    
+                                  
                                     >
-                                        <div>
-                                            <Typography variant="h6" className={description}>{recording.description}</Typography>
-                                            
-                                        </div>
 
-                                    </CardContent>
-                                </section>
-                                <section className={player}>
+
+
+                                    <section className={player}>
                                     <AudioPlayer
 
                                         audioFiles={[{ src:recording.src}]}
 
                                     />
-                                </section>
+                                    </section>
+                                        
+                                    </AccordionSummary>
+                                
+                                    <div>
+                                            <Typography variant="h6" className={description}>{recording.description}</Typography>
+                                            
+                                            </div>
 
-                                </Card>
+                                </Accordion>
                             </div>
                             
                             <br></br>
