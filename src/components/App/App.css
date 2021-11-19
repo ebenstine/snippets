@@ -86,12 +86,15 @@ Alert
 .alert {
   box-sizing: border-box;
   padding: 15px 10px;
-  margin: 15px 0;
-  border: 2px solid #dd4e4e;
+  margin-left: 10px;
+  border: 1.5px solid #dd4e4e;
   background-color: #efefef;
   border-radius: 3px;
   color: #dd4e4e;
   font-size: 0.8rem;
+  font-family: Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif;
+  width: 300px;
+  font-weight: 400;
 }
 
 /* --------------------------------------------------------------------------------
