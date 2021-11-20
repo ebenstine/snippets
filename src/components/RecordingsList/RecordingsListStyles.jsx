@@ -80,7 +80,7 @@ const useStyles = makeStyles(() => ({
 
     description: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 16,
+        fontSize: 12,
         marginLeft: 'auto',
         marginTop: 'auto',
         color: '#233d4d',

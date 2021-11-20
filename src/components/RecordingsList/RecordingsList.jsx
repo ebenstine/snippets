@@ -4,7 +4,9 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Accordion, AccordionSummary, Paper, Typography, MenuItem, FormControl, InputLabel, Select, Card, Drawer, CardContent, Box, ListItemText, TextField } from '@material-ui/core';
+import { Accordion, AccordionSummary, Paper, Typography, MenuItem, Button, InputLabel, Select, Card, Drawer, CardContent, Box, ListItemText, TextField } from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import Delete from '@material-ui/icons/Delete';
 import AudioPlayer from "react-modular-audio-player";
 import useStyles from './RecordingsListStyles';
 
@@ -39,6 +41,14 @@ const RecordingsList = () => {
         setIsDrawerOpen(false);
     }
 
+    const handleDeleteAudio = (recordingId) => {
+        console.log(recordingId);
+        dispatch({
+            type: 'DELETE_AUDIO',
+            payload: recordingId
+        })
+    }
+
     return (
         <>
             <MenuItem onClick={handleClickOpen} className={view}>View All</MenuItem>
@@ -66,25 +76,25 @@ const RecordingsList = () => {
                                     
                                     raised={true}
                                     className={card1}
-                                
+                                    
                                 >
                                
-                                
-                                    
                                     <AccordionSummary
-
+                                        expandIcon={<ExpandMoreIcon />}
+                                        aria-controls="panel1a-content"
+                                        id="panel1a-header"
                                     
 
-                                    item xs={1} key={recording}
+                                        item xs={1} key={recording.id}
                                   
                                     >
 
 
 
                                     <section className={player}>
-                                    <AudioPlayer
+                                        <AudioPlayer
 
-                                        audioFiles={[{ src:recording.src}]}
+                                            audioFiles={[{ src:recording.src}]}
 
                                     />
                                     </section>
@@ -92,10 +102,10 @@ const RecordingsList = () => {
                                     </AccordionSummary>
                                 
                                     <div>
-                                            <Typography variant="h6" className={description}>{recording.description}</Typography>
+                                        <Typography variant="h6" className={description}>{recording.description}</Typography>
                                             
-                                            </div>
-
+                                    </div>
+                                    <Button onClick={() => handleDeleteAudio(recording.id)}><Delete/></Button>
                                 </Accordion>
                             </div>
                             

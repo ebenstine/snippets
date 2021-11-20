@@ -4,12 +4,12 @@ const router = express.Router();
 const {rejectUnauthenticated } = require('../modules/authentication-middleware');
 router.get('/:id', rejectUnauthenticated, (req, res) => {
     const id = req.params.id;
-  
-    const queryText = `
+    console.log(req.params.id);
+    let queryText = `
                       SELECT * FROM recordings
                       WHERE song_id = $1
                       `
-  
+   //this is getting the ID of the song - source of the delete issue
     pool.query(queryText, [id])
     .then (result => {
       console.log(result.rows);
@@ -25,7 +25,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
   router.post('/', rejectUnauthenticated, (req, res) => {
     const recording= req.body;
   
-    const queryText = `INSERT INTO "recordings" (
+    let queryText = `INSERT INTO "recordings" (
                           song_id, description, src 
                        )
                        
@@ -47,11 +47,12 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     })
   
   router.delete('/:id', rejectUnauthenticated, (req, res) => {
-    const id = req.params.id
-  
+    const id = req.params.id;
+
+    console.log('in delete recording', id);
     let sqlText = `DELETE FROM recordings 
                    WHERE id = $1;`
-  
+                  ;
     pool.query(sqlText, [id])
         .then(result => {
             console.log(result);
