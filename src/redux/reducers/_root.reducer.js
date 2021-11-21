@@ -5,6 +5,7 @@ import songs from './songs.reducer'
 import songState from './settingSong.reducer'
 import recordings from './selectedRecording.reducer';
 import songDetails from './songDetails.reducer';
+import allRecordings from './recordings.reducer'
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
 // This is imported in index.js as rootSaga
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   songs,
   recordings,
+  allRecordings,
   songDetails,
   songState,
   
