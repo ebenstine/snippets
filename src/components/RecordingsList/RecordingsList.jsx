@@ -11,7 +11,7 @@ import AudioPlayer from "react-modular-audio-player";
 import useStyles from './RecordingsListStyles';
 
 const RecordingsList = () => {
-    const { paper, description, player, card1, drawer, background, view} = useStyles();
+    const { paper, description, player, card1, drawer, background, view, bye} = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const recordings = useSelector((store) => store.recordings);
@@ -105,7 +105,9 @@ const RecordingsList = () => {
                                         <Typography variant="h6" className={description}>{recording.description}</Typography>
                                             
                                     </div>
-                                    <Button onClick={() => handleDeleteAudio(recording.id)}><Delete/></Button>
+                                    
+                                    <Button variant="text" onClick={handleDeleteAudio} className={bye}><Delete/></Button>
+                                    
                                 </Accordion>
                             </div>
                             

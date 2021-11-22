@@ -81,7 +81,9 @@ const useStyles = makeStyles(() => ({
     description: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 12,
-        marginLeft: 'auto',
+        marginLeft: '1.5em',
+        marginRight: '1.5em',
+        borderBottom: '1px solid #6ca0ad',
         marginTop: 'auto',
         color: '#233d4d',
     },
@@ -99,6 +101,10 @@ const useStyles = makeStyles(() => ({
 
     view: {
         paddingLeft: '3em'
+    },
+
+    bye: {
+        color:'#4d8aaa'
     }
 
     

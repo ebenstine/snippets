@@ -35,8 +35,8 @@ const useStyles = makeStyles((theme) => ({
 
     button1: {
       
-        marginBottom: '1em',
-       
+        marginBottom: '-2em',
+        marginLeft: '17em',
         color: '#233d4d',
         border: '1px solid #6ca0ad',
         paddingLeft: '.5em',
@@ -47,8 +47,8 @@ const useStyles = makeStyles((theme) => ({
 
     button2: {
         
-        marginBottom: '1em',
-       
+        marginBottom: '-2em',
+        marginLeft: '1em',
         color: '#233d4d',
         border: '1px solid #6ca0ad',
         paddingLeft: '1em',

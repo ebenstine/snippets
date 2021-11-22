@@ -31,17 +31,17 @@ const UserPage = () => {
 
       <Typography align="center" variant = "h4" className = {welcome} >Hi, {user.username}!</Typography>
       <br></br>
-      <Typography align="center" variant = "h6" className = {songCount}>You are working on {songs.length} different songs right now.</Typography>
-      <Typography align="center" variant = "h6" className = {recordingCount}>The total count of all recordings is {allRecordings.length}</Typography>
+      <Typography align="center" variant = "h6" className = {songCount}>You have {songs.length} different song projects open right now,</Typography>
+      <Typography align="center" variant = "h6" className = {recordingCount}>which in total include {allRecordings.length} uploaded recordings. </Typography>
       <br></br>
     </div>
 
-      <Box textAlign="center">
+      <section textAlign="center">
     
       <Button variant="contained" size="small" className={button1} onClick={() => handleExplore()}>View Songs</Button>
-      <br></br>
+      
       <Button variant="contained" size="small" className={button2} onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out</Button>
-      </Box>
+      </section>
     </Paper>
     
     </>

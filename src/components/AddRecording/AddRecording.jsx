@@ -16,7 +16,7 @@ import Backup from '@material-ui/icons/Backup';
 const AddRecording = ({ song, handleMenuClose }) => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const { dialog, root, actionDiv, dialogTitle, dialogButtons, upload  } = useStyles();
+  const { dialog, root, actionDiv, dialogTitle, dialogButtons, upload, descriptionText  } = useStyles();
   const params = useParams();
  
   const [fileUrl, setFileUrl] = useState ('no file was dropped');
@@ -72,6 +72,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
               label="description"
               onChange={enterNewRecording('description')}
               value={newRecording.description}
+              multiline className={descriptionText}
               
             />
         
