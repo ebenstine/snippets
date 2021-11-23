@@ -63,7 +63,12 @@ const AddRecording = ({ song, handleMenuClose }) => {
   return (
     <div>
       <MenuItem onClick={handleClickOpen} className={upload}>Upload New</MenuItem>
-      <Dialog open={open} onClose={handleCancel}>
+      <Dialog 
+       PaperProps={{
+        style: { border: "1.5px solid #3b95ac" }
+      }}
+       open={open} 
+       onClose={handleCancel}>
       <FormControl>
         <form className={root}>
         <DialogTitle className={dialogTitle} >Add a Recording</DialogTitle>

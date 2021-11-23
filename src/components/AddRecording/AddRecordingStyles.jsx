@@ -31,9 +31,11 @@ const useStyles = makeStyles((theme) => ({
         },
     },
 
+    
     dialog: {
        background: "#f7ffbd",
-       alignItems: "center"
+       alignItems: "center",
+       
     },
 
     dialogTitle: {

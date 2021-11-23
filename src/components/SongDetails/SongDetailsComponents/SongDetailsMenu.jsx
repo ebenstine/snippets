@@ -53,6 +53,9 @@ const SongDetailsMenu = ({song}) => {
         <Dialog open={open} 
                 onClose={handleCancel} 
                 aria-labelledby="Rename song title input"
+                PaperProps={{
+                  style: { border: "1.5px solid #3b95ac" }
+                }}
                 
                 >
           <DialogTitle className={heading}>Audio Files Menu</DialogTitle>
