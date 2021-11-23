@@ -26,18 +26,6 @@ function SongDetails(){
     }, []);
     const songDetails = useSelector((store) => store.songDetails)
 
-    //back button path home
-    
-    
-    const handleDelete = (songId) => {
-        console.log(songId)
-        dispatch ({
-            type: 'DELETE_SONG',
-            payload: songId
-        })
-        history.push('/songsList')
-    }
-    
 
     const handleRevise = (songId) => {
        

@@ -40,13 +40,13 @@ function SongDelete({ song , handleMenuClose, dispatch }) {
   const handleDelete = () => {
     const id = song.id;
     setOpen(false);
-    handleMenuClose();
+    handleClose();
     dispatch({type: 'DELETE_SONG', payload: id})
   }
 
   const handleCancel = () => {
     setOpen(false);
-    handleMenuClose();
+    handleClose();
   }
 
   return (
