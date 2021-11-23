@@ -7,6 +7,7 @@ import Delete from '@material-ui/icons/Delete';
 import useStyles from './SongDetailsComponents/SongDetailsStyles';
 import SongDetailsMenu from './SongDetailsComponents/SongDetailsMenu';
 import SongTitle from './SongDetailsComponents/SongTitle';
+import SongDelete from './SongDetailsComponents/SongDelete';
 
 function SongDetails(){
     
@@ -247,11 +248,11 @@ function SongDetails(){
                     </div>
                     <br></br>
                     <br></br>
-                    <section>
+                    <div>
                     <Button variant="contained" className={buttons} onClick={() => handleRevise(song.id)}><Edit/></Button>
                     
-                    <Button variant="contained" className={buttons} onClick={() => handleDelete(song.id)}><Delete/></Button> 
-                    </section>
+                    <SongDelete/> 
+                    </div>
                     
                 </>
                 )
