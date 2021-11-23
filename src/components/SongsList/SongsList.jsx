@@ -44,7 +44,7 @@ function SongsList() {
 
 
 
-    //basic material ui setup in return, plan to revisit this
+    //conditionally render cards with different background colors according to priority
     return (
         <>
             <Paper className={paper} elevation={10}>

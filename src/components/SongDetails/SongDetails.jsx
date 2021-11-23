@@ -81,10 +81,6 @@ function SongDetails(){
                         
                         {song.performance_notes}</Typography>
                         <br></br>
-                        
-                    
-                    {/*Will pull in the form from AddRecording component, but it is currently non-functional*/}
-                    
                      
       
 
@@ -125,11 +121,6 @@ function SongDetails(){
                         
                         {song.performance_notes}</Typography>
                         <br></br>
-                        
-                    
-                    {/*Will pull in the form from AddRecording component, but it is currently non-functional*/}
-                    {/*<AddRecording/>*/}
-                     
       
 
                     
@@ -173,12 +164,6 @@ function SongDetails(){
                         {song.performance_notes}</Typography>
                         
                         <br></br>
-                        
-                    
-                    {/*Will pull in the form from AddRecording component, but it is currently non-functional*/}
-                    {/*<AddRecording/>*/}
-                     
-      
 
                     
                     </CardContent>
@@ -218,12 +203,6 @@ function SongDetails(){
                         {song.performance_notes}</Typography>
                         
                         <br></br>
-                        
-                    
-                    {/*Will pull in the form from AddRecording component, but it is currently non-functional*/}
-                    {/*<AddRecording/>*/}
-                     
-      
 
                     
                     </CardContent>
@@ -236,10 +215,11 @@ function SongDetails(){
                     </div>
                     <br></br>
                     <br></br>
+                    
                     <div>
                     <Button variant="contained" className={buttons} onClick={() => handleRevise(song.id)}><Edit/></Button>
                     
-                    <SongDelete/> 
+                    <SongDelete/>
                     </div>
                     
                 </>

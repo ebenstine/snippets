@@ -15,7 +15,7 @@ const RecordingsList = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const recordings = useSelector((store) => store.recordings);
-   
+    const songs = useSelector ((store) => store.songs)
     const params = useParams();
     let [isDrawerOpen, setIsDrawerOpen] = useState(false);
     let [isAccordionOpen, setIsAccordionOpen] = useState(false);

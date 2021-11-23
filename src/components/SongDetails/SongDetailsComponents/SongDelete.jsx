@@ -26,7 +26,7 @@ const useStyles = makeStyles({
   
 
 
-function SongDelete({ song , handleMenuClose, dispatch }) {
+function SongDelete({ song, dispatch }) {
   const [open, setOpen] = useState(false);
   const {buttons} = useStyles();
   const handleClickOpen = () => {
@@ -50,7 +50,7 @@ function SongDelete({ song , handleMenuClose, dispatch }) {
   }
 
   return (
-    <div>
+    <>
       <Button className={buttons} variant="contained" onClick={handleClickOpen}><Delete/></Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="Rename song title input">
         <DialogTitle id="dialogTitle">Delete This Song?</DialogTitle>
@@ -69,7 +69,7 @@ function SongDelete({ song , handleMenuClose, dispatch }) {
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   );
 }
 

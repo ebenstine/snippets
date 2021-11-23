@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 
     heading: {
         color: '#2a4f64',
-        background: '#faffd1',
+        background: '#f7ffbd',
         //borderBottom: '1px solid #6ca0ad',
         paddingLeft: '1em',
         paddingRight: '1em'

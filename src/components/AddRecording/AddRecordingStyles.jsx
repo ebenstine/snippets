@@ -32,19 +32,19 @@ const useStyles = makeStyles((theme) => ({
     },
 
     dialog: {
-       background: "#faffd1",
+       background: "#f7ffbd",
        alignItems: "center"
     },
 
     dialogTitle: {
-        background: "#faffd1",
+        background: "#f7ffbd",
         color: "#2a4f64",
         paddingLeft: "6em",
         
     },
 
     actionDiv: {
-        background: "#faffd1",
+        background: "#f7ffbd",
         paddingRight: "6.5em",
         paddingTop: "1em",
         
