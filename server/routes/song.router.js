@@ -110,7 +110,7 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
     WHERE id = $6;
     `;
 
-    pool.query(queryText, [title, instrument_notes, performance_notes, lyrics, priority, id])
+    pool.query(queryText, [title, instrument_notes, performance_notes, lyrics, priority, req.params.id])
             .then(result => {
             console.log(result);
             res.sendStatus(201);
