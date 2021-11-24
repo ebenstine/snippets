@@ -7,9 +7,6 @@ import Delete from '@material-ui/icons/Delete';
 import useStyles from './SongDetailsComponents/SongDetailsStyles';
 import SongDetailsMenu from './SongDetailsComponents/SongDetailsMenu';
 import SongTitle from './SongDetailsComponents/SongTitle';
-import SongLyrics from './SongDetailsComponents/SongLyrics'
-import SongInstrumentNotes from './SongDetailsComponents/SongInstrumentNotes';
-import SongPerformanceNotes from './SongDetailsComponents/SongPerformanceNotes';
 import SongDelete from './SongDetailsComponents/SongDelete';
 
 function SongDetails(){
@@ -65,19 +62,24 @@ function SongDetails(){
                    
 
                     <CardContent className={cardContent}>
-                    <SongTitle/>
+                    <Typography variant="overline" className={title}>{song.title}</Typography>
                     
-                    <SongLyrics className={cardText} component="p"/> 
-                        
+                    <Typography className={cardText} component="p"> 
+                        <br></br>
+                        {song.lyrics}</Typography>
                         <br></br>
                         <br></br>
                         <br></br>
                         <br></br>
                         
                         
-                    <SongInstrumentNotes className={cardText}/>
+                    <Typography className={cardText}> ▶ Instrumentation Notes:{'  '}
+                        
+                        {song.instrument_notes}</Typography>
                         <br></br>
-                    <SongPerformanceNotes className={cardText}/> 
+                    <Typography className={cardText}> ▶ Performance Notes:{'  '}
+                        
+                        {song.performance_notes}</Typography>
                         <br></br>
                      
       
@@ -234,3 +236,4 @@ function SongDetails(){
     )
 }
 export default SongDetails;
+
