@@ -18,6 +18,7 @@ function SongDetails(){
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
+    const [ editMode, setEditMode] = useState(false);
     console.log(params);
 
     useEffect(() => {
@@ -29,6 +30,9 @@ function SongDetails(){
     }, []);
     const songDetails = useSelector((store) => store.songDetails)
 
+    const handleEditMode = () => {
+        setEditMode(editMode => !editMode)
+    }
 
     const handleRevise = (songId) => {
        
@@ -65,8 +69,19 @@ function SongDetails(){
                    
 
                     <CardContent className={cardContent}>
-                    <SongTitle/>
-                    
+                    {editMode ?
+                        <SongTitle/> :
+                            <div onDoubleClick={handleEditMode}>
+                            <Typography 
+                                variant="overline" 
+                                className={title}>
+
+                                {song.title}
+
+                            </Typography>
+                            </div>
+                            }
+                        <br></br>
                     <SongLyrics className={cardText} component="p"/> 
                         
                         <br></br>

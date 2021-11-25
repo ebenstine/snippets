@@ -22,8 +22,10 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '7.5em'
     },
     titleTitle: {
-        fontFamily: 'Source Sans Pro, sansSerif',
-        fontSize: 28,
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 9.5,
+        borderBottom: '1.25px solid #6ca0ad',
+        whiteSpace: 'pre-wrap'
     },
 }));
 
@@ -95,7 +97,7 @@ function SongInstrumentNotes() {
                 :
                 <div onDoubleClick={handleEditable}>
                     <Typography variant="h5" component="h5" className={titleTitle}>
-                    {`${reviseDetails.instrument_notes}`}
+                    ▶ Instrument Notes: {`${reviseDetails.instrument_notes}`}
                     </Typography>
                 </div>
             }

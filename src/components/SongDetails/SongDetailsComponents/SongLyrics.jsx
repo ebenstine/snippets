@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { Paper, TextField, MenuItem, Button, Typography, Select, FormControl } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { LibraryMusicSharp } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,10 +22,12 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '-1em',
         marginLeft: '7.5em'
     },
-    titleTitle: {
-        fontFamily: 'Source Sans Pro, sansSerif',
-        fontSize: 28,
-    },
+    words: {
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 9.5,
+        borderBottom: '1.25px solid #6ca0ad',
+        whiteSpace: 'pre-wrap'
+    }
 }));
 
 function SongLyrics() {
@@ -32,7 +35,7 @@ function SongLyrics() {
     const dispatch = useDispatch();
     const params = useParams();
     const history = useHistory();
-    const { textField, buttons, titleTitle } = useStyles();
+    const { textField, buttons, words } = useStyles();
     const [ editable, setEditable] = useState(false);
     console.log(params);
     let song = {
@@ -93,7 +96,7 @@ function SongLyrics() {
                 </FormControl>
                 :
                 <div onDoubleClick={handleEditable}>
-                    <Typography variant="h5" component="h5" className={titleTitle}>
+                    <Typography variant="h5" component="h5" className={words}>
                     {`${reviseDetails.lyrics}`}
                     </Typography>
                 </div>

@@ -22,8 +22,10 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '7.5em'
     },
     titleTitle: {
-        fontFamily: 'Source Sans Pro, sansSerif',
-        fontSize: 28,
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 9.5,
+        borderBottom: '1.25px solid #6ca0ad',
+        whiteSpace: 'pre-wrap'
     },
 }));
 
@@ -36,7 +38,7 @@ function SongPerformanceNotes() {
     const [ editable, setEditable] = useState(false);
     console.log(params);
     let song = {
-      performance_notes: songDetails.performance_notes
+      title: songDetails.title
   
     };
   
@@ -76,9 +78,9 @@ function SongPerformanceNotes() {
                 <FormControl  >
                     <form onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
-                            label="Performance Notes" 
-                            name="performance_notes" 
-                            defaultValue={`${reviseDetails.performance_notes}`} 
+                            label="Title" 
+                            name="title"
+                            defaultValue={`${reviseDetails.title}`} 
                             onDoubleClick={handleEditable}
                             margin="dense" 
                             multiline className={textField} 
@@ -87,14 +89,14 @@ function SongPerformanceNotes() {
                             />
                         <div className={buttons}> 
                         <Button onClick={handleEditable}> CANCEL </Button>
-                        <Button variant="filled" type="submit"> SAVE </Button>
+                        <Button variant="contained" type="submit"> SAVE </Button>
                         </div>
                     </form>
                 </FormControl>
                 :
                 <div onDoubleClick={handleEditable}>
                     <Typography variant="h5" component="h5" className={titleTitle}>
-                    {`${reviseDetails.performance_notes}`}
+                    ▶ Performance Notes: {`${reviseDetails.title}`}
                     </Typography>
                 </div>
             }
