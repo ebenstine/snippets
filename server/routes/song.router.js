@@ -87,8 +87,8 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
     }
 })
 
-//put route to edit a song
-router.put('/:id', rejectUnauthenticated, (req, res) => {
+//working put route to edit a song, requires all fields update
+/*router.put('/:id', rejectUnauthenticated, (req, res) => {
     console.log("****\n*****\n*****");
     const id = req.params.id;
     console.log(req.params);
@@ -119,7 +119,33 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
             console.log('error updating song', error);
             res.sendStatus(500);
         })
-});
+});*/
+
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+    const id = req.params.id;
+    const songInfo = req.body
+  
+    // get key : value pairs out of songInfo
+    const songValuePairs = Object.entries(songInfo);
+  
+    // loop over array to get keys and values for all items in songInfo 
+    for (let [key, value] of songValuePairs) {
+      let sqlText = `UPDATE songs 
+                     SET ${key} = $2 
+                     WHERE id = $1;`
+  
+      pool.query(sqlText, [id, value])
+        .then(result => {
+          console.log(result);
+          res.sendStatus(201);
+        }).catch(error => {
+          console.log('error in put', error);
+          res.sendStatus(500);
+        });
+  
+    }
+  });
+  
 
 router.delete('/:id', rejectUnauthenticated, (req, res) => {
     const id = req.params.id;

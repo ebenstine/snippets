@@ -37,7 +37,7 @@ function SongInstrumentNotes() {
     const [ editable, setEditable] = useState(false);
     console.log(params);
     let song = {
-      instrumentNotes: songDetails.instrument_notes,
+      instrument_notes: songDetails.instrument_notes,
   
     };
   
@@ -78,8 +78,8 @@ function SongInstrumentNotes() {
                     <form onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
                             label="Instrument Notes" 
-                            name="instrumentNotes"
-                            defaultValue={`${reviseDetails.instrumentNotes}`} 
+                            name="instrument_notes"
+                            defaultValue={`${reviseDetails.instrument_notes}`} 
                             onDoubleClick={handleEditable}
                             margin="dense" 
                             multiline className={textField} 
@@ -95,7 +95,7 @@ function SongInstrumentNotes() {
                 :
                 <div onDoubleClick={handleEditable}>
                     <Typography variant="h5" component="h5" className={titleTitle}>
-                    {`${reviseDetails.instrumentNotes}`}
+                    {`${reviseDetails.instrument_notes}`}
                     </Typography>
                 </div>
             }
