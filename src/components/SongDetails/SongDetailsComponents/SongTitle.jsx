@@ -6,6 +6,7 @@ import { Paper, TextField, MenuItem, Button, Typography, Select, FormControl } f
 import { makeStyles } from '@material-ui/core/styles';
 
 
+
 const useStyles = makeStyles((theme) => ({
     textField: {
         margin: theme.spacing(1),
@@ -24,49 +25,80 @@ const useStyles = makeStyles((theme) => ({
     },
     titleTitle: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 20,
-        color: '#233d4d',
-        marginLeft: 'auto',
-        marginTop: 'auto',
-        borderBottom: '1.25px solid #6ca0ad'
+        fontSize: 9.5,
+        borderBottom: '1.25px solid #6ca0ad',
+        whiteSpace: 'pre-wrap'
     },
 }));
 
-
-const SongTitle = ({ title, song }) => {
-    const { textField, subheading, buttons, titleTitle } = useStyles();
-    const [ editable, setEditable] = useState(false);
-    const { handleSubmit} = useForm();
-    const params = useParams();
+function SongTitle() {
+    const songDetails = useSelector(store => store.songDetails);
     const dispatch = useDispatch();
+    const params = useParams();
+    const history = useHistory();
+    const { textField, buttons, titleTitle } = useStyles();
+    const [ editable, setEditable] = useState(false);
+    console.log(params);
+    let song = {
+      title: songDetails.title
+  
+    };
+  
+    const [reviseDetails, setReviseDetails] = useState(song);
+  
+  
+    const handleChange = (event) => {
+      setReviseDetails({ ...reviseDetails, [event.target.name]: event.target.value })
+    };
 
     const handleEditable = () => {
         setEditable(editable => !editable)
     }
-
-    const onSubmit = (data) => {
-        data = {...data, id: params.id}
-        dispatch({ type: 'EDIT_SONG', payload: data })
-        setEditable(editable => !editable);
+  
+  
+  
+    const handleCancel = () => {
+      history.push('/songsList');
     }
+  
+  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      let revisedSong = reviseDetails;
+      revisedSong = { ...revisedSong, id: params.id };
+      console.log('new song revisions made in', revisedSong);
+      dispatch({
+        type: 'REVISE_SONG',
+        payload: revisedSong
+      });
+      setEditable(editable => !editable);
+    }
+  
     return (
         <>
             {editable ?
                 <FormControl  >
-                    <form onSubmit={handleSubmit(onSubmit)} autoComplete="off" >
+                    <form onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
-                            label="Title" name="song_title" defaultValue={`${title}`} onDoubleClick={handleEditable}
-                            margin="dense" multiline className={textField} />
+                            label="Title" 
+                            name="title"
+                            value=""
+                            onDoubleClick={handleEditable}
+                            margin="dense" 
+                            multiline className={textField} 
+                            onChange={handleChange}
+                            
+                            />
                         <div className={buttons}> 
                         <Button onClick={handleEditable}> CANCEL </Button>
-                        <Button variant="filled" type="submit"> SAVE </Button>
+                        <Button variant="contained" type="submit"> SAVE </Button>
                         </div>
                     </form>
                 </FormControl>
                 :
                 <div onDoubleClick={handleEditable}>
                     <Typography variant="h5" component="h5" className={titleTitle}>
-                        {`${title}`}
+                    {`${reviseDetails.title}`}
                     </Typography>
                 </div>
             }

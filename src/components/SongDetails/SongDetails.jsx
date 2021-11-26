@@ -18,7 +18,11 @@ function SongDetails(){
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
-    const [ editMode, setEditMode] = useState(false);
+    const [ editTitle, setEditTitle] = useState(false);
+    const [ editLyrics, setEditLyrics] = useState(false);
+    const [ editINotes, setEditINotes] = useState(false);
+    const [ editPNotes, setEditPNotes] = useState(false);
+
     console.log(params);
 
     useEffect(() => {
@@ -30,8 +34,17 @@ function SongDetails(){
     }, []);
     const songDetails = useSelector((store) => store.songDetails)
 
-    const handleEditMode = () => {
-        setEditMode(editMode => !editMode)
+    const handleEditTitle = () => {
+        setEditTitle(editTitle => !editTitle)
+    }
+    const handleEditLyrics = () => {
+        setEditLyrics(editLyrics => !editLyrics)
+    }
+    const handleEditINotes = () => {
+        setEditINotes(editINotes=> !editINotes)
+    }
+    const handleEditPNotes = () => {
+        setEditPNotes(editPNotes => !editPNotes)
     }
 
     const handleRevise = (songId) => {
@@ -69,9 +82,9 @@ function SongDetails(){
                    
 
                     <CardContent className={cardContent}>
-                    {editMode ?
+                    {editTitle ?
                         <SongTitle/> :
-                            <div onDoubleClick={handleEditMode}>
+                            <div onDoubleClick={handleEditTitle}>
                             <Typography 
                                 variant="overline" 
                                 className={title}>
@@ -82,17 +95,54 @@ function SongDetails(){
                             </div>
                             }
                         <br></br>
-                    <SongLyrics className={cardText} component="p"/> 
+                    {editLyrics ?
+                        <SongLyrics/> :
+                        <div onDoubleClick={handleEditLyrics}>
+                            <Typography 
+                                component = "p" 
+                                className={cardText}>
+
+                                {song.lyrics}
+
+                            </Typography>
+                        </div>}
                         
                         <br></br>
                         <br></br>
                         <br></br>
                         <br></br>
                         
-                        
-                    <SongInstrumentNotes className={cardText}/>
+                    {editINotes ?
+                    <SongInstrumentNotes/> :
+                    <div onDoubleClick={handleEditINotes}>
+                        <Typography 
+                                component = "p" 
+                                className={cardText}>
+                                
+                                ▶ Instrument Notes:
+
+                                {song.instrument_notes}
+
+                        </Typography>
+
+                    </div>}
+                    
+
                         <br></br>
-                    <SongPerformanceNotes className={cardText}/> 
+
+                        {editPNotes ?
+                    <SongPerformanceNotes/> :
+                    <div onDoubleClick={handleEditPNotes}>
+                    <Typography 
+                                component = "p" 
+                                className={cardText}>
+                                
+                                ▶ Performance Notes:
+
+                                {song.performance_notes}
+
+                            </Typography>
+                    </div>}
                         <br></br>
                      
       

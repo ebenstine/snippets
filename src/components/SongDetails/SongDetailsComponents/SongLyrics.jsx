@@ -97,7 +97,7 @@ function SongLyrics() {
                 :
                 <div onDoubleClick={handleEditable}>
                     <Typography variant="h5" component="h5" className={words}>
-                    {`${reviseDetails.lyrics}`}
+                    If the lyrics need updating, double click to change.
                     </Typography>
                 </div>
             }
