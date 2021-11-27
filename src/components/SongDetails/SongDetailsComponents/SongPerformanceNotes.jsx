@@ -35,7 +35,7 @@ function SongPerformanceNotes() {
     const params = useParams();
     const history = useHistory();
     const { textField, buttons, titleTitle } = useStyles();
-    const [ editable, setEditable] = useState(false);
+    const [ editable, setEditable] = useState(true);
     console.log(params);
     let song = {
       title: songDetails.title

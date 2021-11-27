@@ -37,7 +37,7 @@ function SongTitle() {
     const params = useParams();
     const history = useHistory();
     const { textField, buttons, titleTitle } = useStyles();
-    const [ editable, setEditable] = useState(false);
+    const [ editable, setEditable] = useState(true);
     console.log(params);
     let song = {
       title: songDetails.title
@@ -76,13 +76,21 @@ function SongTitle() {
   
     return (
         <>
-            {editable ?
+                 
+                {/*<div onDoubleClick={handleEditable}>
+                    <Typography variant="h5" component="h5" className={titleTitle}>
+                        Change the title?  I know this is hard.
+                        </div>
+                    </Typography>*/}
+                {editable? 
+                
+                
                 <FormControl  >
                     <form onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
                             label="Title" 
                             name="title"
-                            value=""
+                            
                             onDoubleClick={handleEditable}
                             margin="dense" 
                             multiline className={textField} 
@@ -96,6 +104,7 @@ function SongTitle() {
                     </form>
                 </FormControl>
                 :
+                
                 <div onDoubleClick={handleEditable}>
                     <Typography variant="h5" component="h5" className={titleTitle}>
                     {`${reviseDetails.title}`}

@@ -36,7 +36,7 @@ function SongLyrics() {
     const params = useParams();
     const history = useHistory();
     const { textField, buttons, words } = useStyles();
-    const [ editable, setEditable] = useState(false);
+    const [ editable, setEditable] = useState(true);
     console.log(params);
     let song = {
       lyrics: songDetails.lyrics,
