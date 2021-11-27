@@ -38,7 +38,7 @@ function SongPerformanceNotes() {
     const [ editable, setEditable] = useState(true);
     console.log(params);
     let song = {
-      title: songDetails.title
+      performance_notes: songDetails.performance_notes
   
     };
   
@@ -78,9 +78,9 @@ function SongPerformanceNotes() {
                 <FormControl  >
                     <form onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
-                            label="Title" 
-                            name="title"
-                            defaultValue={`${reviseDetails.title}`} 
+                            label="Performance Notes" 
+                            name="performance_notes"
+                            
                             onDoubleClick={handleEditable}
                             margin="dense" 
                             multiline className={textField} 
@@ -96,7 +96,7 @@ function SongPerformanceNotes() {
                 :
                 <div onDoubleClick={handleEditable}>
                     <Typography variant="h5" component="h5" className={titleTitle}>
-                    ▶ Performance Notes: {`${reviseDetails.title}`}
+                    ▶ Performance Notes: {`${reviseDetails.performance_notes}`}
                     </Typography>
                 </div>
             }
