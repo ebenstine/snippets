@@ -56,7 +56,7 @@ function SongPerformanceNotes() {
   
   
     const handleCancel = () => {
-      history.push('/songsList');
+        history.push('/songDetails/:id');
     }
   
   
@@ -88,7 +88,7 @@ function SongPerformanceNotes() {
                             
                             />
                         <div className={buttons}> 
-                        <Button onClick={handleEditable}> CANCEL </Button>
+                        <Button onClick={handleCancel}> CANCEL </Button>
                         <Button variant="contained" type="submit"> SAVE </Button>
                         </div>
                     </form>

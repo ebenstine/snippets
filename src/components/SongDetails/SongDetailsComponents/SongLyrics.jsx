@@ -57,7 +57,7 @@ function SongLyrics() {
   
   
     const handleCancel = () => {
-      history.push('/songsList');
+      history.push('/songDetails/:id');
     }
   
   
@@ -89,7 +89,7 @@ function SongLyrics() {
                             
                             />
                         <div className={buttons}> 
-                        <Button onClick={handleEditable}> CANCEL </Button>
+                        <Button onClick={handleCancel}> CANCEL </Button>
                         <Button variant="filled" type="submit"> SAVE </Button>
                         </div>
                     </form>
@@ -97,7 +97,7 @@ function SongLyrics() {
                 :
                 <div onDoubleClick={handleEditable}>
                     <Typography variant="h5" component="h5" className={words}>
-                    If the lyrics need updating, double click to change.
+                    {`${reviseDetails.lyrics}`}
                     </Typography>
                 </div>
             }

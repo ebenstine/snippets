@@ -58,7 +58,7 @@ function SongTitle() {
   
   
     const handleCancel = () => {
-      history.push('/songsList');
+        history.push('/songDetails/:id');
     }
   
   
@@ -98,7 +98,7 @@ function SongTitle() {
                             
                             />
                         <div className={buttons}> 
-                        <Button onClick={handleEditable}> CANCEL </Button>
+                        <Button onClick={handleCancel}> CANCEL </Button>
                         <Button variant="contained" type="submit"> SAVE </Button>
                         </div>
                     </form>

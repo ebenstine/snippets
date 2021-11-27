@@ -6,7 +6,7 @@ const useStyles = makeStyles(() => ({
         marginLeft: '1.5em',
         marginRight: '1.5em',
         width: 380,
-        maxHeight: 700,
+        maxHeight: 900,
         minHeight: 200,
         flexDirection: 'column',
         position: 'relative',
