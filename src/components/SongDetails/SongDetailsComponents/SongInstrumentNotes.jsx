@@ -97,7 +97,7 @@ function SongInstrumentNotes() {
                 :
                 <div onDoubleClick={handleEditable}>
                     <Typography variant="h5" component="h5" className={titleTitle}>
-                    ▶ Instrument Notes: {`${reviseDetails.instrument_notes}`}
+                    ▶ Instrument Notes:{`${' '}`}{`${reviseDetails.instrument_notes}`}
                     </Typography>
                 </div>
             }

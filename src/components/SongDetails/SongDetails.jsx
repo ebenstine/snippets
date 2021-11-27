@@ -120,7 +120,7 @@ function SongDetails(){
                                 className={cardText}>
                                 
                                 ▶ Instrument Notes:
-
+                                {' '}
                                 {song.instrument_notes}
 
                         </Typography>
@@ -138,7 +138,7 @@ function SongDetails(){
                                 className={cardText}>
                                 
                                 ▶ Performance Notes:
-
+                                {' '}
                                 {song.performance_notes}
 
                             </Typography>
