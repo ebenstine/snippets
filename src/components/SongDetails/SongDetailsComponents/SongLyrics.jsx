@@ -79,9 +79,9 @@ function SongLyrics() {
                 <FormControl  >
                     <form onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
-                            label="Lyrics" 
+                            label="Update Lyrics" 
                             name="lyrics" 
-                            defaultValue={`${reviseDetails.lyrics}`} 
+                           
                             onDoubleClick={handleEditable}
                             margin="dense" 
                             multiline className={textField} 

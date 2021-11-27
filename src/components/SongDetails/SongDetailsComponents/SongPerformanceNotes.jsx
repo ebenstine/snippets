@@ -78,7 +78,7 @@ function SongPerformanceNotes() {
                 <FormControl  >
                     <form onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
-                            label="Performance Notes" 
+                            label="Update Performance Notes" 
                             name="performance_notes"
                             
                             onDoubleClick={handleEditable}

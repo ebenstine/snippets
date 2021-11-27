@@ -79,9 +79,9 @@ function SongInstrumentNotes() {
                 <FormControl  >
                     <form onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
-                            label="Instrument Notes" 
+                            label="Update Instrument Notes" 
                             name="instrument_notes"
-                            defaultValue={`${reviseDetails.instrument_notes}`} 
+                            
                             onDoubleClick={handleEditable}
                             margin="dense" 
                             multiline className={textField} 
