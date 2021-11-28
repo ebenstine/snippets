@@ -58,7 +58,7 @@ function SongInstrumentNotes() {
   
   
     const handleCancel = () => {
-      history.push('/songDetails/:id');
+        setEditable(false);
     }
   
   

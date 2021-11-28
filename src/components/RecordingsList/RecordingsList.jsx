@@ -80,10 +80,10 @@ const RecordingsList = () => {
                                 >
                                
                                     <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon/>}
+                                        expandIcon={<ExpandMoreIcon style={{ color: '#3b95ac' }}/>}
                                         aria-controls="panel1a-content"
                                         id="panel1a-header"
-                                        color='#2a4f64'
+                                        
                                     
 
                                         item xs={1} key={recording.id}

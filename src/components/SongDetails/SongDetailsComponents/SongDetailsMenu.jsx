@@ -45,12 +45,19 @@ const SongDetailsMenu = ({song}) => {
     return (
       <div>
         <IconButton>
-        <MoreHorizIcon aria-controls="simple-menu" aria-haspopup="true"
-                        fontSize={'inherit'} onClick={handleClickOpen}>
+          <MoreHorizIcon 
+
+            aria-controls="simple-menu" 
+            aria-haspopup="true"
+            fontSize={'inherit'} 
+            style={{ color: '#233d4d' }}
+            onClick={handleClickOpen}>
+
         </MoreHorizIcon>
-        </IconButton>
+      </IconButton>
         <MenuItem onClick={handleClickOpen}></MenuItem>
-        <Dialog open={open} 
+          <Dialog 
+                open={open} 
                 onClose={handleCancel} 
                 aria-labelledby="Rename song title input"
                 PaperProps={{
@@ -60,8 +67,11 @@ const SongDetailsMenu = ({song}) => {
                 >
           <DialogTitle className={heading}>Audio Files Menu</DialogTitle>
           <DialogContent className={heading}>
+          
           <AddRecording/>
+          
           <RecordingsList/>
+          
           </DialogContent>
           <DialogActions className={heading}>
             

@@ -14,10 +14,12 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiInput-underline:after': {
             borderBottomColor: '#3b95ac',
             
+            
         },
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
                 borderColor: '#3b95ac',
+                paddingLeft: '4em'
                 
             },
             '&:hover fieldset': {
@@ -63,18 +65,21 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '2px',
         background: "#c8ecf5",
         color: '#2a4f64',
+      
+        
             
             
         },
     priority2: {
         
         border: '1px solid #c8ecf5',
-        borderBottom: '1 px solid #c8ecf5',
+        borderBottom: '1px solid #c8ecf5',
         alignItems: 'center',
         margin: '1ch',
         borderRadius: '2px',
         background: "rgb(250, 250, 175)",
-        color: '#2a4f64'
+        color: '#2a4f64',
+       
             
                 
         },

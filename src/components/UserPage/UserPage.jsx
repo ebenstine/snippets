@@ -31,8 +31,8 @@ const UserPage = () => {
 
       <Typography align="center" variant = "h4" className = {welcome} >Hi, {user.username}!</Typography>
       <br></br>
-      <Typography align="center" variant = "h6" className = {songCount}>You have {songs.length} different song projects open right now,</Typography>
-      <Typography align="center" variant = "h6" className = {recordingCount}>which in total include {allRecordings.length} uploaded recordings. </Typography>
+      <Typography align="center" variant = "h6" className = {songCount}>You have {songs.length} different song projects open right now.</Typography>
+      <Typography align="center" variant = "h6" className = {recordingCount}>Between them, you've uploaded {allRecordings.length} total recordings. </Typography>
       <br></br>
     </div>
 
