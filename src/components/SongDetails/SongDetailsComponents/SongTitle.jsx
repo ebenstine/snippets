@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
     textField: {
         
-        width: '36ch',
+        width: '42ch',
         marginBottom: '1em',
     },
 
