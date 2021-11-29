@@ -55,12 +55,13 @@ const useStyles = makeStyles(() => ({
 
     paper: {
        
-        backgroundColor: '#bdbdbd',
+        backgroundColor: 'rgb(230, 252, 255)',
         paddingBottom: '6em',
         paddingTop: '6em',
         paddingLeft: '1.5em',
         paddingRight: '1.5em',
-        width: 400
+        width: 400,
+        height: 500
         
     },
 

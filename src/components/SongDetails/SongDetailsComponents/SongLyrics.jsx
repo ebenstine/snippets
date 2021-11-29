@@ -58,7 +58,7 @@ function SongLyrics() {
   
   
     const handleCancel = () => {
-        setEditable(false)
+        history.push(`/songDetails/${params.id}`)
     }
   
   

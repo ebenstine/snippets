@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { Paper, TextField, MenuItem, Button, Typography, Select, FormControl } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { CheckCircle } from '@material-ui/icons';
+import { Cancel } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -56,7 +58,7 @@ function SongPerformanceNotes() {
   
   
     const handleCancel = () => {
-        history.push('/songDetails/:id');
+        history.push(`/songDetails/${params.id}`)
     }
   
   
@@ -88,8 +90,8 @@ function SongPerformanceNotes() {
                             
                             />
                         <div className={buttons}> 
-                        <Button onClick={handleCancel}> CANCEL </Button>
-                        <Button variant="contained" type="submit"> SAVE </Button>
+                        <Button onClick={handleCancel}><Cancel/></Button>
+                        <Button variant="filled" type="submit"><CheckCircle/></Button>
                         </div>
                     </form>
                 </FormControl>
