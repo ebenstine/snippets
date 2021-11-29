@@ -66,352 +66,379 @@ function SongDetails(){
                 <>
                     <div key={song.id}>
                     {song.priority === '1' ?
-                    <Card spacing={1} className={card1}  raised={true}>
                         
+                        <Card spacing={1} className={card1}  raised={true}>
+                        
+                            <div className={menuDots}>
                     
-                    <div className={menuDots}>
-                    
-                   
-                
-                    <SongDetailsMenu/>
-          
-                    
-                    
-                    </div>
-                    
-                   
-
-                    <CardContent className={cardContent}>
-                    {editTitle ?
-                        <SongTitle/> :
-                            <div onDoubleClick={handleEditTitle}>
-                            <Typography 
-                                variant="overline" 
-                                className={title}>
-
-                                {song.title}
-
-                            </Typography>
+                                <SongDetailsMenu/>
+                            
                             </div>
-                            }
-                        <br></br>
-                    {editLyrics ?
-                        <SongLyrics/> :
-                        <div onDoubleClick={handleEditLyrics}>
-                            <Typography 
-                                component = "p" 
-                                className={cardText}>
-
-                                {song.lyrics}
-
-                            </Typography>
-                        </div>}
-                        
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        
-                    {editINotes ?
-                    <SongInstrumentNotes/> :
-                    <div onDoubleClick={handleEditINotes}>
-                        <Typography 
-                                component = "p" 
-                                className={cardText}>
-                                
-                                ▶ Instrument Notes:
-                                {' '}
-                                {song.instrument_notes}
-
-                        </Typography>
-
-                    </div>}
                     
+                   
 
-                        <br></br>
+                                <CardContent className={cardContent}>
+                                    {editTitle ?
+                                        
+                                        <SongTitle/> :
+                                        
+                                        <div onDoubleClick={handleEditTitle}>
+                            
+                                            <Typography 
+                                                variant="overline" 
+                                                className={title}>
+                                                {song.title}
 
-                        {editPNotes ?
-                    <SongPerformanceNotes/> :
-                    <div onDoubleClick={handleEditPNotes}>
-                    <Typography 
-                                component = "p" 
-                                className={cardText}>
+                                            </Typography>
+
+                                        </div>
+                                        }
+                        
+                                    <br></br>
+
+                                    {editLyrics ?
+                                        
+                                        <SongLyrics/> :
+
+                                        <div onDoubleClick={handleEditLyrics}>
+
+                                            <Typography 
+                                                component = "p" 
+                                                className={cardText}>
+
+                                                {song.lyrics}
+
+                                            </Typography>
+                                        </div>}
+                        
+                                        <br></br>
+                                        <br></br>
+                                        <br></br>
+                                        <br></br>
+                        
+                                        {editINotes ?
+                                            
+                                            <SongInstrumentNotes/> :
+
+                                            <div onDoubleClick={handleEditINotes}>
+
+                                                <Typography 
+                                                    component = "p" 
+                                                    className={cardText}>
                                 
-                                ▶ Performance Notes:
-                                {' '}
-                                {song.performance_notes}
+                                                    ▶ Instrument Notes:
+                                                    {' '}
+                                                    {song.instrument_notes}
 
-                            </Typography>
-                    </div>}
-                        <br></br>
+                                                </Typography>
+
+                                            </div>}
+
+                                            <br></br>
+
+                                            {editPNotes ?
+
+                                                <SongPerformanceNotes/> :
+
+                                                <div onDoubleClick={handleEditPNotes}>
+
+                                                    <Typography 
+                                                        component = "p" 
+                                                        className={cardText}>
+                                
+                                                        ▶ Performance Notes:
+                                                        {' '}
+                                                        {song.performance_notes}
+
+                                                    </Typography>
+                                                </div>}
+                                        
+
+                                                <br></br>
                      
-      
-
-                    
-                    </CardContent>
-                    
+                                </CardContent>
                     
                     </Card> : 
                     song.priority === '2' ?
+                        
                     <Card spacing={1} className={card2}  raised={true}>
-                        
                     
-                    <div className={menuDots}>
-                    
-                   
+                        <div className={menuDots}>
                 
-                    <SongDetailsMenu/>
-          
-                    
-                    
-                    </div>
-                    
-                   
-
-                    <CardContent className={cardContent}>
-                    {editTitle ?
-                        <SongTitle/> :
-                            <div onDoubleClick={handleEditTitle}>
-                            <Typography 
-                                variant="overline" 
-                                className={title}>
-
-                                {song.title}
-
-                            </Typography>
-                            </div>
-                            }
-                        <br></br>
-                    {editLyrics ?
-                        <SongLyrics/> :
-                        <div onDoubleClick={handleEditLyrics}>
-                            <Typography 
-                                component = "p" 
-                                className={cardText}>
-
-                                {song.lyrics}
-
-                            </Typography>
-                        </div>}
+                            <SongDetailsMenu/>
                         
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
+                        </div>
+                
+               
+
+                            <CardContent className={cardContent}>
+                                {editTitle ?
+                                    
+                                    <SongTitle/> :
+                                    
+                                    <div onDoubleClick={handleEditTitle}>
                         
-                    {editINotes ?
-                    <SongInstrumentNotes/> :
-                    <div onDoubleClick={handleEditINotes}>
-                        <Typography 
-                                component = "p" 
-                                className={cardText}>
-                                
-                                ▶ Instrument Notes:
-                                {' '}
-                                {song.instrument_notes}
+                                        <Typography 
+                                            variant="overline" 
+                                            className={title}>
+                                            {song.title}
 
-                        </Typography>
+                                        </Typography>
 
-                    </div>}
+                                    </div>
+                                    }
                     
+                                <br></br>
 
-                        <br></br>
+                                {editLyrics ?
+                                    
+                                    <SongLyrics/> :
 
-                        {editPNotes ?
-                    <SongPerformanceNotes/> :
-                    <div onDoubleClick={handleEditPNotes}>
-                    <Typography 
-                                component = "p" 
-                                className={cardText}>
-                                
-                                ▶ Performance Notes:
-                                {' '}
-                                {song.performance_notes}
+                                    <div onDoubleClick={handleEditLyrics}>
 
-                            </Typography>
-                    </div>}
-                        <br></br>
-                     
-      
+                                        <Typography 
+                                            component = "p" 
+                                            className={cardText}>
 
+                                            {song.lyrics}
+
+                                        </Typography>
+                                    </div>}
                     
-                    </CardContent>
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
                     
-                    
-                    </Card> :
+                                    {editINotes ?
+                                        
+                                        <SongInstrumentNotes/> :
+
+                                        <div onDoubleClick={handleEditINotes}>
+
+                                            <Typography 
+                                                component = "p" 
+                                                className={cardText}>
+                            
+                                                ▶ Instrument Notes:
+                                                {' '}
+                                                {song.instrument_notes}
+
+                                            </Typography>
+
+                                        </div>}
+
+                                        <br></br>
+
+                                        {editPNotes ?
+
+                                            <SongPerformanceNotes/> :
+
+                                            <div onDoubleClick={handleEditPNotes}>
+
+                                                <Typography 
+                                                    component = "p" 
+                                                    className={cardText}>
+                            
+                                                    ▶ Performance Notes:
+                                                    {' '}
+                                                    {song.performance_notes}
+
+                                                </Typography>
+                                            </div>}
+                                    
+
+                                            <br></br>
+                 
+                            </CardContent>
+                
+                </Card> :
                     song.priority === '3' ?
+                        
                     <Card spacing={1} className={card3}  raised={true}>
+                    
+                        <div className={menuDots}>
+                
+                            <SongDetailsMenu/>
                         
+                        </div>
+                
+               
+
+                            <CardContent className={cardContent}>
+                                {editTitle ?
+                                    
+                                    <SongTitle/> :
+                                    
+                                    <div onDoubleClick={handleEditTitle}>
+                        
+                                        <Typography 
+                                            variant="overline" 
+                                            className={title}>
+                                            {song.title}
+
+                                        </Typography>
+
+                                    </div>
+                                    }
+                    
+                                <br></br>
+
+                                {editLyrics ?
+                                    
+                                    <SongLyrics/> :
+
+                                    <div onDoubleClick={handleEditLyrics}>
+
+                                        <Typography 
+                                            component = "p" 
+                                            className={cardText}>
+
+                                            {song.lyrics}
+
+                                        </Typography>
+                                    </div>}
+                    
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
+                                    <br></br>
+                    
+                                    {editINotes ?
+                                        
+                                        <SongInstrumentNotes/> :
+
+                                        <div onDoubleClick={handleEditINotes}>
+
+                                            <Typography 
+                                                component = "p" 
+                                                className={cardText}>
+                            
+                                                ▶ Instrument Notes:
+                                                {' '}
+                                                {song.instrument_notes}
+
+                                            </Typography>
+
+                                        </div>}
+
+                                        <br></br>
+
+                                        {editPNotes ?
+
+                                            <SongPerformanceNotes/> :
+
+                                            <div onDoubleClick={handleEditPNotes}>
+
+                                                <Typography 
+                                                    component = "p" 
+                                                    className={cardText}>
+                            
+                                                    ▶ Performance Notes:
+                                                    {' '}
+                                                    {song.performance_notes}
+
+                                                </Typography>
+                                            </div>}
+                                    
+
+                                            <br></br>
+                 
+                            </CardContent>
+                
+                </Card> :
+                    <Card spacing={1} className={card3}  raised={true}>
                     
                     <div className={menuDots}>
-                    
-                   
-                
-                    <SongDetailsMenu/>
-          
-                    
+            
+                        <SongDetailsMenu/>
                     
                     </div>
-                    
-                   
+            
+           
 
-                    <CardContent className={cardContent}>
-                    {editTitle ?
-                        <SongTitle/> :
-                            <div onDoubleClick={handleEditTitle}>
-                            <Typography 
-                                variant="overline" 
-                                className={title}>
-
-                                {song.title}
-
-                            </Typography>
-                            </div>
-                            }
-                        <br></br>
-                    {editLyrics ?
-                        <SongLyrics/> :
-                        <div onDoubleClick={handleEditLyrics}>
-                            <Typography 
-                                component = "p" 
-                                className={cardText}>
-
-                                {song.lyrics}
-
-                            </Typography>
-                        </div>}
-                        
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        
-                    {editINotes ?
-                    <SongInstrumentNotes/> :
-                    <div onDoubleClick={handleEditINotes}>
-                        <Typography 
-                                component = "p" 
-                                className={cardText}>
+                        <CardContent className={cardContent}>
+                            {editTitle ?
                                 
-                                ▶ Instrument Notes:
-                                {' '}
-                                {song.instrument_notes}
-
-                        </Typography>
-
-                    </div>}
-                    
-
-                        <br></br>
-
-                        {editPNotes ?
-                    <SongPerformanceNotes/> :
-                    <div onDoubleClick={handleEditPNotes}>
-                    <Typography 
-                                component = "p" 
-                                className={cardText}>
+                                <SongTitle/> :
                                 
-                                ▶ Performance Notes:
-                                {' '}
-                                {song.performance_notes}
+                                <div onDoubleClick={handleEditTitle}>
+                    
+                                    <Typography 
+                                        variant="overline" 
+                                        className={title}>
+                                        {song.title}
 
-                            </Typography>
-                    </div>}
-                        <br></br>
-                     
-      
+                                    </Typography>
 
-                    
-                    </CardContent>
-                    
-                    
-                    </Card> :
-                    <Card spacing={1} className={card}  raised={true}>
-                        
-                    
-                    <div className={menuDots}>
-                    
-                   
+                                </div>
+                                }
                 
-                    <SongDetailsMenu/>
-          
-                    
-                    
-                    </div>
-                    
-                   
+                            <br></br>
 
-                    <CardContent className={cardContent}>
-                    {editTitle ?
-                        <SongTitle/> :
-                            <div onDoubleClick={handleEditTitle}>
-                            <Typography 
-                                variant="overline" 
-                                className={title}>
-
-                                {song.title}
-
-                            </Typography>
-                            </div>
-                            }
-                        <br></br>
-                    {editLyrics ?
-                        <SongLyrics/> :
-                        <div onDoubleClick={handleEditLyrics}>
-                            <Typography 
-                                component = "p" 
-                                className={cardText}>
-
-                                {song.lyrics}
-
-                            </Typography>
-                        </div>}
-                        
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        
-                    {editINotes ?
-                    <SongInstrumentNotes/> :
-                    <div onDoubleClick={handleEditINotes}>
-                        <Typography 
-                                component = "p" 
-                                className={cardText}>
+                            {editLyrics ?
                                 
-                                ▶ Instrument Notes:
-                                {' '}
-                                {song.instrument_notes}
+                                <SongLyrics/> :
 
-                        </Typography>
+                                <div onDoubleClick={handleEditLyrics}>
 
-                    </div>}
-                    
+                                    <Typography 
+                                        component = "p" 
+                                        className={cardText}>
 
-                        <br></br>
+                                        {song.lyrics}
 
-                        {editPNotes ?
-                    <SongPerformanceNotes/> :
-                    <div onDoubleClick={handleEditPNotes}>
-                    <Typography 
-                                component = "p" 
-                                className={cardText}>
+                                    </Typography>
+                                </div>}
+                
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                
+                                {editINotes ?
+                                    
+                                    <SongInstrumentNotes/> :
+
+                                    <div onDoubleClick={handleEditINotes}>
+
+                                        <Typography 
+                                            component = "p" 
+                                            className={cardText}>
+                        
+                                            ▶ Instrument Notes:
+                                            {' '}
+                                            {song.instrument_notes}
+
+                                        </Typography>
+
+                                    </div>}
+
+                                    <br></br>
+
+                                    {editPNotes ?
+
+                                        <SongPerformanceNotes/> :
+
+                                        <div onDoubleClick={handleEditPNotes}>
+
+                                            <Typography 
+                                                component = "p" 
+                                                className={cardText}>
+                        
+                                                ▶ Performance Notes:
+                                                {' '}
+                                                {song.performance_notes}
+
+                                            </Typography>
+                                        </div>}
                                 
-                                ▶ Performance Notes:
-                                {' '}
-                                {song.performance_notes}
 
-                            </Typography>
-                    </div>}
-                        <br></br>
-                     
-      
-
-                    
-                    </CardContent>
-                    
-                    
-                    </Card> }
+                                        <br></br>
+             
+                        </CardContent>
+            
+            </Card> }
                     </div>
                     <br></br>
                     <br></br>
