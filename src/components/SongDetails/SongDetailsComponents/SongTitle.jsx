@@ -10,21 +10,47 @@ import { Cancel } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+
+        '& label.Mui-focused': {
+            color: '#2a4f64',
+        },
+        '& .MuiInput-underline:after': {
+            borderBottomColor: '#3b95ac',
+        },
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                borderColor: '#2a4f64',
+                
+            },
+            '&:hover fieldset': {
+                borderColor: '#2a4f64',
+                
+            },
+        },
+    },
+
     textField: {
-        margin: theme.spacing(1),
+        
         width: '36ch',
         marginBottom: '1em',
     },
+
     subheading: {
         marginLeft: '.5em',
         marginBottom: '1.5em',
         marginTop: '.5em'
     },
-    buttons:  {
+    actions: {
         marginBottom: '2em',
         marginTop: '-1em',
-        marginLeft: '7.5em'
+        marginLeft: '7.5em',
     },
+
+    buttons:  {
+        color: '#2a4f64'
+    },
+
     titleTitle: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
@@ -38,7 +64,7 @@ function SongTitle() {
     const dispatch = useDispatch();
     const params = useParams();
     const history = useHistory();
-    const { textField, buttons, titleTitle } = useStyles();
+    const { textField, buttons, titleTitle, root, actions } = useStyles();
     const [ editable, setEditable] = useState(true);
     console.log(params);
     let song = {
@@ -88,7 +114,7 @@ function SongTitle() {
                 
                 
                 <FormControl  >
-                    <form onSubmit={handleSubmit} autoComplete="off" >
+                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
                             label="Update Title" 
                             name="title"
@@ -99,9 +125,9 @@ function SongTitle() {
                             onChange={handleChange}
                             
                             />
-                        <div className={buttons}> 
-                        <Button onClick={handleCancel}><Cancel/></Button>
-                        <Button variant="filled" type="submit"><CheckCircle/></Button>
+                        <div className={actions}> 
+                        <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
+                        <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
                         </div>
                     </form>
                 </FormControl>
