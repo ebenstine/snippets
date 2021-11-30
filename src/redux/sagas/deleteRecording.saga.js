@@ -5,10 +5,10 @@ function* audioDelete(action) {
     try {
         
        
-        let id = (action.payload.id);
+        
  
-        yield axios.delete(`/api/recording/${id}`);
-        yield put({ type: 'FETCH_RECORDINGS', payload: action.payload.song_id});
+        yield axios.delete(`/api/recording/${action.payload}`);
+        yield put({ type: 'FETCH_RECORDINGS' /*payload: action.payload.song_id*/});
         
     } catch (error) {
         console.log('Song DELETE request failed', error)

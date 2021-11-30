@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
     
     paper: {
         margin: '4em auto',
-        backgroundColor: '#bdbdbd',
+        backgroundColor: '#c7c7c7',
         paddingBottom: '2em',
         width: 650
     },

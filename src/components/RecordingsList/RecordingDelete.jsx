@@ -40,10 +40,9 @@ const useStyles = makeStyles({
   
 
 
-function SongDelete({ song, dispatch }) {
+function RecordingDelete({ recording, dispatch }) {
   const [open, setOpen] = useState(false);
   const {button, dialog, dialogButtons} = useStyles();
-  
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -52,14 +51,12 @@ function SongDelete({ song, dispatch }) {
     setOpen(false);
   };
 
-  const handleDelete = (songId) => {
-    console.log(songId)
-    dispatch ({
-        type: 'DELETE_SONG',
-        payload: songId
-    })
-   history.push('./songsList')
-}
+  const handleDelete = () => {
+    const id = recording.id;
+    setOpen(false);
+    handleClose();
+    dispatch({type: 'DELETE_AUDIO', payload: id})
+  }
 
   const handleCancel = () => {
     setOpen(false);
@@ -70,18 +67,18 @@ function SongDelete({ song, dispatch }) {
     <>
       <Button className={button} variant="contained" onClick={handleClickOpen}><Delete/></Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="Rename song title input">
-        <DialogTitle className={dialog}>Delete This Song?</DialogTitle>
+        <DialogTitle className={dialog}>Delete This Recording?</DialogTitle>
         <DialogContent className={dialog} >
           <DialogContentText>
             Is the song saved somewhere permanent, or somewhere in the process of being published to a public platform?
-            If not, it's always possible more work could be added and should continue to live here.  What's the best move right now?
+            If not, it's always possible more work could be added - maybe it should continue to live here.  What's the best move right now?
           </DialogContentText>
         </DialogContent>
         <DialogActions className={dialog}>
           <Button className={dialogButtons} onClick={handleCancel} variant="contained">
             Cancel
           </Button>
-          <Button className={dialogButtons} onClick={() => handleDelete(song.id)} variant="contained">
+          <Button className={dialogButtons} onClick={handleDelete} variant="contained">
             Delete
           </Button>
         </DialogActions>
@@ -91,4 +88,4 @@ function SongDelete({ song, dispatch }) {
 }
 
 
-export default connect()(SongDelete);
+export default connect()(RecordingDelete);

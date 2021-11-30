@@ -121,6 +121,29 @@ const useStyles = makeStyles(() => ({
 
     more: {
         paddingLeft: '1em'
+    },
+
+    button: {
+        marginLeft: '1em',
+        marginBottom: '.3em',
+        marginRight: '2em',
+        color: '#233d4d',
+        border: '1px solid #c8ecf5',
+        paddingLeft: '1em',
+        paddingRight: '1em'
+        
+    },
+    dialog: {
+        backgroundColor: '#efefef',
+        border: '1px solid #dd4e4e',
+        color: '#233d4d'
+    },
+
+    dialogButtons: {
+
+        color: '#233d4d',
+        border: '1px solid #c8ecf5',
     }
+    
 }));
 export default useStyles;

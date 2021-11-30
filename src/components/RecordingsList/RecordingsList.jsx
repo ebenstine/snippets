@@ -41,11 +41,12 @@ const RecordingsList = () => {
         setIsDrawerOpen(false);
     }
 
-    const handleDeleteAudio = (recordingId) => {
-        console.log(recordingId);
+    const handleDeleteAudio = () => {
+        const id = recordings.id
+        console.log(id);
         dispatch({
             type: 'DELETE_AUDIO',
-            payload: recordingId
+            payload: id
         })
     }
 
