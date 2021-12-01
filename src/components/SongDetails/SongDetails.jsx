@@ -480,7 +480,7 @@ function SongDetails(){
                                     <DialogContent className={dialog} >
                                         <DialogContentText>
                                             Is the song saved somewhere permanent, or somewhere in the process of being published to a public platform?
-                                            If not, it's always possible more work could be added and should continue to live here.  What's the best move right now?
+                                            If not, it's always possible more work could be added; maybe it should continue to live here.  What's the best move right now?
                                         </DialogContentText>
                                     </DialogContent>
                                 <DialogActions className={dialog}>
