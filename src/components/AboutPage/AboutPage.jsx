@@ -75,6 +75,8 @@ const AboutPage = () => {
                                 
                                 </p>
                             </Typography>
+
+                            
                          </CardContent>
                     </Card>
                 </div>

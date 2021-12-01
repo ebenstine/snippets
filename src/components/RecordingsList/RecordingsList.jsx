@@ -40,13 +40,14 @@ const RecordingsList = () => {
     const handleCancel = () => {
         setIsDrawerOpen(false);
     }
-
+//CURRENT THEORY: delete doesn't work because params.id is targeting the song.id, because this function is being 
+//called while inside of that id route.
     const handleDeleteAudio = () => {
-        const id = recordings.id
+        const id = params.id
         console.log(id);
         dispatch({
             type: 'DELETE_AUDIO',
-            payload: id
+            payload: params.id
         })
     }
 
@@ -108,7 +109,7 @@ const RecordingsList = () => {
                                             
                                     </div>
                                     
-                                    <Button variant="text" onClick={handleDeleteAudio} className={bye}><Delete/></Button>
+                                    <Button variant="text" onClick={() => handleDeleteAudio(recording.id)} className={bye}><Delete/></Button>
                                     
                                 </Accordion>
                             </div>

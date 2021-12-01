@@ -12,7 +12,7 @@ function* postRecording(action) {
         yield put({ type: 'FETCH_RECORDINGS', payload: action.payload.id})
 
     } catch (error) {
-        console.log('Song POST request failed', error)
+        console.log('Recording POST request failed', error)
     }
 }
 function* addRecording() {

@@ -4,11 +4,14 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* audioDelete(action) {
     try {
         
-       
         
  
-        yield axios.delete(`/api/recording/${action.payload}`);
-        yield put({ type: 'FETCH_RECORDINGS' /*payload: action.payload.song_id*/});
+        yield axios.delete(`/api/recording/${action.payload.id}`);
+        yield put({ 
+            type: 'FETCH_RECORDINGS', 
+            payload: action.payload.song_id
+        
+        });
         
     } catch (error) {
         console.log('Song DELETE request failed', error)
