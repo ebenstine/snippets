@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         margin: '4em auto',
         backgroundColor: '#c7c7c7',
+        border: '1px solid #fdd377',
         paddingBottom: '2em',
         width: 650
     },
@@ -28,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 
     recordingCount: {
         color: '#233d4d',
-        borderBottom: '1px solid #fdd377',
+        borderBottom: '1.5px solid #fdd377',
         paddingRight: '2em',
         paddingLeft: '3.5em'
     },
