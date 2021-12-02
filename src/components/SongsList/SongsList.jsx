@@ -34,11 +34,6 @@ function SongsList() {
     const handleClick = (songId) => {
         history.push(`/songDetails/${songId}`)
     }
-
-    const handleAdd = () => {
-        history.push('/addSong')
-    }
-
     
 
 
@@ -48,17 +43,30 @@ function SongsList() {
     return (
         <>
             <Paper className={paper} elevation={10}>
-
+            <Box 
+                display="flex"
+                flexWrap="wrap"
+                justifyContent="space-between"
+                
+                
+            >
+                
                 {songs.map((song) => {
                     return (
                         <>
-                            <div>
+                            
+                            
+                            
                             {song.priority === '1' ? 
+                            <Box
+                            paddingTop={2}
+                            >
                             <Card
                                 raised={true}
                                 className={card1}
-                            > 
                                 
+                            > 
+                                <section>
                                     <CardContent 
                                         
                                         item xs={1} key={song} 
@@ -72,7 +80,7 @@ function SongsList() {
 
                                     </CardContent>
                                     
-                                
+                                </section>
                                 <section className={player}>
                                     <AudioPlayer
 
@@ -81,9 +89,13 @@ function SongsList() {
                                     />
                                 </section>
 
-                            </Card> : 
+                            </Card> 
+                            </Box>
+                            : 
                             song.priority === '2' ?
-                            
+                            <Box
+                            paddingTop={2}
+                            >
                             <Card
                                 raised={true}
                                 className={card2}
@@ -112,9 +124,14 @@ function SongsList() {
                                     />
                                     </section>
 
-                            </Card> : 
+                            </Card>
+                            </Box>
+                            
+                            : 
                             song.priority === '3' ?
-
+                            <Box
+                            paddingTop={2}
+                            >
                             <Card
                                 raised={true}
                                 className={card3}
@@ -143,7 +160,12 @@ function SongsList() {
                                     />
                                     </section>
 
-                            </Card> : 
+                            </Card> 
+                            </Box>
+                            : 
+                           <Box
+                           paddingTop={2}
+                           >
                            <Card
                            raised={true}
                            className={card}
@@ -172,25 +194,29 @@ function SongsList() {
                                />
                                </section>
 
-                       </Card>}
-                                
+                       </Card>
+                       </Box>
+                       }
+                              
                             
 
-                
-                            </div> 
+                            
+                            
+                            
                             <br></br>
                             <br></br>
+                        
                         </>
 
                     );
                 })}
 
-            <Button variant='contained' className={button} onClick={() => handleAdd()}><PlaylistAdd/></Button>
-
-            </Paper>
-
-        </>
-
+         
+           
+        
+       </Box> 
+    </Paper>
+       </>
     );
 }
 

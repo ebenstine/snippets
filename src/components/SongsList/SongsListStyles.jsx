@@ -3,29 +3,37 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
     card: {
-        flexDirection: 'column',
+      
+        
         backgroundColor:  '#f0a1a1',
-        border: '1px solid #4d8aaa'
+        border: '1px solid #4d8aaa',
+        width: 345
         
     },
     
     card1: {
-        flexDirection: 'column',
+      
+        
         backgroundColor: '#c8ecf5',
-        border: '1px solid #4d8aaa'
+        border: '1px solid #4d8aaa',
+        width: 345
         
     },
 
     card2: {
-        flexDirection: 'column',
+       
+       
         backgroundColor: 'rgb(250, 250, 175)',
-        border: '1px solid #4d8aaa'
+        border: '1px solid #4d8aaa',
+        width: 345
     },
     
     card3: {
-        flexDirection: 'column',
+       
+        
         backgroundColor: '#fdd377',
-        border: '1px solid #4d8aaa'
+        border: '1px solid #4d8aaa',
+        width: 345
     },
 
     cardContent: {
@@ -54,14 +62,15 @@ const useStyles = makeStyles(() => ({
     },
 
     paper: {
-        margin: '4em auto',
+        margin: '3em auto',
         backgroundColor: '#bdbdbd',
         paddingBottom: '6em',
         paddingTop: '6em',
         paddingLeft: '3em',
         paddingRight: '3em',
-        width: 650,
-        border: '1px solid #fdd377'
+        width: 750,
+        border: '1px solid #fdd377',
+    
         
     },
 
@@ -69,7 +78,7 @@ const useStyles = makeStyles(() => ({
        
         marginBottom: '.5em',
         marginLeft: '.85em',
-        marginRight: '19.5em',
+        marginRight: '.75em',
         color: '#1a313f',
         border: '1.35px solid #4d8aaa',
         borderRadius: '.25em',
