@@ -57,6 +57,7 @@ const useStyles = makeStyles((theme) => ({
         background: "#EBEBEB",
         color: "#2a4f64",
         border: "1px solid #c8ecf5",
+        marginBottom: "2em"
     },
 
     upload: {
