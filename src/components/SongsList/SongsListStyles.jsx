@@ -77,8 +77,8 @@ const useStyles = makeStyles(() => ({
     player: {
        
         marginBottom: '.5em',
-        marginLeft: '.85em',
-        marginRight: '.75em',
+        marginLeft: '.65em',
+        marginRight: '.45em',
         color: '#1a313f',
         border: '1.35px solid #4d8aaa',
         borderRadius: '.25em',
@@ -91,7 +91,7 @@ const useStyles = makeStyles(() => ({
     title: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 16,
-        marginLeft: 'auto',
+        marginLeft: '-.4em',
         marginTop: 'auto',
         color: '#233d4d',
         '&:hover': {

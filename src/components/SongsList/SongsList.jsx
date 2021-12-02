@@ -74,7 +74,7 @@ function SongsList() {
                                     
                                      >  
                                         
-                                            <Typography variant="h4" className={title}>{song.title}</Typography>
+                                            <Typography variant="overline" className={title}>{song.title}</Typography>
                                             
                                         
 
@@ -109,7 +109,7 @@ function SongsList() {
                                     >  
         
                                         <div>
-                                            <Typography variant="h4" className={title}>{song.title}</Typography>
+                                            <Typography variant="overline" className={title}>{song.title}</Typography>
             
                                         </div>
 
@@ -145,7 +145,7 @@ function SongsList() {
                                     >  
         
                                         <div>
-                                            <Typography variant="h4" className={title}>{song.title}</Typography>
+                                            <Typography variant="overline" className={title}>{song.title}</Typography>
             
                                         </div>
 
@@ -179,7 +179,7 @@ function SongsList() {
                                >  
    
                                    <div>
-                                       <Typography variant="h4" className={title}>{song.title}</Typography>
+                                       <Typography variant="overline" className={title}>{song.title}</Typography>
        
                                    </div>
 
