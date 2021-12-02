@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#2a4f64'
     },
 
-    titleTitle: {
+    words: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
         borderBottom: '1.25px solid #6ca0ad',
@@ -58,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function SongLyrics() {
+    const songs = useSelector (store => store.songs);
     const songDetails = useSelector(store => store.songDetails);
     const dispatch = useDispatch();
     const params = useParams();
