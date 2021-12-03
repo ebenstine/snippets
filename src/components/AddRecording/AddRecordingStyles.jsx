@@ -53,6 +53,14 @@ const useStyles = makeStyles((theme) => ({
         
     },
 
+    descriptionText: {
+        margin: theme.spacing(1),
+        width: '40ch',
+        marginBottom: '1em',
+        marginTop: '1em'
+
+    },
+
     dialogButtons: {
         background: "#EBEBEB",
         color: "#2a4f64",
