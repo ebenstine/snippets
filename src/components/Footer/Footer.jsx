@@ -1,13 +1,32 @@
 import React from 'react';
-import './Footer.css';
+import { makeStyles } from "@material-ui/core/styles";
 
-// This is one of our simplest components
-// It doesn't have local state, so it can be a function component.
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is, so it doesn't need 'connect()'
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: 'flex',
+        justifyContent: 'center',
+        padding: '1.5em 0',
+        textAlign: 'center',
+        zIndex: 0,
+        background: '#2a4f64',
+        borderTop: '1px solid #c8ecf5;',
+        boxShadow: '1px 1px 8px rgb(112, 111, 111)',
+        paddingTop: '-5em',
+        fontSize: 12
+        
 
-function Footer() {
-  return <footer></footer>;
-}
+    }
+}));
+
+const Footer = () => {
+    const { root } = useStyles()
+    return (
+        <div className={root}>
+            <footer> &copy; Eben Stine
+            </footer>
+        </div>)
+
+};
 
 export default Footer;
+
