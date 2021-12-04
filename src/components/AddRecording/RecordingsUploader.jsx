@@ -66,7 +66,7 @@ const Uploader = ({uploadComplete}) => {
                       color: '#2a4f64', 
                       paddingLeft: '3em', 
                       paddingRight: '3em', 
-                      border: '1px solid #3b95ac'
+                      border: '1.5px solid #3b95ac'
                       
 
                       }}

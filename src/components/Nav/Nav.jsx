@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import QueueMusic from '@material-ui/icons/QueueMusic';
 import PlaylistAdd from '@material-ui/icons/PlaylistAdd';
 import Info from '@material-ui/icons/Info';
+import NavMenu from './NavMenu';
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -28,15 +29,7 @@ function Nav() {
         {/* If a user is logged in, show these links */}
         {user.id && (
           <>
-            <Link className="navLink" to="/songsList">
-            <QueueMusic/>
-            </Link>
-
-        {/*<LogOutButton className="navLink" />*/}
-            
-            <Link className="navLink" to="/addSong">
-            <PlaylistAdd/>
-            </Link>
+            <NavMenu/>
           </>
         )}
 

@@ -1,0 +1,98 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import { Typography } from '@material-ui/core';
+import MenuItem from '@material-ui/core/MenuItem';
+
+
+import QueueMusic from '@material-ui/icons/QueueMusic';
+import PlaylistAdd from '@material-ui/icons/PlaylistAdd';
+import Info from '@material-ui/icons/Info';
+import Menu from '@material-ui/icons/Menu'
+import AccountCircle from '@material-ui/icons/AccountCircle'
+import IconButton from "@material-ui/core/IconButton";
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+
+    heading: {
+        color: '#2a4f64',
+        background: '#f7ffbd',
+        //borderBottom: '1px solid #6ca0ad',
+        paddingLeft: '1em',
+        paddingRight: '1em'
+    }
+
+}))
+
+
+const NavMenu = ({user}) => {
+    const {heading} = useStyles();
+    const [open, setOpen] = useState(false);
+   
+  
+    const handleClickOpen = () => {
+      if (user === null){
+        setOpen(false)
+      } else
+      setOpen(true);
+    };
+    const handleCancel = () => {
+      setOpen(false);
+    }
+
+  
+    return (
+      <div>
+        <IconButton>
+          <Menu 
+
+            aria-controls="simple-menu" 
+            aria-haspopup="true"
+            fontSize={'inherit'} 
+            style={{ color: '#233d4d' }}
+            onClick={handleClickOpen}>
+
+        </Menu>
+      </IconButton>
+        <MenuItem onClick={handleClickOpen}></MenuItem>
+          <Dialog 
+                open={open} 
+                onClose={handleCancel} 
+                aria-labelledby="Rename song title input"
+                PaperProps={{
+                  style: { border: "1.5px solid #3b95ac" }
+                }}
+                
+                >
+          <DialogTitle className={heading}>Audio Files Menu</DialogTitle>
+          <DialogContent className={heading}>
+          
+          <Link to="/songsList">
+            <QueueMusic/>
+            </Link>
+          
+            <Link  to="/addSong">
+            <PlaylistAdd/>
+            </Link>
+
+            <Link to="/user">
+            <AccountCircle/>
+            </Link>
+          
+          </DialogContent>
+          <DialogActions className={heading}>
+            
+          </DialogActions>
+        </Dialog>
+        
+      </div>
+    );
+  }
+  
+  export default NavMenu;
