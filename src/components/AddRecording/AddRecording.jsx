@@ -8,7 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { TextField, FormControl } from '@material-ui/core';
 import { connect, useDispatch } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
-import Uploader from '../Uploader/Uploader'
+import RecordingsUploader from './RecordingsUploader'
 import useStyles from './AddRecordingStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
@@ -81,7 +81,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
               
             />
         
-        <Uploader 
+        <RecordingsUploader 
           uploadComplete={uploadComplete}
         />
         </DialogContent>
