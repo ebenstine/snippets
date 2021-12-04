@@ -1,15 +1,13 @@
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Paper, Card, CardContent, Grid, Typography, Button } from '@material-ui/core';
+import { Paper, Card, CardContent, Typography, Button } from '@material-ui/core';
 import { useEffect, useState } from 'react';
-import Edit from '@material-ui/icons/Edit';
 
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import MenuItem from '@material-ui/core/MenuItem';
 import Delete from '@material-ui/icons/Delete';
 
 import useStyles from './SongDetailsComponents/SongDetailsStyles';
@@ -22,7 +20,24 @@ import SongPerformanceNotes from './SongDetailsComponents/SongPerformanceNotes';
 
 function SongDetails(){
     
-    const { title, root, card, card1, card2, card3, paper, cardText, cardContent, buttons, menuDots, button, dialog, dialogButtons } = useStyles();
+    const { 
+            
+            title, 
+            root, 
+            card, 
+            card1, 
+            card2, 
+            card3, 
+            paper, 
+            cardText, 
+            cardContent,  
+            menuDots, 
+            button, 
+            dialog, 
+            dialogButtons 
+
+        } = useStyles();
+
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();

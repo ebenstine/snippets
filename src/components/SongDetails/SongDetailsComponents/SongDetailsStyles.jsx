@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
     
     card1: {
         
-        backgroundColor: '#c8ecf5', 
+        backgroundColor: '#afe4f1', 
         border: '1px solid #4d8aaa'
     },
 

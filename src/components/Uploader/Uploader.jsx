@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '@material-ui/core';
 import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
 import ProgressBar from './ProgressBar';
-import Done from '@material-ui/icons/Done'
+
 
 const dropStyles = {
   width: "300px",

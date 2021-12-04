@@ -27,10 +27,9 @@ const AddSong = () => {
           
           = useStyles();
 
-  const [url, setUrl] = useState ('no file was dropped');
-  const [newSong, setNewSong] = useState({
+  const [url , setUrl] = useState ('no file was dropped');
+  const [newSong, setNewSong] = useState({});
 
-  });
 
   const enterNewSong = (key) => (event) => {
     setNewSong({ ...newSong, [key]: event.target.value });
@@ -156,7 +155,7 @@ const AddSong = () => {
           <Uploader 
             elevated={10}  
             uploadComplete={uploadComplete}
-            multiline className={textField}  
+            
           />
          
           

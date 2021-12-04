@@ -81,7 +81,9 @@ const AddRecording = ({ song, handleMenuClose }) => {
               
             />
         
-        <Uploader uploadComplete={uploadComplete}/>
+        <Uploader 
+          uploadComplete={uploadComplete}
+        />
         </DialogContent>
         </form>
         </FormControl>

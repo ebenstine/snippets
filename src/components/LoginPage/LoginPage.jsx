@@ -15,7 +15,8 @@ const useStyles = makeStyles({
     border: '1px solid #3b95ac',
     paddingLeft: '1em',
     paddingRight: '1em',
-    color: '#2a4f64'
+    color: '#2a4f64',
+    marginBottom: '10em'
   },
 
   /*paper: {

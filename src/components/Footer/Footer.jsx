@@ -22,7 +22,10 @@ const Footer = () => {
     const { root } = useStyles()
     return (
         <div className={root}>
-            <footer> &copy; Eben Stine
+            <footer> 
+              
+              &copy; Eben Stine
+            
             </footer>
         </div>)
 

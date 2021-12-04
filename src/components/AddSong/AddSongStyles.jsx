@@ -38,8 +38,8 @@ const useStyles = makeStyles((theme) => ({
     inputs: {
         margin: theme.spacing(1),
         width: '12ch',
-        marginBottom: '1em',
-        marginTop: '1.5em',
+        marginBottom: '1.5em',
+        marginTop: '4em',
         background: '#EBEBEB',
         color: '#2a4f64',
         border: '1px solid #c8ecf5'
@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         margin: '4em auto',
         backgroundColor: '#bdbdbd',
-        paddingBottom: '6em',
+        paddingBottom: '4em',
         width: 650,
         border: '1px solid #fdd377'
 
