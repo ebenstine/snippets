@@ -66,6 +66,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
       <Dialog 
        PaperProps={{
         style: { border: "1.5px solid #3b95ac" }
+
       }}
        open={open} 
        onClose={handleCancel}>

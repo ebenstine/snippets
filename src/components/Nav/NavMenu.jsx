@@ -18,14 +18,15 @@ import AccountCircle from '@material-ui/icons/AccountCircle'
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
 
     heading: {
         color: '#2a4f64',
         background: '#f7ffbd',
-        //borderBottom: '1px solid #6ca0ad',
-        paddingLeft: '1em',
-        paddingRight: '1em'
+        '&:hover': {
+            background:'#f4ffa1',
+            } 
+        
     }
 
 }))
@@ -62,33 +63,67 @@ const NavMenu = ({user}) => {
       </IconButton>
         <MenuItem onClick={handleClickOpen}></MenuItem>
           <Dialog 
-                open={open} 
-                onClose={handleCancel} 
-                aria-labelledby="Rename song title input"
-                PaperProps={{
-                  style: { border: "1.5px solid #3b95ac" }
-                }}
                 
+                open={open}
+                PaperProps={{
+                    style: { border: "1.5px solid #3b95ac",
+                             position: "fixed", top: 0, right: 0, m: 0, 
+                             
+                            }
+            
+                  }}
+                onClose={handleCancel}
+
                 >
-          <DialogTitle className={heading}>Audio Files Menu</DialogTitle>
-          <DialogContent className={heading}>
+          <DialogTitle className={heading}></DialogTitle>
+          <MenuItem
+          className={heading}
           
-          <Link to="/songsList">
-            <QueueMusic/>
+          >
+          
+          <Link to="/songsList"
+          style = {{
+            color: '#233d4d',
+            display:'flex',
+            flexWrap: 'wrap'
+            }}
+          >
+            
+            <QueueMusic/>See All Songs
             </Link>
-          
-            <Link  to="/addSong">
-            <PlaylistAdd/>
+          </MenuItem>
+
+          <MenuItem className={heading}>
+           
+            <Link  to="/addSong"
+            style = {{
+                color: '#233d4d',
+                display:'flex',
+                flexWrap: 'wrap',
+                
+                
+                 }}
+            >
+            <PlaylistAdd/>  
+            Add a New Song
             </Link>
 
-            <Link to="/user">
-            <AccountCircle/>
-            </Link>
-          
-          </DialogContent>
-          <DialogActions className={heading}>
+          </MenuItem>
+          <MenuItem className={heading}>
             
-          </DialogActions>
+            <Link to="/user"
+            style = {{
+                color: '#233d4d',
+                display:'flex',
+                flexWrap: 'wrap'
+                 }}
+            > 
+            
+            <AccountCircle/> Account Info
+            </Link>
+        
+          </MenuItem>
+        
         </Dialog>
         
       </div>
