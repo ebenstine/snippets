@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     card: {
         flexDirection: 'column',
         backgroundColor:  '#f0a1a1',
@@ -77,6 +77,18 @@ const useStyles = makeStyles(() => ({
         paddingBottom: '.5em',
         
         
+    },
+
+    drawerHeader: {
+        display: "flex",
+        align: "center",
+        paddingRight: "4.74em",
+        color: "#233d4d",
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 20,
+        
+        
+        justifyContent: "flex-end",
     },
 
     description: {

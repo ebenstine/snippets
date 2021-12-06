@@ -9,10 +9,12 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Delete from '@material-ui/icons/Delete';
 import QueueMusic from '@material-ui/icons/QueueMusic';
 import AudioPlayer from "react-modular-audio-player";
+import IconButton from "@material-ui/core/IconButton";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import useStyles from './RecordingsListStyles';
 
 const RecordingsList = () => {
-    const { paper, description, player, card1, drawer, background, view, bye} = useStyles();
+    const { paper, description, player, card1, drawer, drawerHeader, background, view, bye} = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const recordings = useSelector((store) => store.recordings);
@@ -21,7 +23,7 @@ const RecordingsList = () => {
     let [isDrawerOpen, setIsDrawerOpen] = useState(false);
     let [isAccordionOpen, setIsAccordionOpen] = useState(false);
     
-
+    let song = params.id
     
 
     const handleClickOpen = (recordings) => {
@@ -55,6 +57,8 @@ const RecordingsList = () => {
     return (
         <>
             <MenuItem onClick={handleClickOpen} className={view}><QueueMusic/>&nbsp;View All</MenuItem>
+
+         
             <Drawer
                 className={drawer}
                 variant="temporary"
@@ -66,22 +70,42 @@ const RecordingsList = () => {
             
             
             <Paper className= {paper} elevation={10}>
+            <div className={drawerHeader}>
+                <IconButton onClick={handleCancel}>
+                    {<ChevronLeftIcon />}
+                        </IconButton>
                 
+                            <Typography 
+                    
+                                style={{borderBottom: "1.5px solid #4d8aaa",
+                                        fontSize: 16
+                                        }}
+                                variant="overline" 
+                                align="center"
+                            >
+                            Recordings History
+                            </Typography>
+                
+            </div>
+                <br></br>
+            
                 {recordings.map((recording) => {
                     
                    
                     return (
                         <>
                             
+                    
+                            
                             <div className={background}>
-                                
+                            
                                 <Accordion
                                     
                                     raised={true}
                                     className={card1}
                                     
                                 >
-                               
+                                    
                                     <AccordionSummary
                                         expandIcon={<ExpandMoreIcon style={{ color: '#3b95ac' }}/>}
                                         aria-controls="panel1a-content"
