@@ -101,7 +101,13 @@ const useStyles = makeStyles(() => ({
     },
 
     view: {
-        paddingLeft: '3em'
+        paddingLeft: '3em',
+        background: '#fff099',
+        '&:hover': {
+          background:'#fde76c',
+          },
+        border: "1px solid #3b95ac",
+        borderRadius: "3px",
     },
 
     bye: {

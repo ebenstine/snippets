@@ -33,20 +33,20 @@ const useStyles = makeStyles((theme) => ({
 
     
     dialog: {
-       background: "#f7ffbd",
+       background: "#fff099",
        alignItems: "center",
        
     },
 
     dialogTitle: {
-        background: "#f7ffbd",
+        background: "#fff099",
         color: "#2a4f64",
         paddingLeft: "6em",
         
     },
 
     actionDiv: {
-        background: "#f7ffbd",
+        background: "#fff099",
         paddingRight: "6.5em",
         paddingTop: "1em",
         
@@ -70,7 +70,13 @@ const useStyles = makeStyles((theme) => ({
     },
 
     upload: {
-        paddingLeft: '2em'
+        paddingLeft: '2em',
+        background: '#fff099',
+        '&:hover': {
+          background:'#fde76c',
+          },
+        border: "1px solid #3b95ac",
+        borderRadius: "3px"
     }
 
 }));

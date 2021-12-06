@@ -22,9 +22,9 @@ const useStyles = makeStyles((theme) => ({
 
     heading: {
         color: '#2a4f64',
-        background: '#f7ffbd',
+        background: '#fff099',
         '&:hover': {
-            background:'#f4ffa1',
+            background:'#fde76c',
             },
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
@@ -58,7 +58,10 @@ const NavMenu = ({user}) => {
             aria-controls="simple-menu" 
             aria-haspopup="true"
             fontSize={'inherit'} 
-            style={{ color: '#233d4d' }}
+            display="flex"
+            style={{ color: '#3b95ac',
+                     
+                   }}
             onClick={handleClickOpen}>
 
         </Menu>
@@ -70,7 +73,7 @@ const NavMenu = ({user}) => {
                 PaperProps={{
                     style: { border: "1.5px solid #3b95ac",
                              position: "fixed", top: 0, right: 0, m: 0, 
-                             background: "rgb(230, 252, 255)"
+                             background: "rgb(199, 246, 252)"
                             }
             
                   }}

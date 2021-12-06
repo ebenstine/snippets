@@ -15,9 +15,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
 
-    heading: {
+    menuItems: {
+        margin: theme.spacing(1),
         color: '#2a4f64',
-        background: '#f7ffbd',
+        
+       
+        
+        
         //borderBottom: '1px solid #6ca0ad',
         paddingLeft: '1em',
         paddingRight: '1em'
@@ -27,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const SongDetailsMenu = ({song}) => {
-    const {heading} = useStyles();
+    const {heading, menuItems} = useStyles();
     const [open, setOpen] = useState(false);
    
   
@@ -61,21 +65,24 @@ const SongDetailsMenu = ({song}) => {
                 onClose={handleCancel} 
                 aria-labelledby="Rename song title input"
                 PaperProps={{
-                  style: { border: "1.5px solid #3b95ac" }
-                }}
+                  style: { border: "1.5px solid #3b95ac",
+                  background: "rgb(199, 246, 252",
+                  
+                          }
+                  }}    
                 
                 >
           <DialogTitle className={heading}>Audio Files Menu</DialogTitle>
-          <DialogContent className={heading}>
+          <DialogContent className={menuItems}>
           
           <AddRecording/>
-          
-          <RecordingsList/>
-          
           </DialogContent>
-          <DialogActions className={heading}>
-            
-          </DialogActions>
+          <DialogContent className={menuItems}>
+          <RecordingsList/>
+          </DialogContent>
+          
+          
+          
         </Dialog>
         
       </div>
