@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react';
 //import LogOutButton from '../LogOutButton/LogOutButton';
-import { useHistory } from 'react-router-dom';
+
 import {useSelector, useDispatch } from 'react-redux';
 import { Paper, Button, Typography, Box } from '@material-ui/core'
 import useStyles from '../UserPage/UserPageStyles'
+import ExitToApp from '@material-ui/icons/ExitToApp';
+
 const UserPage = () => {
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
@@ -11,13 +13,10 @@ const UserPage = () => {
   const allRecordings = useSelector((store) => store.allRecordings)
   const { paper, welcome, songCount, recordingCount, button1, button2 } = useStyles();
 
-  const history = useHistory();
+
   const dispatch = useDispatch();
 
-  const handleExplore = () => {
-    history.push('/songsList')
-  }
-
+ 
   useEffect(() => {
     dispatch({ type: 'FETCH_SONGS' })
     dispatch({ type: 'FETCH_ALL_RECORDINGS '})
@@ -38,9 +37,9 @@ const UserPage = () => {
 
       <section textAlign="center">
     
-      <Button variant="contained" size="small" className={button1} onClick={() => handleExplore()}>View Songs</Button>
+    
       
-      <Button variant="contained" size="small" className={button2} onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out</Button>
+      <Button variant="contained" size="small" className={button2} onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out<ExitToApp/></Button>
       </section>
     </Paper>
     

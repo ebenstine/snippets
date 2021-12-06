@@ -18,15 +18,17 @@ import AccountCircle from '@material-ui/icons/AccountCircle'
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
 
     heading: {
         color: '#2a4f64',
         background: '#f7ffbd',
         '&:hover': {
             background:'#f4ffa1',
-            } 
-        
+            },
+        margin: theme.spacing(1),
+        border: "1px solid #3b95ac",
+        borderRadius: "3px"
     }
 
 }))
@@ -68,14 +70,14 @@ const NavMenu = ({user}) => {
                 PaperProps={{
                     style: { border: "1.5px solid #3b95ac",
                              position: "fixed", top: 0, right: 0, m: 0, 
-                             
+                             background: "rgb(230, 252, 255)"
                             }
             
                   }}
                 onClose={handleCancel}
 
                 >
-          <DialogTitle className={heading}></DialogTitle>
+          
           <MenuItem
           className={heading}
           
@@ -83,13 +85,18 @@ const NavMenu = ({user}) => {
           
           <Link to="/songsList"
           style = {{
+            
             color: '#233d4d',
             display:'flex',
             flexWrap: 'wrap'
+
             }}
           >
             
-            <QueueMusic/>See All Songs
+            <QueueMusic/>
+            <Typography component="h5">
+            {`${' '}`}See All Songs
+            </Typography>
             </Link>
           </MenuItem>
 
