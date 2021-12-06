@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Accordion, AccordionSummary, Paper, Typography, MenuItem, Button, Drawer } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Delete from '@material-ui/icons/Delete';
+import QueueMusic from '@material-ui/icons/QueueMusic';
 import AudioPlayer from "react-modular-audio-player";
 import useStyles from './RecordingsListStyles';
 
@@ -53,7 +54,7 @@ const RecordingsList = () => {
 
     return (
         <>
-            <MenuItem onClick={handleClickOpen} className={view}>View All</MenuItem>
+            <MenuItem onClick={handleClickOpen} className={view}><QueueMusic/>&nbsp;View All</MenuItem>
             <Drawer
                 className={drawer}
                 variant="temporary"

@@ -58,7 +58,7 @@ const NavMenu = ({user}) => {
             aria-controls="simple-menu" 
             aria-haspopup="true"
             fontSize={'inherit'} 
-            display="flex"
+            align="center"
             style={{ color: '#3b95ac',
                      
                    }}
@@ -71,12 +71,13 @@ const NavMenu = ({user}) => {
                 
                 open={open}
                 PaperProps={{
-                    style: { border: "1.5px solid #3b95ac",
+                    style: 
+                        { border: "1.5px solid #3b95ac",
                              position: "fixed", top: 0, right: 0, m: 0, 
                              background: "rgb(199, 246, 252)"
-                            }
+                        }
             
-                  }}
+                            }}
                 onClose={handleCancel}
 
                 >
@@ -94,11 +95,12 @@ const NavMenu = ({user}) => {
             flexWrap: 'wrap'
 
             }}
+            onClick={handleCancel}
           >
             
             <QueueMusic/>
             <Typography component="h5">
-            {`${' '}`}See All Songs
+            &nbsp;See All Songs
             </Typography>
             </Link>
           </MenuItem>
@@ -113,9 +115,10 @@ const NavMenu = ({user}) => {
                 
                 
                  }}
+                 onClick={handleCancel}     
             >
             <PlaylistAdd/>  
-            Add a New Song
+            &nbsp;Add a New Song
             </Link>
 
           </MenuItem>
@@ -127,9 +130,11 @@ const NavMenu = ({user}) => {
                 display:'flex',
                 flexWrap: 'wrap'
                  }}
+                 onClick={handleCancel}
             > 
             
-            <AccountCircle/> Account Info
+            <AccountCircle/> 
+            &nbsp;Account Info
             </Link>
         
           </MenuItem>

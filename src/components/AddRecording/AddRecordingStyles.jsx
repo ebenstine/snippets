@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     upload: {
-        paddingLeft: '2em',
+        paddingLeft: '1em',
         background: '#fff099',
         '&:hover': {
           background:'#fde76c',

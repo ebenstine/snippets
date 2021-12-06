@@ -13,6 +13,8 @@ import useStyles from './AddRecordingStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
 
+
+
 const AddRecording = ({ song, handleMenuClose }) => {
   const history = useHistory();
   const dispatch = useDispatch();
@@ -62,7 +64,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
 
   return (
     <div>
-      <MenuItem onClick={handleClickOpen} className={upload}>Upload New</MenuItem>
+      <MenuItem onClick={handleClickOpen} className={upload}><Backup/>&nbsp;Upload New</MenuItem>
       <Dialog 
        PaperProps={{
         style: { border: "1.5px solid #3b95ac" }

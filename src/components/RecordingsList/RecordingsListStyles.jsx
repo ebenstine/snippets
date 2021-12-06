@@ -101,7 +101,7 @@ const useStyles = makeStyles(() => ({
     },
 
     view: {
-        paddingLeft: '3em',
+        paddingLeft: '1.75em',
         background: '#fff099',
         '&:hover': {
           background:'#fde76c',

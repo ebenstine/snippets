@@ -39,7 +39,7 @@ const UserPage = () => {
     
     
       
-      <Button size="small" className={button2} onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out<ExitToApp/></Button>
+      <Button variant="contained" size="small" className={button2} onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out<ExitToApp/></Button>
       </section>
     </Paper>
     

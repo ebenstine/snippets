@@ -503,7 +503,7 @@ function SongDetails(){
                                     Cancel
                                     </Button>
                                     <Button className={dialogButtons} onClick={() => handleDelete(song.id)} variant="contained">
-                                    Delete
+                                    Delete 
                                     </Button>
                                 </DialogActions>
                             </Dialog>

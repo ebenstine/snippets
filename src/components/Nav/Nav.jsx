@@ -8,14 +8,18 @@ import QueueMusic from '@material-ui/icons/QueueMusic';
 import PlaylistAdd from '@material-ui/icons/PlaylistAdd';
 import Info from '@material-ui/icons/Info';
 import NavMenu from './NavMenu';
+import { AppBar, Toolbar } from '@material-ui/core'
 
 function Nav() {
   const user = useSelector((store) => store.user);
 
   return (
-    <div className="nav">
+    <div className="nav" position="relative">
+      
       <Link to="/home">
+        
         <h2 className="nav-title">▶ SNIPPETS</h2>
+        
       </Link>
       <div>
         {/* If no user is logged in, show these links */}
@@ -35,6 +39,7 @@ function Nav() {
 
         
       </div>
+     
     </div>
   );
 }
