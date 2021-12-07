@@ -30,7 +30,7 @@ const useStyles = makeStyles(() => ({
 
     card2: {
         
-        backgroundColor: 'rgb(250, 250, 175)',
+        backgroundColor: '#ebad7b',
         border: '1px solid #4d8aaa'
         
     },
@@ -52,7 +52,8 @@ const useStyles = makeStyles(() => ({
         whiteSpace: 'pre-line',
         fontSize: 14.5,
         paddingBottom: '2em',
-        borderBottom: '1px solid #afe1ee'
+        borderBottom: '1px solid #afe1ee',
+        color: '#233d4d'
         
 
     },
@@ -93,7 +94,8 @@ const useStyles = makeStyles(() => ({
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
         borderBottom: '1.25px solid #6ca0ad',
-        whiteSpace: 'pre-wrap'
+        whiteSpace: 'pre-wrap',
+        color: '#233d4d'
     },
 
     notes: {

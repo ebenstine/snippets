@@ -51,9 +51,10 @@ const useStyles = makeStyles((theme) => ({
 
     words: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 9.5,
+        fontSize: 15,
         borderBottom: '1.25px solid #6ca0ad',
-        whiteSpace: 'pre-wrap'
+        whiteSpace: 'pre-wrap',
+        color: '#233d4d'
     },
 }));
 

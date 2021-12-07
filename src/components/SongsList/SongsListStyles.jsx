@@ -23,7 +23,7 @@ const useStyles = makeStyles(() => ({
     card2: {
        
        
-        backgroundColor: 'rgb(250, 250, 175)',
+        backgroundColor: '#ebad7b',
         border: '1px solid #4d8aaa',
         width: 345
     },
