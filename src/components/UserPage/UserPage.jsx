@@ -32,7 +32,7 @@ const UserPage = () => {
       <br></br>
       <Typography align="center" variant = "h6" className = {songCount}>You have {songs.length} different song projects open right now.</Typography>
       <Typography align="center" variant = "h6" className = {recordingCount}>Between them, you've uploaded {allRecordings.length} total recordings. </Typography>
-      <Typography align="center" variant = "h6" className = {genrePrompt}>It looks like you're working in 1 genre/style across these projects. </Typography>
+      <Typography align="center" variant = "h6" className = {genrePrompt}>Currently, you're working in 1 genre/style across these projects. </Typography>
       <br></br>
       
     </div>
@@ -41,7 +41,7 @@ const UserPage = () => {
     
     
       
-      <Button variant="contained" size="small" className={button2} onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out<ExitToApp/></Button>
+      <Button variant="contained" size="small" className={button2} onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out&nbsp;<ExitToApp/></Button>
       </section>
     </Paper>
     

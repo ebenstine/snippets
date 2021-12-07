@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     },
     priority: {
         
-        border: '1px solid #c8ecf5',
+        //border: '1px solid #c8ecf5',
         borderBottom: '1 px solid #c8ecf5',
         alignItems: 'center',
         margin: '1ch',
@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
         },
     priority1: {
         
-        border: '1px solid #c8ecf5',
+        //border: '1px solid #c8ecf5',
         borderBottom: '1 px solid #c8ecf5',
         alignItems: 'center',
         margin: '1ch',
@@ -75,8 +75,8 @@ const useStyles = makeStyles((theme) => ({
         },
     priority2: {
         
-        border: '1px solid #c8ecf5',
-        borderBottom: '1px solid #c8ecf5',
+        //border: '1px solid #c8ecf5',
+        //borderBottom: '1px solid #c8ecf5',
         alignItems: 'center',
         margin: '1ch',
         borderRadius: '2px',
@@ -89,7 +89,7 @@ const useStyles = makeStyles((theme) => ({
 
     priority3: {
         
-        border: '1px solid #c8ecf5',
+        //border: '1px solid #c8ecf5',
         borderBottom: '1 px solid #c8ecf5',
         alignItems: 'center',
         margin: '1ch',
