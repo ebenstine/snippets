@@ -45,12 +45,17 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     marginTop: 30,
     marginBottom: 25,
-    background: '#EBEBEB',
-    border: '1px solid #3b95ac',
+    background: '#fff099',
+        color: '#2a4f64',
+        border: '1px solid #3b95ac',
+        '&:hover': {
+            background:'#fde76c',
+            },
     paddingLeft: '1em',
     paddingRight: '1em',
     color: '#2a4f64' 
   },
+  
   signIn: {
     marginBottom: 15,
     color: '#2a4f64',

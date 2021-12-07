@@ -147,7 +147,10 @@ const useStyles = makeStyles((theme) => ({
 
     },
   setPriority: {
-        paddingLeft: '1em'
+        paddingLeft: '1em',
+        //background: "#fff099",
+        color: "#2a4f64",
+        //border: "1px solid #3b95ac",
         
     }
 }));

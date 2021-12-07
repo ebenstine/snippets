@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
     dialogButtons: {
         background: "#fff099",
         color: "#2a4f64",
-        border: "1px solid #3b95ac",
+        //border: "1px solid #3b95ac",
         marginBottom: "2em",
         marginTop: "1em",
         '&:hover': {

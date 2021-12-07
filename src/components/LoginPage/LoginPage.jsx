@@ -11,14 +11,19 @@ const useStyles = makeStyles({
   },
 
   signUp: {
-    background: '#EBEBEB',
-    border: '1px solid #3b95ac',
+    background: '#fff099',
+        color: '#2a4f64',
+        border: '1px solid #3b95ac',
+        '&:hover': {
+            background:'#fde76c',
+            },
     paddingLeft: '1em',
     paddingRight: '1em',
     color: '#2a4f64',
     marginBottom: '10em'
   },
 
+  
   /*paper: {
     margin: '4em auto',
     backgroundColor: '#bdbdbd',
@@ -38,7 +43,7 @@ function LoginPage() {
     <>
     {/*<Paper className={paper}>*/}
       <LoginForm />
-      <Typography align="center" className={invite}>
+      <Typography align="center" variant="h6" className={invite}>
       No account yet?
       </Typography>
       <br></br>
