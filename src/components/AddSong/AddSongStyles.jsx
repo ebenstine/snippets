@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
                 borderColor: '#3b95ac',
                 
             },
-            '&.MuiSelect fieldset': {
+            '&.MuiSelect-select': {
                 borderColor: '#3b95ac',
                 borderRadius: '8px',
                 paddingLeft: '3em'

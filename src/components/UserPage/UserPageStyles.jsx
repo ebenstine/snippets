@@ -71,6 +71,12 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: '1.5px solid #6ca0ad'
     },
 
+    playIcon: {
+        color:"#6ca0ad",
+        outlineColor: "#233d4d",
+        marginLeft: "0em"
+    }
+
     
 
 

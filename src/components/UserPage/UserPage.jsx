@@ -11,7 +11,7 @@ const UserPage = () => {
   const user = useSelector((store) => store.user);
   const songs = useSelector((store) => store.songs);
   const allRecordings = useSelector((store) => store.allRecordings)
-  const { paper, welcome, songCount, recordingCount, button1, button2, genrePrompt } = useStyles();
+  const { paper, welcome, songCount, recordingCount, button1, button2, genrePrompt, playIcon } = useStyles();
 
 
   const dispatch = useDispatch();
@@ -28,12 +28,41 @@ const UserPage = () => {
     <Paper className={paper} elevation={10}>
     <div className="container">
 
-      <Typography align="center" variant = "h4" className = {welcome} >Hi, {user.username}!</Typography>
+      <Typography 
+        align="center" 
+        variant = "h4" 
+        className = {welcome} 
+          >Hi, {user.username}!
+      </Typography>
+
       <br></br>
-      <Typography align="center" variant = "h6" className = {songCount}>You have {songs.length} different song projects open right now.</Typography>
-      <Typography align="center" variant = "h6" className = {recordingCount}>Between them, you've uploaded {allRecordings.length} total recordings. </Typography>
-      <Typography align="center" variant = "h6" className = {genrePrompt}>Currently, you're working in 1 genre/style across these projects. </Typography>
+
+      <Typography 
+        align="center" 
+        variant = "h6" 
+        className = {songCount}>
+          <span className={playIcon}>▶</span>
+            &nbsp;You have {songs.length} different song projects open right now.
+      </Typography>
+
+      <Typography 
+        align="center" 
+        variant = "h6" 
+        className = {recordingCount}>
+          <span className={playIcon}>▶</span>
+            &nbsp;Between them, you've uploaded {allRecordings.length} total recordings. 
+      </Typography>
+
+      <Typography 
+        align="center" 
+        variant = "h6" 
+        className = {genrePrompt}>
+          <span className={playIcon}>▶</span>
+            &nbsp;Currently, you're working in 1 genre/style across these projects. 
+      </Typography>
+
       <br></br>
+
       
     </div>
 
