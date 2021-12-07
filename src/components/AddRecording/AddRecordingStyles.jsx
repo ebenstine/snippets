@@ -33,20 +33,20 @@ const useStyles = makeStyles((theme) => ({
 
     
     dialog: {
-       background: "#fff099",
+       background: "rgb(199, 246, 252)",
        alignItems: "center",
        
     },
 
     dialogTitle: {
-        background: "#fff099",
+        background: "rgb(199, 246, 252)",
         color: "#2a4f64",
         paddingLeft: "6em",
         
     },
 
     actionDiv: {
-        background: "#fff099",
+        background: "rgb(199, 246, 252)",
         paddingRight: "6.5em",
         paddingTop: "1em",
         
@@ -62,11 +62,15 @@ const useStyles = makeStyles((theme) => ({
     },
 
     dialogButtons: {
-        background: "#EBEBEB",
+        background: "#fff099",
         color: "#2a4f64",
         border: "1px solid #3b95ac",
         marginBottom: "2em",
-        marginTop: "1em"
+        marginTop: "1em",
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
     },
 
     upload: {

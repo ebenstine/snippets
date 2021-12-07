@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
     songCount: {
         color: '#233d4d',
-        borderBottom: '1.5px solid #f0a1a1',
+        
         
         paddingRight: '2em',
         paddingLeft: '3.5em',
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
     recordingCount: {
         color: '#233d4d',
-        borderBottom: '1.5px solid #fdd377',
+        
         paddingRight: '2em',
         paddingLeft: '3.5em'
     },
@@ -52,16 +52,24 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '-2em',
         marginLeft: '21em',
         color: '#233d4d',
+        background: '#fff099',
         border: '1px solid #6ca0ad',
         paddingLeft: '1em',
         paddingRight: '1em',
         '&:hover': {
-            background:'rgb(230, 252, 255)',
+            background:'#fde76c',
             },
      
+            
 
-
-    }
+    },
+    genrePrompt: {
+        color: '#233d4d',
+        
+        paddingRight: '2em',
+        paddingLeft: '3.5em',
+        borderBottom: '1.5px solid #6ca0ad'
+    },
 
     
 

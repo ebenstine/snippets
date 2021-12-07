@@ -11,7 +11,7 @@ const UserPage = () => {
   const user = useSelector((store) => store.user);
   const songs = useSelector((store) => store.songs);
   const allRecordings = useSelector((store) => store.allRecordings)
-  const { paper, welcome, songCount, recordingCount, button1, button2 } = useStyles();
+  const { paper, welcome, songCount, recordingCount, button1, button2, genrePrompt } = useStyles();
 
 
   const dispatch = useDispatch();
@@ -32,7 +32,9 @@ const UserPage = () => {
       <br></br>
       <Typography align="center" variant = "h6" className = {songCount}>You have {songs.length} different song projects open right now.</Typography>
       <Typography align="center" variant = "h6" className = {recordingCount}>Between them, you've uploaded {allRecordings.length} total recordings. </Typography>
+      <Typography align="center" variant = "h6" className = {genrePrompt}>It looks like you're working in 1 genre/style across these projects. </Typography>
       <br></br>
+      
     </div>
 
       <section textAlign="center">
