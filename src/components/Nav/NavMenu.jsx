@@ -60,7 +60,7 @@ const NavMenu = ({user}) => {
             fontSize={'inherit'} 
             align="center"
             style={{ color: '#3b95ac',
-                     
+                     marginBottom: '-.45em'
                    }}
             onClick={handleClickOpen}>
 

@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '4em',
         background: '#fff099',
         color: '#2a4f64',
-        border: '1px solid #c8ecf5',
+        border: '1px solid #3b95ac',
         '&:hover': {
             background:'#fde76c',
             },
@@ -151,6 +151,7 @@ const useStyles = makeStyles((theme) => ({
         //background: "#fff099",
         color: "#2a4f64",
         //border: "1px solid #3b95ac",
+        alignItems: "center"
         
     }
 }));

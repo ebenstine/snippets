@@ -108,7 +108,7 @@ const useStyles = makeStyles(() => ({
         marginBottom: '.3em',
         marginRight: '2em',
         color: '#233d4d',
-        border: '1px solid #c8ecf5',
+        border: '1px solid #3b95ac',
         paddingLeft: '1em',
         paddingRight: '1em'
         
@@ -129,7 +129,7 @@ const useStyles = makeStyles(() => ({
         marginRight: '2em',
         color: '#233d4d',
         background: '#fff099',
-        border: '1px solid #c8ecf5',
+        border: '1px solid #3b95ac',
         paddingLeft: '1em',
         paddingRight: '1em',
         '&:hover': {
