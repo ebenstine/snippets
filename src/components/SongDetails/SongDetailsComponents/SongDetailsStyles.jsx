@@ -140,22 +140,40 @@ const useStyles = makeStyles(() => ({
         
     },
     dialog: {
-        backgroundColor: '#efefef',
+        //backgroundColor: '#efefef',
         marginLeft: '1em',
         marginRight: '1em'
     },
 
     dialogContent: {
-        backgroundColor: '#efefef',
-        borderBottom: '1px solid #dd4e4e',
+        backgroundColor: '#ffc6be',
+        display:'flex',
+        flexWrap: 'wrap',
         color: '#233d4d',
+        
+        
         
     },
 
     dialogButtons: {
 
         color: '#233d4d',
-        border: '1px solid #c8ecf5',
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        alignItems: 'center',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    },
+
+    dialogText: {
+        border: '1px solid #e45252',
+        borderRadius: '3px',
+        color: '#233d4d',
+        paddingLeft: '1em',
+        paddingRight: '1em'
+        
     }
     
 }));

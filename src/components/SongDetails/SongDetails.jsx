@@ -9,6 +9,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Delete from '@material-ui/icons/Delete';
+import Cancel from '@material-ui/icons/Cancel';
+import Feedback from '@material-ui/icons/Feedback';
 
 import useStyles from './SongDetailsComponents/SongDetailsStyles';
 import SongDetailsMenu from './SongDetailsComponents/SongDetailsMenu';
@@ -34,6 +36,7 @@ function SongDetails(){
             menuDots, 
             button, 
             dialog,
+            dialogText,
             dialogContent, 
             dialogButtons 
 
@@ -492,20 +495,26 @@ function SongDetails(){
                         <Button className={button} variant="contained" onClick={handleClickOpen}><Delete/></Button>
                         
                             <Dialog open={open} className={dialog} onClose={handleClose} aria-labelledby="Rename song title input">
-                                <DialogTitle className={dialogContent}>Delete This Song?</DialogTitle>
+                                <DialogTitle className={dialogContent}><Feedback style = {{
+            
+            color: '#e45252',
+            fontSize: 50,
+            
+
+            }}/></DialogTitle>
                                     <DialogContent className={dialogContent} >
-                                        <DialogContentText>
-                                            This action permanently deletes the song entirely.
+                                        <DialogContentText className={dialogText}>
+                                            This action permanently deletes the song and all its content.
                                             Is the song saved somewhere permanent, or somewhere in the process of being published to a public platform?
                                             If not, it's always possible more work could be added; maybe it should continue to live here.  What's the best move right now?
                                         </DialogContentText>
                                     </DialogContent>
                                 <DialogActions className={dialogContent}>
                                     <Button className={dialogButtons} onClick={handleCancel} variant="contained">
-                                    Cancel
+                                    <Cancel/>
                                     </Button>
                                     <Button className={dialogButtons} onClick={() => handleDelete(song.id)} variant="contained">
-                                    Delete 
+                                    <Delete/>
                                     </Button>
                                 </DialogActions>
                             </Dialog>
