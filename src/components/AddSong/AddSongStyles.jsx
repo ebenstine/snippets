@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         margin: '1ch',
         borderRadius: '2px',
-        background: "rgb(250, 250, 175)",
+        background: "#ffb171",
         color: '#2a4f64',
        
             

@@ -30,7 +30,7 @@ const useStyles = makeStyles(() => ({
 
     card2: {
         
-        backgroundColor: '#ebad7b',
+        backgroundColor: '#ffb171',
         border: '1px solid #4d8aaa'
         
     },
@@ -141,8 +141,15 @@ const useStyles = makeStyles(() => ({
     },
     dialog: {
         backgroundColor: '#efefef',
-        border: '1px solid #dd4e4e',
-        color: '#233d4d'
+        marginLeft: '1em',
+        marginRight: '1em'
+    },
+
+    dialogContent: {
+        backgroundColor: '#efefef',
+        borderBottom: '1px solid #dd4e4e',
+        color: '#233d4d',
+        
     },
 
     dialogButtons: {
