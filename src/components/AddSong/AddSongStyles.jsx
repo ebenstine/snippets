@@ -114,7 +114,7 @@ const useStyles = makeStyles((theme) => ({
     },
     paper: {
         margin: '4em auto',
-        background: 'linear-gradient(to right,  #9c9e9f 0%,#e7e7e7 100%)',
+        background: 'linear-gradient(to right,  #9c9e9f 0%,#f6f6f6 100%)',
         paddingBottom: '4em',
         width: 650,
         border: '1px solid #fdd377'
