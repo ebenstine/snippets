@@ -97,29 +97,30 @@ const AddSong = () => {
           <br></br>
           {newSong.priority ==='1' ?
           <Select
-
+              
               name="priority"
               onChange={enterNewSong('priority')}
               className={priority1}
               value={newSong.priority}
+              placeholder="Assign Completion Priority"
               >
-                <MenuItem defaultValue={''} className={setPriority} >Assign Completion Priority</MenuItem>
-                <MenuItem value={'1'} className={setPriority} >&nbsp;Group One</MenuItem>
-                <MenuItem value={'2'} className={setPriority} >&nbsp;Group Two</MenuItem>
+                <MenuItem defaultValue='Select Priority' className={setPriority} >Assign Completion Priority&nbsp;&nbsp;&nbsp;&nbsp;</MenuItem>
+                <MenuItem value={'1'} className={setPriority} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
+                <MenuItem value={'2'} className={setPriority} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'3'} className={setPriority} >&nbsp;Group Three</MenuItem>
             
           </Select> :
           newSong.priority ==='2' ?
           <Select
-
+              
               name="priority"
               onChange={enterNewSong('priority')}
               className={priority2}
               value={newSong.priority}
               >
                 <MenuItem defaultValue={''} className={setPriority} >Assign Completion Priority</MenuItem>
-                <MenuItem value={'1'} className={setPriority} >&nbsp;Group One</MenuItem>
-                <MenuItem value={'2'} className={setPriority} >&nbsp;Group Two</MenuItem>
+                <MenuItem value={'1'} className={setPriority} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
+                <MenuItem value={'2'} className={setPriority} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'3'} className={setPriority} >&nbsp;Group Three</MenuItem>
                
           </Select> :
@@ -132,8 +133,8 @@ const AddSong = () => {
               value={newSong.priority}
               >
                 <MenuItem defaultValue={''} className={setPriority} >Assign Completion Priority</MenuItem>
-                <MenuItem value={'1'} className={setPriority} >&nbsp;Group One</MenuItem>
-                <MenuItem value={'2'} className={setPriority} >&nbsp;Group Two</MenuItem>
+                <MenuItem value={'1'} className={setPriority} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
+                <MenuItem value={'2'} className={setPriority} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'3'} className={setPriority} >&nbsp;Group Three</MenuItem>
             
           </Select> :
@@ -143,10 +144,11 @@ const AddSong = () => {
           onChange={enterNewSong('priority')}
           className={priority}
           value={newSong.priority}
+          
           >
-            <MenuItem defaultValue={''} className={setPriority} >Assign Completion Priority</MenuItem>
-            <MenuItem value={'1'} className={setPriority} >&nbsp;Group One</MenuItem>
-            <MenuItem value={'2'} className={setPriority} >&nbsp;Group Two</MenuItem>
+            <MenuItem className={setPriority} >Assign Completion Priority</MenuItem>
+            <MenuItem value={'1'} className={setPriority} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
+            <MenuItem value={'2'} className={setPriority} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
             <MenuItem value={'3'} className={setPriority} >&nbsp;Group Three</MenuItem>
         
       </Select>}

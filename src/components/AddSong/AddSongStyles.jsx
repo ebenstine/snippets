@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
-            margin: theme.spacing(1),
+            //margin: theme.spacing(1),
             color: 'white'
             //width: '25ch'
         },
@@ -14,12 +14,14 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiInput-underline:after': {
             borderBottomColor: '#3b95ac',
             
+
+            
             
         },
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
                 borderColor: '#3b95ac',
-                paddingLeft: '4em'
+                //paddingLeft: '4em'
                 
             },
             '&:hover fieldset': {
@@ -32,7 +34,6 @@ const useStyles = makeStyles((theme) => ({
                 paddingLeft: '3em'
             },
             
-
         },
     },
     inputs: {
@@ -49,10 +50,10 @@ const useStyles = makeStyles((theme) => ({
     },
     priority: {
         
-        //border: '1px solid #c8ecf5',
-        borderBottom: '1 px solid #c8ecf5',
+        border: '1.5px solid #3b95ac',
+        
         alignItems: 'center',
-        margin: '1ch',
+        //margin: '1ch',
         borderRadius: '2px',
         background: "#EBEBEB",
         color: '#2a4f64',
@@ -61,10 +62,10 @@ const useStyles = makeStyles((theme) => ({
         },
     priority1: {
         
-        //border: '1px solid #c8ecf5',
-        borderBottom: '1 px solid #c8ecf5',
+        border: '1.5px solid #3b95ac',
+        
         alignItems: 'center',
-        margin: '1ch',
+        //margin: '1ch',
         borderRadius: '2px',
         background: "#c8ecf5",
         color: '#2a4f64',
@@ -75,10 +76,10 @@ const useStyles = makeStyles((theme) => ({
         },
     priority2: {
         
-        //border: '1px solid #c8ecf5',
-        //borderBottom: '1px solid #c8ecf5',
+        border: '1.5px solid #3b95ac',
+        
         alignItems: 'center',
-        margin: '1ch',
+        //margin: '1ch',
         borderRadius: '2px',
         background: "#ffb171",
         color: '#2a4f64',
@@ -89,10 +90,11 @@ const useStyles = makeStyles((theme) => ({
 
     priority3: {
         
-        //border: '1px solid #c8ecf5',
-        borderBottom: '1 px solid #c8ecf5',
+        border: '1.5px solid #3b95ac',
+        
+        
         alignItems: 'center',
-        margin: '1ch',
+        //margin: '1ch',
         borderRadius: '2px',
         background: "#fdd377",
         color: '#2a4f64',
@@ -147,11 +149,9 @@ const useStyles = makeStyles((theme) => ({
 
     },
   setPriority: {
-        paddingLeft: '1em',
-        //background: "#fff099",
+        
         color: "#2a4f64",
-        //border: "1px solid #3b95ac",
-        alignItems: "center"
+        
         
     }
 }));
