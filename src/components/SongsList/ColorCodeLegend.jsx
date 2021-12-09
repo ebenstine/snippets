@@ -10,8 +10,8 @@ import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 
 
-import QueueMusic from '@material-ui/icons/QueueMusic';
-import PlaylistAdd from '@material-ui/icons/PlaylistAdd';
+import { LooksOne, LooksTwo, Looks3 } from '@material-ui/icons';
+import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox';
 import Info from '@material-ui/icons/Info';
 import MoreHoriz from '@material-ui/icons/MoreHoriz'
 import AccountCircle from '@material-ui/icons/AccountCircle'
@@ -20,11 +20,41 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
 
-    heading: {
+    colorCode: {
         color: '#2a4f64',
-        background: '#fff099',
+        background: 'transparent',
         '&:hover': {
-            background:'#fde76c',
+            background:'#f0a1a1',
+            },
+        margin: theme.spacing(1),
+        border: "1px solid #3b95ac",
+        borderRadius: "3px"
+    },
+    colorCode1: {
+        color: '#2a4f64',
+        background: 'transparent',
+        '&:hover': {
+            background:'#afe4f1',
+            },
+        margin: theme.spacing(1),
+        border: "1px solid #3b95ac",
+        borderRadius: "3px"
+    },
+    colorCode2: {
+        color: '#2a4f64',
+        background: 'transparent',
+        '&:hover': {
+            background:'#ffb171',
+            },
+        margin: theme.spacing(1),
+        border: "1px solid #3b95ac",
+        borderRadius: "3px"
+    },
+    colorCode3: {
+        color: '#2a4f64',
+        background: 'transparent',
+        '&:hover': {
+            background:'#fdd377',
             },
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
@@ -40,13 +70,20 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    dialogTitle: {
+
+        color:'#2a4f64',
+        background:'transparent'
+
+    }
+
     
 
 }))
 
 
 const ColorCodeLegend = () => {
-    const {heading, menu, menuSwitch} = useStyles();
+    const {colorCode, colorCode1, colorCode2, colorCode3, menu, dialogTitle} = useStyles();
     const [open, setOpen] = useState(false);
    
   
@@ -87,23 +124,23 @@ const ColorCodeLegend = () => {
                     style: 
                         { border: "1.5px solid #3b95ac",
                              position: "fixed", top: 68, right: 18, m: 50, 
-                             background: "rgb(199, 246, 252)"
+                             background: "rgb(230, 252, 255)"
                         }
             
                             }}
                 onClose={handleCancel}
 
                 >
+        <DialogTitle className={dialogTitle} >Priority Color Key</DialogTitle>
           
           <MenuItem
-          className={heading}
+          className={colorCode1}
           
           >
           
           <Link to="/songsList"
           style = {{
-            
-            color: '#233d4d',
+            color:'#233d4d',
             display:'flex',
             flexWrap: 'wrap'
 
@@ -111,16 +148,16 @@ const ColorCodeLegend = () => {
             onClick={handleCancel}
           >
             
-            <QueueMusic/>
+            <LooksOne/>
             <Typography component="h5">
-            &nbsp;View All Songs
+            &nbsp;Group One
             </Typography>
             </Link>
           </MenuItem>
 
-          <MenuItem className={heading}>
+          <MenuItem className={colorCode2}>
            
-            <Link  to="/addSong"
+            <Link  to="/songsList"
             style = {{
                 color: '#233d4d',
                 display:'flex',
@@ -130,14 +167,14 @@ const ColorCodeLegend = () => {
                  }}
                  onClick={handleCancel}     
             >
-            <PlaylistAdd/>  
-            &nbsp;Add a New Song
+            <LooksTwo/>  
+            &nbsp;Group Two
             </Link>
 
           </MenuItem>
-          <MenuItem className={heading}>
+          <MenuItem className={colorCode3}>
             
-            <Link to="/user"
+            <Link to="/songsList"
             style = {{
                 color: '#233d4d',
                 display:'flex',
@@ -146,8 +183,24 @@ const ColorCodeLegend = () => {
                  onClick={handleCancel}
             > 
             
-            <AccountCircle/> 
-            &nbsp;Account Info
+            <Looks3/> 
+            &nbsp;Group Three
+            </Link>
+        
+          </MenuItem>
+          <MenuItem className={colorCode}>
+            
+            <Link to="/songsList"
+            style = {{
+                color: '#233d4d',
+                display:'flex',
+                flexWrap: 'wrap'
+                 }}
+                 onClick={handleCancel}
+            > 
+            
+            <IndeterminateCheckBoxIcon/> 
+            &nbsp;None specified
             </Link>
         
           </MenuItem>

@@ -5,7 +5,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
             //margin: theme.spacing(1),
-            color: 'white'
+            color: 'black'
             //width: '25ch'
         },
         '& label.Mui-focused': {
