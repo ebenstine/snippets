@@ -35,6 +35,9 @@ const useStyles = makeStyles(() => ({
         borderBottom: "1.6px solid #6ca0ad"
 
     },
+
+
+
 }));
 
 const AboutPage = () => {
@@ -68,9 +71,10 @@ const AboutPage = () => {
                                 
                                 
                                 <p>
-                                I created Snippets to help me keep all the different details and moving parts of my unfinished songs centralized in a single concisely organized location. 
-                                The homepage is a list of songs the user has added, organized in a patterned column list that color-codes the columns according 
-                                to a priority designation, so the user can group the songs according to when they hope to finish them. 
+                                Snippets mitigates this confusion by keeping all the different details and moving parts unfinished songs centralized and organized. 
+                                The homepage is a list of songs the user has added, organized in a patterned card list that color-codes the cards according 
+                                to a priority designation.
+                                This allows the user to group the songs according to when they hope to finish them, and potentially to plan how to organize their material for future releases. 
                                 Finally, the user can route specific recordings into a details page for a given song - in addition to including this history of recordings for a given song, the details page contains all the relevant notes the user 
                                 has added that will help them connect the dots when they return to work on the song.  The user can update these details as they prefer.
                                 

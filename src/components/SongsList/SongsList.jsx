@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import { Box, Paper, Typography, Card, CardContent } from '@material-ui/core';
 import useStyles from './SongsListStyles';
+import ColorCodeLegend from './ColorCodeLegend'
 ;
 
 //import songDetails from '../../redux/reducers/songDetails.reducer';
@@ -40,7 +41,7 @@ function SongsList() {
     return (
         <>
             <Paper className={paper} elevation={10}>
-                
+                <ColorCodeLegend/>
                 <Box 
                     display="flex"
                     flexWrap="wrap"

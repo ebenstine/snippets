@@ -66,7 +66,7 @@ const useStyles = makeStyles(() => ({
         background: 'linear-gradient(to right,  #9c9e9f 0%,#f6f6f6 100%)',
         paddingBottom: '6em',
         paddingTop: '6em',
-        paddingLeft: '3em',
+        paddingLeft: '4.2em',
         paddingRight: '3em',
         width: 750,
         border: '1px solid #fdd377',
