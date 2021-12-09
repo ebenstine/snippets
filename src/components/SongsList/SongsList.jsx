@@ -14,7 +14,7 @@ import ColorCodeLegend from './ColorCodeLegend'
 
 function SongsList() {
 
-    const { title, player, card, card1, card2, card3, paper } = useStyles();
+    const { title, player, card, card1, card2, card3, paper, menuDots } = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
@@ -41,7 +41,12 @@ function SongsList() {
     return (
         <>
             <Paper className={paper} elevation={10}>
+                <div className={menuDots}>
+
                 <ColorCodeLegend/>
+
+                </div>
+
                 <Box 
                     display="flex"
                     flexWrap="wrap"

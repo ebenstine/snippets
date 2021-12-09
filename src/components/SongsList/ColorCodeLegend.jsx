@@ -13,7 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import QueueMusic from '@material-ui/icons/QueueMusic';
 import PlaylistAdd from '@material-ui/icons/PlaylistAdd';
 import Info from '@material-ui/icons/Info';
-import Menu from '@material-ui/icons/Menu'
+import MoreHoriz from '@material-ui/icons/MoreHoriz'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from '@material-ui/core/styles';
@@ -32,8 +32,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     menu: {
-        marginBottom: '-.45em',
-        color: '#e7e7e7',
+       
+        color: '#3b95ac',
         '&:hover': {
         color:'#3b95ac'
         }
@@ -51,10 +51,9 @@ const ColorCodeLegend = () => {
    
   
     const handleClickOpen = () => {
-      if (user === null){
-        setOpen(false)
-      } else
-      setOpen(true);
+      
+        setOpen(true)
+
       
     };
     const handleCancel = () => {
@@ -65,7 +64,7 @@ const ColorCodeLegend = () => {
     return (
       <div>
         <IconButton>
-          <Menu 
+          <MoreHoriz
 
             aria-controls="simple-menu" 
             aria-haspopup="true"
@@ -76,7 +75,7 @@ const ColorCodeLegend = () => {
             
             >
             
-        </Menu>
+        </MoreHoriz>
       </IconButton>
         <MenuItem onClick={handleClickOpen}>
                 

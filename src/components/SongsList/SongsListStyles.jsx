@@ -101,6 +101,10 @@ const useStyles = makeStyles(() => ({
         
     },
 
+    menuDots: {
+        paddingLeft: '46.5em',
+        marginTop: '-6em'
+    },
     
 
     button: {
