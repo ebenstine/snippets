@@ -29,13 +29,24 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
         borderRadius: "3px"
-    }
+    },
+
+    menu: {
+        marginBottom: '-.45em',
+        color: '#e7e7e7',
+        '&:hover': {
+        color:'#3b95ac'
+        }
+
+    },
+
+    
 
 }))
 
 
 const NavMenu = ({user}) => {
-    const {heading} = useStyles();
+    const {heading, menu, menuSwitch} = useStyles();
     const [open, setOpen] = useState(false);
    
   
@@ -44,6 +55,7 @@ const NavMenu = ({user}) => {
         setOpen(false)
       } else
       setOpen(true);
+      
     };
     const handleCancel = () => {
       setOpen(false);
@@ -59,14 +71,16 @@ const NavMenu = ({user}) => {
             aria-haspopup="true"
             fontSize={'inherit'} 
             align="center"
-            style={{ color: '#3b95ac',
-                     marginBottom: '-.45em'
-                   }}
-            onClick={handleClickOpen}>
-
+            className={menu}
+            onClick={handleClickOpen}
+            
+            >
+            
         </Menu>
       </IconButton>
-        <MenuItem onClick={handleClickOpen}></MenuItem>
+        <MenuItem onClick={handleClickOpen}>
+                
+        </MenuItem>
           <Dialog 
                 
                 open={open}
@@ -100,7 +114,7 @@ const NavMenu = ({user}) => {
             
             <QueueMusic/>
             <Typography component="h5">
-            &nbsp;See All Songs
+            &nbsp;View All Songs
             </Typography>
             </Link>
           </MenuItem>

@@ -6,7 +6,7 @@ const useStyles = makeStyles(() => ({
       
         
         backgroundColor:  '#f0a1a1',
-        border: '1px solid #4d8aaa',
+        border: '1.5px solid #4d8aaa',
         width: 345
         
     },
@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
       
         
         backgroundColor: '#afe4f1',
-        border: '1px solid #4d8aaa',
+        border: '1.5px solid #4d8aaa',
         width: 345
         
     },
@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
        
        
         backgroundColor: '#ffb171',
-        border: '1px solid #4d8aaa',
+        border: '1.5px solid #4d8aaa',
         width: 345
     },
     
@@ -32,7 +32,7 @@ const useStyles = makeStyles(() => ({
        
         
         backgroundColor: '#fdd377',
-        border: '1px solid #4d8aaa',
+        border: '1.5px solid #4d8aaa',
         width: 345
     },
 

@@ -9,8 +9,9 @@ const dropStyles = {
   height: "200px",
   backgroundColor: '#2a4f64',
   borderRadius: '3px',
-  border: '1px solid #c8ecf5',
+  border: '1.5px solid #c8ecf5',
   boxShadow: '7px 7px 10px grey'
+  //background: 'linear-gradient(to bottom,  #2a4f64 75%,#e7e7e7 85%)'
 }
 
 
@@ -63,7 +64,7 @@ const Uploader = ({uploadComplete}) => {
                       color: '#EBEBEB', 
                       paddingLeft: '3em', 
                       paddingRight: '3em', 
-                      border: '1px dashed #c8ecf5'
+                      border: '1.5px solid #c8ecf5'
 
                       }}
                   >Click to Add, or Drag and Drop File</Button>

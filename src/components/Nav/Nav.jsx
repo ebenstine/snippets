@@ -16,7 +16,7 @@ function Nav() {
   return (
     <div className="nav" position="relative">
       
-      <Link to="/home">
+      <Link to="/about">
         
         <h2 className="nav-title">▶ SNIPPETS</h2>
         

@@ -28,13 +28,13 @@
 
 .nav-title:hover {
   
-  color: #efefef;
+  color: #3b95ac;
 }
 
 .navLink {
   display: inline-block;
-  color: #ffb171;;
-  background-color: #2a4f64;;
+  color: #233d4d;
+  background-color: #ff8c8c;
   text-align: center;
   padding: 12px 6px;
   text-decoration: none;

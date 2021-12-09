@@ -140,13 +140,13 @@ const useStyles = makeStyles(() => ({
         
     },
     dialog: {
-        //backgroundColor: '#efefef',
+        
         marginLeft: '1em',
         marginRight: '1em'
     },
 
     dialogContent: {
-        backgroundColor: '#ffc6be',
+        backgroundColor: 'rgb(230, 252, 255)',
         display:'flex',
         flexWrap: 'wrap',
         color: '#233d4d',
@@ -158,21 +158,24 @@ const useStyles = makeStyles(() => ({
     dialogButtons: {
 
         color: '#233d4d',
-        background: '#fff099',
+        background: '#ff8c8c',
         border: '1px solid #3b95ac',
         alignItems: 'center',
         '&:hover': {
-            background:'#fde76c',
+            background:'#e45252',
             },
         
     },
 
     dialogText: {
-        border: '1px solid #e45252',
+        border: '1.5px solid #e45252',
         borderRadius: '3px',
         color: '#233d4d',
+        background: 'linear-gradient(to bottom right,  #ff8c8c 0%,#e7e7e7 100%)',
         paddingLeft: '1em',
-        paddingRight: '1em'
+        paddingRight: '1em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em'
         
     }
     

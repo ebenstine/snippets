@@ -1,6 +1,6 @@
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Paper, Card, CardContent, Typography, Button } from '@material-ui/core';
+import { Paper, Card, CardContent, Typography, Button, HelperText } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 
 import Dialog from '@material-ui/core/Dialog';
@@ -105,6 +105,7 @@ function SongDetails(){
     return (
         
         <div>
+            
             <Paper className={paper} elevation={10}>
             
             <section className={root}>
@@ -485,39 +486,88 @@ function SongDetails(){
              
                         </CardContent>
             
-            </Card> }
+                </Card> }
                     </div>
                     <br></br>
                     <br></br>
                     
                     <div>
                     
-                        <Button className={button} variant="contained" onClick={handleClickOpen}><Delete/></Button>
+                        <Button 
+                            className={button} 
+                            variant="contained" 
+                            onClick={handleClickOpen}
+                        >
+                            <Delete/>
+                            
+                        </Button>
                         
-                            <Dialog open={open} className={dialog} onClose={handleClose} aria-labelledby="Rename song title input">
-                                <DialogTitle className={dialogContent}><Feedback style = {{
-            
-            color: '#e45252',
-            fontSize: 50,
-            
-
-            }}/></DialogTitle>
+                            <Dialog 
+                                open={open} 
+                                PaperProps={{
+                                    style: 
+                                        { border: "1px solid #e45252",
+                                             
+                                             background: "rgb(199, 246, 252)"
+                                        }
+                            
+                                            }}
+                                className={dialog} 
+                                onClose={handleClose} 
+                                
+                            >
+                                
+                                <DialogTitle className={dialogContent}>
+                                    <div>
+                                    <Feedback 
+                                        style = {{
+                                            color: '#e45252',
+                                            fontSize: 50,
+                                            paddingTop: '-1em',
+                                            display: 'flex',
+                                            flexWrap: 'wrap'
+                                        }}
+                                    />
+                                   
+                                    </div>
+                                </DialogTitle>
+                                    
                                     <DialogContent className={dialogContent} >
+                                        
                                         <DialogContentText className={dialogText}>
+                                            
                                             This action permanently deletes the song and all its content.
                                             Is the song saved somewhere permanent, or somewhere in the process of being published to a public platform?
                                             If not, it's always possible more work could be added; maybe it should continue to live here.  What's the best move right now?
+                                        
                                         </DialogContentText>
+                                    
                                     </DialogContent>
+                               
                                 <DialogActions className={dialogContent}>
-                                    <Button className={dialogButtons} onClick={handleCancel} variant="contained">
-                                    <Cancel/>
+                                    
+                                    <Button 
+                                        className={dialogButtons} 
+                                        onClick={handleCancel} 
+                                        variant="contained"
+                                    >
+                                        <Cancel/>
+                                    
                                     </Button>
-                                    <Button className={dialogButtons} onClick={() => handleDelete(song.id)} variant="contained">
-                                    <Delete/>
+                                    
+                                    <Button 
+                                        className={dialogButtons} 
+                                        onClick={() => handleDelete(song.id)} 
+                                        variant="contained"
+                                    >
+                                    
+                                        <Delete/>
                                     </Button>
+
                                 </DialogActions>
+
                             </Dialog>
+
                     </div>
                     
                 </>
