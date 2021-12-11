@@ -11,7 +11,7 @@ const UserPage = () => {
   const user = useSelector((store) => store.user);
   const songs = useSelector((store) => store.songs);
   const allRecordings = useSelector((store) => store.allRecordings)
-  const { paper, welcome, songCount, recordingCount, button1, button2, genrePrompt, playIcon } = useStyles();
+  const { paper, welcome, songCount, recordingCount, button1, button2, genrePrompt, playIcon, highlight } = useStyles();
 
 
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ const UserPage = () => {
         variant = "h6" 
         className = {songCount}>
           <span className={playIcon}>▶</span>
-            &nbsp;You have {songs.length} different song projects open right now.
+            &nbsp;You have <span className={highlight}>{songs.length}</span> different song projects open right now.
       </Typography>
 
       <Typography 
@@ -50,7 +50,7 @@ const UserPage = () => {
         variant = "h6" 
         className = {recordingCount}>
           <span className={playIcon}>▶</span>
-            &nbsp;Between them, you've uploaded {allRecordings.length} total recordings. 
+            &nbsp;Between them, you've uploaded <span className={highlight}>{allRecordings.length}</span> total recordings. 
       </Typography>
 
       <Typography 

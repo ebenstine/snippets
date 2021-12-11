@@ -72,9 +72,15 @@ const useStyles = makeStyles((theme) => ({
     },
 
     playIcon: {
-        color:"#6ca0ad",
+        color:"#1d778d",
         outlineColor: "#233d4d",
         marginLeft: "0em"
+    },
+
+    highlight: {
+
+        color: '#1d778d'
+
     }
 
     
