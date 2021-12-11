@@ -104,7 +104,7 @@ const AddSong = () => {
               value={newSong.priority}
               placeholder="Assign Completion Priority"
               >
-                <MenuItem defaultValue='Select Priority' className={setPriority} >Assign Completion Priority&nbsp;&nbsp;&nbsp;&nbsp;</MenuItem>
+                <MenuItem defaultValue={'  '}className={setPriority} >&nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'1'} className={setPriority} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'2'} className={setPriority} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'3'} className={setPriority} >&nbsp;Group Three</MenuItem>

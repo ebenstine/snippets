@@ -525,7 +525,8 @@ function SongDetails(){
                                             fontSize: 50,
                                             paddingTop: '-1em',
                                             display: 'flex',
-                                            flexWrap: 'wrap'
+                                            flexWrap: 'wrap',
+                                            textStroke: '2px black'
                                         }}
                                     />
                                    

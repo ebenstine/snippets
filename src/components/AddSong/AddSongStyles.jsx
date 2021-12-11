@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
             '&.MuiSelect-select': {
                 borderColor: '#3b95ac',
                 borderRadius: '8px',
-                paddingLeft: '3em'
+                //paddingLeft: '3em'
             },
             
         },
@@ -50,8 +50,9 @@ const useStyles = makeStyles((theme) => ({
     },
     priority: {
         
-        border: '1.5px solid #3b95ac',
-        
+        borderTop: '1.5px solid #3b95ac',
+        borderLeft: '1.5px solid #3b95ac',
+        borderRight: '1.5px solid #3b95ac',
         alignItems: 'center',
         //margin: '1ch',
         borderRadius: '2px',
@@ -62,7 +63,9 @@ const useStyles = makeStyles((theme) => ({
         },
     priority1: {
         
-        border: '1.5px solid #3b95ac',
+        borderTop: '1.5px solid #3b95ac',
+        borderLeft: '1.5px solid #3b95ac',
+        borderRight: '1.5px solid #3b95ac',
         
         alignItems: 'center',
         //margin: '1ch',
@@ -76,7 +79,9 @@ const useStyles = makeStyles((theme) => ({
         },
     priority2: {
         
-        border: '1.5px solid #3b95ac',
+        borderTop: '1.5px solid #3b95ac',
+        borderLeft: '1.5px solid #3b95ac',
+        borderRight: '1.5px solid #3b95ac',
         
         alignItems: 'center',
         //margin: '1ch',
@@ -90,7 +95,9 @@ const useStyles = makeStyles((theme) => ({
 
     priority3: {
         
-        border: '1.5px solid #3b95ac',
+        borderTop: '1.5px solid #3b95ac',
+        borderLeft: '1.5px solid #3b95ac',
+        borderRight: '1.5px solid #3b95ac',
         
         
         alignItems: 'center',

@@ -36,12 +36,16 @@ const useStyles = makeStyles(() => ({
 
     },
 
+    playIcon: {
+        color:"#6ca0ad"
+    }
+
 
 
 }));
 
 const AboutPage = () => {
-    const { card, text, root, title } = useStyles();
+    const { card, text, root, title, playIcon } = useStyles();
 
     return (
         <div className='formSpacer' >
@@ -53,11 +57,12 @@ const AboutPage = () => {
                                 About Snippets
                             </Typography>
                             <Typography variant="body2" component="p" className={text} paragraph={true}>
+                                
                                 <p>
-
-                                Without question, the most foundational tool for the modern songwriter is the smartphone.
-                                The ability to record a voice memo at any second to document an idea makes it possible for an 
-                                artist to save almost anything they ever thought of while working on a song.  Invariably, these 
+                                <span className={playIcon}>▶</span>
+                                &nbsp;Without question, the most foundational tool for the modern songwriter is the Voice Memos app.
+                                The ability to record anything at any second to document an idea makes it possible for an 
+                                artist to save every useful thought they ever had while working on a song.  Invariably, these 
                                 voice memos become cluttered and wildly disorganized very quickly, and because the only indication of 
                                 what one might contain is offered in its title, the context or concept nested within that recording can 
                                 easily be lost.  
@@ -65,19 +70,26 @@ const AboutPage = () => {
                                
                                 
                                 <p>
-                                How did I play that part again?  Why does this sound like a different tuning than I've previously used?
+                                <span className={playIcon}>▶</span>
+                                &nbsp;How did I play that part again?  Why does this sound like a different tuning than I've previously used?
                                 Wait, what was that melody even going to be used for?  Where is that one that has that great lyric I thought of while riding the bus? 
                                 </p>
                                 
                                 
                                 <p>
-                                Snippets mitigates this confusion by keeping all the different details and moving parts unfinished songs centralized and organized. 
-                                The homepage is a list of songs the user has added, organized in a patterned card list that color-codes the cards according 
-                                to a priority designation.
-                                This allows the user to group the songs according to when they hope to finish them, and potentially to plan how to organize their material for future releases. 
-                                Finally, the user can route specific recordings into a details page for a given song - in addition to including this history of recordings for a given song, the details page contains all the relevant notes the user 
-                                has added that will help them connect the dots when they return to work on the song.  The user can update these details as they prefer.
-                                
+                                <span className={playIcon}>▶</span>
+                                &nbsp;Snippets mitigates this confusion by keeping all the different details and moving parts of a songwriter's unfinished songs centralized and easy to access. 
+                                It gives users the ability to add songs along with all their relevant details.  These are viewable on the song's details page, where users have the ability 
+                                to upload as many additional audio recordings relevant to that song that they might have.  A color-coding system is used throughout the app that allows users 
+                                to demarcate a priority tier for each song, paving the way for structured planning of future releases, and for a more focused songwriting 
+                                workflow.  
+                                </p>
+
+
+                                <p>
+                                <span className={playIcon}>▶</span>
+                                &nbsp;Voice memos saved songwriters from forgetting important ideas.  By organizing these ideas with details, structuring, and context, Snippets helps its users maintain
+                                a more productive songwriting process.
                                 </p>
                             </Typography>
 
