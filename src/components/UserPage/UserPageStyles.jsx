@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         margin: '4em auto',
         background: 'linear-gradient(to right,  #9c9e9f 0%,#f6f6f6 100%)',
-        border: '1px solid #fdd377',
+        border: '1px solid #eb9148',
         paddingBottom: '2em',
         width: 650,
         marginBottom: '10em'
@@ -79,7 +79,8 @@ const useStyles = makeStyles((theme) => ({
 
     highlight: {
 
-        color: '#1d778d'
+        color: '#1d778d',
+        borderBottom: '1.5px solid #eb9148'
 
     }
 

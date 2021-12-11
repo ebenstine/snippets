@@ -58,7 +58,7 @@ const UserPage = () => {
         variant = "h6" 
         className = {genrePrompt}>
           <span className={playIcon}>▶</span>
-            &nbsp;Currently, you're working in 1 genre/style across these projects. 
+            &nbsp;Currently, you're working in <span className={highlight}>1</span> genre/style across these projects. 
       </Typography>
 
       <br></br>

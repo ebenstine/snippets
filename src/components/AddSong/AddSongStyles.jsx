@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
         background: 'linear-gradient(to right,  #9c9e9f 0%,#f6f6f6 100%)',
         paddingBottom: '4em',
         width: 650,
-        border: '1px solid #fdd377'
+        border: '1px solid #eb9148'
 
     },
     textField: {

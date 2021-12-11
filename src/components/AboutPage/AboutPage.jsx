@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
         marginTop: '5em',
         marginBottom: '6em',
         color: '#1a313f',
-        border: '1px solid #fdd377'
+        border: '1px solid #eb9148'
     },
     text: {
         margin: '0, auto',
