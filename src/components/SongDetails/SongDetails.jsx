@@ -538,9 +538,8 @@ function SongDetails(){
                                         <DialogContentText className={dialogText}>
                                             
                                             This action permanently deletes the song and all its content.
-                                            Is the song saved somewhere permanent, or somewhere in the process of being published to a public platform?
-                                            If not, it's always possible more work could be added; maybe it should continue to live here.  What's the best move right now?
-                                        
+                                            Do you want to do this?  Please keep in mind that it can't be undone.
+
                                         </DialogContentText>
                                     
                                     </DialogContent>

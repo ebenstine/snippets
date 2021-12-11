@@ -59,37 +59,41 @@ const AboutPage = () => {
                             <Typography variant="body2" component="p" className={text} paragraph={true}>
                                 
                                 <p>
-                                <span className={playIcon}>▶</span>
-                                &nbsp;Without question, the most foundational tool for the modern songwriter is the Voice Memos app.
-                                The ability to record anything at any second to document an idea makes it possible for an 
-                                artist to save every useful thought they ever had while working on a song.  Invariably, these 
-                                voice memos become cluttered and wildly disorganized very quickly, and because the only indication of 
-                                what one might contain is offered in its title, the context or concept nested within that recording can 
-                                easily be lost.  
+                                    <span className={playIcon}>▶</span>
+
+                                        &nbsp;Without question, the most foundational tool for the modern songwriter is the Voice Memos app.
+                                        The ability to record anything at any second to document an idea makes it possible for an 
+                                        artist to save every useful thought they ever had while working on a song.  Invariably, these 
+                                        voice memos become cluttered and wildly disorganized very quickly, and because the only indication of 
+                                        what one might contain is offered in its title, the context or concept nested within that recording can 
+                                        easily be lost.  
                                 </p>
                                
                                 
                                 <p>
-                                <span className={playIcon}>▶</span>
-                                &nbsp;How did I play that part again?  Why does this sound like a different tuning than I've previously used?
-                                Wait, what was that melody even going to be used for?  Where is that one that has that great lyric I thought of while riding the bus? 
+                                    <span className={playIcon}>▶</span>
+
+                                        &nbsp;How did I play that part again?  Why does this sound like a different tuning than I've previously used?
+                                        Wait, what was that melody even going to be used for?  Where is that one that has that great lyric I thought of while riding the bus? 
                                 </p>
                                 
                                 
                                 <p>
-                                <span className={playIcon}>▶</span>
-                                &nbsp;Snippets mitigates this confusion by keeping all the different details and moving parts of a songwriter's unfinished songs centralized and easy to access. 
-                                It gives users the ability to add songs along with all their relevant details.  These are viewable on the song's details page, where users have the ability 
-                                to upload as many additional audio recordings relevant to that song that they might have.  A color-coding system is used throughout the app that allows users 
-                                to demarcate a priority tier for each song, paving the way for structured planning of future releases, and for a more focused songwriting 
-                                workflow.  
+                                    <span className={playIcon}>▶</span>
+
+                                        &nbsp;Snippets mitigates this confusion by keeping all the different details and moving parts of a songwriter's unfinished songs centralized and easy to access. 
+                                        It gives users the ability to add songs along with all their relevant details.  These are viewable on the song's details page, where users have the ability 
+                                        to upload as many additional audio recordings relevant to that song that they might have.  A color-coding system is used throughout the app that allows users 
+                                        to demarcate a priority tier for each song, paving the way for structured planning of future releases, and for a more focused songwriting 
+                                        workflow.  
                                 </p>
 
 
                                 <p>
-                                <span className={playIcon}>▶</span>
-                                &nbsp;Voice memos saved songwriters from forgetting important ideas.  By organizing these ideas with details, structuring, and context, Snippets helps its users maintain
-                                a more productive songwriting process.
+                                    <span className={playIcon}>▶</span>
+
+                                        &nbsp;Voice memos saved songwriters from forgetting important ideas.  Snippets takes the next step in organizing these ideas with details, structuring, and context, helping its 
+                                        users maintain a more organized and ultimately more productive songwriting process. 
                                 </p>
                             </Typography>
 

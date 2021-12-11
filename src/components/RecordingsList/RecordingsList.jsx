@@ -71,14 +71,22 @@ const RecordingsList = () => {
             
             <Paper className= {paper} elevation={10}>
             <div className={drawerHeader}>
-                <IconButton onClick={handleCancel}>
+                <IconButton onClick={handleCancel}
+                    
+                    style={{
+                        color:"#eb9148"
+                    }}
+                
+                >
+                    
                     {<ChevronLeftIcon />}
                         </IconButton>
                 
                             <Typography 
                     
-                                style={{borderBottom: "1.5px solid #4d8aaa",
-                                        fontSize: 16
+                                style={{borderBottom: "1.5px solid #1d778d",
+                                        fontSize: 16,
+                                        color: "#233d4d"
                                         }}
                                 variant="overline" 
                                 align="center"
@@ -107,7 +115,7 @@ const RecordingsList = () => {
                                 >
                                     
                                     <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon style={{ color: '#3b95ac' }}/>}
+                                        expandIcon={<ExpandMoreIcon style={{ color: '#eb9148' }}/>}
                                         aria-controls="panel1a-content"
                                         id="panel1a-header"
                                         

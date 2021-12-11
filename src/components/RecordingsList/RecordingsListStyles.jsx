@@ -10,11 +10,11 @@ const useStyles = makeStyles((theme) => ({
     
     card1: {
         flexDirection: 'column',
-        backgroundColor: '#ffcdd2',
-        color: '#233d4d',
+        backgroundColor: '#6ca0ad',
+        color: 'rgb(250, 250, 175)',
         marginLeft: '.5em',
         marginRight: '.5em',
-        border: '1px solid #4d8aaa'
+        border: '1.5px solid #1d778d'
         
     },
 
@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '.85em',
         marginRight: '.85em',
         color: '#1a313f',
-        border: '1.35px solid #6ca0ad',
+        border: '1.35px solid #1d778d',
         borderRadius: '.25em',
         paddingTop: '.5em',
         paddingBottom: '.5em',
@@ -96,7 +96,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 12,
         marginLeft: '1.5em',
         marginRight: '1.5em',
-        borderBottom: '1px solid #6ca0ad',
+        borderBottom: '1.5px solid #1d778d',
         marginTop: 'auto',
         color: '#233d4d',
     },
@@ -118,12 +118,12 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
           background:'#fde76c',
           },
-        border: "1px solid #3b95ac",
+        border: "1px solid #1d778d",
         borderRadius: "3px",
     },
 
     bye: {
-        color:'#4d8aaa'
+        color:'#eb9148'
     }
 
     
