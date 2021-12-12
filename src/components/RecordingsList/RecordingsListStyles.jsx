@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
        
         marginBottom: '.5em',
         marginLeft: '.85em',
-        marginRight: '.85em',
+        marginRight: '-.35em',
         color: '#1a313f',
         border: '1.35px solid #1d778d',
         borderRadius: '.25em',
@@ -123,7 +123,13 @@ const useStyles = makeStyles((theme) => ({
     },
 
     bye: {
-        color:'#eb9148'
+        color:'#eb9148',
+        marginTop: '.2em',
+        marginLeft: '.2em',
+        marginBottom: '.2em',
+       
+        //border: '1px solid #233d4d',
+        //background: '#EBEBEB'
     }
 
     

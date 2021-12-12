@@ -86,14 +86,14 @@ const useStyles = makeStyles(() => ({
         color: '#233d4d',
         marginLeft: 'auto',
         marginTop: 'auto',
-        borderBottom: '1.25px solid #6ca0ad'
+        borderBottom: '1px solid #6ca0ad'
        
         
     },
     cardText: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
-        borderBottom: '1.25px solid #6ca0ad',
+        borderBottom: '1px solid #6ca0ad',
         whiteSpace: 'pre-wrap',
         color: '#233d4d'
     },
@@ -101,7 +101,7 @@ const useStyles = makeStyles(() => ({
     notes: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
-        borderBottom: '1.25px solid #6ca0ad',
+        borderBottom: '1px solid #6ca0ad',
         whiteSpace: 'pre-wrap'
     },
 

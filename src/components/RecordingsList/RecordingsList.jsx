@@ -115,7 +115,14 @@ const RecordingsList = () => {
                                 >
                                     
                                     <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon style={{ color: '#eb9148' }}/>}
+                                        expandIcon={<ExpandMoreIcon 
+                                            style={{ 
+                                                
+                                                color: '#eb9148',
+                                                paddingRight: '.75em'
+
+                                                }}/>}
+
                                         aria-controls="panel1a-content"
                                         id="panel1a-header"
                                         

@@ -28,7 +28,8 @@ const useStyles = makeStyles((theme) => ({
             },
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
-        borderRadius: "3px"
+        borderRadius: "3px",
+        paddingLeft:'2.2em'
     },
     colorCode1: {
         color: '#2a4f64',
@@ -38,7 +39,8 @@ const useStyles = makeStyles((theme) => ({
             },
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
-        borderRadius: "3px"
+        borderRadius: "3px",
+        paddingLeft: '3em'
     },
     colorCode2: {
         color: '#2a4f64',
@@ -48,7 +50,8 @@ const useStyles = makeStyles((theme) => ({
             },
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
-        borderRadius: "3px"
+        borderRadius: "3px",
+        paddingLeft: '3em'
     },
     colorCode3: {
         color: '#2a4f64',
@@ -58,7 +61,8 @@ const useStyles = makeStyles((theme) => ({
             },
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
-        borderRadius: "3px"
+        borderRadius: "3px",
+        paddingLeft: '2.7em'
     },
 
     menu: {
@@ -131,7 +135,7 @@ const ColorCodeLegend = () => {
                 onClose={handleCancel}
 
                 >
-        <DialogTitle className={dialogTitle} >Song Color Key</DialogTitle>
+        <DialogTitle className={dialogTitle} >Song Priority Colors</DialogTitle>
           
           <MenuItem
           className={colorCode1}

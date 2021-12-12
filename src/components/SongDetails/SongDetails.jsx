@@ -173,10 +173,11 @@ function SongDetails(){
                                                 <Typography 
                                                     component = "p" 
                                                     className={cardText}>
-                                
-                                                    ▶ Instrument Notes:
-                                                    {' '}
-                                                    {song.instrument_notes}
+
+                                                        <span style={{color:"#1d778d"}}>▶</span>&nbsp;
+                                                            Instrument Notes:
+                                                                {' '}
+                                                                    {song.instrument_notes}
 
                                                 </Typography>
 
@@ -193,10 +194,11 @@ function SongDetails(){
                                                     <Typography 
                                                         component = "p" 
                                                         className={cardText}>
-                                
-                                                        ▶ Performance Notes:
-                                                        {' '}
-                                                        {song.performance_notes}
+
+                                                            <span style={{color:"#1d778d"}}>▶</span>&nbsp;
+                                                                Performance Notes:
+                                                                    {' '}
+                                                                        {song.performance_notes}
 
                                                     </Typography>
                                                 </div>}
@@ -268,9 +270,10 @@ function SongDetails(){
                                                 component = "p" 
                                                 className={cardText}>
                             
-                                                ▶ Instrument Notes:
-                                                {' '}
-                                                {song.instrument_notes}
+                                                    <span style={{color:"#1d778d"}}>▶</span>&nbsp;
+                                                        Instrument Notes:
+                                                            {' '}
+                                                                {song.instrument_notes}
 
                                             </Typography>
 
@@ -288,9 +291,10 @@ function SongDetails(){
                                                     component = "p" 
                                                     className={cardText}>
                             
-                                                    ▶ Performance Notes:
-                                                    {' '}
-                                                    {song.performance_notes}
+                                                        <span style={{color:"#1d778d"}}>▶</span>&nbsp;
+                                                            Performance Notes:
+                                                                {' '}
+                                                                    {song.performance_notes}
 
                                                 </Typography>
                                             </div>}
@@ -361,10 +365,11 @@ function SongDetails(){
                                             <Typography 
                                                 component = "p" 
                                                 className={cardText}>
-                            
-                                                ▶ Instrument Notes:
-                                                {' '}
-                                                {song.instrument_notes}
+                                                    
+                                                    <span style={{color:"#1d778d"}}>▶</span>&nbsp;
+                                                        Instrument Notes:
+                                                            {' '}
+                                                                {song.instrument_notes}
 
                                             </Typography>
 
@@ -381,10 +386,11 @@ function SongDetails(){
                                                 <Typography 
                                                     component = "p" 
                                                     className={cardText}>
-                            
-                                                    ▶ Performance Notes:
-                                                    {' '}
-                                                    {song.performance_notes}
+
+                                                        <span style={{color:"#1d778d"}}>▶</span>&nbsp;
+                                                            Performance Notes:
+                                                                {' '}
+                                                                    {song.performance_notes}
 
                                                 </Typography>
                                             </div>}
@@ -453,10 +459,11 @@ function SongDetails(){
                                         <Typography 
                                             component = "p" 
                                             className={cardText}>
-                        
-                                            ▶ Instrument Notes:
-                                            {' '}
-                                            {song.instrument_notes}
+
+                                                <span style={{color:"#1d778d"}}>▶</span>&nbsp;
+                                                    Instrument Notes:
+                                                        {' '}
+                                                            {song.instrument_notes}
 
                                         </Typography>
 
@@ -473,10 +480,11 @@ function SongDetails(){
                                             <Typography 
                                                 component = "p" 
                                                 className={cardText}>
-                        
-                                                ▶ Performance Notes:
-                                                {' '}
-                                                {song.performance_notes}
+
+                                                    <span style={{color:"#1d778d"}}>▶</span>&nbsp;
+                                                        Performance Notes:
+                                                            {' '}
+                                                                {song.performance_notes}
 
                                             </Typography>
                                         </div>}

@@ -54,7 +54,7 @@ const SongDetailsMenu = ({song}) => {
             aria-controls="simple-menu" 
             aria-haspopup="true"
             fontSize={'inherit'} 
-            style={{ color: '#233d4d' }}
+            style={{ color: '#3b95ac' }}
             onClick={handleClickOpen}>
 
         </MoreHorizIcon>
