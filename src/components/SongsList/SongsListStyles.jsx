@@ -6,7 +6,7 @@ const useStyles = makeStyles(() => ({
       
         
         backgroundColor:  '#f0a1a1',
-        border: '1.5px solid #4d8aaa',
+        border: '1px solid #1d778d',
         width: 345
         
     },
@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
       
         
         backgroundColor: '#afe4f1',
-        border: '1.5px solid #4d8aaa',
+        border: '1px solid #1d778d',
         width: 345
         
     },
@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
        
        
         backgroundColor: '#ffb171',
-        border: '1.5px solid #4d8aaa',
+        border: '1px solid #1d778d',
         width: 345
     },
     
@@ -32,7 +32,7 @@ const useStyles = makeStyles(() => ({
        
         
         backgroundColor: '#fdd377',
-        border: '1.5px solid #4d8aaa',
+        border: '1px solid #1d778d',
         width: 345
     },
 
@@ -80,7 +80,7 @@ const useStyles = makeStyles(() => ({
         marginLeft: '.65em',
         marginRight: '.45em',
         color: '#1a313f',
-        border: '1.35px solid #4d8aaa',
+        border: '1.5px solid #1d778d',
         borderRadius: '.25em',
         paddingTop: '.5em',
         paddingBottom: '.5em',
@@ -95,7 +95,7 @@ const useStyles = makeStyles(() => ({
         marginTop: 'auto',
         color: '#233d4d',
         '&:hover': {
-            color:'#3b95ac',
+            color:'#1d778d',
             cursor: 'pointer' 
     }
         

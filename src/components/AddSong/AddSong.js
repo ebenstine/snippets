@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { Paper, MenuItem, TextField, Button, Typography, Select, FormControl } from '@material-ui/core';
+import { Paper, MenuItem, TextField, Button, Typography, Select, FormControl, InputLabel, DialogTitle} from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import useStyles from './AddSongStyles'
@@ -19,16 +19,24 @@ const AddSong = () => {
           textField, 
           cardContent, 
           title, 
-          priority, 
+          menu,
+          selectTitle,
+          priority0, 
           priority1,
           priority2,
           priority3,
-          setPriority } 
+          setPriority1,
+          setPriority2,
+          setPriority3,
+          
+        
+        } 
           
           = useStyles();
 
   const [url , setUrl] = useState ('no file was dropped');
   const [newSong, setNewSong] = useState({});
+  
 
 
   const enterNewSong = (key) => (event) => {
@@ -56,14 +64,18 @@ const AddSong = () => {
   const toUserHome = () => {
     history.push('/songsList')
 }
-  
+
+
+
+
+
   return (
     <div>
       <Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>
         <FormControl >
           <form className={root} onSubmit={handleSave} noValidate autoComplete="off" >
             <div className={cardContent}>
-            <Typography variant = "h5" component="h5" className={title}>Submit A New Song</Typography>
+            <Typography variant = "h5" component="h5" className={title}>Add A New Song</Typography>
             <TextField
               label="Title"
               onChange={enterNewSong('title')}
@@ -96,21 +108,26 @@ const AddSong = () => {
             />
           <br></br>
           {newSong.priority ==='1' ?
+          <div className={menu}>
+          
           <Select
               
               name="priority"
               onChange={enterNewSong('priority')}
               className={priority1}
               value={newSong.priority}
-              placeholder="Assign Completion Priority"
               >
-                <MenuItem defaultValue={'  '}className={setPriority} >&nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;</MenuItem>
-                <MenuItem value={'1'} className={setPriority} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
-                <MenuItem value={'2'} className={setPriority} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
-                <MenuItem value={'3'} className={setPriority} >&nbsp;Group Three</MenuItem>
+                
+                <DialogTitle defaultValue={'  '}className={selectTitle} >&nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;</DialogTitle>
+                <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
+                <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
+                <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
             
-          </Select> :
+          </Select> 
+          
+          </div>:
           newSong.priority ==='2' ?
+          <div>
           <Select
               
               name="priority"
@@ -118,40 +135,50 @@ const AddSong = () => {
               className={priority2}
               value={newSong.priority}
               >
-                <MenuItem defaultValue={''} className={setPriority} >Assign Completion Priority</MenuItem>
-                <MenuItem value={'1'} className={setPriority} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
-                <MenuItem value={'2'} className={setPriority} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
-                <MenuItem value={'3'} className={setPriority} >&nbsp;Group Three</MenuItem>
-               
-          </Select> :
-          newSong.priority ==='3' ?
-          <Select
-
-              name="priority"
-              onChange={enterNewSong('priority')}
-              className={priority3}
-              value={newSong.priority}
-              >
-                <MenuItem defaultValue={''} className={setPriority} >Assign Completion Priority</MenuItem>
-                <MenuItem value={'1'} className={setPriority} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
-                <MenuItem value={'2'} className={setPriority} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
-                <MenuItem value={'3'} className={setPriority} >&nbsp;Group Three</MenuItem>
+                
+                <DialogTitle defaultValue={''} className={selectTitle} >Assign Completion Priority</DialogTitle>
+                <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
+                <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
+                <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
             
-          </Select> :
+            
+          </Select> 
+          </div>:
+          newSong.priority ==='3' ?
+          <div className={menu}>
           <Select
 
-          name="priority"
-          onChange={enterNewSong('priority')}
-          className={priority}
-          value={newSong.priority}
-          
+            name="priority"
+            onChange={enterNewSong('priority')}
+            className={priority3}
+            value={newSong.priority}
+              
+              
+              >
+                <DialogTitle defaultValue={''} className={selectTitle} >Assign Completion Priority</DialogTitle>
+                <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
+                <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
+                <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
+            
+            
+          </Select> 
+          </div>:
+          <div className={menu}>
+          <Select
+
+            name="priority"
+            onChange={enterNewSong('priority')}
+            className={priority0}
+            value={newSong.priority}
           >
-            <MenuItem className={setPriority} >Assign Completion Priority</MenuItem>
-            <MenuItem value={'1'} className={setPriority} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
-            <MenuItem value={'2'} className={setPriority} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
-            <MenuItem value={'3'} className={setPriority} >&nbsp;Group Three</MenuItem>
-        
-      </Select>}
+            
+            <DialogTitle className={selectTitle} >Assign Completion Priority</DialogTitle>
+            <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
+            <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
+            <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
+            
+          </Select>
+          </div>}
           
           
 

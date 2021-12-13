@@ -6,12 +6,13 @@ import ProgressBar from './ProgressBar';
 
 const dropStyles = {
   width: "300px",
-  height: "200px",
-  backgroundColor: '#2a4f64',
+  height: "150px",
+  //background: 'linear-gradient(to right,  #233d4d 0%, #1d778d 100%)' -- this color scheme is great, saving for posterity
   borderRadius: '3px',
-  border: '1.5px solid #c8ecf5',
-  boxShadow: '7px 7px 10px grey'
-  //background: 'linear-gradient(to bottom,  #2a4f64 75%,#e7e7e7 85%)'
+  border: '1px solid #3b95ac',
+  boxShadow: '2px 2px 8px rgb(112, 111, 111)',
+  background: 'rgb(199, 246, 252)'
+  
 }
 
 
@@ -50,7 +51,7 @@ const Uploader = ({uploadComplete}) => {
         <div
             style={{
 
-                    paddingTop: '4em', 
+                    paddingTop: '2.5em', 
                     paddingLeft: '1.5em', 
                     paddingRight: '1.5em',
                     
@@ -61,14 +62,14 @@ const Uploader = ({uploadComplete}) => {
             <Button variant="outlined" 
                     style={{
 
-                      color: '#EBEBEB', 
+                      color: '#233d4d', 
                       paddingLeft: '3em', 
                       paddingRight: '3em', 
-                      border: '1.5px solid #c8ecf5',
-                      //background: '#1d778d' -- this needs to look better
+                      border: '1.5px solid #3b95ac',
+                      background: '#82bdcc' 
 
                       }}
-                  >Click to Add, or Drag and Drop File</Button>
+                  >Click to Select, or Drag and Drop File</Button>
             </div>
     )
   return (

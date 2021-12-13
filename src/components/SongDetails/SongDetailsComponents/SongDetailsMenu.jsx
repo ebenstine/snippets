@@ -25,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
         //borderBottom: '1px solid #6ca0ad',
         paddingLeft: '1em',
         paddingRight: '1em'
+    },
+
+    heading: {
+      color: '#2a4f64'
     }
 
 }))

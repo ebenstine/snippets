@@ -10,11 +10,11 @@ const useStyles = makeStyles((theme) => ({
     
     card1: {
         flexDirection: 'column',
-        backgroundColor: '#6ca0ad',
+        backgroundColor: '#82bdcc',
         color: 'rgb(250, 250, 175)',
         marginLeft: '.5em',
         marginRight: '.5em',
-        border: '1.5px solid #1d778d'
+        border: '1px solid #1d778d'
         
     },
 
@@ -124,9 +124,14 @@ const useStyles = makeStyles((theme) => ({
 
     bye: {
         color:'#eb9148',
-        marginTop: '.2em',
-        marginLeft: '.2em',
-        marginBottom: '.2em',
+        marginTop: '.75em',
+        marginLeft: '.75em',
+        marginBottom: '.75em',
+        background: '#1d778d',
+        '&:hover': {
+            background:'#3b95ac',
+            }
+
        
         //border: '1px solid #233d4d',
         //background: '#EBEBEB'

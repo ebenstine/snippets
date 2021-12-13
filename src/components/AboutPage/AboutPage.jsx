@@ -82,9 +82,10 @@ const AboutPage = () => {
                                     <span className={playIcon}>▶</span>
 
                                         &nbsp;Snippets mitigates this confusion by keeping all the different details and moving parts of a songwriter's unfinished songs centralized and easy to access. 
-                                        It gives users the ability to add songs along with all their relevant details.  These are viewable on the song's details page, where users have the ability 
-                                        to upload as many additional audio recordings relevant to that song that they might have.  A color-coding system is used throughout the app that allows users 
-                                        to demarcate a priority tier for each song, paving the way for structured planning of future releases, and for a more focused songwriting 
+                                        It gives users the ability to add not just their song title and audio file, but all the details that might be relevant or even crucial when revisiting the song to continue writing.  
+                                        These are viewable on the song's details page, where users can 
+                                        also upload as many additional audio recordings connected to that song that they might have.  A color-coding system is used throughout the app that allows users 
+                                        to demarcate a priority tier for each song, paving the way for structured planning of future releases, and facilitating a more focused songwriting 
                                         workflow.  
                                 </p>
 

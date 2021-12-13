@@ -135,7 +135,7 @@ const ColorCodeLegend = () => {
                 onClose={handleCancel}
 
                 >
-        <DialogTitle className={dialogTitle} >Song Priority Colors</DialogTitle>
+        <DialogTitle className={dialogTitle} >Song Priority Groups</DialogTitle>
           
           <MenuItem
           className={colorCode1}

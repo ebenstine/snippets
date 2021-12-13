@@ -149,7 +149,7 @@ const RecordingsList = () => {
                                             
                                     </div>
                                     
-                                    <Button variant="text" onClick={() => handleDeleteAudio(recording.id)} className={bye}><Delete/></Button>
+                                    <Button variant="contained" onClick={() => handleDeleteAudio(recording.id)} className={bye}><Delete/></Button>
                                     
                                 </Accordion>
                             </div>
