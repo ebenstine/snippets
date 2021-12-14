@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { Paper, MenuItem, TextField, Button, Typography, Select, FormControl, InputLabel, DialogTitle} from '@material-ui/core';
+import { Paper, MenuItem, TextField, Button, Typography, Select, FormControl, Dialog, DialogTitle} from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import useStyles from './AddSongStyles'
@@ -19,7 +19,7 @@ const AddSong = () => {
           textField, 
           cardContent, 
           title, 
-          menu,
+          dialog,
           selectTitle,
           priority0, 
           priority1,
@@ -108,7 +108,7 @@ const AddSong = () => {
             />
           <br></br>
           {newSong.priority ==='1' ?
-          <div className={menu}>
+          <div>
           
           <Select
               
@@ -122,7 +122,7 @@ const AddSong = () => {
                 <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
-            
+                
           </Select> 
           
           </div>:
@@ -140,12 +140,12 @@ const AddSong = () => {
                 <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
-            
+                
             
           </Select> 
           </div>:
           newSong.priority ==='3' ?
-          <div className={menu}>
+          <div>
           <Select
 
             name="priority"
@@ -155,15 +155,16 @@ const AddSong = () => {
               
               
               >
+                
                 <DialogTitle defaultValue={''} className={selectTitle} >Assign Completion Priority</DialogTitle>
                 <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
-            
+               
             
           </Select> 
           </div>:
-          <div className={menu}>
+          <div>
           <Select
 
             name="priority"
@@ -206,4 +207,3 @@ const AddSong = () => {
 }
 
 export default connect() (AddSong);
-

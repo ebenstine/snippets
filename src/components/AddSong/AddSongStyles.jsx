@@ -227,6 +227,11 @@ const useStyles = makeStyles((theme) => ({
         background: "transparent"
     },
 
+    dialog: {
+        background: '#fff099',
+        border: '1px solid #3b95ac' 
+    }
+
     
 
     
