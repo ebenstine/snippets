@@ -2,6 +2,27 @@ import React, { useState } from 'react';
 import { Button } from '@material-ui/core';
 import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
 import ProgressBar from './ProgressBar';
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles(() => ({
+  dropZone: {
+
+    color: '#233d4d', 
+    paddingLeft: '3em', 
+    paddingRight: '3em', 
+    border: '1.5px solid #3b95ac',
+    
+    background: '#82bdcc',
+    '&:hover': {
+      border: '1.5px solid #233d4d',
+      background: '#82bdcc'
+    }
+
+    }
+
+
+
+}));
 
 
 const dropStyles = {
@@ -23,7 +44,7 @@ const Uploader = ({uploadComplete}) => {
 
     const [progress, setProgress] = useState(0);
     const [progressTitle, setProgressTitle] = useState('')
-
+    const { dropZone } = useStyles();
     const handleFinishedUpload = info => {
       
       console.log(info);
@@ -54,28 +75,17 @@ const Uploader = ({uploadComplete}) => {
                     paddingTop: '2.5em', 
                     paddingLeft: '1.5em', 
                     paddingRight: '1.5em',
-                    '&:hover': {
-                      background:'#1d778d',
-                      },
+                    
                     
 
                   }}
           
             >
             <Button variant="outlined" 
-                    style={{
+                    className={dropZone}
 
-                      color: '#233d4d', 
-                      paddingLeft: '3em', 
-                      paddingRight: '3em', 
-                      border: '1.5px solid #3b95ac',
-                      '&:hover': {
-                        background:'#1d778d',
-                        },
-                      background: '#82bdcc' 
-
-                      }}
-                  >Click to Select, or Drag and Drop File</Button>
+                    
+            >Click to Select, or Drag and Drop File</Button>
             </div>
     )
   return (
