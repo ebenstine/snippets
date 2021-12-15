@@ -28,8 +28,8 @@ const useStyles = makeStyles((theme) => ({
             //border: "2px solid #3b95ac"
           //},
           "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#3b95ac",
-            borderRadius: "5px 5px 5px 5px"
+            border: "1.5px solid#3b95ac",
+            borderRadius: "3px 3px 3px 3px"
           },
         
 

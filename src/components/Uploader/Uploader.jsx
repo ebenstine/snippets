@@ -54,6 +54,9 @@ const Uploader = ({uploadComplete}) => {
                     paddingTop: '2.5em', 
                     paddingLeft: '1.5em', 
                     paddingRight: '1.5em',
+                    '&:hover': {
+                      background:'#1d778d',
+                      },
                     
 
                   }}
@@ -66,6 +69,9 @@ const Uploader = ({uploadComplete}) => {
                       paddingLeft: '3em', 
                       paddingRight: '3em', 
                       border: '1.5px solid #3b95ac',
+                      '&:hover': {
+                        background:'#1d778d',
+                        },
                       background: '#82bdcc' 
 
                       }}

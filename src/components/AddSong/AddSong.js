@@ -125,11 +125,7 @@ const AddSong = () => {
               onChange={enterNewSong('priority')}
               className={priority1}
               value={newSong.priority}
-              /*sx={{
-                '&.Mui-focused': {
-                    outline: 'none',
-                }
-              }}*/
+              
               >
                 
                 <DialogTitle defaultValue={'  '}className={selectTitle} >&nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;</DialogTitle>
@@ -142,41 +138,49 @@ const AddSong = () => {
           </div>:
           newSong.priority ==='2' ?
           <div>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel id="demo-controlled-open-select-label">Priority</InputLabel>
           <Select
-              
+              labelId="demo-controlled-open-select-label"
+              id="demo-controlled-open-select"
+              label="priority"
               name="priority"
               onChange={enterNewSong('priority')}
               className={priority2}
               value={newSong.priority}
+              
               >
                 
-                <DialogTitle defaultValue={''} className={selectTitle} >Assign Completion Priority</DialogTitle>
+                <DialogTitle defaultValue={'  '}className={selectTitle} >&nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;</DialogTitle>
                 <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
                 
-            
           </Select> 
+          </FormControl>
           </div>:
           newSong.priority ==='3' ?
           <div>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel id="demo-controlled-open-select-label">Priority</InputLabel>
           <Select
-
-            name="priority"
-            onChange={enterNewSong('priority')}
-            className={priority3}
-            value={newSong.priority}
-              
+              labelId="demo-controlled-open-select-label"
+              id="demo-controlled-open-select"
+              label="priority"
+              name="priority"
+              onChange={enterNewSong('priority')}
+              className={priority3}
+              value={newSong.priority}
               
               >
                 
-                <DialogTitle defaultValue={''} className={selectTitle} >Assign Completion Priority</DialogTitle>
+                <DialogTitle defaultValue={'  '}className={selectTitle} >&nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;</DialogTitle>
                 <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
                 <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
-               
-            
+                
           </Select> 
+          </FormControl> 
           </div>:
           <div>
           <Select
