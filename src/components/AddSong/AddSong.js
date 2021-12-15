@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { Paper, MenuItem, TextField, Button, Typography, Select, FormControl, Dialog, DialogTitle} from '@material-ui/core';
+import { Paper, MenuItem, TextField, Button, Typography, DialogTitle} from '@material-ui/core';
+import { Select, FormControl, InputLabel } from '@mui/material'
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
 import useStyles from './AddSongStyles'
 import Uploader from '../Uploader/Uploader';
 import Backup from '@material-ui/icons/Backup';
 import Cancel from '@material-ui/icons/Cancel';
+import PriorityGroupOne from './PriorityGroupOne';
 
 
 const AddSong = () => {
@@ -76,46 +78,58 @@ const AddSong = () => {
           <form className={root} onSubmit={handleSave} noValidate autoComplete="off" >
             <div className={cardContent}>
             <Typography variant = "h5" component="h5" className={title}>Add A New Song</Typography>
-            <TextField
-              label="Title"
-              onChange={enterNewSong('title')}
-              value={newSong.title}
+              <TextField
+                label="Title"
+                onChange={enterNewSong('title')}
+                value={newSong.title}
               
-              multiline className={textField}
-            />
+                multiline className={textField}
+              />
           
-            <TextField
-              label="Instrument Notes"
-              onChange={enterNewSong('instrument_notes')}
-              value={newSong.instrument_notes}
-              multiline className={textField}
+              <TextField
+                label="Instrument Notes"
+                onChange={enterNewSong('instrument_notes')}
+                value={newSong.instrument_notes}
+                multiline className={textField}
 
-            />
+              />
          
-          <TextField
-              label="Performance Notes"
-              onChange={enterNewSong('performance_notes')}
-              value={newSong.performance_notes}
-              multiline className={textField}
+              <TextField
+                label="Performance Notes"
+                onChange={enterNewSong('performance_notes')}
+                value={newSong.performance_notes}
+                multiline className={textField}
 
-            />
+              />
           
-          <TextField
-              label="Lyrics"
-              onChange={enterNewSong('lyrics')}
-              value={newSong.lyrics}
-              multiline className={textField}
-            />
-          <br></br>
+              <TextField
+                label="Lyrics"
+                onChange={enterNewSong('lyrics')}
+                value={newSong.lyrics}
+                multiline className={textField}
+              />
+            <br></br>
+            
           {newSong.priority ==='1' ?
+
+          
           <div>
           
+        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel id="demo-controlled-open-select-label">Priority</InputLabel>
           <Select
-              
+              labelId="demo-controlled-open-select-label"
+              id="demo-controlled-open-select"
+              label="priority"
               name="priority"
               onChange={enterNewSong('priority')}
               className={priority1}
               value={newSong.priority}
+              /*sx={{
+                '&.Mui-focused': {
+                    outline: 'none',
+                }
+              }}*/
               >
                 
                 <DialogTitle defaultValue={'  '}className={selectTitle} >&nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;</DialogTitle>
@@ -124,7 +138,7 @@ const AddSong = () => {
                 <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
                 
           </Select> 
-          
+          </FormControl>
           </div>:
           newSong.priority ==='2' ?
           <div>

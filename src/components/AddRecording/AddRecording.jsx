@@ -67,7 +67,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
       <MenuItem onClick={handleClickOpen} className={upload}><Backup/>&nbsp;Upload New</MenuItem>
       <Dialog 
        PaperProps={{
-        style: { border: "1.5px solid #3b95ac" }
+        style: { border: "1px solid #3b95ac" }
 
       }}
        open={open} 

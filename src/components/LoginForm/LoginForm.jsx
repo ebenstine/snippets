@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
     '& .MuiInput-underline:after': {
         borderBottomColor: '#ffab5c',
+        borderTopColor:'#ffab5c',
         
         
     },

@@ -111,9 +111,10 @@ export default function PriorityGroupOne() {
           label="Priority"
           className={priority1}
           onChange={handleChange}
+          
         >
           <DialogTitle value="" className={selectTitle}>
-          &nbsp;&nbsp;<em>Assign Completion Priority</em>&nbsp;&nbsp;
+          &nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;
           </DialogTitle>
           <MenuItem value={'1'} className={setPriority1}>&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
           <MenuItem value={'2'} className={setPriority2}>&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>

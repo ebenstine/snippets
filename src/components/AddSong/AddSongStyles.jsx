@@ -5,34 +5,62 @@ const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
             //margin: theme.spacing(1),
-            color: 'black'
+            color: '#2a4f64'
             //width: '25ch'
         },
         '& label.Mui-focused': {
             color: '#2a4f64',
+            border: '#3b95ac'
         },
         '& .MuiInput-underline:after': {
             borderBottomColor: '#3b95ac',
+        }, 
+            
+            
+            
+        
+        "& .MuiOutlinedInput-input": {
+            color: "#2a4f64",
+            //border: "2px solid #3b95ac"
+            
+        },
+        //"& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
+            //border: "2px solid #3b95ac"
+          //},
+          "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#3b95ac",
+            borderRadius: "5px 5px 5px 5px"
+          },
+        
+
+          
+        '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+                color: '#3b95ac',
+                //paddingLeft: '4em'
+                
+            },
+            '& .Mui-selected': {
+
+               borderColor: '3b95ac'
+
+            },
+            '&:hover fieldset': {
+                border:' 1.5px solid #3b95ac' 
+            },  
+            '&:fieldset.Mui-focused': {
+                border:' 1.5px solid #3b95ac'
+            
+            },
             
 
             
             
-        },
-        '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-                borderColor: '#3b95ac',
-                //paddingLeft: '4em'
-                
-            },
-            '&:hover fieldset': {
-                borderColor: '#3b95ac',
-                
-            },
-            '&.MuiSelect-select': {
-                borderColor: '#3b95ac',
-                borderRadius: '8px',
-                //paddingLeft: '3em'
-            },
+            
+            
+          
+            
+            
             
         },
     },
@@ -50,9 +78,9 @@ const useStyles = makeStyles((theme) => ({
     },
     priority0: {
         
-        borderTop: '1.5px solid #3b95ac',
+        /*borderTop: '1.5px solid #3b95ac',
         borderLeft: '1.5px solid #3b95ac',
-        borderRight: '1.5px solid #3b95ac',
+        borderRight: '1.5px solid #3b95ac',*/
         alignItems: 'center',
         //margin: '1ch',
         borderRadius: '2px',
@@ -63,9 +91,9 @@ const useStyles = makeStyles((theme) => ({
         },
     priority1: {
         
-        borderTop: '1.5px solid #3b95ac',
+       /* borderTop: '1.5px solid #3b95ac',
         borderLeft: '1.5px solid #3b95ac',
-        borderRight: '1.5px solid #3b95ac',
+        borderRight: '1.5px solid #3b95ac',*/
         
         alignItems: 'center',
         //margin: '1ch',
@@ -79,9 +107,9 @@ const useStyles = makeStyles((theme) => ({
         },
     priority2: {
         
-        borderTop: '1.5px solid #3b95ac',
+        /*borderTop: '1.5px solid #3b95ac',
         borderLeft: '1.5px solid #3b95ac',
-        borderRight: '1.5px solid #3b95ac',
+        borderRight: '1.5px solid #3b95ac',*/
         
         alignItems: 'center',
         //margin: '1ch',
@@ -95,9 +123,9 @@ const useStyles = makeStyles((theme) => ({
 
     priority3: {
         
-        borderTop: '1.5px solid #3b95ac',
+        /*borderTop: '1.5px solid #3b95ac',
         borderLeft: '1.5px solid #3b95ac',
-        borderRight: '1.5px solid #3b95ac',
+        borderRight: '1.5px solid #3b95ac',*/
         
         
         alignItems: 'center',
@@ -165,7 +193,7 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         marginLeft: '3em',
         marginRight: '3em',
-        border: '1px solid #3b95ac',
+        //border: '1px solid #3b95ac',
         borderRadius: '3px',
         paddingLeft: '2.7em'
         
