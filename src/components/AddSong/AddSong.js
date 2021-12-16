@@ -40,11 +40,15 @@ const AddSong = () => {
   const [newSong, setNewSong] = useState({});
   
 
-
   const enterNewSong = (key) => (event) => {
     setNewSong({ ...newSong, [key]: event.target.value });
   };
 
+  if (newSong.title === '' || newSong.preview_audio === '') {
+    alert('Not all fields are required, but you must enter a title and upload an audio file')
+    return false;
+  } 
+  
   const handleSave = (event) => {
     event.preventDefault();
     dispatch({ 
@@ -55,7 +59,7 @@ const AddSong = () => {
     });
     history.push('/songsList')
    };
-
+  
   console.log(newSong);
 
   const uploadComplete = (fileUrl) => {
@@ -66,7 +70,6 @@ const AddSong = () => {
   const toUserHome = () => {
     history.push('/songsList')
 }
-
 
 
 
@@ -223,5 +226,6 @@ const AddSong = () => {
   </div>
   );
 }
+
 
 export default connect() (AddSong);
