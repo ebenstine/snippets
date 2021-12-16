@@ -118,7 +118,7 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
           background:'#fde76c',
           },
-        border: "1px solid #1d778d",
+        border: "1px solid #3b95ac",
         borderRadius: "3px",
     },
 

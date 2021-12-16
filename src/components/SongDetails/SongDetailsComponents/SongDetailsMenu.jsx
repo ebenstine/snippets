@@ -69,7 +69,7 @@ const SongDetailsMenu = ({song}) => {
                 onClose={handleCancel} 
                 aria-labelledby="Rename song title input"
                 PaperProps={{
-                  style: { border: "1px solid #3b95ac",
+                  style: { border: "1px solid #2a4f64",
                   background: "rgb(199, 246, 252",
                   
                           }

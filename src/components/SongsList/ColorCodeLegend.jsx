@@ -126,7 +126,7 @@ const ColorCodeLegend = () => {
                 open={open}
                 PaperProps={{
                     style: 
-                        { border: "1px solid #3b95ac",
+                        { border: "1px solid #2a4f64",
                              position: "fixed", top: 68, right: 18, m: 50, 
                              background: "rgb(230, 252, 255)"
                         }

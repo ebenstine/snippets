@@ -86,7 +86,7 @@ const NavMenu = ({user}) => {
                 open={open}
                 PaperProps={{
                     style: 
-                        { border: "1px solid #3b95ac",
+                        { border: "1px solid #2a4f64",
                              position: "fixed", top: 0, right: 0, m: 0, 
                              background: "rgb(199, 246, 252)"
                         }
