@@ -29,13 +29,21 @@ const useStyles = makeStyles((theme) => ({
 
     heading: {
       color: '#2a4f64'
+    }, 
+
+    menuIcon: {
+      color: '#3b95ac',
+      '&:hover': {
+        color:'#2a4f64'
+      }
+
     }
 
 }))
 
 
 const SongDetailsMenu = ({song}) => {
-    const {heading, menuItems} = useStyles();
+    const {heading, menuItems, menuIcon} = useStyles();
     const [open, setOpen] = useState(false);
    
   
@@ -55,10 +63,10 @@ const SongDetailsMenu = ({song}) => {
         <IconButton>
           <MoreHorizIcon 
 
+            className={menuIcon}
             aria-controls="simple-menu" 
             aria-haspopup="true"
-            fontSize={'inherit'} 
-            style={{ color: '#3b95ac' }}
+            fontSize={'inherit'}
             onClick={handleClickOpen}>
 
         </MoreHorizIcon>

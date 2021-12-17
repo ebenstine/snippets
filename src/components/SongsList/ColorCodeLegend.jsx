@@ -10,7 +10,7 @@ import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 
 
-import { LooksOne, LooksTwo, Looks3 } from '@material-ui/icons';
+import { Album } from '@material-ui/icons';
 import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox';
 import Info from '@material-ui/icons/Info';
 import MoreHoriz from '@material-ui/icons/MoreHoriz'
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
     colorCode: {
         color: '#2a4f64',
-        background: 'transparent',
+        background: 'rgb(230, 252, 255)',
         '&:hover': {
             background:'#f0a1a1',
             },
@@ -33,9 +33,9 @@ const useStyles = makeStyles((theme) => ({
     },
     colorCode1: {
         color: '#2a4f64',
-        background: 'transparent',
+        background: 'rgb(230, 252, 255)',
         '&:hover': {
-            background:'#afe4f1',
+            background:'#c4fbff',
             },
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     },
     colorCode2: {
         color: '#2a4f64',
-        background: 'transparent',
+        background:'rgb(230, 252, 255)',
         '&:hover': {
             background:'#ffb171',
             },
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     },
     colorCode3: {
         color: '#2a4f64',
-        background: 'transparent',
+        background: 'rgb(230, 252, 255)',
         '&:hover': {
             background:'#fdd377',
             },
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
        
         color: '#3b95ac',
         '&:hover': {
-        color:'#3b95ac'
+        color:'#2a4f64'
         }
 
     },
@@ -128,14 +128,14 @@ const ColorCodeLegend = () => {
                     style: 
                         { border: "1px solid #2a4f64",
                              position: "fixed", top: 68, right: 18, m: 50, 
-                             background: "rgb(230, 252, 255)"
+                             
                         }
             
                             }}
                 onClose={handleCancel}
 
                 >
-        <DialogTitle className={dialogTitle} >Song Priority Groups</DialogTitle>
+        <DialogTitle className={dialogTitle} >Priority by Color Key</DialogTitle>
           
           <MenuItem
           className={colorCode1}
@@ -152,7 +152,7 @@ const ColorCodeLegend = () => {
             onClick={handleCancel}
           >
             
-            <LooksOne/>
+            <Album/>
             <Typography component="h5">
             &nbsp;Group One
             </Typography>
@@ -171,7 +171,7 @@ const ColorCodeLegend = () => {
                  }}
                  onClick={handleCancel}     
             >
-            <LooksTwo/>  
+            <Album/>  
             &nbsp;Group Two
             </Link>
 
@@ -187,7 +187,7 @@ const ColorCodeLegend = () => {
                  onClick={handleCancel}
             > 
             
-            <Looks3/> 
+            <Album/> 
             &nbsp;Group Three
             </Link>
         

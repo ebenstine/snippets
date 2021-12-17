@@ -87,6 +87,14 @@ function App() {
           >
           <SongDetails />
           </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows archive else shows LoginPage
+            exact
+            path="/archive"
+          >
+            <SongsList />
+          </ProtectedRoute>
           
 
 
@@ -132,6 +140,8 @@ function App() {
               <LoginPage/>
             }
           </Route>
+
+          
 
 
           {/* If none of the other routes matched, we will show a 404. */}
