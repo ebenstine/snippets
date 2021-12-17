@@ -52,7 +52,8 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
         borderBottom: '1.25px solid #6ca0ad',
-        whiteSpace: 'pre-wrap'
+        whiteSpace: 'pre-wrap',
+        color: '#2a4f64'
     },
 }));
 
@@ -124,7 +125,7 @@ function SongInstrumentNotes() {
                 :
                 <div onDoubleClick={handleEditable}>
                     <Typography variant="h5" component="h5" className={titleTitle}>
-                    ▶ Instrument Notes:{`${' '}`}{`${reviseDetails.instrument_notes}`}
+                    <span style={{color:"#1d778d"}}>▶</span>&nbsp;Instrument Notes: {`${reviseDetails.instrument_notes}`}
                     </Typography>
                 </div>
             }

@@ -126,7 +126,7 @@ function SongPerformanceNotes() {
                 :
                 <div onDoubleClick={handleEditable}>
                     <Typography variant="h5" component="h5" className={titleTitle}>
-                    ▶ Performance Notes:{`${' '}`} {`${reviseDetails.performance_notes}`}
+                    <span style={{color:"#1d778d"}}>▶</span>&nbsp;Performance Notes:{`${reviseDetails.performance_notes}`}
                     </Typography>
                 </div>
             }
