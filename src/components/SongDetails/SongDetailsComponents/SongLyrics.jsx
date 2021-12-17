@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
         
         width: '42ch',
         marginBottom: '1em',
+        fontSize: 15
     },
 
     subheading: {
@@ -51,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 
     words: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 15,
+        fontSize: 9.5,
         borderBottom: '1.25px solid #6ca0ad',
         whiteSpace: 'pre-wrap',
         color: '#233d4d'
@@ -109,8 +110,9 @@ function SongLyrics() {
                     <form className={root} onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
                             label="Update Lyrics" 
-                            name="lyrics" 
-                           
+                            name="lyrics"
+                             
+                            
                             onDoubleClick={handleEditable}
                             margin="dense" 
                             multiline className={textField} 

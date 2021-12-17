@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
         
         width: '42ch',
         marginBottom: '1em',
+        fontSize: 20
     },
 
     subheading: {
@@ -53,9 +54,10 @@ const useStyles = makeStyles((theme) => ({
 
     titleTitle: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 9.5,
+        fontSize: 20,
         borderBottom: '1.25px solid #6ca0ad',
-        whiteSpace: 'pre-wrap'
+        whiteSpace: 'pre-wrap',
+        color: '#2a4f64'
     },
 }));
 
@@ -134,7 +136,7 @@ function SongTitle() {
                 :
                 
                 <div onDoubleClick={handleEditable}>
-                    <Typography variant="h5" component="h5" className={titleTitle}>
+                    <Typography variant="overline" className={titleTitle}>
                     {`${reviseDetails.title}`}
                     </Typography>
                 </div>

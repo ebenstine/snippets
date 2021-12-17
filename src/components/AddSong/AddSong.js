@@ -46,7 +46,7 @@ const AddSong = () => {
 
   if (newSong.title === '' || newSong.preview_audio === '') {
     alert('Not all fields are required, but you must enter a title and upload an audio file')
-    return false;
+
   } 
   
   const handleSave = (event) => {
