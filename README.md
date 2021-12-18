@@ -6,14 +6,21 @@ _Duration: 2 Week Sprint_
 
 I created Snippets to help me keep all the different details and moving parts of my unfinished songs centralized in a single concisely organized location.  It's so easy to forget a good idea when writing a song -  be it a great random idea for a lyric, an unexpected utilization of an inventive guitar tuning, or a melodic inspiration. From the user's home page they can navigate either to add a new song, or to a list of songs they've already added, organized in a patterned column list that color-codes the columns according to a pre-established set of priority tiers (this is keeping track of unfinished work, after all).  The user can click on a song to view all lyrics and notes for that project, and edit them as needed.  If applicable, the user can upload additional audio recordings relevant to a song by following the menu prompts on the details page.
 ## Screen Shots
-"https://user-images.githubusercontent.com/81579996/146627415-9f471d7b-0dcd-453f-aa38-c1e028789662.png">
-"https://user-images.githubusercontent.com/81579996/146627410-d661c3bd-f0d6-4575-9b21-f58625616eb0.png">
-"https://user-images.githubusercontent.com/81579996/146627417-deebe2e3-42a8-46ca-b50a-6283b9bdeafe.png">
-<img width="1440" alt="Screen Shot 2021-12-17 at 9 19 18 PM" src="https://user-images.githubusercontent.com/81579996/146627419-b0bf3d19-0614-47af-a3cc-7b99c42d8725.png">
-<img width="1440" alt="Screen Shot 2021-12-17 at 9 17 29 PM" src="https://user-images.githubusercontent.com/81579996/146627420-909a439e-ba37-4697-8186-2a63162c7b4e.png">
-<img width="1440" alt="Screen Shot 2021-12-17 at 9 18 18 PM" src="https://user-images.githubusercontent.com/81579996/146627423-2f592853-1842-4f66-8065-e70459821ecb.png">
 
-<img width="1440" alt="Screen Shot 2021-12-17 at 9 15 57 PM" src="https://user-images.githubusercontent.com/81579996/146627461-97a8bc4d-9882-4b37-a305-440e5e85d764.png">
+<img width="1440" alt="Screen Shot 2021-12-17 at 9 15 57 PM" src="https://user-images.githubusercontent.com/81579996/146627545-3eedd128-7063-4881-86b6-f90e8b7269e8.png">
+
+<img width="1440" alt="Screen Shot 2021-12-17 at 9 18 02 PM" src="https://user-images.githubusercontent.com/81579996/146627549-e502e06b-45db-4966-a1fd-62e6c8be3c77.png">
+
+
+<img width="1440" alt="Screen Shot 2021-12-17 at 9 19 01 PM" src="https://user-images.githubusercontent.com/81579996/146627557-bd48d9f0-e8d9-4d7c-9ac5-ef956b149f84.png">
+
+<img width="1440" alt="Screen Shot 2021-12-17 at 9 17 29 PM" src="https://user-images.githubusercontent.com/81579996/146627560-640b1247-958d-4a2e-922f-71be7d795c00.png">
+
+
+<img width="1440" alt="Screen Shot 2021-12-17 at 9 18 18 PM" src="https://user-images.githubusercontent.com/81579996/146627563-d06763db-218d-46c4-9cbf-3c8fd8544380.png">
+<img width="1440" alt="Screen Shot 2021-12-17 at 9 19 18 PM" src="https://user-images.githubusercontent.com/81579996/146627566-c4003ec0-67a6-4e01-a94d-10bb34c92988.png">
+
+
 
 
 ### Prerequisites
