@@ -116,11 +116,11 @@ function SongPerformanceNotes() {
                             multiline className={textField} 
                             onChange={handleChange}
                             
-                            />
-                        <div className={actions}> 
-                        <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
-                        <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
-                        </div>
+                        />
+                            <div className={actions}> 
+                                <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
+                                <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
+                            </div>
                     </form>
                 </FormControl>
                 :
