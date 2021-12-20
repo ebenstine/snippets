@@ -78,20 +78,25 @@ const NavMenu = ({user}) => {
             
         </Menu>
       </IconButton>
-        <MenuItem onClick={handleClickOpen}>
+        <MenuItem 
+        
+          onClick={handleClickOpen}>
                 
         </MenuItem>
+          
           <Dialog 
                 
                 open={open}
-                PaperProps={{
+                  PaperProps={{
                     style: 
-                        { border: "1px solid #2a4f64",
-                             position: "fixed", top: 0, right: 0, m: 0, 
-                             background: "rgb(199, 246, 252)"
-                        }
+                          { 
+                            border: "1px solid #2a4f64",
+                            position: "fixed", top: 0, right: 0, m: 0, 
+                            background: "rgb(199, 246, 252)"
+                          }
             
                             }}
+                
                 onClose={handleCancel}
 
                 >

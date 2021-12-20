@@ -1,4 +1,4 @@
-//THIS NONSENSE CAN'T BE ACCESSED ANYWHERE 
+//THIS NONSENSE CAN'T BE ACCESSED ANYWHERE // THE SHIT IS DEPRECATED
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './LandingPage.css';

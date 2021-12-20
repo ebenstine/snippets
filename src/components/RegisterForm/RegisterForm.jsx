@@ -44,11 +44,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 30,
     marginBottom: 25,
     background: '#fff099',
-        color: '#2a4f64',
-        border: '1px solid #3b95ac',
-        '&:hover': {
-            background:'#fde76c',
-            },
+    color: '#2a4f64',
+    border: '1px solid #3b95ac',
+      '&:hover': {
+          background:'#fde76c',
+          },
     paddingLeft: '1em',
     paddingRight: '1em'
   },
@@ -91,25 +91,61 @@ function RegisterForm() {
       <Grid noValidate autoComplete="off" onSubmit={registerUser}>
         {/* MUI input fields and button for registration form  */}
         <Grid item lg={2} xs={6} sm={3} md={3}>
-          <Typography variant="h5" className={classes.signUp}>Create Account</Typography>
+          <Typography 
+
+            variant="h5" 
+            className={classes.signUp}
+            >Create Account
+
+          </Typography>
+
         </Grid>
-        {errors.registrationMessage && (
-          <h3 className="alert" role="alert">
-            {errors.registrationMessage}
-          </h3>
-        )}
+
+          {errors.registrationMessage && (
+            <h3 className="alert" role="alert">
+              {errors.registrationMessage}
+            </h3>
+          )}
+
         <Grid item lg={2} xs={6} sm={3} md={3}>
-          <TextField noValidate autoComplete="off" required variant="standard" label="Username" color="primary" value={username}
-            onChange={(event) => setUsername(event.target.value)} />
+          <TextField 
+            
+            noValidate autoComplete="off" 
+            required variant="standard" 
+            label="Username" 
+            color="primary" 
+            value={username}
+            onChange={(event) => setUsername(event.target.value)} 
+
+            />
         </Grid>
         <Grid item lg={2} xs={6} sm={3} md={3}>
-          <TextField className={classes.password} required label="Password" variant="standard" color="primary" value={password}
-            type="password" noValidate autoComplete="off" onChange={(event) => setPassword(event.target.value)} />
+          <TextField 
+
+            className={classes.password} 
+            required label="Password" 
+            variant="standard" 
+            color="primary" 
+            value={password}
+            type="password" 
+            noValidate autoComplete="off" 
+            onChange={(event) => setPassword(event.target.value)} 
+
+            />
         </Grid>
         
           <Grid item lg={2} xs={6} sm={3} md={3}>
-            <Button variant="contained" className={classes.btn} align="center" onClick={registerUser}>Sign Up</Button>
+            <Button 
+              
+              variant="contained" 
+              className={classes.btn} 
+              align="center" 
+              onClick={registerUser}
+
+            >Sign Up</Button>
+
           </Grid>
+
         
 
       </Grid>
