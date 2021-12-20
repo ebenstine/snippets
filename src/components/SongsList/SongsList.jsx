@@ -14,7 +14,22 @@ import ColorCodeLegend from './ColorCodeLegend'
 
 function SongsList() {
 
-    const { title, player, card, card1, card2, card3, paper, menuDots } = useStyles();
+    const { 
+            
+            title, 
+            title1, 
+            title2, 
+            title3, 
+            player, 
+            card, 
+            card1, 
+            card2, 
+            card3, 
+            paper, 
+            menuDots 
+            
+        } = useStyles();
+
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
@@ -81,7 +96,7 @@ function SongsList() {
                                         
                                                             <Typography 
                                                                 variant="overline" 
-                                                                className={title}>{song.title}
+                                                                className={title1}>{song.title}
                                                             </Typography>
                                             
                                         
@@ -130,7 +145,7 @@ function SongsList() {
                                                             <Typography 
                                                                     
                                                                 variant="overline" 
-                                                                className={title}>{song.title}
+                                                                className={title2}>{song.title}
                                                             
                                                             </Typography>
             
@@ -185,7 +200,7 @@ function SongsList() {
                                                             <Typography 
                                                             
                                                                 variant="overline" 
-                                                                className={title}>{song.title}
+                                                                className={title3}>{song.title}
                                                     
                                                             </Typography>
     

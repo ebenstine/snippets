@@ -96,7 +96,51 @@ const useStyles = makeStyles(() => ({
         color: '#233d4d',
         '&:hover': {
             color:'#1d778d',
-            cursor: 'pointer' 
+            cursor: 'pointer',
+            borderBottom: '1.5px solid #1d778d'
+    }
+        
+    },
+
+    title1: {
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 16,
+        marginLeft: '-.4em',
+        marginTop: 'auto',
+        color: '#233d4d',
+        '&:hover': {
+            color:'#1d778d',
+            cursor: 'pointer',
+            borderBottom: '1.5px solid #1d778d',
+           
+    }
+        
+    },
+
+    title2: {
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 16,
+        marginLeft: '-.4em',
+        marginTop: 'auto',
+        color: '#233d4d',
+        '&:hover': {
+            color:'#1d778d',
+            cursor: 'pointer',
+            borderBottom: '1.5px solid #1d778d'
+    }
+        
+    },
+
+    title3: {
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 16,
+        marginLeft: '-.4em',
+        marginTop: 'auto',
+        color: '#233d4d',
+        '&:hover': {
+            color:'#1d778d',
+            cursor: 'pointer',
+            borderBottom: '1.5px solid #1d778d'
     }
         
     },
