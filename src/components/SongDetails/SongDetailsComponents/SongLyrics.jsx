@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
     textField: {
         
-        width: '42ch',
+        width: '45ch',
         marginBottom: '1em',
         fontSize: 15
     },
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
     words: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
-        borderBottom: '1.25px solid #6ca0ad',
+        borderBottom: '1.5px solid #6ca0ad',
         whiteSpace: 'pre-wrap',
         color: '#233d4d'
     },
