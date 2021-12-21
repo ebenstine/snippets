@@ -67,7 +67,7 @@ function SongsList() {
                     flexWrap="wrap"
                     justifyContent="space-between"
                 >
-                
+                {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
                         {songs.map((song) => {
                             return (
                                 <>
@@ -288,6 +288,7 @@ function SongsList() {
 
     </Paper>
 </>
+//ternary statement : would go here, with priority group rendering to follow?
 );
 
 }
