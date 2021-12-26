@@ -45,12 +45,12 @@ const RecordingsList = () => {
     }
 //CURRENT THEORY: delete doesn't work because params.id is targeting the song.id, because this function is being 
 //called while inside of that id route.
-    const handleDeleteAudio = () => {
-        const id = params.id
-        console.log(id);
+    const handleDeleteAudio = (recordingId) => {
+        
+        console.log(recordingId);
         dispatch({
             type: 'DELETE_AUDIO',
-            payload: params.id
+            payload: recordingId
         })
     }
 
