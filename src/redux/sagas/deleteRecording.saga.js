@@ -4,9 +4,9 @@ import { put, takeLatest } from 'redux-saga/effects';
 function* audioDelete(action) {
     try {
         
-        
+        let id = (action.payload.id);
  
-        yield axios.delete(`/api/recording/${action.payload.id}`);
+        yield axios.delete(`/api/recording/${id}`);
         yield put({ 
             type: 'FETCH_RECORDINGS', 
             payload: action.payload.song_id
