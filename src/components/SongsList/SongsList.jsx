@@ -52,6 +52,9 @@ function SongsList() {
                     flexWrap="wrap"
                     justifyContent="space-between"
                 >
+                {/*if no distinction for what group to show is made, show all ternary statement would start here
+                    //{song.finished === "false" ? }
+                */}
                 
                         {songs.map((song) => {
                             return (

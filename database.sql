@@ -20,7 +20,7 @@ CREATE TABLE "songs" (
 	"performance_notes" TEXT DEFAULT 'no notes added',
     "priority" VARCHAR (10)
 	"lyrics" TEXT DEFAULT 'no lyrics added',
-	"finished" BOOLEAN DEFAULT FALSE,
+	"finished" BOOLEAN DEFAULT false,
 	"preview_audio" TEXT
 );
 

@@ -8,7 +8,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import Delete from '@material-ui/icons/Delete';
+import Archive from '@material-ui/icons/Archive';
 import Cancel from '@material-ui/icons/Cancel';
 import Feedback from '@material-ui/icons/Feedback';
 
@@ -506,7 +506,7 @@ function SongDetails(){
                             variant="contained" 
                             onClick={handleClickOpen}
                         >
-                            <Delete/>
+                            <Archive/>
                             
                         </Button>
                         
@@ -545,8 +545,8 @@ function SongDetails(){
                                         
                                         <DialogContentText className={dialogText}>
                                             
-                                            This action permanently deletes the song and all its content.
-                                            Do you want to do this?  Please keep in mind that it can't be undone.
+                                            Moving the song to the finished archive will remove your ability to 
+                                            add new work.  Do you want to do this?
 
                                         </DialogContentText>
                                     
@@ -569,7 +569,7 @@ function SongDetails(){
                                         variant="contained"
                                     >
                                     
-                                        <Delete/>
+                                        <Archive/>
                                     </Button>
 
                                 </DialogActions>

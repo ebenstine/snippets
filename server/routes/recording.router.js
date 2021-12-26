@@ -3,7 +3,7 @@ const pool = require('../modules/pool');
 const router = express.Router();
 const {rejectUnauthenticated } = require('../modules/authentication-middleware');
 //haven't defined req.body? 
-router.get('/', rejectUnauthenticated, (req, res) => {
+/*router.get('/', rejectUnauthenticated, (req, res) => {
   
   const queryText = `SELECT * FROM recordings ORDER BY "id" ASC`;
   pool.query(queryText)
@@ -15,7 +15,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
       res.sendStatus(500)
     })
 
-})
+})*/
 
 
 

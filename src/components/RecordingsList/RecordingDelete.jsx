@@ -51,11 +51,11 @@ function RecordingDelete({ recording, dispatch }) {
     setOpen(false);
   };
 
-  const handleDelete = () => {
-    const id = recording.id;
+  const handleDelete = (recordingId) => {
+    console.log(recordingId);
     setOpen(false);
     handleClose();
-    dispatch({type: 'DELETE_AUDIO', payload: id})
+    dispatch({type: 'DELETE_AUDIO', payload: recordingId})
   }
 
   const handleCancel = () => {
