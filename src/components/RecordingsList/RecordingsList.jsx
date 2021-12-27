@@ -43,8 +43,7 @@ const RecordingsList = () => {
     const handleCancel = () => {
         setIsDrawerOpen(false);
     }
-//CURRENT THEORY: delete doesn't work because params.id is targeting the song.id, because this function is being 
-//called while inside of that id route.
+
     const handleDeleteAudio = (recordingId) => {
         
         console.log(recordingId);

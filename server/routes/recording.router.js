@@ -65,9 +65,9 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     })
   
   router.delete('/:id', rejectUnauthenticated, (req, res) => {
-    const id =  req.params.id
-
-    console.log('in delete recording', id);
+   
+    const id = req.params.id
+    console.log('in delete recording');
     let sqlText = `DELETE FROM recordings 
                    WHERE id = $1;`
                   ;
