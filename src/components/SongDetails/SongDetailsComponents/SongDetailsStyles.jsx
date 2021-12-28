@@ -86,7 +86,12 @@ const useStyles = makeStyles(() => ({
         color: '#233d4d',
         marginLeft: 'auto',
         marginTop: 'auto',
-        borderBottom: '1px solid #6ca0ad'
+        borderBottom: '1px solid #6ca0ad',
+        '&:hover': {
+            borderBottom: '1.5px solid #1d778d',
+            cursor: 'pointer'
+            },
+
        
         
     },
@@ -95,7 +100,11 @@ const useStyles = makeStyles(() => ({
         fontSize: 9.5,
         borderBottom: '1px solid #6ca0ad',
         whiteSpace: 'pre-wrap',
-        color: '#233d4d'
+        color: '#233d4d',
+        '&:hover': {
+            borderBottom: '1.5px solid #1d778d',
+            cursor: 'pointer'
+            },
     },
 
     notes: {

@@ -57,7 +57,8 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 20,
         borderBottom: '1.25px solid #6ca0ad',
         whiteSpace: 'pre-wrap',
-        color: '#2a4f64'
+        color: '#2a4f64',
+        
     },
 }));
 
