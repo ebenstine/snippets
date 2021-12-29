@@ -164,17 +164,37 @@ const useStyles = makeStyles(() => ({
         
     },
 
-    dialogButtons: {
+    cancelButton: {
 
         color: '#233d4d',
-        background: '#ff8c8c',
+        '&:hover': {
+            color:'#e45252',
+            },
+        background: '#fff099',
         border: '1px solid #3b95ac',
         alignItems: 'center',
         '&:hover': {
-            background:'#e45252',
+            background:'#fde76c',
             },
         
     },
+
+    archiveButton: {
+
+        color: '#233d4d',
+        '&:hover': {
+            color:'#77c568',
+            },
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        alignItems: 'center',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    },
+
+
 
     dialogText: {
         border: '1.5px solid #e45252',

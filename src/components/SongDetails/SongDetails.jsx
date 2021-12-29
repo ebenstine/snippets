@@ -38,7 +38,8 @@ function SongDetails(){
             dialog,
             dialogText,
             dialogContent, 
-            dialogButtons 
+            cancelButton,
+            archiveButton
 
         } = useStyles();
 
@@ -49,6 +50,7 @@ function SongDetails(){
     const [ editLyrics, setEditLyrics] = useState(false);
     const [ editINotes, setEditINotes] = useState(false);
     const [ editPNotes, setEditPNotes] = useState(false);
+  
 
     console.log(params);
 
@@ -83,7 +85,13 @@ function SongDetails(){
       const handleClose = () => {
         setOpen(false);
       };
-
+    /*const handleArchived = (songId) => {
+    dispatch ({
+        type: 'REVISE_SONG',
+        payload: songId,
+                isFinished: true
+    })
+    }*/
 
     const handleDelete = (songId) => {
         console.log(songId)
@@ -91,7 +99,7 @@ function SongDetails(){
             type: 'DELETE_SONG',
             payload: songId
         })
-       history.push('/songsList')
+       history.push/songsList
     }
 
     const handleCancel = () => {
@@ -546,7 +554,7 @@ function SongDetails(){
                                         <DialogContentText className={dialogText}>
                                             
                                             Moving the song to the finished archive will remove your ability to 
-                                            add new work.  Do you want to do this?
+                                            add new ideas or changes.  Do you want to do this?
 
                                         </DialogContentText>
                                     
@@ -555,7 +563,7 @@ function SongDetails(){
                                 <DialogActions className={dialogContent}>
                                     
                                     <Button 
-                                        className={dialogButtons} 
+                                        className={cancelButton} 
                                         onClick={handleCancel} 
                                         variant="contained"
                                     >
@@ -564,7 +572,7 @@ function SongDetails(){
                                     </Button>
                                     
                                     <Button 
-                                        className={dialogButtons} 
+                                        className={archiveButton} 
                                         onClick={() => handleDelete(song.id)} 
                                         variant="contained"
                                     >

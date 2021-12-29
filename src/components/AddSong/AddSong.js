@@ -80,7 +80,7 @@ const AddSong = () => {
         <FormControl >
           <form className={root} onSubmit={handleSave} noValidate autoComplete="off" >
             <div className={cardContent}>
-            <Typography variant = "h5" component="h5" className={title}>Add A New Song</Typography>
+            <Typography variant = "h5" component="h5" className={title}>New Song Details</Typography>
               <TextField
                 label="Title"
                 onChange={enterNewSong('title')}
