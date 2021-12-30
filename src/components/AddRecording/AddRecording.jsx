@@ -40,6 +40,11 @@ const AddRecording = ({ song, handleMenuClose }) => {
     setNewRecording({ ...newRecording, id:params.id, [key]: event.target.value });
   };
 
+  if (newRecording.description === '' || newRecording.src === 'null') {
+    alert('You must enter a description and upload an audio file!')
+    
+  } 
+
   const handleSave = (event) => {
     event.preventDefault();
     dispatch({ 
