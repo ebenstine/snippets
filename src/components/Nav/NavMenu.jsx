@@ -10,7 +10,9 @@ import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 
 
+
 import QueueMusic from '@material-ui/icons/QueueMusic';
+import MenuBook from '@material-ui/icons/MenuBook';
 import PlaylistAdd from '@material-ui/icons/PlaylistAdd';
 import Info from '@material-ui/icons/Info';
 import Menu from '@material-ui/icons/Menu'
@@ -119,7 +121,7 @@ const NavMenu = ({user}) => {
             
             <QueueMusic/>
             <Typography component="h5">
-            &nbsp;View All Songs
+            &nbsp;View Active Songs
             </Typography>
             </Link>
           </MenuItem>
@@ -140,6 +142,29 @@ const NavMenu = ({user}) => {
             &nbsp;Add a New Song
             </Link>
 
+          </MenuItem>
+
+          <MenuItem
+          className={heading}
+          
+          >
+          
+          <Link to="/archive"
+          style = {{
+            
+            color: '#233d4d',
+            display:'flex',
+            flexWrap: 'wrap'
+
+            }}
+            onClick={handleCancel}
+          >
+            
+            <MenuBook/>
+            <Typography component="h5">
+            &nbsp;View Archive
+            </Typography>
+            </Link>
           </MenuItem>
           <MenuItem className={heading}>
             
