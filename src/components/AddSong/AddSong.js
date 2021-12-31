@@ -10,6 +10,8 @@ import Uploader from '../Uploader/Uploader';
 import Backup from '@material-ui/icons/Backup';
 import Cancel from '@material-ui/icons/Cancel';
 import PriorityGroupOne from './PriorityGroupOne';
+import { Alert } from '@material-ui/lab';
+import { Add } from '@material-ui/icons';
 
 
 const AddSong = () => {
@@ -48,7 +50,7 @@ const AddSong = () => {
     alert('Not all fields are required, but you must enter a title and upload an audio file')
     
   } 
-  
+ 
   const handleSave = (event) => {
     event.preventDefault();
     dispatch({ 

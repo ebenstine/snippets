@@ -9,3 +9,4 @@
 // but that probably isn't really necessary here.  these are all just songs, just differentiated by completion status
 // so the finished archive just needs to conditionally render what's false
 // while the songsList component might need to get updated to conditionally render what's true
+// or the other way around if the boolean we use is "finished" - which makes the most sense, probably.
