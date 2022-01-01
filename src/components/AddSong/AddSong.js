@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { Paper, MenuItem, TextField, Button, Typography, DialogTitle} from '@material-ui/core';
+import { Paper, MenuItem, TextField, Button, Typography, DialogTitle, FormHelperText} from '@material-ui/core';
 import { Select, FormControl, InputLabel } from '@mui/material'
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -40,18 +40,22 @@ const AddSong = () => {
 
   const [url , setUrl] = useState ('no file was dropped');
   const [newSong, setNewSong] = useState({});
+  const [errorState, setErrorState] = useState(false);
+  const [helperText, setHelperText] = useState('');
   
 
   const enterNewSong = (key) => (event) => {
     setNewSong({ ...newSong, [key]: event.target.value });
   };
 
-  if (newSong.title === '' || newSong.preview_audio === '') {
-    alert('Not all fields are required, but you must enter a title and upload an audio file')
-    
+  if ((newSong.title === '') || (newSong.preview_audio === '')) {
+    setErrorState(true);
+    setHelperText('Please enter a title, and upload a file')
+  
   } 
  
   const handleSave = (event) => {
+    setErrorState(false);
     event.preventDefault();
     dispatch({ 
       
@@ -87,7 +91,7 @@ const AddSong = () => {
                 label="Title"
                 onChange={enterNewSong('title')}
                 value={newSong.title}
-              
+                error={errorState}
                 multiline className={textField}
               />
           
@@ -113,6 +117,7 @@ const AddSong = () => {
                 value={newSong.lyrics}
                 multiline className={textField}
               />
+              <FormHelperText error={errorState} > {helperText} </FormHelperText>
             <br></br>
             
           {newSong.priority ==='1' ?
@@ -130,7 +135,6 @@ const AddSong = () => {
               onChange={enterNewSong('priority')}
               className={priority1}
               value={newSong.priority}
-              
               
               >
                 
@@ -210,6 +214,7 @@ const AddSong = () => {
           <Uploader 
             elevated={10}  
             uploadComplete={uploadComplete}
+            error={errorState}
             
           />
          
