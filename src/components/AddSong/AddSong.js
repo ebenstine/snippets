@@ -44,6 +44,8 @@ const AddSong = () => {
   const [helperText, setHelperText] = useState('');
   
 
+  
+
   const enterNewSong = (key) => (event) => {
     setNewSong({ ...newSong, [key]: event.target.value });
   };
@@ -53,6 +55,9 @@ const AddSong = () => {
     setHelperText('Please enter a title, and upload a file')
   
   } 
+
+ 
+  
  
   const handleSave = (event) => {
     setErrorState(false);
@@ -67,7 +72,7 @@ const AddSong = () => {
    };
   
   console.log(newSong);
-
+  
   const uploadComplete = (fileUrl) => {
     console.log('fileUrl upload complete', fileUrl);
       setNewSong({...newSong, src: fileUrl})
@@ -77,7 +82,7 @@ const AddSong = () => {
     history.push('/songsList')
 }
 
-
+   
 
 
   return (

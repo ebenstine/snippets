@@ -6,13 +6,29 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 //route to get all songs
 router.get('/', rejectUnauthenticated, (req, res) => {
     const queryText = 
-    `SELECT song_id, title, date, instrument_notes, performance_notes, priority, lyrics, preview_audio,
+    `SELECT song_id, 
+            title, 
+            date, 
+            instrument_notes, 
+            performance_notes, 
+            priority, 
+            lyrics, 
+            finished, 
+            preview_audio,
         ARRAY_AGG (src)
         FROM songs
         JOIN "recordings" 
         ON "recordings".song_id = "songs".id
         WHERE user_id = $1
-        GROUP BY song_id, title, date, instrument_notes, performance_notes, priority, lyrics, preview_audio 
+        GROUP BY song_id, 
+                 title, 
+                 date, 
+                 instrument_notes, 
+                 performance_notes, 
+                 priority, 
+                 lyrics, 
+                 finished, 
+                 preview_audio 
         ORDER BY song_id ASC
     `;
 
@@ -52,18 +68,48 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
 router.post('/', rejectUnauthenticated, async (req, res) => {
     const client = await pool.connect();
     const userId = req.user.id;
-    const { title, instrument_notes, performance_notes, priority, lyrics, src, description } = req.body;
+    const { title, 
+            instrument_notes, 
+            performance_notes, 
+            priority, 
+            lyrics, 
+            finished, 
+            src, 
+            description } 
+            
+            = req.body;
 
     try {
         await client.query('BEGIN');
         const firstQuery = `
                             INSERT INTO "songs" (
-                            user_id, title, instrument_notes, performance_notes, priority, lyrics, preview_audio
+                            user_id, 
+                            title, 
+                            instrument_notes, 
+                            performance_notes, 
+                            priority, 
+                            lyrics, 
+                            finished, 
+                            preview_audio
                             )
                             VALUES($1, $2, $3, $4, $5, $6, $7)
                             RETURNING "id"`;
 
-        const result = await client.query(firstQuery, [userId, title, instrument_notes, performance_notes, priority, lyrics, src]);
+        const result = await client.query
+        
+        (
+            
+            firstQuery, 
+                [userId, 
+                    title, 
+                    instrument_notes, 
+                    performance_notes, 
+                    priority, 
+                    lyrics, 
+                    finished, 
+                    src
+                ]
+        );
 
         const newSongId = result.rows[0].id;
         const secondQuery = `

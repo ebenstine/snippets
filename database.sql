@@ -21,7 +21,7 @@ CREATE TABLE "songs" (
     "priority" VARCHAR (10)
 	"lyrics" TEXT DEFAULT 'no lyrics added',
 	"finished" BOOLEAN DEFAULT FALSE,
-	"preview_audio" TEXT
+	"preview_audio" TEXT NOT NULL
 );
 
 CREATE TABLE "recordings" (
