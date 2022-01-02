@@ -92,7 +92,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
                             finished, 
                             preview_audio
                             )
-                            VALUES($1, $2, $3, $4, $5, $6, $7)
+                            VALUES($1, $2, $3, $4, $5, $6, $7, $8)
                             RETURNING "id"`;
 
         const result = await client.query
