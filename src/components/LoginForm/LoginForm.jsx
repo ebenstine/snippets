@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
-import { Button, Grid, Container, Typography, TextField, Card, CardHeader, CardContent, makeStyles, ThemeProvider } from '@material-ui/core';
-
+import { Button, Grid, Container, Typography, Card, CardHeader, CardContent, makeStyles, ThemeProvider } from '@material-ui/core';
+import { TextField, FormControl } from '@mui/material'
 //change of styling with MUI components
 const useStyles = makeStyles((theme) => ({
 
@@ -118,6 +118,7 @@ function LoginForm() {
     
       <Container align="center" className={classes.root}>
         {/* grid for responsive design */}
+        
         <Grid noValidate autoComplete="off" onSubmit={login}>
 
           <Grid item lg={2} xs={6} sm={3} md={3}>
@@ -145,6 +146,7 @@ function LoginForm() {
           
 
         </Grid>
+      
       </Container>
       
 

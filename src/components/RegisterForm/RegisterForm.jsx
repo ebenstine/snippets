@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Grid, Container, Typography, TextField, makeStyles } from '@material-ui/core';
-
+import { Button, Container, Typography,  makeStyles } from '@material-ui/core';
+import { Grid, TextField } from '@mui/material'
 // change styling for MUI components
 const useStyles = makeStyles((theme) => ({
 

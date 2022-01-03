@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     },
     actions: {
         marginBottom: '2em',
-        marginTop: '-1em',
+        marginTop: '-.75em',
         marginLeft: '7.5em',
     },
 
