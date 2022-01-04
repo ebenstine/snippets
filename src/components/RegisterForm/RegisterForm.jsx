@@ -1,66 +1,107 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Container, Typography,  makeStyles } from '@material-ui/core';
-import { Grid, TextField } from '@mui/material'
+import { Button, Grid, Container, Typography,  makeStyles } from '@material-ui/core';
+import { TextField } from '@mui/material'
 // change styling for MUI components
 const useStyles = makeStyles((theme) => ({
 
   root: {
     paddingTop: '5em',
-     '& .MuiTextField-root': {
-         margin: theme.spacing(1),
-         color: 'white'
-         //width: '25ch'
-     },
-     '& label.Mui-focused': {
-         color: '#3b95ac',
-         
-     },
-     '& .MuiInput-underline:after': {
-         borderBottomColor: '#ffab5c',
-         
-         
-     },
-     '& .MuiOutlinedInput-root': {
-         '& fieldset': {
-             borderColor: '#ffab5c',
-             
-         },
-         '&:hover fieldset': {
-             borderColor: '#ffab5c',
-             
-         },
-         '&.MuiSelect fieldset': {
-             borderColor: '#ffab5c',
-             borderRadius: '8px',
-             paddingLeft: '3em'
-         },
-         
- 
-     },
- },
   
-  btn: {
-    marginTop: 30,
-    marginBottom: 25,
-    background: '#fff099',
-    color: '#2a4f64',
-    border: '1px solid #3b95ac',
-      '&:hover': {
-          background:'#fde76c',
-          },
-    paddingLeft: '1em',
-    paddingRight: '1em'
-  },
-  signUp: {
-    marginBottom: 15,
-    color: '#2a4f64'
-  },
-  password: {
-    marginTop: 15,
-  }
+      '& .MuiTextField-root': {
+          margin: theme.spacing(1),
+          color: '#2a4f64',
+          
+          '&:hover fieldset': {
+            borderColor: '#ffab5c'
+          }
+          //width: '25ch'
+      },
+      '& label.Mui-focused': {
+          color: '#3b95ac',
+          borderColor: '#ffab5c',
+      },
+      '& .MuiInput-underline:after': {
+          borderBottomColor: '#3b95ac',
+      }, 
+          
+          
+          
+      
+      "& .MuiOutlinedInput-input": {
+          color: "#2a4f64",
+         
+          
+      },
+      //"& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
+          //border: "2px solid #3b95ac"
+        //},
+        "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+          border: "1.5px solid#3b95ac",
+          borderRadius: "3px 3px 3px 3px"
+        },
+      
 
-}))
+        
+      '& .MuiOutlinedInput-root': {
+          '& fieldset': {
+              color: '#3b95ac',
+              //paddingLeft: '4em'
+              
+          },
+          '& .Mui-selected': {
+
+             borderColor: '3b95ac'
+
+          },
+          '&:hover fieldset': {
+              border:' 1.5px solid #3b95ac' 
+          },  
+          '&:fieldset.Mui-focused': {
+              border:' 1.5px solid #3b95ac'
+          
+          },
+          
+          
+          
+          
+          
+        
+          
+          
+          
+      },
+  },
+ 
+   btn: {
+     marginTop: 30,
+     marginBottom: 25,
+     background: '#fff099',
+         color: '#2a4f64',
+         border: '1px solid #3b95ac',
+         '&:hover': {
+             background:'#fde76c',
+             },
+     paddingLeft: '1em',
+     paddingRight: '1em',
+     color: '#2a4f64' 
+   },
+   
+   signUp: {
+     marginBottom: 15,
+     color: '#2a4f64',
+     
+     
+   },
+   password: {
+     marginTop: 15,
+     
+     
+   },
+ 
+   
+ 
+ }))
 // change default themes of specific MUI components 
 
 function RegisterForm() {
@@ -111,7 +152,7 @@ function RegisterForm() {
           <TextField 
             
             noValidate autoComplete="off" 
-            required variant="standard" 
+            required variant="outlined" 
             label="Username" 
             color="primary" 
             value={username}
@@ -124,7 +165,7 @@ function RegisterForm() {
 
             className={classes.password} 
             required label="Password" 
-            variant="standard" 
+            variant="outlined" 
             color="primary" 
             value={password}
             type="password" 

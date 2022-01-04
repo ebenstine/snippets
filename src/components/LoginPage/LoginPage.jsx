@@ -1,7 +1,7 @@
 import React from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import { useHistory } from 'react-router-dom';
-import { Button, Typography, makeStyles } from '@material-ui/core';
+import { Button, Paper, Typography, makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
 
@@ -23,14 +23,17 @@ const useStyles = makeStyles({
     marginBottom: '10em'
   },
 
-  
-  /*paper: {
-    margin: '4em auto',
-    backgroundColor: '#bdbdbd',
-    paddingBottom: '2em',
-    width: 650
-},*/
 
+
+  
+ //paper: {
+    margin: '4em auto',
+    background: 'linear-gradient(to right,  #9c9e9f 0%,#f6f6f6 100%)',
+    border: '1px solid #fdd377',
+    paddingBottom: '2em',
+    width: 650,
+    marginBottom: '10em'
+//},
 
 })
 
@@ -41,7 +44,7 @@ function LoginPage() {
 
   return (
     <>
-    {/*<Paper className={paper}>*/}
+  
       <LoginForm />
       <Typography align="center" variant="h6" className={invite}>
       No account yet?
@@ -59,7 +62,7 @@ function LoginPage() {
           Make One!
         </Button>
       </center>
-     {/* </Paper> */}
+     
     </>
   );
 }

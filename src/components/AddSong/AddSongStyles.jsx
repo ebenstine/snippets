@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
-            //margin: theme.spacing(1),
+            margin: theme.spacing(1),
             color: '#2a4f64'
             //width: '25ch'
         },
