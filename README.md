@@ -48,7 +48,7 @@ The application is built on file-uploading to Amazon Web Services.  The 'Add Son
 HTML, CSS, Javascript, Node.js, Express.js, AWS S3, PostgreSQL, Material-UI, Passport, React, Redux, Redux-Sagas, React-Dropzone-S3-Uploader, React-Modular-Audio-Player.
 
 ## Coming Features
-I plan to add a genre field which will create another mode of organization for the user's projects, if for example the songwriter utilizes several different mediums or styles of music.  I hope to figure out a way to input and display custom guitar tunings.  
+I plan to add a genre field which will create another mode of organization for the user's projects, if for example the songwriter utilizes several different mediums or styles of music.  I'll create a chat feature which will allow remote collaborators to discuss the songwriting process inside the app.  I hope to figure out a way to input and display custom guitar tunings.  
 
 ## Acknowledgement
 Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. A very special thanks to my instructors Edan Schwartz and Matt Black.
