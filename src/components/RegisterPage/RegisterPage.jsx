@@ -36,7 +36,7 @@ function RegisterPage() {
 
       <center>
         <Typography className={prompt}>
-        Already have an account?
+        Account already made?
         </Typography>
         <br></br>
         <Button

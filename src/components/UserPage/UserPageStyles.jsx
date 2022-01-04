@@ -15,16 +15,17 @@ const useStyles = makeStyles((theme) => ({
     
     welcome: {
         color: '#233d4d',
-        borderBottom: '1.5px solid #6ca0ad',
+        //borderBottom: '1.5px solid #6ca0ad',
         
         
     },
     songCount: {
         color: '#233d4d',
         
-        
+        borderTop: '1.5px solid #6ca0ad',
         paddingRight: '2em',
         paddingLeft: '3.5em',
+        paddingTop: '1em'
         
     },
 
@@ -65,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     },
     genrePrompt: {
         color: '#233d4d',
-        
+        paddingBottom:'1em',
         paddingRight: '2em',
         paddingLeft: '3.5em',
         borderBottom: '1.5px solid #6ca0ad'

@@ -44,7 +44,7 @@ const UserPage = () => {
           <span className={playIcon}>▶</span>
             &nbsp;You have <span className={highlight}>{songs.length}</span> different song projects open right now.
       </Typography>
-
+      <br></br>
       <Typography 
         align="center" 
         variant = "h6" 
@@ -52,7 +52,7 @@ const UserPage = () => {
           <span className={playIcon}>▶</span>
             &nbsp;Between them, you've uploaded <span className={highlight}>{allRecordings.length}</span> total recordings. 
       </Typography>
-
+      <br></br>
       <Typography 
         align="center" 
         variant = "h6" 
