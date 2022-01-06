@@ -53,7 +53,6 @@ function LoginPage() {
       <center>
         <Button
           variant="contained"
-          size="medium"
           className={signUp}
           onClick={() => {
             history.push('/registration');

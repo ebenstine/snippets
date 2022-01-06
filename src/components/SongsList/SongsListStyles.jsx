@@ -95,7 +95,7 @@ const useStyles = makeStyles(() => ({
         marginTop: 'auto',
         color: '#233d4d',
         '&:hover': {
-            color:'#1d778d',
+            
             cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d'
     }
@@ -109,7 +109,7 @@ const useStyles = makeStyles(() => ({
         marginTop: 'auto',
         color: '#233d4d',
         '&:hover': {
-            color:'#1d778d',
+            //color:'#1d778d',
             cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d',
            
@@ -124,7 +124,7 @@ const useStyles = makeStyles(() => ({
         marginTop: 'auto',
         color: '#233d4d',
         '&:hover': {
-            color:'#1d778d',
+            //color:'#1d778d',
             cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d'
     }
@@ -138,7 +138,7 @@ const useStyles = makeStyles(() => ({
         marginTop: 'auto',
         color: '#233d4d',
         '&:hover': {
-            color:'#1d778d',
+            //color:'#1d778d',
             cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d'
     }
