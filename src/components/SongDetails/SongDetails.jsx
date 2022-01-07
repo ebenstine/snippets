@@ -85,22 +85,23 @@ function SongDetails(){
       const handleClose = () => {
         setOpen(false);
       };
-    /*const handleArchived = (songId) => {
+    const handleArchived = (songId) => {
     dispatch ({
         type: 'REVISE_SONG',
         payload: songId,
-                isFinished: true
+                finished: true
     })
-    }*/
+    history.push/(`/songsList`)
+    }
 
-    const handleDelete = (songId) => {
+    /*const handleDelete = (songId) => {
         console.log(songId)
         dispatch ({
-            type: 'DELETE_SONG',
+            type: 'REVISE_SONG',
             payload: songId
         })
        history.push/songsList
-    }
+    }*/
 
     const handleCancel = () => {
         setOpen(false);
@@ -573,7 +574,7 @@ function SongDetails(){
                                     
                                     <Button 
                                         className={archiveButton} 
-                                        onClick={() => handleDelete(song.id)} 
+                                        onClick={() => handleArchived(song.id)} 
                                         variant="contained"
                                     >
                                     
