@@ -83,7 +83,7 @@ function SongsList() {
                         {songs.map((song) => {
                             return (
                                 <>
-                                {song.finished == 'true' ?
+                                {song.finished === true ?
                                 <>
                                     {song.priority === '1' ? 
                                         
