@@ -71,6 +71,8 @@ function SongsList() {
                         {songs.map((song) => {
                             return (
                                 <>
+                                {song.finished == false ?
+                                <>
                             
                                     {song.priority === '1' ? 
                                         
@@ -279,7 +281,14 @@ function SongsList() {
                             <br></br>
                         
                         </>
-
+                    :
+                        <div>
+                            <h3>No active songs right now!</h3>
+                            <h4>Either you finished everything you were working on, or haven't written much in a minute!</h4>
+                            <h4>Go to Add Song to get started!</h4>
+                        </div>   
+                    }  
+                    </> 
                     );
 
                 })}

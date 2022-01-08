@@ -297,7 +297,7 @@ function SongsList() {
                         </>
                      :
                     <div>
-                        <h1>NOTHING TO SEE</h1>
+                        <h3>No finished songs to show, just yet!</h3>
                     </div>   
                         }
                     </>
