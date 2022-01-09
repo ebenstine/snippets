@@ -284,7 +284,7 @@ function SongsList() {
                         
                         </>
                     :
-                        <h1></h1>
+                        null
                     }  
                     </> 
                     );
