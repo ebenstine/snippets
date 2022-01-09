@@ -38,6 +38,7 @@ function SongsList() {
             card2, 
             card3, 
             paper, 
+            message,
             menuDots 
             
         } = useStyles();
@@ -296,9 +297,9 @@ function SongsList() {
                                      
                         </>
                      :
-                    <div>
-                        <h3>No finished songs to show, just yet!</h3>
-                    </div>   
+                    
+
+                    <div></div>
                         }
                     </>
                     );

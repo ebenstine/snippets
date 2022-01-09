@@ -39,9 +39,18 @@ const AddSong = () => {
           = useStyles();
 
   const [url , setUrl] = useState ('no file was dropped');
-  const [newSong, setNewSong] = useState({});
+ 
   const [errorState, setErrorState] = useState(false);
   const [helperText, setHelperText] = useState('');
+  const [newSong, setNewSong] = useState({
+      title: '',
+      instrument_notes: '',
+      performance_notes: '',
+      lyrics: '',
+      priority: '',
+      finished: false,
+      preview_audio: ''
+    });
   
 
   
@@ -50,9 +59,9 @@ const AddSong = () => {
     setNewSong({ ...newSong, [key]: event.target.value });
   };
 
-  if ((newSong.title === '') || (newSong.preview_audio === '')) {
-    setErrorState(true);
-    setHelperText('Please enter a title, and upload a file')
+  if ((newSong.title === null) || (newSong.preview_audio === null)) {
+    
+    alert('Please enter a title, and upload a file')
   
   } 
 
@@ -60,7 +69,7 @@ const AddSong = () => {
   
  
   const handleSave = (event) => {
-    setErrorState(false);
+    
     event.preventDefault();
     dispatch({ 
       
@@ -122,8 +131,28 @@ const AddSong = () => {
                 value={newSong.lyrics}
                 multiline className={textField}
               />
-              <FormHelperText error={errorState} > {helperText} </FormHelperText>
+              
             <br></br>
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel id="demo-controlled-open-select-label">Status?</InputLabel>
+          <Select
+              labelId="demo-controlled-open-select-label"
+              id="demo-controlled-open-select"
+              label="finished?"
+              name="finished"
+              onChange={enterNewSong('finished')}
+              className={priority1}
+              value={newSong.finished}
+              
+              >
+                
+                
+                <MenuItem value={true} className={setPriority1} >Finished</MenuItem>
+                <MenuItem value={false} className={setPriority2} >In Progress</MenuItem>
+                
+                
+          </Select> 
+          </FormControl>
             
           {newSong.priority ==='1' ?
 
@@ -131,7 +160,7 @@ const AddSong = () => {
           <div>
           
         <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-controlled-open-select-label">Priority</InputLabel>
+        <InputLabel id="demo-controlled-open-select-label">Priority?</InputLabel>
           <Select
               labelId="demo-controlled-open-select-label"
               id="demo-controlled-open-select"
@@ -154,7 +183,7 @@ const AddSong = () => {
           newSong.priority ==='2' ?
           <div>
           <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-controlled-open-select-label">Priority</InputLabel>
+        <InputLabel id="demo-controlled-open-select-label">Priority?</InputLabel>
           <Select
               labelId="demo-controlled-open-select-label"
               id="demo-controlled-open-select"
@@ -177,7 +206,7 @@ const AddSong = () => {
           newSong.priority ==='3' ?
           <div>
           <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-controlled-open-select-label">Priority</InputLabel>
+        <InputLabel id="demo-controlled-open-select-label">Priority?</InputLabel>
           <Select
               labelId="demo-controlled-open-select-label"
               id="demo-controlled-open-select"

@@ -83,14 +83,14 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
         await client.query('BEGIN');
         const firstQuery = `
                             INSERT INTO "songs" (
-                            user_id, 
-                            title, 
-                            instrument_notes, 
-                            performance_notes, 
-                            priority, 
-                            lyrics, 
-                            finished, 
-                            preview_audio
+                            "user_id", 
+                            "title", 
+                            "instrument_notes", 
+                            "performance_notes", 
+                            "priority", 
+                            "lyrics", 
+                            "finished", 
+                            "preview_audio"
                             )
                             VALUES($1, $2, $3, $4, $5, $6, $7, $8)
                             RETURNING "id"`;

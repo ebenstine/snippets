@@ -26,7 +26,8 @@ function SongsList() {
             card2, 
             card3, 
             paper, 
-            menuDots 
+            menuDots,
+            message
             
         } = useStyles();
 
@@ -55,6 +56,7 @@ function SongsList() {
     //conditionally render cards with different background colors according to priority
     return (
         <>
+            
             <Paper className={paper} elevation={10}>
                 <div className={menuDots}>
 
@@ -282,11 +284,7 @@ function SongsList() {
                         
                         </>
                     :
-                        <div>
-                            <h3>No active songs right now!</h3>
-                            <h4>Either you finished everything you were working on, or haven't written much in a minute!</h4>
-                            <h4>Go to Add Song to get started!</h4>
-                        </div>   
+                        <h1></h1>
                     }  
                     </> 
                     );

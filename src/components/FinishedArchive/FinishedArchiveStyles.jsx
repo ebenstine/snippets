@@ -160,6 +160,13 @@ const useStyles = makeStyles(() => ({
         border: '1.25px solid #c8ecf5'
         
 
+    },
+
+    message: {
+        color: '#2a4f64',
+        paddingTop: '5em',
+        fontSize: 20
+        
     }
 
     

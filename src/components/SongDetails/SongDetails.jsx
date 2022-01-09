@@ -51,9 +51,10 @@ function SongDetails(){
     const [ editINotes, setEditINotes] = useState(false);
     const [ editPNotes, setEditPNotes] = useState(false);
   
-
+    
     console.log(params);
 
+ 
     useEffect(() => {
         
         dispatch ({
@@ -85,16 +86,11 @@ function SongDetails(){
       const handleClose = () => {
         setOpen(false);
       };
-    const handleArchived = (songId) => {
-    dispatch ({
-        type: 'REVISE_SONG',
-        payload: songId,
-                finished: true
-    })
-    history.push/(`/songsList`)
-    }
 
-    /*const handleDelete = (songId) => {
+
+      
+
+    /*const handleArchive = (songId) => {
         console.log(songId)
         dispatch ({
             type: 'REVISE_SONG',
