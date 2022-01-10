@@ -15,7 +15,7 @@ import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import { Box, Paper, Typography, Card, CardContent } from '@material-ui/core';
-import useStyles from './FinishedArchiveStyles';
+import useStyles from './InactiveArchiveStyles';
 
 ;
 
@@ -24,7 +24,7 @@ import useStyles from './FinishedArchiveStyles';
 
 
 
-function SongsList() {
+function InactiveArchive() {
 
     const { 
             
@@ -315,4 +315,4 @@ function SongsList() {
 
 }
 
-export default SongsList;
+export default InactiveArchive;

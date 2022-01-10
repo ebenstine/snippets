@@ -73,7 +73,7 @@ function SongsList() {
                         {songs.map((song) => {
                             return (
                                 <>
-                                {song.finished == false ?
+                                {song.is_active == true ?
                                 <>
                             
                                     {song.priority === '1' ? 
