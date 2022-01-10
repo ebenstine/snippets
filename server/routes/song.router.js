@@ -13,7 +13,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
             performance_notes, 
             priority, 
             lyrics, 
-            finished, 
+            is_active, 
             preview_audio,
         ARRAY_AGG (src)
         FROM songs
@@ -27,7 +27,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
                  performance_notes, 
                  priority, 
                  lyrics, 
-                 finished, 
+                 is_active, 
                  preview_audio 
         ORDER BY song_id ASC
     `;
@@ -73,7 +73,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
             performance_notes, 
             priority, 
             lyrics, 
-            finished, 
+            is_active, 
             src, 
             description } 
             
@@ -89,7 +89,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
                             "performance_notes", 
                             "priority", 
                             "lyrics", 
-                            "finished", 
+                            "is_active", 
                             "preview_audio"
                             )
                             VALUES($1, $2, $3, $4, $5, $6, $7, $8)
@@ -106,7 +106,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
                     performance_notes, 
                     priority, 
                     lyrics, 
-                    finished, 
+                    is_active, 
                     src
                 ]
         );

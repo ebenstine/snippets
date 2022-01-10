@@ -84,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         //margin: '1ch',
         borderRadius: '2px',
-        background: "#EBEBEB",
+        background: "#f0a1a1",
         color: '#2a4f64',
         
         
@@ -194,6 +194,21 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '3em',
         marginRight: '3em',
         //border: '1px solid #3b95ac',
+        borderRadius: '3px',
+        paddingLeft: '2.7em'
+        
+    },
+    setPriority0: {
+        
+        color: "#2a4f64",
+        background: "rgb(230, 252, 255)",
+        '&:hover': {
+            background:'#f0a1a1',
+            },
+        margin: theme.spacing(1),
+        marginLeft: '3em',
+        marginRight: '3em',
+        border: '1px solid #3b95ac',
         borderRadius: '3px',
         paddingLeft: '2.7em'
         
