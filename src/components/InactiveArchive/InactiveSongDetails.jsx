@@ -1,0 +1,210 @@
+import { useHistory, useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { Paper, Card, CardContent, Typography, Button, HelperText } from '@material-ui/core';
+import { useEffect, useState } from 'react';
+
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import Archive from '@material-ui/icons/Archive';
+import Cancel from '@material-ui/icons/Cancel';
+import Feedback from '@material-ui/icons/Feedback';
+import QueueMusic from '@material-ui/icons/QueueMusic';
+
+import useStyles from './InactiveSongDetailsStyles';
+import SongDetailsMenu from './SongDetailsComponents/SongDetailsMenu';
+import SongTitle from './SongDetailsComponents/SongTitle';
+import SongLyrics from './SongDetailsComponents/SongLyrics'
+import SongInstrumentNotes from './SongDetailsComponents/SongInstrumentNotes';
+import SongPerformanceNotes from './SongDetailsComponents/SongPerformanceNotes';
+
+
+function InactiveSongDetails(){
+    
+    const { 
+            
+            title, 
+            root, 
+            card, 
+            card1, 
+            card2, 
+            card3, 
+            paper, 
+            cardText, 
+            cardContent,  
+            menuDots, 
+            button, 
+            dialog,
+            dialogText,
+            dialogContent, 
+            cancelButton,
+            archiveButton
+
+        } = useStyles();
+
+    const params = useParams();
+    const dispatch = useDispatch();
+    const history = useHistory();
+    
+    
+    console.log(params);
+
+ 
+    useEffect(() => {
+        
+        dispatch ({
+            type: 'FETCH_SONG_DETAILS',
+            payload: params.id,
+        });
+    }, []);
+    const songDetails = useSelector((store) => store.songDetails)
+
+      
+
+    /*const handleArchive = (songId) => {
+        console.log(songId)
+        dispatch ({
+            type: 'REVISE_SONG',
+            payload: songId
+        })
+       history.push/songsList
+    }*/
+
+    const handleCancel = () => {
+        setOpen(false);
+        handleClose();
+      }
+
+    
+
+    
+    return (
+        
+
+        <div>
+            
+            <Paper className={paper} elevation={10}>
+            
+                <section className={root}>
+                    {songDetails.map((song) => {
+                        return (
+                             
+                                <div key={song.id}>
+                                    
+                        
+                                        <Card 
+                                            spacing={1} 
+                                            className={card1}  
+                                            raised={true}
+                                        >
+                        
+                                            <div className={menuDots}>
+                    
+                                                <SongDetailsMenu/>
+                            
+                                            </div>
+                    
+                   
+
+                                            <CardContent className={cardContent}>
+                                    
+                                                
+                                        
+                                                    
+                                        
+                                                        <div onDoubleClick={handleEditTitle}>
+                            
+                                                            <Typography 
+                                                                variant="overline" 
+                                                                className={title}>
+                                                                {song.title}
+
+                                                            </Typography>
+
+                                                        </div>
+                                                
+                        
+                                                <br></br>
+
+                                                
+                                        
+                                                    
+
+                                                        <div onDoubleClick={handleEditLyrics}>
+
+                                                            <Typography 
+                                                                component = "p" 
+                                                                className={cardText}>
+                                                                {song.lyrics}
+
+                                                            </Typography>
+                                                        </div>
+                                                
+                        
+                                                <br></br>
+                                                <br></br>
+                                                <br></br>
+                                                <br></br>
+                        
+                                                
+                                            
+                                                    
+
+                                                        <div onDoubleClick={handleEditINotes}>
+
+                                                            <Typography 
+                                                                component = "p" 
+                                                                className={cardText}>
+
+                                                                    <span style={{color:"#1d778d"}}>▶</span>
+                                                                
+                                                                        &nbsp;
+                                                                        Instrument Notes:
+                                                                        {' '}
+                                                                        {song.instrument_notes}
+
+                                                            </Typography>
+
+                                                        </div>
+                                                
+
+                                                <br></br>
+
+                                               
+
+                                                      
+                                                        <div>
+
+                                                            <Typography 
+                                                                component = "p" 
+                                                                className={cardText}>
+
+                                                                <span style={{color:"#1d778d"}}>▶</span>
+
+                                                                    &nbsp;
+                                                                    Performance Notes:
+                                                                    {' '}
+                                                                    {song.performance_notes}
+
+                                                            </Typography>
+                                                        </div>
+                                               
+                                        
+
+                                                <br></br>
+                     
+                                            </CardContent>
+                    
+                                        </Card>
+                    
+                                </div>
+                            )
+                        })} 
+                    </section>
+                </Paper>
+        </div>
+    )
+}
+        export default InactiveSongDetails; 
