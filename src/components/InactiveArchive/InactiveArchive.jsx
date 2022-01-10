@@ -84,7 +84,7 @@ function InactiveArchive() {
                         {songs.map((song) => {
                             return (
                                 <>
-                                {song.finished === true ?
+                                {song.is_active === false ?
                                 <>
                                     {song.priority === '1' ? 
                                         
