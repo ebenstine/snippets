@@ -100,7 +100,7 @@ const NavMenu = ({user}) => {
             
                             }}
                 
-                onClose={handleCancel}
+                onClose={handleClose}
 
             >
           
@@ -119,7 +119,7 @@ const NavMenu = ({user}) => {
                   flexWrap: 'wrap'
 
                 }}
-                onClick={handleCancel}
+                onClick={handleClose}
               >
             
                 <QueueMusic/>

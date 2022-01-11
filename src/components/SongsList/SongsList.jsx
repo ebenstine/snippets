@@ -228,7 +228,9 @@ function SongsList() {
                     
                                         </Box>
                                     : 
-                            
+
+                                    song.priority === 'Uncertain' ?
+                             
                                         <Box
                                        
                                             paddingTop={2}
@@ -277,6 +279,11 @@ function SongsList() {
 
                                             </Card>
                                         </Box>
+
+                                    :
+
+                                    null 
+
                                     }
                             
                             <br></br>
