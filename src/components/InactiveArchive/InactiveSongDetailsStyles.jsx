@@ -130,7 +130,22 @@ const useStyles = makeStyles(() => ({
         paddingLeft: '1em'
     },
 
-    button: {
+    activateButton: {
+        marginLeft: '10em',
+        marginBottom: '.3em',
+        marginRight: '2em',
+        color: '#233d4d',
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        paddingLeft: '1em',
+        paddingRight: '1em',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    },
+
+    deleteButton: {
         marginLeft: '1em',
         marginBottom: '.3em',
         marginRight: '2em',

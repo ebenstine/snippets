@@ -13,8 +13,10 @@ import Cancel from '@material-ui/icons/Cancel';
 import Feedback from '@material-ui/icons/Feedback';
 import QueueMusic from '@material-ui/icons/QueueMusic';
 
+
 import useStyles from './InactiveSongDetailsStyles';
 import SongDetailsMenu from '../SongDetails/SongDetailsComponents/SongDetailsMenu';
+import Delete from '@material-ui/icons/Delete';
 
 
 
@@ -36,8 +38,8 @@ function InactiveSongDetails(){
             dialog,
             dialogText,
             dialogContent, 
-            cancelButton,
-            archiveButton
+            deleteButton,
+            activateButton
 
         } = useStyles();
 
@@ -69,6 +71,15 @@ function InactiveSongDetails(){
        history.push/songsList
     }*/
 
+    const handleDelete = (songId) => {
+        console.log(songId)
+        dispatch ({
+            type: 'DELETE_SONG',
+            payload: songId
+        })
+        history.push('/songsList')
+    }
+
     
     
 
@@ -81,7 +92,9 @@ function InactiveSongDetails(){
             <Paper className={paper} elevation={10}>
             
                 <section className={root}>
+                    
                     {songDetails.map((song) => {
+                        
                         return (
                              
                                 <div key={song.id}>
@@ -103,37 +116,31 @@ function InactiveSongDetails(){
 
                                             <CardContent className={cardContent}>
                                     
-                                                
-                                        
-                                                    
-                                        
-                                                        <div>
+                                                <div>
                             
-                                                            <Typography 
-                                                                variant="overline" 
-                                                                className={title}>
-                                                                {song.title}
+                                                    <Typography 
+                                                        
+                                                        variant="overline" 
+                                                        className={title}>
+                                                        {song.title}
 
-                                                            </Typography>
+                                                    </Typography>
 
-                                                        </div>
+                                                </div>
                                                 
-                        
                                                 <br></br>
 
-                                                
-                                        
-                                                    
+                                                <div>
 
-                                                        <div>
+                                                    <Typography 
+                                                        
+                                                        component = "p" 
+                                                        className={cardText}>
+                                                        {song.lyrics}
 
-                                                            <Typography 
-                                                                component = "p" 
-                                                                className={cardText}>
-                                                                {song.lyrics}
-
-                                                            </Typography>
-                                                        </div>
+                                                    </Typography>
+                                                        
+                                                </div>
                                                 
                         
                                                 <br></br>
@@ -145,22 +152,23 @@ function InactiveSongDetails(){
                                             
                                                     
 
-                                                        <div>
+                                                <div>
 
-                                                            <Typography 
-                                                                component = "p" 
-                                                                className={cardText}>
-
-                                                                    <span style={{color:"#1d778d"}}>▶</span>
+                                                    <Typography 
                                                                 
-                                                                        &nbsp;
-                                                                        Instrument Notes:
-                                                                        {' '}
-                                                                        {song.instrument_notes}
+                                                        component = "p" 
+                                                        className={cardText}>
 
-                                                            </Typography>
+                                                            <span style={{color:"#1d778d"}}>▶</span>
+                                                                
+                                                                &nbsp;
+                                                                Instrument Notes:
+                                                                {' '}
+                                                                {song.instrument_notes}
 
-                                                        </div>
+                                                    </Typography>
+
+                                                </div>
                                                 
 
                                                 <br></br>
@@ -168,21 +176,23 @@ function InactiveSongDetails(){
                                                
 
                                                       
-                                                        <div>
+                                                <div>
 
-                                                            <Typography 
-                                                                component = "p" 
-                                                                className={cardText}>
+                                                    <Typography 
+                                                                
+                                                        component = "p" 
+                                                        className={cardText}>
 
-                                                                <span style={{color:"#1d778d"}}>▶</span>
+                                                        <span style={{color:"#1d778d"}}>▶</span>
 
-                                                                    &nbsp;
-                                                                    Performance Notes:
-                                                                    {' '}
-                                                                    {song.performance_notes}
+                                                            &nbsp;
+                                                            Performance Notes:
+                                                            {' '}
+                                                            {song.performance_notes}
 
-                                                            </Typography>
-                                                        </div>
+                                                    </Typography>
+
+                                                </div>
                                                
                                         
 
@@ -191,33 +201,38 @@ function InactiveSongDetails(){
                                             </CardContent>
                     
                                         </Card>
-                                <div>
-                                <Button 
-                                    className={button} 
-                                    variant="contained" 
-                                    //onClick={handleClickOpen}
-                                >
-                                    <QueueMusic/>
-                                    
-                                </Button>
                                 
-                                 </div>   
+                                    <div>
+                                    
+                                    <br></br>
+                                    <br></br>
+                                
+                                
+                                        <Button 
+                                        
+                                            className={activateButton} 
+                                            variant="contained" 
+                                            //onClick={handleClickOpen}
+                                        >
+                                            <QueueMusic/>
+                                    
+                                        </Button>
+
+                                        <Button 
+                                        
+                                            className={deleteButton}
+                                            variant="contained"
+                                            onClick={() => handleDelete(song.id)}
+                                        >
+                                        
+                                        <Delete/>
+
+
+                                        </Button>
+                                
+                                    </div>   
                     
                                 </div>
-                            
-                                
-                    
-                    
-                    
-                                
-                                 
-                                    
-        
-                                  
-        
-                            
-                            
-                            
                             )
                         })} 
                     </section>
@@ -225,4 +240,5 @@ function InactiveSongDetails(){
         </div>
     )
 }
-        export default InactiveSongDetails; 
+        
+export default InactiveSongDetails; 
