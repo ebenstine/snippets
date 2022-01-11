@@ -5,9 +5,10 @@ const useStyles = makeStyles(() => ({
     card: {
       
         
-        backgroundColor:  '#f0a1a1',
+        backgroundColor:  '#a5a5a5',
         border: '1px solid #1d778d',
-        width: 345
+        width: 345,
+        marginTop: '3.5em'
         
     },
     
