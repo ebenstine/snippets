@@ -14,11 +14,8 @@ import Feedback from '@material-ui/icons/Feedback';
 import QueueMusic from '@material-ui/icons/QueueMusic';
 
 import useStyles from './InactiveSongDetailsStyles';
-import SongDetailsMenu from './SongDetailsComponents/SongDetailsMenu';
-import SongTitle from './SongDetailsComponents/SongTitle';
-import SongLyrics from './SongDetailsComponents/SongLyrics'
-import SongInstrumentNotes from './SongDetailsComponents/SongInstrumentNotes';
-import SongPerformanceNotes from './SongDetailsComponents/SongPerformanceNotes';
+import SongDetailsMenu from '../SongDetails/SongDetailsComponents/SongDetailsMenu';
+
 
 
 function InactiveSongDetails(){
@@ -72,11 +69,7 @@ function InactiveSongDetails(){
        history.push/songsList
     }*/
 
-    const handleCancel = () => {
-        setOpen(false);
-        handleClose();
-      }
-
+    
     
 
     
@@ -114,7 +107,7 @@ function InactiveSongDetails(){
                                         
                                                     
                                         
-                                                        <div onDoubleClick={handleEditTitle}>
+                                                        <div>
                             
                                                             <Typography 
                                                                 variant="overline" 
@@ -132,7 +125,7 @@ function InactiveSongDetails(){
                                         
                                                     
 
-                                                        <div onDoubleClick={handleEditLyrics}>
+                                                        <div>
 
                                                             <Typography 
                                                                 component = "p" 
@@ -152,7 +145,7 @@ function InactiveSongDetails(){
                                             
                                                     
 
-                                                        <div onDoubleClick={handleEditINotes}>
+                                                        <div>
 
                                                             <Typography 
                                                                 component = "p" 
@@ -198,8 +191,33 @@ function InactiveSongDetails(){
                                             </CardContent>
                     
                                         </Card>
+                                <div>
+                                <Button 
+                                    className={button} 
+                                    variant="contained" 
+                                    //onClick={handleClickOpen}
+                                >
+                                    <QueueMusic/>
+                                    
+                                </Button>
+                                
+                                 </div>   
                     
                                 </div>
+                            
+                                
+                    
+                    
+                    
+                                
+                                 
+                                    
+        
+                                  
+        
+                            
+                            
+                            
                             )
                         })} 
                     </section>

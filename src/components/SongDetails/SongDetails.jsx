@@ -25,6 +25,7 @@ import SongTitle from './SongDetailsComponents/SongTitle';
 import SongLyrics from './SongDetailsComponents/SongLyrics'
 import SongInstrumentNotes from './SongDetailsComponents/SongInstrumentNotes';
 import SongPerformanceNotes from './SongDetailsComponents/SongPerformanceNotes';
+import InactiveSongDetails from '../InactiveArchive/InactiveSongDetails';
 
 
 function SongDetails(){
@@ -118,12 +119,18 @@ function SongDetails(){
         
         <div>
             
-            <Paper className={paper} elevation={10}>
             
-                <section className={root}>
-                    {songDetails.map((song) => {
-                        return (
-                             <>
+            {songDetails.map((song) => {
+                        
+                return (
+                    <>
+                        {song.is_active === true ? 
+                                    
+                        <>
+                             
+                        <Paper className={paper} elevation={10}>
+            
+                            <section className={root}>
                                 <div key={song.id}>
                                     {song.priority === '1' ?
                         
@@ -558,14 +565,14 @@ function SongDetails(){
                                             </CardContent>
             
                                         </Card> 
-                                        
-                                    }
+                                    }   
+                                    
                                 </div>
                     
                     
                     <br></br>
                     <br></br>
-                    {song.is_active === true ?
+                    
                     <div>
                     
                     
@@ -645,46 +652,29 @@ function SongDetails(){
 
                             </Dialog>
 
+                        </div> 
+                    
+                    </section>
+
+            </Paper> 
+                    </>
+                    :
+
+                    <InactiveSongDetails/>
+                                
                             
-
-                          
-
+                    }
                     
                     
-                    </div> 
-                :
-
-                    <div>
-                    
-                    
-                    
-                        <Button 
-                            className={button} 
-                            variant="contained" 
-                            onClick={handleClickOpen}
-                        >
-                            <QueueMusic/>
-                            
-                        </Button>
-                        
-                            
-                            
-
-                          
-
-                    
-                    
-                    </div> 
-                }
+                
                 </>
+                
                 )
             })}
                     
                     
             
-                    </section>
-
-            </Paper> 
+                    
         </div>
         
     )
