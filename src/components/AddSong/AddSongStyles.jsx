@@ -2,38 +2,34 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles((theme) => ({
+    
     root: {
         '& .MuiTextField-root': {
             margin: theme.spacing(1),
             color: '#2a4f64'
             //width: '25ch'
         },
+        
         '& label.Mui-focused': {
             color: '#2a4f64',
             border: '#3b95ac'
         },
+
         '& .MuiInput-underline:after': {
             borderBottomColor: '#3b95ac',
         }, 
             
-            
-            
-        
         "& .MuiOutlinedInput-input": {
             color: "#2a4f64",
             //border: "2px solid #3b95ac"
             
         },
-        //"& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
-            //border: "2px solid #3b95ac"
-          //},
-          "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+       
+        "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
             border: "1.5px solid#3b95ac",
             borderRadius: "3px 3px 3px 3px"
-          },
+        },
         
-
-          
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
                 color: '#3b95ac',
@@ -52,19 +48,11 @@ const useStyles = makeStyles((theme) => ({
                 border:' 1.5px solid #3b95ac'
             
             },
-            
-
-            
-            
-            
-            
-          
-            
-            
-            
         },
     },
+    
     inputs: {
+        
         margin: theme.spacing(1),
         width: '12ch',
         marginBottom: '1.5em',
@@ -75,8 +63,10 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             background:'#fde76c',
             },
+    
     },
-    priority0: {
+    
+    priorityUncertain: {
         
         /*borderTop: '1.5px solid #3b95ac',
         borderLeft: '1.5px solid #3b95ac',
@@ -88,7 +78,8 @@ const useStyles = makeStyles((theme) => ({
         color: '#2a4f64',
         
         
-        },
+    },
+    
     priority1: {
         
        /* borderTop: '1.5px solid #3b95ac',
@@ -101,10 +92,8 @@ const useStyles = makeStyles((theme) => ({
         background: "#afe4f1",
         color: '#2a4f64',
       
-        
-            
-            
-        },
+    },
+
     priority2: {
         
         /*borderTop: '1.5px solid #3b95ac',
@@ -117,9 +106,7 @@ const useStyles = makeStyles((theme) => ({
         background: "#ffb171",
         color: '#2a4f64',
        
-            
-                
-        },
+    },
 
     priority3: {
         
@@ -134,21 +121,72 @@ const useStyles = makeStyles((theme) => ({
         background: "#fdd377",
         color: '#2a4f64',
                     
-                    
-        },
-    
-        
-        
-        
-        
+    },
 
+    statusActive: {
+        alignItems: 'center',
+        //margin: '1ch',
+        borderRadius: '2px',
+        background: "#a6e083",
+        color: '#2a4f64',
+        
+    }, 
+
+    statusInactive: {
+        alignItems: 'center',
+        //margin: '1ch',
+        borderRadius: '2px',
+        background: "#a5a5a5",
+        color: '#2a4f64',
+        
+    },
+
+    statusBlank: {
+        alignItems: 'center',
+        //margin: '1ch',
+        borderRadius: '2px',
+        background: "#EBEBEB",
+        color: '#2a4f64',
     
+    },
+
+    setActive: {
+        color: "#2a4f64",
+        background: "rgb(230, 252, 255)",
+        '&:hover': {
+            background:'#a6e083',
+            },
+        margin: theme.spacing(1),
+        marginLeft: '3em',
+        marginRight: '3em',
+        border: '1px solid #3b95ac',
+        borderRadius: '3px',
+        paddingLeft: '2.7em'
+
+    },
+
+    setInactive: {
+        color: "#2a4f64",
+        background: "rgb(230, 252, 255)",
+        '&:hover': {
+            background:'#a5a5a5',
+            },
+        margin: theme.spacing(1),
+        marginLeft: '3em',
+        marginRight: '3em',
+        border: '1px solid #3b95ac',
+        borderRadius: '3px',
+        paddingLeft: '2.7em'
+
+    },
+
     titleField: {
         margin: theme.spacing(1),
         width: '16em',
         marginBottom: '1em',
         marginTop: '1.5em',
     },
+
     paper: {
         margin: '4em auto',
         background: 'linear-gradient(to right,  #9c9e9f 0%,#f6f6f6 100%)',
@@ -157,12 +195,14 @@ const useStyles = makeStyles((theme) => ({
         border: '1.25px solid #eb9148'
 
     },
+
     textField: {
         margin: theme.spacing(3),
         width: '40ch',
         marginBottom: '1em',
         marginTop: '1em'
     },
+
     cardContent: {
         display: 'flex',
         flexDirection : 'column', 
@@ -170,19 +210,34 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '9em',
         paddingTop: '3em'
     },  
+
     title: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         color: '#2a4f64'
     },
+
     wrapper: {
         display: 'flex',
         
     },
+
     buttons: {
         display: 'flex',
         alignItems: 'center'
 
     },
+
+    blankPriority:{
+
+        alignItems: 'center',
+        //margin: '1ch',
+        borderRadius: '2px',
+        background: "#EBEBEB",
+        color: '#2a4f64',
+
+
+    },
+
     setPriority: {
         
         color: "#2a4f64",
@@ -198,7 +253,7 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: '2.7em'
         
     },
-    setPriority0: {
+    setPriorityUncertain: {
         
         color: "#2a4f64",
         background: "rgb(230, 252, 255)",
@@ -263,8 +318,6 @@ const useStyles = makeStyles((theme) => ({
         
     },
 
-    
-
     selectTitle: {
         color: "#2a4f64",
         background: "transparent"
@@ -275,11 +328,6 @@ const useStyles = makeStyles((theme) => ({
         border: '1px solid #3b95ac' 
     }
 
-    
-
-    
-
-    
 }));
 
 export default useStyles;

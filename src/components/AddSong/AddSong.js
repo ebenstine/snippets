@@ -24,12 +24,18 @@ const AddSong = () => {
           cardContent, 
           title, 
           dialog,
+          statusBlank,
+          statusActive,
+          statusInactive,
+          setActive,
+          setInactive,
           selectTitle,
-          priority0, 
+          blankPriority,
+          priorityUncertain, 
           priority1,
           priority2,
           priority3,
-          setPriority0,
+          setPriorityUncertain,
           setPriority1,
           setPriority2,
           setPriority3,
@@ -137,54 +143,158 @@ const AddSong = () => {
                 />
               
                 <br></br>
-            
-            
-              {newSong.priority ==='1' ?
+              
+              {newSong.is_active === true ? 
 
                 <div>
-          
+
                   <FormControl sx={{ m: 1, minWidth: 120 }}>
           
                     <InputLabel 
                       id="demo-controlled-open-select-label">
                       Status
                     </InputLabel>
-            
+  
                       <Select
-              
+    
                         labelId="demo-controlled-open-select-label"
                         id="demo-controlled-open-select"
                         label="is_active"
                         name="is_active"
                         onChange={enterNewSong('is_active')}
-                        className={priority1}
+                        className={statusActive}
                         value={newSong.is_active}
-              
+    
                       >
-                
+      
                         <DialogTitle 
                           defaultValue={'  '}
                           className={selectTitle}>
                           &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
                         </DialogTitle>  
-                  
+        
                           <MenuItem 
                             value={true} 
-                            className={setPriority1}>
+                            className={setActive}>
                             Active
                           </MenuItem>
-                  
+        
                           <MenuItem 
                             value={false} 
-                            className={setPriority2}>
+                            className={setInactive}>
                             Inactive
                           </MenuItem>
-                
-                
-                      
-                      </Select> 
+      
+                        </Select> 
 
                   </FormControl>
+              
+                </div>
+              
+              :
+
+              newSong.is_active === false ?
+
+              <div>
+
+                <FormControl sx={{ m: 1, minWidth: 120 }}>
+      
+                  <InputLabel 
+                    id="demo-controlled-open-select-label">
+                    Status
+                  </InputLabel>
+
+                    <Select
+
+                      labelId="demo-controlled-open-select-label"
+                      id="demo-controlled-open-select"
+                      label="is_active"
+                      name="is_active"
+                      onChange={enterNewSong('is_active')}
+                      className={statusInactive}
+                      value={newSong.is_active}
+
+                    >
+  
+                      <DialogTitle 
+                        defaultValue={'  '}
+                        className={selectTitle}>
+                        &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
+                      </DialogTitle>  
+    
+                        <MenuItem 
+                          value={true} 
+                          className={setActive}>
+                          Active
+                        </MenuItem>
+    
+                        <MenuItem 
+                          value={false} 
+                          className={setInactive}>
+                          Inactive
+                        </MenuItem>
+  
+                    </Select> 
+
+                </FormControl>
+          
+              </div>
+
+            :
+
+              <div>
+
+                <FormControl sx={{ m: 1, minWidth: 120 }}>
+  
+                  <InputLabel 
+                    id="demo-controlled-open-select-label">
+                    Status
+                  </InputLabel>
+
+                    <Select
+
+                      labelId="demo-controlled-open-select-label"
+                      id="demo-controlled-open-select"
+                      label="is_active"
+                      name="is_active"
+                      onChange={enterNewSong('is_active')}
+                      className={statusBlank}
+                      value={newSong.is_active}
+
+                    >
+
+                      <DialogTitle 
+                        defaultValue={'  '}
+                        className={selectTitle}>
+                        &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
+                      </DialogTitle>  
+
+                        <MenuItem 
+                          value={true} 
+                          className={setActive}>
+                          Active
+                        </MenuItem>
+
+                        <MenuItem 
+                          value={false} 
+                          className={setInactive}>
+                          Inactive
+                        </MenuItem>
+
+                    </Select> 
+
+                </FormControl>
+      
+              </div>
+
+            }
+
+                
+              {newSong.priority ==='1' ?
+
+                <div>
+          
+                  
 
                   <FormControl sx={{ m: 1, minWidth: 120 }}>
                   
@@ -231,7 +341,7 @@ const AddSong = () => {
                   
                           <MenuItem 
                             value={'Uncertain'} 
-                            className={setPriority0}>
+                            className={setPriorityUncertain}>
                             &nbsp;Uncertain
                             </MenuItem>
           
@@ -247,49 +357,7 @@ const AddSong = () => {
 
                 <div>
           
-                  <FormControl sx={{ m: 1, minWidth: 120 }}>
-          
-                    <InputLabel 
-                      id="demo-controlled-open-select-label">
-                      Status
-                    </InputLabel>
-  
-                      <Select
-    
-                        labelId="demo-controlled-open-select-label"
-                        id="demo-controlled-open-select"
-                        label="is_active"
-                        name="is_active"
-                        onChange={enterNewSong('is_active')}
-                        className={priority1}
-                        value={newSong.is_active}
-    
-                      >
-      
-                        <DialogTitle 
-                          
-                          defaultValue={'  '}
-                          className={selectTitle}>
-                          &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
-                        </DialogTitle>  
-        
-                          <MenuItem 
-                            value={true} 
-                            className={setPriority1}>
-                            Active
-                          </MenuItem>
-        
-                          <MenuItem 
-                            value={false} 
-                            className={setPriority2}>
-                            Inactive
-                          </MenuItem>
-      
-      
-                        </Select> 
-
-                  </FormControl>
-
+                  
                   <FormControl sx={{ m: 1, minWidth: 120 }}>
                   
                     <InputLabel 
@@ -335,7 +403,7 @@ const AddSong = () => {
                   
                           <MenuItem 
                             value={'Uncertain'} 
-                            className={setPriority0}>
+                            className={setPriorityUncertain}>
                             &nbsp;Uncertain
                             </MenuItem>
           
@@ -351,49 +419,7 @@ const AddSong = () => {
           
                 <div>
 
-                  <FormControl sx={{ m: 1, minWidth: 120 }}>
-          
-                    <InputLabel 
-                      id="demo-controlled-open-select-label">
-                      Status
-                    </InputLabel>
-
-                      <Select
-
-                        labelId="demo-controlled-open-select-label"
-                        id="demo-controlled-open-select"
-                        label="is_active"
-                        name="is_active"
-                        onChange={enterNewSong('is_active')}
-                        className={priority3}
-                        value={newSong.is_active}
-
-                      >
-
-                        <DialogTitle 
-                
-                          defaultValue={'  '}
-                          className={selectTitle}>
-                          &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
-                      
-                        </DialogTitle>  
-
-                          <MenuItem 
-                            value={true} 
-                            className={setPriority1}>
-                            Active
-                          </MenuItem>
-
-                          <MenuItem 
-                            value={false} 
-                            className={setPriority2}>
-                            Inactive
-                          </MenuItem>
-
-
-                      </Select> 
-
-                  </FormControl>
+                  
 
                   <FormControl sx={{ m: 1, minWidth: 120 }}>
                   
@@ -440,7 +466,7 @@ const AddSong = () => {
                   
                           <MenuItem 
                             value={'Uncertain'} 
-                            className={setPriority0}>
+                            className={setPriorityUncertain}>
                             &nbsp;Uncertain
                             </MenuItem>
           
@@ -456,48 +482,7 @@ const AddSong = () => {
       
                 <div>
 
-                  <FormControl sx={{ m: 1, minWidth: 120 }}>
-          
-                    <InputLabel 
-                      id="demo-controlled-open-select-label">
-                      Status
-                    </InputLabel>
-
-                      <Select
-
-                        labelId="demo-controlled-open-select-label"
-                        id="demo-controlled-open-select"
-                        label="is_active"
-                        name="is_active"
-                        onChange={enterNewSong('is_active')}
-                        className={priority1}
-                        value={newSong.is_active}
-
-                      >
-
-                        <DialogTitle 
-      
-                          defaultValue={'  '}
-                          className={selectTitle}>
-                          &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
-            
-                        </DialogTitle>  
-
-                          <MenuItem 
-                            value={true} 
-                            className={setPriority1}>
-                            Active
-                          </MenuItem>
-
-                          <MenuItem 
-                            value={false} 
-                            className={setPriority2}>
-                            Inactive
-                          </MenuItem>
-
-                      </Select> 
-
-                  </FormControl>
+                  
 
                   <FormControl sx={{ m: 1, minWidth: 120 }}>
                   
@@ -513,7 +498,7 @@ const AddSong = () => {
                         label="priority"
                         name="priority"
                         onChange={enterNewSong('priority')}
-                        className={priority1}
+                        className={priorityUncertain}
                         value={newSong.priority}
               
                       >
@@ -544,7 +529,7 @@ const AddSong = () => {
                   
                           <MenuItem 
                             value={'Uncertain'} 
-                            className={setPriority0}>
+                            className={setPriorityUncertain}>
                             &nbsp;Uncertain
                             </MenuItem>
           
@@ -555,7 +540,64 @@ const AddSong = () => {
                 </div>
               :
 
-                null
+              <div>
+
+              
+
+              <FormControl sx={{ m: 1, minWidth: 120 }}>
+              
+                <InputLabel 
+                  id="demo-controlled-open-select-label">
+                  Priority
+                </InputLabel>
+        
+                  <Select
+          
+                    labelId="demo-controlled-open-select-label"
+                    id="demo-controlled-open-select"
+                    label="priority"
+                    name="priority"
+                    onChange={enterNewSong('priority')}
+                    className={blankPriority}
+                    value={newSong.priority}
+          
+                  >
+            
+                    <DialogTitle 
+                      defaultValue={'  '}
+                      className={selectTitle} >
+                      &nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;
+                    </DialogTitle>
+                    
+                      <MenuItem 
+                        value={'1'} 
+                        className={setPriority1}>
+                        &nbsp;&nbsp;Group One&nbsp;&nbsp;
+                      </MenuItem>
+              
+                      <MenuItem 
+                        value={'2'} 
+                        className={setPriority2}>
+                        &nbsp;&nbsp;Group Two&nbsp;&nbsp;
+                      </MenuItem>
+              
+                      <MenuItem 
+                        value={'3'} 
+                        className={setPriority3}>
+                        &nbsp;Group Three
+                      </MenuItem>
+              
+                      <MenuItem 
+                        value={'Uncertain'} 
+                        className={setPriorityUncertain}>
+                        &nbsp;Uncertain
+                        </MenuItem>
+      
+                  </Select> 
+    
+              </FormControl>
+      
+            </div>
     
               }
           
