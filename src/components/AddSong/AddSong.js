@@ -82,283 +82,526 @@ const AddSong = () => {
 
   const toUserHome = () => {
     history.push('/songsList')
-}
+  }
 
    
 
 
   return (
     <div>
+      
       <Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>
-      
-
-
-
-
-
+        
         <FormControl >
+          
           <form className={root} onSubmit={handleSave} noValidate autoComplete="off" >
+            
             <div className={cardContent}>
-            <Typography variant = "h5" component="h5" className={title}>New Song Details</Typography>
-              <TextField
-                label="Title"
-                onChange={enterNewSong('title')}
-                value={newSong.title}
-                error={errorState}
-                multiline className={textField}
-              />
+            
+              <Typography 
+                variant="h5" 
+                component="h5" 
+                className={title}>
+                New Song Details
+              </Typography>
+                
+                <TextField
+                  label="Title"
+                  onChange={enterNewSong('title')}
+                  value={newSong.title}
+                  error={errorState}
+                  multiline className={textField}
+                />
           
-              <TextField
-                label="Instrument Notes"
-                onChange={enterNewSong('instrument_notes')}
-                value={newSong.instrument_notes}
-                multiline className={textField}
+                <TextField
+                  label="Instrument Notes"
+                  onChange={enterNewSong('instrument_notes')}
+                  value={newSong.instrument_notes}
+                  multiline className={textField}
 
-              />
+                />
          
-              <TextField
-                label="Performance Notes"
-                onChange={enterNewSong('performance_notes')}
-                value={newSong.performance_notes}
-                multiline className={textField}
+                <TextField
+                  label="Performance Notes"
+                  onChange={enterNewSong('performance_notes')}
+                  value={newSong.performance_notes}
+                  multiline className={textField}
 
-              />
-          
-              <TextField
-                label="Lyrics"
-                onChange={enterNewSong('lyrics')}
-                value={newSong.lyrics}
-                multiline className={textField}
-              />
+                />
+
+                <TextField
+                  label="Lyrics"
+                  onChange={enterNewSong('lyrics')}
+                  value={newSong.lyrics}
+                  multiline className={textField}
+                />
               
-            <br></br>
+                <br></br>
             
             
-    {newSong.priority ==='1' ?
+              {newSong.priority ==='1' ?
 
+                <div>
           
-      <div>
+                  <FormControl sx={{ m: 1, minWidth: 120 }}>
           
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel id="demo-controlled-open-select-label">Priority</InputLabel>
-            <Select
-              labelId="demo-controlled-open-select-label"
-              id="demo-controlled-open-select"
-              label="priority"
-              name="priority"
-              onChange={enterNewSong('priority')}
-              className={priority1}
-              value={newSong.priority}
+                    <InputLabel 
+                      id="demo-controlled-open-select-label">
+                      Status
+                    </InputLabel>
+            
+                      <Select
               
-            >
-                
-                <DialogTitle defaultValue={'  '}className={selectTitle} >&nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;</DialogTitle>
-                  <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
-                  <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
-                  <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
-                  <MenuItem value={'Uncertain'} className={setPriority0} >&nbsp;Uncertain</MenuItem>
-          </Select> 
-        </FormControl>
-
-          
-          
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel id="demo-controlled-open-select-label">Status</InputLabel>
-            <Select
-              labelId="demo-controlled-open-select-label"
-              id="demo-controlled-open-select"
-              label="is_active"
-              name="is_active"
-              onChange={enterNewSong('is_active')}
-              className={priority1}
-              value={newSong.is_active}
+                        labelId="demo-controlled-open-select-label"
+                        id="demo-controlled-open-select"
+                        label="is_active"
+                        name="is_active"
+                        onChange={enterNewSong('is_active')}
+                        className={priority1}
+                        value={newSong.is_active}
               
-              >
+                      >
                 
-                <DialogTitle defaultValue={'  '}className={selectTitle} >&nbsp;&nbsp;Set Working Status&nbsp;&nbsp;</DialogTitle>  
-                  <MenuItem value={true} className={setPriority1} >Active</MenuItem>
-                  <MenuItem value={false} className={setPriority2} >Inactive</MenuItem>
+                        <DialogTitle 
+                          defaultValue={'  '}
+                          className={selectTitle}>
+                          &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
+                        </DialogTitle>  
+                  
+                          <MenuItem 
+                            value={true} 
+                            className={setPriority1}>
+                            Active
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={false} 
+                            className={setPriority2}>
+                            Inactive
+                          </MenuItem>
                 
                 
-            </Select> 
-        </FormControl>
-          
-      </div>
-          
-    :
-          
-    newSong.priority ==='2' ?
+                      
+                      </Select> 
 
+                  </FormControl>
 
-      <div>
-          
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-controlled-open-select-label">Priority</InputLabel>
-              <Select
-                labelId="demo-controlled-open-select-label"
-                id="demo-controlled-open-select"
-                label="priority"
-                name="priority"
-                onChange={enterNewSong('priority')}
-                className={priority2}
-                value={newSong.priority}
-              >
-                
-                <DialogTitle defaultValue={'  '}className={selectTitle} >&nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;</DialogTitle>
-                  <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
-                  <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
-                  <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
-                  <MenuItem value={'Uncertain'} className={setPriority0} >&nbsp;Uncertain</MenuItem>
-              </Select> 
-          </FormControl>
-
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-controlled-open-select-label">Status</InputLabel>
-              <Select
-                labelId="demo-controlled-open-select-label"
-                id="demo-controlled-open-select"
-                label="is_active"
-                name="is_active"
-                onChange={enterNewSong('is_active')}
-                className={priority1}
-                value={newSong.is_active}
+                  <FormControl sx={{ m: 1, minWidth: 120 }}>
+                  
+                    <InputLabel 
+                      id="demo-controlled-open-select-label">
+                      Priority
+                    </InputLabel>
+            
+                      <Select
               
-              >
+                        labelId="demo-controlled-open-select-label"
+                        id="demo-controlled-open-select"
+                        label="priority"
+                        name="priority"
+                        onChange={enterNewSong('priority')}
+                        className={priority1}
+                        value={newSong.priority}
+              
+                      >
                 
-                <DialogTitle defaultValue={'  '}className={selectTitle} >&nbsp;&nbsp;Set Working Status&nbsp;&nbsp;</DialogTitle>  
-                  <MenuItem value={true} className={setPriority1} >Active</MenuItem>
-                  <MenuItem value={false} className={setPriority2} >Inactive</MenuItem>
-                
-                
-              </Select> 
-          </FormControl>
+                        <DialogTitle 
+                          defaultValue={'  '}
+                          className={selectTitle} >
+                          &nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;
+                        </DialogTitle>
+                        
+                          <MenuItem 
+                            value={'1'} 
+                            className={setPriority1}>
+                            &nbsp;&nbsp;Group One&nbsp;&nbsp;
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={'2'} 
+                            className={setPriority2}>
+                            &nbsp;&nbsp;Group Two&nbsp;&nbsp;
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={'3'} 
+                            className={setPriority3}>
+                            &nbsp;Group Three
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={'Uncertain'} 
+                            className={setPriority0}>
+                            &nbsp;Uncertain
+                            </MenuItem>
+          
+                      </Select> 
+        
+                  </FormControl>
+          
+                </div>
+          
+              :
+          
+              newSong.priority ==='2' ?
 
-      </div>
-
-    :
+                <div>
+          
+                  <FormControl sx={{ m: 1, minWidth: 120 }}>
+          
+                    <InputLabel 
+                      id="demo-controlled-open-select-label">
+                      Status
+                    </InputLabel>
+  
+                      <Select
     
-    newSong.priority ==='3' ?
-          
-        <div>
-
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-controlled-open-select-label">Priority</InputLabel>
-              <Select
-                labelId="demo-controlled-open-select-label"
-                id="demo-controlled-open-select"
-                label="priority"
-                name="priority"
-                onChange={enterNewSong('priority')}
-                className={priority3}
-                value={newSong.priority}
-              
-              >
-                
-                <DialogTitle defaultValue={'  '}className={selectTitle} >&nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;</DialogTitle>
-                  <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
-                  <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
-                  <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
-                  <MenuItem value={'Uncertain'} className={setPriority0} >&nbsp;Uncertain</MenuItem>
-              </Select> 
-          </FormControl> 
-
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-controlled-open-select-label">Status</InputLabel>
-              <Select
-                labelId="demo-controlled-open-select-label"
-                id="demo-controlled-open-select"
-                label="is_active"
-                name="is_active"
-                onChange={enterNewSong('is_active')}
-                className={priority1}
-                value={newSong.is_active}
-              
-              >
-                
-                <DialogTitle defaultValue={'  '}className={selectTitle} >&nbsp;&nbsp;Set Working Status&nbsp;&nbsp;</DialogTitle>  
-                  <MenuItem value={true} className={setPriority1} >Active</MenuItem>
-                  <MenuItem value={false} className={setPriority2} >Inactive</MenuItem>
-                
-                
-              </Select> 
-          </FormControl>
-        </div>
+                        labelId="demo-controlled-open-select-label"
+                        id="demo-controlled-open-select"
+                        label="is_active"
+                        name="is_active"
+                        onChange={enterNewSong('is_active')}
+                        className={priority1}
+                        value={newSong.is_active}
+    
+                      >
       
-    :
+                        <DialogTitle 
+                          
+                          defaultValue={'  '}
+                          className={selectTitle}>
+                          &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
+                        </DialogTitle>  
+        
+                          <MenuItem 
+                            value={true} 
+                            className={setPriority1}>
+                            Active
+                          </MenuItem>
+        
+                          <MenuItem 
+                            value={false} 
+                            className={setPriority2}>
+                            Inactive
+                          </MenuItem>
       
-    
-        <div>
-            
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-controlled-open-select-label">Priority</InputLabel>
-              <Select
-                labelId="demo-controlled-open-select-label"
-                id="demo-controlled-open-select"
-                label="priority"
-                name="priority"
-                onChange={enterNewSong('priority')}
-                className={priority0}
-                value={newSong.priority}
-              >
-            
-                <DialogTitle className={selectTitle} >Assign Completion Priority</DialogTitle>
-                  <MenuItem value={'1'} className={setPriority1} >&nbsp;&nbsp;Group One&nbsp;&nbsp;</MenuItem>
-                  <MenuItem value={'2'} className={setPriority2} >&nbsp;&nbsp;Group Two&nbsp;&nbsp;</MenuItem>
-                  <MenuItem value={'3'} className={setPriority3} >&nbsp;Group Three</MenuItem>
-                  <MenuItem value={'Uncertain'} className={setPriority0} >&nbsp;&nbsp;&nbsp;Uncertain</MenuItem>
-            
-              </Select>
-          </FormControl>
+      
+                        </Select> 
 
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-controlled-open-select-label">Status</InputLabel>
-              <Select
-                labelId="demo-controlled-open-select-label"
-                id="demo-controlled-open-select"
-                label="is_active"
-                name="is_active"
-                onChange={enterNewSong('is_active')}
-                className={priority1}
-                value={newSong.is_active}
+                  </FormControl>
+
+                  <FormControl sx={{ m: 1, minWidth: 120 }}>
+                  
+                    <InputLabel 
+                      id="demo-controlled-open-select-label">
+                      Priority
+                    </InputLabel>
+            
+                      <Select
               
-              >
+                        labelId="demo-controlled-open-select-label"
+                        id="demo-controlled-open-select"
+                        label="priority"
+                        name="priority"
+                        onChange={enterNewSong('priority')}
+                        className={priority2}
+                        value={newSong.priority}
+              
+                      >
                 
-                <DialogTitle defaultValue={'  '}className={selectTitle} >&nbsp;&nbsp;Set Working Status&nbsp;&nbsp;</DialogTitle>  
-                  <MenuItem value={true} className={setPriority1} >Active</MenuItem>
-                  <MenuItem value={false} className={setPriority2} >Inactive</MenuItem>
-                
-                
-              </Select> 
-          </FormControl>
+                        <DialogTitle 
+                          defaultValue={'  '}
+                          className={selectTitle} >
+                          &nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;
+                        </DialogTitle>
+                        
+                          <MenuItem 
+                            value={'1'} 
+                            className={setPriority1}>
+                            &nbsp;&nbsp;Group One&nbsp;&nbsp;
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={'2'} 
+                            className={setPriority2}>
+                            &nbsp;&nbsp;Group Two&nbsp;&nbsp;
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={'3'} 
+                            className={setPriority3}>
+                            &nbsp;Group Three
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={'Uncertain'} 
+                            className={setPriority0}>
+                            &nbsp;Uncertain
+                            </MenuItem>
           
-        </div>
-    
-    }
-          
-          
+                      </Select> 
+        
+                  </FormControl>
 
-          <Uploader 
-            elevated={10}  
-            uploadComplete={uploadComplete}
-            error={errorState}
+                </div>
+
+              :
+    
+              newSong.priority ==='3' ?
+          
+                <div>
+
+                  <FormControl sx={{ m: 1, minWidth: 120 }}>
+          
+                    <InputLabel 
+                      id="demo-controlled-open-select-label">
+                      Status
+                    </InputLabel>
+
+                      <Select
+
+                        labelId="demo-controlled-open-select-label"
+                        id="demo-controlled-open-select"
+                        label="is_active"
+                        name="is_active"
+                        onChange={enterNewSong('is_active')}
+                        className={priority3}
+                        value={newSong.is_active}
+
+                      >
+
+                        <DialogTitle 
+                
+                          defaultValue={'  '}
+                          className={selectTitle}>
+                          &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
+                      
+                        </DialogTitle>  
+
+                          <MenuItem 
+                            value={true} 
+                            className={setPriority1}>
+                            Active
+                          </MenuItem>
+
+                          <MenuItem 
+                            value={false} 
+                            className={setPriority2}>
+                            Inactive
+                          </MenuItem>
+
+
+                      </Select> 
+
+                  </FormControl>
+
+                  <FormControl sx={{ m: 1, minWidth: 120 }}>
+                  
+                    <InputLabel 
+                      id="demo-controlled-open-select-label">
+                      Priority
+                    </InputLabel>
             
-          />
+                      <Select
+              
+                        labelId="demo-controlled-open-select-label"
+                        id="demo-controlled-open-select"
+                        label="priority"
+                        name="priority"
+                        onChange={enterNewSong('priority')}
+                        className={priority3}
+                        value={newSong.priority}
+              
+                      >
+                
+                        <DialogTitle 
+                          defaultValue={'  '}
+                          className={selectTitle} >
+                          &nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;
+                        </DialogTitle>
+                        
+                          <MenuItem 
+                            value={'1'} 
+                            className={setPriority1}>
+                            &nbsp;&nbsp;Group One&nbsp;&nbsp;
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={'2'} 
+                            className={setPriority2}>
+                            &nbsp;&nbsp;Group Two&nbsp;&nbsp;
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={'3'} 
+                            className={setPriority3}>
+                            &nbsp;Group Three
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={'Uncertain'} 
+                            className={setPriority0}>
+                            &nbsp;Uncertain
+                            </MenuItem>
+          
+                      </Select> 
+        
+                  </FormControl>
+
+                </div>
+      
+              :
+
+              newSong.priority === 'Uncertain' ?
+      
+                <div>
+
+                  <FormControl sx={{ m: 1, minWidth: 120 }}>
+          
+                    <InputLabel 
+                      id="demo-controlled-open-select-label">
+                      Status
+                    </InputLabel>
+
+                      <Select
+
+                        labelId="demo-controlled-open-select-label"
+                        id="demo-controlled-open-select"
+                        label="is_active"
+                        name="is_active"
+                        onChange={enterNewSong('is_active')}
+                        className={priority1}
+                        value={newSong.is_active}
+
+                      >
+
+                        <DialogTitle 
+      
+                          defaultValue={'  '}
+                          className={selectTitle}>
+                          &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
+            
+                        </DialogTitle>  
+
+                          <MenuItem 
+                            value={true} 
+                            className={setPriority1}>
+                            Active
+                          </MenuItem>
+
+                          <MenuItem 
+                            value={false} 
+                            className={setPriority2}>
+                            Inactive
+                          </MenuItem>
+
+                      </Select> 
+
+                  </FormControl>
+
+                  <FormControl sx={{ m: 1, minWidth: 120 }}>
+                  
+                    <InputLabel 
+                      id="demo-controlled-open-select-label">
+                      Priority
+                    </InputLabel>
+            
+                      <Select
+              
+                        labelId="demo-controlled-open-select-label"
+                        id="demo-controlled-open-select"
+                        label="priority"
+                        name="priority"
+                        onChange={enterNewSong('priority')}
+                        className={priority1}
+                        value={newSong.priority}
+              
+                      >
+                
+                        <DialogTitle 
+                          defaultValue={'  '}
+                          className={selectTitle} >
+                          &nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;
+                        </DialogTitle>
+                        
+                          <MenuItem 
+                            value={'1'} 
+                            className={setPriority1}>
+                            &nbsp;&nbsp;Group One&nbsp;&nbsp;
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={'2'} 
+                            className={setPriority2}>
+                            &nbsp;&nbsp;Group Two&nbsp;&nbsp;
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={'3'} 
+                            className={setPriority3}>
+                            &nbsp;Group Three
+                          </MenuItem>
+                  
+                          <MenuItem 
+                            value={'Uncertain'} 
+                            className={setPriority0}>
+                            &nbsp;Uncertain
+                            </MenuItem>
+          
+                      </Select> 
+        
+                  </FormControl>
+          
+                </div>
+              :
+
+                null
+    
+              }
+          
+                  <Uploader 
+                    elevated={10}  
+                    uploadComplete={uploadComplete}
+                    error={errorState}
+            
+                  />
          
           
-          <FormControl>
-            <div>
-            <Button variant="contained" onClick={toUserHome} className={inputs} ><Cancel/></Button>
+                  <FormControl>
+                
+                    <div>
             
-            <Button variant="contained" type="submit" /*onClick={toUserHome}*/ className={inputs}><Backup/></Button>
+                      <Button 
+                        variant="contained" 
+                        onClick={toUserHome} 
+                        className={inputs}>
+                        <Cancel/>
+                      </Button>
+            
+                      <Button 
+                        variant="contained" 
+                        type="submit" 
+                        /*onClick={toUserHome}*/ 
+                        className={inputs}>
+                        <Backup/>
+                      </Button>
+                    
+                    </div>
+          
+                  </FormControl>
+          
             </div>
-          </FormControl>
-          
-        </div>
-      </form>
-    </FormControl>
-   </Paper>
-  </div>
+
+          </form>
+
+        </FormControl>
+
+      </Paper>
+
+    </div>
+
   );
+
 }
 
 
