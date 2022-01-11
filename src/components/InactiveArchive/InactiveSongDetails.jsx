@@ -212,6 +212,7 @@ function InactiveSongDetails(){
                                         
                                             className={activateButton} 
                                             variant="contained" 
+                                            
                                             //onClick={handleClickOpen}
                                         >
                                             <QueueMusic/>

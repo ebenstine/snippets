@@ -59,7 +59,7 @@ const NavMenu = ({user}) => {
       setOpen(true);
       
     };
-    const handleCancel = () => {
+    const handleClose = () => {
       setOpen(false);
     }
 
@@ -78,15 +78,16 @@ const NavMenu = ({user}) => {
             
             >
             
-        </Menu>
-      </IconButton>
-        <MenuItem 
+          </Menu>
+        </IconButton>
         
-          onClick={handleClickOpen}>
+          <MenuItem 
+        
+            onClick={handleClickOpen}>
                 
-        </MenuItem>
+          </MenuItem>
           
-          <Dialog 
+            <Dialog 
                 
                 open={open}
                   PaperProps={{
@@ -101,84 +102,112 @@ const NavMenu = ({user}) => {
                 
                 onClose={handleCancel}
 
-                >
-          
-          <MenuItem
-          className={heading}
-          
-          >
-          
-          <Link to="/songsList"
-          style = {{
-            
-            color: '#233d4d',
-            display:'flex',
-            flexWrap: 'wrap'
-
-            }}
-            onClick={handleCancel}
-          >
-            
-            <QueueMusic/>
-            <Typography component="h5">
-            &nbsp;View Active Songs
-            </Typography>
-            </Link>
-          </MenuItem>
-
-          <MenuItem className={heading}>
-           
-            <Link  to="/addSong"
-            style = {{
-                color: '#233d4d',
-                display:'flex',
-                flexWrap: 'wrap',
-                
-                
-                 }}
-                 onClick={handleCancel}     
             >
-            <PlaylistAdd/>  
-            &nbsp;Add a New Song
-            </Link>
-
-          </MenuItem>
-
-          <MenuItem
-          className={heading}
           
-          >
+            <MenuItem
+              className={heading}
           
-          <Link to="/archive"
-          style = {{
+            >
+          
+              <Link 
+                
+                to="/songsList"
+                style = {{
             
-            color: '#233d4d',
-            display:'flex',
-            flexWrap: 'wrap'
+                  color: '#233d4d',
+                  display:'flex',
+                  flexWrap: 'wrap'
 
-            }}
-            onClick={handleCancel}
+                }}
+                onClick={handleCancel}
+              >
+            
+                <QueueMusic/>
+                
+                <Typography component="h5">
+                  
+                  &nbsp;View Active Songs
+
+                </Typography> 
+              
+              </Link>
+            
+            </MenuItem>
+
+            <MenuItem 
+              className={heading}
+            >
+           
+              <Link  
+                to="/addSong"
+                style = {{
+
+                  color: '#233d4d',
+                  display:'flex',
+                  flexWrap: 'wrap',
+                
+                }}
+                onClick={handleClose}  
+
+              >
+            
+                <PlaylistAdd/>  
+            
+                &nbsp;Add a New Song
+            
+              </Link>
+
+            </MenuItem>
+
+            <MenuItem
+              className={heading}
+          
+            >
+          
+              <Link 
+                to="/archive"
+                style = {{
+            
+                  color: '#233d4d',
+                  display:'flex',
+                  flexWrap: 'wrap'
+
+                }}
+                onClick={handleClose}
+              >
+            
+                <MenuBook/>
+            
+                  <Typography component="h5">
+              
+                    &nbsp;View Inactive Archive
+            
+                  </Typography>
+
+                </Link>
+          
+            </MenuItem>
+
+          <MenuItem 
+            className={heading}
           >
             
-            <MenuBook/>
-            <Typography component="h5">
-            &nbsp;View Archive
-            </Typography>
-            </Link>
-          </MenuItem>
-          <MenuItem className={heading}>
-            
-            <Link to="/user"
-            style = {{
+            <Link 
+              to="/user"
+              style = {{
+                
                 color: '#233d4d',
                 display:'flex',
                 flexWrap: 'wrap'
-                 }}
-                 onClick={handleCancel}
+                
+                }}
+                onClick={handleClose}
             > 
             
-            <AccountCircle/> 
-            &nbsp;Account Info
+              <AccountCircle/> 
+            
+                &nbsp;Account Info
+            
             </Link>
         
           </MenuItem>
