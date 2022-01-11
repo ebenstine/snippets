@@ -89,7 +89,7 @@ function InactiveSongDetails(){
                         
                                         <Card 
                                             spacing={1} 
-                                            className={card1}  
+                                            className={card}  
                                             raised={true}
                                         >
                         

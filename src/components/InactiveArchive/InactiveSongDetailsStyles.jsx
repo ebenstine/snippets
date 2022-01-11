@@ -2,49 +2,46 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles(() => ({
-    /*card: {
-      
+
+    cardContent: {
+        marginTop: '-2em',
+        marginLeft: '1.5em',
+        marginRight: '1.5em',
+        width: 380,
+        maxHeight: 900,
+        minHeight: 200,
+        flexDirection: 'column',
+        position: 'relative',
+        alignItems: 'center',
+        paddingTop: '3em',
+        //backgroundColor: '#c8ecf5'
+    },
+
+    card: {
         
         backgroundColor:  '#f0a1a1',
-        border: '1px solid #1d778d',
-        width: 345
+        border: '1px solid #4d8aaa'
         
     },
     
     card1: {
-      
         
-        backgroundColor: '#afe4f1',
-        border: '1px solid #1d778d',
-        width: 345
-        
+        backgroundColor: '#afe4f1', 
+        border: '1px solid #4d8aaa'
     },
 
     card2: {
-       
-       
+        
         backgroundColor: '#ffb171',
-        border: '1px solid #1d778d',
-        width: 345
+        border: '1px solid #4d8aaa'
+        
     },
     
     card3: {
-       
         
         backgroundColor: '#fdd377',
-        border: '1px solid #1d778d',
-        width: 345
-    },
-
-    cardContent: {
-        display: 'flex',
-        flexDirection : 'column', 
-        alignItems: "center", 
-        marginLeft: '1em',
-        paddingTop: '3em',
-        backgroundColor: '#77a9b6',
-        color: '#1a313f'
-
+        border: '1px solid #4d8aaa'
+        
     },
 
     text: {
@@ -56,119 +53,157 @@ const useStyles = makeStyles(() => ({
         lineHeight: '1.8em',
         whiteSpace: 'pre-line',
         fontSize: 14.5,
+        paddingBottom: '2em',
+        borderBottom: '1px solid #afe1ee',
+        color: '#233d4d'
         
-        //paddingBottom: '2em',
 
+    },
+    root: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginTop: '2em'
     },
 
     paper: {
-        margin: '3em auto',
-        background: 'linear-gradient(to right,  #9c9e9f 0%,#f6f6f6 100%)',
-        paddingBottom: '6em',
-        paddingTop: '6em',
-        paddingLeft: '4.2em',
-        paddingRight: '3em',
-        width: 750,
-        border: '1px solid #eb9148',
-    
-        
+        margin: '4em auto',
+        background: 'linear-gradient(to right,  #9c9e9f 0%,#e7e7e7 100%)',
+        paddingBottom: '1em',
+        paddingTop: '1em',
+        width: 650,
+        alignItems: 'center',
+        border: '1px solid #ffcdd2'
+       
     },
 
     player: {
-       
-        marginBottom: '.5em',
-        marginLeft: '.65em',
-        marginRight: '.45em',
-        color: '#1a313f',
-        border: '1.5px solid #1d778d',
-        borderRadius: '.25em',
-        paddingTop: '.5em',
-        paddingBottom: '.5em',
-        
-        
+        position: 'absolute',
+        bottom: '4em',
+        border: '1px solid snow'
     },
-
     title: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 16,
-        marginLeft: '-.4em',
-        marginTop: 'auto',
+        fontSize: 20,
         color: '#233d4d',
-        '&:hover': {
-            
-            cursor: 'pointer',
-            borderBottom: '1.5px solid #1d778d'
-    }
+        marginLeft: 'auto',
+        marginTop: 'auto',
+        borderBottom: '1px solid #6ca0ad',
+        
+
+       
+        
+    },
+    cardText: {
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 9.5,
+        borderBottom: '1px solid #6ca0ad',
+        whiteSpace: 'pre-wrap',
+        color: '#233d4d',
         
     },
 
-    title1: {
+    notes: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 16,
-        marginLeft: '-.4em',
-        marginTop: 'auto',
-        color: '#233d4d',
-        '&:hover': {
-            //color:'#1d778d',
-            cursor: 'pointer',
-            borderBottom: '1.5px solid #1d778d',
-           
-    }
-        
+        fontSize: 9.5,
+        borderBottom: '1px solid #6ca0ad',
+        whiteSpace: 'pre-wrap'
     },
 
-    title2: {
-        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 16,
-        marginLeft: '-.4em',
-        marginTop: 'auto',
+    buttons: {
+        marginLeft: '1em',
+        marginBottom: '.3em',
+        marginRight: '2em',
         color: '#233d4d',
-        '&:hover': {
-            //color:'#1d778d',
-            cursor: 'pointer',
-            borderBottom: '1.5px solid #1d778d'
-    }
-        
-    },
-
-    title3: {
-        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 16,
-        marginLeft: '-.4em',
-        marginTop: 'auto',
-        color: '#233d4d',
-        '&:hover': {
-            //color:'#1d778d',
-            cursor: 'pointer',
-            borderBottom: '1.5px solid #1d778d'
-    }
+        border: '1px solid #3b95ac',
+        paddingLeft: '1em',
+        paddingRight: '1em'
         
     },
 
     menuDots: {
-        paddingLeft: '46.5em',
-        marginTop: '-6em'
+        paddingLeft: '25em',
+        color: '#233d4d'
     },
-    
+
+    more: {
+        paddingLeft: '1em'
+    },
 
     button: {
+        marginLeft: '1em',
+        marginBottom: '.3em',
+        marginRight: '2em',
+        color: '#233d4d',
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        paddingLeft: '1em',
+        paddingRight: '1em',
+        '&:hover': {
+            background:'#fde76c',
+            },
         
-        fontSize: 16,
-        color: '#2a4f64',
-        backgroundColor:'#EBEBEB',
-        boxShadow: '1px 1px 10px grey',
-        border: '1.25px solid #c8ecf5'
+    },
+    dialog: {
         
-
+        marginLeft: '1em',
+        marginRight: '1em'
     },
 
-    message: {
-        color: '#2a4f64',
-        fontSize: 20
+    dialogContent: {
+        backgroundColor: 'rgb(230, 252, 255)',
+        display:'flex',
+        flexWrap: 'wrap',
+        color: '#233d4d',
+        
+        
+        
+    },
+
+    cancelButton: {
+
+        color: '#233d4d',
+        '&:hover': {
+            color:'#e45252',
+            },
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        alignItems: 'center',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    },
+
+    archiveButton: {
+
+        color: '#233d4d',
+        '&:hover': {
+            color:'#77c568',
+            },
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        alignItems: 'center',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    },
+
+
+
+    dialogText: {
+        border: '1.5px solid #e45252',
+        borderRadius: '3px',
+        color: '#233d4d',
+        background: 'linear-gradient(to bottom right,  #ff8c8c 0%,#e7e7e7 100%)',
+        paddingLeft: '1em',
+        paddingRight: '1em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em'
         
     }
-
-    */
     
 }));
+
 export default useStyles;
