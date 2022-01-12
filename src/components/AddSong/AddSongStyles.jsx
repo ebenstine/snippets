@@ -136,7 +136,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         //margin: '1ch',
         borderRadius: '2px',
-        background: "#a5a5a5",
+        background: "#b9b9b9",
         color: '#2a4f64',
         
     },
@@ -169,7 +169,7 @@ const useStyles = makeStyles((theme) => ({
         color: "#2a4f64",
         background: "rgb(230, 252, 255)",
         '&:hover': {
-            background:'#a5a5a5',
+            background:'#b9b9b9',
             },
         margin: theme.spacing(1),
         marginLeft: '3em',
