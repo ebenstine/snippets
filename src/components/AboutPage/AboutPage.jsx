@@ -86,7 +86,8 @@ const AboutPage = () => {
                                         These are viewable on the song's details page, where users can 
                                         also upload as many additional audio recordings connected to that song that they might have.  A color-coding system is used throughout the app that allows users 
                                         to demarcate a priority tier for each song, paving the way for structured planning of future releases, and facilitating a more focused songwriting 
-                                        workflow.  
+                                        workflow.  Additionally, users can designate the working status of a song, allowing them to upload both active and inactive work, and then differentiate between the two and update as needed.  
+                                        This is another intuitive step toward allowing the user to store all their unfinished work inside the app, no matter its state.  
                                 </p>
 
 

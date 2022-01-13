@@ -58,7 +58,7 @@ const AddSong = () => {
     setNewSong({ ...newSong, [key]: event.target.value });
   };
 
-  if ((newSong.title === null) || (newSong.preview_audio === null)) {
+  if ((newSong.title === '') || (newSong.preview_audio === '')) {
     
     alert('Please enter a title, and upload a file')
   
