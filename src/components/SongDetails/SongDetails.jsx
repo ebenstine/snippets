@@ -85,6 +85,12 @@ function SongDetails(){
         setEditPNotes(editPNotes => !editPNotes)
     }
 
+    let song = {
+        isActive: songDetails.is_active
+    }
+    const [status, setStatus] = useState(song);
+    
+
     const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => {
@@ -98,12 +104,13 @@ function SongDetails(){
 
       
 
-    const handleArchive = (songId) => {
-        console.log(songId)
+    const handleStatus = () => {
+        setStatus(!status)
+        let updatedStatus = {...status, id:params.id}
         dispatch ({
             type: 'REVISE_SONG',
-            payload: songId,
-                     is_active: false
+            payload: updatedStatus
+                     
         })
        history.push('/songsList')
     }
@@ -642,7 +649,7 @@ function SongDetails(){
                                     
                                     <Button 
                                         className={archiveButton} 
-                                        onClick={() => handleArchive(song.id)} 
+                                        onClick={handleStatus} 
                                         variant="contained"
                                     >
                                     

@@ -18,7 +18,7 @@ CREATE TABLE "songs" (
 	"title" TEXT NOT NULL,
     "instrument_notes" TEXT DEFAULT 'no notes added',
 	"performance_notes" TEXT DEFAULT 'no notes added',
-    "priority" VARCHAR (10)
+    "priority" VARCHAR (10),
 	"lyrics" TEXT DEFAULT 'no lyrics added',
 	"is_active" BOOLEAN DEFAULT true,
 	"preview_audio" TEXT NOT NULL
