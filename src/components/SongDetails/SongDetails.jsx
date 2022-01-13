@@ -98,14 +98,15 @@ function SongDetails(){
 
       
 
-    /*const handleArchive = (songId) => {
+    const handleArchive = (songId) => {
         console.log(songId)
         dispatch ({
             type: 'REVISE_SONG',
-            payload: songId
+            payload: songId,
+                     is_active: false
         })
-       history.push/songsList
-    }*/
+       history.push('/songsList')
+    }
 
     const handleCancel = () => {
         setOpen(false);
@@ -641,7 +642,7 @@ function SongDetails(){
                                     
                                     <Button 
                                         className={archiveButton} 
-                                        onClick={() => handleArchived(song.id)} 
+                                        onClick={() => handleArchive(song.id)} 
                                         variant="contained"
                                     >
                                     

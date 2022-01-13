@@ -8,7 +8,7 @@ function* reviseSong(action) {
             withCredentials: true,*/
        // };
         console.log('**action.payload is:', action.payload);
-        yield axios.put(`/api/song/${action.payload.id}`) //action.payload);
+        yield axios.put(`/api/song/${action.payload.id}`, action.payload);
 
         yield put({
             type: 'FETCH_SONG_DETAILS',

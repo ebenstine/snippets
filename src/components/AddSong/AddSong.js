@@ -176,7 +176,7 @@ const AddSong = () => {
                           <MenuItem 
                             value={true} 
                             className={setActive}>
-                            Active
+                            &nbsp;&nbsp;Active
                           </MenuItem>
         
                           <MenuItem 
@@ -225,7 +225,7 @@ const AddSong = () => {
                         <MenuItem 
                           value={true} 
                           className={setActive}>
-                          Active
+                          &nbsp;&nbsp;Active
                         </MenuItem>
     
                         <MenuItem 
@@ -272,7 +272,7 @@ const AddSong = () => {
                         <MenuItem 
                           value={true} 
                           className={setActive}>
-                          Active
+                          &nbsp;&nbsp;Active
                         </MenuItem>
 
                         <MenuItem 

@@ -87,7 +87,7 @@ function InactiveArchive() {
                             return (
                                 <>
                                 {song.is_active === false ?
-                                <>
+                                    <>
                                     {song.priority === '1' ? 
                                         
                                         <Box
@@ -302,7 +302,7 @@ function InactiveArchive() {
                     
 
                     null
-                        }
+                }
                     </>
                     );
 

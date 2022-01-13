@@ -191,6 +191,23 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
   
     }
   });
+
+router.put('/:id', rejectUnauthenticated, (req, res) => {
+    const id = req.params.id;
+    
+    let sqlText = `UPDATE songs
+                   SET "is_active" = NOT "is_active"
+                   WHERE id = $1;`
+    
+    pool.query(sqlText, [id] )
+      .then(result => {
+          console.log(result);
+          res.sendStatus(201);
+      }).catch(error => {
+          console.log('error updating', error);
+          res.sendStatus(500);
+      })
+})
   
 
 router.delete('/:id', rejectUnauthenticated, (req, res) => {

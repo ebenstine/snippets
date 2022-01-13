@@ -1,6 +1,6 @@
 import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Paper, Card, CardContent, Typography, Button, HelperText } from '@material-ui/core';
+import { Paper, Card, CardContent, Typography, Button, FormControl } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 
 import Dialog from '@material-ui/core/Dialog';
@@ -58,19 +58,52 @@ function InactiveSongDetails(){
             payload: params.id,
         });
     }, []);
+   
     const songDetails = useSelector((store) => store.songDetails)
+
+    let song = {
+        isActive: songDetails.is_active
+    
+      };
+    
+      const [isActive, setIsActive] = useState(song);
+    
+    
+      const handleActivate = () => {
+        setIsActive (!isActive)
+      };
+  
+      
+      const handleCancel = () => {
+          history.push(`/songDetails/${params.id}`)
+      }
+    
+    
+      const handleSubmit = (event) => {
+        event.preventDefault();
+        let revisedSong = isActive;
+        revisedSong = { ...revisedSong, id: params.id };
+        console.log('new song revisions made in', revisedSong);
+        dispatch({
+          type: 'REVISE_SONG',
+          payload: revisedSong,
+                    is_active: true
+                
+        });
+       
+      }
+    
+    
+    
+    
+      
+    
+  
+    
 
       
 
-    /*const handleArchive = (songId) => {
-        console.log(songId)
-        dispatch ({
-            type: 'REVISE_SONG',
-            payload: songId
-        })
-       history.push/songsList
-    }*/
-
+    
     const handleDelete = (songId) => {
         console.log(songId)
         dispatch ({
@@ -79,6 +112,8 @@ function InactiveSongDetails(){
         })
         history.push('/songsList')
     }
+
+    
 
     
     
@@ -206,14 +241,19 @@ function InactiveSongDetails(){
                                     
                                     <br></br>
                                     <br></br>
-                                
-                                
+                                    <FormControl>
+                                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
+                                        <div>
+                    
                                         <Button 
                                         
                                             className={activateButton} 
                                             variant="contained" 
+                                            type="submit"
                                             
-                                            //onClick={handleClickOpen}
+                                            
+                                            onClick={() =>handleActivate(song.id)}
+                                            
                                         >
                                             <QueueMusic/>
                                     
@@ -230,9 +270,11 @@ function InactiveSongDetails(){
 
 
                                         </Button>
-                                
+                                        </div>
+                                    </form>
+                                    </FormControl>
                                     </div>   
-                    
+
                                 </div>
                             )
                         })} 
