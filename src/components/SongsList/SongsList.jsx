@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { Box, Paper, Typography, Card, CardContent } from '@material-ui/core';
 import useStyles from './SongsListStyles';
 import ColorCodeLegend from './ColorCodeLegend'
@@ -33,7 +33,9 @@ function SongsList() {
 
     const dispatch = useDispatch();
     const history = useHistory();
+    const params = useParams();
     const songs = useSelector((store) => store.songs);
+    const songDetails = useSelector((store) => store.songDetails)
     console.log(songs);
 
 
@@ -44,6 +46,9 @@ function SongsList() {
         });
     }, []);
     //push forward to details page on click
+
+
+
 
     const handleClick = (songId) => {
         history.push(`/songDetails/${songId}`)

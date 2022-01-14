@@ -71,6 +71,8 @@ function SongDetails(){
         });
     }, []);
     const songDetails = useSelector((store) => store.songDetails)
+    const songs = useSelector((store) => store.songs)
+
 
     const handleEditTitle = () => {
         setEditTitle(editTitle => !editTitle)
@@ -104,15 +106,16 @@ function SongDetails(){
 
       
 
-    const handleStatus = () => {
-        
-        setStatus({...status})
+    const handleStatus = (event) => {
+        event.preventDefault();
+        let updatedStatus = {...status, id:params.id}
         dispatch ({
             type: 'REVISE_SONG',
-            payload: status
+            payload: updatedStatus
                      
         })
-    history.push(`/songsList`)
+    history.push(`/songsList`);
+    
     }
 
     const handleCancel = () => {
@@ -651,6 +654,7 @@ function SongDetails(){
                                         className={archiveButton} 
                                         onClick={handleStatus} 
                                         variant="contained"
+                                        type="submit"
                                         value={song.is_active = false}
                                     >
                                     
