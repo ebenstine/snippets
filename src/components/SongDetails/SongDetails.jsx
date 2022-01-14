@@ -86,7 +86,7 @@ function SongDetails(){
     }
 
     let song = {
-        isActive: songDetails.is_active
+       is_active: songDetails.is_active = false
     }
     const [status, setStatus] = useState(song);
     
@@ -105,14 +105,14 @@ function SongDetails(){
       
 
     const handleStatus = () => {
-        setStatus(!status)
-        let updatedStatus = {...status, id:params.id}
+        
+        setStatus({...status})
         dispatch ({
             type: 'REVISE_SONG',
-            payload: updatedStatus
+            payload: status
                      
         })
-       history.push('/songsList')
+    history.push(`/songsList`)
     }
 
     const handleCancel = () => {
@@ -651,6 +651,7 @@ function SongDetails(){
                                         className={archiveButton} 
                                         onClick={handleStatus} 
                                         variant="contained"
+                                        value={song.is_active = false}
                                     >
                                     
                                         <Archive/>
