@@ -46,6 +46,7 @@ function InactiveArchive() {
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
+    
     console.log(songs);
 
 
@@ -67,253 +68,91 @@ function InactiveArchive() {
 
     //conditionally render cards with different background colors according to priority
     return (
-        <>
-            <Paper className={paper} elevation={10}>
-                <div className={menuDots}>
+                <>
+                    <Paper className={paper} elevation={10}>
                     
-                <div>
-                </div>
-                
-                </div>
-
-                <Box 
-                    display="flex"
-                    flexWrap="wrap"
-                    justifyContent="space-between"
-                >
-                {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
-                
-                        {songs.map((song) => {
-                            return (
-                                <>
-                                {song.is_active === false ?
-                                    <>
-                                    {song.priority === '1' ? 
-                                        
-                                        <Box
-                                            
-                                            paddingTop={2}
-                                        
-                                        >
-                                            <Card
-                                                
-                                                raised={true}
-                                                className={card}
-                                
-                                            > 
-                                                    <section>
-
-                                                        <CardContent 
-                                        
-                                                            item xs={1} key={song} 
-                                                            onClick={() => handleClick(song.song_id)} 
-                                    
-                                                        >  
-                                        
-                                                            <Typography 
-                                                                variant="overline" 
-                                                                className={title1}>{song.title}
-                                                            </Typography>
-                                            
-                                        
-
-                                                        </CardContent>
-                                    
-                                                    </section>
-                                                        
-                                                        <section className={player}>
-                                                    
-                                                            <AudioPlayer
-
-                                                                audioFiles={[{ src: song.preview_audio }]}
-
-                                                            />
-                                                        </section>
-
-                                            </Card> 
-                                        </Box>
-                                    : 
-                            
-                                    song.priority === '2' ?
-                            
-                                        <Box
-                                            
-                                            paddingTop={2}
-                            
-                                        >
-                                            <Card
-                                
-                                                raised={true}
-                                                className={card2}
-                                            
-                                            > 
-                                                <section> 
-                                        
-                                                    <CardContent 
-        
-                                                        item xs={1} key={song} 
-                                                        onClick={() => handleClick(song.song_id)} 
-    
-                                                    >  
-        
-                                                        <div>
-                                            
-                                                            <Typography 
-                                                                    
-                                                                variant="overline" 
-                                                                className={title2}>{song.title}
-                                                            
-                                                            </Typography>
-            
-                                                        </div>
-
-                                                    </CardContent>
-    
-                                                </section>
-                                
-                                                    <section className={player}>
-                                    
-                                                        <AudioPlayer
-
-                                                            audioFiles={[{ src: song.preview_audio }]}
-
-                                                        />
-                                                    
-                                                    </section>
-
-                                            </Card>
-                            
-                                        </Box>
-                            
-                                    : 
-
-                                    song.priority === '3' ?
-                                    
-                                        <Box
-                                            
-                                            paddingTop={2}
-                    
-                                        >
-                                        
-                                            <Card
+                        <Box 
                         
-                                                raised={true}
-                                                className={card3}
-                                    
-                                            > 
-                                                
-                                                <section> 
+                            display="flex"
+                            flexWrap="wrap"
+                            justifyContent="space-between"
+                        >
+                
+                            {songs.map((song) => {
+                            
+                                return (
                                 
-                                                    <CardContent 
-
-                                                        item xs={1} key={song} 
-                                                        onClick={() => handleClick(song.song_id)} 
-
-                                                    >  
-
-                                                        <div>
+                                            <>
+                                
+                                                {song.is_active === false ?
                                     
-                                                            <Typography 
-                                                            
-                                                                variant="overline" 
-                                                                className={title3}>{song.title}
-                                                    
-                                                            </Typography>
-    
-                                                        </div>
-
-                                                    </CardContent>
-
-                                                </section>
-                        
-                                                    <section className={player}>
-                            
-                                                        <AudioPlayer
-
-                                                            audioFiles={[{ src: song.preview_audio }]}
-
-                                                        />
+                                                    <>
+                                    
+                                                        <Box paddingTop={2}>
                                             
-                                                </section>
+                                                            <Card
+                                                
+                                                                raised={true}
+                                                                className={card}
+                                
+                                                            > 
+                                                
+                                                                <section>
 
-                                            </Card>
-                    
-                                        </Box>
-                                    : 
-                            
-                                        <Box
-                                       
-                                            paddingTop={2}
+                                                                    <CardContent 
                                         
-                                        >
-                                
-                                            <Card
-                           
-                                                raised={true}
-                                                className={card}
-                                            
-                                            > 
-                                                
-                                                <section> 
-                                            
-                                                    <CardContent 
-   
-                                                        item xs={1} key={song} 
-                                                        onClick={() => handleClick(song.song_id)} 
-
-                                                    >  
-   
-                                                        <div>
-                                                
-                                                            <Typography 
-                                                        
-                                                                variant="overline" 
-                                                                className={title}>{song.title}
-                                                        
-                                                            </Typography>
-       
-                                                        </div>
-
-                                                    </CardContent>
-
-                                                </section>
-                           
-                                                    <section className={player}>
-                               
-                                                        <AudioPlayer
-
-                                                             audioFiles={[{ src: song.preview_audio }]}
-
-                                                        />
-                                                    </section>
-
-                                            </Card>
-                                        </Box>
-                                    }
+                                                                        item xs={1} key={song} 
+                                                                        onClick={() => handleClick(song.song_id)} 
                                     
-                                
-                                
-                            
-                            <br></br>
-                            <br></br>
+                                                                    >  
+                                        
+                                                                        <Typography 
+                                                                            
+                                                                            variant="overline" 
+                                                                            className={title1}>{song.title}
+                                                        
+                                                                        </Typography>
+                                            
+                                                                    </CardContent>
+                                    
+                                                                </section>
+                                                        
+                                                                <section className={player}>
+                                                    
+                                                                    <AudioPlayer
+
+                                                                        audioFiles={[{ src: song.preview_audio }]}
+
+                                                                    />
+                                                        
+                                                                </section>
+
+                                                            </Card> 
+
+                                                        </Box>
+                                    
+                                                        <br></br>
+                                                        <br></br>
                                      
-                        </>
-                     :
+                                                    </>
+                     
+                                                :
                     
+                                                null 
+                                                }
+                        
+                                            </>
+                                        );
 
-                    null
-                }
-                    </>
-                    );
+                            })}
 
-                })}
+                        </Box> 
 
-         </Box> 
+                    </Paper>
 
-    </Paper>
-</>
-//ternary statement : would go here, with priority group rendering to follow?
-);
+                </>
+
+            );
 
 }
 
