@@ -219,18 +219,12 @@ return (
                                                 </CardContent>
                     
                                         </Card>
+                                <br></br>
+                                <br></br>
                                 
                                 <div>
                                     
-                                    <Button 
-                                        
-                                        className={deleteButton} 
-                                        variant="contained" 
-                                        onClick={handleClickOpen}
-                                    >
-                                        <Delete/>
-
-                                    </Button>   
+          
 
                                     <Button 
                                         
@@ -243,6 +237,16 @@ return (
                                     >
                                         <QueueMusic/>
                                     
+                                    </Button>
+
+                                    <Button 
+                                        
+                                        className={deleteButton} 
+                                        variant="contained" 
+                                        onClick={handleClickOpen}
+                                    >
+                                        <Delete/>
+
                                     </Button>
 
                                         <Dialog 

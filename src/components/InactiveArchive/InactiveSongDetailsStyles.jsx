@@ -149,7 +149,7 @@ const useStyles = makeStyles(() => ({
     },
 
     deleteButton: {
-        marginLeft: '1em',
+        marginLeft: '1.5em',
         marginBottom: '.3em',
         marginRight: '2em',
         color: '#233d4d',
