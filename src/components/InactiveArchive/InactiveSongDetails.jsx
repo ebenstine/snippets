@@ -17,6 +17,7 @@ import QueueMusic from '@material-ui/icons/QueueMusic';
 import useStyles from './InactiveSongDetailsStyles';
 import SongDetailsMenu from '../SongDetails/SongDetailsComponents/SongDetailsMenu';
 import Delete from '@material-ui/icons/Delete';
+import { fabClasses } from '@mui/material';
 
 
 
@@ -35,6 +36,7 @@ function InactiveSongDetails(){
             cardContent,  
             menuDots, 
             button, 
+            cancelButton,
             dialog,
             dialogText,
             dialogContent, 
@@ -62,48 +64,39 @@ function InactiveSongDetails(){
     const songDetails = useSelector((store) => store.songDetails)
 
     let song = {
-        isActive: songDetails.is_active
+        is_active: songDetails.is_active = true
     
       };
     
-      const [isActive, setIsActive] = useState(song);
-    
-    
-      const handleActivate = () => {
-        setIsActive (!isActive)
+      const [status, setStatus] = useState(song);
+      const [open, setOpen] = useState(false);
+
+      const handleClickOpen = () => {
+        setOpen(true);
       };
+    
+      const handleClose = () => {
+        setOpen(false);
+      };
+    
+    
+      const handleStatus = (event) => {
+        event.preventDefault();
+        let updatedStatus = {...status, id:params.id}
+        dispatch ({
+            type: 'REVISE_SONG',
+            payload: updatedStatus
+                     
+        })
+    history.push(`/songsList`);
+    
+    }
   
       
       const handleCancel = () => {
-          history.push(`/songDetails/${params.id}`)
+        setOpen(false);
+        handleClose();
       }
-    
-    
-      const handleSubmit = (event) => {
-        event.preventDefault();
-        let revisedSong = isActive;
-        revisedSong = { ...revisedSong, id: params.id };
-        console.log('new song revisions made in', revisedSong);
-        dispatch({
-          type: 'REVISE_SONG',
-          payload: revisedSong,
-                    is_active: true
-                
-        });
-       
-      }
-    
-    
-    
-    
-      
-    
-  
-    
-
-      
-
-    
     const handleDelete = (songId) => {
         console.log(songId)
         dispatch ({
@@ -119,20 +112,20 @@ function InactiveSongDetails(){
     
 
     
-    return (
+return (
         
 
-        <div>
+    <>
             
-            <Paper className={paper} elevation={10}>
+        <Paper className={paper} elevation={10}>
             
-                <section className={root}>
+            <section className={root}>
                     
-                    {songDetails.map((song) => {
+                {songDetails.map((song) => {
                         
-                        return (
+                    return (
                              
-                                <div key={song.id}>
+                            <div key={song.id}>
                                     
                         
                                         <Card 
@@ -149,138 +142,209 @@ function InactiveSongDetails(){
                     
                    
 
-                                            <CardContent className={cardContent}>
+                                                <CardContent className={cardContent}>
                                     
-                                                <div>
+                                                    <div>
                             
-                                                    <Typography 
+                                                        <Typography 
                                                         
-                                                        variant="overline" 
-                                                        className={title}>
-                                                        {song.title}
+                                                            variant="overline" 
+                                                            className={title}>
+                                                            {song.title}
 
-                                                    </Typography>
+                                                        </Typography>
 
-                                                </div>
+                                                    </div>
                                                 
-                                                <br></br>
+                                                    <br></br>
 
-                                                <div>
+                                                    <div>
 
-                                                    <Typography 
+                                                        <Typography 
                                                         
-                                                        component = "p" 
-                                                        className={cardText}>
-                                                        {song.lyrics}
+                                                            component = "p" 
+                                                            className={cardText}>
+                                                            {song.lyrics}
 
-                                                    </Typography>
+                                                        </Typography>
                                                         
-                                                </div>
+                                                    </div>
                                                 
                         
-                                                <br></br>
-                                                <br></br>
-                                                <br></br>
-                                                <br></br>
+                                                    <br></br>
+                                                    <br></br>
+                                                    <br></br>
+                                                    <br></br>
                         
+                                                    <div>
+
+                                                        <Typography 
+                                                                
+                                                            component = "p" 
+                                                            className={cardText}>
+
+                                                                <span style={{color:"#1d778d"}}>▶</span>
+                                                                
+                                                                    &nbsp;
+                                                                    Instrument Notes:
+                                                                    {' '}
+                                                                    {song.instrument_notes}
+
+                                                        </Typography>
+
+                                                    </div>
                                                 
-                                            
-                                                    
+                                                    <br></br>
 
-                                                <div>
+                                                    <div>
 
-                                                    <Typography 
+                                                        <Typography 
                                                                 
-                                                        component = "p" 
-                                                        className={cardText}>
+                                                            component = "p" 
+                                                            className={cardText}>
 
-                                                            <span style={{color:"#1d778d"}}>▶</span>
-                                                                
-                                                                &nbsp;
-                                                                Instrument Notes:
-                                                                {' '}
-                                                                {song.instrument_notes}
+                                                                <span style={{color:"#1d778d"}}>▶</span>
 
-                                                    </Typography>
+                                                                    &nbsp;
+                                                                    Performance Notes:
+                                                                    {' '}
+                                                                    {song.performance_notes}
 
-                                                </div>
-                                                
+                                                        </Typography>
 
-                                                <br></br>
-
+                                                    </div>
                                                
-
-                                                      
-                                                <div>
-
-                                                    <Typography 
-                                                                
-                                                        component = "p" 
-                                                        className={cardText}>
-
-                                                        <span style={{color:"#1d778d"}}>▶</span>
-
-                                                            &nbsp;
-                                                            Performance Notes:
-                                                            {' '}
-                                                            {song.performance_notes}
-
-                                                    </Typography>
-
-                                                </div>
-                                               
-                                        
-
-                                                <br></br>
+                                                    <br></br>
                      
-                                            </CardContent>
+                                                </CardContent>
                     
                                         </Card>
                                 
-                                    <div>
+                                <div>
                                     
-                                    <br></br>
-                                    <br></br>
-                                    <FormControl>
-                                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
-                                        <div>
-                    
-                                        <Button 
+                                    <Button 
                                         
-                                            className={activateButton} 
-                                            variant="contained" 
-                                            type="submit"
-                                            
-                                            
-                                            onClick={() =>handleActivate(song.id)}
-                                            
-                                        >
-                                            <QueueMusic/>
-                                    
-                                        </Button>
-
-                                        <Button 
-                                        
-                                            className={deleteButton}
-                                            variant="contained"
-                                            onClick={() => handleDelete(song.id)}
-                                        >
-                                        
+                                        className={deleteButton} 
+                                        variant="contained" 
+                                        onClick={handleClickOpen}
+                                    >
                                         <Delete/>
 
+                                    </Button>   
 
-                                        </Button>
-                                        </div>
-                                    </form>
-                                    </FormControl>
-                                    </div>   
+                                    <Button 
+                                        
+                                        className={activateButton} 
+                                        variant="contained" 
+                                        type="submit"
+                                        value={song.is_active = true}
+                                        onClick={handleStatus}
+                                            
+                                    >
+                                        <QueueMusic/>
+                                    
+                                    </Button>
 
+                                        <Dialog 
+                                
+                                            open={open} 
+                                            PaperProps={{
+                                                style: { 
+                                                    
+                                                    border: "1px solid #e45252",
+                                                    background: "rgb(199, 246, 252)"
+                                        
+                                                }
+                            
+                                            }}
+                                
+                                            className={dialog} 
+                                            onClose={handleClose} 
+                                
+                                        >
+                                
+                                            <DialogTitle className={dialogContent}>
+                                    
+                                                <div>
+                                    
+                                                    <Feedback 
+                                                        
+                                                        style = {{
+                                            
+                                                            color: '#e45252',
+                                                            fontSize: 50,
+                                                            paddingTop: '-1em',
+                                                            display: 'flex',
+                                                            flexWrap: 'wrap',
+                                                            textStroke: '2px black'
+                                        
+                                                        }}
+                                    
+                                                    />
+                                   
+                                                </div>
+                                
+                                            </DialogTitle>
+                                    
+                                                <DialogContent className={dialogContent} >
+                                        
+                                                    <DialogContentText className={dialogText}>
+                                            
+                                                        Deleting the song is a permanent, unchangeable action.  Do you want to do this?
+
+                                                    </DialogContentText>
+                                    
+                                                </DialogContent>
+                               
+                                                <DialogActions className={dialogContent}>    
+                                        
+                                                    <div>
+
+                                                        <Button 
+                                        
+                                                            className={cancelButton} 
+                                                            onClick={handleCancel} 
+                                                            variant="contained"
+                                    
+                                                        >
+                                        
+                                                            <Cancel/>
+                                    
+                                                        </Button>
+                    
+                                                        <Button 
+                                        
+                                                            className={deleteButton}
+                                                            variant="contained"
+                                                            onClick={() => handleDelete(song.id)}
+                                        
+                                                        >
+                                        
+                                                            <Delete/>
+
+                                                        </Button>
+                                                    
+                                                    </div>
+
+                                                </DialogActions>
+
+                                        </Dialog>
+                                        
                                 </div>
-                            )
-                        })} 
-                    </section>
-                </Paper>
-        </div>
+                                    
+                            </div> 
+                          
+                                
+                               
+                        )
+                    })} 
+
+                </section>
+            
+            </Paper>
+
+        </>
+
     )
 }
         

@@ -19,7 +19,7 @@ const useStyles = makeStyles(() => ({
 
     card: {
         
-        backgroundColor:  '#a5a5a5',
+        backgroundColor:  '#cccccc',
         border: '1px solid #4d8aaa'
         
     },
@@ -120,6 +120,8 @@ const useStyles = makeStyles(() => ({
         paddingRight: '1em'
         
     },
+
+    
 
     menuDots: {
         paddingLeft: '25em',

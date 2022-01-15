@@ -98,7 +98,7 @@ function InactiveArchive() {
                                             <Card
                                                 
                                                 raised={true}
-                                                className={card1}
+                                                className={card}
                                 
                                             > 
                                                     <section>
