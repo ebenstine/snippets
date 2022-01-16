@@ -2,7 +2,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Paper, Card, CardContent, Typography, Button, FormControl } from '@material-ui/core';
 import { useEffect, useState } from 'react';
-
+import { makeStyles } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -12,12 +12,116 @@ import Archive from '@material-ui/icons/Archive';
 import Cancel from '@material-ui/icons/Cancel';
 import Feedback from '@material-ui/icons/Feedback';
 import QueueMusic from '@material-ui/icons/QueueMusic';
-
-
-import useStyles from './InactiveSongDetailsStyles';
-import SongDetailsMenu from '../SongDetails/SongDetailsComponents/SongDetailsMenu';
 import Delete from '@material-ui/icons/Delete';
 
+const useStyles = makeStyles(() => ({
+
+
+    activateButton: {
+        marginLeft: '10em',
+        marginBottom: '.3em',
+        marginRight: '2em',
+        color: '#233d4d',
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        paddingLeft: '1em',
+        paddingRight: '1em',
+        '&:hover': {
+            background:'#fde76c',
+            
+            },
+        
+    },
+
+    deletePrompt: {
+        marginLeft: '1.5em',
+        marginBottom: '.3em',
+        marginRight: '2em',
+        color: '#233d4d',
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        paddingLeft: '1em',
+        paddingRight: '1em',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    },
+    dialog: {
+        
+        marginLeft: '1em',
+        marginRight: '1em'
+    },
+
+    dialogContent: {
+        backgroundColor: 'rgb(230, 252, 255)',
+        display:'flex',
+        flexWrap: 'wrap',
+        color: '#233d4d',
+        
+        
+        
+    },
+
+    deleteButton: {
+        
+        color: '#233d4d',
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        marginLeft: '1em',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    },
+    dialog: {
+        
+        marginLeft: '1em',
+        marginRight: '1em'
+    },
+
+    dialogContent: {
+        backgroundColor: 'rgb(230, 252, 255)',
+        display:'flex',
+        flexWrap: 'wrap',
+        color: '#233d4d',
+        
+        
+        
+    },
+
+
+    cancelButton: {
+
+        color: '#233d4d',
+        '&:hover': {
+            color:'#e45252',
+            },
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        alignItems: 'center',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    },
+
+    
+
+
+    dialogText: {
+        border: '1.5px solid #e45252',
+        borderRadius: '3px',
+        color: '#233d4d',
+        background: 'linear-gradient(to bottom right,  #ff8c8c 0%,#e7e7e7 100%)',
+        paddingLeft: '1em',
+        paddingRight: '1em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em'
+        
+    }
+
+}));
 
 
 
@@ -25,13 +129,7 @@ function InactiveArchiveStatus(){
     
     const { 
             
-            title, 
-            root, 
-            card, 
-            paper, 
-            cardText, 
-            cardContent,  
-            menuDots, 
+            
             deletePrompt,
             button, 
             cancelButton,
