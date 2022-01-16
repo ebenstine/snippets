@@ -89,23 +89,28 @@ const Uploader = ({uploadComplete}) => {
             </div>
     )
   return (
+    
     <div style={{ paddingTop: '2em'}}>
       
-    <RecordingsProgressBar progress={progress} progressTitle={progressTitle} />
-    
-    <DropzoneS3Uploader
-
-      onError={(error) => console.log('upload failed', error)}
-      onProgress={onProgress}
-      onFinish={handleFinishedUpload}
-      s3Url={s3Url}
-      style={dropStyles}
-      maxSize={1024 * 1024 * 100}
-      upload={uploadOptions}
-      accept="audio/*"
-      children={innerElement} 
+      <RecordingsProgressBar 
+        progress={progress} 
+        progressTitle={progressTitle} 
       
-    />
+      />
+    
+        <DropzoneS3Uploader
+
+        onError={(error) => console.log('upload failed', error)}
+        onProgress={onProgress}
+        onFinish={handleFinishedUpload}
+        s3Url={s3Url}
+        style={dropStyles}
+        maxSize={1024 * 1024 * 100}
+        upload={uploadOptions}
+        accept="audio/*"
+        children={innerElement} 
+      
+      />
     
     </div>
   );

@@ -91,6 +91,7 @@ function SongDetails(){
             
                             <section className={root}>
                                 <div key={song.id}>
+                                    
                                     {song.priority === '1' ?
                         
                                         <Card 
