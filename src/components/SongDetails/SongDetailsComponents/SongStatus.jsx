@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { Dialog, DialogContent, DialogActions, Button } from '@material-ui/core';
-import { Archive, Feedback } from '@material-ui/icons';
+import { Dialog, DialogContent, DialogContentText, DialogActions, DialogTitle, Button } from '@material-ui/core';
+import { Archive, Feedback, Cancel } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
@@ -83,6 +83,7 @@ const useStyles = makeStyles(() => ({
 
 }));
 
+function SongStatus() {
 
 const params = useParams();
     const dispatch = useDispatch();
@@ -138,6 +139,8 @@ const params = useParams();
        }
 
 
+return (
+<>
 {songDetails.map((song) => {
                         
                 return (
@@ -227,3 +230,8 @@ const params = useParams();
                         </div>
                 )
             })}
+        </>
+    )    
+}
+
+export default SongStatus;   

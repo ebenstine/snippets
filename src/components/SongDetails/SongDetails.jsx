@@ -88,7 +88,7 @@ function SongDetails(){
         setEditPNotes(editPNotes => !editPNotes)
     }
 
-    let song = {
+    /*let song = {
        is_active: songDetails.is_active = false
     }
     const [status, setStatus] = useState(song);
@@ -124,7 +124,7 @@ function SongDetails(){
         handleClose();
       }
 
-    
+    */
 
     
     return (
