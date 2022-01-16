@@ -17,7 +17,7 @@ import QueueMusic from '@material-ui/icons/QueueMusic';
 import useStyles from './InactiveSongDetailsStyles';
 import SongDetailsMenu from '../SongDetails/SongDetailsComponents/SongDetailsMenu';
 import Delete from '@material-ui/icons/Delete';
-import { fabClasses } from '@mui/material';
+
 
 
 
@@ -35,6 +35,7 @@ function InactiveSongDetails(){
             cardText, 
             cardContent,  
             menuDots, 
+            deletePrompt,
             button, 
             cancelButton,
             dialog,
@@ -241,7 +242,7 @@ return (
 
                                     <Button 
                                         
-                                        className={deleteButton} 
+                                        className={deletePrompt} 
                                         variant="contained" 
                                         onClick={handleClickOpen}
                                     >
@@ -294,7 +295,7 @@ return (
                                         
                                                     <DialogContentText className={dialogText}>
                                             
-                                                        Deleting the song is a permanent, unchangeable action.  Do you want to do this?
+                                                        Deleting the song is an irreversible action.  Do you want to do this?
 
                                                     </DialogContentText>
                                     

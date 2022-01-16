@@ -103,9 +103,9 @@ const AboutPage = () => {
                          </CardContent>
                     </Card>
                 </div>
-                </div>
             </div>
-          )
+        </div>
+    )
 };
 
 export default AboutPage;

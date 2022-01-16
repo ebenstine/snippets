@@ -9,16 +9,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Paper, Card, CardContent, Typography, Button, HelperText } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Archive from '@material-ui/icons/Archive';
-import Cancel from '@material-ui/icons/Cancel';
-import Feedback from '@material-ui/icons/Feedback';
-import QueueMusic from '@material-ui/icons/QueueMusic';
-
 import useStyles from './SongDetailsComponents/SongDetailsStyles';
 import SongDetailsMenu from './SongDetailsComponents/SongDetailsMenu';
 import SongTitle from './SongDetailsComponents/SongTitle';
@@ -43,12 +33,7 @@ function SongDetails(){
             cardText, 
             cardContent,  
             menuDots, 
-            button, 
-            dialog,
-            dialogText,
-            dialogContent, 
-            cancelButton,
-            archiveButton
+            
 
         } = useStyles();
 
@@ -87,44 +72,6 @@ function SongDetails(){
     const handleEditPNotes = () => {
         setEditPNotes(editPNotes => !editPNotes)
     }
-
-    /*let song = {
-       is_active: songDetails.is_active = false
-    }
-    const [status, setStatus] = useState(song);
-    
-
-    const [open, setOpen] = useState(false);
-
-    const handleClickOpen = () => {
-        setOpen(true);
-      };
-    
-      const handleClose = () => {
-        setOpen(false);
-      };
-
-
-      
-
-    const handleStatus = (event) => {
-        event.preventDefault();
-        let updatedStatus = {...status, id:params.id}
-        dispatch ({
-            type: 'REVISE_SONG',
-            payload: updatedStatus
-                     
-        })
-    history.push(`/archive`);
-    
-    }
-
-    const handleCancel = () => {
-        setOpen(false);
-        handleClose();
-      }
-
-    */
 
     
     return (
@@ -582,34 +529,32 @@ function SongDetails(){
                                 </div>
                     
                     
-                    <br></br>
-                    <br></br>
+                                <br></br>
+                                <br></br>
                     
-                    <SongStatus/>
+                                <SongStatus/>
                     
-                    </section>
+                            </section>
 
-            </Paper> 
+                        </Paper> 
+                    
                     </>
-                    :
+                    
+                        :
 
-                    <InactiveSongDetails/>
+                        <InactiveSongDetails/>
                                 
-                            
-                    }
+                        }
                     
-                    
-                
                 </>
                 
                 )
-            })}
-                    
-                    
             
+            })}
                     
         </div>
         
     )
+
 }
 export default SongDetails;

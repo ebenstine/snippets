@@ -140,8 +140,9 @@ const params = useParams();
 
 
 return (
-<>
-{songDetails.map((song) => {
+
+    <>
+        {songDetails.map((song) => {
                         
                 return (
         
@@ -221,6 +222,7 @@ return (
                                     >
                                     
                                         <Archive/>
+                                        
                                     </Button>
 
                                 </DialogActions>

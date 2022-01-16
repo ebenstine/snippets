@@ -129,7 +129,7 @@ const useStyles = makeStyles(() => ({
         
     },
 
-    deleteButton: {
+    deletePrompt: {
         marginLeft: '1.5em',
         marginBottom: '.3em',
         marginRight: '2em',
@@ -159,6 +159,34 @@ const useStyles = makeStyles(() => ({
         
     },
 
+    deleteButton: {
+        
+        color: '#233d4d',
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        marginLeft: '1em',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    },
+    dialog: {
+        
+        marginLeft: '1em',
+        marginRight: '1em'
+    },
+
+    dialogContent: {
+        backgroundColor: 'rgb(230, 252, 255)',
+        display:'flex',
+        flexWrap: 'wrap',
+        color: '#233d4d',
+        
+        
+        
+    },
+
+
     cancelButton: {
 
         color: '#233d4d',
@@ -174,21 +202,7 @@ const useStyles = makeStyles(() => ({
         
     },
 
-    archiveButton: {
-
-        color: '#233d4d',
-        '&:hover': {
-            color:'#77c568',
-            },
-        background: '#fff099',
-        border: '1px solid #3b95ac',
-        alignItems: 'center',
-        '&:hover': {
-            background:'#fde76c',
-            },
-        
-    },
-
+    
 
 
     dialogText: {
