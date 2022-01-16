@@ -26,6 +26,7 @@ import SongLyrics from './SongDetailsComponents/SongLyrics'
 import SongInstrumentNotes from './SongDetailsComponents/SongInstrumentNotes';
 import SongPerformanceNotes from './SongDetailsComponents/SongPerformanceNotes';
 import InactiveSongDetails from '../InactiveArchive/InactiveSongDetails';
+import SongStatus from './SongDetailsComponents/SongStatus';
 
 
 function SongDetails(){
@@ -114,7 +115,7 @@ function SongDetails(){
             payload: updatedStatus
                      
         })
-    history.push(`/songsList`);
+    history.push(`/archive`);
     
     }
 
@@ -584,88 +585,7 @@ function SongDetails(){
                     <br></br>
                     <br></br>
                     
-                    <div>
-                    
-                    
-                    
-                        <Button 
-                            className={button} 
-                            variant="contained" 
-                            onClick={handleClickOpen}
-                        >
-                            <Archive/>
-                            
-                        </Button>
-                        
-                            <Dialog 
-                                open={open} 
-                                PaperProps={{
-                                    style: 
-                                        { border: "1px solid #e45252",
-                                             
-                                             background: "rgb(199, 246, 252)"
-                                        }
-                            
-                                            }}
-                                className={dialog} 
-                                onClose={handleClose} 
-                                
-                            >
-                                
-                                <DialogTitle className={dialogContent}>
-                                    <div>
-                                    <Feedback 
-                                        style = {{
-                                            color: '#e45252',
-                                            fontSize: 50,
-                                            paddingTop: '-1em',
-                                            display: 'flex',
-                                            flexWrap: 'wrap',
-                                            textStroke: '2px black'
-                                        }}
-                                    />
-                                   
-                                    </div>
-                                </DialogTitle>
-                                    
-                                    <DialogContent className={dialogContent} >
-                                        
-                                        <DialogContentText className={dialogText}>
-                                            
-                                            Moving the song to the inactive archive will temporarily remove your ability to 
-                                            add new ideas or changes.  Do you want to do this?
-
-                                        </DialogContentText>
-                                    
-                                    </DialogContent>
-                               
-                                <DialogActions className={dialogContent}>
-                                    
-                                    <Button 
-                                        className={cancelButton} 
-                                        onClick={handleCancel} 
-                                        variant="contained"
-                                    >
-                                        <Cancel/>
-                                    
-                                    </Button>
-                                    
-                                    <Button 
-                                        className={archiveButton} 
-                                        onClick={handleStatus} 
-                                        variant="contained"
-                                        type="submit"
-                                        value={song.is_active = false}
-                                    >
-                                    
-                                        <Archive/>
-                                    </Button>
-
-                                </DialogActions>
-
-                            </Dialog>
-
-                        </div> 
+                    <SongStatus/>
                     
                     </section>
 

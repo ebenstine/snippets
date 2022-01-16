@@ -102,6 +102,11 @@ const useStyles = makeStyles(() => ({
         
     },
 
+    menuDots: {
+        paddingLeft: '46.5em',
+        marginTop: '-6em'
+    },
+
     title1: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 16,

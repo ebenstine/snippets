@@ -192,7 +192,7 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
     }
   });
 
-router.put('/:id', rejectUnauthenticated, (req, res) => {
+/*router.put('/:id', rejectUnauthenticated, (req, res) => {
     const id = req.params.id;
     
     let sqlText = `UPDATE songs
@@ -207,7 +207,7 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
           console.log('error updating', error);
           res.sendStatus(500);
       })
-})
+})*/
   
 
 router.delete('/:id', rejectUnauthenticated, (req, res) => {

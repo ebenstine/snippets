@@ -5,37 +5,14 @@ const useStyles = makeStyles(() => ({
     card: {
       
         
-        backgroundColor:  '#cccccc',
+        backgroundColor:  '#c7c7c7',
         border: '1px solid #1d778d',
         width: 345,
-        marginTop: '3.5em'
+        
         
     },
     
-    card1: {
-      
-        
-        backgroundColor: '#afe4f1',
-        border: '1px solid #1d778d',
-        width: 345
-        
-    },
-
-    card2: {
-       
-       
-        backgroundColor: '#ffb171',
-        border: '1px solid #1d778d',
-        width: 345
-    },
-    
-    card3: {
-       
-        
-        backgroundColor: '#fdd377',
-        border: '1px solid #1d778d',
-        width: 345
-    },
+ 
 
     cardContent: {
         display: 'flex',
@@ -145,12 +122,6 @@ const useStyles = makeStyles(() => ({
     }
         
     },
-
-    menuDots: {
-        paddingLeft: '46.5em',
-        marginTop: '-6em'
-    },
-    
 
     button: {
         

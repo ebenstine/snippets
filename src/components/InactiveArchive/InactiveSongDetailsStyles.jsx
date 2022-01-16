@@ -19,31 +19,12 @@ const useStyles = makeStyles(() => ({
 
     card: {
         
-        backgroundColor:  '#cccccc',
+        backgroundColor:  '#c7c7c7',
         border: '1px solid #4d8aaa'
         
     },
     
-    card1: {
-        
-        backgroundColor: '#afe4f1', 
-        border: '1px solid #4d8aaa'
-    },
-
-    card2: {
-        
-        backgroundColor: '#ffb171',
-        border: '1px solid #4d8aaa'
-        
-    },
     
-    card3: {
-        
-        backgroundColor: '#fdd377',
-        border: '1px solid #4d8aaa'
-        
-    },
-
     text: {
         display: 'flex',
         //width: 295,

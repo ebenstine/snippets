@@ -61,6 +61,8 @@ const useStyles = makeStyles((theme) => ({
         color: '#2a4f64',
         
     },
+
+    
 }));
 
 function SongTitle() {
