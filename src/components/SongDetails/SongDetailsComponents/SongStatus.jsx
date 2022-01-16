@@ -133,10 +133,7 @@ const params = useParams();
      
      }
  
-     const handleCancel = () => {
-         setOpen(false);
-         handleClose();
-       }
+     
 
 
 return (
@@ -206,7 +203,7 @@ return (
                                     
                                     <Button 
                                         className={cancelButton} 
-                                        onClick={handleCancel} 
+                                        onClick={handleClose} 
                                         variant="contained"
                                     >
                                         <Cancel/>
