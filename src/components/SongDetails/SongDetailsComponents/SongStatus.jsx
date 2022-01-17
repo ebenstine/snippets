@@ -85,7 +85,7 @@ const useStyles = makeStyles(() => ({
 
 function SongStatus() {
 
-const params = useParams();
+    const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -123,7 +123,7 @@ const params = useParams();
  
      const handleStatus = (event) => {
          event.preventDefault();
-         let updatedStatus = {...status, id:params.id}
+         let updatedStatus = {...status, id: params.id}
          dispatch ({
              type: 'REVISE_SONG',
              payload: updatedStatus

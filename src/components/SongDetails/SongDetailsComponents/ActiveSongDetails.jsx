@@ -38,7 +38,7 @@ const [ editTitle, setEditTitle] = useState(false);
 const [ editLyrics, setEditLyrics] = useState(false);
 const [ editINotes, setEditINotes] = useState(false);
 const [ editPNotes, setEditPNotes] = useState(false);
-
+//add state handler for status? 
 
 console.log(params);
 

@@ -91,6 +91,7 @@ function SongLyrics() {
    //pushing to the details id was never the smart path but what other options are there?
 
    //  ... make a new endpoint? 
+   //best plan could be to shift the action into the songDetails menu? push it under the rug
     const handleCancel = () => {
         history.push(`/songDetails/${params.id}`)
     }
