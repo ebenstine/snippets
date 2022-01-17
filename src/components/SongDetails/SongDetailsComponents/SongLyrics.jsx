@@ -5,6 +5,7 @@ import { Paper, TextField, MenuItem, Button, Typography, Select, FormControl } f
 import { makeStyles } from '@material-ui/core/styles';
 import { CheckCircle } from '@material-ui/icons';
 import { Cancel } from '@material-ui/icons';
+import ActiveSongDetails from './ActiveSongDetails';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -72,7 +73,7 @@ function SongLyrics() {
       lyrics: songDetails.lyrics,
   
     };
-  
+    
     const [reviseDetails, setReviseDetails] = useState(song);
   
   
@@ -85,11 +86,14 @@ function SongLyrics() {
     }
   
   
-  
+   //this is the source of the state issue.  
+   //the songDetails id does not know at this point what its status is.
+   //pushing to the details id was never the smart path but what other options are there?
+
+   //  ... make a new endpoint? 
     const handleCancel = () => {
         history.push(`/songDetails/${params.id}`)
     }
-  
   
     const handleSubmit = (event) => {
       event.preventDefault();

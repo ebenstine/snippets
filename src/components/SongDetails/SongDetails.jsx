@@ -1,8 +1,6 @@
-//this component contains a substantial portion of the app's capabilities.
-//it is significantly refactored currently but needs include:
+//this component contains most of the app's capabilities.
+//but, it is substantially refactored to subcomponents which are handling a lot of the actions
 
-//create components for un-editable song items, and refactor that code so the conditional rendering is crisp
-//create component for action buttons (setActive, setInactive) refactor the code
 
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -47,7 +45,7 @@ function SongDetails(){
                         song.is_active === false ? 
                         
                         <InactiveSongDetails/> 
-                        
+
                         :
 
                         null 
