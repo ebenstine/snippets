@@ -41,14 +41,14 @@ function SongDetails(){
                         <ActiveSongDetails/> 
                 
                         :
-                        
-                        song.is_active === false ? 
-                        
-                        <InactiveSongDetails/> 
+
+                        song.is_active === false ?
+
+                        <InactiveSongDetails/>
 
                         :
 
-                        null 
+                        null
 
                         }
 
