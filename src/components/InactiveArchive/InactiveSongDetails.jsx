@@ -60,7 +60,11 @@ return (
                 {songDetails.map((song) => {
                         
                     return (
-                             
+
+                        <>
+                        {song.is_active === false ?
+                            
+                            
                             <div key={song.id}>
                                     
                         
@@ -161,8 +165,14 @@ return (
                                 <InactiveArchiveStatus/>
                                     
                             </div> 
-                          
-                                
+                        :
+                        
+                        null
+                        
+                        } 
+
+                        
+                        </>
                                
                         )
                     })} 
