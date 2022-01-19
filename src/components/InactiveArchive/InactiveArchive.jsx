@@ -59,7 +59,7 @@ function InactiveArchive() {
     //push forward to details page on click
 
     const handleClick = (songId) => {
-        history.push(`/songDetails/${songId}`)
+        history.push(`/InactiveSongDetails/${songId}`)
     }
     
 

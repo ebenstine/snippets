@@ -165,7 +165,7 @@ const NavMenu = ({user}) => {
             >
           
               <Link 
-                to="/archive"
+                to="/InactiveArchive"
                 style = {{
             
                   color: '#233d4d',

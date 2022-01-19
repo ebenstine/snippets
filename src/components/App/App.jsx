@@ -16,13 +16,13 @@ import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InactiveArchive from '../InactiveArchive/InactiveArchive';
-
+import InactiveSongDetails from '../InactiveArchive/InactiveSongDetails';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddSong from '../AddSong/AddSong';
 import SongsList from '../SongsList/SongsList';
 import SongDetails from '../SongDetails/SongDetails';
-import ReviseSong from '../ReviseSong/ReviseSong';
+
 import './App.css';
 
 function App() {
@@ -89,9 +89,17 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
+          //logged in shows songDetails page else shows LoginPage
+          exact
+          path="/InactiveSongDetails/:id"
+          >
+          <InactiveSongDetails />
+          </ProtectedRoute>
+
+          <ProtectedRoute
             // logged in shows archive else shows LoginPage
             exact
-            path="/archive"
+            path="/InactiveArchive"
           >
             <InactiveArchive/>
           </ProtectedRoute>
