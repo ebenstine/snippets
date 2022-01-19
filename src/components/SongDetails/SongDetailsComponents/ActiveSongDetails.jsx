@@ -23,6 +23,11 @@ const {
     card3, 
     paper, 
     cardText, 
+    lyricText,
+    lyricBlock1,
+    lyricBlock2,
+    lyricBlock3,
+    lyricBlockUncertain,
     cardContent,  
     menuDots, 
     
@@ -66,6 +71,13 @@ const handleEditINotes = () => {
 const handleEditPNotes = () => {
     setEditPNotes(editPNotes => !editPNotes)
 }
+//the structure of this conditional rendering is:
+/*1. if the song's priority is x, show that song's accordant background color.
+  2. if the edit mode for song property x is on, pull in the component for that property, which,
+  3. itself asks if edit mode is turned on, and if it is, shows the input form,
+  4. or otherwise, shows the edited text.
+  5. if the edit mode for the property is off, the original inputted data is shown.
+*/
 
 return (
         
@@ -125,11 +137,14 @@ return (
                                         
                                                     <SongLyrics/> :
 
-                                                        <div onDoubleClick={handleEditLyrics}>
+                                                        <div onDoubleClick={handleEditLyrics} 
+                                                             className={lyricBlock1}
+                                                        >
 
                                                             <Typography 
-                                                                component = "p" 
-                                                                className={cardText}>
+                                                                component="span"
+                                                                
+                                                                className={lyricText}>
                                                                 {song.lyrics}
 
                                                             </Typography>
@@ -148,7 +163,7 @@ return (
                                                         <div onDoubleClick={handleEditINotes}>
 
                                                             <Typography 
-                                                                component = "p" 
+                                                                component = "span" 
                                                                 className={cardText}>
 
                                                                     <span style={{color:"#1d778d"}}>▶</span>
@@ -172,7 +187,7 @@ return (
                                                         <div onDoubleClick={handleEditPNotes}>
 
                                                             <Typography 
-                                                                component = "p" 
+                                                                component = "span" 
                                                                 className={cardText}>
 
                                                                 <span style={{color:"#1d778d"}}>▶</span>
@@ -236,11 +251,14 @@ return (
                                         
                                                     <SongLyrics/> :
 
-                                                        <div onDoubleClick={handleEditLyrics}>
+                                                        <div onDoubleClick={handleEditLyrics}
+                                                             className={lyricBlock2}
+                                                             
+                                                        >
 
                                                             <Typography 
-                                                                component = "p" 
-                                                                className={cardText}>
+                                                                component = "span" 
+                                                                className={lyricText}>
                                                                 {song.lyrics}
 
                                                             </Typography>
@@ -259,7 +277,7 @@ return (
                                                         <div onDoubleClick={handleEditINotes}>
 
                                                             <Typography 
-                                                                component = "p" 
+                                                                component = "span" 
                                                                 className={cardText}>
 
                                                                     <span style={{color:"#1d778d"}}>▶</span>
@@ -283,7 +301,7 @@ return (
                                                         <div onDoubleClick={handleEditPNotes}>
 
                                                             <Typography 
-                                                                component = "p" 
+                                                                component = "span" 
                                                                 className={cardText}>
 
                                                                 <span style={{color:"#1d778d"}}>▶</span>
@@ -346,11 +364,13 @@ return (
                                         
                                                     <SongLyrics/> :
 
-                                                        <div onDoubleClick={handleEditLyrics}>
+                                                        <div onDoubleClick={handleEditLyrics}
+                                                             className={lyricBlock3}
+                                                        >
 
                                                             <Typography 
-                                                                component = "p" 
-                                                                className={cardText}>
+                                                                component = "span" 
+                                                                className={lyricText}>
                                                                 {song.lyrics}
 
                                                             </Typography>
@@ -369,7 +389,7 @@ return (
                                                         <div onDoubleClick={handleEditINotes}>
 
                                                             <Typography 
-                                                                component = "p" 
+                                                                component = "span" 
                                                                 className={cardText}>
 
                                                                     <span style={{color:"#1d778d"}}>▶</span>
@@ -393,7 +413,7 @@ return (
                                                         <div onDoubleClick={handleEditPNotes}>
 
                                                             <Typography 
-                                                                component = "p" 
+                                                                component = "span" 
                                                                 className={cardText}>
 
                                                                 <span style={{color:"#1d778d"}}>▶</span>
@@ -454,11 +474,13 @@ return (
                                 
                                                     <SongLyrics/> :
 
-                                                        <div onDoubleClick={handleEditLyrics}>
+                                                        <div onDoubleClick={handleEditLyrics}
+                                                             className={lyricBlockUncertain}
+                                                        >
 
                                                             <Typography 
-                                                                component = "p" 
-                                                                className={cardText}>
+                                                                component = "span" 
+                                                                className={lyricText}>
 
                                                                 {song.lyrics}
 
@@ -478,7 +500,7 @@ return (
                                                         <div onDoubleClick={handleEditINotes}>
 
                                                             <Typography 
-                                                                component = "p" 
+                                                                component = "span" 
                                                                 className={cardText}>
 
                                                                     <span style={{color:"#1d778d"}}>▶</span>&nbsp;
@@ -500,7 +522,7 @@ return (
                                                         <div onDoubleClick={handleEditPNotes}>
 
                                                             <Typography 
-                                                                component = "p" 
+                                                                component = "span" 
                                                                 className={cardText}>
 
                                                                     <span style={{color:"#1d778d"}}>▶</span>&nbsp;

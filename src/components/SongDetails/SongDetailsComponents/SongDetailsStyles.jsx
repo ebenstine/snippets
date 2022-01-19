@@ -99,6 +99,7 @@ const useStyles = makeStyles(() => ({
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
         borderBottom: '1px solid #6ca0ad',
+        marginTop: 'auto',
         whiteSpace: 'pre-wrap',
         color: '#233d4d',
         '&:hover': {
@@ -106,6 +107,72 @@ const useStyles = makeStyles(() => ({
             cursor: 'pointer'
             },
     },
+
+    lyricBlock1: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#94d9eb',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em'
+
+    },
+
+    lyricBlock2: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#f8a058',
+            cursor: 'pointer',
+            //border: '1px solid #6ca0ad'
+            
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        //border: '1px solid #6ca0ad',
+  
+
+
+    },
+
+    lyricBlock3: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#fcca60',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em'
+
+    },
+
+    lyricBlockUncertain: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#eb9292',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em'
+
+    },
+
+    lyricText: {
+
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 9.5,
+        //borderBottom: '1px solid #6ca0ad',
+        marginTop: 'auto',
+        whiteSpace: 'pre-wrap',
+        color: '#233d4d',
+        
+        
+    },
+    
 
     notes: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',

@@ -132,7 +132,7 @@ function SongLyrics() {
                 </FormControl>
                 :
                 <div onDoubleClick={handleEditable}>
-                    <Typography variant="h5" component="h5" className={words}>
+                    <Typography variant="caption" component="span" className={words}>
                     {`${reviseDetails.lyrics}`}
                     </Typography>
                 </div>

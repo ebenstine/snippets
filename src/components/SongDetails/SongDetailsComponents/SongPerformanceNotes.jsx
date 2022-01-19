@@ -118,7 +118,7 @@ function SongPerformanceNotes() {
                             
                         />
                             <div className={actions}> 
-                                <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
+                                <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
                                 <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
                             </div>
                     </form>
@@ -129,6 +129,7 @@ function SongPerformanceNotes() {
                     <span style={{color:"#1d778d"}}>▶</span>&nbsp;Performance Notes:{`${reviseDetails.performance_notes}`}
                     </Typography>
                 </div>
+
             }
             
         </>

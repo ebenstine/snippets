@@ -6,7 +6,8 @@ const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
             margin: theme.spacing(1),
-            color: '#2a4f64'
+            color: '#2a4f64',
+            border:'#2a4f64'
             //width: '25ch'
         },
         
@@ -15,12 +16,17 @@ const useStyles = makeStyles((theme) => ({
             border: '#3b95ac'
         },
 
+        '& .MuiInput-underline:before': {
+            borderBottomColor: '#2a4f64',
+        },
+
         '& .MuiInput-underline:after': {
             borderBottomColor: '#3b95ac',
         }, 
             
         "& .MuiOutlinedInput-input": {
             color: "#2a4f64",
+            borderBottomColor:'#2a4f64'
             //border: "2px solid #3b95ac"
             
         },
@@ -136,7 +142,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         //margin: '1ch',
         borderRadius: '2px',
-        background: "#b9b9b9",
+        background: "#c7c7c7",
         color: '#2a4f64',
         
     },
