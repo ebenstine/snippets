@@ -16,8 +16,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import { Box, Paper, Typography, Card, CardContent } from '@material-ui/core';
 import useStyles from './InactiveArchiveStyles';
+import Feedback from '@material-ui/icons/Feedback';
 
-;
+
 
 //import songDetails from '../../redux/reducers/songDetails.reducer';
 
@@ -32,7 +33,12 @@ function InactiveArchive() {
             player, 
             card,  
             paper, 
-            menuDots 
+            menuDots,
+            blankPage,
+            message,
+            messageCard,
+            messageDiv,
+            feedback
             
         } = useStyles();
 
@@ -65,10 +71,13 @@ function InactiveArchive() {
                 <>
 
                 {songs.id ? 
+                    
                     <Paper className={paper} elevation={10}>
+                        
                         <div className={menuDots}>
 
                         </div>
+                        
                         <Box 
                         
                             display="flex"
@@ -151,7 +160,56 @@ function InactiveArchive() {
 
                     </Paper>
                 :
-                <h1>ain't nothin here</h1>
+                
+                
+                <Paper className={blankPage}>
+                    
+                    <div>
+
+                        <Card 
+                            className={messageCard}
+                            raised={true}
+                        >
+                        
+                            <div>
+                                
+                                <Feedback 
+                                        
+                                    style = {{
+                                        
+                                        color: '#1d778d',
+                                        fontSize: 40,
+                                        paddingTop: '.5em',
+                                        paddingLeft: '.5em',
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
+                                       
+                                        
+                                    }}
+                                />
+                                   
+                            </div>
+                        
+                                <div className={messageDiv}>
+                                <Typography
+                        
+                                    align="center"
+                                    variant="h6"
+                                    className={message}
+                        
+                                >
+                                    
+                                    This inactive archive page will show songs you've marked 
+                                    as such when uploading.  It should help to catalog unfinished 
+                                    material that hasn't been abandoned, but that is dormant for the moment.
+
+                                </Typography>
+                                </div>
+                        </Card>
+
+                    </div>
+
+                </Paper>
 
                 }
                 </>
