@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch } from 'react-redux';
-import { Paper, Button, Typography, Box } from '@material-ui/core'
+import { Paper, Button, Typography, Card } from '@material-ui/core'
 import useStyles from '../UserPage/UserPageStyles'
 import ExitToApp from '@material-ui/icons/ExitToApp';
 
@@ -17,7 +17,8 @@ const UserPage = () => {
           button2, 
           genrePrompt, 
           playIcon, 
-          highlight 
+          highlight,
+          infoCard
         
         } = useStyles();
 
@@ -47,7 +48,7 @@ const UserPage = () => {
         </Typography>
 
         <br></br>
-
+        <Card className={infoCard}>
         <Typography 
         
           align="center" 
@@ -87,9 +88,9 @@ const UserPage = () => {
 
         <br></br>
 
-      
+      </Card>
       </div>
-
+      
         <section textAlign="center">
     
     

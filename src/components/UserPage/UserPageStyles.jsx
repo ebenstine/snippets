@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     paper: {
         margin: '4em auto',
         background: 'linear-gradient(to right,  #9c9e9f 0%,#f6f6f6 100%)',
-        border: '1px solid #fdd377',
+        border: '1px solid #ffb171',
         paddingBottom: '2em',
         width: 650,
         marginBottom: '10em'
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     songCount: {
         color: '#233d4d',
         
-        borderTop: '1.5px solid #6ca0ad',
+        //borderTop: '1.5px solid #6ca0ad',
         paddingRight: '2em',
         paddingLeft: '3.5em',
         paddingTop: '1em'
@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom:'1em',
         paddingRight: '2em',
         paddingLeft: '3.5em',
-        borderBottom: '1.5px solid #6ca0ad'
+        //borderBottom: '1.5px solid #6ca0ad'
     },
 
     playIcon: {
@@ -83,6 +83,13 @@ const useStyles = makeStyles((theme) => ({
         color: '#1d778d',
         borderBottom: '1.5px solid #eb9148'
 
+    },
+
+    infoCard: {
+
+        backgroundColor: "#ffb171",
+        border: '1px solid #1d778d'
+    
     }
 
     

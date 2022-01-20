@@ -171,6 +171,46 @@ const useStyles = makeStyles(() => ({
         color: '#2a4f64',
         fontSize: 20
         
+    },
+
+    message: {
+        color: '#1a313f',
+        fontSize: 14.5,
+        paddingTop: '2em',
+        paddingBottom: '2em'
+        
+    },
+
+    blankPage: {
+        
+        margin: '4em auto',
+        background: 'linear-gradient(to right,  #9c9e9f 0%,#f6f6f6 100%)',
+        border: '1px solid #ffb171',
+        paddingBottom: '2em',
+        width: 650,
+        marginBottom: '10em'
+
+    },
+
+
+    messageCard: {
+        width: 500,
+        margin: 'auto',
+        marginTop: '3em',
+        marginBottom:'3em',
+        border: '1px solid #1d778d',
+        background: '#ffb171'
+    },
+
+    feedback: {
+
+        color: '#1d778d',
+        fontSize: 40,
+        paddingTop: '.5em',
+        paddingLeft: '.5em',
+        display: 'flex',
+        flexWrap: 'wrap',
+
     }
 
     

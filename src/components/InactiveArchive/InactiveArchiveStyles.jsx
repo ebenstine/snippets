@@ -146,7 +146,7 @@ const useStyles = makeStyles(() => ({
         
         margin: '4em auto',
         background: 'linear-gradient(to right,  #9c9e9f 0%,#f6f6f6 100%)',
-        border: '1px solid #fdd377',
+        border: '1px solid #ffb171',
         paddingBottom: '2em',
         width: 650,
         marginBottom: '10em'
@@ -159,9 +159,20 @@ const useStyles = makeStyles(() => ({
         margin: 'auto',
         marginTop: '3em',
         marginBottom:'3em',
-        border: '1px solid #fdd377',
+        border: '1px solid #1d778d',
         background: '#ffb171'
     },
+
+    feedback: {
+
+        color: '#1d778d',
+        fontSize: 40,
+        paddingTop: '.5em',
+        paddingLeft: '.5em',
+        display: 'flex',
+        flexWrap: 'wrap',
+
+    }
 
 
 

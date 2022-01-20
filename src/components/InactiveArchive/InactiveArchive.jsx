@@ -70,7 +70,7 @@ function InactiveArchive() {
     return (
                 <>
 
-                {songs.id ? 
+                {songs ? 
                     
                     <Paper className={paper} elevation={10}>
                         
@@ -159,6 +159,7 @@ function InactiveArchive() {
                         </Box> 
 
                     </Paper>
+
                 :
                 
                 
@@ -173,38 +174,28 @@ function InactiveArchive() {
                         
                             <div>
                                 
-                                <Feedback 
-                                        
-                                    style = {{
-                                        
-                                        color: '#1d778d',
-                                        fontSize: 40,
-                                        paddingTop: '.5em',
-                                        paddingLeft: '.5em',
-                                        display: 'flex',
-                                        flexWrap: 'wrap',
-                                       
-                                        
-                                    }}
-                                />
-                                   
+                                <Feedback className={feedback}/>
+                                
                             </div>
                         
                                 <div className={messageDiv}>
-                                <Typography
-                        
-                                    align="center"
-                                    variant="h6"
-                                    className={message}
-                        
-                                >
                                     
-                                    This inactive archive page will show songs you've marked 
-                                    as such when uploading.  It should help to catalog unfinished 
-                                    material that hasn't been abandoned, but that is dormant for the moment.
+                                    <Typography
+                        
+                                        align="center"
+                                        variant="h6"
+                                        className={message}
+                        
+                                    >
+                                    
+                                        This inactive archive page will show songs you've marked 
+                                        as such when uploading.  It should help to catalog unfinished 
+                                        material that hasn't been abandoned, but that is dormant for the moment.
 
-                                </Typography>
+                                    </Typography>
+                                
                                 </div>
+                        
                         </Card>
 
                     </div>
