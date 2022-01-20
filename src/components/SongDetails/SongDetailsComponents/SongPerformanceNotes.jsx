@@ -50,12 +50,16 @@ const useStyles = makeStyles((theme) => ({
         color: '#2a4f64'
     },
 
-    titleTitle: {
+    notes: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
         borderBottom: '1.25px solid #6ca0ad',
         whiteSpace: 'pre-wrap',
-        color: '#2a4f64'
+        color: '#2a4f64',
+        '&:hover': {
+            borderBottom: '1.5px solid #1d778d',
+            cursor: 'pointer'
+        }
     },
 }));
 
@@ -64,7 +68,15 @@ function SongPerformanceNotes() {
     const dispatch = useDispatch();
     const params = useParams();
     const history = useHistory();
-    const { textField, buttons, titleTitle, root, actions } = useStyles();
+   
+    const { 
+            textField, 
+            buttons, 
+            notes, 
+            root, 
+            actions 
+        } = useStyles();
+
     const [ editable, setEditable] = useState(true);
     console.log(params);
     let song = {
@@ -123,10 +135,18 @@ function SongPerformanceNotes() {
                             </div>
                     </form>
                 </FormControl>
+                
                 :
+                
                 <div onDoubleClick={handleEditable}>
-                    <Typography variant="h5" component="h5" className={titleTitle}>
-                    <span style={{color:"#1d778d"}}>▶</span>&nbsp;Performance Notes:{`${reviseDetails.performance_notes}`}
+                    <Typography 
+                         
+                        component="span" 
+                        className={notes}>
+                    
+                    <span style={{color:"#1d778d"}}>▶</span>
+                    &nbsp;Performance Notes: {`${reviseDetails.performance_notes}`}
+
                     </Typography>
                 </div>
 

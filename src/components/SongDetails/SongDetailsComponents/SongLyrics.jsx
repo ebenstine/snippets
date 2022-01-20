@@ -235,7 +235,7 @@ function SongLyrics() {
                         
                                         <Typography 
                                             
-                                            variant="caption" 
+                                            //variant="caption" 
                                             component="span" 
                                             className={words}
                         
