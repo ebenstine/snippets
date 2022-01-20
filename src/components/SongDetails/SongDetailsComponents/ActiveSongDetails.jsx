@@ -78,6 +78,7 @@ const handleEditPNotes = () => {
   4. or otherwise, shows the edited text.
   5. if the edit mode for the property is off, the original inputted data is shown.
 */
+//the conditional rendering for each song component and whether it is being edited, or has been edited, is pulled in from refactored components
 
 return (
         
@@ -142,7 +143,7 @@ return (
                                                         >
 
                                                             <Typography 
-                                                                component="span"
+                                                                component="p"
                                                                 
                                                                 className={lyricText}>
                                                                 {song.lyrics}
@@ -547,7 +548,8 @@ return (
                     
                                 <br></br>
                                 <br></br>
-                                
+                            {/*pulls in conditional rendering for status designation from refactored component*/}    
+
                             <SongStatus/>
                                 
                     

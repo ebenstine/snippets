@@ -118,7 +118,7 @@ function SongPerformanceNotes() {
                             
                         />
                             <div className={actions}> 
-                                <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
+                                <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
                                 <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
                             </div>
                     </form>

@@ -27,18 +27,11 @@ import useStyles from './InactiveArchiveStyles';
 function InactiveArchive() {
 
     const { 
-            
-            title, 
+             
             title1, 
-            title2, 
-            title3, 
             player, 
-            card, 
-            card1, 
-            card2, 
-            card3, 
+            card,  
             paper, 
-            message,
             menuDots 
             
         } = useStyles();
@@ -66,7 +59,8 @@ function InactiveArchive() {
 
 
 
-    //conditionally render cards with different background colors according to priority
+    //because there is no color-coding involved in the inactive archive, 
+    //there is a fraction of the code here as in the primary active list, thus presenting no need to refactor.
     return (
                 <>
                     <Paper className={paper} elevation={10}>

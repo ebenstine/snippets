@@ -129,7 +129,7 @@ function SongStatus() {
              payload: updatedStatus
                       
          })
-     history.push(`/archive`);
+     history.push(`/InactiveArchive`);
      
      }
  
