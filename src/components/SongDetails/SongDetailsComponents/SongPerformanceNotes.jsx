@@ -7,7 +7,7 @@ import { CheckCircle } from '@material-ui/icons';
 import { Cancel } from '@material-ui/icons';
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
 
     root: {
 

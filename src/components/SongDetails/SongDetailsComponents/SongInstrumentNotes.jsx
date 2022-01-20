@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { CheckCircle } from '@material-ui/icons';
 import { Cancel } from '@material-ui/icons';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
 
         '& label.Mui-focused': {

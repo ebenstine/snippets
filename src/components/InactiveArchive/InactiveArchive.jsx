@@ -60,9 +60,11 @@ function InactiveArchive() {
 
 
     //because there is no color-coding involved in the inactive archive, 
-    //there is a fraction of the code here as in the primary active list, thus presenting no need to refactor.
+    //there less code to deal with and thus no need to refactor.
     return (
                 <>
+
+                {songs.id ? 
                     <Paper className={paper} elevation={10}>
                         <div className={menuDots}>
 
@@ -141,12 +143,17 @@ function InactiveArchive() {
                                             </>
                                         );
 
-                            })}
+                            })
+                            
+                        }
 
                         </Box> 
 
                     </Paper>
+                :
+                <h1>ain't nothin here</h1>
 
+                }
                 </>
 
             );
