@@ -10,7 +10,7 @@
 // so the finished archive just needs to conditionally render what's false
 // while the songsList component might need to get updated to conditionally render what's true
 // or the other way around if the boolean we use is "finished" - which makes the most sense, probably.
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
@@ -45,8 +45,20 @@ function InactiveArchive() {
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
+
+    const [listView, setListView] = useState();
     
     console.log(songs);
+
+    const handleState = () => {
+        
+        if (songs.length > 0) 
+            {setListView(true)}
+            
+            else 
+
+            {setListView(false)};
+        }
 
 
     //get db info on page load
@@ -54,6 +66,7 @@ function InactiveArchive() {
         dispatch({
             type: 'FETCH_SONGS'
         });
+        handleState();
     }, []);
     //push forward to details page on click
 
@@ -66,11 +79,11 @@ function InactiveArchive() {
 
 
     //because there is no color-coding involved in the inactive archive, 
-    //there less code to deal with and thus no need to refactor.
+    //there's much less code to deal with and thus no need to refactor.
     return (
                 <>
 
-                {songs ? 
+                {listView ? 
                     
                     <Paper className={paper} elevation={10}>
                         
@@ -152,9 +165,7 @@ function InactiveArchive() {
                                             </>
                                         );
 
-                            })
-                            
-                        }
+                            })}
 
                         </Box> 
 
@@ -188,9 +199,10 @@ function InactiveArchive() {
                         
                                     >
                                     
-                                        This inactive archive page will show songs you've marked 
-                                        as such when uploading.  It should help to catalog unfinished 
+                                        This inactive archive shows songs you've marked 
+                                        as such when uploading.  It offers the option to catalog unfinished 
                                         material that hasn't been abandoned, but that is dormant for the moment.
+                                        If you only see a blank page, there are currently no songs marked as inactive.
 
                                     </Typography>
                                 

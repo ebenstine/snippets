@@ -41,7 +41,7 @@ function SongsList() {
     const songs = useSelector((store) => store.songs);
     const songDetails = useSelector((store) => store.songDetails)
 
-    const [listView, setListView] = useState(false);
+    const [listView, setListView] = useState();
     console.log(songs);
 
 
@@ -50,21 +50,25 @@ function SongsList() {
     /*const handleState = () => {
         setListView(listView = !listView)
     }*/
-const handleState = () => {
-    
-    if (songs.length > 0) {
-        setListView(listView => !listView)
-    }
-}   
+    const handleState = () => {
+        
+        if (songs.length > 0) 
+            {setListView(true)}
+            
+            else 
 
-//get db info on page load
-useEffect(() => {
-    dispatch({
-        type: 'FETCH_SONGS'
-    });
-    handleState();
-}, []);
-//push forward to details page on click
+            {setListView(false)};
+        }   
+
+    //get db info on page load
+    useEffect(() => {
+        dispatch({
+            type: 'FETCH_SONGS',
+        
+        });
+        handleState();
+    }, []);
+    //push forward to details page on click
 
 
     const handleClick = (songId) => {
@@ -79,6 +83,9 @@ useEffect(() => {
 
     //conditionally render cards with different background colors according to priority
     return (
+       
+    
+
             <>
 
             {listView ?  
@@ -309,9 +316,8 @@ useEffect(() => {
 
                                                             :
 
-                                                            <>
-                                                            {handleState}
-                                                            </>
+                                                            null
+                                                            
 
                                                             }
                                                     
@@ -320,9 +326,7 @@ useEffect(() => {
                                                 
                                                 </>
                                             :
-                                            <>
-                                            {handleState}
-                                            </>
+                                           null
 
                                             }  
                                             </> 
@@ -360,7 +364,8 @@ useEffect(() => {
                         
                                     >
                                     
-                                        There are no active songs yet.  Navigate to 'Add New Song' in the top right menu to get started.
+                                        This is where all your active songs live.  You can upload music and song information
+                                        by heading to the navigation bar in the top right.
 
                                     </Typography>
                                 
@@ -376,7 +381,7 @@ useEffect(() => {
 
 
         </>
-
+            
 );
 
 }

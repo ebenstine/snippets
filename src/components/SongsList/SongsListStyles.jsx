@@ -179,6 +179,7 @@ const useStyles = makeStyles(() => ({
         paddingTop: '2em',
         paddingBottom: '2em'
         
+        
     },
 
     blankPage: {
