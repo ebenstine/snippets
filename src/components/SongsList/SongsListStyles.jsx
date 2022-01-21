@@ -178,7 +178,7 @@ const useStyles = makeStyles(() => ({
         fontSize: 14.5,
         paddingTop: '2em',
         paddingBottom: '2em'
-        
+
         
     },
 
@@ -212,6 +212,18 @@ const useStyles = makeStyles(() => ({
         display: 'flex',
         flexWrap: 'wrap',
 
+    },
+
+    heading: {
+        borderBottom: '1px solid #2a4f64',
+        color: '#2a4f64',
+        //borderRadius: '2px',
+        paddingTop: '.2em',
+        paddingBottom: '.2em'
+    },
+
+    playIcon: {
+        color: '#fde76c'
     }
 
     

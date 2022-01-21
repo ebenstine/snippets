@@ -31,7 +31,9 @@ function SongsList() {
             message,
             messageCard,
             messageDiv,
-            feedback
+            feedback,
+            heading,
+            playIcon
             
         } = useStyles();
 
@@ -58,16 +60,18 @@ function SongsList() {
             else 
 
             {setListView(false)};
+
+            
         }   
 
     //get db info on page load
     useEffect(() => {
         dispatch({
-            type: 'FETCH_SONGS',
+            type: 'FETCH_SONGS', 
         
         });
         handleState();
-    }, []);
+    },[]);
     //push forward to details page on click
 
 
@@ -99,9 +103,16 @@ function SongsList() {
                                         </div>
 
                                         <div>
-                                            <Typography variant="overline">
+                                            <Typography 
+                                                
+                                                variant="overline"
+                                                className={heading}
+                                                
+                                            >
 
-                                            ▶ Active Song List ///
+                                            <span className={playIcon}>▶</span> Active Songs
+
+
                                             </Typography>
                                         </div>
                                         <Box 

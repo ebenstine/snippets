@@ -38,7 +38,9 @@ function InactiveArchive() {
             message,
             messageCard,
             messageDiv,
-            feedback
+            feedback,
+            heading,
+            playIcon
             
         } = useStyles();
 
@@ -81,22 +83,32 @@ function InactiveArchive() {
     //because there is no color-coding involved in the inactive archive, 
     //there's much less code to deal with and thus no need to refactor.
     return (
-                <>
+            <>
 
                 {listView ? 
                     
                     <Paper className={paper} elevation={10}>
                         
-                        <div className={menuDots}>
+                        <div 
+                            
+                            className={menuDots}>
 
                         </div>
 
-                        <div>
-                                            <Typography variant="overline">
+                            <div>
+                                
+                                <Typography 
+                                    
+                                    variant="overline"
+                                    className={heading}
+                                >
 
-                                            ▶ Inactive Song List ///
-                                            </Typography>
-                                        </div>
+                                    <span className={playIcon}>▶</span>     
+                                    Inactive Songs
+                                            
+                                </Typography>
+                                        
+                            </div>
                         
                         <Box 
                         
@@ -181,50 +193,51 @@ function InactiveArchive() {
                 :
                 
                 
-                <Paper className={blankPage}>
-                    
-                    <div>
+                    <Paper className={blankPage}>
+                        
+                        <div>
 
-                        <Card 
-                            className={messageCard}
-                            raised={true}
-                        >
-                        
-                            <div>
-                                
-                                <Feedback className={feedback}/>
-                                
-                            </div>
-                        
-                                <div className={messageDiv}>
+                            <Card 
+                                className={messageCard}
+                                raised={true}
+                            >
+                            
+                                <div>
                                     
-                                    <Typography
-                        
-                                        align="center"
-                                        variant="h6"
-                                        className={message}
-                        
-                                    >
+                                    <Feedback className={feedback}/>
                                     
-                                        This inactive archive shows songs you've marked 
-                                        as such when uploading.  It offers the option to catalog unfinished 
-                                        material that hasn't been abandoned, but that is dormant for the moment.
-                                        If you only see a blank page, there are currently no songs marked as inactive.
-
-                                    </Typography>
-                                
                                 </div>
-                        
-                        </Card>
+                            
+                                    <div className={messageDiv}>
+                                        
+                                        <Typography
+                            
+                                            align="center"
+                                            variant="h6"
+                                            className={message}
+                            
+                                        >
+                                        
+                                            This inactive archive shows songs you've marked 
+                                            as such when uploading.  It offers the option to catalog unfinished 
+                                            material that hasn't been abandoned, but that is dormant for the moment.
+                                            If you only see a blank page, there are currently no songs marked as inactive.
 
-                    </div>
+                                        </Typography>
+                                    
+                                    </div>
+                            
+                            </Card>
 
-                </Paper>
+                        </div>
+
+                    </Paper>
 
                 }
-                </>
 
-            );
+            </>
+
+    );
 
 }
 

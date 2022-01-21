@@ -117,7 +117,8 @@ const useStyles = makeStyles(() => ({
         borderRadius: '3px',
         paddingRight: '.5em',
         paddingLeft: '.5em',
-        paddingBottom: '1em'
+        paddingBottom: '1em',
+        paddingTop: '1em'
 
     },
 
@@ -132,7 +133,8 @@ const useStyles = makeStyles(() => ({
         borderRadius: '3px',
         paddingRight: '.5em',
         paddingLeft: '.5em',
-        paddingBottom: '1em'
+        paddingBottom: '1em',
+        paddingTop: '1em'
         //border: '1px solid #6ca0ad',
   
 
@@ -148,7 +150,8 @@ const useStyles = makeStyles(() => ({
         borderRadius: '3px',
         paddingRight: '.5em',
         paddingLeft: '.5em',
-        paddingBottom: '1em'
+        paddingBottom: '1em',
+        paddingTop: '1em'
 
     },
 
@@ -161,7 +164,8 @@ const useStyles = makeStyles(() => ({
         borderRadius: '3px',
         paddingRight: '.5em',
         paddingLeft: '.5em',
-        paddingBottom: '1em'
+        paddingBottom: '1em',
+        paddingTop: '1em'
 
     },
 
@@ -277,7 +281,9 @@ const useStyles = makeStyles(() => ({
         paddingTop: '.5em',
         paddingBottom: '.5em'
         
-    }
+    }, 
+
+    
     
 }));
 export default useStyles;
