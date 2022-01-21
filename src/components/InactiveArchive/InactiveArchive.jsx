@@ -90,6 +90,13 @@ function InactiveArchive() {
                         <div className={menuDots}>
 
                         </div>
+
+                        <div>
+                                            <Typography variant="overline">
+
+                                            ▶ Inactive Song List ///
+                                            </Typography>
+                                        </div>
                         
                         <Box 
                         

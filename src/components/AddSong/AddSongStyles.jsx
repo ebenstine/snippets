@@ -256,7 +256,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         //border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2.7em'
+        paddingLeft: '3.4em'
         
     },
     setPriorityUncertain: {
@@ -271,7 +271,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2.7em'
+        paddingLeft: '3.4em'
         
     },
 
@@ -287,7 +287,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2.7em'
+        paddingLeft: '3.4em'
         
     },
 
@@ -303,7 +303,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2.7em'
+        paddingLeft: '3.4em'
         
     },
 
@@ -320,7 +320,7 @@ const useStyles = makeStyles((theme) => ({
         
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2.7em'
+        paddingLeft: '3.4em'
         
     },
 

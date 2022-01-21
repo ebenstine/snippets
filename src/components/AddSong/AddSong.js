@@ -342,7 +342,7 @@ const AddSong = () => {
                           <MenuItem 
                             value={'Uncertain'} 
                             className={setPriorityUncertain}>
-                            &nbsp;Uncertain
+                            &nbsp;&nbsp;&nbsp;Uncertain
                             </MenuItem>
           
                       </Select> 
@@ -404,7 +404,7 @@ const AddSong = () => {
                           <MenuItem 
                             value={'Uncertain'} 
                             className={setPriorityUncertain}>
-                            &nbsp;Uncertain
+                            &nbsp;&nbsp;&nbsp;Uncertain
                             </MenuItem>
           
                       </Select> 
@@ -467,7 +467,7 @@ const AddSong = () => {
                           <MenuItem 
                             value={'Uncertain'} 
                             className={setPriorityUncertain}>
-                            &nbsp;Uncertain
+                            &nbsp;&nbsp;&nbsp;Uncertain
                             </MenuItem>
           
                       </Select> 
@@ -530,7 +530,7 @@ const AddSong = () => {
                           <MenuItem 
                             value={'Uncertain'} 
                             className={setPriorityUncertain}>
-                            &nbsp;Uncertain
+                            &nbsp;&nbsp;&nbsp;Uncertain
                             </MenuItem>
           
                       </Select> 
@@ -590,7 +590,7 @@ const AddSong = () => {
                       <MenuItem 
                         value={'Uncertain'} 
                         className={setPriorityUncertain}>
-                        &nbsp;Uncertain
+                        &nbsp;&nbsp;&nbsp;Uncertain
                         </MenuItem>
       
                   </Select> 
