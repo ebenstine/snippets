@@ -72,27 +72,30 @@ const Uploader = ({uploadComplete}) => {
         <div
             style={{
 
-                    paddingTop: '1.25em', 
-                    paddingLeft: '1.5em', 
-                    paddingRight: '1.5em',
+              paddingTop: '1.25em', 
+              paddingLeft: '1.5em', 
+              paddingRight: '1.5em',
                     
-                    
-
-                  }}
-          
+            }}
+        >
+            <Button 
+              
+              variant="outlined" 
+              className={dropZone}
             >
-            <Button variant="outlined" 
-                    className={dropZone}
+              
+              Click to Add, or Drag and Drop File
+            
+            </Button>
 
-
-                  >Click to Add, or Drag and Drop File</Button>
-            </div>
+        </div>
     )
   return (
     
     <div style={{ paddingTop: '2em'}}>
       
       <RecordingsProgressBar 
+        
         progress={progress} 
         progressTitle={progressTitle} 
       
@@ -100,17 +103,17 @@ const Uploader = ({uploadComplete}) => {
     
         <DropzoneS3Uploader
 
-        onError={(error) => console.log('upload failed', error)}
-        onProgress={onProgress}
-        onFinish={handleFinishedUpload}
-        s3Url={s3Url}
-        style={dropStyles}
-        maxSize={1024 * 1024 * 100}
-        upload={uploadOptions}
-        accept="audio/*"
-        children={innerElement} 
+          onError={(error) => console.log('upload failed', error)}
+          onProgress={onProgress}
+          onFinish={handleFinishedUpload}
+          s3Url={s3Url}
+          style={dropStyles}
+          maxSize={1024 * 1024 * 100}
+          upload={uploadOptions}
+          accept="audio/*"
+          children={innerElement} 
       
-      />
+        />
     
     </div>
   );

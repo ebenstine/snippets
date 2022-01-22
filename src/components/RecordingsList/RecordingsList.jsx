@@ -55,109 +55,153 @@ const RecordingsList = () => {
 
     return (
         <>
-            <MenuItem onClick={handleClickOpen} className={view}><QueueMusic/>&nbsp;View All</MenuItem>
+            <MenuItem 
+                
+                onClick={handleClickOpen} 
+                className={view}
+            >
+                <QueueMusic/>
+                
+                &nbsp;View All
+            
+            </MenuItem>
 
          
             <Drawer
+                
                 className={drawer}
                 variant="temporary"
                 anchor="left"
                 open={isDrawerOpen}
-                
                 onClose={handleCancel}
+            
             >
             
             
-            <Paper className= {paper} elevation={10}>
-            <div className={drawerHeader}>
-                <IconButton onClick={handleCancel}
-                    
-                    style={{
-                        color:"#eb9148"
-                    }}
-                
-                >
-                    
-                    {<ChevronLeftIcon />}
-                        </IconButton>
-                
-                            <Typography 
-                    
-                                style={{borderBottom: "1.5px solid #1d778d",
-                                        fontSize: 16,
-                                        color: "#233d4d"
-                                        }}
-                                variant="overline" 
-                                align="center"
-                            >
-                            Recordings History
-                            </Typography>
-                
-            </div>
-                <br></br>
-            
-                {recordings.map((recording) => {
-                    
-                   
-                    return (
-                        <>
+                    <Paper 
                             
-                    
+                        className= {paper} 
+                        elevation={10}
+                    >
+                        
+                        <div className={drawerHeader}>
                             
-                            <div className={background}>
+                            <IconButton 
                             
-                                <Accordion
+                                onClick={handleCancel}
+                                style={{
                                     
-                                    raised={true}
-                                    className={card1}
-                                    
-                                >
-                                    
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon 
-                                            style={{ 
-                                                
-                                                color: '#eb9148',
-                                                paddingRight: '.75em'
-
-                                                }}/>}
-
-                                        aria-controls="panel1a-content"
-                                        id="panel1a-header"
-                                        
-                                    
-
-                                        item xs={1} key={recording.id}
-                                  
-                                    >
-
-
-
-                                    <section className={player}>
-                                        <AudioPlayer
-
-                                            audioFiles={[{ src:recording.src}]}
-
-                                    />
-                                    </section>
-                                        
-                                    </AccordionSummary>
+                                    color:"#eb9148"
                                 
-                                    <div>
-                                        <Typography variant="h6" className={description}>{recording.description}</Typography>
-                                            
-                                    </div>
-                                    
-                                    <Button variant="contained" onClick={() => handleDeleteAudio(recording.id)} className={bye}><Delete/></Button>
-                                    
-                                </Accordion>
-                            </div>
+                                }}
                             
-                            <br></br>
-                        </>
-                    )
-                })}
-            </Paper>
+                            >
+                                
+                                <ChevronLeftIcon/>
+                                    
+                                    </IconButton>
+                            
+                                        <Typography 
+                                
+                                            style={{
+                                                
+                                                borderBottom: "1.5px solid #1d778d",
+                                                fontSize: 16,
+                                                color: "#233d4d"
+                                            
+                                            }}
+                                            variant="overline" 
+                                            align="center"
+
+                                        >
+                                        
+                                            Recordings History
+                                        
+                                        </Typography>
+                            
+                        </div>
+                            
+                        <br></br>
+                        
+                        {recordings.map((recording) => {
+                                
+                            
+                                return (
+                                    
+                                    <>
+                                        
+                                        <div className={background}>
+                                        
+                                            <Accordion
+                                                
+                                                raised={true}
+                                                className={card1}
+                                                
+                                            >
+                                                
+                                                <AccordionSummary
+                                                    
+                                                    expandIcon=
+                                                        
+                                                        {<ExpandMoreIcon 
+                                                        
+                                                            style={{ 
+                                                            
+                                                            color: '#eb9148',
+                                                            paddingRight: '.75em'
+
+                                                            }}
+
+                                                        />}
+
+                                                    aria-controls="panel1a-content"
+                                                    id="panel1a-header"
+                                                    item xs={1} key={recording.id}
+                                            
+                                                >
+
+                                                    <section className={player}>
+                                                    
+                                                        <AudioPlayer
+
+                                                            audioFiles={[{ src:recording.src}]}
+
+                                                        />
+                                                    </section>
+                                                    
+                                                        </AccordionSummary>
+                                            
+                                                            <div>
+                                                    
+                                                                <Typography 
+                                                                
+                                                                    variant="h6" 
+                                                                    className={description}>
+                                                                    {recording.description}
+                                                                    
+                                                                </Typography>
+                                                        
+                                                            </div>
+                                                
+                                                            <Button 
+                                                                
+                                                                variant="contained" 
+                                                                onClick={() => handleDeleteAudio(recording.id)} 
+                                                                className={bye}>
+                                                                <Delete/>
+
+                                                            </Button>
+                                                
+                                            </Accordion>
+
+                                        </div>
+                                        
+                                        <br></br>
+                                    </>
+                                )
+                        })}
+
+                    </Paper>
             
             </Drawer>
 

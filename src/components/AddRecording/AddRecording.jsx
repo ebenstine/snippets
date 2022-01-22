@@ -6,7 +6,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { TextField, FormControl } from '@material-ui/core';
-import { connect, useDispatch } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
 import RecordingsUploader from './RecordingsUploader'
 import useStyles from './AddRecordingStyles'
@@ -20,7 +20,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
   const dispatch = useDispatch();
   const { dialog, root, actionDiv, dialogTitle, dialogButtons, upload, descriptionText  } = useStyles();
   const params = useParams();
- 
+  const songDetails = useSelector((store) => store.songDetails)
   const [fileUrl, setFileUrl] = useState ('no file was dropped');
   const [open, setOpen] = useState(false);
   const [newRecording, setNewRecording] = useState({});
@@ -30,7 +30,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
       setOpen(false)
     } else
     setOpen(true);
-};
+  };
   const handleCancel = () => {
     setOpen(false);
     //handleMenuClose();
@@ -41,8 +41,9 @@ const AddRecording = ({ song, handleMenuClose }) => {
   };
 
   if (newRecording.description === '' || newRecording.src === 'null') {
-    alert('You must enter a description and upload an audio file!')
     
+    alert('You must enter a description and upload an audio file!')
+  
   } 
 
   const handleSave = (event) => {
@@ -54,7 +55,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
 
     });
    setOpen(false);
-   };
+  };
 
   console.log(newRecording);
 
@@ -68,44 +69,93 @@ const AddRecording = ({ song, handleMenuClose }) => {
 }
 
   return (
+    
+    
     <div>
-      <MenuItem onClick={handleClickOpen} className={upload}><Backup/>&nbsp;Upload New</MenuItem>
-      <Dialog 
-       PaperProps={{
-        style: { border: "1px solid #2a4f64" }
+      
+      <MenuItem 
+        
+        onClick={handleClickOpen} 
+        className={upload}>
+        <Backup/>
+        &nbsp;Upload New
+        
+      </MenuItem>
+      
+        <Dialog 
+          
+          PaperProps={{
+          
+            style: { border: "1px solid #2a4f64" }
 
-      }}
-       open={open} 
-       onClose={handleCancel}>
-      <FormControl>
-        <form className={root}>
-        <DialogTitle className={dialogTitle} >Add a Recording</DialogTitle>
-        <DialogContent   className={dialog}>
-        <TextField
-              label="description"
-              onChange={enterNewRecording('description')}
-              value={newRecording.description}
-              multiline className={descriptionText}
+          }}
+          open={open} 
+          onClose={handleCancel}
+        
+        >
+      
+          <FormControl>
+        
+            <form className={root}>
+        
+              <DialogTitle className={dialogTitle} >Add a Recording </DialogTitle>
+        
+                <DialogContent className={dialog}>
+        
+                  <TextField
+                  
+                    label="description"
+                    onChange={enterNewRecording('description')}
+                    value={newRecording.description}
+                    multiline className={descriptionText}
               
-            />
+                  />
         
-        <RecordingsUploader 
-          uploadComplete={uploadComplete}
-        />
-        </DialogContent>
-        </form>
-        </FormControl>
+                    <RecordingsUploader 
+                
+                      uploadComplete={uploadComplete}
+
+                    />
+
+                </DialogContent>
+
+            </form>
+
+          </FormControl>
         
-        <DialogActions className={actionDiv}>
-          <Button onClick={handleCancel} variant="contained" size="small" className={dialogButtons}>
-            <Cancel/>
-          </Button>
-          <Button onClick={handleSave} variant="contained" size="small" className={dialogButtons}>
-            <Backup/>
-          </Button>
-        </DialogActions>
-      </Dialog>
+        
+            <DialogActions className={actionDiv}>
+          
+              <Button 
+                
+                onClick={handleCancel} 
+                variant="contained" 
+                size="small" 
+                className={dialogButtons}
+              >
+            
+                <Cancel/>
+
+              </Button>
+          
+              <Button 
+                
+                onClick={handleSave} 
+                variant="contained" 
+                size="small" 
+                className={dialogButtons}
+              >
+            
+                <Backup/>
+
+              </Button>
+
+            </DialogActions>
+
+        </Dialog>
+   
     </div>
+    
   );
 }
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom'
-import { Box, Paper, Typography, Card, CardContent } from '@material-ui/core';
+import { Box, Paper, Typography, Card, CardContent, Button } from '@material-ui/core';
 import useStyles from './SongsListStyles';
 import ColorCodeLegend from './ColorCodeLegend'
 import Feedback from '@material-ui/icons/Feedback';
@@ -33,7 +33,8 @@ function SongsList() {
             messageDiv,
             feedback,
             heading,
-            playIcon
+            playIcon,
+            hackButton
             
         } = useStyles();
 
@@ -77,6 +78,10 @@ function SongsList() {
 
     const handleClick = (songId) => {
         history.push(`/songDetails/${songId}`)
+    }
+
+    const goBack = () => {
+        history.push(`/songsList`)
     }
 
     
@@ -389,7 +394,12 @@ function SongsList() {
                                 </div>
                         
                         </Card>
-
+                                        <Button 
+                                            onClick={goBack}
+                                            className={hackButton}
+                                            variant="outlined"
+                                            >See List
+                                        </Button>
                     </div>
 
                 </Paper>

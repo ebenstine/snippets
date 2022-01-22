@@ -27,18 +27,31 @@ const theme = createTheme({
 });
 
 const RecordingsProgressBar = ({ progress, progressTitle }) => {
+    
     const { root } = useStyles();
 
     return (
         <>
             <ThemeProvider theme={theme}>
+                
                 {progress > 0 &&
+                    
                     <>
                         <Typography>
+                            
                             {progressTitle}
+
                         </Typography>
+                        
                         <div className={root}>
-                            <LinearProgress variant="determinate" value={progress} color="primary" />
+
+                            <LinearProgress 
+                            
+                                variant="determinate" 
+                                value={progress} 
+                                color="primary" 
+                            />
+
                         </div>
                     </>
                 }

@@ -5,10 +5,7 @@
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import InactiveSongDetails from '../InactiveArchive/InactiveSongDetails';
 import ActiveSongDetails from './SongDetailsComponents/ActiveSongDetails';
-import InactiveArchiveStatus from '../InactiveArchive/InactiveArchiveStatus';
-import SongStatus from './SongDetailsComponents/SongStatus';
 
 function SongDetails(){
     
@@ -42,17 +39,10 @@ function SongDetails(){
                 
                         :
                         
-                        
-                        
                         null
                         
-
-                        
-
                         }
 
-                        
-                    
                     </>
                 
                 )

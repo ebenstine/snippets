@@ -224,6 +224,23 @@ const useStyles = makeStyles(() => ({
 
     playIcon: {
         color: '#fde76c'
+    },
+
+    hackButton: {
+        color: '#233d4d',
+        '&:hover': {
+            color:'#77c568',
+            },
+        background: '#fff099',
+        marginLeft: '20em',
+        border: '1px solid #3b95ac',
+        alignItems: 'center',
+        '&:hover': {
+            
+            background:'#fde76c',
+            
+            },
+        
     }
 
     
