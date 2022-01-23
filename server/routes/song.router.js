@@ -75,7 +75,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
             lyrics, 
             is_active, 
             src, 
-            description } 
+             } 
             
             = req.body;
 
@@ -117,7 +117,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
                             VALUES ($1, $2, $3)
         
                             `;
-        await client.query(secondQuery, [newSongId, description, src]);
+        await client.query(secondQuery, [newSongId, title, src]);
 
         await client.query('COMMIT'); 
 

@@ -68,12 +68,12 @@ const RecordingsList = () => {
         setIsDrawerOpen(false);
     }
 
-    const handleDeleteAudio = () => {
+    const handleDeleteAudio = (recordingId) => {
         
-        console.log(params.id);
+        console.log(recordingId);
         dispatch({
             type: 'DELETE_AUDIO',
-            payload: params.id
+            payload: recordingId
         })
     }
 
@@ -152,15 +152,15 @@ const RecordingsList = () => {
                         
                                 <Typography variant="overline" className={firstRecording}>
 
-                                    &nbsp;&nbsp;<span className={cuteStar}>*</span> Primary Recording 
-
+                                    &nbsp;&nbsp;<span className={cuteStar}>*</span> Primary <span className={cuteStar}>*</span>
+                                    
                                 </Typography>
-
-                            </div>
+                                
 
                             {showHeading ? 
 
-                                <div>
+
+                                
                                 
                                     <Typography variant="overline" className={firstRecording}>
 
@@ -168,13 +168,14 @@ const RecordingsList = () => {
 
                                     </Typography>           
 
-                                </div>
+                                
 
                             :
 
                             null
                             
                             }
+                            </div>
                             
                         {recordings.map((recording) => {
                                 
