@@ -85,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: "4.74em",
         color: "#233d4d",
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 20,
+        fontSize: 22,
         
         
         justifyContent: "flex-end",
@@ -135,6 +135,14 @@ const useStyles = makeStyles((theme) => ({
        
         //border: '1px solid #233d4d',
         //background: '#EBEBEB'
+    },
+
+    firstRecording: {
+        color: "#233d4d",
+    },
+
+    cuteStar:{
+        color:'#eb9148' 
     }
 
     

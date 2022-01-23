@@ -153,9 +153,8 @@ return (
                                                 }
                         
                                                 <br></br>
-                                                <br></br>
-                                                <br></br>
-                                                <br></br>
+                                                
+                                               
                         
                                                 {editINotes ?
                                             
@@ -258,7 +257,7 @@ return (
                                                         >
 
                                                             <Typography 
-                                                                component = "span" 
+                                                                component = "p" 
                                                                 className={lyricText}>
                                                                 {song.lyrics}
 
@@ -267,9 +266,7 @@ return (
                                                 }
                         
                                                 <br></br>
-                                                <br></br>
-                                                <br></br>
-                                                <br></br>
+                                                
                         
                                                 {editINotes ?
                                             
@@ -370,7 +367,7 @@ return (
                                                         >
 
                                                             <Typography 
-                                                                component = "span" 
+                                                                component = "p" 
                                                                 className={lyricText}>
                                                                 {song.lyrics}
 

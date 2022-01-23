@@ -14,7 +14,21 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import useStyles from './RecordingsListStyles';
 
 const RecordingsList = () => {
-    const { paper, description, player, card1, drawer, drawerHeader, background, view, bye} = useStyles();
+    const { 
+            paper, 
+            description, 
+            player, 
+            card1, 
+            drawer, 
+            drawerHeader, 
+            background, 
+            view, 
+            bye,
+            firstRecording,
+            cuteStar
+        
+        } = useStyles();
+
     const dispatch = useDispatch();
     const history = useHistory();
     const recordings = useSelector((store) => store.recordings);
@@ -22,34 +36,44 @@ const RecordingsList = () => {
     const params = useParams();
     let [isDrawerOpen, setIsDrawerOpen] = useState(false);
     let [isAccordionOpen, setIsAccordionOpen] = useState(false);
+    const [showHeading, setShowHeading] = useState(false);
     
     let song = params.id
+    console.log(recordings);
     
 
-    const handleClickOpen = (recordings) => {
+    const handleClickOpen = () => {
         if (recordings === null) {
             setIsDrawerOpen(false)
         } else 
         setIsDrawerOpen(true);
+        
         dispatch({
             type: 'FETCH_RECORDINGS',
             payload: params.id
            
         });
-        
+
+        if (recordings.length > 1) {
+            setShowHeading(true)
+        } else
+        setShowHeading(false);
+
     };
+
+
     
 
     const handleCancel = () => {
         setIsDrawerOpen(false);
     }
 
-    const handleDeleteAudio = (recordingId) => {
+    const handleDeleteAudio = () => {
         
-        console.log(recordingId);
+        console.log(params.id);
         dispatch({
             type: 'DELETE_AUDIO',
-            payload: recordingId
+            payload: params.id
         })
     }
 
@@ -57,7 +81,7 @@ const RecordingsList = () => {
         <>
             <MenuItem 
                 
-                onClick={handleClickOpen} 
+                onClick={handleClickOpen}
                 className={view}
             >
                 <QueueMusic/>
@@ -115,14 +139,43 @@ const RecordingsList = () => {
 
                                         >
                                         
-                                            Recordings History
+                                            Recordings History 
                                         
                                         </Typography>
                             
+                                            
                         </div>
                             
-                        <br></br>
+                            <br></br>
+                            
+                            <div>
                         
+                                <Typography variant="overline" className={firstRecording}>
+
+                                    &nbsp;&nbsp;<span className={cuteStar}>*</span> Primary Recording 
+
+                                </Typography>
+
+                            </div>
+
+                            {showHeading ? 
+
+                                <div>
+                                
+                                    <Typography variant="overline" className={firstRecording}>
+
+                                        &nbsp;&nbsp;<span className={cuteStar}>*</span> Additional Recordings
+
+                                    </Typography>           
+
+                                </div>
+
+                            :
+
+                            null
+                            
+                            }
+                            
                         {recordings.map((recording) => {
                                 
                             
@@ -213,17 +266,6 @@ const RecordingsList = () => {
             
 
 export default RecordingsList;
-
-
-
-
-
-
-
-
-
-
-
 
 
 
