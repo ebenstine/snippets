@@ -37,10 +37,11 @@ const RecordingsList = () => {
     let [isDrawerOpen, setIsDrawerOpen] = useState(false);
     let [isAccordionOpen, setIsAccordionOpen] = useState(false);
     const [showHeading, setShowHeading] = useState(false);
+    const [showExtraText, setShowExtraText] = useState()
     
-    let song = params.id
+   
     console.log(recordings);
-    
+    console.log(recordings[0]);
 
     const handleClickOpen = () => {
         if (recordings === null) {
@@ -57,9 +58,25 @@ const RecordingsList = () => {
         if (recordings.length > 1) {
             setShowHeading(true)
         } else
-        setShowHeading(false);
-
+            setShowHeading(false);
+        
     };
+
+    const handleTextState = () => {
+        
+        
+        //all this is doing is asking if recordings[0] exists, so of course it doesn't work.
+            if (recordings.id === recordings[0]) {
+                setShowExtraText(true)
+            } 
+            else 
+            {
+            if (recordings.id !== recordings[0]) {
+                setShowExtraText(false)
+            }
+           
+        }
+    }
 
 
     
@@ -152,17 +169,17 @@ const RecordingsList = () => {
                         
                                 <Typography variant="overline" className={firstRecording}>
 
-                                    &nbsp;&nbsp;<span className={cuteStar}>*</span> Primary <span className={cuteStar}>*</span>
+                                    &nbsp;&nbsp;<span className={cuteStar}>*</span> original upload <span className={cuteStar}>*</span>
                                     
                                 </Typography>
                                 
 
-                            {showHeading ? 
+                            {/*{showHeading ? 
 
 
                                 
                                 
-                                    <Typography variant="overline" className={firstRecording}>
+                                    <Typography variant="body2" className={firstRecording}>
 
                                         &nbsp;&nbsp;<span className={cuteStar}>*</span> Additional Recordings
 
@@ -174,8 +191,8 @@ const RecordingsList = () => {
 
                             null
                             
-                            }
-                            </div>
+                            }*/}
+                        </div>
                             
                         {recordings.map((recording) => {
                                 
@@ -202,10 +219,12 @@ const RecordingsList = () => {
                                                             style={{ 
                                                             
                                                             color: '#eb9148',
-                                                            paddingRight: '.75em'
-
+                                                            paddingRight: '.75em',
+                                                            
+                                                            
                                                             }}
-
+                                                            onClick={handleTextState}
+                                                            
                                                         />}
 
                                                     aria-controls="panel1a-content"
@@ -226,14 +245,30 @@ const RecordingsList = () => {
                                                         </AccordionSummary>
                                             
                                                             <div>
-                                                    
+                                                            
+                                                            {showExtraText ?
+
                                                                 <Typography 
                                                                 
                                                                     variant="h6" 
                                                                     className={description}>
-                                                                    {recording.description}
+                                                                    This is the primary recording for &nbsp;
+                                                                    {recording.description} 
+                                                                    
                                                                     
                                                                 </Typography>
+                                                            :
+
+                                                            <Typography 
+                                                                
+                                                                    variant="h6" 
+                                                                    className={description}>
+                                                                    {recording.description} 
+                                                                    
+                                                                    
+                                                                </Typography>
+                                                            
+                                                            }
                                                         
                                                             </div>
                                                 

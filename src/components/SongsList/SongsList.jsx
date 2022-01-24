@@ -150,13 +150,19 @@ function SongsList() {
                                                                                 <CardContent 
                                                                 
                                                                                     item xs={1} key={song} 
-                                                                                    onClick={() => handleClick(song.song_id)} 
+                                                                                    
                                                             
                                                                                 >  
                                                                 
                                                                                     <Typography 
                                                                                         variant="overline" 
-                                                                                        className={title1}>{song.title}
+                                                                                        className={title1}
+                                                                                        onClick={() => handleClick(song.song_id)} 
+
+                                                                                    >
+                                                                                        
+                                                                                        {song.title}
+                                                                                        
                                                                                     </Typography>
                                                                     
                                                                 

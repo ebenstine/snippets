@@ -219,7 +219,8 @@ const useStyles = makeStyles(() => ({
         color: '#2a4f64',
         //borderRadius: '2px',
         paddingTop: '.2em',
-        paddingBottom: '.2em'
+        paddingBottom: '.2em',
+        fontSize: 15
     },
 
     playIcon: {
