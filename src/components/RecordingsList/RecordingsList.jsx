@@ -92,6 +92,7 @@ const RecordingsList = () => {
             type: 'DELETE_AUDIO',
             payload: recordingId
         })
+        setIsDrawerOpen(false);
     }
 
     return (

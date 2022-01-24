@@ -22,7 +22,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 
 router.get('/:id', rejectUnauthenticated, (req, res) => {
     const id = req.params.id;
-    console.log(req.params.id);
+   
     let queryText = `
                       SELECT * FROM recordings
                       WHERE song_id = $1
@@ -35,6 +35,8 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     })
     .catch(err => { 
       console.log('Error complete select song', err);
+      //this is the error showing in the console on delete
+      //req.params.id is undefined
     })
   })
   
