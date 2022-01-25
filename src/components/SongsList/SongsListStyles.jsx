@@ -84,7 +84,69 @@ const useStyles = makeStyles(() => ({
         borderRadius: '.25em',
         paddingTop: '.5em',
         paddingBottom: '.5em',
+        '&:hover': {
+            
+            backgroundColor: '#eb9292',
+    }
         
+        
+    },
+
+    player1: {
+       
+        marginBottom: '.5em',
+        marginLeft: '.65em',
+        marginRight: '.45em',
+        color: '#1a313f',
+        border: '1.5px solid #1d778d',
+        borderRadius: '.25em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em',
+        '&:hover': {
+           
+            backgroundColor: '#94d9eb',
+            
+        }
+        
+        
+    },
+
+    player2: {
+       
+        marginBottom: '.5em',
+        marginLeft: '.65em',
+        marginRight: '.45em',
+        color: '#1a313f',
+        border: '1.5px solid #1d778d',
+        borderRadius: '.25em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em',
+        '&:hover': {
+            
+            
+            backgroundColor: '#f8a058',
+            
+        }
+        
+        
+    },
+
+    player3: {
+       
+        marginBottom: '.5em',
+        marginLeft: '.65em',
+        marginRight: '.45em',
+        color: '#1a313f',
+        border: '1.5px solid #1d778d',
+        borderRadius: '.25em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em',
+        '&:hover': {
+            
+            
+            backgroundColor: '#fcca60',
+            
+        }
         
     },
 
@@ -97,8 +159,8 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
             
             cursor: 'pointer',
-            borderBottom: '1.5px solid #1d778d'
-    }
+            borderBottom: '1.5px solid #1d778d',
+        }
         
     },
 
@@ -114,9 +176,10 @@ const useStyles = makeStyles(() => ({
         marginTop: 'auto',
         color: '#233d4d',
         '&:hover': {
-            //color:'#1d778d',
+            
             cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d',
+            
            
     }
         
@@ -131,8 +194,9 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
             //color:'#1d778d',
             cursor: 'pointer',
-            borderBottom: '1.5px solid #1d778d'
-    }
+            borderBottom: '1.5px solid #1d778d',
+            
+        }
         
     },
 
@@ -145,8 +209,9 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
             //color:'#1d778d',
             cursor: 'pointer',
-            borderBottom: '1.5px solid #1d778d'
-    }
+            borderBottom: '1.5px solid #1d778d',
+          
+        }
         
     },
 

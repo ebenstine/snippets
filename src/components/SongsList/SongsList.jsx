@@ -20,7 +20,10 @@ function SongsList() {
             title1, 
             title2, 
             title3, 
-            player, 
+            player,
+            player1,
+            player2,
+            player3, 
             card, 
             card1, 
             card2, 
@@ -171,7 +174,7 @@ function SongsList() {
                                                             
                                                                             </section>
                                                                                 
-                                                                                <section className={player}>
+                                                                                <section className={player1}>
                                                                             
                                                                                     <AudioPlayer
 
@@ -225,7 +228,7 @@ function SongsList() {
                             
                                                                         </section>
                                                         
-                                                                            <section className={player}>
+                                                                            <section className={player2}>
                                                             
                                                                                 <AudioPlayer
 
@@ -283,7 +286,7 @@ function SongsList() {
 
                                                                         </section>
                                                 
-                                                                            <section className={player}>
+                                                                            <section className={player3}>
                                                     
                                                                                 <AudioPlayer
 
