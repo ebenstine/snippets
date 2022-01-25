@@ -76,7 +76,8 @@ const AddSong = () => {
       payload: newSong 
       
     });
-    history.push('/songsList')
+
+    history.push('/archive')
    };
   
   console.log(newSong);

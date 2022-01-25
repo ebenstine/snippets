@@ -10,6 +10,7 @@ function* audioDelete(action) {
         yield axios.delete(`/api/recording/${id}`);
         yield put({ 
             type: 'FETCH RECORDINGS',
+            payload: action.payload.song_id
             
            
         });

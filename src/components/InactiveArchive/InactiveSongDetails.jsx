@@ -45,7 +45,7 @@ function InactiveSongDetails(){
     }, []);
    
     const songDetails = useSelector((store) => store.songDetails)
-
+    const songs = useSelector((store) => store.songs)
     
     
 return (
