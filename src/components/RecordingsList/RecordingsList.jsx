@@ -92,6 +92,7 @@ const RecordingsList = () => {
             type: 'DELETE_AUDIO',
             payload: recordingId
         })
+        //hiding the lack of live updating here but whatev
         setIsDrawerOpen(false);
     }
 

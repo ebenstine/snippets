@@ -162,7 +162,7 @@ const useStyles = makeStyles(() => ({
         marginTop: '3em',
         marginBottom:'3em',
         border: '1px solid #1d778d',
-        background: '#ffb171'
+        background: '#fcbe8c'
     },
 
     feedback: {
@@ -181,7 +181,8 @@ const useStyles = makeStyles(() => ({
         color: '#2a4f64',
         //borderRadius: '2px',
         paddingTop: '.2em',
-        paddingBottom: '.2em'
+        paddingBottom: '.2em',
+        fontSize: 15
     },
 
     playIcon: {

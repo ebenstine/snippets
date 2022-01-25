@@ -16,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     welcome: {
         color: '#233d4d',
         //borderBottom: '1.5px solid #6ca0ad',
+        fontSize: 22
         
         
     },
@@ -25,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
         //borderTop: '1.5px solid #6ca0ad',
         paddingRight: '2em',
         paddingLeft: '3.5em',
-        paddingTop: '1em'
+        paddingTop: '1em',
+        fontSize: 16
         
     },
 
@@ -33,7 +35,8 @@ const useStyles = makeStyles((theme) => ({
         color: '#233d4d',
         
         paddingRight: '2em',
-        paddingLeft: '3.5em'
+        paddingLeft: '3.5em',
+        fontSize: 16
     },
 
     button1: {
@@ -70,24 +73,27 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: '2em',
         paddingLeft: '3.5em',
         //borderBottom: '1.5px solid #6ca0ad'
+        fontSize: 16
     },
 
     playIcon: {
         color:"#1d778d",
         outlineColor: "#233d4d",
-        marginLeft: "0em"
+        marginLeft: "0em",
+        fontSize: 16
     },
 
     highlight: {
 
         color: '#1d778d',
-        borderBottom: '1.5px solid #eb9148'
+        borderBottom: '1.5px solid #eb9148',
+        fontSize: 16
 
     },
 
     infoCard: {
 
-        backgroundColor: "#ffb171",
+        backgroundColor: "#fcbe8c",
         border: '1px solid #1d778d'
     
     }
@@ -97,4 +103,4 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default useStyles 
+export default useStyles

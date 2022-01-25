@@ -202,7 +202,7 @@ function SongsList() {
                                                                             <CardContent 
                                 
                                                                                 item xs={1} key={song} 
-                                                                                onClick={() => handleClick(song.song_id)} 
+                                                                                 
                             
                                                                             >  
                                 
@@ -211,7 +211,11 @@ function SongsList() {
                                                                                     <Typography 
                                                                                             
                                                                                         variant="overline" 
-                                                                                        className={title2}>{song.title}
+                                                                                        className={title2}
+                                                                                        onClick={() => handleClick(song.song_id)}
+                                                                                    >
+                                                                                        {song.title}
+
                                                                                     
                                                                                     </Typography>
                                     
@@ -257,7 +261,7 @@ function SongsList() {
                                                                             <CardContent 
 
                                                                                 item xs={1} key={song} 
-                                                                                onClick={() => handleClick(song.song_id)} 
+                                                                                 
 
                                                                             >  
 
@@ -266,7 +270,10 @@ function SongsList() {
                                                                                     <Typography 
                                                                                     
                                                                                         variant="overline" 
-                                                                                        className={title3}>{song.title}
+                                                                                        className={title3}
+                                                                                        onClick={() => handleClick(song.song_id)}
+                                                                                    >
+                                                                                        {song.title}
                                                                             
                                                                                     </Typography>
                             
@@ -311,7 +318,7 @@ function SongsList() {
                                                                             <CardContent 
                         
                                                                                 item xs={1} key={song} 
-                                                                                onClick={() => handleClick(song.song_id)} 
+                                                                                 
 
                                                                             >  
                         
@@ -320,7 +327,10 @@ function SongsList() {
                                                                                     <Typography 
                                                                                 
                                                                                         variant="overline" 
-                                                                                        className={title}>{song.title}
+                                                                                        className={title}
+                                                                                        onClick={() => handleClick(song.song_id)}
+                                                                                    >
+                                                                                        {song.title}
                                                                                 
                                                                                     </Typography>
                             
