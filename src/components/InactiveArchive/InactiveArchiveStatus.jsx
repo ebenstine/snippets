@@ -178,7 +178,7 @@ function InactiveArchiveStatus(){
     
       const handleStatus = (event) => {
         event.preventDefault();
-        let updatedStatus = {...status, id:params.id}
+        let updatedStatus = {...status, id: params.id}
         dispatch ({
             type: 'REVISE_SONG',
             payload: updatedStatus
@@ -193,13 +193,13 @@ function InactiveArchiveStatus(){
         setOpen(false);
         handleClose();
       }
-    const handleDelete = (songId) => {
-        console.log(songId)
+    const handleDelete = () => {
+        
         dispatch ({
             type: 'DELETE_SONG',
-            payload: songId
+            payload: params.id
         })
-        history.push('/songsList')
+     history.push(`/inactiveArchive`)
     }
 
     

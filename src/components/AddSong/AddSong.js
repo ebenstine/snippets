@@ -76,7 +76,12 @@ const AddSong = () => {
       payload: newSong 
       
     });
+    newSong.is_active === true ?
     history.push('/songsList')
+
+    : 
+
+    history.push('/inactiveArchive')
    };
   
   console.log(newSong);
