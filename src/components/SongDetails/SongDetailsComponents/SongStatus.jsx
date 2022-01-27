@@ -105,23 +105,23 @@ function SongStatus() {
     let song = {
         is_active: songDetails.is_active = false
      }
-     const [status, setStatus] = useState(song);
      
+    const [status, setStatus] = useState(song);
+     
+    const [open, setOpen] = useState(false);
  
-     const [open, setOpen] = useState(false);
- 
-     const handleClickOpen = () => {
+    const handleClickOpen = () => {
          setOpen(true);
        };
      
-       const handleClose = () => {
-         setOpen(false);
-       };
+    const handleClose = () => {
+        setOpen(false);
+    };
  
  
        
  
-     const handleStatus = (event) => {
+    const handleStatus = (event) => {
          event.preventDefault();
          let updatedStatus = {...status, id: params.id}
          dispatch ({
@@ -131,7 +131,7 @@ function SongStatus() {
          })
      history.push(`/InactiveArchive`);
      
-     }
+    }
  
      
 
@@ -192,7 +192,7 @@ return (
                                         
                                         <DialogContentText className={dialogText}>
                                             
-                                            Moving the song to the inactive archive will temporarily remove your ability to 
+                                            Moving the song to the inactive archive will suspend your ability to 
                                             add new ideas or changes.  Do you want to do this?
 
                                         </DialogContentText>

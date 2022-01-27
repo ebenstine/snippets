@@ -477,7 +477,7 @@ return (
                                                         >
 
                                                             <Typography 
-                                                                component = "span" 
+                                                                component = "p" 
                                                                 className={lyricText}>
 
                                                                 {song.lyrics}

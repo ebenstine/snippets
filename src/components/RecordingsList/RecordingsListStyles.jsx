@@ -109,11 +109,11 @@ const useStyles = makeStyles((theme) => ({
 
     view: {
         paddingLeft: '1.75em',
-        background: '#fff099',
+        background: 'rgb(230, 252, 255)',
         '&:hover': {
-          background:'#fde76c',
+          background:'#94d9eb',
           },
-        border: "1px solid #3b95ac",
+        border: "1px solid #eb9148",
         borderRadius: "3px",
     },
 

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
+import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 import AddRecording from '../../AddRecording/AddRecording';
 import RecordingsList from '../../RecordingsList/RecordingsList';
@@ -26,7 +26,9 @@ const useStyles = makeStyles((theme) => ({
     },
 
     heading: {
-      color: '#2a4f64'
+      color: '#2a4f64',
+      borderBottom: '1px solid #2a4f64',
+      fontSize: 20
     }, 
 
     menuIcon: {
@@ -98,12 +100,13 @@ const SongDetailsMenu = ({song}) => {
             }}    
                 
           >
-          
-            <DialogTitle 
+          <DialogTitle>
+            <Typography 
               
               className={heading}>
               Audio Files Menu
               
+            </Typography>
             </DialogTitle>
           
               <DialogContent className={menuItems}>

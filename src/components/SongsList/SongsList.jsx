@@ -47,7 +47,7 @@ function SongsList() {
     const songs = useSelector((store) => store.songs);
     const songDetails = useSelector((store) => store.songDetails)
 
-    const [listView, setListView] = useState();
+    const [listView, setListView] = useState(true);
     console.log(songs);
 
 
@@ -58,13 +58,8 @@ function SongsList() {
     }*/
     const handleState = () => {
         
-        if (songs.length > 0) 
-            {setListView(true)}
-            
-            else 
-
-            {setListView(false)};
-
+        if (songs.length === 0) 
+            {setListView(false)}
             
         }   
 
@@ -413,12 +408,14 @@ function SongsList() {
                                 </div>
                         
                         </Card>
-                                        <Button 
-                                            onClick={goBack}
-                                            className={hackButton}
-                                            variant="outlined"
-                                            >See List
-                                        </Button>
+                            
+                            <Button 
+                                onClick={goBack}
+                                className={hackButton}
+                                variant="outlined"
+                                >See List
+                            </Button>
+
                     </div>
 
                 </Paper>

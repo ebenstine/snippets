@@ -112,10 +112,10 @@ const AddSong = () => {
             <div className={cardContent}>
             
               <Typography 
-                variant="overline" 
+                variant="h5" 
                 
                 className={title}>
-                New Song Details
+                Add a New Song
               </Typography>
                 
                 <TextField

@@ -24,18 +24,18 @@ const useStyles = makeStyles((theme) => ({
 
     navLinks: {
         color: '#2a4f64',
-        background: '#f6f6f6',
+        background:  'rgb(230, 252, 255)',
         '&:hover': {
-            background:'#67a2b1',
+            background:'#94d9eb',
             },
         margin: theme.spacing(1),
-        border: "1px solid #2a4f64",
+        border: "1px solid #eb9148",
         borderRadius: "3px"
     },
 
     menu: {
         marginBottom: '-.45em',
-        color: '#e7e7e7',
+        color: 'rgb(230, 252, 255)',
         '&:hover': {
         color:'#67a2b1'
         }

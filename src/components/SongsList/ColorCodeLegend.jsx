@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
     colorCode: {
         color: '#2a4f64',
-        background: '#f6f6f6',
+        background: 'rgb(230, 252, 255)',
         '&:hover': {
             background:'#f0a1a1',
             },
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     },
     colorCode1: {
         color: '#2a4f64',
-        background: '#f6f6f6',
+        background: 'rgb(230, 252, 255)',
         '&:hover': {
             background:'#afe4f1',
             },
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     },
     colorCode2: {
         color: '#2a4f64',
-        background:'#f6f6f6',
+        background:'rgb(230, 252, 255)',
         '&:hover': {
             background:'#ffb171',
             },
@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
     },
     colorCode3: {
         color: '#2a4f64',
-        background: '#f6f6f6',
+        background: 'rgb(230, 252, 255)',
         '&:hover': {
             background:'#fdd377',
             },

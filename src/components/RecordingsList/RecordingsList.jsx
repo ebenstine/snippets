@@ -271,106 +271,112 @@ const RecordingsList = () => {
                                                         />
                                                     </section>
                                                     
-                                                        </AccordionSummary>
+                                                </AccordionSummary>
                                             
                                                             <div>
                                                             
-                                                            {showExtraText ?
+                                                                {showExtraText ?
 
-                                                                <Typography 
-                                                                
-                                                                    variant="h6" 
-                                                                    className={description}>
-                                                                    This is the primary recording for &nbsp;
-                                                                    {recording.description} 
+                                                                    <Typography 
                                                                     
-                                                                    
-                                                                </Typography>
-                                                            :
+                                                                        variant="h6" 
+                                                                        className={description}>
+                                                                        This is the primary recording for &nbsp;
+                                                                        {recording.description} 
+                                                                        
+                                                                        
+                                                                    </Typography>
+                                                                :
 
-                                                            <Typography 
+                                                                    <Typography 
+                                                                    
+                                                                        variant="h6" 
+                                                                        className={description}>
+                                                                        {recording.description} 
+                                                                        
+                                                                        
+                                                                    </Typography>
                                                                 
-                                                                    variant="h6" 
-                                                                    className={description}>
-                                                                    {recording.description} 
-                                                                    
-                                                                    
-                                                                </Typography>
-                                                            
-                                                            }
+                                                                }
                                                         
                                                             </div>
 
-                                                            <Button 
-                                                                className={deletePrompt}
-                                                                variant="contained"
-                                                                onClick={handleDialogOpen}
-                                                            >
-                                                                <Delete/>
-                                                            </Button>
+                                                                <Button 
+                                                                    className={deletePrompt}
+                                                                    variant="contained"
+                                                                    onClick={handleDialogOpen}
+                                                                >
+                                                                    <Delete/>
+                                                                </Button>
 
-                                                            <Dialog 
-                                                                open={isDialogOpen} 
-                                                                PaperProps={{
-                                                                    style: 
-                                                                        { border: "1px solid #e45252",
-                                                                            
-                                                                            background: "rgb(199, 246, 252)"
-                                                                        }
-                                                            
-                                                                            }}
-                                                                className={dialog} 
-                                                                onClose={handleDialogClose} 
-                                                                
-                                                            >
-                                                                
-                                                                <DialogTitle className={dialogContent}>
-                                                                    <div>
-                                                                    <Feedback 
-                                                                        style = {{
-                                                                            color: '#e45252',
-                                                                            fontSize: 50,
-                                                                            paddingTop: '-1em',
-                                                                            display: 'flex',
-                                                                            flexWrap: 'wrap',
-                                                                            textStroke: '2px black'
-                                                                        }}
-                                                                    />
-                                                                
-                                                                    </div>
-                                                                </DialogTitle>
+                                                                <Dialog 
                                                                     
-                                                                    <DialogContent className={dialogContent} >
+                                                                    open={isDialogOpen} 
+                                                                    PaperProps={{
+                                                                        style: 
+                                                                            { border: "1px solid #e45252",
+                                                                                
+                                                                                background: "rgb(199, 246, 252)"
+                                                                            }
+                                                                
+                                                                                }}
+                                                                    className={dialog} 
+                                                                    onClose={handleDialogClose} 
+                                                                    
+                                                                >
+                                                                    
+                                                                    <DialogTitle className={dialogContent}>
                                                                         
-                                                                        <DialogContentText className={dialogText}>
-                                                                            
-                                                                            Deleting the recording cannot be undone.  Do you want to do this?
-
-                                                                        </DialogContentText>
-                                                                    
-                                                                    </DialogContent>
-                                                            
-                                                                <DialogActions className={dialogContent}>
-                                    
-                                                                    <Button 
-                                                                        className={cancelButton} 
-                                                                        onClick={handleDialogClose} 
-                                                                        variant="contained"
-                                                                    >
-                                                                        <Cancel/>
-                                                                    
-                                                                    </Button>
-                                                
-                                                                    <Button 
+                                                                        <div>
                                                                         
-                                                                        variant="contained" 
-                                                                        onClick={() => handleDeleteAudio(recording.id)} 
-                                                                        className={deleteButton}>
-                                                                        <Delete/>
+                                                                            <Feedback 
+                                                                                style = {{
+                                                                                    color: '#e45252',
+                                                                                    fontSize: 50,
+                                                                                    paddingTop: '-1em',
+                                                                                    display: 'flex',
+                                                                                    flexWrap: 'wrap',
+                                                                                    textStroke: '2px black'
+                                                                                }}
+                                                                            />
+                                                                
+                                                                        </div>
+                                                                
+                                                                        </DialogTitle>
+                                                                            
+                                                                            <DialogContent className={dialogContent} >
+                                                                                
+                                                                                <DialogContentText className={dialogText}>
+                                                                                    
+                                                                                    Deleting a recording cannot be undone.  Do you want to do this?
 
-                                                                    </Button>
-                                                    </DialogActions>
-                                                </Dialog>
+                                                                                </DialogContentText>
+                                                                            
+                                                                            </DialogContent>
+                                                                    
+                                                                        <DialogActions className={dialogContent}>
+                                            
+                                                                            <Button 
+                                                                                className={cancelButton} 
+                                                                                onClick={handleDialogClose} 
+                                                                                variant="contained"
+                                                                            >
+                                                                                <Cancel/>
+                                                                            
+                                                                            </Button>
+                                                        
+                                                                            <Button 
+                                                                                
+                                                                                variant="contained" 
+                                                                                onClick={() => handleDeleteAudio(recording.id)} 
+                                                                                className={deleteButton}>
+                                                                                <Delete/>
+
+                                                                            </Button>
+                                                                        
+                                                                        </DialogActions>
+
+                                                                    </Dialog>
                                                 
                                             </Accordion>
 

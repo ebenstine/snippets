@@ -1,0 +1,12 @@
+if there are no songs
+    show noSongsAlert state
+        otherwise
+            show songsList
+
+                within songsList, 
+                    if priorityButton is pushed
+                        show only that priority group's songs
+                            and if there are none, show nothing(null)
+
+                            this likely requires current SongsList component to be refactored into an AllSongs file.
+                            which will be drawn into a ternary statement for rendering against files for PriorityOneSongs, PriorityTwoSongs, etc.
