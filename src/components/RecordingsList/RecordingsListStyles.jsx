@@ -18,15 +18,7 @@ const useStyles = makeStyles((theme) => ({
         
     },
 
-    card2: {
-        flexDirection: 'column',
-        backgroundColor: 'rgb(250, 250, 175)'
-    },
-    
-    card3: {
-        flexDirection: 'column',
-        backgroundColor: '#fdd377'
-    },
+ 
 
     cardContent: {
         display: 'flex',
@@ -71,10 +63,13 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '.85em',
         marginRight: '-.35em',
         color: '#1a313f',
-        border: '1.35px solid #1d778d',
+        border: '1px solid #1a313f',
         borderRadius: '.25em',
         paddingTop: '.5em',
         paddingBottom: '.5em',
+        '&:hover': {
+            background:'#5294a5',
+            },
         
         
     },
@@ -123,13 +118,14 @@ const useStyles = makeStyles((theme) => ({
     },
 
     bye: {
-        color:'#eb9148',
+        color:'#5294a5',
         marginTop: '.75em',
         marginLeft: '.75em',
         marginBottom: '.75em',
-        background: '#1d778d',
+        border: '1px solid #1a313f',
+        background: '#fff099',
         '&:hover': {
-            background:'#3b95ac',
+            background:'#fde76c',
             }
 
        

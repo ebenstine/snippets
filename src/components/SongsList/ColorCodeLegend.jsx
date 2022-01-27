@@ -22,40 +22,40 @@ const useStyles = makeStyles((theme) => ({
 
     colorCode: {
         color: '#2a4f64',
-        background: 'rgb(230, 252, 255)',
+        background: '#f6f6f6',
         '&:hover': {
             background:'#f0a1a1',
             },
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
         borderRadius: "3px",
-        paddingLeft:'2.2em'
+        paddingLeft:'2.7em'
     },
     colorCode1: {
         color: '#2a4f64',
-        background: 'rgb(230, 252, 255)',
+        background: '#f6f6f6',
         '&:hover': {
-            background:'#c4fbff',
+            background:'#afe4f1',
             },
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
         borderRadius: "3px",
-        paddingLeft: '3em'
+        paddingLeft: '2.7em'
     },
     colorCode2: {
         color: '#2a4f64',
-        background:'rgb(230, 252, 255)',
+        background:'#f6f6f6',
         '&:hover': {
             background:'#ffb171',
             },
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
         borderRadius: "3px",
-        paddingLeft: '3em'
+        paddingLeft: '2.7em'
     },
     colorCode3: {
         color: '#2a4f64',
-        background: 'rgb(230, 252, 255)',
+        background: '#f6f6f6',
         '&:hover': {
             background:'#fdd377',
             },
@@ -77,7 +77,14 @@ const useStyles = makeStyles((theme) => ({
     dialogTitle: {
 
         color:'#2a4f64',
-        background:'transparent'
+        background:'transparent',
+        
+
+    },
+
+    titleText: {
+      borderBottom: '1.5px solid #3b95ac',
+      fontSize: 20
 
     }
 
@@ -87,7 +94,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const ColorCodeLegend = () => {
-    const {colorCode, colorCode1, colorCode2, colorCode3, menu, dialogTitle} = useStyles();
+    const {colorCode, colorCode1, colorCode2, colorCode3, menu, dialogTitle, titleText} = useStyles();
     const [open, setOpen] = useState(false);
    
   
@@ -125,17 +132,25 @@ const ColorCodeLegend = () => {
                 
                 open={open}
                 PaperProps={{
-                    style: 
-                        { border: "1px solid #2a4f64",
-                             position: "fixed", top: 68, right: 18, m: 50, 
+                    
+                  style: 
+                      
+                      {    
+                        border: "1px solid #2a4f64",
+                        position: "fixed", top: 68, right: 18, m: 50, 
+                        background: '#d0f7fa'
                              
-                        }
+                      }
             
-                            }}
+                }}
                 onClose={handleCancel}
 
                 >
-        <DialogTitle className={dialogTitle} >Priority by Color Key</DialogTitle>
+        <DialogTitle className={dialogTitle}>
+          
+          <Typography className={titleText}>Completion Priority</Typography>
+          
+        </DialogTitle>
           
           <MenuItem
           className={colorCode1}
@@ -204,7 +219,7 @@ const ColorCodeLegend = () => {
             > 
             
             <IndeterminateCheckBoxIcon/> 
-            &nbsp;None specified
+            &nbsp;Uncertain
             </Link>
         
           </MenuItem>

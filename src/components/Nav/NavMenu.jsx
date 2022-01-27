@@ -22,14 +22,14 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
 
-    heading: {
+    navLinks: {
         color: '#2a4f64',
-        background: '#fff099',
+        background: '#f6f6f6',
         '&:hover': {
-            background:'#fde76c',
+            background:'#3b95ac',
             },
         margin: theme.spacing(1),
-        border: "1px solid #3b95ac",
+        border: "1px solid #2a4f64",
         borderRadius: "3px"
     },
 
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const NavMenu = ({user}) => {
-    const {heading, menu, menuSwitch} = useStyles();
+    const {navLinks, menu, menuSwitch} = useStyles();
     const [open, setOpen] = useState(false);
    
   
@@ -105,7 +105,7 @@ const NavMenu = ({user}) => {
             >
           
             <MenuItem
-              className={heading}
+              className={navLinks}
           
             >
           
@@ -135,7 +135,7 @@ const NavMenu = ({user}) => {
             </MenuItem>
 
             <MenuItem 
-              className={heading}
+              className={navLinks}
             >
            
               <Link  
@@ -160,7 +160,7 @@ const NavMenu = ({user}) => {
             </MenuItem>
 
             <MenuItem
-              className={heading}
+              className={navLinks}
           
             >
           
@@ -189,7 +189,7 @@ const NavMenu = ({user}) => {
             </MenuItem>
 
           <MenuItem 
-            className={heading}
+            className={navLinks}
           >
             
             <Link 
@@ -206,7 +206,7 @@ const NavMenu = ({user}) => {
             
               <AccountCircle/> 
             
-                &nbsp;Account Info
+                &nbsp;Account Details
             
             </Link>
         

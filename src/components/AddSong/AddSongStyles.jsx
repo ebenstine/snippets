@@ -219,7 +219,8 @@ const useStyles = makeStyles((theme) => ({
 
     title: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        color: '#2a4f64'
+        color: '#2a4f64',
+        fontSize: 20
     },
 
     wrapper: {

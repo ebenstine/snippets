@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
             color: '#2a4f64',
         },
         '& .MuiInput-underline:after': {
-            borderBottomColor: '#3b95ac',
+            borderBottomColor: '#eb9148',
         },
         '& .MuiOutlinedInput-root': {
             '& fieldset': {

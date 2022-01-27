@@ -4,14 +4,32 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Accordion, AccordionSummary, Paper, Typography, MenuItem, Button, Drawer } from '@material-ui/core';
+import { 
+    Accordion, 
+    AccordionSummary, 
+    Paper, 
+    Typography, 
+    MenuItem, 
+    Button, 
+    Drawer,
+    Dialog,
+    DialogTitle,
+    DialogContentText,
+    DialogContent,
+    DialogActions,
+    
+} 
+    
+from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Delete from '@material-ui/icons/Delete';
 import QueueMusic from '@material-ui/icons/QueueMusic';
 import AudioPlayer from "react-modular-audio-player";
 import IconButton from "@material-ui/core/IconButton";
+import Feedback from '@material-ui/icons/Feedback';
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import useStyles from './RecordingsListStyles';
+import { Cancel } from '@material-ui/icons';
 
 const RecordingsList = () => {
     const { 
@@ -25,7 +43,13 @@ const RecordingsList = () => {
             view, 
             bye,
             firstRecording,
-            cuteStar
+            cuteStar,
+            deletePrompt,
+            dialog,
+            dialogContent,
+            dialogText,
+            cancelButton,
+            deleteButton
         
         } = useStyles();
 
@@ -34,10 +58,11 @@ const RecordingsList = () => {
     const recordings = useSelector((store) => store.recordings);
     const songs = useSelector ((store) => store.songs)
     const params = useParams();
-    let [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    let [isAccordionOpen, setIsAccordionOpen] = useState(false);
+    const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [showHeading, setShowHeading] = useState(false);
     const [showExtraText, setShowExtraText] = useState()
+    const [isDialogOpen, setIsDialogOpen] = useState(false)
+
     
    
     console.log(recordings);
@@ -62,6 +87,10 @@ const RecordingsList = () => {
         
     };
 
+    const handleDialogOpen = () => {
+        setIsDialogOpen(true)
+    }
+
     const handleTextState = () => {
         
         
@@ -83,6 +112,10 @@ const RecordingsList = () => {
 
     const handleCancel = () => {
         setIsDrawerOpen(false);
+    }
+
+    const handleDialogClose = () => {
+        setIsDialogOpen(false)
     }
 
     const handleDeleteAudio = (recordingId) => {
@@ -177,20 +210,13 @@ const RecordingsList = () => {
                                 
 
                             {/*{showHeading ? 
-
-
                                 
                                 
                                     <Typography variant="body2" className={firstRecording}>
-
                                         &nbsp;&nbsp;<span className={cuteStar}>*</span> Additional Recordings
-
                                     </Typography>           
-
                                 
-
                             :
-
                             null
                             
                             }*/}
@@ -273,15 +299,77 @@ const RecordingsList = () => {
                                                             }
                                                         
                                                             </div>
-                                                
-                                                            <Button 
-                                                                
-                                                                variant="contained" 
-                                                                onClick={() => handleDeleteAudio(recording.id)} 
-                                                                className={bye}>
-                                                                <Delete/>
 
+                                                            <Button 
+                                                                className={deletePrompt}
+                                                                variant="contained"
+                                                                onClick={handleDialogOpen}
+                                                            >
+                                                                <Delete/>
                                                             </Button>
+
+                                                            <Dialog 
+                                                                open={isDialogOpen} 
+                                                                PaperProps={{
+                                                                    style: 
+                                                                        { border: "1px solid #e45252",
+                                                                            
+                                                                            background: "rgb(199, 246, 252)"
+                                                                        }
+                                                            
+                                                                            }}
+                                                                className={dialog} 
+                                                                onClose={handleDialogClose} 
+                                                                
+                                                            >
+                                                                
+                                                                <DialogTitle className={dialogContent}>
+                                                                    <div>
+                                                                    <Feedback 
+                                                                        style = {{
+                                                                            color: '#e45252',
+                                                                            fontSize: 50,
+                                                                            paddingTop: '-1em',
+                                                                            display: 'flex',
+                                                                            flexWrap: 'wrap',
+                                                                            textStroke: '2px black'
+                                                                        }}
+                                                                    />
+                                                                
+                                                                    </div>
+                                                                </DialogTitle>
+                                                                    
+                                                                    <DialogContent className={dialogContent} >
+                                                                        
+                                                                        <DialogContentText className={dialogText}>
+                                                                            
+                                                                            Deleting the recording cannot be undone.  Do you want to do this?
+
+                                                                        </DialogContentText>
+                                                                    
+                                                                    </DialogContent>
+                                                            
+                                                                <DialogActions className={dialogContent}>
+                                    
+                                                                    <Button 
+                                                                        className={cancelButton} 
+                                                                        onClick={handleDialogClose} 
+                                                                        variant="contained"
+                                                                    >
+                                                                        <Cancel/>
+                                                                    
+                                                                    </Button>
+                                                
+                                                                    <Button 
+                                                                        
+                                                                        variant="contained" 
+                                                                        onClick={() => handleDeleteAudio(recording.id)} 
+                                                                        className={bye}>
+                                                                        <Delete/>
+
+                                                                    </Button>
+                                                    </DialogActions>
+                                                </Dialog>
                                                 
                                             </Accordion>
 

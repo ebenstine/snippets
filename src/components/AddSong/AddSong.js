@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import { Paper, MenuItem, TextField, Button, Typography, DialogTitle, FormHelperText} from '@material-ui/core';
+import { Paper, MenuItem, TextField, Button, Typography, DialogTitle, Dialog} from '@material-ui/core';
 import { Select, FormControl, InputLabel } from '@mui/material'
 import { useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -51,6 +51,7 @@ const AddSong = () => {
   const [helperText, setHelperText] = useState('');
   const [newSong, setNewSong] = useState({});
   
+  
 
   
 
@@ -95,6 +96,7 @@ const AddSong = () => {
     history.push('/songsList')
   }
 
+
    
 
 
@@ -110,8 +112,8 @@ const AddSong = () => {
             <div className={cardContent}>
             
               <Typography 
-                variant="h5" 
-                component="h5" 
+                variant="overline" 
+                
                 className={title}>
                 New Song Details
               </Typography>
@@ -171,7 +173,7 @@ const AddSong = () => {
                         value={newSong.is_active}
     
                       >
-      
+                        
                         <DialogTitle 
                           defaultValue={'  '}
                           className={selectTitle}>
@@ -189,7 +191,7 @@ const AddSong = () => {
                             className={setInactive}>
                             Inactive
                           </MenuItem>
-      
+                          
                         </Select> 
 
                   </FormControl>
@@ -267,7 +269,8 @@ const AddSong = () => {
                       value={newSong.is_active}
 
                     >
-
+                    
+                    
                       <DialogTitle 
                         defaultValue={'  '}
                         className={selectTitle}>
@@ -285,7 +288,7 @@ const AddSong = () => {
                           className={setInactive}>
                           Inactive
                         </MenuItem>
-
+                     
                     </Select> 
 
                 </FormControl>
