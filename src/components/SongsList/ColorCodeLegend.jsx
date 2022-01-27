@@ -8,63 +8,19 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
+import GroupOne from './CustomLists/GroupOne';
+import GroupTwo from './CustomLists/GroupTwo';
+import GroupThree from './CustomLists/GroupThree';
+import GroupUncertain from './CustomLists/GroupUncertain';
 
 
-import { Album } from '@material-ui/icons';
-import IndeterminateCheckBoxIcon from '@material-ui/icons/IndeterminateCheckBox';
-import Info from '@material-ui/icons/Info';
 import MoreHoriz from '@material-ui/icons/MoreHoriz'
-import AccountCircle from '@material-ui/icons/AccountCircle'
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
 
-    colorCode: {
-        color: '#2a4f64',
-        background: '#f6f6f6',
-        '&:hover': {
-            background:'#f0a1a1',
-            },
-        margin: theme.spacing(1),
-        border: "1px solid #3b95ac",
-        borderRadius: "3px",
-        paddingLeft:'2.7em'
-    },
-    colorCode1: {
-        color: '#2a4f64',
-        background: '#f6f6f6',
-        '&:hover': {
-            background:'#afe4f1',
-            },
-        margin: theme.spacing(1),
-        border: "1px solid #3b95ac",
-        borderRadius: "3px",
-        paddingLeft: '2.7em'
-    },
-    colorCode2: {
-        color: '#2a4f64',
-        background:'#f6f6f6',
-        '&:hover': {
-            background:'#ffb171',
-            },
-        margin: theme.spacing(1),
-        border: "1px solid #3b95ac",
-        borderRadius: "3px",
-        paddingLeft: '2.7em'
-    },
-    colorCode3: {
-        color: '#2a4f64',
-        background: '#f6f6f6',
-        '&:hover': {
-            background:'#fdd377',
-            },
-        margin: theme.spacing(1),
-        border: "1px solid #3b95ac",
-        borderRadius: "3px",
-        paddingLeft: '2.7em'
-    },
-
+    
     menu: {
        
         color: '#3b95ac',
@@ -151,78 +107,18 @@ const ColorCodeLegend = () => {
           <Typography className={titleText}>Completion Priority</Typography>
           
         </DialogTitle>
+          <DialogContent>
           
-          <MenuItem
-          className={colorCode1}
+            <GroupOne onClick={handleCancel}></GroupOne>
           
-          >
+            <GroupTwo onClick={handleCancel}></GroupTwo>
+
+            <GroupThree onClick={handleCancel}></GroupThree>
+
+            <GroupUncertain onClick={handleCancel}></GroupUncertain>
+
+          </DialogContent>
           
-          <Link to="/songsList"
-          style = {{
-            color:'#233d4d',
-            display:'flex',
-            flexWrap: 'wrap'
-
-            }}
-            onClick={handleCancel}
-          >
-            
-            <Album/>
-            <Typography component="h5">
-            &nbsp;Group One
-            </Typography>
-            </Link>
-          </MenuItem>
-
-          <MenuItem className={colorCode2}>
-           
-            <Link  to="/songsList"
-            style = {{
-                color: '#233d4d',
-                display:'flex',
-                flexWrap: 'wrap',
-                
-                
-                 }}
-                 onClick={handleCancel}     
-            >
-            <Album/>  
-            &nbsp;Group Two
-            </Link>
-
-          </MenuItem>
-          <MenuItem className={colorCode3}>
-            
-            <Link to="/songsList"
-            style = {{
-                color: '#233d4d',
-                display:'flex',
-                flexWrap: 'wrap'
-                 }}
-                 onClick={handleCancel}
-            > 
-            
-            <Album/> 
-            &nbsp;Group Three
-            </Link>
-        
-          </MenuItem>
-          <MenuItem className={colorCode}>
-            
-            <Link to="/songsList"
-            style = {{
-                color: '#233d4d',
-                display:'flex',
-                flexWrap: 'wrap'
-                 }}
-                 onClick={handleCancel}
-            > 
-            
-            <IndeterminateCheckBoxIcon/> 
-            &nbsp;Uncertain
-            </Link>
-        
-          </MenuItem>
         
         </Dialog>
         

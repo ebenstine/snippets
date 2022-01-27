@@ -110,13 +110,13 @@ const SongDetailsMenu = ({song}) => {
           
                 <AddRecording/>
           
-                  </DialogContent>
+              </DialogContent>
           
-                    <DialogContent className={menuItems}>
+              <DialogContent className={menuItems}>
           
-                      <RecordingsList/>
+                <RecordingsList/>
           
-                  </DialogContent>
+              </DialogContent>
           
           
           
