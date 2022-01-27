@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '.85em',
         marginRight: '-.35em',
         color: '#1a313f',
-        border: '1px solid #1a313f',
+        border: '1.5px solid #1d778d',
         borderRadius: '.25em',
         paddingTop: '.5em',
         paddingBottom: '.5em',
@@ -139,7 +139,85 @@ const useStyles = makeStyles((theme) => ({
 
     cuteStar:{
         color:'#eb9148' 
+    },
+
+    dialogText: {
+        border: '1.5px solid #e45252',
+        borderRadius: '3px',
+        color: '#233d4d',
+        background: 'linear-gradient(to bottom right,  #ff8c8c 0%,#e7e7e7 100%)',
+        paddingLeft: '1em',
+        paddingRight: '1em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em'
+        
+    },
+
+    dialog: {
+        
+        marginLeft: '1em',
+        marginRight: '1em'
+    },
+
+    deletePrompt: {
+        marginLeft: '1em',
+        marginBottom: '.5em',
+        marginRight: '2em',
+        marginTop: '.5em',
+        color: '#233d4d',
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        paddingLeft: '1em',
+        paddingRight: '1em',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    },
+
+    cancelButton: {
+
+        color: '#233d4d',
+        '&:hover': {
+            color:'#e45252',
+            },
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        alignItems: 'center',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    },
+
+    deleteButton: {
+
+        color: '#233d4d',
+        '&:hover': {
+            color:'#77c568',
+            },
+        background: '#fff099',
+        border: '1px solid #3b95ac',
+        alignItems: 'center',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    },
+
+    dialogText: {
+        border: '1.5px solid #e45252',
+        borderRadius: '3px',
+        color: '#233d4d',
+        background: 'linear-gradient(to bottom right,  #ff8c8c 0%,#e7e7e7 100%)',
+        paddingLeft: '1em',
+        paddingRight: '1em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em'
+        
     }
+    
+
 
     
     

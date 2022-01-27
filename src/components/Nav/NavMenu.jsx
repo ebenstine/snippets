@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#2a4f64',
         background: '#f6f6f6',
         '&:hover': {
-            background:'#3b95ac',
+            background:'#67a2b1',
             },
         margin: theme.spacing(1),
         border: "1px solid #2a4f64",
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '-.45em',
         color: '#e7e7e7',
         '&:hover': {
-        color:'#3b95ac'
+        color:'#67a2b1'
         }
 
     },

@@ -127,6 +127,7 @@ const RecordingsList = () => {
         })
         //hiding the lack of live updating here but whatev
         setIsDrawerOpen(false);
+        setIsDialogOpen(false);
     }
 
     return (
@@ -364,7 +365,7 @@ const RecordingsList = () => {
                                                                         
                                                                         variant="contained" 
                                                                         onClick={() => handleDeleteAudio(recording.id)} 
-                                                                        className={bye}>
+                                                                        className={deleteButton}>
                                                                         <Delete/>
 
                                                                     </Button>
@@ -391,24 +392,4 @@ const RecordingsList = () => {
 }
             
 
-export default RecordingsList;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default RecordingsList;   
