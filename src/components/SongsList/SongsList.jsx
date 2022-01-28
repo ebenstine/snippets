@@ -6,7 +6,7 @@ import { Box, Paper, Typography, Card, CardContent, Button } from '@material-ui/
 import useStyles from './SongsListStyles';
 import ColorCodeLegend from './ColorCodeLegend'
 import Feedback from '@material-ui/icons/Feedback';
-
+import CustomLists from './CustomLists/CustomLists';
 //import songDetails from '../../redux/reducers/songDetails.reducer';
 
 
@@ -100,16 +100,18 @@ function SongsList() {
 
             <>
 
-            {listView ?  
                                     
-                                    <Paper className={paper} elevation={10}>
+                                   
+                {listView ?  
+                            <Paper className={paper} elevation={10}>
                                         
                                         <div className={menuDots}>
 
                                             <ColorCodeLegend/>
 
-                                        </div>
+                                                <CustomLists/>
 
+                                        </div>
                                         <div>
                                             <Typography 
                                                 
@@ -376,10 +378,11 @@ function SongsList() {
                                         })}
 
                                 </Box> 
-
                             </Paper>
-                    :
 
+                            
+                    :
+                                    
                     <Paper className={blankPage}>
                     
                     <div>
@@ -424,6 +427,7 @@ function SongsList() {
                 </Paper>
                                     
             }
+        
 
 
         </>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom'
-import { Box, Typography, Card, CardContent, MenuItem } from '@material-ui/core';
+import { Box, Dialog, Typography, Card, CardContent, MenuItem } from '@material-ui/core';
 import useStyles from './CustomListsStyles'
 import { Album } from '@material-ui/icons';
 
@@ -23,6 +23,7 @@ const GroupOne = () => {
     const songs = useSelector((store) => store.songs);
 
     const [showGroupOne, setShowGroupOne] = useState();
+    const [open, setOpen] = useState(false);
     console.log(songs);
 
     useEffect(() => {
@@ -40,11 +41,16 @@ const GroupOne = () => {
         history.push(`/songDetails/${songId}`)
     }
 
+    const handleCancel = () => {
+        setOpen(false)
+    }
+
     return (
         <>
             <MenuItem
                 className={colorCode1}
                 onClick={handleShowGroup}
+                
             >
             
             <Album/>
@@ -53,12 +59,15 @@ const GroupOne = () => {
             </Typography>
             
           </MenuItem>
+         
+         
          {showGroupOne ?
 
             songs.map((song) => {
 
               song.priority === '1' ?
 
+              
               <Box
                                                                     
                 paddingTop={2}
@@ -107,6 +116,7 @@ const GroupOne = () => {
 
                     </Card> 
                 </Box>
+                
             :
 
                 null

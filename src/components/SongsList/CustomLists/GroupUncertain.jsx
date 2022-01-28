@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom'
 import { Box, Typography, Card, CardContent, MenuItem } from '@material-ui/core';
 import useStyles from './CustomListsStyles'
-import { Album } from '@material-ui/icons';
+import { IndeterminateCheckBoxOutlined } from '@material-ui/icons';
 
 const GroupUncertain = () => {
 
@@ -48,7 +48,7 @@ const GroupUncertain = () => {
                 onClick={handleShowGroup}
             >
             
-            <Album/>
+            <IndeterminateCheckBoxOutlined/>
             <Typography component="h5">
             &nbsp;Uncertain
             </Typography>

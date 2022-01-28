@@ -20,7 +20,7 @@ import InactiveSongDetails from '../InactiveArchive/InactiveSongDetails';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import AddSong from '../AddSong/AddSong';
-import SongsList from '../SongsList/SongsList';
+import SongsListState from '../SongsList/SongsListState';
 import SongDetails from '../SongDetails/SongDetails';
 
 import './App.css';
@@ -67,9 +67,9 @@ function App() {
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
-            path="/songsList"
+            path="/songsListState"
           >
-            <SongsList />
+            <SongsListState />
           </ProtectedRoute>
 
           <ProtectedRoute
