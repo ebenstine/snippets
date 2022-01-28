@@ -14,7 +14,7 @@ const SongsListState = () => {
     const params = useParams();
     const songs = useSelector((store) => store.songs);
 
-    const [showCustomLists, setShowCustomLists] = useState(false);
+    const [showCustomLists, setShowCustomLists] = useState(true);
 
     useEffect(() => {
         dispatch({

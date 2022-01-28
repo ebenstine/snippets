@@ -18,13 +18,19 @@ const CustomLists = () => {
                     
                     <DialogContent>    
                         <GroupOne/>
-                            
-                            <GroupTwo/>
-                                
-                                <GroupThree/>
-                                    
-                                    <GroupUncertain/>
                     </DialogContent>
+                            
+                        <DialogContent>
+                            <GroupTwo/>
+                        </DialogContent>
+
+                            <DialogContent>        
+                                <GroupThree/>
+                            </DialogContent>
+                                    
+                                <DialogContent>
+                                    <GroupUncertain/>
+                                </DialogContent>
                     
             
             </Paper>
