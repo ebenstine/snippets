@@ -109,8 +109,7 @@ function SongsList() {
 
                                             <ColorCodeLegend/>
 
-                                                <CustomLists/>
-
+                                         
                                         </div>
                                         <div>
                                             <Typography 

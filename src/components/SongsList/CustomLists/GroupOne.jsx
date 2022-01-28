@@ -60,6 +60,11 @@ const GroupOne = () => {
             
           </MenuItem>
          
+          <Box 
+            display="flex"
+            flexWrap="wrap"
+            justifyContent="space-between"
+            >
          
          {showGroupOne ?
 
@@ -128,7 +133,7 @@ const GroupOne = () => {
                 null
             
             }   
-        
+        </Box>
         </>
 
 
