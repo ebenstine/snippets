@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
       background: '#5fbdd4'
     }
 
-    }
+  }
 
 
 
@@ -26,6 +26,7 @@ const useStyles = makeStyles(() => ({
 
 
 const dropStyles = {
+  
   width: "300px",
   height: "150px",
   //background: 'linear-gradient(to right,  #233d4d 0%, #1d778d 100%)' -- this color scheme is great, saving for posterity
@@ -45,6 +46,7 @@ const Uploader = ({uploadComplete}) => {
     const [progress, setProgress] = useState(0);
     const [progressTitle, setProgressTitle] = useState('')
     const { dropZone } = useStyles();
+    
     const handleFinishedUpload = info => {
       
       console.log(info);
@@ -56,56 +58,71 @@ const Uploader = ({uploadComplete}) => {
 
 
     const onProgress = (percent, event) => {
+      
       setProgress(percent);
       setProgressTitle(event);
+
     }
 
     
     const uploadOptions = {
+
     server: 'http://localhost:5000'
+
     }
+    
     const s3Url = 'https://snippetsbucket.s3.amazonaws.com'
     
     
     
     const innerElement = (
+        
         <div
             style={{
 
-                    paddingTop: '2.5em', 
-                    paddingLeft: '1.5em', 
-                    paddingRight: '1.5em',
+              paddingTop: '2.5em', 
+              paddingLeft: '1.5em', 
+              paddingRight: '1.5em',
                     
-                    
-
-                  }}
+            }}
           
-            >
-            <Button variant="outlined" 
-                    className={dropZone}
+        >
+            <Button 
+              
+              variant="outlined" 
+              className={dropZone}
 
-                    
-            >Click to Select, or Drag and Drop File</Button>
-            </div>
+            >
+              Click to Select, or Drag and Drop File
+            </Button>
+            
+        </div>
     )
+
+
   return (
+    
     <div style={{ paddingTop: '2em'}}>
       
-    <ProgressBar progress={progress} progressTitle={progressTitle} />
+      <ProgressBar 
+        progress={progress} 
+        progressTitle={progressTitle} 
+      />
     
-    <DropzoneS3Uploader
+    
+      <DropzoneS3Uploader
 
-      onError={(error) => console.log('upload failed', error)}
-      onProgress={onProgress}
-      onFinish={handleFinishedUpload}
-      s3Url={s3Url}
-      style={dropStyles}
-      maxSize={1024 * 1024 * 100}
-      upload={uploadOptions}
-      accept="audio/*"
-      children={innerElement} 
+        onError={(error) => console.log('upload failed', error)}
+        onProgress={onProgress}
+        onFinish={handleFinishedUpload}
+        s3Url={s3Url}
+        style={dropStyles}
+        maxSize={1024 * 1024 * 100}
+        upload={uploadOptions}
+        accept="audio/*"
+        children={innerElement} 
       
-    />
+      />
     
     </div>
   );
