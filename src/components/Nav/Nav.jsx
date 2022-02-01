@@ -1,14 +1,11 @@
 import React from 'react';
+import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import LogOutButton from '../LogOutButton/LogOutButton';
-import { Drawer } from '@material-ui/core';
+
 import './Nav.css';
 import { useSelector } from 'react-redux';
-import QueueMusic from '@material-ui/icons/QueueMusic';
-import PlaylistAdd from '@material-ui/icons/PlaylistAdd';
-import Info from '@material-ui/icons/Info';
+
 import NavMenu from './NavMenu';
-import { AppBar, Toolbar } from '@material-ui/core'
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -18,7 +15,7 @@ function Nav() {
       
       <Link to="/about">
         
-        <h2 className="nav-title">▶ SNIPPETS</h2>
+        <Typography variant="overline" style={{fontSize:19}} className="nav-title">▶ SNIPPETS</Typography>
         
       </Link>
       <div>
