@@ -18,6 +18,12 @@ const useStyles = makeStyles((theme) => ({
 
         '& .MuiInput-underline:before': {
             borderBottomColor: '#2a4f64',
+    
+        },
+
+        '& .MuiInput-underline.Mui-selected': {
+            borderBottomColor: '#2a4f64',
+            
         },
 
         '& .MuiInput-underline:after': {
