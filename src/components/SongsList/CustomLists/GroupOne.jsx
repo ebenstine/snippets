@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom'
-import { Box, Dialog, Typography, Card, CardContent, MenuItem } from '@material-ui/core';
+import { Box, Dialog, Typography, Card, CardContent, MenuItem, Drawer } from '@material-ui/core';
 import useStyles from './CustomListsStyles'
 import { Album } from '@material-ui/icons';
 
@@ -35,6 +35,7 @@ const GroupOne = () => {
     },[]);
     const handleShowGroup = () => {
         setShowGroupOne(true)
+        setOpen(true)
     }
 
     const handleClick = (songId) => {
@@ -65,7 +66,9 @@ const GroupOne = () => {
             flexWrap="wrap"
             justifyContent="space-between"
             >
-         
+         <Dialog
+            open={open}
+         >
          {showGroupOne ?
 
             songs.map((song) => {
@@ -132,8 +135,10 @@ const GroupOne = () => {
 
                 <h1>What the fuck</h1>
             
-            }   
+            }  
+        </Dialog> 
         </Box>
+       
         </>
 
 
