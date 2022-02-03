@@ -130,7 +130,7 @@ const GroupOne = () => {
 
             :
 
-                null
+                <h1>What the fuck</h1>
             
             }   
         </Box>

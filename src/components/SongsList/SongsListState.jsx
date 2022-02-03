@@ -21,7 +21,7 @@ const SongsListState = () => {
             type: 'FETCH_SONGS', 
         
         });
-       
+      
     },[]);
 
     return (
@@ -34,9 +34,7 @@ const SongsListState = () => {
 
                 <SongsList/>
 
-                
-            
-    }
+            }
         
         
         </>

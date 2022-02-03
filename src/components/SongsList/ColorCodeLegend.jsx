@@ -3,9 +3,14 @@ import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
 import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
+import GroupOne from './CustomLists/GroupOne';
+import GroupTwo from './CustomLists/GroupTwo';
+import GroupThree from './CustomLists/GroupThree';
+import GroupUncertain from './CustomLists/GroupUncertain';
 
 
 import MoreHoriz from '@material-ui/icons/MoreHoriz'
@@ -96,14 +101,38 @@ const ColorCodeLegend = () => {
                 onClose={handleCancel}
 
                 >
-        <DialogTitle className={dialogTitle}>
-          
-          <Typography className={titleText}>Completion Priority</Typography>
-          
-        </DialogTitle>
+            <DialogTitle className={dialogTitle}>
+              
+              <Typography className={titleText}>Completion Priority</Typography>
+              
+            </DialogTitle>
+
+              <DialogContent>
+
+                  <GroupOne/>
+
+              </DialogContent>
+
+                <DialogContent>
+
+                    <GroupTwo/>
+
+                </DialogContent>
+
+                  <DialogContent>
+
+                      <GroupThree/>
+
+                  </DialogContent>
+                  
+                    <DialogContent>
+
+                        <GroupUncertain/>
+
+                    </DialogContent>
           
         
-        </Dialog>
+          </Dialog>
         
       </div>
     );
