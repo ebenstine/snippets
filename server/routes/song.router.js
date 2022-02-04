@@ -140,12 +140,9 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
     console.log(req.params);
     
     console.log(req.body);
-
-
     const { title, instrument_notes, performance_notes, lyrics, priority } = req.body
     
     const queryText = `
-
     UPDATE songs
     SET
         title = $1,
@@ -155,7 +152,6 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
         priority = $5
     WHERE id = $6;
     `;
-
     pool.query(queryText, [title, instrument_notes, performance_notes, lyrics, priority, req.params.id])
             .then(result => {
             console.log(result);

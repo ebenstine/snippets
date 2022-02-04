@@ -9,9 +9,7 @@ import useStyles from './AddSongStyles'
 import Uploader from '../Uploader/Uploader';
 import Backup from '@material-ui/icons/Backup';
 import Cancel from '@material-ui/icons/Cancel';
-import PriorityGroupOne from './PriorityGroupOne';
-import { Alert } from '@material-ui/lab';
-import { Add } from '@material-ui/icons';
+
 
 
 const AddSong = () => {

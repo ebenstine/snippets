@@ -1,0 +1,36 @@
+Have gone back and forth today about whether to update db and queries 
+to include a 'primary instrument' field.  One round of logical end-scheming would seem to 
+render the concept irrelevant; like the conditional rendering it would require is really only a 
+purpose unto itself.  The user can just say what the main instrument is and what the tuning is in the provided
+instrument_notes field.
+
+BUT 
+
+The reason why the primary instrument field makes sense is because it becomes necessary later on when I 
+intend to add the images of custom chords from jguitar.  
+
+The process here would involve posting a song with the form mostly as is, but with primary instrument in place of 
+instrument notes.  < This field would then be recorded as null in the database.  The submit action would trigger a dialog
+to appear which would ask the user to provide a little extra detail, the presentation of which would be determined by the primary
+instrument type.
+
+example: newSong.primary_instrument === 'guitar' ?  
+            'what tuning was used?' :
+
+         newSong.primary_instrument === 'snythesizer' ?
+            'which one, dummy?' :
+
+
+So the logic to show those images in the details page of a song would hinge on whether that song even uses the guitar; 
+it'd be silly to have a 'see chords' or whatever option on a song that is piano or synth based.  
+
+
+UNLESS
+
+Piano and synth based songs can also have images (of hand positioning, for example) viewable.  I don't see a reason why the image upload would have 
+to be differentiated to account for that in any way.  
+
+THEREFORE
+
+It would seem that no conditional rendering can be deemed necessary in songDetails which would reference the 
+'primary instrument' field.  
