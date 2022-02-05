@@ -1,3 +1,5 @@
+/// The "primary_instrument" field rabbit hole ///
+
 Have gone back and forth today about whether to update db and queries 
 to include a 'primary instrument' field.  One round of logical end-scheming would seem to 
 render the concept irrelevant; like the conditional rendering it would require is really only a 
@@ -7,7 +9,7 @@ instrument_notes field.
 BUT 
 
 The reason why the primary instrument field makes sense is because it becomes necessary later on when I 
-intend to add the images of custom chords from jguitar.  
+intend to add the images of custom chords from j/guitar.  
 
 The process here would involve posting a song with the form mostly as is, but with primary instrument in place of 
 instrument notes.  < This field would then be recorded as null in the database.  The submit action would trigger a dialog
@@ -17,8 +19,10 @@ instrument type.
 example: newSong.primary_instrument === 'guitar' ?  
             'what tuning was used?' :
 
-         newSong.primary_instrument === 'snythesizer' ?
+         newSong.primary_instrument === 'synthesizer' ?
             'which one, dummy?' :
+
+The submit action on this would then make a put request to immediately edit that null value for instrument notes above.
 
 
 So the logic to show those images in the details page of a song would hinge on whether that song even uses the guitar; 
@@ -33,4 +37,14 @@ to be differentiated to account for that in any way.
 THEREFORE
 
 It would seem that no conditional rendering can be deemed necessary in songDetails which would reference the 
-'primary instrument' field.  
+'primary instrument' field.  Making this change to the database and embarking on all the extra rendering to follow just doesn't 
+really seem to offer that much of value.  The custom tunings are a big deal but they just aren't going to be represented in any 
+more complex visual way - until the images are there, which as established above does not have to be specific to guitar-built songs - 
+than by a simple D/A/D/G/C/D or whatever.
+
+HOWEVER ... 
+
+It's gonna be beneficial for UI.  The details page will be less cluttered up with words and will have more visual appeal with a 
+a nice little icon next to the song title indicating the instrument choice.  While not necessary in any sense, it's just more web-appy 
+to do it this way.
+

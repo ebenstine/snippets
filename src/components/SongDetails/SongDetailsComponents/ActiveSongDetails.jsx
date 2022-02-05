@@ -9,6 +9,8 @@ import SongLyrics from './SongLyrics'
 import SongInstrumentNotes from './SongInstrumentNotes';
 import SongPerformanceNotes from './SongPerformanceNotes';
 import SongStatus from './SongStatus';
+import { IconButton } from '@material-ui/core';
+import { Piano } from '@mui/icons-material';
 
 
 export default function ActiveSongDetails(){
@@ -462,7 +464,9 @@ return (
                                                                 {song.title}
 
                                                             </Typography>
-
+                                                            <IconButton>
+                                                            <Piano style={{color:'#1d778d'}}/>
+                                                            </IconButton>
                                                         </div>
                                                 }
                 
