@@ -59,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: '1.25px solid #6ca0ad',
         whiteSpace: 'pre-wrap',
         color: '#2a4f64',
+        align: 'center'
         
     },
 

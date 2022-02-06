@@ -465,7 +465,8 @@ return (
 
                                                             </Typography>
                                                             <IconButton>
-                                                            <Piano style={{color:'#1d778d'}}/>
+                                                            <b><img style={{width:20, height:20, weight:500 }} src="plectrum.png"></img></b>
+                                                            <Piano style={{color:'#233d4d'}}/>
                                                             </IconButton>
                                                         </div>
                                                 }
