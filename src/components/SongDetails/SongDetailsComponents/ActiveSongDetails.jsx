@@ -35,6 +35,10 @@ const {
     lyricBlockUncertain,
     cardContent,  
     menuDots, 
+    notes,
+    notes1,
+    notes2,
+    notes3
     
 
 } = useStyles();
@@ -120,7 +124,7 @@ return (
                    
 
                                             <CardContent className={cardContent}>
-                                    
+                                                
                                                 {editTitle ?
                                         
                                                     <SongTitle/> :
@@ -165,54 +169,94 @@ return (
                                             
                                                     <SongInstrumentNotes/> :
 
-                                                        <div onDoubleClick={handleEditINotes}>
-
-                                                            <Typography 
-                                                                component = "span" 
-                                                                className={cardText}>
-
-                                                                    <span style={{color:"#1d778d"}}>▶</span>
-                                                                
-                                                                        &nbsp;
-                                                                        Instrument Notes:
-                                                                        {' '}
-                                                                        {song.instrument_notes}
-
-                                                            </Typography>
-
-                                                        </div>
-                                                }
-
-                                                <br></br>
-
-                                                {editPNotes ?
-
-                                                    <SongPerformanceNotes/> :
-                                                        <>
-                                                        <div>
-                                                        <b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="quill.png"></img></b>
-                                                            <span><Typography variant="overline" style={{paddingBottom: '1em'}}>
-                                                                performance notes
-                                                            </Typography></span>
-
-                                                        </div>
+                                                    <>
+                                                    <div>
                                                         
-                                                        <div onDoubleClick={handleEditPNotes}>
+                                                        <Typography 
+                                                            variant="caption" 
+                                                            className={notes}
+                                                        >
+                                                            Writing Notes:
 
-                                                            <Typography 
-                                                                component = "span" 
-                                                                className={cardText}>
+                                                        </Typography>
 
-                                                                <span style={{color:"#1d778d"}}>▶</span>
 
-                                                                    &nbsp;
+                                                    </div>
+                                                    
+                                                    <div onDoubleClick={handleEditINotes}>
+                                                    
+                                                        
+                                                        <b>
+                                                            <img 
+                                                                style={{width:12, height:12, paddingTop:'-.5em' }} 
+                                                                src="quill.png">
+                                                            </img>
+                                                        </b> 
+                                                            
+                                                            &nbsp;
+                                                                    
+                                                                <Typography 
+                                                                
+                                                                    component = "span" 
+                                                                    className={cardText}
+                                                                >
                                                                     
                                                                     {' '}
-                                                                    {song.performance_notes}
+                                                                    {song.instrument_notes}
+
+                                                                </Typography>
+
+                                                    </div>
+                                                </>
+                                            }
+
+                                        <br></br>
+
+                                        {editPNotes ?
+
+                                            <SongPerformanceNotes/> :
+                                            
+                                                <>
+                                                    <div>
+                                            
+                                                        <Typography 
+                                                            variant="caption" 
+                                                            className={notes}
+                                                        >
+                                                         
+                                                         Production Ideas:
+                                                    
+                                                        </Typography>
+
+
+                                                    </div>
+
+
+                                                    <div onDoubleClick={handleEditPNotes}>
+
+                                                    
+                                                        <b>
+                                                            <img 
+                                                                style={{width:12, height:12}} 
+                                                                src="sound-faders.png">
+                                                            </img>
+                                                        </b> 
+                                                        
+                                                        &nbsp;
+                                                            
+                                                            <Typography
+
+                                                                component = "span" 
+                                                                className={cardText}
+                                                            >
+                                                            
+                                                                {' '}
+                                                                {song.performance_notes}
 
                                                             </Typography>
-                                                        </div>
-                                                        </>
+                                                    </div>
+                                                </>
+                                                        
                                                 }
                                         
 
@@ -286,46 +330,94 @@ return (
                                             
                                                     <SongInstrumentNotes/> :
 
-                                                        <div onDoubleClick={handleEditINotes}>
+                                                    <>
+                                                    <div>
+                                                        
+                                                        <Typography 
+                                                            variant="caption" 
+                                                            className={notes}
+                                                        >
+                                                            Writing Notes:
 
-                                                            <Typography 
-                                                                component = "span" 
-                                                                className={cardText}>
+                                                        </Typography>
 
-                                                                    <span style={{color:"#1d778d"}}>▶</span>
+
+                                                    </div>
+                                                    
+                                                    <div onDoubleClick={handleEditINotes}>
+                                                    
+                                                        
+                                                        <b>
+                                                            <img 
+                                                                style={{width:12, height:12, paddingTop:'-.5em' }} 
+                                                                src="quill.png">
+                                                            </img>
+                                                        </b> 
+                                                            
+                                                            &nbsp;
+                                                                    
+                                                                <Typography 
                                                                 
-                                                                        &nbsp;
-                                                                        Instrument Notes:
-                                                                        {' '}
-                                                                        {song.instrument_notes}
-
-                                                            </Typography>
-
-                                                        </div>
-                                                }
-
-                                                <br></br>
-
-                                                {editPNotes ?
-
-                                                    <SongPerformanceNotes/> :
-
-                                                        <div onDoubleClick={handleEditPNotes}>
-
-                                                            <Typography 
-                                                                component = "span" 
-                                                                className={cardText}>
-
-                                                                <span style={{color:"#1d778d"}}>▶</span>
-
-                                                                    &nbsp;
-                                                                    Performance Notes:
+                                                                    component = "span" 
+                                                                    className={cardText}
+                                                                >
+                                                                    
                                                                     {' '}
-                                                                    {song.performance_notes}
+                                                                    {song.instrument_notes}
+
+                                                                </Typography>
+
+                                                    </div>
+                                                </>
+                                            }
+
+                                        <br></br>
+
+                                        {editPNotes ?
+
+                                            <SongPerformanceNotes/> :
+                                            
+                                                <>
+                                                    <div>
+                                            
+                                                        <Typography 
+                                                            variant="caption" 
+                                                            className={notes}
+                                                        >
+                                                         
+                                                         Production Ideas:
+                                                    
+                                                        </Typography>
+
+
+                                                    </div>
+
+
+                                                    <div onDoubleClick={handleEditPNotes}>
+
+                                                    
+                                                        <b>
+                                                            <img 
+                                                                style={{width:12, height:12}} 
+                                                                src="sound-faders.png">
+                                                            </img>
+                                                        </b> 
+                                                        
+                                                        &nbsp;
+                                                            
+                                                            <Typography
+
+                                                                component = "span" 
+                                                                className={cardText}
+                                                            >
+                                                            
+                                                                {' '}
+                                                                {song.performance_notes}
 
                                                             </Typography>
-                                                        </div>
-                                                }
+                                                    </div>
+                                                </>
+                                            }
                                         
 
                                                 <br></br>
@@ -399,47 +491,94 @@ return (
                                                     <SongInstrumentNotes/> :
                                                         
 
-                                                        <div onDoubleClick={handleEditINotes}>
-
-                                                            <Typography 
-                                                                component = "span" 
-                                                                className={cardText}>
-
-                                                                    <span style={{color:"#1d778d"}}>▶</span>
-                                                                
-                                                                        &nbsp;
-                                                                        Instrument Notes:
-                                                                        {' '}
-                                                                        {song.instrument_notes}
-
-                                                            </Typography>
-
-                                                        </div>
+                                                    <>
+                                                    <div>
                                                         
-                                                }
+                                                        <Typography 
+                                                            variant="caption" 
+                                                            className={notes}
+                                                        >
+                                                            Writing Notes:
 
-                                                <br></br>
+                                                        </Typography>
 
-                                                {editPNotes ?
 
-                                                    <SongPerformanceNotes/> :
-
-                                                        <div onDoubleClick={handleEditPNotes}>
-
-                                                            <Typography 
-                                                                component = "span" 
-                                                                className={cardText}>
-
-                                                                <span style={{color:"#1d778d"}}>▶</span>
-
-                                                                    &nbsp;
-                                                                    Performance Notes:
+                                                    </div>
+                                                    
+                                                    <div onDoubleClick={handleEditINotes}>
+                                                    
+                                                        
+                                                        <b>
+                                                            <img 
+                                                                style={{width:12, height:12, paddingTop:'-.5em' }} 
+                                                                src="quill.png">
+                                                            </img>
+                                                        </b> 
+                                                            
+                                                            &nbsp;
+                                                                    
+                                                                <Typography 
+                                                                
+                                                                    component = "span" 
+                                                                    className={cardText}
+                                                                >
+                                                                    
                                                                     {' '}
-                                                                    {song.performance_notes}
+                                                                    {song.instrument_notes}
+
+                                                                </Typography>
+
+                                                    </div>
+                                                </>
+                                            }
+
+                                        <br></br>
+
+                                        {editPNotes ?
+
+                                            <SongPerformanceNotes/> :
+                                            
+                                                <>
+                                                    <div>
+                                            
+                                                        <Typography 
+                                                            variant="caption" 
+                                                            className={notes}
+                                                        >
+                                                         
+                                                         Production Ideas:
+                                                    
+                                                        </Typography>
+
+
+                                                    </div>
+
+
+                                                    <div onDoubleClick={handleEditPNotes}>
+
+                                                    
+                                                        <b>
+                                                            <img 
+                                                                style={{width:12, height:12}} 
+                                                                src="sound-faders.png">
+                                                            </img>
+                                                        </b> 
+                                                        
+                                                        &nbsp;
+                                                            
+                                                            <Typography
+
+                                                                component = "span" 
+                                                                className={cardText}
+                                                            >
+                                                            
+                                                                {' '}
+                                                                {song.performance_notes}
 
                                                             </Typography>
-                                                        </div>
-                                                }
+                                                    </div>
+                                                </>
+                                            }
                                         
 
                                                 <br></br>
@@ -479,7 +618,7 @@ return (
 
                                                             </Typography>
                                                             <IconButton>
-                                                            <b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>
+                                                            {/*<b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>*/}
                                                             <Piano style={{color:'#1d778d', paddingBottom: '.1em'}}/>
                                                             </IconButton>
                                                         </div>
@@ -511,63 +650,103 @@ return (
                                                 <br></br>
                 
                                                 {editINotes ?
-                                    
+
                                                     <SongInstrumentNotes/> :
-                                                    <>
-                                                        <div>
+                                                        
+                                                        <>
+                                                            <div>
+                                                                
+                                                                <Typography 
+                                                                    variant="caption" 
+                                                                    className={notes}
+                                                                >
+                                                                    Writing Notes:
 
-                                                            <Typography variant="overline">
-
-                                                                Notes
-                                                            </Typography>
+                                                                </Typography>
 
 
-                                                        </div>
-
-                                                        <div onDoubleClick={handleEditINotes}>
-
-                                                            <Typography 
-                                                                component = "span" 
-                                                                className={cardText}>
-
-                                                                    <b><img style={{width:12, height:12, paddingBottom:'.05em' }} src="quill.png"></img></b> &nbsp;
+                                                            </div>
+                                                            
+                                                            <div onDoubleClick={handleEditINotes}>
+                                                            
+                                                                
+                                                                <b>
+                                                                    <img 
+                                                                        style={{width:12, height:12, paddingTop:'-.5em' }} 
+                                                                        src="quill.png">
+                                                                    </img>
+                                                                </b> 
                                                                     
-                                                                    {' '}
-                                                                    {song.instrument_notes}
+                                                                    &nbsp;
+                                                                            
+                                                                        <Typography 
+                                                                        
+                                                                            component = "span" 
+                                                                            className={cardText}
+                                                                        >
+                                                                            
+                                                                            {' '}
+                                                                            {song.instrument_notes}
 
-                                                            </Typography>
+                                                                        </Typography>
 
-                                                        </div>
-                                                    </>
-                                                }
+                                                            </div>
+                                                        </>
+                                                    }
 
                                                 <br></br>
 
                                                 {editPNotes ?
 
                                                     <SongPerformanceNotes/> :
+                                                    
+                                                        <>
+                                                            <div>
+                                                    
+                                                                <Typography 
+                                                                    variant="caption" 
+                                                                    className={notes}
+                                                                >
+                                                                 
+                                                                 Production Ideas:
+                                                            
+                                                                </Typography>
 
-                                                        <div onDoubleClick={handleEditPNotes}>
 
-                                                            <Typography 
-                                                                component = "span" 
+                                                            </div>
+
+
+                                                            <div onDoubleClick={handleEditPNotes}>
+
+                                                            
+                                                                <b>
+                                                                    <img 
+                                                                        style={{width:12, height:12}} 
+                                                                        src="sound-faders.png">
+                                                                    </img>
+                                                                </b> 
                                                                 
-                                                                className={cardText}>
+                                                                &nbsp;
+                                                                    
+                                                                    <Typography
 
-                                                                    <b><img style={{width:12, height:12, paddingBottom:'.05em' }} src="sound-faders.png"></img></b> &nbsp;                                        
-                                                                   
-                                                                    {' '}
-                                                                    {song.performance_notes}
+                                                                        component = "span" 
+                                                                        className={cardText}
+                                                                    >
+                                                                    
+                                                                        {' '}
+                                                                        {song.performance_notes}
 
-                                                            </Typography>
-                                                        </div>
-                                                }
+                                                                    </Typography>
+                                                            </div>
+                                                        </>
+                                                    }
                                 
 
                                                 <br></br>
-             
+                                                
                                             </CardContent>
-            
+                                            
                                         </Card> 
                                     }   
                                     

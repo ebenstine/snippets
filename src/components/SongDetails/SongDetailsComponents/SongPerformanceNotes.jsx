@@ -55,7 +55,7 @@ const useStyles = makeStyles(() => ({
         fontSize: 9.5,
         borderBottom: '1.25px solid #6ca0ad',
         whiteSpace: 'pre-wrap',
-        color: '#2a4f64',
+        color: '#233d4d',
         '&:hover': {
             borderBottom: '1.5px solid #1d778d',
             cursor: 'pointer'
@@ -139,13 +139,24 @@ function SongPerformanceNotes() {
                 :
                 
                 <div onDoubleClick={handleEditable}>
+
+
+                        <div>
+                        <Typography variant="caption" style={{color:'#233d4d'}}>
+                                Production Ideas:
+                        </Typography>
+
+
+                        </div>
+                    <b><img style={{width:12, height:12}} src="sound-faders.png"></img></b> &nbsp;
+                    
                     <Typography 
                          
                         component="span" 
                         className={notes}>
                     
-                    <span style={{color:"#1d778d"}}>▶</span>
-                    &nbsp;Performance Notes: {`${reviseDetails.performance_notes}`}
+                    
+                    {`${reviseDetails.performance_notes}`}
 
                     </Typography>
                 </div>

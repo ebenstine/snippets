@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { SignalCellularConnectedNoInternet1BarSharp } from '@mui/icons-material';
 
 const useStyles = makeStyles(() => ({
     cardContent: {
@@ -282,6 +283,26 @@ const useStyles = makeStyles(() => ({
         paddingBottom: '.5em'
         
     }, 
+
+    notes: {
+        color: '#233d4d',
+        
+
+    },
+
+    notes1: {
+
+    },
+
+    notes2: {
+
+    }, 
+
+    notes3:{
+
+    }
+
+
 
     
     

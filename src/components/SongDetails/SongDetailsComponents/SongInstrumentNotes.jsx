@@ -142,14 +142,22 @@ function SongInstrumentNotes() {
                 
                 <div onDoubleClick={handleEditable}>
 
+                    <div>
+                    <Typography variant="caption" style={{color:'#233d4d'}}>
+                            Writing Notes:
+                    </Typography>
+
+
+                </div>
+                    <b><img style={{width:12, height:12, paddingTop:'-.5em' }} src="quill.png"></img></b> &nbsp;
                     <Typography 
                         
                         component="span" 
                         className={notes}>
 
-                        <span style={{color:"#1d778d"}}>▶</span>
                         
-                        &nbsp;Instrument Notes: {`${reviseDetails.instrument_notes}`}
+                        
+                        {`${reviseDetails.instrument_notes}`}
 
                     </Typography>
                 </div>
