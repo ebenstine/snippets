@@ -137,6 +137,12 @@ return (
                                                                 {song.title}
 
                                                             </Typography>
+                                                            
+                                                            <IconButton>
+                                                            
+                                                            {/*<b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>*/}
+                                                            <Piano style={{color:'#1d778d', paddingBottom: '.1em'}}/>
+                                                            </IconButton>
 
                                                         </div>
                                                 }
@@ -300,6 +306,12 @@ return (
 
                                                             </Typography>
 
+                                                            <IconButton>
+                                                            
+                                                            {/*<b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>*/}
+                                                            <Piano style={{color:'#1d778d', paddingBottom: '.1em'}}/>
+                                                            </IconButton>
+
                                                         </div>
                                                 }
                         
@@ -449,6 +461,7 @@ return (
                                                 {editTitle ?
                                         
                                                     <SongTitle/> :
+                                                    
                                         
                                                         <div onDoubleClick={handleEditTitle}>
                             
@@ -458,6 +471,11 @@ return (
                                                                 {song.title}
 
                                                             </Typography>
+                                                            <IconButton>
+                                                            
+                                                            {/*<b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>*/}
+                                                            <Piano style={{color:'#1d778d', paddingBottom: '.1em'}}/>
+                                                            </IconButton>
 
                                                         </div>
                                                 }
@@ -618,6 +636,7 @@ return (
 
                                                             </Typography>
                                                             <IconButton>
+                                                            
                                                             {/*<b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>*/}
                                                             <Piano style={{color:'#1d778d', paddingBottom: '.1em'}}/>
                                                             </IconButton>
