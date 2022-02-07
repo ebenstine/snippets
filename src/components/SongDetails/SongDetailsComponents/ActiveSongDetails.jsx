@@ -9,8 +9,11 @@ import SongLyrics from './SongLyrics'
 import SongInstrumentNotes from './SongInstrumentNotes';
 import SongPerformanceNotes from './SongPerformanceNotes';
 import SongStatus from './SongStatus';
-import { IconButton } from '@material-ui/core';
+import { IconButton, Icon } from '@material-ui/core';
 import { Piano } from '@mui/icons-material';
+import { Notes } from '@mui/icons-material';
+
+
 
 
 export default function ActiveSongDetails(){
@@ -185,7 +188,15 @@ return (
                                                 {editPNotes ?
 
                                                     <SongPerformanceNotes/> :
+                                                        <>
+                                                        <div>
+                                                        <b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="quill.png"></img></b>
+                                                            <span><Typography variant="overline" style={{paddingBottom: '1em'}}>
+                                                                performance notes
+                                                            </Typography></span>
 
+                                                        </div>
+                                                        
                                                         <div onDoubleClick={handleEditPNotes}>
 
                                                             <Typography 
@@ -195,12 +206,13 @@ return (
                                                                 <span style={{color:"#1d778d"}}>▶</span>
 
                                                                     &nbsp;
-                                                                    Performance Notes:
+                                                                    
                                                                     {' '}
                                                                     {song.performance_notes}
 
                                                             </Typography>
                                                         </div>
+                                                        </>
                                                 }
                                         
 
@@ -385,6 +397,7 @@ return (
                                                 {editINotes ?
                                             
                                                     <SongInstrumentNotes/> :
+                                                        
 
                                                         <div onDoubleClick={handleEditINotes}>
 
@@ -402,6 +415,7 @@ return (
                                                             </Typography>
 
                                                         </div>
+                                                        
                                                 }
 
                                                 <br></br>
@@ -465,8 +479,8 @@ return (
 
                                                             </Typography>
                                                             <IconButton>
-                                                            <b><img style={{width:20, height:20, weight:500 }} src="plectrum.png"></img></b>
-                                                            <Piano style={{color:'#233d4d'}}/>
+                                                            <b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>
+                                                            <Piano style={{color:'#1d778d', paddingBottom: '.1em'}}/>
                                                             </IconButton>
                                                         </div>
                                                 }
@@ -499,6 +513,16 @@ return (
                                                 {editINotes ?
                                     
                                                     <SongInstrumentNotes/> :
+                                                    <>
+                                                        <div>
+
+                                                            <Typography variant="overline">
+
+                                                                Notes
+                                                            </Typography>
+
+
+                                                        </div>
 
                                                         <div onDoubleClick={handleEditINotes}>
 
@@ -506,14 +530,15 @@ return (
                                                                 component = "span" 
                                                                 className={cardText}>
 
-                                                                    <span style={{color:"#1d778d"}}>▶</span>&nbsp;
-                                                                    Instrument Notes:
+                                                                    <b><img style={{width:12, height:12, paddingBottom:'.05em' }} src="quill.png"></img></b> &nbsp;
+                                                                    
                                                                     {' '}
                                                                     {song.instrument_notes}
 
                                                             </Typography>
 
                                                         </div>
+                                                    </>
                                                 }
 
                                                 <br></br>
@@ -526,10 +551,11 @@ return (
 
                                                             <Typography 
                                                                 component = "span" 
+                                                                
                                                                 className={cardText}>
 
-                                                                    <span style={{color:"#1d778d"}}>▶</span>&nbsp;
-                                                                    Performance Notes:
+                                                                    <b><img style={{width:12, height:12, paddingBottom:'.05em' }} src="sound-faders.png"></img></b> &nbsp;                                        
+                                                                   
                                                                     {' '}
                                                                     {song.performance_notes}
 
