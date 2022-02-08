@@ -218,7 +218,7 @@ const AddSong = () => {
                         name="primary_instrument"
                         onChange={enterNewSong('primary_instrument')}
                         className=
-                          {newSong.primaryInstrument === 'guitar' ?
+                          {newSong.primary_instrument ?
                             primaryInstrument :
                               primaryInstrumentBlank 
                             
@@ -261,14 +261,14 @@ const AddSong = () => {
                         </Select> 
 
                   </FormControl>
-              
+                </div>
                 
               
               
                 
           
                   
-
+                <div>
                   <FormControl sx={{ m: 1, minWidth: 120 }}>
                   
                     <InputLabel 
