@@ -149,8 +149,6 @@ const AddSong = () => {
               
                 <br></br>
               
-              {newSong.is_active === true ? 
-
                 <div>
 
                   <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -167,7 +165,13 @@ const AddSong = () => {
                         label="is_active"
                         name="is_active"
                         onChange={enterNewSong('is_active')}
-                        className={statusActive}
+                        className=
+                          {newSong.is_active === true ? 
+                            statusActive :
+                              newSong.is_active === false ?
+                                statusInactive :
+                                  statusBlank
+                          }
                         value={newSong.is_active}
     
                       >
@@ -196,108 +200,7 @@ const AddSong = () => {
               
                 </div>
               
-              :
-
-              newSong.is_active === false ?
-
-              <div>
-
-                <FormControl sx={{ m: 1, minWidth: 120 }}>
-      
-                  <InputLabel 
-                    id="demo-controlled-open-select-label">
-                    Status
-                  </InputLabel>
-
-                    <Select
-
-                      labelId="demo-controlled-open-select-label"
-                      id="demo-controlled-open-select"
-                      label="is_active"
-                      name="is_active"
-                      onChange={enterNewSong('is_active')}
-                      className={statusInactive}
-                      value={newSong.is_active}
-
-                    >
-  
-                      <DialogTitle 
-                        defaultValue={'  '}
-                        className={selectTitle}>
-                        &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
-                      </DialogTitle>  
-    
-                        <MenuItem 
-                          value={true} 
-                          className={setActive}>
-                          &nbsp;&nbsp;Active
-                        </MenuItem>
-    
-                        <MenuItem 
-                          value={false} 
-                          className={setInactive}>
-                          Inactive
-                        </MenuItem>
-  
-                    </Select> 
-
-                </FormControl>
-          
-              </div>
-
-            :
-
-              <div>
-
-                <FormControl sx={{ m: 1, minWidth: 120 }}>
-  
-                  <InputLabel 
-                    id="demo-controlled-open-select-label">
-                    Status
-                  </InputLabel>
-
-                    <Select
-
-                      labelId="demo-controlled-open-select-label"
-                      id="demo-controlled-open-select"
-                      label="is_active"
-                      name="is_active"
-                      onChange={enterNewSong('is_active')}
-                      className={statusBlank}
-                      value={newSong.is_active}
-
-                    >
-                    
-                    
-                      <DialogTitle 
-                        defaultValue={'  '}
-                        className={selectTitle}>
-                        &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
-                      </DialogTitle>  
-
-                        <MenuItem 
-                          value={true} 
-                          className={setActive}>
-                          &nbsp;&nbsp;Active
-                        </MenuItem>
-
-                        <MenuItem 
-                          value={false} 
-                          className={setInactive}>
-                          Inactive
-                        </MenuItem>
-                     
-                    </Select> 
-
-                </FormControl>
-      
-              </div>
-
-            }
-
-                
               
-
                 <div>
           
                   
