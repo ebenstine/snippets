@@ -28,6 +28,7 @@ const AddSong = () => {
           setActive,
           setInactive,
           selectTitle,
+          selectStatus,
           blankPriority,
           priorityUncertain, 
           priority1,
@@ -37,6 +38,10 @@ const AddSong = () => {
           setPriority1,
           setPriority2,
           setPriority3,
+          primaryInstrument,
+          primaryInstrumentBlank,
+          selectInstrument,
+          setInstrument
           
         
         } 
@@ -178,14 +183,14 @@ const AddSong = () => {
                         
                         <DialogTitle 
                           defaultValue={'  '}
-                          className={selectTitle}>
-                          &nbsp;&nbsp;Set Working Status&nbsp;&nbsp;
+                          className={selectStatus}>
+                          &nbsp;&nbsp;Working Status&nbsp;&nbsp;
                         </DialogTitle>  
         
                           <MenuItem 
                             value={true} 
                             className={setActive}>
-                            &nbsp;&nbsp;Active
+                            Active
                           </MenuItem>
         
                           <MenuItem 
@@ -197,11 +202,70 @@ const AddSong = () => {
                         </Select> 
 
                   </FormControl>
+
+                  <FormControl sx={{ m: 1, minWidth: 120 }}>
+          
+                    <InputLabel 
+                      id="demo-controlled-open-select-label">
+                      Instrument
+                    </InputLabel>
+  
+                      <Select
+    
+                        labelId="demo-controlled-open-select-label"
+                        id="demo-controlled-open-select"
+                        label="primary_instrument"
+                        name="primary_instrument"
+                        onChange={enterNewSong('primary_instrument')}
+                        className=
+                          {newSong.primaryInstrument === 'guitar' ?
+                            primaryInstrument :
+                              primaryInstrumentBlank 
+                            
+
+                          }
+                        value={newSong.primary_instrument}
+    
+                      >
+                        
+                        <DialogTitle 
+                          defaultValue={'  '}
+                          className={selectInstrument}>
+                          &nbsp;&nbsp;Primary Instrument&nbsp;&nbsp;
+                        </DialogTitle>  
+        
+                          <MenuItem 
+                            value={'guitar'} 
+                            className={setInstrument}>
+                            Guitar
+                          </MenuItem>
+        
+                          <MenuItem 
+                            value={'keyboard'} 
+                            className={setInstrument}>
+                            Keyboard
+                          </MenuItem>
+
+                          <MenuItem 
+                            value={'laptop'} 
+                            className={setInstrument}>
+                            Laptop
+                          </MenuItem>
+
+                          <MenuItem 
+                            value={'other'} 
+                            className={setInstrument}>
+                            Other
+                          </MenuItem>
+                          
+                        </Select> 
+
+                  </FormControl>
               
-                </div>
+                
               
               
-                <div>
+                
           
                   
 
@@ -246,31 +310,31 @@ const AddSong = () => {
                         <DialogTitle 
                           defaultValue={'  '}
                           className={selectTitle} >
-                          &nbsp;&nbsp;Assign Completion Priority&nbsp;&nbsp;
+                          &nbsp;&nbsp;Completion Priority&nbsp;&nbsp;
                         </DialogTitle>
                         
                           <MenuItem 
                             value={'1'} 
                             className={setPriority1}>
-                            &nbsp;&nbsp;Group One&nbsp;&nbsp;
+                            Group One
                           </MenuItem>
                   
                           <MenuItem 
                             value={'2'} 
                             className={setPriority2}>
-                            &nbsp;&nbsp;Group Two&nbsp;&nbsp;
+                            Group Two
                           </MenuItem>
                   
                           <MenuItem 
                             value={'3'} 
                             className={setPriority3}>
-                            &nbsp;Group Three
+                            Group Three
                           </MenuItem>
                   
                           <MenuItem 
                             value={'Uncertain'} 
                             className={setPriorityUncertain}>
-                            &nbsp;&nbsp;&nbsp;Uncertain
+                            Uncertain
                             </MenuItem>
           
                       </Select> 

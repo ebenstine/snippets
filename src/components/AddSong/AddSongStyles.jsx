@@ -151,6 +151,7 @@ const useStyles = makeStyles((theme) => ({
         background: "#c7c7c7",
         color: '#2a4f64',
         
+        
     },
 
     statusBlank: {
@@ -173,7 +174,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2.7em'
+        paddingLeft: '2.3em'
 
     },
 
@@ -188,7 +189,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2.7em'
+        paddingLeft: '2em'
 
     },
 
@@ -278,7 +279,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '3.4em'
+        paddingLeft: '2.5em'
         
     },
 
@@ -294,7 +295,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '3.4em'
+        paddingLeft: '2.5em'
         
     },
 
@@ -310,7 +311,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '3.4em'
+        paddingLeft: '2.5em'
         
     },
 
@@ -327,18 +328,69 @@ const useStyles = makeStyles((theme) => ({
         
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '3.4em'
+        paddingLeft: '2em'
         
     },
 
     selectTitle: {
         color: "#2a4f64",
-        background: "transparent"
+        background: "transparent",
+        paddingLeft: '2em'
+    },
+
+    selectStatus: {
+
+        color: "#2a4f64",
+        background: "transparent",
+        paddingLeft: '2em'
+
     },
 
     dialog: {
         background: '#fff099',
         border: '1px solid #3b95ac' 
+    },
+
+    primaryInstrument: {
+
+        alignItems: 'center',
+        //margin: '1ch',
+        borderRadius: '2px',
+        background: "#82bdcc",
+        color: '#2a4f64',
+
+    },
+
+    primaryInstrumentBlank: {
+
+        alignItems: 'center',
+        //margin: '1ch',
+        borderRadius: '2px',
+        background: "#EBEBEB",
+        color: '#2a4f64',
+
+    },
+
+    selectInstrument: {
+
+        
+    },
+
+    setInstrument: {
+
+        color: "#2a4f64",
+        background: "rgb(230, 252, 255)",
+        '&:hover': {
+            background:'#82bdcc',
+            },
+        margin: theme.spacing(1),
+        marginLeft: '3em',
+        marginRight: '3em',
+        border: '1px solid #3b95ac',
+        borderRadius: '3px',
+        paddingLeft: '2.3em'
+
+
     }
 
 }));
