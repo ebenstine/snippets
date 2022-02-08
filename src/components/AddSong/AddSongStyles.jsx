@@ -373,6 +373,8 @@ const useStyles = makeStyles((theme) => ({
 
     selectInstrument: {
 
+        color: '#2a4f64'
+
         
     },
 

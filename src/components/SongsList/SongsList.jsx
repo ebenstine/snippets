@@ -65,11 +65,12 @@ function SongsList() {
 
     //get db info on page load
     useEffect(() => {
+        handleState();
         dispatch({
             type: 'FETCH_SONGS', 
         
         });
-        handleState();
+        
     },[]);
     //push forward to details page on click
 

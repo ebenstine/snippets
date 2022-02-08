@@ -14,7 +14,7 @@ import React, { useEffect, useState } from 'react';
 import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
-import { Box, Paper, Typography, Card, CardContent } from '@material-ui/core';
+import { Box, Paper, Typography, Card, CardContent, Button } from '@material-ui/core';
 import useStyles from './InactiveArchiveStyles';
 import Feedback from '@material-ui/icons/Feedback';
 
@@ -40,7 +40,8 @@ function InactiveArchive() {
             messageDiv,
             feedback,
             heading,
-            playIcon
+            playIcon, 
+            hackButton
             
         } = useStyles();
 
@@ -74,6 +75,10 @@ function InactiveArchive() {
 
     const handleClick = (songId) => {
         history.push(`/InactiveSongDetails/${songId}`)
+    }
+
+    const goBack = () => {
+        history.push(`/InactiveArchive`)
     }
     
 
@@ -228,6 +233,13 @@ function InactiveArchive() {
                                     </div>
                             
                             </Card>
+
+                            <Button 
+                                onClick={goBack}
+                                className={hackButton}
+                                variant="outlined"
+                                >See Archive
+                            </Button>
 
                         </div>
 
