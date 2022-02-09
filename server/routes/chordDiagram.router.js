@@ -30,13 +30,13 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     const chord_diagram= req.body;
   
     let queryText = `INSERT INTO "chord_diagrams" (
-                          song_id, imagePath 
+                          song_id, image_path 
                        )
                        
                        VALUES ($1, $2);
                        
                        `;
-    pool.query(queryText, [chord_diagram.id, chord_diagram.imagePath])
+    pool.query(queryText, [chord_diagram.id, chord_diagram.image_path])
    
   
       .then(result => {

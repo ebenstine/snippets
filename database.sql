@@ -16,8 +16,10 @@ CREATE TABLE "songs" (
 	"user_id" INT NOT NULL REFERENCES "user",
 	"date" DATE DEFAULT CURRENT_DATE,
 	"title" TEXT NOT NULL,
-    "instrument_notes" TEXT DEFAULT 'no notes added',
+    "instrument_specs" TEXT DEFAULT 'no notes added',
 	"performance_notes" TEXT DEFAULT 'no notes added',
+	"songwriting_notes" TEXT DEFAULT 'no notes added',
+	"production_ideas" TEXT DEFAULT 'no notes added',
     "priority" VARCHAR (10),
 	"lyrics" TEXT DEFAULT 'no lyrics added',
 	"is_active" BOOLEAN DEFAULT true,
@@ -31,9 +33,10 @@ CREATE TABLE "recordings" (
 	"src" TEXT 
 );
 
-CREATE TABLE "chord diagrams" (
+CREATE TABLE "chord_diagrams" (
    "id" SERIAL PRIMARY KEY,
-   "imageUrl" VARCHAR(1024) NOT NULL,
-   "song_id" INT REFERENCES "songs"
+   "song_id" INT NOT NULL REFERENCES "songs",
+   "image_path" VARCHAR(1024) NOT NULL
+   
 );
 
