@@ -11,6 +11,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const songRouter = require('./routes/song.router');
 const recordingRouter = require('./routes/recording.router');
+const chordDiagramRouter = require('./routes/chordDiagram.router');
 const s3Uploader = require('react-s3-uploader/s3router');
 
 // Body parser middleware
@@ -28,6 +29,8 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/song', songRouter);
 app.use('/api/recording', recordingRouter);
+app.use('/api/chord_diagram', chordDiagramRouter);
+
 app.use('/s3', s3Uploader({
   bucket: "snippetsbucket", // required
   region: 'us-east-2',      // optional

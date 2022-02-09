@@ -9,8 +9,10 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     `SELECT song_id, 
             title, 
             date, 
-            instrument_notes, 
-            performance_notes, 
+            instrument_specs, 
+            performance_notes,
+            songwriting_notes,
+            production_ideas, 
             priority, 
             lyrics, 
             is_active, 
@@ -19,12 +21,16 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         FROM songs
         JOIN "recordings" 
         ON "recordings".song_id = "songs".id
+        JOIN "chord_diagrams"
+        ON "chord_diagrams".song_id = "songs".id
         WHERE user_id = $1
         GROUP BY song_id, 
                  title, 
                  date, 
-                 instrument_notes, 
-                 performance_notes, 
+                 instrument_specs, 
+                 performance_notes,
+                 songwriting_notes,
+                 production_ideas,  
                  priority, 
                  lyrics, 
                  is_active, 
@@ -69,8 +75,10 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
     const client = await pool.connect();
     const userId = req.user.id;
     const { title, 
-            instrument_notes, 
+            instrument_specs, 
             performance_notes, 
+            songwriting_notes,
+            production_ideas,
             priority, 
             lyrics, 
             is_active, 
@@ -85,14 +93,16 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
                             INSERT INTO "songs" (
                             "user_id", 
                             "title", 
-                            "instrument_notes", 
-                            "performance_notes", 
+                            "instrument_specs", 
+                            "performance_notes",
+                            "songwriting_notes",
+                            "production_ideas", 
                             "priority", 
                             "lyrics", 
                             "is_active", 
                             "preview_audio"
                             )
-                            VALUES($1, $2, $3, $4, $5, $6, $7, $8)
+                            VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
                             RETURNING "id"`;
 
         const result = await client.query
@@ -102,8 +112,10 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
             firstQuery, 
                 [userId, 
                     title, 
-                    instrument_notes, 
+                    instrument_specs, 
                     performance_notes, 
+                    songwriting_notes,
+                    production_ideas,
                     priority, 
                     lyrics, 
                     is_active, 

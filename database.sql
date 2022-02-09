@@ -30,3 +30,10 @@ CREATE TABLE "recordings" (
     "description" TEXT DEFAULT 'no description added',
 	"src" TEXT 
 );
+
+CREATE TABLE "chord diagrams" (
+   "id" SERIAL PRIMARY KEY,
+   "imageUrl" VARCHAR(1024) NOT NULL,
+   "song_id" INT REFERENCES "songs"
+);
+
