@@ -6,8 +6,10 @@ import useStyles from './SongDetailsStyles';
 import SongDetailsMenu from './SongDetailsMenu';
 import SongTitle from './SongTitle';
 import SongLyrics from './SongLyrics'
-import SongInstrumentNotes from './SongInstrumentNotes';
-import SongPerformanceNotes from './SongPerformanceNotes';
+//import SongInstrumentNotes from './SongInstrumentNotes';
+//import SongPerformanceNotes from './SongPerformanceNotes';
+import SongWritingNotes from './SongwritingNotes';
+import SongProductionIdeas from './SongProductionIdeas';
 import SongStatus from './SongStatus';
 import { IconButton, Icon } from '@material-ui/core';
 import { Piano } from '@mui/icons-material';
@@ -173,7 +175,7 @@ return (
                         
                                                 {editINotes ?
                                             
-                                                    <SongInstrumentNotes/> :
+                                                    <SongWritingNotes/> :
 
                                                     <>
                                                     <div>
@@ -208,7 +210,7 @@ return (
                                                                 >
                                                                     
                                                                     {' '}
-                                                                    {song.instrument_notes}
+                                                                    {song.songwriting_notes}
 
                                                                 </Typography>
 
@@ -220,7 +222,7 @@ return (
 
                                         {editPNotes ?
 
-                                            <SongPerformanceNotes/> :
+                                            <SongProductionIdeas/> :
                                             
                                                 <>
                                                     <div>
@@ -340,7 +342,7 @@ return (
                         
                                                 {editINotes ?
                                             
-                                                    <SongInstrumentNotes/> :
+                                                    <SongWritingNotes/> :
 
                                                     <>
                                                     <div>
@@ -375,7 +377,7 @@ return (
                                                                 >
                                                                     
                                                                     {' '}
-                                                                    {song.instrument_notes}
+                                                                    {song.songwriting_notes}
 
                                                                 </Typography>
 
@@ -387,7 +389,7 @@ return (
 
                                         {editPNotes ?
 
-                                            <SongPerformanceNotes/> :
+                                            <SongProductionIdeas/> :
                                             
                                                 <>
                                                     <div>
@@ -506,7 +508,7 @@ return (
                         
                                                 {editINotes ?
                                             
-                                                    <SongInstrumentNotes/> :
+                                                    <SongWritingNotes/> :
                                                         
 
                                                     <>
@@ -542,7 +544,7 @@ return (
                                                                 >
                                                                     
                                                                     {' '}
-                                                                    {song.instrument_notes}
+                                                                    {song.songwriting_notes}
 
                                                                 </Typography>
 
@@ -554,7 +556,7 @@ return (
 
                                         {editPNotes ?
 
-                                            <SongPerformanceNotes/> :
+                                            <SongProductionIdeas/> :
                                             
                                                 <>
                                                     <div>
@@ -669,7 +671,7 @@ return (
                 
                                                 {editINotes ?
 
-                                                    <SongInstrumentNotes/> :
+                                                    <SongWritingNotes/> :
                                                         
                                                         <>
                                                             <div>
@@ -704,7 +706,7 @@ return (
                                                                         >
                                                                             
                                                                             {' '}
-                                                                            {song.instrument_notes}
+                                                                            {song.songwriting_notes}
 
                                                                         </Typography>
 
@@ -716,7 +718,7 @@ return (
 
                                                 {editPNotes ?
 
-                                                    <SongPerformanceNotes/> :
+                                                    <SongProductionIdeas/> :
                                                     
                                                         <>
                                                             <div>
