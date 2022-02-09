@@ -257,7 +257,7 @@ return (
                                                             >
                                                             
                                                                 {' '}
-                                                                {song.performance_notes}
+                                                                {song.production_ideas}
 
                                                             </Typography>
                                                     </div>
@@ -424,7 +424,7 @@ return (
                                                             >
                                                             
                                                                 {' '}
-                                                                {song.performance_notes}
+                                                                {song.production_ideas}
 
                                                             </Typography>
                                                     </div>
@@ -591,8 +591,7 @@ return (
                                                             >
                                                             
                                                                 {' '}
-                                                                {song.performance_notes}
-
+                                                                {song.production_ideas}
                                                             </Typography>
                                                     </div>
                                                 </>
@@ -754,7 +753,7 @@ return (
                                                                     >
                                                                     
                                                                         {' '}
-                                                                        {song.performance_notes}
+                                                                        {song.production_ideas}
 
                                                                     </Typography>
                                                             </div>
