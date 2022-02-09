@@ -19,9 +19,9 @@ CREATE TABLE "songs" (
     "instrument_specs" TEXT DEFAULT 'no notes added',
 	"performance_notes" TEXT DEFAULT 'no notes added',
 	"songwriting_notes" TEXT DEFAULT 'no notes added',
-	"production_ideas" TEXT DEFAULT 'no notes added',
+	"production_ideas" TEXT DEFAULT "no notes added",
     "priority" VARCHAR (10),
-	"lyrics" TEXT DEFAULT 'no lyrics added',
+	"lyrics" TEXT DEFAULT "no lyrics added",
 	"is_active" BOOLEAN DEFAULT true,
 	"preview_audio" TEXT NOT NULL
 );
@@ -29,7 +29,7 @@ CREATE TABLE "songs" (
 CREATE TABLE "recordings" (
 	"id" SERIAL PRIMARY KEY,
 	"song_id" INT NOT NULL REFERENCES "songs",
-    "description" TEXT DEFAULT 'no description added',
+    "description" TEXT DEFAULT "no description added",
 	"src" TEXT 
 );
 

@@ -21,8 +21,6 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         FROM songs
         JOIN "recordings" 
         ON "recordings".song_id = "songs".id
-        JOIN "chord_diagrams"
-        ON "chord_diagrams".song_id = "songs".id
         WHERE user_id = $1
         GROUP BY song_id, 
                  title, 

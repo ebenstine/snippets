@@ -130,17 +130,17 @@ const AddSong = () => {
                 />
           
                 <TextField
-                  label="Instrument Notes"
-                  onChange={enterNewSong('instrument_notes')}
-                  value={newSong.instrument_notes}
+                  label="Songwriting Notes"
+                  onChange={enterNewSong('songwriting_notes')}
+                  value={newSong.songwriting_notes}
                   multiline className={textField}
 
                 />
          
                 <TextField
-                  label="Performance Notes"
-                  onChange={enterNewSong('performance_notes')}
-                  value={newSong.performance_notes}
+                  label="Production Ideas"
+                  onChange={enterNewSong('production_ideas')}
+                  value={newSong.production_ideas}
                   multiline className={textField}
 
                 />
