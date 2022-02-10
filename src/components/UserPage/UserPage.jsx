@@ -44,11 +44,11 @@ const UserPage = () => {
           variant = "h4" 
           className = {welcome} 
         >
-          Hi, {user.username}!
+          Hey, {user.username}!
         </Typography>
 
         <br></br>
-        <Card className={infoCard}>
+        
         <Typography 
         
           align="center" 
@@ -56,7 +56,7 @@ const UserPage = () => {
           className = {songCount}>
           
             <span className={playIcon}>▶</span>
-             &nbsp;You have <span className={highlight}>{songs.length}</span> different song projects open right now.
+             &nbsp;You are working on <span className={highlight}>{songs.length}</span> songs right now.
       
         </Typography>
       
@@ -69,26 +69,16 @@ const UserPage = () => {
           className = {recordingCount}>
           
             <span className={playIcon}>▶</span>
-            &nbsp;Between them, you've uploaded <span className={highlight}>{allRecordings.length}</span> total recordings. 
+            &nbsp;In total, you've uploaded <span className={highlight}>{allRecordings.length}</span> audio recordings. 
       
         </Typography>
       
         <br></br>
       
-        <Typography 
         
-          align="center" 
-          variant = "h6" 
-          className = {genrePrompt}>
-          
-            <span className={playIcon}>▶</span>
-            &nbsp;Currently, you're working in <span className={highlight}>1</span> genre/style across these projects. 
-      
-        </Typography>
-
         <br></br>
 
-      </Card>
+      
       </div>
       
         <section textAlign="center">

@@ -16,7 +16,9 @@ const useStyles = makeStyles((theme) => ({
     welcome: {
         color: '#233d4d',
         //borderBottom: '1.5px solid #6ca0ad',
-        fontSize: 24
+        fontSize: 24,
+        paddingBottom: '1em',
+        borderBottom: '1.5px solid #6ca0ad'
         
         
     },
@@ -36,7 +38,9 @@ const useStyles = makeStyles((theme) => ({
         
         paddingRight: '2em',
         paddingLeft: '3.5em',
-        fontSize: 19
+        paddingBottom: '2em',
+        fontSize: 19,
+        borderBottom: '1.5px solid #6ca0ad'
     },
 
     button1: {

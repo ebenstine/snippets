@@ -208,126 +208,121 @@ function InactiveArchiveStatus(){
     
 
     
-return (
+    return (
         
-
-    <>
+        <>
             
+            <div>
+            
+                <Button 
+                    
+                    className={activateButton} 
+                    variant="contained" 
+                    type="submit"
+                    value={song.is_active = true}
+                    onClick={handleStatus}
+                        
+                >
+                    <QueueMusic/>
+                
+                </Button>
 
+                <Button 
+                    
+                    className={deletePrompt} 
+                    variant="contained" 
+                    onClick={handleClickOpen}
+                >
+                    <Delete/>
+
+                </Button>
+
+                    <Dialog 
+            
+                        open={open} 
+                        PaperProps={{
+                            style: { 
                                 
-                                <div>
+                                border: "1px solid #e45252",
+                                background: "rgb(199, 246, 252)"
+                    
+                            }
+        
+                        }}
+            
+                        className={dialog} 
+                        onClose={handleClose} 
+            
+                    >
+            
+                        <DialogTitle className={dialogContent}>
+                
+                            <div>
+                
+                                <Feedback 
                                     
-          
+                                    style = {{
+                        
+                                        color: '#e45252',
+                                        fontSize: 50,
+                                        paddingTop: '-1em',
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
+                                        textStroke: '2px black'
+                    
+                                    }}
+                
+                                />
+                
+                            </div>
+            
+                        </DialogTitle>
+                
+                            <DialogContent className={dialogContent} >
+                    
+                                <DialogContentText className={dialogText}>
+                        
+                                    Deleting the song is an irreversible action.  Do you want to do this?
+
+                                </DialogContentText>
+                
+                            </DialogContent>
+            
+                            <DialogActions className={dialogContent}>    
+                    
+                                <div>
 
                                     <Button 
-                                        
-                                        className={activateButton} 
-                                        variant="contained" 
-                                        type="submit"
-                                        value={song.is_active = true}
-                                        onClick={handleStatus}
-                                            
+                    
+                                        className={cancelButton} 
+                                        onClick={handleCancel} 
+                                        variant="contained"
+                
                                     >
-                                        <QueueMusic/>
-                                    
+                    
+                                        <Cancel/>
+                
                                     </Button>
 
                                     <Button 
-                                        
-                                        className={deletePrompt} 
-                                        variant="contained" 
-                                        onClick={handleClickOpen}
+                    
+                                        className={deleteButton}
+                                        variant="contained"
+                                        onClick={() => handleDelete(song.id)}
+                    
                                     >
+                    
                                         <Delete/>
 
                                     </Button>
-
-                                        <Dialog 
                                 
-                                            open={open} 
-                                            PaperProps={{
-                                                style: { 
-                                                    
-                                                    border: "1px solid #e45252",
-                                                    background: "rgb(199, 246, 252)"
-                                        
-                                                }
-                            
-                                            }}
-                                
-                                            className={dialog} 
-                                            onClose={handleClose} 
-                                
-                                        >
-                                
-                                            <DialogTitle className={dialogContent}>
-                                    
-                                                <div>
-                                    
-                                                    <Feedback 
-                                                        
-                                                        style = {{
-                                            
-                                                            color: '#e45252',
-                                                            fontSize: 50,
-                                                            paddingTop: '-1em',
-                                                            display: 'flex',
-                                                            flexWrap: 'wrap',
-                                                            textStroke: '2px black'
-                                        
-                                                        }}
-                                    
-                                                    />
-                                   
-                                                </div>
-                                
-                                            </DialogTitle>
-                                    
-                                                <DialogContent className={dialogContent} >
-                                        
-                                                    <DialogContentText className={dialogText}>
-                                            
-                                                        Deleting the song is an irreversible action.  Do you want to do this?
-
-                                                    </DialogContentText>
-                                    
-                                                </DialogContent>
-                               
-                                                <DialogActions className={dialogContent}>    
-                                        
-                                                    <div>
-
-                                                        <Button 
-                                        
-                                                            className={cancelButton} 
-                                                            onClick={handleCancel} 
-                                                            variant="contained"
-                                    
-                                                        >
-                                        
-                                                            <Cancel/>
-                                    
-                                                        </Button>
-                    
-                                                        <Button 
-                                        
-                                                            className={deleteButton}
-                                                            variant="contained"
-                                                            onClick={() => handleDelete(song.id)}
-                                        
-                                                        >
-                                        
-                                                            <Delete/>
-
-                                                        </Button>
-                                                    
-                                                    </div>
-
-                                                </DialogActions>
-
-                                        </Dialog>
-                                        
                                 </div>
+
+                            </DialogActions>
+
+                    </Dialog>
+                
+            </div>
                                     
         </>                    
     )

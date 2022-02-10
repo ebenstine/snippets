@@ -375,6 +375,8 @@ function SongsList() {
 
                             </Paper>
                     :
+                    //this conditional render is meant essentially as a welcome/here's what to do
+                    //message for when the user might explore the app before uploading anything.
 
                     <Paper className={blankPage}>
                     
