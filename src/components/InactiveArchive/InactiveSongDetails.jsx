@@ -116,43 +116,85 @@ return (
                                                     <br></br>
                                                     <br></br>
                         
-                                                    <div>
+                                                    <>
+                                                    
+                                                        <div>
+                                                            
+                                                            <Typography 
+                                                                variant="caption" 
+                                                                style={{color:'#233d4d'}}
+                                                            >
+                                                                    
+                                                                    Writing Notes:
+                                                            
+                                                            </Typography>
 
-                                                        <Typography 
-                                                                
-                                                            component = "p" 
-                                                            className={cardText}>
 
-                                                                <span style={{color:"#1d778d"}}>▶</span>
-                                                                
-                                                                    &nbsp;
-                                                                    Instrument Notes:
-                                                                    {' '}
-                                                                    {song.instrument_notes}
+                                                        </div>
+                                                        
+                                                        <div>
+                                                            
+                                                            <b>
+                                                                <img 
+                                                                    style={{width:12, height:12}} 
+                                                                    src="quill.png">
+                                                                </img>
+                                                            </b> 
+                                                            
+                                                            &nbsp;
 
-                                                        </Typography>
+                                                                <Typography 
+                                                                    
+                                                                    component = "span" 
+                                                                    className={cardText}
+                                                                >
 
-                                                    </div>
+                                                                    {song.production_ideas}
+
+                                                                </Typography>
+                                                        </div>
+                                                    </>
                                                 
                                                     <br></br>
 
-                                                    <div>
+                                                    <>
+                                                    
+                                                        <div>
+                                                            
+                                                            <Typography 
+                                                                variant="caption" 
+                                                                style={{color:'#233d4d'}}
+                                                            >
+                                                                    
+                                                                    Production Ideas:
+                                                            
+                                                            </Typography>
 
-                                                        <Typography 
-                                                                
-                                                            component = "p" 
-                                                            className={cardText}>
 
-                                                                <span style={{color:"#1d778d"}}>▶</span>
+                                                        </div>
+                                                        
+                                                        <div>
+                                                            
+                                                            <b>
+                                                                <img 
+                                                                    style={{width:12, height:12}} 
+                                                                    src="sound-faders.png">
+                                                                </img>
+                                                            </b> 
+                                                            
+                                                            &nbsp;
 
-                                                                    &nbsp;
-                                                                    Performance Notes:
-                                                                    {' '}
-                                                                    {song.performance_notes}
+                                                                <Typography 
+                                                                    
+                                                                    component = "span" 
+                                                                    className={cardText}
+                                                                >
 
-                                                        </Typography>
+                                                                    {song.production_ideas}
 
-                                                    </div>
+                                                                </Typography>
+                                                        </div>
+                                                    </>
                                                
                                                     <br></br>
                      
