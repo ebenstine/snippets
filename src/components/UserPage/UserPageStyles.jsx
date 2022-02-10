@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: '2em',
         paddingLeft: '3.5em',
         paddingTop: '1em',
-        fontSize: 19
+        fontSize: 17
         
     },
 
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: '2em',
         paddingLeft: '3.5em',
         paddingBottom: '2em',
-        fontSize: 19,
+        fontSize: 17,
         borderBottom: '1.5px solid #6ca0ad'
     },
 
@@ -77,21 +77,21 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: '2em',
         paddingLeft: '3.5em',
         //borderBottom: '1.5px solid #6ca0ad'
-        fontSize: 19
+        fontSize: 17
     },
 
     playIcon: {
         color:"#1d778d",
         outlineColor: "#233d4d",
         marginLeft: "0em",
-        fontSize: 19
+        fontSize: 17
     },
 
     highlight: {
 
         color: '#1d778d',
         borderBottom: '1.5px solid #eb9148',
-        fontSize: 19
+        fontSize: 17
 
     },
 

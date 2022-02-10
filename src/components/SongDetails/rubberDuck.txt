@@ -16,6 +16,10 @@ instrument notes.  < This field would then be recorded as null in the database. 
 to appear which would ask the user to provide a little extra detail, the presentation of which would be determined by the primary
 instrument type.
 
+(^ This is pretty illogical.  The updating of a null value is fine and good but there's no reason a dialog upon submit makes any 
+sense.  When the user clicks the instrument icon it should open a dialog that requests the instrument detail be entered (form input text conditionally 
+rendered dependent on instrument type), followed by an image-specific uploader for the chord diagrams (this component will mirror addRecording almost exactly)).
+
 example: newSong.primary_instrument === 'guitar' ?  
             'what tuning was used?' :
 
