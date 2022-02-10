@@ -77,53 +77,59 @@ const SongDetailsMenu = ({song}) => {
             fontSize={'inherit'}
             onClick={handleClickOpen}>
 
-        </MoreHorizIcon>
+          </MoreHorizIcon>
       
-      </IconButton>
+        </IconButton>
         
-        <MenuItem onClick={handleClickOpen}></MenuItem>
+          <MenuItem onClick={handleClickOpen}/>
+
+         
           
-          <Dialog 
+            <Dialog 
                 
-            open={open} 
-            onClose={handleCancel} 
-            aria-labelledby="Rename song title input"
-            PaperProps={{
-                
-              style: { 
-                    
-                border: "1px solid #2a4f64",
-                background: "rgb(199, 246, 252",
+              open={open} 
+              onClose={handleCancel} 
+              aria-labelledby="Rename song title input"
+              PaperProps={{
                   
-              }
+                style: { 
+                      
+                  border: "1px solid #2a4f64",
+                  background: "rgb(199, 246, 252",
                   
-            }}    
+                }
+                  
+              }}    
                 
-          >
-          <DialogTitle>
-            <Typography 
+            >
+          
+              <DialogTitle>
+            
+                <Typography 
               
-              className={heading}>
-              Audio Files Menu
+                  className={heading}>
               
-            </Typography>
-            </DialogTitle>
+                    Audio Files Menu
+              
+                </Typography>
+           
+              </DialogTitle>
           
-              <DialogContent className={menuItems}>
+                  <DialogContent className={menuItems}>
           
-                <AddRecording/>
+                    <AddRecording/>
           
-                  </DialogContent>
+                      </DialogContent>
           
-                    <DialogContent className={menuItems}>
+                        <DialogContent className={menuItems}>
           
-                      <RecordingsList/>
+                          <RecordingsList/>
           
-                  </DialogContent>
+                            </DialogContent>
           
           
           
-          </Dialog>
+            </Dialog>
         
     </div>
     

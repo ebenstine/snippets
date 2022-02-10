@@ -4,7 +4,8 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import getSong from './setSongSelection.saga';
 import getRecording from './setAudioSelection.saga';
-import getAllRecordings from './getRecordings.saga'
+import getAllRecordings from './getRecordings.saga';
+import getChordDiagrams from './getChordDiagrams.saga'
 import getSongs from './getSongs.saga';
 import postSong from './postSong.saga';
 import postRecording from './postRecording.saga';
@@ -27,6 +28,7 @@ export default function* rootSaga() {
     getSong(),
     getSongs(),
     getRecording(),
+    getChordDiagrams(),
     getAllRecordings(),
     getSongDetails(),
     postSong(),
