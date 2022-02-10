@@ -1,6 +1,3 @@
-//this will get pulled into songDetails, in a similar fashion to addRecording
-//likely should be an mui drawer that pops out from the left
-
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -55,7 +52,7 @@ const RecordingsList = () => {
 
     const dispatch = useDispatch();
     const history = useHistory();
-    const recordings = useSelector((store) => store.recordings);
+    const chord_diagrams = useSelector((store) => store.chord_diagrams);
     const songs = useSelector ((store) => store.songs)
     const params = useParams();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -75,7 +72,7 @@ const RecordingsList = () => {
         setIsDrawerOpen(true);
         
         dispatch({
-            type: 'FETCH_DIAGRAMS',
+            type: 'FETCH_RECORDINGS',
             payload: params.id
            
         });
