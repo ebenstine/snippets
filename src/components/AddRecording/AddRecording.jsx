@@ -5,7 +5,8 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { TextField, FormControl } from '@material-ui/core';
+import { FormControl } from '@material-ui/core';
+import { TextField } from '@mui/material'
 import { connect, useDispatch, useSelector } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
 import RecordingsUploader from './RecordingsUploader'
@@ -108,6 +109,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
                     onChange={enterNewRecording('description')}
                     value={newRecording.description}
                     multiline className={descriptionText}
+                    
               
                   />
         

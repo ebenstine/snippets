@@ -3,33 +3,64 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
 
     root: {
-        '& .MuiTextField-root': {
-            marginLeft: '4em',
+         
+      
+          '& .MuiTextField-root': {
+              marginLeft: '3em',
+              color: '#2a4f64',
+              
+              '&:hover fieldset': {
+                borderColor: '#ffab5c'
+              }
+              //width: '25ch'
+          },
+          '& label.Mui-focused': {
+              color: '#3b95ac',
+              borderColor: '#ffab5c',
+          },
+          '& .MuiInput-underline:after': {
+              borderBottomColor: '#3b95ac',
+          }, 
+              
+              
+              
+          
+          "& .MuiOutlinedInput-input": {
+              color: "#2a4f64",
+             
+              
+          },
+          //"& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
+              //border: "2px solid #3b95ac"
+            //},
+            "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              border: "1.5px solid#3b95ac",
+              borderRadius: "3px 3px 3px 3px"
+            },
+          
+    
             
+          '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                  color: '#3b95ac',
+                  //paddingLeft: '4em'
+                  
+              },
+              '& .Mui-selected': {
+    
+                 borderColor: '3b95ac'
+    
+              },
+              '&:hover fieldset': {
+                  border:' 1.5px solid #3b95ac' 
+              },  
+              '&:fieldset.Mui-focused': {
+                  border:' 1.5px solid #3b95ac'
+              
+              },
+              
         },
-        '& label.Mui-focused': {
-            color: '#2a4f64',
-        },
-        '& .MuiInput-underline:after': {
-            borderBottomColor: '#eb9148',
-        },
-        '& .MuiOutlinedInput-root': {
-            '& fieldset': {
-                borderColor: '#2a4f64',
-                
-            },
-            '&:hover fieldset': {
-                borderColor: '#2a4f64',
-                
-            },
-            '&.MuiSelect fieldset': {
-                borderColor: '#2a4f64',
-                borderRadius: '8px'
-            },
-            
-
-        },
-    },
+      },
 
     
     dialog: {
@@ -54,11 +85,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     descriptionText: {
-        margin: theme.spacing(1),
-        //width: '40ch',
-        marginBottom: '1em',
-        marginTop: '1em'
-
+        margin: 'auto'
     },
 
     dialogButtons: {

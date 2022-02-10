@@ -1,31 +1,73 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { TextField, Button, Typography, FormControl } from '@material-ui/core';
+import { Button, Typography, FormControl } from '@material-ui/core';
+import {TextField} from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 import { CheckCircle } from '@material-ui/icons';
 import { Cancel } from '@material-ui/icons';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     root: {
-
+        '& .MuiTextField-root': {
+            margin: theme.spacing(1),
+            color: '#2a4f64',
+            border:'#2a4f64'
+            //width: '25ch'
+        },
+        
         '& label.Mui-focused': {
             color: '#2a4f64',
+            border: '#3b95ac'
         },
+
+        '& .MuiInput-underline:before': {
+            borderBottomColor: '#2a4f64',
+    
+        },
+
+        '& .MuiInput-underline.Mui-selected': {
+            borderBottomColor: '#2a4f64',
+            
+        },
+
         '& .MuiInput-underline:after': {
             borderBottomColor: '#3b95ac',
+        }, 
+            
+        "& .MuiOutlinedInput-input": {
+            color: "#2a4f64",
+            borderBottomColor:'#2a4f64'
+            //border: "2px solid #3b95ac"
+            
         },
+       
+        "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: "1.5px solid#3b95ac",
+            borderRadius: "3px 3px 3px 3px"
+        },
+        
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
-                borderColor: '#2a4f64',
+                color: '#3b95ac',
+                //paddingLeft: '4em'
                 
             },
+            '& .Mui-selected': {
+
+               borderColor: '3b95ac'
+
+            },
             '&:hover fieldset': {
-                borderColor: '#2a4f64',
-                
+                border:' 1.5px solid #3b95ac' 
+            },  
+            '&:fieldset.Mui-focused': {
+                border:' 1.5px solid #3b95ac'
+            
             },
         },
     },
+
 
     textField: {
         
@@ -40,7 +82,7 @@ const useStyles = makeStyles(() => ({
     },
     actions: {
         marginBottom: '2em',
-        marginTop: '-.75em',
+        
         marginLeft: '7.5em',
     },
 
