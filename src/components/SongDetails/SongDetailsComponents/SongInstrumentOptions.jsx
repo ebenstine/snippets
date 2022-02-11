@@ -70,7 +70,7 @@ return (
   
     return (
       
-      <div>
+      <>
         
         
         
@@ -149,7 +149,7 @@ return (
           
             </Dialog>
         
-    </div>
+    </>
     
     );
 })}

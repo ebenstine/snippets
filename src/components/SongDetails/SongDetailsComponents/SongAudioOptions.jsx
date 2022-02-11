@@ -65,7 +65,7 @@ const SongAudioOptions = ({song}) => {
   
   return (
       
-      <div>
+      <>
         
         <IconButton>
           
@@ -131,7 +131,7 @@ const SongAudioOptions = ({song}) => {
           
             </Dialog>
         
-    </div>
+    </>
     
   );
 
