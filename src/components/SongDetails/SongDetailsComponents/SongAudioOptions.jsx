@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const SongDetailsMenu = ({song}) => {
+const SongAudioOptions = ({song}) => {
     const {heading, menuItems, menuIcon} = useStyles();
     
     const [open, setOpen] = useState(false);
@@ -137,4 +137,4 @@ const SongDetailsMenu = ({song}) => {
 
 }
   
-  export default SongDetailsMenu;
+  export default SongAudioOptions;

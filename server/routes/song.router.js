@@ -9,6 +9,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     `SELECT song_id, 
             title, 
             date, 
+            primary_instrument,
             instrument_specs, 
             performance_notes,
             songwriting_notes,
@@ -25,6 +26,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         GROUP BY song_id, 
                  title, 
                  date, 
+                 primary_instrument,
                  instrument_specs, 
                  performance_notes,
                  songwriting_notes,
@@ -73,6 +75,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
     const client = await pool.connect();
     const userId = req.user.id;
     const { title, 
+            primary_instrument,
             instrument_specs, 
             performance_notes, 
             songwriting_notes,
@@ -91,6 +94,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
                             INSERT INTO "songs" (
                             "user_id", 
                             "title", 
+                            "primary_instrument"
                             "instrument_specs", 
                             "performance_notes",
                             "songwriting_notes",
@@ -100,7 +104,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
                             "is_active", 
                             "preview_audio"
                             )
-                            VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+                            VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
                             RETURNING "id"`;
 
         const result = await client.query
@@ -110,6 +114,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
             firstQuery, 
                 [userId, 
                     title, 
+                    primary_instrument,
                     instrument_specs, 
                     performance_notes, 
                     songwriting_notes,

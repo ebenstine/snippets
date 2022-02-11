@@ -34,6 +34,7 @@ export default function* rootSaga() {
     getSongDetails(),
     postSong(),
     postRecording(),
+    postChordDiagram(),
     songDelete(),
     audioDelete(),
     reviseSong()

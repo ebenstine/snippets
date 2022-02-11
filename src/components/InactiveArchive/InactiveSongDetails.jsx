@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 
 import useStyles from './InactiveSongDetailsStyles';
-import SongDetailsMenu from '../SongDetails/SongDetailsComponents/SongDetailsMenu';
+import SongAudioOptions from '../SongDetails/SongDetailsComponents/SongAudioOptions';
 import Delete from '@material-ui/icons/Delete';
 import InactiveArchiveStatus from './InactiveArchiveStatus';
 
@@ -76,7 +76,7 @@ return (
                         
                                             <div className={menuDots}>
                     
-                                                <SongDetailsMenu/>
+                                                <SongAudioOptions/>
                             
                                             </div>
                     
