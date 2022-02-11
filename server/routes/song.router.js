@@ -94,7 +94,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
                             INSERT INTO "songs" (
                             "user_id", 
                             "title", 
-                            "primary_instrument"
+                            "primary_instrument",
                             "instrument_specs", 
                             "performance_notes",
                             "songwriting_notes",
