@@ -9,6 +9,7 @@ import getChordDiagrams from './getChordDiagrams.saga'
 import getSongs from './getSongs.saga';
 import postSong from './postSong.saga';
 import postRecording from './postRecording.saga';
+import postChordDiagram from './postChordDiagram.saga';
 import getSongDetails from './getSongDetails.saga';
 import songDelete from './deleteSong.saga';
 import audioDelete from './deleteRecording.saga';
