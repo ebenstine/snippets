@@ -11,6 +11,7 @@ import ChordDiagrams from '../../ChordDiagrams/ChordDiagrams';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from '@material-ui/core/styles';
+import { Piano } from '@mui/icons-material';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -80,14 +81,33 @@ return (
             <IconButton>
             
             
-            <Piano style={{color:'#1d778d', paddingBottom: '.1em'}}/>
+            <Piano
+
+                className={menuIcon}
+                aria-controls="simple-menu" 
+                aria-haspopup="true"
+                fontSize={'inherit'}
+                onClick={handleClickOpen}
+
+            >
+
+            </Piano>
             </IconButton>
 
             :
 
             song.primary_instrument === 'guitar' ?
 
-            <IconButton>
+            <IconButton
+
+                className={menuIcon}
+                aria-controls="simple-menu" 
+                aria-haspopup="true"
+                fontSize={'inherit'}
+                onClick={handleClickOpen}
+
+            
+            >
             
             <b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>
             
@@ -135,7 +155,7 @@ return (
           
                   <DialogContent className={menuItems}>
           
-                   
+                    <AddChordDiagram/>
           
                       </DialogContent>
           
