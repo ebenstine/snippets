@@ -85,7 +85,7 @@ const Uploader = ({uploadComplete}) => {
               className={dropZone}
             >
               
-              Click to Add, or Drag and Drop File
+              Click to Add, or Drag and Drop Chord Diagram
             
             </Button>
 

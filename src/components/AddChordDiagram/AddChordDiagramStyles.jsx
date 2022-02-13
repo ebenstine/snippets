@@ -101,7 +101,9 @@ const useStyles = makeStyles((theme) => ({
     },
 
     upload: {
-        paddingLeft: '1em',
+        marginLeft: '2em',
+        marginRight: '2em',
+        paddingLeft: '1.3em',
         background: 'rgb(230, 252, 255)',
         '&:hover': {
           background:'#94d9eb',

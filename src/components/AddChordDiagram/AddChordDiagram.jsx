@@ -1,5 +1,20 @@
 //input form component
 
+//conditional render of instrument spec 
+// song.primaryInstrument === 'guitar' ? 
+    // input form asks for guitar tuning
+      // :
+        //song.primaryInstrument === 'keyboard' ?
+          // input form asks for keyboard type
+            // : 
+              // song.primaryInstrument === 'laptop' ?
+                // input form asks for software used
+                  // : 
+                    // song.primaryInstrument === 'other' ?
+                      // input form asks what instrument was used.
+            // input value is song.instrument_spec, either way.
+
+
 //contains a post route both to the song ('instrument spec'), and to the chord diagrams table (the image)
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
@@ -73,6 +88,15 @@ const AddChordDiagram = ({ song, handleMenuClose }) => {
 }
 
   return (
+
+    <>
+
+    {songDetails.map((song) => {
+
+    
+        return (
+
+
     
     
     <div>
@@ -82,7 +106,7 @@ const AddChordDiagram = ({ song, handleMenuClose }) => {
         onClick={handleClickOpen} 
         className={upload}>
         <Backup/>
-        &nbsp;Upload Chord Image
+        &nbsp;Upload New
         
       </MenuItem>
       
@@ -102,19 +126,37 @@ const AddChordDiagram = ({ song, handleMenuClose }) => {
         
             <form className={root}>
         
-              <DialogTitle className={dialogTitle} >Add a Chord Image </DialogTitle>
+              <DialogTitle className={dialogTitle} >
+                  Add a Reminder
+              </DialogTitle>
         
                 <DialogContent className={dialog}>
-        
+
+                
+                {song.primary_instrument === 'guitar' ?
                   <TextField
-                  
-                    label="description"
+                     
+                    label="guitar tuning" 
+                    onChange={enterNewRecording('description')}
+                    value={newRecording.description}
+                    multiline className={descriptionText}
+                    
+              
+                  /> 
+
+                  :
+
+                  <TextField
+                     
+                    label="keyboard type" 
                     onChange={enterNewRecording('description')}
                     value={newRecording.description}
                     multiline className={descriptionText}
                     
               
                   />
+
+                } 
         
                     <ChordDiagramsUploader 
                 
@@ -160,7 +202,9 @@ const AddChordDiagram = ({ song, handleMenuClose }) => {
         </Dialog>
    
     </div>
-    
+        )
+    })}
+    </>
   );
 }
 
