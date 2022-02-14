@@ -10,12 +10,12 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(() => ({
   dropZone: {
 
-    color: '#2a4f64', 
+    color: '#233d4d', 
     paddingLeft: '3em', 
     paddingRight: '3em', 
     border: '1.5px solid #3b95ac',
     
-    
+    background: '#82bdcc',
     '&:hover': {
       border: '1.5px solid #233d4d',
       background: '#5fbdd4'
@@ -30,11 +30,12 @@ const useStyles = makeStyles(() => ({
 
 const dropStyles = {
   width: "300px",
-  height: "100px",
+  height: "130px",
   //backgroundColor: '#2a4f64',
-  //borderRadius: '3px',
-  //border: '1px solid #c8ecf5',
-  //boxShadow: '2px 2px 4px grey'
+  borderRadius: '3px',
+  border: '0px white',
+  boxShadow: '1px 1px 4px rgb(112, 111, 111)',
+  background: 'rgb(199, 246, 252)'
 }
 
 
