@@ -7,8 +7,14 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiTextField-root': {
             margin: theme.spacing(1),
             color: '#2a4f64',
-            border:'#2a4f64'
+            border:'#2a4f64',
             //width: '25ch'
+            '& .MuiInput': {
+                '&::placeholder': {
+                  textOverflow: 'ellipsis !important',
+                  color: 'blue'
+                }
+              }
         },
         
         '& label.Mui-focused': {
@@ -60,6 +66,13 @@ const useStyles = makeStyles((theme) => ({
                 border:' 1.5px solid #3b95ac'
             
             },
+
+            'input': {
+                '&::placeholder': {
+                  textOverflow: 'ellipsis !important',
+                  color: 'blue'
+                }
+              }
         },
     },
     

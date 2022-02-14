@@ -75,7 +75,7 @@ const RecordingsList = () => {
         setIsDrawerOpen(true);
         
         dispatch({
-            type: 'FETCH_DIAGRAMS',
+            type: 'FETCH_RECORDINGS',
             payload: params.id
            
         });

@@ -138,7 +138,7 @@ const AddSong = () => {
                     >
                   </img>
                   }
-                  placeholder = "Title"
+                  placeholder= "Title"
                   onChange={enterNewSong('title')}
                   value={newSong.title}
                   error={errorState}
