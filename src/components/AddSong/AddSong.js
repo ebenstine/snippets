@@ -131,7 +131,14 @@ const AddSong = () => {
               </Typography>
                 
                 <TextField
-                  label="Title"
+                  label=
+                  {<img 
+                    style={{width:21, height:21}} 
+                    src='top.png'
+                    >
+                  </img>
+                  }
+                  placeholder = "Title"
                   onChange={enterNewSong('title')}
                   value={newSong.title}
                   error={errorState}
@@ -139,7 +146,14 @@ const AddSong = () => {
                 />
           
                 <TextField
-                  label="Songwriting Notes"
+                  label=
+                  {<img 
+                    style={{width:16, height:16}} 
+                    src='quill.png'
+                    >
+                  </img>
+                  }
+                  placeholder = "Songwriting Notes"
                   onChange={enterNewSong('songwriting_notes')}
                   value={newSong.songwriting_notes}
                   multiline className={textField}
@@ -148,10 +162,13 @@ const AddSong = () => {
          
                 <TextField
                 
-                  label={<img 
-                    style={{width:16, height:16}} 
-                    src='sound-faders.png'>
-                </img>}
+                  label=
+                    {<img 
+                      style={{width:16, height:16}} 
+                      src='sound-faders.png'
+                      >
+                    </img>
+                    }
                   placeholder = "Production Notes"
                   onChange={enterNewSong('production_ideas')}
                   value={newSong.production_ideas}
@@ -160,7 +177,14 @@ const AddSong = () => {
                 />
 
                 <TextField
-                  label="Lyrics"
+                  label=
+                  {<img 
+                    style={{width:21, height:21}} 
+                    src='lyrics.png'
+                    >
+                  </img>
+                  }
+                  placeholder = "Lyrics"
                   onChange={enterNewSong('lyrics')}
                   value={newSong.lyrics}
                   multiline className={textField}
