@@ -200,7 +200,7 @@ const AddSong = () => {
                       id="demo-controlled-open-select-label">
                       Status
                     </InputLabel>
-  
+                      
                       <Select
     
                         labelId="demo-controlled-open-select-label"
@@ -218,24 +218,30 @@ const AddSong = () => {
                         value={newSong.is_active}
     
                       >
-                        
+                      
                         <DialogTitle 
                           defaultValue={'  '}
                           className={selectStatus}>
+                          
                           &nbsp;&nbsp;Working Status&nbsp;&nbsp;
                         </DialogTitle>  
-        
+                         
                           <MenuItem 
                             value={true} 
                             className={setActive}>
-                            <PlayArrowRounded/>Active
+                            <div style={{display:'flex', flexWrap:'wrap'}}>
+                            <PlayArrowRounded/>&nbsp;Active
+                            </div>
                           </MenuItem>
-        
+                          
                           <MenuItem 
                             value={false} 
                             className={setInactive}>
-                            <PlayDisabledRounded/>Inactive
+                              <div style={{display:'flex', flexWrap:'wrap'}}>
+                            <PlayDisabledRounded/>&nbsp;Inactive
+                              </div>
                           </MenuItem>
+                          
                           
                         </Select> 
 
@@ -249,13 +255,14 @@ const AddSong = () => {
                     </InputLabel>
   
                       <Select
-    
+                        
                         labelId="demo-controlled-open-select-label"
                         id="demo-controlled-open-select"
                         label="primary_instrument"
                         name="primary_instrument"
                         onChange={enterNewSong('primary_instrument')}
                         className=
+                        
                           {newSong.primary_instrument ?
                             primaryInstrument :
                               primaryInstrumentBlank 
@@ -277,18 +284,24 @@ const AddSong = () => {
                             className={setGuitar}>
                             <b><img style={{width:14, height:14, paddingTop: '.3em'}} src="plectrumForMenu.png"></img></b>&nbsp;Guitar
                           </MenuItem>
-        
+                          
                           <MenuItem 
                             value={'keyboard'} 
                             className={setKeyboard}>
+                            <div style={{display: 'flex', flexWrap: 'wrap'}}>
                             <Piano/>&nbsp;Keyboard
+                            </div>
                           </MenuItem>
+                          
 
 
                           <MenuItem 
                             value={'other'} 
                             className={setOther}>
-                            <Lightbulb/>&nbsp;Other
+
+                            <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                            <Lightbulb style={{}}/>&nbsp;Other
+                            </div>
                           </MenuItem>
                           
                         </Select> 
@@ -349,25 +362,33 @@ const AddSong = () => {
                           <MenuItem 
                             value={'1'} 
                             className={setPriority1}>
+                            <div style={{display:'flex', flexWrap:'wrap'}}>
                             <Album/>&nbsp;Group One
+                            </div>
                           </MenuItem>
                   
                           <MenuItem 
                             value={'2'} 
                             className={setPriority2}>
+                            <div style={{display:'flex', flexWrap:'wrap'}}>
                             <Album/>&nbsp;Group Two
+                            </div>
                           </MenuItem>
                   
                           <MenuItem 
                             value={'3'} 
                             className={setPriority3}>
+                            <div style={{display:'flex', flexWrap:'wrap'}}> 
                             <Album/>&nbsp;Group Three
+                            </div>
                           </MenuItem>
                   
                           <MenuItem 
                             value={'Uncertain'} 
                             className={setPriorityUncertain}>
+                            <div style={{display:'flex', flexWrap:'wrap'}}> 
                             <IndeterminateCheckBoxOutlined/>&nbsp;Uncertain
+                            </div>
                             </MenuItem>
           
                       </Select> 

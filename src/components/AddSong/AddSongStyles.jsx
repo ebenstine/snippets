@@ -141,6 +141,8 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '2px',
         background: "#fde76c",
         color: '#2a4f64',
+        display: 'flex',
+        flexWrap: 'wrap'
         
     }, 
 
@@ -150,6 +152,8 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '2px',
         background: "#c7c7c7",
         color: '#2a4f64',
+        display: 'flex',
+        flexWrap: 'wrap'
         
         
     },
@@ -174,7 +178,8 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '1.3em'
+        paddingLeft: '1.3em',
+        display: 'flex'
 
     },
 
@@ -189,7 +194,8 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '1em'
+        paddingLeft: '1em',
+        display: 'flex'
 
     },
 
@@ -359,6 +365,8 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: '2px',
         background: "#82bdcc",
         color: '#2a4f64',
+        
+
 
     },
 
