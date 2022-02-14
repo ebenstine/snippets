@@ -14,8 +14,7 @@
                       // input form asks what instrument was used.
             // input value is song.instrument_spec, either way.
 
-
-//contains a post route both to the song ('instrument spec'), and to the chord diagrams table (the image)
+//import into performanceGuide
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -42,7 +41,18 @@ const AddChordDiagram = ({ song, handleMenuClose }) => {
   const songDetails = useSelector((store) => store.songDetails)
   const [fileUrl, setFileUrl] = useState ('no file was dropped');
   const [open, setOpen] = useState(false);
-  const [newRecording, setNewRecording] = useState({});
+  const [newImage, setNewImage] = useState({});
+
+  let song = {
+    instrument_specs: songDetails.instrument_specs,
+    performance_notes: songDetails.performance_notes
+
+  };
+
+  
+
+  
+  const [reviseDetails, setReviseDetails] = useState(song);
 
   const handleClickOpen = () => {
     if (song === null){
@@ -55,24 +65,53 @@ const AddChordDiagram = ({ song, handleMenuClose }) => {
     //handleMenuClose();
     setFileUrl('');
   }
-  const enterNewRecording = (key) => (event) => {
-    setNewRecording({ ...newRecording, id:params.id, [key]: event.target.value });
+  const enterNewImage = (key) => (event) => {
+    setNewImage({ ...newImage, id:params.id, [key]: event.target.value });
   };
 
-  if (newRecording.description === '' || newRecording.src === 'null') {
+  const handleChange = (event) => {
+    setReviseDetails({ ...reviseDetails, [event.target.name]: event.target.value })
+  };
+
+  if (newImage.image_path === '' || newRecording.src === 'null') {
     
-    alert('You must enter a description and upload an audio file!')
+    alert('You must upload an image file!')
   
   } 
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let revisedSong = reviseDetails;
+    revisedSong = { ...revisedSong, id: params.id };
+    console.log('new song revisions made in', revisedSong);
+    dispatch({
+      type: 'REVISE_SONG',
+      payload: revisedSong
+    });
+    dispatch({ 
+
+      type: 'POST_DIAGRAM', 
+      payload: newImage
+
+    });
+  }
+    
+  
 
   const handleSave = (event) => {
     event.preventDefault();
     dispatch({ 
 
-      type: 'POST_NEW_RECORDING', 
-      payload: newRecording
+      type: 'POST_DIAGRAM', 
+      payload: newImage
 
     });
+
+    dispatch ({
+
+      type: 'REVISE_SONG',
+      payload: revisedSong
+    })
    setOpen(false);
   };
 

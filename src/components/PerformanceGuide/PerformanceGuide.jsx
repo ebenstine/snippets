@@ -1,7 +1,8 @@
-//a list view of all chord diagram images for the song
+//Similar to the function of songDetails
 
-
-//view performance guide
+//will show the editable contents of instrumentSpec performanceNotes
+//and, the images table that contains all chord diagrams for the song, from songChordDiagrams
+//which doesn't need an edit, but a post and delete
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
