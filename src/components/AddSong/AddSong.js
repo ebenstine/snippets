@@ -10,6 +10,12 @@ import useStyles from './AddSongStyles'
 import Uploader from '../Uploader/Uploader';
 import Backup from '@material-ui/icons/Backup';
 import Cancel from '@material-ui/icons/Cancel';
+import { PlayArrowRounded } from '@material-ui/icons';
+import { PlayDisabledRounded } from '@mui/icons-material';
+import { Piano } from '@mui/icons-material';
+import { Lightbulb } from '@mui/icons-material';
+import { IndeterminateCheckBoxOutlined } from '@mui/icons-material';
+import { Album } from '@mui/icons-material';
 
 
 
@@ -42,7 +48,9 @@ const AddSong = () => {
           primaryInstrument,
           primaryInstrumentBlank,
           selectInstrument,
-          setInstrument
+          setGuitar,
+          setKeyboard,
+          setOther
           
         
         } 
@@ -139,7 +147,12 @@ const AddSong = () => {
                 />
          
                 <TextField
-                  label="Production Ideas"
+                
+                  label={<img 
+                    style={{width:16, height:16}} 
+                    src='sound-faders.png'>
+                </img>}
+                  placeholder = "Production Notes"
                   onChange={enterNewSong('production_ideas')}
                   value={newSong.production_ideas}
                   multiline className={textField}
@@ -191,13 +204,13 @@ const AddSong = () => {
                           <MenuItem 
                             value={true} 
                             className={setActive}>
-                            Active
+                            <PlayArrowRounded/>Active
                           </MenuItem>
         
                           <MenuItem 
                             value={false} 
                             className={setInactive}>
-                            Inactive
+                            <PlayDisabledRounded/>Inactive
                           </MenuItem>
                           
                         </Select> 
@@ -237,26 +250,21 @@ const AddSong = () => {
         
                           <MenuItem 
                             value={'guitar'} 
-                            className={setInstrument}>
-                            Guitar
+                            className={setGuitar}>
+                            <b><img style={{width:14, height:14, paddingTop: '.3em'}} src="plectrumForMenu.png"></img></b>&nbsp;Guitar
                           </MenuItem>
         
                           <MenuItem 
                             value={'keyboard'} 
-                            className={setInstrument}>
-                            Keyboard
+                            className={setKeyboard}>
+                            <Piano/>&nbsp;Keyboard
                           </MenuItem>
 
-                          <MenuItem 
-                            value={'laptop'} 
-                            className={setInstrument}>
-                            Laptop
-                          </MenuItem>
 
                           <MenuItem 
                             value={'other'} 
-                            className={setInstrument}>
-                            Other
+                            className={setOther}>
+                            <Lightbulb/>&nbsp;Other
                           </MenuItem>
                           
                         </Select> 
@@ -317,25 +325,25 @@ const AddSong = () => {
                           <MenuItem 
                             value={'1'} 
                             className={setPriority1}>
-                            Group One
+                            <Album/>&nbsp;Group One
                           </MenuItem>
                   
                           <MenuItem 
                             value={'2'} 
                             className={setPriority2}>
-                            Group Two
+                            <Album/>&nbsp;Group Two
                           </MenuItem>
                   
                           <MenuItem 
                             value={'3'} 
                             className={setPriority3}>
-                            Group Three
+                            <Album/>&nbsp;Group Three
                           </MenuItem>
                   
                           <MenuItem 
                             value={'Uncertain'} 
                             className={setPriorityUncertain}>
-                            Uncertain
+                            <IndeterminateCheckBoxOutlined/>&nbsp;Uncertain
                             </MenuItem>
           
                       </Select> 

@@ -34,7 +34,7 @@ const dropStyles = {
   //background: 'linear-gradient(to right,  #233d4d 0%, #1d778d 100%)' -- this color scheme is great, saving for posterity
   borderRadius: '3px',
   border: '0px white',
-  boxShadow: '2px 2px 6px rgb(112, 111, 111)',
+  boxShadow: '1px 1px 4px rgb(112, 111, 111)',
   background: 'rgb(199, 246, 252)'
   
 }

@@ -174,7 +174,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2.3em'
+        paddingLeft: '1.3em'
 
     },
 
@@ -189,7 +189,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2em'
+        paddingLeft: '1em'
 
     },
 
@@ -280,7 +280,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2.5em'
+        paddingLeft: '1.5em'
         
     },
 
@@ -296,7 +296,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2.5em'
+        paddingLeft: '1.5em'
         
     },
 
@@ -312,7 +312,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2.5em'
+        paddingLeft: '1.5em'
         
     },
 
@@ -329,7 +329,7 @@ const useStyles = makeStyles((theme) => ({
         
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2em'
+        paddingLeft: '1.3em'
         
     },
 
@@ -379,7 +379,7 @@ const useStyles = makeStyles((theme) => ({
         
     },
 
-    setInstrument: {
+    setGuitar: {
 
         color: "#2a4f64",
         background: "rgb(230, 252, 255)",
@@ -392,6 +392,40 @@ const useStyles = makeStyles((theme) => ({
         border: '1px solid #3b95ac',
         borderRadius: '3px',
         paddingLeft: '2.3em'
+
+
+    },
+
+    setKeyboard: {
+
+        color: "#2a4f64",
+        background: "rgb(230, 252, 255)",
+        '&:hover': {
+            background:'#82bdcc',
+            },
+        margin: theme.spacing(1),
+        marginLeft: '3em',
+        marginRight: '3em',
+        border: '1px solid #3b95ac',
+        borderRadius: '3px',
+        paddingLeft: '1.4em'
+
+
+    },
+
+    setOther: {
+
+        color: "#2a4f64",
+        background: "rgb(230, 252, 255)",
+        '&:hover': {
+            background:'#82bdcc',
+            },
+        margin: theme.spacing(1),
+        marginLeft: '3em',
+        marginRight: '3em',
+        border: '1px solid #3b95ac',
+        borderRadius: '3px',
+        paddingLeft: '2em'
 
 
     }
