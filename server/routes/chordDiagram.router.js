@@ -36,7 +36,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
                        VALUES ($1, $2);
                        
                        `;
-    pool.query(queryText, [chord_diagram.song_id, chord_diagram.image_path])
+    pool.query(queryText, [chord_diagram.id, chord_diagram.image_path])
    
   
       .then(result => {

@@ -70,7 +70,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
 
   const uploadComplete = (fileUrl) => {
     console.log('fileUrl upload complete', fileUrl);
-      setNewImage({...newImage, id:params.id, src: fileUrl})
+      setNewImage({...newImage, id:params.id, image_path: fileUrl})
   }
 
   const toUserHome = () => {
@@ -92,7 +92,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
         onClick={handleClickOpen} 
         className={upload}>
         <Backup/>
-        &nbsp;Upload New Image
+        &nbsp;Upload Visual
         
       </MenuItem>
       

@@ -57,7 +57,7 @@ const PerformanceGuide = () => {
 
     const dispatch = useDispatch();
     const history = useHistory();
-    const recordings = useSelector((store) => store.recordings);
+    const chordDiagrams = useSelector((store) => store.chordDiagrams);
     const songs = useSelector ((store) => store.songs)
     const params = useParams();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -67,11 +67,9 @@ const PerformanceGuide = () => {
 
     
    
-    console.log(recordings);
-    console.log(recordings[0]);
-
+    
     const handleClickOpen = () => {
-        if (recordings === null) {
+        if (chordDiagrams === null) {
             setIsDrawerOpen(false)
         } else 
         setIsDrawerOpen(true);
@@ -82,7 +80,7 @@ const PerformanceGuide = () => {
            
         });
 
-        if (recordings.length > 1) {
+        if (chordDiagrams.length > 1) {
             setShowHeading(true)
         } else
             setShowHeading(false);
@@ -93,23 +91,7 @@ const PerformanceGuide = () => {
         setIsDialogOpen(true)
     }
 
-    const handleTextState = () => {
-        
-        
-        //all this is doing is asking if recordings[0] exists, so of course it doesn't work.
-            if (recordings.id === recordings[0]) {
-                setShowExtraText(true)
-            } 
-            else 
-            {
-            if (recordings.id !== recordings[0]) {
-                setShowExtraText(false)
-            }
-           
-        }
-    }
-
-
+    
     
 
     const handleCancel = () => {
@@ -120,12 +102,12 @@ const PerformanceGuide = () => {
         setIsDialogOpen(false)
     }
 
-    const handleDeleteAudio = (recordingId) => {
+    const handleDeleteDiagram = (diagramId) => {
         
-        console.log(recordingId);
+        console.log(diagramId);
         dispatch({
-            type: 'DELETE_AUDIO',
-            payload: recordingId
+            type: 'DELETE_DIAGRAM',
+            payload: diagramId
         })
         //hiding the lack of live updating here but whatev
         setIsDrawerOpen(false);
@@ -194,7 +176,7 @@ const PerformanceGuide = () => {
 
                                         >
                                         
-                                            Recordings History 
+                                            All Chord Images
                                         
                                         </Typography>
                             
@@ -225,7 +207,7 @@ const PerformanceGuide = () => {
                             }*/}
                         </div>
                             
-                        {recordings.map((recording) => {
+                        {chordDiagrams.map((chordDiagram) => {
                                 
                             
                                 return (
@@ -254,24 +236,20 @@ const PerformanceGuide = () => {
                                                             
                                                             
                                                             }}
-                                                            onClick={handleTextState}
+                                                            
                                                             
                                                         />}
 
                                                     aria-controls="panel1a-content"
                                                     id="panel1a-header"
-                                                    item xs={1} key={recording.id}
+                                                    item xs={1} key={chordDiagram.id}
                                             
                                                 >
 
                                                     <section className={player}>
-                                                    
-                                                        <AudioPlayer
 
-                                                            audioFiles={[{ src:recording.src}]}
-
-                                                        />
-                                                    </section>
+                                                    <img src={chordDiagram.image_path}/>
+                                                     </section>
                                                     
                                                 </AccordionSummary>
                                             
@@ -284,7 +262,7 @@ const PerformanceGuide = () => {
                                                                         variant="h6" 
                                                                         className={description}>
                                                                         This is the primary recording for &nbsp;
-                                                                        {recording.description} 
+                                                                        
                                                                         
                                                                         
                                                                     </Typography>
@@ -294,7 +272,7 @@ const PerformanceGuide = () => {
                                                                     
                                                                         variant="h6" 
                                                                         className={description}>
-                                                                        {recording.description} 
+                                                                        
                                                                         
                                                                         
                                                                     </Typography>
