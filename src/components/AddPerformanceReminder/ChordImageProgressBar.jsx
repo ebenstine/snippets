@@ -26,7 +26,7 @@ const theme = createTheme({
     },
 });
 
-const ChordDiagramsProgressBar = ({ progress, progressTitle }) => {
+const ChordImageProgressBar = ({ progress, progressTitle }) => {
     
     const { root } = useStyles();
 
@@ -60,4 +60,4 @@ const ChordDiagramsProgressBar = ({ progress, progressTitle }) => {
     )
 }
 
-export default ChordDiagramsProgressBar;
+export default ChordImageProgressBar;

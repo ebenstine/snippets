@@ -12,6 +12,8 @@
                       // input form asks what instrument was used.
             // input value is song.instrument_spec, either way.
 
+//!!! This will actually be the editable version of the performance guide text view for instrument_specs
+
         import React, { useState, useEffect } from 'react';
         import { useDispatch, useSelector } from 'react-redux';
         import { useHistory, useParams } from 'react-router-dom';
@@ -149,8 +151,8 @@
                                         {song.primary_instrument === 'guitar' ?
                   
                                             <TextField
-                     
-                                                label="Guitar Tuning" 
+                                            // IMPORTANT! 'THE ORIGINAL ENTRY', WHILE ALSO AN UPDATE, IS IN addReminder
+                                                label="Update Guitar Tuning" 
                                                 name="instrument_specs"
                                                 onDoubleClick={handleEditable}
                                                 margin="dense" 
@@ -164,7 +166,7 @@
 
                                             <TextField
                                                 
-                                                label="Keyboard Model" 
+                                                label="Update Keyboard Model" 
                                                 name="instrument_specs"
                                                 onDoubleClick={handleEditable}
                                                 margin="dense" 
@@ -178,7 +180,7 @@
                                             
                                             <TextField
 
-                                                label="Instrument or Software"
+                                                label="Update Instrument or Software"
                                                 name="instrument_specs"
                                                 onDoubleClick={handleEditable}
                                                 margin="dense" 

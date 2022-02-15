@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { Button } from '@material-ui/core';
 import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
-import ChordDiagramsProgressBar from './ChordDiagramsProgressBar';
+import ChordImageProgressBar from './ChordImageProgressBar';
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(() => ({
@@ -96,7 +96,7 @@ const Uploader = ({uploadComplete}) => {
     
     <div style={{ paddingTop: '2em'}}>
       
-      <ChordDiagramsProgressBar 
+      <ChordImageProgressBar 
         
         progress={progress} 
         progressTitle={progressTitle} 

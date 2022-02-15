@@ -1,19 +1,3 @@
-//input form component
-
-//conditional render of instrument spec 
-// song.primaryInstrument === 'guitar' ? 
-    // input form asks for guitar tuning
-      // :
-        //song.primaryInstrument === 'keyboard' ?
-          // input form asks for keyboard type
-            // : 
-              // song.primaryInstrument === 'laptop' ?
-                // input form asks for software used
-                  // : 
-                    // song.primaryInstrument === 'other' ?
-                      // input form asks what instrument was used.
-            // input value is song.instrument_spec, either way.
-
 //import into performanceGuide
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
@@ -26,14 +10,14 @@ import { FormControl } from '@material-ui/core';
 import { TextField } from '@mui/material'
 import { connect, useDispatch, useSelector } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
-import ChordDiagramsUploader from './ChordDiagramsUploader'
-import useStyles from './AddChordDiagramStyles'
+import ChordImagesUploader from './ChordImagesUploader'
+import useStyles from './AddChordImageStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
 
 
 
-const AddChordDiagram = ({ song, handleMenuClose }) => {
+const AddChordImage = ({ song, handleMenuClose }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { dialog, root, actionDiv, dialogTitle, dialogButtons, upload, descriptionText  } = useStyles();
@@ -43,11 +27,6 @@ const AddChordDiagram = ({ song, handleMenuClose }) => {
   const [open, setOpen] = useState(false);
   const [newImage, setNewImage] = useState({});
 
-  let song = {
-    instrument_specs: songDetails.instrument_specs,
-    performance_notes: songDetails.performance_notes
-
-  };
 
   
 
@@ -247,4 +226,4 @@ const AddChordDiagram = ({ song, handleMenuClose }) => {
   );
 }
 
-export default AddChordDiagram;
+export default AddChordImage;

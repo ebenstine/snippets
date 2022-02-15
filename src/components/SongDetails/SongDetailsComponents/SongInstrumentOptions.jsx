@@ -6,7 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
-import AddChordDiagram from '../../AddChordDiagram/AddChordDiagram';
+import AddChordImage from '../../AddPerformanceReminder/AddChordImage';
 import PerformanceGuide from '../../PerformanceGuide/PerformanceGuide';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from "@material-ui/core/IconButton";
@@ -158,7 +158,9 @@ return (
                     {/*this structure can stay the same but AddChordDiagram is only going to be one aspect of the broader 
                     AddReminders component which will also include the instrumentSpecs and performanceNotes components; the reasoning for 
                     this is to allow the post and update actions to be handled separately*/}
-                    <AddChordDiagram/>
+                    <AddChordImage/>
+
+
           
                       </DialogContent>
           
