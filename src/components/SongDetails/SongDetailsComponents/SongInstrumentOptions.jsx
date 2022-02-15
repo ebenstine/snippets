@@ -155,7 +155,9 @@ return (
               </DialogTitle>
           
                   <DialogContent className={menuItems}>
-          
+                    {/*this structure can stay the same but AddChordDiagram is only going to be one aspect of the broader 
+                    AddReminders component which will also include the instrumentSpecs and performanceNotes components; the reasoning for 
+                    this is to allow the post and update actions to be handled separately*/}
                     <AddChordDiagram/>
           
                       </DialogContent>

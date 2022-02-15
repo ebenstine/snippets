@@ -1,0 +1,9 @@
+Add Performance Reminders 
+        subcomp -AddNotes
+            - updates null values for instrument_spec and performance_notes
+        subcomp -AddImage
+            - posts chord images
+                subcomp - localized progress bar
+                subcomp - localized uploader
+
+This component gets refactored into the songInstrument options dialog
