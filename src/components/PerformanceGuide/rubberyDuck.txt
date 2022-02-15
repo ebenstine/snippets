@@ -1,8 +1,10 @@
 Add Performance Reminders 
         subcomp -AddNotes
             - updates null values for instrument_spec and performance_notes
+            ('upload note')
         subcomp -AddImage
             - posts chord images
+            ('upload image')
                 subcomp - localized progress bar
                 subcomp - localized uploader
 

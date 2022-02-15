@@ -31,8 +31,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
   
 
   
-  const [reviseDetails, setReviseDetails] = useState(song);
-
+  
   const handleClickOpen = () => {
     if (song === null){
       setOpen(false)
@@ -48,34 +47,11 @@ const AddChordImage = ({ song, handleMenuClose }) => {
     setNewImage({ ...newImage, id:params.id, [key]: event.target.value });
   };
 
-  const handleChange = (event) => {
-    setReviseDetails({ ...reviseDetails, [event.target.name]: event.target.value })
-  };
-
-  if (newImage.image_path === '' || newRecording.src === 'null') {
+  if (newImage.image_path === ''){
     
     alert('You must upload an image file!')
   
   } 
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    let revisedSong = reviseDetails;
-    revisedSong = { ...revisedSong, id: params.id };
-    console.log('new song revisions made in', revisedSong);
-    dispatch({
-      type: 'REVISE_SONG',
-      payload: revisedSong
-    });
-    dispatch({ 
-
-      type: 'POST_DIAGRAM', 
-      payload: newImage
-
-    });
-  }
-    
-  
 
   const handleSave = (event) => {
     event.preventDefault();
@@ -85,20 +61,16 @@ const AddChordImage = ({ song, handleMenuClose }) => {
       payload: newImage
 
     });
-
-    dispatch ({
-
-      type: 'REVISE_SONG',
-      payload: revisedSong
-    })
    setOpen(false);
   };
 
-  console.log(newRecording);
+
+
+  console.log(newImage);
 
   const uploadComplete = (fileUrl) => {
     console.log('fileUrl upload complete', fileUrl);
-      setNewRecording({...newRecording, id:params.id, src: fileUrl})
+      setNewImage({...newImage, id:params.id, src: fileUrl})
   }
 
   const toUserHome = () => {
@@ -109,11 +81,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
 
     <>
 
-    {songDetails.map((song) => {
-
     
-        return (
-
 
     
     
@@ -124,7 +92,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
         onClick={handleClickOpen} 
         className={upload}>
         <Backup/>
-        &nbsp;Upload New
+        &nbsp;Upload New Image
         
       </MenuItem>
       
@@ -145,38 +113,12 @@ const AddChordImage = ({ song, handleMenuClose }) => {
             <form className={root}>
         
               <DialogTitle className={dialogTitle} >
-                  Add a Reminder
+                  Add Visual Reminder
               </DialogTitle>
         
                 <DialogContent className={dialog}>
-
-                
-                {song.primary_instrument === 'guitar' ?
-                  <TextField
-                     
-                    label="guitar tuning" 
-                    onChange={enterNewRecording('description')}
-                    value={newRecording.description}
-                    multiline className={descriptionText}
-                    
-              
-                  /> 
-
-                  :
-
-                  <TextField
-                     
-                    label="keyboard type" 
-                    onChange={enterNewRecording('description')}
-                    value={newRecording.description}
-                    multiline className={descriptionText}
-                    
-              
-                  />
-
-                } 
         
-                    <ChordDiagramsUploader 
+                    <ChordImagesUploader
                 
                       uploadComplete={uploadComplete}
 
@@ -220,8 +162,8 @@ const AddChordImage = ({ song, handleMenuClose }) => {
         </Dialog>
    
     </div>
-        )
-    })}
+        
+    
     </>
   );
 }

@@ -41,7 +41,7 @@ const dropStyles = {
 
 
 
-const Uploader = ({uploadComplete}) => {
+const ChordImagesUploader = ({uploadComplete}) => {
 
 
     const [progress, setProgress] = useState(0);
@@ -112,7 +112,7 @@ const Uploader = ({uploadComplete}) => {
           style={dropStyles}
           maxSize={1024 * 1024 * 100}
           upload={uploadOptions}
-          accept="audio/*"
+          accept="image/*"
           children={innerElement} 
       
         />
@@ -121,4 +121,4 @@ const Uploader = ({uploadComplete}) => {
   );
 }
 
-export default Uploader;
+export default ChordImagesUploader;

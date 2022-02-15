@@ -9,7 +9,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
    
     let queryText = `
                       SELECT * FROM chord_diagrams
-                      WHERE songId = $1
+                      WHERE song_id = $1
                       `
    //this is getting the ID of the song - source of the delete issue
     pool.query(queryText, [id])
@@ -30,13 +30,13 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
     const chord_diagram= req.body;
   
     let queryText = `INSERT INTO "chord_diagrams" (
-                          songId, image_path 
+                          song_id, image_path 
                        )
                        
                        VALUES ($1, $2);
                        
                        `;
-    pool.query(queryText, [chord_diagram.id, chord_diagram.image_path])
+    pool.query(queryText, [chord_diagram.song_id, chord_diagram.image_path])
    
   
       .then(result => {
