@@ -5,9 +5,9 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
-import AddRecording from '../../AddRecording/AddRecording';
-import RecordingsList from '../../RecordingsList/RecordingsList';
-import HeadphonesRoundedIcon from '@mui/icons-material/HeadphonesRounded';
+import SongAudioOptions from './SongAudioOptions';
+import SongInstrumentOptions from './SongInstrumentOptions';
+import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-const SongAudioOptions = ({song}) => {
+const SongDetailsMenu = ({song}) => {
     const {heading, menuItems, menuIcon} = useStyles();
     
     const [open, setOpen] = useState(false);
@@ -69,7 +69,7 @@ const SongAudioOptions = ({song}) => {
         
         <IconButton>
           
-          <HeadphonesRoundedIcon 
+          <MoreHorizIcon 
 
             className={menuIcon}
             aria-controls="simple-menu" 
@@ -77,8 +77,8 @@ const SongAudioOptions = ({song}) => {
             fontSize={'inherit'}
             onClick={handleClickOpen}>
 
-          </HeadphonesRoundedIcon>
-          
+          </MoreHorizIcon>
+      
         </IconButton>
         
           <MenuItem onClick={handleClickOpen}/>
@@ -96,6 +96,7 @@ const SongAudioOptions = ({song}) => {
                       
                   border: "1px solid #2a4f64",
                   background: "rgb(199, 246, 252",
+                  position: "fixed", top: 145, right: 230
                   
                 }
                   
@@ -103,27 +104,19 @@ const SongAudioOptions = ({song}) => {
                 
             >
           
-              <DialogTitle>
-            
-                <Typography 
               
-                  className={heading}>
-              
-                    Audio Files Menu
-              
-                </Typography>
            
-              </DialogTitle>
+            
           
                   <DialogContent className={menuItems}>
           
-                    <AddRecording/>
+                    <SongAudioOptions/>
           
                       </DialogContent>
           
                         <DialogContent className={menuItems}>
           
-                          <RecordingsList/>
+                          <SongInstrumentOptions/>
           
                             </DialogContent>
           
@@ -137,4 +130,4 @@ const SongAudioOptions = ({song}) => {
 
 }
   
-  export default SongAudioOptions;
+  export default SongDetailsMenu;

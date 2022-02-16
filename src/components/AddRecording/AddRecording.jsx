@@ -13,6 +13,7 @@ import RecordingsUploader from './RecordingsUploader'
 import useStyles from './AddRecordingStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
+import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 
 
 
@@ -105,7 +106,8 @@ const AddRecording = ({ song, handleMenuClose }) => {
         
                   <TextField
                   
-                    label="description"
+                    label={<DescriptionOutlinedIcon/>}
+                    placeholder="describe recording"
                     onChange={enterNewRecording('description')}
                     value={newRecording.description}
                     multiline className={descriptionText}

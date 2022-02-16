@@ -14,6 +14,8 @@ import ChordImagesUploader from './ChordImagesUploader'
 import useStyles from './AddChordImageStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+
 
 
 
@@ -91,7 +93,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
         
         onClick={handleClickOpen} 
         className={upload}>
-        <Backup/>
+        <AddPhotoAlternateIcon/>
         &nbsp;Upload Visual
         
       </MenuItem>

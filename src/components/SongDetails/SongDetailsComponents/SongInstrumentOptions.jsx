@@ -111,7 +111,7 @@ return (
             
             >
             
-            <b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>
+            <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="headstock.png"></img></b>
             
             </IconButton>
 

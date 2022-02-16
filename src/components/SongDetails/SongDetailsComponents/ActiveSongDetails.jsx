@@ -3,8 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Paper, Card, CardContent, Typography, Button, HelperText } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import useStyles from './SongDetailsStyles';
-import SongAudioOptions from './SongAudioOptions';
-import SongInstrumentOptions from './SongInstrumentOptions';
+import SongDetailsMenu from './SongDetailsMenu';
 import SongTitle from './SongTitle';
 import SongLyrics from './SongLyrics'
 //import SongInstrumentNotes from './SongInstrumentNotes';
@@ -120,7 +119,7 @@ return (
                         
                                             <div className={menuDots}>
                     
-                                                <SongAudioOptions/>
+                                                <SongDetailsMenu/>
                             
                                             </div>
                     
@@ -141,7 +140,7 @@ return (
 
                                                             </Typography>
                                                             
-                                                                <SongInstrumentOptions/>
+                                                              
 
                                                         </div>
                                                 }
@@ -284,7 +283,7 @@ return (
                         
                                             <div className={menuDots}>
                     
-                                                <SongAudioOptions/>
+                                                <SongDetailsMenu/>
                             
                                             </div>
                     
@@ -304,27 +303,9 @@ return (
                                                                 {song.title}
 
                                                             </Typography>
-                                                            {song.primary_instrument === 'keyboard' ?
-                                                            <IconButton>
                                                             
-                                                            {/*<b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>*/}
-                                                            <Piano style={{color:'#1d778d', paddingBottom: '.1em'}}/>
-                                                            </IconButton>
 
-                                                            :
-
-                                                            song.primary_instrument === 'guitar' ?
-
-                                                            <IconButton>
                                                             
-                                                            <b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>
-                                                            
-                                                            </IconButton>
-
-                                                            :
-                                                            null
-
-                                                            }
 
                                                         </div>
                                                 }
@@ -464,7 +445,7 @@ return (
                         
                                             <div className={menuDots}>
                     
-                                                <SongAudioOptions/>
+                                                <SongDetailsMenu/>
                             
                                             </div>
                     
@@ -485,12 +466,7 @@ return (
                                                                 {song.title}
 
                                                             </Typography>
-                                                            <IconButton>
                                                             
-                                                            {/*<b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>*/}
-                                                            <Piano style={{color:'#1d778d', paddingBottom: '.1em'}}/>
-                                                            </IconButton>
-
                                                         </div>
                                                 }
                         
@@ -628,7 +604,7 @@ return (
                     
                                             <div className={menuDots}>
             
-                                                <SongAudioOptions/>
+                                                <SongDetailsMenu/>
                     
                                             </div>
             
@@ -648,11 +624,9 @@ return (
                                                                 {song.title}
 
                                                             </Typography>
-                                                            <IconButton>
                                                             
-                                                            {/*<b><img style={{width:18, height:18, paddingBottom:'.05em' }} src="plectrum.png"></img></b>*/}
-                                                            <Piano style={{color:'#1d778d', paddingBottom: '.1em'}}/>
-                                                            </IconButton>
+                                                            
+                                                            
                                                         </div>
                                                 }
                 

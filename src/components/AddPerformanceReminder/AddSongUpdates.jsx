@@ -13,6 +13,7 @@ import ChordImagesUploader from './ChordImagesUploader'
 import useStyles from './AddChordImageStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
+import NoteAddIcon from '@mui/icons-material/NoteAdd';
 
 
 
@@ -90,7 +91,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
         
         onClick={handleClickOpen} 
         className={upload}>
-        <Backup/>
+        <NoteAddIcon/>
         &nbsp;Upload Text
         
       </MenuItem>
@@ -112,7 +113,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
             <form className={root}>
         
               <DialogTitle className={dialogTitle} >
-                  Add Specifications and Notes
+                  Add Technical Notes
               </DialogTitle>
         
                 <DialogContent className={dialog}>

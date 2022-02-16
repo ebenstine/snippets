@@ -26,7 +26,7 @@ import {
 from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Delete from '@material-ui/icons/Delete';
-import { InfoOutlined } from '@material-ui/icons'
+import { Info } from '@material-ui/icons'
 import AudioPlayer from "react-modular-audio-player";
 import IconButton from "@material-ui/core/IconButton";
 import Feedback from '@material-ui/icons/Feedback';
@@ -122,7 +122,7 @@ const PerformanceGuide = () => {
                 onClick={handleClickOpen}
                 className={view}
             >
-                <InfoOutlined/>
+                <Info/>
                 
                 &nbsp;View All
             
@@ -133,7 +133,7 @@ const PerformanceGuide = () => {
                 
                 className={drawer}
                 variant="temporary"
-                anchor="left"
+                anchor="right"
                 open={isDrawerOpen}
                 onClose={handleCancel}
             
