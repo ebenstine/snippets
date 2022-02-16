@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
         color: 'rgb(250, 250, 175)',
         marginLeft: '.5em',
         marginRight: '.5em',
-        border: '1px solid #1d778d'
+        border: '1px solid #1d778d',
+        width: 150
         
     },
 

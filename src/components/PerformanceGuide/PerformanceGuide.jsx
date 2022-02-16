@@ -1,8 +1,9 @@
 //Similar to the function of songDetails
 
 //will show the editable contents of instrumentSpec performanceNotes
-//and, the images table that contains all chord diagrams for the song, from songChordDiagrams
-//which doesn't need an edit, but a post and delete
+//and, the images table that contains all chord diagrams for the song, although this code is not refactored
+//until I figure out how and if it makes sense to do it
+//the chord diagrams don't an edit, but a post and delete
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -165,18 +166,19 @@ const PerformanceGuide = () => {
                                         <Typography 
                                 
                                             style={{
-                                                
+                                                //probably have the 'all chord images' heading 
+                                                //read "Performance Guide"
                                                 borderBottom: "1.5px solid #1d778d",
                                                 fontSize: 16,
                                                 color: "#233d4d"
                                             
                                             }}
                                             variant="overline" 
-                                            align="center"
+                                            align="center" 
 
-                                        >
+                                        > 
                                         
-                                            All Chord Images
+                                            All Chord Images 
                                         
                                         </Typography>
                             
@@ -186,25 +188,19 @@ const PerformanceGuide = () => {
                             <br></br>
                             
                             <div>
+                                {/*this is where the instrument specs component should come in, with conditional render for instrument
+                                that takes place in that component*/}
                         
                                 <Typography variant="overline" className={firstRecording}>
 
                                     &nbsp;&nbsp;<span className={cuteStar}>*</span> original upload <span className={cuteStar}>*</span>
                                     
                                 </Typography>
+
+                                {/*make a new typography element here for the 'chord images' heading*/}
                                 
 
-                            {/*{showHeading ? 
-                                
-                                
-                                    <Typography variant="body2" className={firstRecording}>
-                                        &nbsp;&nbsp;<span className={cuteStar}>*</span> Additional Recordings
-                                    </Typography>           
-                                
-                            :
-                            null
                             
-                            }*/}
                         </div>
                             
                         {chordDiagrams.map((chordDiagram) => {
@@ -248,7 +244,7 @@ const PerformanceGuide = () => {
 
                                                     <section className={player}>
 
-                                                    <img src={chordDiagram.image_path}/>
+                                                    <img src={chordDiagram.image_path} style={{height: 55, width: 60}}/>
                                                      </section>
                                                     
                                                 </AccordionSummary>
