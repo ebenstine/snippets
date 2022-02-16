@@ -7,6 +7,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 import AddChordImage from '../../AddPerformanceReminder/AddChordImage';
+import AddSongUpdates from '../../AddPerformanceReminder/AddSongUpdates';
 import PerformanceGuide from '../../PerformanceGuide/PerformanceGuide';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
 import IconButton from "@material-ui/core/IconButton";
@@ -160,11 +161,17 @@ return (
                     this is to allow the post and update actions to be handled separately*/}
                     <AddChordImage/>
 
-
-          
-                      </DialogContent>
-          
+                        </DialogContent>
+                        
                         <DialogContent className={menuItems}>
+          
+                            <AddSongUpdates/>  
+          
+                            </DialogContent>
+
+                      
+          
+                      <DialogContent className={menuItems}>
           
                             <PerformanceGuide/>  
           
