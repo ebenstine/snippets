@@ -12,7 +12,7 @@ import { connect, useDispatch, useSelector } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
 import SongPerformanceNotes from './SongPerformanceNotes';
 import SongInstrumentSpecs from './SongInstrumentSpecs';
-import useStyles from './AddChordImageStyles'
+import useStyles from './AddSongUpdatesStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
 import { NoteAddOutlined } from '@material-ui/icons';
@@ -88,9 +88,7 @@ const AddSongUpdates = ({ song, handleMenuClose }) => {
         
         >
       
-          <FormControl>
-        
-            <form className={root}>
+          
         
               <DialogTitle className={dialogTitle} >
                   Enter Specifications and Notes
@@ -108,9 +106,7 @@ const AddSongUpdates = ({ song, handleMenuClose }) => {
                 
                 </DialogContent>
 
-            </form>
-
-          </FormControl>
+            
         
         
             <DialogActions className={actionDiv}>
