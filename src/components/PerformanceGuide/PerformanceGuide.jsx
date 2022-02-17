@@ -124,7 +124,7 @@ const PerformanceGuide = () => {
             >
                 <Info/>
                 
-                &nbsp;View All
+                &nbsp;Full Performance Guide
             
             </MenuItem>
 

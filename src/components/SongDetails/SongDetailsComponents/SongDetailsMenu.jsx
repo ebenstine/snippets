@@ -96,8 +96,7 @@ const SongDetailsMenu = ({song}) => {
                       
                   border: "1px solid #2a4f64",
                   background: "rgb(199, 246, 252",
-                  position: "fixed", top: 145, right: 230
-                  
+                  position: "static", top: 145, right: 230
                 }
                   
               }}    

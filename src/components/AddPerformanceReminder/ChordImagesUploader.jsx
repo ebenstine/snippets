@@ -86,7 +86,7 @@ const ChordImagesUploader = ({uploadComplete}) => {
               className={dropZone}
             >
               
-              Click to Add, or Drag and Drop Chord Diagram
+              Click to Select, or Drag and Drop File
             
             </Button>
 

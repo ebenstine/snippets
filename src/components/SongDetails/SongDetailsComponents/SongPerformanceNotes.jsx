@@ -77,7 +77,7 @@ function SongPerformanceNotes() {
             actions 
         } = useStyles();
 
-    const [ editable, setEditable] = useState(true);
+    
     console.log(params);
     let song = {
       performance_notes: songDetails.performance_notes
@@ -91,9 +91,7 @@ function SongPerformanceNotes() {
       setReviseDetails({ ...reviseDetails, [event.target.name]: event.target.value })
     };
 
-    const handleEditable = () => {
-        setEditable(editable => !editable)
-    }
+    
   
   
   
@@ -111,12 +109,12 @@ function SongPerformanceNotes() {
         type: 'REVISE_SONG',
         payload: revisedSong
       });
-      setEditable(editable => !editable);
+     
     }
   
     return (
         <>
-            {editable ?
+           
                 <FormControl  >
                     <form className={root} onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
@@ -136,32 +134,7 @@ function SongPerformanceNotes() {
                     </form>
                 </FormControl>
                 
-                :
                 
-                <div onDoubleClick={handleEditable}>
-
-
-                        <div>
-                        <Typography variant="caption" style={{color:'#233d4d'}}>
-                                Production Ideas:
-                        </Typography>
-
-
-                        </div>
-                    <b><img style={{width:12, height:12}} src="sound-faders.png"></img></b> &nbsp;
-                    
-                    <Typography 
-                         
-                        component="span" 
-                        className={notes}>
-                    
-                    
-                    {`${reviseDetails.performance_notes}`}
-
-                    </Typography>
-                </div>
-
-            }
             
         </>
    

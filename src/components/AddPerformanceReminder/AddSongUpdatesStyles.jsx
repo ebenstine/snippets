@@ -104,8 +104,7 @@ const useStyles = makeStyles((theme) => ({
         
         marginLeft: '2em',
         marginRight: '2em',
-        paddingLeft: '2.3em',
-        paddingRight: '2.3em',
+        paddingLeft: '1.6em',
         
         background: 'rgb(230, 252, 255)',
         '&:hover': {

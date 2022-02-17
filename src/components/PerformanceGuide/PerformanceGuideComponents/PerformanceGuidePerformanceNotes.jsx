@@ -63,7 +63,7 @@ const useStyles = makeStyles(() => ({
     },
 }));
         
-        function SongPerformanceNotes() {
+        function PerformanceGuidePerformanceNotes() {
             const songDetails = useSelector(store => store.songDetails);
             const dispatch = useDispatch();
             const params = useParams();
@@ -193,4 +193,4 @@ const useStyles = makeStyles(() => ({
         
         
         
-    export default SongPerformanceNotes;
+    export default PerformanceGuidePerformanceNotes;

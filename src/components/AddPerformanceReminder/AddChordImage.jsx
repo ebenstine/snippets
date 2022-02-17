@@ -94,7 +94,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
         onClick={handleClickOpen} 
         className={upload}>
         <AddPhotoAlternateIcon/>
-        &nbsp;Upload Visual
+        &nbsp;Upload Visual Cue
         
       </MenuItem>
       
@@ -115,7 +115,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
             <form className={root}>
         
               <DialogTitle className={dialogTitle} >
-                  Add Visual Reminder
+                  Add a Chord Image
               </DialogTitle>
         
                 <DialogContent className={dialog}>

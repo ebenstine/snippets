@@ -1,3 +1,4 @@
+//import into performanceGuide
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -13,7 +14,8 @@ import ChordImagesUploader from './ChordImagesUploader'
 import useStyles from './AddChordImageStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
-import NoteAddIcon from '@mui/icons-material/NoteAdd';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+
 
 
 
@@ -91,8 +93,8 @@ const AddChordImage = ({ song, handleMenuClose }) => {
         
         onClick={handleClickOpen} 
         className={upload}>
-        <NoteAddIcon/>
-        &nbsp;Upload Text
+        <AddPhotoAlternateIcon/>
+        &nbsp;Upload Visual Cue
         
       </MenuItem>
       
@@ -113,12 +115,12 @@ const AddChordImage = ({ song, handleMenuClose }) => {
             <form className={root}>
         
               <DialogTitle className={dialogTitle} >
-                  Add Technical Notes
+                  Enter Specifications and Notes
               </DialogTitle>
         
                 <DialogContent className={dialog}>
         
-                    <ChordImagesUploader
+                   
                 
                       uploadComplete={uploadComplete}
 

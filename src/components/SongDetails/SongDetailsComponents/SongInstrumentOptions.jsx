@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
       color: '#2a4f64',
       borderBottom: '1px solid #2a4f64',
       fontSize: 20,
-      paddingLeft: '.5em'
+      paddingLeft: '1.9em'
     }, 
 
     menuIcon: {
@@ -80,11 +80,10 @@ return (
         {song.primary_instrument === 'keyboard' ? 
           
           
-            <IconButton>
+            <IconButton
             
             
-            <Piano
-
+            
                 className={menuIcon}
                 aria-controls="simple-menu" 
                 aria-haspopup="true"
@@ -93,7 +92,7 @@ return (
 
             >
 
-            </Piano>
+            <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="technique.png"></img></b>
             </IconButton>
 
             :
@@ -111,7 +110,7 @@ return (
             
             >
             
-            <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="headstock.png"></img></b>
+            <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="technique.png"></img></b>
             
             </IconButton>
 
@@ -149,7 +148,7 @@ return (
               
                   className={heading}>
               
-                    Performance Reminders
+                    Performance Cue Options
               
                 </Typography>
            

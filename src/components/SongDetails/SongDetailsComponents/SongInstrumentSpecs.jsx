@@ -79,11 +79,11 @@ function SongInstrumentNotes() {
         
         } = useStyles();
 
-    const [ editable, setEditable] = useState(true);
+    
     console.log(params);
 
     let song = {
-      instrument_notes: songDetails.instrument_notes,
+      instrument_specs: songDetails.instrument_specs,
   
     };
   
@@ -94,9 +94,6 @@ function SongInstrumentNotes() {
       setReviseDetails({ ...reviseDetails, [event.target.name]: event.target.value })
     };
 
-    const handleEditable = () => {
-        setEditable(editable => !editable)
-    }
   
   
   
@@ -114,12 +111,12 @@ function SongInstrumentNotes() {
         type: 'REVISE_SONG',
         payload: revisedSong
       });
-      setEditable(editable => !editable);
+      
     }
   
     return (
         <>
-            {editable ?
+            
                 <FormControl  >
                     <form className={root} onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
@@ -138,30 +135,7 @@ function SongInstrumentNotes() {
                         </div>
                     </form>
                 </FormControl>
-                :
                 
-                <div onDoubleClick={handleEditable}>
-
-                    <div>
-                    <Typography variant="caption" style={{color:'#233d4d'}}>
-                            Writing Notes:
-                    </Typography>
-
-
-                </div>
-                    <b><img style={{width:12, height:12, paddingTop:'-.5em' }} src="quill.png"></img></b> &nbsp;
-                    <Typography 
-                        
-                        component="span" 
-                        className={notes}>
-
-                        
-                        
-                        {`${reviseDetails.instrument_notes}`}
-
-                    </Typography>
-                </div>
-            }
             
         </>
    
