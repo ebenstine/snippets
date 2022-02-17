@@ -30,7 +30,7 @@ const useStyles = makeStyles(() => ({
 
 const dropStyles = {
   width: "300px",
-  height: "130px",
+  height: "110px",
   //backgroundColor: '#2a4f64',
   borderRadius: '3px',
   border: '0px white',

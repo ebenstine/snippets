@@ -94,7 +94,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
         onClick={handleClickOpen} 
         className={upload}>
         <AddPhotoAlternateIcon/>
-        &nbsp;Upload Visual Cue
+        &nbsp;Upload Visual Aid
         
       </MenuItem>
       

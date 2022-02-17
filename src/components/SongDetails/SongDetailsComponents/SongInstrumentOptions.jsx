@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
       color: '#2a4f64',
       borderBottom: '1px solid #2a4f64',
       fontSize: 20,
-      paddingLeft: '1.9em'
+      paddingLeft: '.4em'
     }, 
 
     menuIcon: {
@@ -148,7 +148,7 @@ return (
               
                   className={heading}>
               
-                    Performance Cue Options
+                    Performance Assistance Options
               
                 </Typography>
            

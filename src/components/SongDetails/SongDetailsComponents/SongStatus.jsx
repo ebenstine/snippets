@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import { Dialog, DialogContent, DialogContentText, DialogActions, DialogTitle, Button } from '@material-ui/core';
-import { Archive, Feedback, Cancel } from '@material-ui/icons';
+import { Archive, Feedback, Cancel, CheckCircle } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
@@ -153,7 +153,7 @@ return (
                             variant="contained" 
                             onClick={handleClickOpen}
                         >
-                            <Archive/>
+                            <img src="archiveSong.png" style={{width:26, height:26}} ></img>
                             
                         </Button>
                         
@@ -218,7 +218,7 @@ return (
                                         value={song.is_active = false}
                                     >
                                     
-                                        <Archive/>
+                                        <CheckCircle/>
                                         
                                     </Button>
 

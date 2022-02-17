@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
     dialogTitle: {
         background: "rgb(199, 246, 252)",
         color: "#2a4f64",
-        paddingLeft: "6em",
+        paddingLeft: "5.7em",
         
     },
 

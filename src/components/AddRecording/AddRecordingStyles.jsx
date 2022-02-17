@@ -11,7 +11,11 @@ const useStyles = makeStyles((theme) => ({
               
               '&:hover fieldset': {
                 borderColor: '#ffab5c'
-              }
+              },
+
+              '&::placeholder':{
+                color: 'black'
+            }
               //width: '25ch'
           },
           '& label.Mui-focused': {
@@ -85,7 +89,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     descriptionText: {
-        margin: 'auto'
+        margin: 'auto',
+        '&::placeholder':{
+            color: 'black'
+        }
     },
 
     dialogButtons: {

@@ -98,7 +98,7 @@ const AddSongUpdates = ({ song, handleMenuClose }) => {
         <div className={root}>
         
               <DialogTitle className={dialogTitle} >
-                  Enter Specifications and Notes
+                  Instrument Specs and Notes
               </DialogTitle>
 
               

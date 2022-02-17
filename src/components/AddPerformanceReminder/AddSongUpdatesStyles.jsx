@@ -7,7 +7,7 @@ const useStyles = makeStyles(() => ({
       
         '& .MuiTextField-root': {
             
-            color: '#2a4f64',
+            color: '#1d778d',
             
             '&:hover fieldset': {
               borderColor: '#ffab5c'
@@ -26,7 +26,7 @@ const useStyles = makeStyles(() => ({
             
         
         "& .MuiOutlinedInput-input": {
-            color: "#2a4f64",
+            color: "#1d778d",
            
             
         },
@@ -74,7 +74,7 @@ const useStyles = makeStyles(() => ({
     dialogTitle: {
         background: "rgb(199, 246, 252)",
         color: "#2a4f64",
-        paddingLeft: '2.4em',
+        paddingLeft: '2.9em',
         marginBottom: '1em'
         
         

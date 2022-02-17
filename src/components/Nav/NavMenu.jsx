@@ -176,7 +176,7 @@ const NavMenu = ({user}) => {
                 onClick={handleClose}
               >
             
-                <MenuBook/>
+            <img src="archiveSong.png" style={{width:26, height:26}} ></img>
             
                   <Typography component="h5">
               

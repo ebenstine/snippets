@@ -6,14 +6,14 @@ import { FormControl, TextField } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 import { CheckCircle } from '@material-ui/icons';
 import { Cancel } from '@material-ui/icons';
-import { Lightbulb, Piano } from '@mui/icons-material';
+import { Lightbulb, Piano, DescriptionOutlined } from '@mui/icons-material';
 const useStyles = makeStyles(() => ({
     root: {
          
       
         '& .MuiTextField-root': {
             //marginLeft: '3em',
-            color: '#2a4f64',
+            color: '#1d778d',
             
             '&:hover fieldset': {
               borderColor: '#ffab5c'
@@ -32,7 +32,7 @@ const useStyles = makeStyles(() => ({
             
         
         "& .MuiOutlinedInput-input": {
-            color: "#2a4f64",
+            color: "#1d778d",
            
             
         },
@@ -75,7 +75,8 @@ const useStyles = makeStyles(() => ({
         
         width: '35ch',
         marginBottom: '1em',
-        marginTop: '1em'
+        marginTop: '1em',
+        color: '#1d778d'
         //marginLeft: '2em',
         //marginRight: '2em'
     },
@@ -190,14 +191,14 @@ function SongInstrumentSpecs() {
                                 label= 
                                     {
                                         <img 
-                                            style={{width:16, height:16}} 
-                                            src='headstock.png'
+                                            style={{width:22, height:22}} 
+                                            src='finalHeadstock.png'
                                         >
                                         </img>
                                     }
                                         
                                 name="instrument_specs"
-                                placeholder="enter guitar tuning"
+                                placeholder="Enter Guitar Tuning"
                                 
                                 value={reviseDetails.instrument_specs}
                                 margin="dense" 
@@ -212,10 +213,10 @@ function SongInstrumentSpecs() {
 
                             <TextField 
                                     
-                                    label= {<Piano/>}
+                                    label= {<Piano style={{color: '#1d778d'}}/>}
                                             
                                     name="instrument_specs"
-                                    placeholder="enter keyboard model"
+                                    placeholder="Enter Keyboard Model"
                                     
                                     value={reviseDetails.instrument_specs}
                                     margin="dense" 
@@ -227,7 +228,7 @@ function SongInstrumentSpecs() {
 
                             <TextField 
                                                 
-                                    label={<Lightbulb/>}
+                                    label={<Lightbulb style={{color: '#1d778d'}}/>}
                                             
                                     name="instrument_specs"
                                     placeholder="enter instrument or software"
@@ -247,7 +248,8 @@ function SongInstrumentSpecs() {
 
 
                         <TextField 
-                            label="Update Instrument Specs" 
+                            label={<DescriptionOutlined style={{color: '#1d778d'}}/>}
+                            placeholder="Enter Performance Notes" 
                             name="performance_notes"
                             
                             value={reviseDetails.performance_notes}
