@@ -121,7 +121,7 @@ function SongPerformanceNotes() {
                             label="Update Performance Notes" 
                             name="performance_notes"
                             
-                            onDoubleClick={handleEditable}
+                            value={reviseDetails.performance_notes}
                             margin="dense" 
                             multiline className={textField} 
                             onChange={handleChange}

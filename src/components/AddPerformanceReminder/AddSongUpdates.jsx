@@ -7,27 +7,30 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { FormControl } from '@material-ui/core';
-import { TextField } from '@mui/material'
+
 import { connect, useDispatch, useSelector } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
-import ChordImagesUploader from './ChordImagesUploader'
+import SongPerformanceNotes from './SongPerformanceNotes';
+import SongInstrumentSpecs from './SongInstrumentSpecs';
 import useStyles from './AddChordImageStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
-import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
+import { NoteAddOutlined } from '@material-ui/icons';
 
 
 
 
-const AddChordImage = ({ song, handleMenuClose }) => {
+
+
+const AddSongUpdates = ({ song, handleMenuClose }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const { dialog, root, actionDiv, dialogTitle, dialogButtons, upload, descriptionText  } = useStyles();
   const params = useParams();
   const songDetails = useSelector((store) => store.songDetails)
-  const [fileUrl, setFileUrl] = useState ('no file was dropped');
+  
   const [open, setOpen] = useState(false);
-  const [newImage, setNewImage] = useState({});
+
 
 
   
@@ -43,42 +46,17 @@ const AddChordImage = ({ song, handleMenuClose }) => {
   const handleCancel = () => {
     setOpen(false);
     //handleMenuClose();
-    setFileUrl('');
-  }
-  const enterNewImage = (key) => (event) => {
-    setNewImage({ ...newImage, id:params.id, [key]: event.target.value });
-  };
-
-  if (newImage.image_path === ''){
     
-    alert('You must upload an image file!')
-  
-  } 
-
+  }
   const handleSave = (event) => {
     event.preventDefault();
-    dispatch({ 
-
-      type: 'POST_DIAGRAM', 
-      payload: newImage
-
-    });
+    
    setOpen(false);
   };
 
-
-
-  console.log(newImage);
-
-  const uploadComplete = (fileUrl) => {
-    console.log('fileUrl upload complete', fileUrl);
-      setNewImage({...newImage, id:params.id, image_path: fileUrl})
-  }
-
-  const toUserHome = () => {
-    history.push('/songsList')
-}
-
+  
+  
+  
   return (
 
     <>
@@ -93,8 +71,8 @@ const AddChordImage = ({ song, handleMenuClose }) => {
         
         onClick={handleClickOpen} 
         className={upload}>
-        <AddPhotoAlternateIcon/>
-        &nbsp;Upload Visual Cue
+        <NoteAddOutlined/>
+        &nbsp;Create Text Reminder
         
       </MenuItem>
       
@@ -120,12 +98,14 @@ const AddChordImage = ({ song, handleMenuClose }) => {
         
                 <DialogContent className={dialog}>
         
-                   
+                   <SongInstrumentSpecs/>
                 
-                      uploadComplete={uploadComplete}
+                </DialogContent>
 
-                    />
-
+                <DialogContent className={dialog}>
+        
+                   <SongPerformanceNotes/>
+                
                 </DialogContent>
 
             </form>
@@ -168,6 +148,8 @@ const AddChordImage = ({ song, handleMenuClose }) => {
     
     </>
   );
+
+        
 }
 
-export default AddChordImage;
+export default AddSongUpdates;

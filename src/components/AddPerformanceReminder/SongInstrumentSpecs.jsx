@@ -63,7 +63,7 @@ const useStyles = makeStyles(() => ({
     },
 }));
 
-function SongInstrumentNotes() {
+function SongInstrumentSpecs() {
     const songs = useSelector (store => store.songs);
     const songDetails = useSelector(store => store.songDetails);
     const dispatch = useDispatch();
@@ -93,6 +93,7 @@ function SongInstrumentNotes() {
     const handleChange = (event) => {
       setReviseDetails({ ...reviseDetails, [event.target.name]: event.target.value })
     };
+    
 
   
   
@@ -111,19 +112,24 @@ function SongInstrumentNotes() {
         type: 'REVISE_SONG',
         payload: revisedSong
       });
-      
     }
+    
   
     return (
         <>
+            {songDetails.map((song) => {
+
+                return (
+
+                <>
             
-                <FormControl  >
+                <FormControl>
                     <form className={root} onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
-                            label="Update Instrument Notes" 
-                            name="instrument_notes"
+                            label="Update Instrument Specs" 
+                            name="instrument_specs"
                             
-                            onDoubleClick={handleEditable}
+                            value={reviseDetails.instrument_specs}
                             margin="dense" 
                             multiline className={textField} 
                             onChange={handleChange}
@@ -135,6 +141,10 @@ function SongInstrumentNotes() {
                         </div>
                     </form>
                 </FormControl>
+                </>
+            )
+            
+            })}
                 
             
         </>
@@ -144,4 +154,4 @@ function SongInstrumentNotes() {
 
 
 
-export default SongInstrumentNotes;
+export default SongInstrumentSpecs;
