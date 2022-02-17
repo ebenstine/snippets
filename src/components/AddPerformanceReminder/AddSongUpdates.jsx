@@ -10,7 +10,7 @@ import { FormControl } from '@material-ui/core';
 
 import { connect, useDispatch, useSelector } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
-import SongPerformanceNotes from './SongPerformanceNotes';
+
 import SongInstrumentSpecs from './SongInstrumentSpecs';
 import useStyles from './AddSongUpdatesStyles'
 import Cancel from '@material-ui/icons/Cancel';
@@ -65,7 +65,7 @@ const AddSongUpdates = ({ song, handleMenuClose }) => {
 
     
     
-    <div>
+    
       
       <MenuItem 
         
@@ -80,7 +80,14 @@ const AddSongUpdates = ({ song, handleMenuClose }) => {
           
           PaperProps={{
           
-            style: { border: "1px solid #2a4f64" }
+            style: { 
+              
+                      border: "1px solid #2a4f64",
+                      background: "rgb(199, 246, 252)",
+                      margin:'auto',
+                      width: 350
+                    
+                    }
 
           }}
           open={open} 
@@ -88,58 +95,24 @@ const AddSongUpdates = ({ song, handleMenuClose }) => {
         
         >
       
-          
+        <div className={root}>
         
               <DialogTitle className={dialogTitle} >
                   Enter Specifications and Notes
               </DialogTitle>
-        
+
+              
                 <DialogContent className={dialog}>
         
                    <SongInstrumentSpecs/>
                 
                 </DialogContent>
-
-                <DialogContent className={dialog}>
-        
-                   <SongPerformanceNotes/>
                 
-                </DialogContent>
 
-            
-        
-        
-            <DialogActions className={actionDiv}>
-          
-              <Button 
-                
-                onClick={handleCancel} 
-                variant="contained" 
-                size="small" 
-                className={dialogButtons}
-              >
-            
-                <Cancel/>
-
-              </Button>
-          
-              <Button 
-                
-                onClick={handleSave} 
-                variant="contained" 
-                size="small" 
-                className={dialogButtons}
-              >
-            
-                <Backup/>
-
-              </Button>
-
-            </DialogActions>
-
+        </div>    
         </Dialog>
    
-    </div>
+    
         
     
     </>

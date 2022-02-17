@@ -1,51 +1,109 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { TextField, Button, Typography, FormControl } from '@material-ui/core';
+import { Button} from '@material-ui/core';
+import { FormControl, TextField } from '@mui/material';
 import { makeStyles } from '@material-ui/core/styles';
 import { CheckCircle } from '@material-ui/icons';
 import { Cancel } from '@material-ui/icons';
-
+import { Lightbulb, Piano } from '@mui/icons-material';
 const useStyles = makeStyles(() => ({
     root: {
-
-        '& label.Mui-focused': {
+         
+      
+        '& .MuiTextField-root': {
+            //marginLeft: '3em',
             color: '#2a4f64',
+            
+            '&:hover fieldset': {
+              borderColor: '#ffab5c'
+            }
+            //width: '25ch'
+        },
+        '& label.Mui-focused': {
+            color: '#3b95ac',
+            borderColor: '#ffab5c',
         },
         '& .MuiInput-underline:after': {
             borderBottomColor: '#3b95ac',
+        }, 
+            
+            
+            
+        
+        "& .MuiOutlinedInput-input": {
+            color: "#2a4f64",
+           
+            
         },
+        //"& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
+            //border: "2px solid #3b95ac"
+          //},
+          "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: "1.5px solid#3b95ac",
+            borderRadius: "3px 3px 3px 3px"
+          },
+        
+  
+          
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
-                borderColor: '#2a4f64',
+                color: '#3b95ac',
+                //paddingLeft: '4em'
                 
+            },
+            '& .Mui-selected': {
+  
+               borderColor: '3b95ac'
+  
             },
             '&:hover fieldset': {
-                borderColor: '#2a4f64',
-                
+                border:' 1.5px solid #3b95ac' 
+            },  
+            '&:fieldset.Mui-focused': {
+                border:' 1.5px solid #3b95ac'
+            
             },
-        },
+
+            
+            
+      },
     },
+
 
     textField: {
         
-        width: '42ch',
+        width: '35ch',
         marginBottom: '1em',
+        marginTop: '1em'
+        //marginLeft: '2em',
+        //marginRight: '2em'
     },
 
     subheading: {
-        marginLeft: '.5em',
+        //marginLeft: '.5em',
         marginBottom: '1.5em',
         marginTop: '.5em'
     },
     actions: {
-        marginBottom: '2em',
-        marginTop: '-.75em',
-        marginLeft: '7.5em',
+        
+        marginTop: '1em',
+        marginLeft: '4em',
+        //marginRight: '3em'
     },
 
     buttons:  {
-        color: '#2a4f64'
+        background: "#fff099",
+        color: "#2a4f64",
+        border: "1px solid #3b95ac",
+        marginBottom: "2em",
+        marginTop: "3em",
+        marginLeft:'1em',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    
     },
 
     
@@ -123,24 +181,87 @@ function SongInstrumentSpecs() {
 
                 <>
             
-                <FormControl>
-                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
+                    <FormControl>
+                        <form onSubmit={handleSubmit} autoComplete="off" >
+                        {song.primary_instrument === 'guitar' ?
+                        
+                            <TextField 
+                                
+                                label= 
+                                    {
+                                        <img 
+                                            style={{width:16, height:16}} 
+                                            src='headstock.png'
+                                        >
+                                        </img>
+                                    }
+                                        
+                                name="instrument_specs"
+                                placeholder="enter guitar tuning"
+                                
+                                value={reviseDetails.instrument_specs}
+                                margin="dense" 
+                                multiline className={textField} 
+                                onChange={handleChange}
+                                
+                                />
+
+                        :
+
+                        song.primary_instrument === 'keyboard' ?
+
+                            <TextField 
+                                    
+                                    label= {<Piano/>}
+                                            
+                                    name="instrument_specs"
+                                    placeholder="enter keyboard model"
+                                    
+                                    value={reviseDetails.instrument_specs}
+                                    margin="dense" 
+                                    multiline className={textField} 
+                                    onChange={handleChange}
+                                    
+                            />
+                        :
+
+                            <TextField 
+                                                
+                                    label={<Lightbulb/>}
+                                            
+                                    name="instrument_specs"
+                                    placeholder="enter instrument or software"
+                                    
+                                    value={reviseDetails.instrument_specs}
+                                    margin="dense" 
+                                    multiline className={textField} 
+                                    onChange={handleChange}
+                                    
+                            />
+                        }
+
+                        
+
+                        
+
+
+
                         <TextField 
                             label="Update Instrument Specs" 
-                            name="instrument_specs"
+                            name="performance_notes"
                             
-                            value={reviseDetails.instrument_specs}
+                            value={reviseDetails.performance_notes}
                             margin="dense" 
                             multiline className={textField} 
                             onChange={handleChange}
                             
                             />
                         <div className={actions}> 
-                        <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
-                        <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
+                        <Button className={buttons} onClick={handleCancel} variant="outlined"><Cancel/></Button>
+                        <Button className={buttons} variant="outlined" type="submit"><CheckCircle/></Button>
                         </div>
                     </form>
-                </FormControl>
+                    </FormControl>
                 </>
             )
             
