@@ -95,16 +95,20 @@ const RecordingsList = () => {
         
         
         //all this is doing is asking if recordings[0] exists, so of course it doesn't work.
-            if (recordings.id === recordings[0]) {
+            let recording;
+            for (recording of recordings) {
+        
+            if (recording === recordings[0]) {
                 setShowExtraText(true)
             } 
             else 
             {
-            if (recordings.id !== recordings[0]) {
+            if (recording !== recordings[0]) {
                 setShowExtraText(false)
             }
            
         }
+    }
     }
 
 
@@ -139,7 +143,7 @@ const RecordingsList = () => {
             >
                 <QueueMusic/>
                 
-                &nbsp;View All
+                &nbsp;Manage All
             
             </MenuItem>
 
@@ -281,7 +285,7 @@ const RecordingsList = () => {
                                                                     
                                                                         variant="h6" 
                                                                         className={description}>
-                                                                        This is the primary recording for &nbsp;
+                                                                        The original, preview recording for {''}
                                                                         {recording.description} 
                                                                         
                                                                         

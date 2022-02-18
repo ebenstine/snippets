@@ -14,6 +14,8 @@ import getSongDetails from './getSongDetails.saga';
 import songDelete from './deleteSong.saga';
 import audioDelete from './deleteRecording.saga';
 import reviseSong from './reviseSong.saga';
+import imageDelete from './deleteChordDiagram.saga';
+
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
 // This is imported in index.js as rootSaga
@@ -37,6 +39,7 @@ export default function* rootSaga() {
     postChordDiagram(),
     songDelete(),
     audioDelete(),
+    imageDelete(),
     reviseSong()
 
   ]);

@@ -1,15 +1,14 @@
-
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
-function* audioDelete(action) {
+function* imageDelete(action) {
     try {
         
         const id = (action.payload);
         console.log(id);
-        yield axios.delete(`/api/recording/${id}`);
+        yield axios.delete(`/api/chord_diagram/${id}`);
         yield put({ 
-            type: 'FETCH_RECORDINGS',
+            type: 'FETCH_DIAGRAMS',
             
            
         });
@@ -22,8 +21,8 @@ function* audioDelete(action) {
     }
 }
 
-function* deleteAudio() {
-    yield takeLatest('DELETE_AUDIO', audioDelete);
+function* deleteChordDiagram() {
+    yield takeLatest('DELETE_DIAGRAM', imageDelete);
 }
 
-export default deleteAudio;
+export default deleteChordDiagram;

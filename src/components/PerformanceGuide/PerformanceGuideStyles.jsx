@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme) => ({
         
     },
 
+    background: {
+        paddingLeft: '1em'
+    },
+
  
 
     cardContent: {

@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { 
     Accordion, 
     AccordionSummary, 
+    Box,
     Paper, 
     Typography, 
     MenuItem, 
@@ -202,6 +203,11 @@ const PerformanceGuide = () => {
 
                             
                         </div>
+                        <Box 
+                            display="flex"
+                            flexWrap="wrap"
+                            justifyContent="flex-start"
+                        >
                             
                         {chordDiagrams.map((chordDiagram) => {
                                 
@@ -209,7 +215,11 @@ const PerformanceGuide = () => {
                                 return (
                                     
                                     <>
-                                        
+                                       <Box
+                                            paddingTop={2}
+                                            paddingRight={1}
+                                                                
+                                        > 
                                         <div className={background}>
                                         
                                             <Accordion
@@ -357,11 +367,13 @@ const PerformanceGuide = () => {
                                             </Accordion>
 
                                         </div>
+                                    </Box>
                                         
                                         <br></br>
                                     </>
                                 )
                         })}
+                        </Box>
 
                     </Paper>
             
