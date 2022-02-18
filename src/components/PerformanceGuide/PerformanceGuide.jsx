@@ -189,26 +189,80 @@ const PerformanceGuide = () => {
                             
                             <br></br>
 
-                            
-                            <div>
-                                {/*this is where the instrument specs component should come in, with conditional render for instrument
-                                that takes place in that component*/}
+                            {songDetails.map((song) => {
+                                
+                                return (
+                                    <>
+                                        {song.primary_instrument === 'guitar' && song.instrument_specs !== 'standard' ? 
+                                        <> 
+                                            <Typography variant="overline">
 
-                                {/*actually, the other component is the editable textfield. The conditional render for what the unedited
-                                text view should show has to happen here (i.e. if the primary instrument is guitar, and the instrument spec is NOT 
-                                standard, the images heading should say customized chord images*/}
-                        
-                                <Typography variant="overline" className={firstRecording}>
+                                                Custom Tuning: {song.instrument_specs}
 
-                                    &nbsp;&nbsp;<span className={cuteStar}>*</span> original upload <span className={cuteStar}>*</span>
+                                            </Typography>
+                                            
+                                        <br></br> 
+                                            
+                                            <Typography variant="overline">
+
+                                                Custom Chord Images: 
+                                            </Typography>
+                                        </> 
+
+                                        :
+
+                                        song.primary_instrument === 'guitar' && song.instrument_specs === 'standard' ?
+                                            <>
+                                            <Typography variant="overline">
+
+                                                    Tuning: {song.instrument_specs} 
+                                            </Typography>
+                                            <br></br>
+                                            
+                                            <Typography variant="overline">
+                                                    Chord Images:
+                                            </Typography>
+                                            </>
+                                        :
+
+                                        song.primary_instrument === 'keyboard' ?
+                                            <>
+                                            <Typography variant="overline">
+
+                                                    Keyboard Model: {song.instrument_specs}
+                                            </Typography>
+                                            <br></br>
+                                            <Typography variant="overline">
+
+                                                    Chord Images:
+                                            </Typography>
+                                            </>
+
+                                        : 
+                                            <>
+
+                                            <Typography variant="overline">
+                                                    Instrument or Software Used: {song.instrument.specs}
+                                            </Typography>
+
+                                            <Typography variant="overline">
+
+                                                    Chord Charts, Screenshots, Anything:
+                                            </Typography>
+                                        
+                                            </>
+
+                                        }
+
+                                
+                                
                                     
-                                </Typography>
-
-                                {/*make a new typography element here for the 'chord images' heading*/}
+                                
                                 
 
-                            
-                        </div>
+                                    </>
+                                )
+                            })}
                         <Box 
                             display="flex"
                             flexWrap="wrap"
