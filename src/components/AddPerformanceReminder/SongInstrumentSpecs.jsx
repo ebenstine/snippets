@@ -1,3 +1,4 @@
+//this is the input component for the property
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';

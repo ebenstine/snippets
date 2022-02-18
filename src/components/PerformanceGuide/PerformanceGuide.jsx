@@ -7,6 +7,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import PerformanceGuideInstrumentSpecs from './PerformanceGuideComponents/PerformanceGuideInstrumentSpecs'
 import { 
     Accordion, 
     AccordionSummary, 
@@ -63,8 +64,8 @@ const PerformanceGuide = () => {
     const songDetails = useSelector ((store) => store.songDetails);
     const params = useParams();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    const [showHeading, setShowHeading] = useState(false);
-    const [showExtraText, setShowExtraText] = useState()
+    const [editingNotes, setEditingNotes] = useState(false);
+    const [editingSpecs, setEditingSpecs] = useState(false);
     const [isDialogOpen, setIsDialogOpen] = useState(false)
     //going to need an editing state for conditional render like in detailsPage
 
@@ -82,11 +83,6 @@ const PerformanceGuide = () => {
             payload: params.id
            
         });
-
-        if (chordDiagrams.length > 1) {
-            setShowHeading(true)
-        } else
-            setShowHeading(false);
         
     };
 
@@ -115,6 +111,14 @@ const PerformanceGuide = () => {
         //hiding the lack of live updating here but whatev
         setIsDrawerOpen(false);
         setIsDialogOpen(false);
+    }
+
+    const handleEditingSpecs = () => {
+        setEditingSpecs(editingSpecs => !editingSpecs)
+    }
+
+    const handleEditingNotes = () => {
+        setEditingNotes(editingNotes => !editingNotes)
     }
 
     return (
@@ -193,6 +197,14 @@ const PerformanceGuide = () => {
                                 
                                 return (
                                     <>
+                                    {editingSpecs ?
+                                        
+                                        <PerformanceGuideInstrumentSpecs/> 
+
+                                        :
+
+                                        <div onDoubleClick={handleEditingSpecs}>
+
                                         {song.primary_instrument === 'guitar' && song.instrument_specs !== 'standard' ? 
                                         <> 
                                             <Typography variant="overline">
@@ -253,9 +265,10 @@ const PerformanceGuide = () => {
                                             </>
 
                                         }
+                                    </div>
 
                                 
-                                
+                                    }
                                     
                                 
                                 
