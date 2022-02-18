@@ -91,10 +91,10 @@ const RecordingsList = () => {
         setIsDialogOpen(true)
     }
 
-    const handleTextState = () => {
+    function handleTextState() {
         
         
-        //all this is doing is asking if recordings[0] exists, so of course it doesn't work.
+        //loop to determine if the recording is the original. if so, change the state.
             let recording;
             for (recording of recordings) {
         
@@ -102,14 +102,16 @@ const RecordingsList = () => {
                 setShowExtraText(true)
             } 
             else 
-            {
+            
             if (recording !== recordings[0]) {
                 setShowExtraText(false)
             }
            
         }
-    }
-    }
+    };
+    
+    
+    
 
 
     
@@ -400,6 +402,7 @@ const RecordingsList = () => {
 
     )
 }
-            
+    
+
 
 export default RecordingsList;   

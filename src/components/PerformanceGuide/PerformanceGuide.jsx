@@ -60,12 +60,13 @@ const PerformanceGuide = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const chordDiagrams = useSelector((store) => store.chordDiagrams);
-    const songs = useSelector ((store) => store.songs)
+    const songDetails = useSelector ((store) => store.songDetails);
     const params = useParams();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [showHeading, setShowHeading] = useState(false);
     const [showExtraText, setShowExtraText] = useState()
     const [isDialogOpen, setIsDialogOpen] = useState(false)
+    //going to need an editing state for conditional render like in detailsPage
 
     
    
@@ -179,7 +180,7 @@ const PerformanceGuide = () => {
 
                                         > 
                                         
-                                            All Chord Images 
+                                            Performance Guide
                                         
                                         </Typography>
                             
@@ -187,10 +188,15 @@ const PerformanceGuide = () => {
                         </div>
                             
                             <br></br>
+
                             
                             <div>
                                 {/*this is where the instrument specs component should come in, with conditional render for instrument
                                 that takes place in that component*/}
+
+                                {/*actually, the other component is the editable textfield. The conditional render for what the unedited
+                                text view should show has to happen here (i.e. if the primary instrument is guitar, and the instrument spec is NOT 
+                                standard, the images heading should say customized chord images*/}
                         
                                 <Typography variant="overline" className={firstRecording}>
 
@@ -259,37 +265,11 @@ const PerformanceGuide = () => {
                                                     
                                                 </AccordionSummary>
                                             
-                                                            <div>
-                                                            
-                                                                {showExtraText ?
-
-                                                                    <Typography 
-                                                                    
-                                                                        variant="h6" 
-                                                                        className={description}>
-                                                                        This is the primary recording for &nbsp;
-                                                                        
-                                                                        
-                                                                        
-                                                                    </Typography>
-                                                                :
-
-                                                                    <Typography 
-                                                                    
-                                                                        variant="h6" 
-                                                                        className={description}>
-                                                                        
-                                                                        
-                                                                        
-                                                                    </Typography>
-                                                                
-                                                                }
-                                                        
-                                                            </div>
+                                                         
 
                                                                 <Button 
                                                                     className={deletePrompt}
-                                                                    variant="contained"
+                                                                    
                                                                     onClick={handleDialogOpen}
                                                                 >
                                                                     <Delete/>
@@ -354,7 +334,7 @@ const PerformanceGuide = () => {
                                                                             <Button 
                                                                                 
                                                                                 variant="contained" 
-                                                                                onClick={() => handleDeleteAudio(recording.id)} 
+                                                                                onClick={() => handleDeleteDiagram(chordDiagram.id)} 
                                                                                 className={deleteButton}>
                                                                                 <Delete/>
 
