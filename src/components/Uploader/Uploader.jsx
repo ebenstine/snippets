@@ -94,6 +94,7 @@ const Uploader = ({uploadComplete}) => {
 
             >
               Click to Select, or Drag and Drop File
+              
             </Button>
             
         </div>

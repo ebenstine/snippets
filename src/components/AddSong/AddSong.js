@@ -282,7 +282,9 @@ const AddSong = () => {
                           <MenuItem 
                             value={'guitar'} 
                             className={setGuitar}>
-                            <b><img style={{width:22, height:22, paddingTop: '.3em'}} src="specsHeadstock.png"></img></b>&nbsp;Guitar
+                            <div style={{display: 'flex', flexWrap: 'wrap'}}>
+                            <b><img style={{width:22, height:22}} src="specsHeadstock.png"></img></b>&nbsp;Guitar
+                            </div>
                           </MenuItem>
                           
                           <MenuItem 

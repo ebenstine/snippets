@@ -23,7 +23,9 @@ import Feedback from '@material-ui/icons/Feedback';
 //import songDetails from '../../redux/reducers/songDetails.reducer';
 
 
-
+//**** use a conditional render that just maps thru songs and checks 
+//for song.is_active===false.  if the loop catches anything it will render the list.
+//otherwise, the greeting message. */
 
 function InactiveArchive() {
 
@@ -49,24 +51,15 @@ function InactiveArchive() {
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
 
-    const [listView, setListView] = useState();
+    
     
     console.log(songs);
 
-    const handleState = () => {
-        
-        if (songs.length > 0) 
-            {setListView(true)}
-            
-            else 
-
-            {setListView(false)};
-        }
-
+    
 
     //get db info on page load
     useEffect(() => {
-        handleState();
+        
         dispatch({
             type: 'FETCH_SONGS'
         });
@@ -88,10 +81,28 @@ function InactiveArchive() {
 
     //because there is no color-coding involved in the inactive archive, 
     //there's much less code to deal with and thus no need to refactor.
+    //this conditional render eliminates the list view if no inactive songs are present. 
+    //obviously needs cleanup, but works?
     return (
             <>
+            <Box 
+                        
+                        display="flex"
+                        flexWrap="wrap"
+                        justifyContent="space-between"
+                    >
+            
+                        {songs.map((song) => {
+                        
+                            return (
+                            
+                                        <>
+                            
+                                            {song.is_active === false ?
+                                
+                                                <>
 
-                {listView ? 
+                 
                     
                     <Paper className={paper} elevation={10}>
                         
@@ -116,22 +127,7 @@ function InactiveArchive() {
                                         
                             </div>
                         
-                        <Box 
                         
-                            display="flex"
-                            flexWrap="wrap"
-                            justifyContent="space-between"
-                        >
-                
-                            {songs.map((song) => {
-                            
-                                return (
-                                
-                                            <>
-                                
-                                                {song.is_active === false ?
-                                    
-                                                    <>
                                     
                                                         <Box paddingTop={2}>
                                             
@@ -179,24 +175,16 @@ function InactiveArchive() {
                                                         <br></br>
                                                         <br></br>
                                      
-                                                    </>
+                                                    
                      
-                                                :
                                                 
-                                                null
                                                 
-                                                }
+                                            </Paper>
                         
                                             </>
-                                        );
+                                        
 
-                            })}
-
-                        </Box> 
-
-                    </Paper>
-
-                :
+                    :
                 
                 
                     <Paper className={blankPage}>
@@ -246,11 +234,16 @@ function InactiveArchive() {
 
                     </Paper>
 
-                }
+                
 
+                }
             </>
 
     );
+            })}
+            </Box>
+            </>
+    )
 
 }
 

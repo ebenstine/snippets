@@ -1,6 +1,8 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import { PlayArrowRounded } from '@mui/icons-material';
+
 
 import './Nav.css';
 import { useSelector } from 'react-redux';

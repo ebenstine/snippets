@@ -3,6 +3,7 @@ import {useSelector, useDispatch } from 'react-redux';
 import { Paper, Button, Typography, Card } from '@material-ui/core'
 import useStyles from '../UserPage/UserPageStyles'
 import ExitToApp from '@material-ui/icons/ExitToApp';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 
 const UserPage = () => {
   
@@ -37,6 +38,10 @@ const UserPage = () => {
     <Paper className={paper} elevation={10}>
       
       <div className="container">
+        <div style={{display:'flex', justifyContent:'center' }}>
+        <AccountCircle style={{color: '#233d4d', width:30, height:30}}/>
+        </div>
+        <br></br>
 
         <Typography 
           
@@ -44,6 +49,7 @@ const UserPage = () => {
           variant = "h4" 
           className = {welcome} 
         >
+          
           Hey, {user.username}!
         </Typography>
 
