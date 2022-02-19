@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
 
     drawerHeader: {
         display: "flex",
-        align: "center",
+        justifyContent: "center",
         paddingRight: "4.74em",
         color: "#233d4d",
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
@@ -221,6 +221,17 @@ const useStyles = makeStyles((theme) => ({
         paddingRight: '1em',
         paddingTop: '.5em',
         paddingBottom: '.5em'
+        
+    },
+
+    instSpecs: {
+        
+        borderRadius: '3px',
+        border:' 1.5px solid #3b95ac',
+        background: '#82bdcc',
+        '&:hover': {
+            background:'#94d9eb'
+        }
         
     }
     

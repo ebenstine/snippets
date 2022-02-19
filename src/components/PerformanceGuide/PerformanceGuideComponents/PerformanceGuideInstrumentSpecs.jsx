@@ -17,32 +17,79 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { Paper, TextField, MenuItem, Button, Typography, Select, FormControl } from '@material-ui/core';
+import { Paper, MenuItem, Button, Typography, Select, FormControl } from '@material-ui/core';
+import { TextField } from '@mui/material'
 import { makeStyles } from '@material-ui/core/styles';
 import { CheckCircle } from '@material-ui/icons';
 import { Cancel } from '@material-ui/icons';
+import { Piano } from '@mui/icons-material';
+import { Lightbulb } from '@mui/icons-material';
 
 
 const useStyles = makeStyles(() => ({
 
     root: {
-
-        '& label.Mui-focused': {
+         
+      
+        '& .MuiTextField-root': {
+            marginLeft: '1em',
             color: '#2a4f64',
+            
+            '&:hover fieldset': {
+              borderColor: '#eb9148'
+            },
+
+            '&::placeholder':{
+              color: 'black'
+          }
+            //width: '25ch'
+        },
+        '& label.Mui-focused': {
+            color: '#3b95ac',
+            borderColor: '#eb9148',
         },
         '& .MuiInput-underline:after': {
-            borderBottomColor: '#3b95ac',
+            borderBottomColor: '#e45252',
+        }, 
+            
+            
+            
+        
+        "& .MuiOutlinedInput-input": {
+            color: "#2a4f64",
+           
+            
         },
+        //"& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
+            //border: "2px solid #3b95ac"
+          //},
+          "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: "1.5px solid#3b95ac",
+            borderRadius: "3px 3px 3px 3px"
+          },
+        
+  
+          
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
-                borderColor: '#2a4f64',
+                color: '#3b95ac',
+                //paddingLeft: '4em'
                 
+            },
+            '& .Mui-selected': {
+  
+               borderColor: '3b95ac'
+  
             },
             '&:hover fieldset': {
-                borderColor: '#2a4f64',
-                
+                border:' 1.5px solid #3b95ac' 
+            },  
+            '&:fieldset.Mui-focused': {
+                border:' 1.5px solid #3b95ac'
+            
             },
-        },
+            
+      },
     },
 
     textField: {
@@ -63,7 +110,18 @@ const useStyles = makeStyles(() => ({
     },
 
     buttons:  {
-        color: '#2a4f64'
+        color: '#2a4f64',
+        marginTop: '.75em'
+    },
+
+    instSpecs: {
+        borderRadius: '3px',
+        border:' 1.5px solid #3b95ac',
+        background: '#82bdcc',
+        '&:hover': {
+            background:'#5294a5'
+        }
+        
     },
 
     notes: {
@@ -75,8 +133,15 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
             borderBottom: '1.5px solid #1d778d',
             cursor: 'pointer'
-        }
+        },
+        align:'center'
     },
+
+    specText: {
+        color:'#233d4d', 
+        display:'flex', 
+        justifyContent:'center'
+    }
 }));
 
 function PerformanceGuideInstrumentSpecs() {
@@ -90,10 +155,15 @@ function PerformanceGuideInstrumentSpecs() {
             buttons, 
             notes, 
             root, 
-            actions 
+            actions,
+            instSpecs,
+            specText
+
         } = useStyles();
 
-    const [ editable, setEditable] = useState(true);
+    const [ editable, setEditable ] = useState(false);
+    const [ updated, setUpdated ] = useState(false);
+ 
     console.log(params);
     let song = {
         instrument_specs: songDetails.instrument_specs
@@ -101,6 +171,7 @@ function PerformanceGuideInstrumentSpecs() {
     };
     
     const [reviseDetails, setReviseDetails] = useState(song);
+
     
     
     const handleChange = (event) => {
@@ -130,130 +201,235 @@ function PerformanceGuideInstrumentSpecs() {
                     });
         
                     setEditable(editable => !editable);
+                    setUpdated(updated => !updated);
+                    
     }
     
     return (
-        
+            
         <>
-        
-        {songDetails.map((song) => {
             
-            return (
-            
-                <>
-            
-                    {editable ?
+            {songDetails.map((song) => {
                 
-                        <FormControl  >
+                return (
+                
+                    <>
+                
+                        {editable ?
                     
-                            <form className={root} onSubmit={handleSubmit} autoComplete="off" >
+                            <FormControl  >
                         
-                                {song.primary_instrument === 'guitar' ?
-          
-                                    <TextField
-                                    // IMPORTANT! 'THE ORIGINAL ENTRY', WHILE ALSO AN UPDATE, IS IN addReminder
-                                        label="Update Guitar Tuning" 
-                                        name="instrument_specs"
-                                        onDoubleClick={handleEditable}
-                                        margin="dense" 
-                                        multiline className={textField} 
-                                        onChange={handleChange}
-                                    /> 
+                                <form className={root} onSubmit={handleSubmit} autoComplete="off" >
+                            
+                                    {song.primary_instrument === 'guitar' ?
+            
+                                        <TextField
+                                        // IMPORTANT! 'THE ORIGINAL ENTRY', WHILE ALSO AN UPDATE, IS IN addReminder
+                                            
+                                            label={
+                                                <img 
+                                                    style={{width:22, height:22}} 
+                                                    src='finalHeadstock.png'
+                                                >
+                                                </img>
+                                            } 
+                                            placeholder="Update Guitar Tuning"
+                                            name="instrument_specs"
+                                            onDoubleClick={handleEditable}
+                                            margin="dense" 
+                                            multiline className={textField} 
+                                            onChange={handleChange}
+                                        /> 
+
+                                    :
+
+                                    song.primary_instrument === 'keyboard' ?
+
+                                        <TextField
+                                            
+                                            label={<Piano/>} 
+                                            placeholder="Update Keyboard Type"
+                                            name="instrument_specs"
+                                            onDoubleClick={handleEditable}
+                                            margin="dense" 
+                                            multiline className={textField} 
+                                            onChange={handleChange}
+                                    
+                                        />
+                                    :
+
+                                
+                                        
+                                        <TextField
+                                            
+                                            label={<Lightbulb/>}
+                                            placeholder="Update Instrument or Software"
+                                            name="instrument_specs"
+                                            onDoubleClick={handleEditable}
+                                            margin="dense" 
+                                            multiline className={textField} 
+                                            onChange={handleChange}
+                                        />
+                                    }
+                                
+                                
+                                    <div className={actions}> 
+
+                                        <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
+                                        <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
+                                        
+                                    </div>
+                        
+                                </form>
+                            
+                            </FormControl>
+                    
+                        :
+                            
+                            <div onDoubleClick={handleEditable}>
+                                
+                                {updated ?
+
+                                song.primary_instrument === 'guitar' ?
+                                    
+                                    <div className={instSpecs}>
+                                        
+                                        <Typography variant= "overline" className={specText}>
+                                            
+                                            
+                                            Updated Tuning: {reviseDetails.instrument_specs} 
+                                            
+                                        </Typography>
+                                    </div>
 
                                 :
 
                                 song.primary_instrument === 'keyboard' ?
 
-                                    <TextField
+                                    <div>
+                                        <Typography variant="overline" className={specText}>
+                                            
+                                            Updated Keyboard Type: {reviseDetails.instrument_specs} 
                                         
-                                        label="Update Keyboard Model" 
-                                        name="instrument_specs"
-                                        onDoubleClick={handleEditable}
-                                        margin="dense" 
-                                        multiline className={textField} 
-                                        onChange={handleChange}
-                                
-                                    />
+                                        </Typography>
+                                    </div>
+
                                 :
+                                    <div>
+                                        <Typography variant="overline" className={specText}>
+                                            
+                                            Updated Instrument or Software Type:  {reviseDetails.instrument_specs}
 
-                               
-                                    
-                                    <TextField
-
-                                        label="Update Instrument or Software"
-                                        name="instrument_specs"
-                                        onDoubleClick={handleEditable}
-                                        margin="dense" 
-                                        multiline className={textField} 
-                                        onChange={handleChange}
-                                    />
-                                }
-                            
-                            
-                                <div className={actions}> 
-
-                                    <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
-                                    <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
-                                    
-                                </div>
-                    
-                            </form>
-                        
-                        </FormControl>
-                
-                    :
-                
-                        <div onDoubleClick={handleEditable}>
-
-                            {song.primary_instrument === 'guitar' ? 
+                                        </Typography>
+                                    </div>
+                                :
+                                //this element probably needs all the conditional rendering for instrument type and language
+                                    <>
                                 
-                                <div>
-                                    <Typography variant="caption" style={{color:'#233d4d'}}>
-                                        Guitar Tuning:    
-                                    </Typography>
-                                </div>
+                                        {song.primary_instrument === 'guitar' && song.instrument_specs !== 'standard' ? 
+                                            <>
+                                                <div className={instSpecs}>
 
-                            :
+                                                    <Typography variant="overline" className={specText}>
 
-                            song.primary_instrument === 'keyboard' ?
+                                                        Custom Tuning: {song.instrument_specs}
 
-                                <div>
-                                    <Typography variant="caption" style={{color:'#233d4d'}}>
-                                        Keyboard Type:   
-                                    </Typography>
-                                </div>
+                                                    </Typography>
 
-                            :
-                                <div>
-                                    <Typography variant="caption" style={{color:'#233d4d'}}>
-                                        Instrument or Software Type:  
-                                    </Typography>
-                                </div>
-                            
-                            }
+                                                </div> 
+                                                
+                                                <br></br> 
+                                                
+                                                <div>
+                                                
+                                                    <Typography variant="overline">
 
+                                                        Custom Chord Images: 
+                                                
+                                                    </Typography>
+                                                
+                                                </div>
+                                            
+                                            </>
+                                        :
 
-                                <Typography 
-                                    
-                                    component="span" 
-                                    className={notes}
-                                >
-                            
-                                    {`${reviseDetails.instrument_specs}`}
-        
-                                </Typography>
-                        </div>
+                                            song.primary_instrument === 'guitar' && song.instrument_specs === 'standard' ?
+                                                
+                                                <>
+                                                
+                                                    <div className={instSpecs}>
+                                                
+                                                        <Typography variant="overline" className={specText}>
 
-                    }
+                                                            Tuning: {song.instrument_specs} 
+
+                                                        </Typography>
+                                                
+                                                    </div>
+                                                
+                                                    <br></br>
+                                                
+                                                    
+                                                </>
+                                        :
+
+                                            song.primary_instrument === 'keyboard' ?
+                                                
+                                                <>
+                                                
+                                                    <div className={instSpecs}>
+                                                
+                                                        <Typography variant="overline" className={specText}>
+
+                                                            Keyboard Model: {song.instrument_specs}
+                                                        
+                                                        </Typography>
+                                                
+                                                    </div>
+                                                
+                                                    <br></br>
+                                                
+                                                    
+                                                </>
+
+                                        : 
+                                                
+                                            <>
+                                                <div className={instSpecs}>
+                                                
+                                                    <Typography variant="overline">
+                                                        
+                                                        Instrument or Software Used: {song.instrument.specs}
+                                                
+                                                    </Typography>
+                                                
+                                                </div>
+                                                
+                                                
+                                            
+                                            </>
+
+                                            }
+                                
+                                
+
+                                    </>
+                        
+                                
+
+                                }
+                        
+                            </div>
+                        }
+                    
+                    </>
             
-                </>
-        
-            )
-        
-        })}
+                )
+            
+            })}
 
-    </>
-)
+        </>
+    )
 }
 
 

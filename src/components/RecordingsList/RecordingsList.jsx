@@ -23,7 +23,7 @@ import {
 from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Delete from '@material-ui/icons/Delete';
-import QueueMusic from '@material-ui/icons/QueueMusic';
+import HeadphonesRoundedIcon from '@mui/icons-material/HeadphonesRounded';
 import AudioPlayer from "react-modular-audio-player";
 import IconButton from "@material-ui/core/IconButton";
 import Feedback from '@material-ui/icons/Feedback';
@@ -143,8 +143,8 @@ const RecordingsList = () => {
                 onClick={handleClickOpen}
                 className={view}
             >
-                <QueueMusic/>
                 
+                <HeadphonesRoundedIcon/>
                 &nbsp;Manage All
             
             </MenuItem>
@@ -166,6 +166,14 @@ const RecordingsList = () => {
                         className= {paper} 
                         elevation={10}
                     >
+                        <div style={{display:'flex', justifyContent: 'center', paddingBottom: '2em'}}>
+
+                            <img 
+                                style={{width:50, height:50, display:'flex', justifyContent: 'center'}} 
+                                src='listSoundwaves.png'
+                            >
+                            </img>
+                        </div>
                         
                         <div className={drawerHeader}>
                             

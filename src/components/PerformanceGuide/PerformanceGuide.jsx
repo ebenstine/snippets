@@ -28,7 +28,7 @@ import {
 from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Delete from '@material-ui/icons/Delete';
-import { Info } from '@material-ui/icons'
+import HeadphonesRoundedIcon from '@mui/icons-material/HeadphonesRounded';
 import AudioPlayer from "react-modular-audio-player";
 import IconButton from "@material-ui/core/IconButton";
 import Feedback from '@material-ui/icons/Feedback';
@@ -54,7 +54,8 @@ const PerformanceGuide = () => {
             dialogContent,
             dialogText,
             cancelButton,
-            deleteButton
+            deleteButton,
+            instSpecs
         
         } = useStyles();
 
@@ -128,7 +129,7 @@ const PerformanceGuide = () => {
                 onClick={handleClickOpen}
                 className={view}
             >
-                <Info/>
+                 <b><img style={{width:22, height:22, paddingBottom:'.05em' }} src="musicStandMenu.png"></img></b>
                 
                 &nbsp;Full Performance Guide
             
@@ -136,22 +137,29 @@ const PerformanceGuide = () => {
 
          
             <Drawer
-                
+            
                 className={drawer}
                 variant="temporary"
                 anchor="right"
                 open={isDrawerOpen}
                 onClose={handleCancel}
-            
+        
             >
             
             
-                    <Paper 
-                            
-                        className= {paper} 
-                        elevation={10}
-                    >
+                <Paper 
                         
+                    className= {paper} 
+                    elevation={10}
+                >
+                        <div style={{display:'flex', justifyContent: 'center', paddingBottom: '2em'}}>
+
+                        <img 
+                            style={{width:50, height:50, display:'flex', justifyContent: 'center'}} 
+                            src='finalHeadstock.png'
+                        >
+                        </img>
+                        </div>
                         <div className={drawerHeader}>
                             
                             <IconButton 
@@ -184,103 +192,24 @@ const PerformanceGuide = () => {
 
                                         > 
                                         
-                                            Performance Guide
+                                        Performance Guide
+                                        
                                         
                                         </Typography>
                             
                                             
                         </div>
                             
-                            <br></br>
+                        <br></br>
 
-                            {songDetails.map((song) => {
-                                
-                                return (
-                                    <>
-                                    {editingSpecs ?
-                                        
-                                        <PerformanceGuideInstrumentSpecs/> 
+                    <PerformanceGuideInstrumentSpecs/> 
 
-                                        :
-
-                                        <div onDoubleClick={handleEditingSpecs}>
-
-                                        {song.primary_instrument === 'guitar' && song.instrument_specs !== 'standard' ? 
-                                        <> 
-                                            <Typography variant="overline">
-
-                                                Custom Tuning: {song.instrument_specs}
-
-                                            </Typography>
-                                            
-                                        <br></br> 
-                                            
-                                            <Typography variant="overline">
-
-                                                Custom Chord Images: 
-                                            </Typography>
-                                        </> 
-
-                                        :
-
-                                        song.primary_instrument === 'guitar' && song.instrument_specs === 'standard' ?
-                                            <>
-                                            <Typography variant="overline">
-
-                                                    Tuning: {song.instrument_specs} 
-                                            </Typography>
-                                            <br></br>
-                                            
-                                            <Typography variant="overline">
-                                                    Chord Images:
-                                            </Typography>
-                                            </>
-                                        :
-
-                                        song.primary_instrument === 'keyboard' ?
-                                            <>
-                                            <Typography variant="overline">
-
-                                                    Keyboard Model: {song.instrument_specs}
-                                            </Typography>
-                                            <br></br>
-                                            <Typography variant="overline">
-
-                                                    Chord Images:
-                                            </Typography>
-                                            </>
-
-                                        : 
-                                            <>
-
-                                            <Typography variant="overline">
-                                                    Instrument or Software Used: {song.instrument.specs}
-                                            </Typography>
-
-                                            <Typography variant="overline">
-
-                                                    Chord Charts, Screenshots, Anything:
-                                            </Typography>
-                                        
-                                            </>
-
-                                        }
-                                    </div>
-
-                                
-                                    }
                                     
-                                
-                                
-
-                                    </>
-                                )
-                            })}
-                        <Box 
-                            display="flex"
-                            flexWrap="wrap"
-                            justifyContent="flex-start"
-                        >
+                    <Box 
+                        display="flex"
+                        flexWrap="wrap"
+                        justifyContent="flex-start"
+                    >
                             
                         {chordDiagrams.map((chordDiagram) => {
                                 
@@ -293,136 +222,142 @@ const PerformanceGuide = () => {
                                             paddingRight={1}
                                                                 
                                         > 
-                                        <div className={background}>
+                                            <div className={background}>
                                         
-                                            <Accordion
-                                                
-                                                raised={true}
-                                                className={card1}
-                                                
-                                            >
-                                                
-                                                <AccordionSummary
+                                                <Accordion
                                                     
-                                                    expandIcon=
-                                                        
-                                                        {<ExpandMoreIcon 
-                                                        
-                                                            style={{ 
-                                                            
-                                                            color: '#eb9148',
-                                                            paddingRight: '.75em',
-                                                            
-                                                            
-                                                            }}
-                                                            
-                                                            
-                                                        />}
-
-                                                    aria-controls="panel1a-content"
-                                                    id="panel1a-header"
-                                                    item xs={1} key={chordDiagram.id}
-                                            
+                                                    raised={true}
+                                                    className={card1}
+                                                    
                                                 >
+                                                
+                                                    <AccordionSummary
+                                                        
+                                                        expandIcon=
+                                                            
+                                                            {<ExpandMoreIcon 
+                                                            
+                                                                style={{ 
+                                                                
+                                                                color: '#eb9148',
+                                                                paddingRight: '.75em',
+                                                                
+                                                                
+                                                                }}
+                                                                
+                                                                
+                                                            />}
 
-                                                    <section className={player}>
+                                                        aria-controls="panel1a-content"
+                                                        id="panel1a-header"
+                                                        item xs={1} key={chordDiagram.id}
+                                                
+                                                    >
 
-                                                    <img src={chordDiagram.image_path} style={{height: 55, width: 60}}/>
-                                                     </section>
-                                                    
-                                                </AccordionSummary>
+                                                        <section className={player}>
+
+                                                            <img 
+                                                                src={chordDiagram.image_path} 
+                                                                style={{height: 55, width: 60}}
+                                                            />
+                                                        </section>
+                                                        
+                                                    </AccordionSummary>
                                             
                                                          
 
-                                                                <Button 
-                                                                    className={deletePrompt}
-                                                                    
-                                                                    onClick={handleDialogOpen}
-                                                                >
-                                                                    <Delete/>
-                                                                </Button>
+                                                        <Button 
+                                                            className={deletePrompt}
+                                                            
+                                                            onClick={handleDialogOpen}
+                                                        >
+                                                            
+                                                            <Delete/>
 
-                                                                <Dialog 
-                                                                    
-                                                                    open={isDialogOpen} 
-                                                                    PaperProps={{
-                                                                        style: 
-                                                                            { border: "1px solid #e45252",
-                                                                                
-                                                                                background: "rgb(199, 246, 252)"
-                                                                            }
+                                                        </Button>
+
+                                                            <Dialog 
                                                                 
-                                                                                }}
-                                                                    className={dialog} 
-                                                                    onClose={handleDialogClose} 
-                                                                    
-                                                                >
-                                                                    
-                                                                    <DialogTitle className={dialogContent}>
-                                                                        
-                                                                        <div>
-                                                                        
-                                                                            <Feedback 
-                                                                                style = {{
-                                                                                    color: '#e45252',
-                                                                                    fontSize: 50,
-                                                                                    paddingTop: '-1em',
-                                                                                    display: 'flex',
-                                                                                    flexWrap: 'wrap',
-                                                                                    textStroke: '2px black'
-                                                                                }}
-                                                                            />
+                                                                open={isDialogOpen} 
+                                                                PaperProps={{
+                                                                    style: 
+                                                                        { border: "1px solid #e45252",
+                                                                            
+                                                                            background: "rgb(199, 246, 252)"
+                                                                        }
+                                                            
+                                                                            }}
+                                                                className={dialog} 
+                                                                onClose={handleDialogClose} 
                                                                 
-                                                                        </div>
+                                                            >
                                                                 
-                                                                        </DialogTitle>
-                                                                            
-                                                                            <DialogContent className={dialogContent} >
-                                                                                
-                                                                                <DialogContentText className={dialogText}>
-                                                                                    
-                                                                                    Deleting a recording cannot be undone.  Do you want to do this?
-
-                                                                                </DialogContentText>
-                                                                            
-                                                                            </DialogContent>
+                                                                <DialogTitle className={dialogContent}>
                                                                     
-                                                                        <DialogActions className={dialogContent}>
-                                            
-                                                                            <Button 
-                                                                                className={cancelButton} 
-                                                                                onClick={handleDialogClose} 
-                                                                                variant="contained"
-                                                                            >
-                                                                                <Cancel/>
-                                                                            
-                                                                            </Button>
-                                                        
-                                                                            <Button 
-                                                                                
-                                                                                variant="contained" 
-                                                                                onClick={() => handleDeleteDiagram(chordDiagram.id)} 
-                                                                                className={deleteButton}>
-                                                                                <Delete/>
-
-                                                                            </Button>
+                                                                    <div>
+                                                                    
+                                                                        <Feedback 
+                                                                            style = {{
+                                                                                color: '#e45252',
+                                                                                fontSize: 50,
+                                                                                paddingTop: '-1em',
+                                                                                display: 'flex',
+                                                                                flexWrap: 'wrap',
+                                                                                textStroke: '2px black'
+                                                                            }}
+                                                                        />
+                                                            
+                                                                    </div>
+                                                            
+                                                                    </DialogTitle>
                                                                         
-                                                                        </DialogActions>
+                                                                        <DialogContent className={dialogContent} >
+                                                                            
+                                                                            <DialogContentText className={dialogText}>
+                                                                                
+                                                                                Deleting a recording cannot be undone.  Do you want to do this?
 
-                                                                    </Dialog>
+                                                                            </DialogContentText>
+                                                                        
+                                                                        </DialogContent>
+                                                                
+                                                                    <DialogActions className={dialogContent}>
+                                        
+                                                                        <Button 
+                                                                            className={cancelButton} 
+                                                                            onClick={handleDialogClose} 
+                                                                            variant="contained"
+                                                                        >
+                                                                            <Cancel/>
+                                                                        
+                                                                        </Button>
+                                                    
+                                                                        <Button 
+                                                                            
+                                                                            variant="contained" 
+                                                                            onClick={() => handleDeleteDiagram(chordDiagram.id)} 
+                                                                            className={deleteButton}>
+                                                                            <Delete/>
+
+                                                                        </Button>
+                                                                    
+                                                                    </DialogActions>
+
+                                                            </Dialog>
                                                 
-                                            </Accordion>
+                                                </Accordion>
 
-                                        </div>
-                                    </Box>
+                                            </div>
+                                        </Box>
                                         
                                         <br></br>
                                     </>
                                 )
                         })}
-                        </Box>
 
-                    </Paper>
+                    </Box>
+
+                </Paper>
             
             </Drawer>
 
