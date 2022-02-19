@@ -233,7 +233,14 @@ const useStyles = makeStyles((theme) => ({
             background:'#94d9eb'
         }
         
-    }
+    },
+    starting: {
+        color: "#233d4d",
+    },
+
+    cuteStar:{
+        color:'#eb9148' 
+    },
     
 
 

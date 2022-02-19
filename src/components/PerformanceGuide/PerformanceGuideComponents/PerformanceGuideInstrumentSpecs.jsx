@@ -340,15 +340,6 @@ function PerformanceGuideInstrumentSpecs() {
                                                 
                                                 <br></br> 
                                                 
-                                                <div>
-                                                
-                                                    <Typography variant="overline">
-
-                                                        Custom Chord Images: 
-                                                
-                                                    </Typography>
-                                                
-                                                </div>
                                             
                                             </>
                                         :
@@ -399,7 +390,7 @@ function PerformanceGuideInstrumentSpecs() {
                                                 
                                                     <Typography variant="overline">
                                                         
-                                                        Instrument or Software Used: {song.instrument.specs}
+                                                        Instrument or Software Used: {song.instrument_specs}
                                                 
                                                     </Typography>
                                                 

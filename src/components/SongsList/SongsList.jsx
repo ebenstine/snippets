@@ -404,7 +404,7 @@ function SongsList() {
                                     >
                                     
                                         This is where all your active songs live.  You can upload music and song information
-                                        by heading to the navigation bar in the top right.
+                                        by following the navigation bar prompts. 
 
                                     </Typography>
                                 

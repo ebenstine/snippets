@@ -223,19 +223,7 @@ const RecordingsList = () => {
                                     
                                 </Typography>
                                 
-
-                            {/*{showHeading ? 
-                                
-                                
-                                    <Typography variant="body2" className={firstRecording}>
-                                        &nbsp;&nbsp;<span className={cuteStar}>*</span> Additional Recordings
-                                    </Typography>           
-                                
-                            :
-                            null
-                            
-                            }*/}
-                        </div>
+                            </div>
                             
                         {recordings.map((recording) => {
                                 
@@ -288,8 +276,8 @@ const RecordingsList = () => {
                                                 </AccordionSummary>
                                             
                                                             <div>
-                                                            
-                                                                {showExtraText ?
+                                                                {/*the way this conditional is set up turns off the state when the array has more than one item*/}
+                                                                {recording === recordings[0] ?
 
                                                                     <Typography 
                                                                     

@@ -47,7 +47,7 @@ const PerformanceGuide = () => {
             background, 
             view, 
             bye,
-            firstRecording,
+            starting,
             cuteStar,
             deletePrompt,
             dialog,
@@ -203,7 +203,37 @@ const PerformanceGuide = () => {
                         <br></br>
 
                     <PerformanceGuideInstrumentSpecs/> 
+                    
+                    {songDetails.map((song) => {
 
+                        return (
+                        <>
+                        
+                        
+                            {song.primary_instrument === 'guitar' || song.primary_instrument === 'keyboard' ?
+                            
+                                <Typography variant="caption" className={starting}>
+
+                                    &nbsp;&nbsp;
+                                        <span className={cuteStar}>*</span> 
+                                            Beginning Hand Position 
+                                                <span className={cuteStar}>*</span>
+                                    
+                                </Typography>
+
+                            :
+
+                            song.primary_instrument === 'other' ?
+
+                                null
+                            :
+                                null
+                            }
+                            
+                        
+                        </>
+                        )
+                    })}
                                     
                     <Box 
                         display="flex"
