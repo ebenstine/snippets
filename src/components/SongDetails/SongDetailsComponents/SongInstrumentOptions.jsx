@@ -115,10 +115,27 @@ return (
             </IconButton>
 
             :
-            null
+            song.primary_instrument === 'other' ?
+            <IconButton
 
-            }
-        
+                className={menuIcon}
+                aria-controls="simple-menu" 
+                aria-haspopup="true"
+                fontSize={'inherit'}
+                onClick={handleClickOpen}
+
+            
+            >
+            
+            <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="technique.png"></img></b>
+            </IconButton>
+            
+            :
+
+            null
+            
+            
+        }
         
           <MenuItem onClick={handleClickOpen}/>
 

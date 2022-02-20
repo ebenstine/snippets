@@ -35,6 +35,8 @@ import Feedback from '@material-ui/icons/Feedback';
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import useStyles from './PerformanceGuideStyles';
 import { Cancel } from '@material-ui/icons';
+import { Lightbulb } from '@mui/icons-material';
+import { Piano } from '@mui/icons-material';
 
 const PerformanceGuide = () => {
     const { 
@@ -152,14 +154,83 @@ const PerformanceGuide = () => {
                     className= {paper} 
                     elevation={10}
                 >
-                        <div style={{display:'flex', justifyContent: 'center', paddingBottom: '2em'}}>
+                    {songDetails.map((song) => {
+                        
+                        return (
+                        
+                            <>
+                                <div 
+                                    style=
+                                        {{
+                                            display:'flex', 
+                                            justifyContent: 'center', 
+                                            paddingBottom: '2em'
+                                        }}>
+                        
+                        {song.primary_instrument === 'guitar' ?
+                        
+                            <img 
+                            
+                                style=
+                                    {{
+                                        width:50, 
+                                        height:50, 
+                                        display:'flex', 
+                                        justifyContent: 'center'
+                                    }} 
+                            
+                                src='finalHeadstock.png'
+                            >
+                        
+                            </img>
 
-                        <img 
-                            style={{width:50, height:50, display:'flex', justifyContent: 'center'}} 
-                            src='finalHeadstock.png'
-                        >
-                        </img>
+                        :
+                        
+                        song.primary_instrument === 'keyboard' ?
+                        
+                            <Piano
+                            
+                                style=
+                                    {{
+                                        width:50, 
+                                        height:50, 
+                                        display:'flex', 
+                                        color: '#1d778d', 
+                                        justifyContent: 'center'
+                                    }} 
+                            
+                            >
+                            </Piano>
+
+                        :
+                        
+                        song.primary_instrument === 'other' ?
+
+                            <Lightbulb
+                            
+                                style=
+                                    {{
+                                        width:50, 
+                                        height:50, 
+                                        display:'flex', 
+                                        color: '#1d778d', 
+                                        justifyContent: 'center'
+                                    }} 
+                            
+                            >
+                            </Lightbulb>
+                        :
+
+                        null
+                        
+
+
+                        }
                         </div>
+                        
+                        </>
+                        )
+                    })}
                         <div className={drawerHeader}>
                             
                             <IconButton 
