@@ -148,7 +148,7 @@ const ColorCodeLegend = () => {
                 >
         <DialogTitle className={dialogTitle}>
           
-          <Typography className={titleText}>Completion Priority</Typography>
+          <Typography className={titleText}><Album/></Typography>
           
         </DialogTitle>
           
@@ -167,10 +167,7 @@ const ColorCodeLegend = () => {
             onClick={handleCancel}
           >
             
-            <Album/>
-            <Typography component="h5">
-            &nbsp;Group One
-            </Typography>
+            
             </Link>
           </MenuItem>
 
@@ -186,8 +183,7 @@ const ColorCodeLegend = () => {
                  }}
                  onClick={handleCancel}     
             >
-            <Album/>  
-            &nbsp;Group Two
+            
             </Link>
 
           </MenuItem>
@@ -202,8 +198,7 @@ const ColorCodeLegend = () => {
                  onClick={handleCancel}
             > 
             
-            <Album/> 
-            &nbsp;Group Three
+            
             </Link>
         
           </MenuItem>
@@ -218,8 +213,7 @@ const ColorCodeLegend = () => {
                  onClick={handleCancel}
             > 
             
-            <IndeterminateCheckBoxIcon/> 
-            &nbsp;Uncertain
+            
             </Link>
         
           </MenuItem>
