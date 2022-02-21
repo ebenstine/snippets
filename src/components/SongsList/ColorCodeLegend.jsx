@@ -21,7 +21,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
 
     colorCode: {
-        color: '#2a4f64',
+        
         background: 'rgb(230, 252, 255)',
         '&:hover': {
             background:'#f0a1a1',
@@ -29,21 +29,32 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
         borderRadius: "3px",
-        paddingLeft:'2.7em'
+        display:'flex',
+                
+        justifyContent:'center',
+        paddingBottom: '.1em'
+        
+        
     },
     colorCode1: {
-        color: '#2a4f64',
+        
         background: 'rgb(230, 252, 255)',
         '&:hover': {
             background:'#afe4f1',
+            color: '#f0a1a1'
             },
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
         borderRadius: "3px",
-        paddingLeft: '2.7em'
+        color: '#1d778d',
+        display:'flex',
+                
+        justifyContent:'center',
+        paddingBottom: '.1em'
+       
     },
     colorCode2: {
-        color: '#2a4f64',
+        color: 'rgb(230, 252, 255)',
         background:'rgb(230, 252, 255)',
         '&:hover': {
             background:'#ffb171',
@@ -51,10 +62,14 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
         borderRadius: "3px",
-        paddingLeft: '2.7em'
+        display:'flex',
+                
+        justifyContent:'center',
+        paddingBottom: '.1em'
+        
     },
     colorCode3: {
-        color: '#2a4f64',
+        color: 'rgb(230, 252, 255)',
         background: 'rgb(230, 252, 255)',
         '&:hover': {
             background:'#fdd377',
@@ -62,7 +77,11 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         border: "1px solid #3b95ac",
         borderRadius: "3px",
-        paddingLeft: '2.7em'
+        display:'flex',
+                
+        justifyContent:'center',
+        paddingBottom: '.1em'
+       
     },
 
     menu: {
@@ -78,6 +97,8 @@ const useStyles = makeStyles((theme) => ({
 
         color:'#2a4f64',
         background:'transparent',
+        display: 'flex',
+        justifyContent: 'center'
         
 
     },
@@ -148,7 +169,9 @@ const ColorCodeLegend = () => {
                 >
         <DialogTitle className={dialogTitle}>
           
-          <Typography className={titleText}><Album/></Typography>
+          <Typography className={titleText}>
+            <img src='albumCollection.png' style={{height:40, width:40}}></img>
+          </Typography>
           
         </DialogTitle>
           
@@ -157,63 +180,68 @@ const ColorCodeLegend = () => {
           
           >
           
-          <Link to="/songsList"
+          <Link to="/groupOne"
           style = {{
-            color:'#233d4d',
-            display:'flex',
-            flexWrap: 'wrap'
+            
+            
+            color: '#1d778d',
+            
 
             }}
             onClick={handleCancel}
           >
             
-            
+            <img src='menuVinyl.png' style={{height:22, width:22}}></img>
             </Link>
           </MenuItem>
 
           <MenuItem className={colorCode2}>
            
-            <Link  to="/songsList"
+            <Link  to="/groupTwo"
             style = {{
-                color: '#233d4d',
-                display:'flex',
-                flexWrap: 'wrap',
-                
-                
-                 }}
+            
+            
+              color: '#1d778d',
+              
+  
+              }}
                  onClick={handleCancel}     
             >
-            
+            <img src='menuVinyl.png' style={{height:22, width:22}}></img>
             </Link>
-
+         
           </MenuItem>
           <MenuItem className={colorCode3}>
             
-            <Link to="/songsList"
+            <Link to="/groupThree"
             style = {{
-                color: '#233d4d',
-                display:'flex',
-                flexWrap: 'wrap'
-                 }}
+            
+            
+              color: '#1d778d',
+              
+  
+              }}
                  onClick={handleCancel}
             > 
             
-            
+            <img src='menuVinyl.png' style={{height:22, width:22}}></img>
             </Link>
         
           </MenuItem>
           <MenuItem className={colorCode}>
             
-            <Link to="/songsList"
+            <Link to="/groupUncertain"
             style = {{
-                color: '#233d4d',
-                display:'flex',
-                flexWrap: 'wrap'
-                 }}
+            
+            
+              color: '#1d778d',
+              
+  
+              }}
                  onClick={handleCancel}
             > 
             
-            
+            <img src='menuVinyl.png' style={{height:22, width:22}}></img>
             </Link>
         
           </MenuItem>

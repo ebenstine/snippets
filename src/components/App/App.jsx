@@ -22,6 +22,10 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import AddSong from '../AddSong/AddSong';
 import SongsList from '../SongsList/SongsList';
 import SongDetails from '../SongDetails/SongDetails';
+import GroupOne from '../SongsList/GroupOne';
+import GroupTwo from '../SongsList/GroupTwo';
+import GroupThree from '../SongsList/GroupThree';
+import GroupUncertain from '../SongsList/GroupUncertain';
 
 import './App.css';
 
@@ -73,11 +77,43 @@ function App() {
           </ProtectedRoute>
 
           <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/groupOne"
+          >
+            <GroupOne/>
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/groupTwo"
+          >
+            <GroupTwo/>
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/groupThree"
+          >
+            <GroupThree/>
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows InfoPage else shows LoginPage
+            exact
+            path="/groupUncertain"
+          >
+            <GroupUncertain/>
+          </ProtectedRoute>
+
+          <ProtectedRoute
            //logged in shows addSong page else shows LoginPage
             exact 
             path="/addSong"
            >
-          <AddSong />
+          <AddSong/>
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -85,7 +121,7 @@ function App() {
           exact
           path="/songDetails/:id"
           >
-          <SongDetails />
+          <SongDetails/>
           </ProtectedRoute>
 
           <ProtectedRoute
@@ -93,7 +129,7 @@ function App() {
           exact
           path="/InactiveSongDetails/:id"
           >
-          <InactiveSongDetails />
+          <InactiveSongDetails/>
           </ProtectedRoute>
 
           <ProtectedRoute
