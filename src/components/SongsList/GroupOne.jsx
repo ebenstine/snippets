@@ -80,7 +80,7 @@ function GroupOne() {
     }
 
     const goBack = () => {
-        history.push(`/songsList`)
+        history.push(`/groupOne`)
     }
 
     

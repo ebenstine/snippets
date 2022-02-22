@@ -114,7 +114,7 @@ function SongsList() {
                                                 
                                             >
 
-                                            <span className={playIcon}>▶</span> Active Songs
+                                            <span className={playIcon}>▶</span>All Active Songs
 
 
                                             </Typography>
