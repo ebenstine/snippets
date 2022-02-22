@@ -57,15 +57,24 @@ const AddSongUpdates = ({ song, handleMenuClose }) => {
   
   
   
-  return (
+  
+    return (
 
-    <>
+      <>
+        {songDetails.map((song) => {
+          return(
+          <>
 
     
 
     
     
-    
+            {song.instrument_specs ?
+
+            null 
+
+            :
+
       
       <MenuItem 
         
@@ -75,7 +84,7 @@ const AddSongUpdates = ({ song, handleMenuClose }) => {
         &nbsp;Create Text Reminder
         
       </MenuItem>
-      
+        }
         <Dialog 
           
           PaperProps={{
@@ -108,7 +117,7 @@ const AddSongUpdates = ({ song, handleMenuClose }) => {
                 
                 </DialogContent>
                 
-
+            
         </div>    
         </Dialog>
    
@@ -117,8 +126,10 @@ const AddSongUpdates = ({ song, handleMenuClose }) => {
     
     </>
   );
-
-        
+       
+        })}
+      </>
+      )      
 }
 
 export default AddSongUpdates;
