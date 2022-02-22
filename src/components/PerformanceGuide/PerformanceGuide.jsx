@@ -126,6 +126,11 @@ const PerformanceGuide = () => {
 
     return (
         <>
+        {songDetails.map((song) => {
+            return (
+            <>
+            
+            {song.instrument_specs ?
             <MenuItem 
                 
                 onClick={handleClickOpen}
@@ -136,6 +141,12 @@ const PerformanceGuide = () => {
                 &nbsp;Full Performance Guide
             
             </MenuItem>
+            :
+            null
+        }
+            </>
+            )
+        })}
 
          
             <Drawer
