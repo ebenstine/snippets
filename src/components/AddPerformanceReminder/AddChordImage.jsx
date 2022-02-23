@@ -181,7 +181,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
                     onClose={handleAlertClose}
                     
                     >
-                  Chord Image Uploaded!
+                  Success! Images Viewable in Performance Guide
                   </Alert>
 
                 </Dialog>

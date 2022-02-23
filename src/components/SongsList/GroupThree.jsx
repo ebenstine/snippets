@@ -122,7 +122,7 @@ function GroupOne() {
                                         <Box 
                                             display="flex"
                                             flexWrap="wrap"
-                                            justifyContent="space-between"
+                                            alignContent="flex-start"
                                         >
                                         {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
                                                 {songs.map((song) => {
@@ -135,7 +135,8 @@ function GroupOne() {
                                                                 
                                                                 <Box
                                                                     
-                                                                    paddingTop={2}
+                                                                paddingTop={2}
+                                                                paddingRight={3.5}
                                                                 
                                                                 >
                                                                     <Card

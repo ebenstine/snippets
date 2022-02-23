@@ -7,7 +7,7 @@ import useStyles from './SongsListStyles';
 import ColorCodeLegend from './ColorCodeLegend'
 import Feedback from '@material-ui/icons/Feedback';
 
-//import songDetails from '../../redux/reducers/songDetails.reducer';
+
 
 
 

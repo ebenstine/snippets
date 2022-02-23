@@ -7,7 +7,7 @@ import useStyles from './SongsListStyles';
 import ColorCodeLegend from './ColorCodeLegend'
 import Feedback from '@material-ui/icons/Feedback';
 
-//import songDetails from '../../redux/reducers/songDetails.reducer';
+
 
 
 
@@ -120,9 +120,13 @@ function GroupTwo() {
                                             </Typography>
                                         </div>
                                         <Box 
-                                            display="flex"
-                                            flexWrap="wrap"
-                                            justifyContent="space-between"
+                                        display="flex"
+                                        flexWrap="wrap"
+                                        alignContent="flex-start"
+                                        
+                                        
+                                            
+                                            
                                         >
                                         {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
                                                 {songs.map((song) => {
@@ -135,8 +139,9 @@ function GroupTwo() {
                                                                 
                                                                 <Box
                                                                     
-                                                                    paddingTop={2}
-                                                                
+                                                                paddingTop={2}
+                                                                paddingRight={3.5}
+                                                                    
                                                                 >
                                                                     <Card
                                                                         
@@ -155,7 +160,7 @@ function GroupTwo() {
                                                                 
                                                                                     <Typography 
                                                                                         variant="overline" 
-                                                                                        className={title1}
+                                                                                        className={title2}
                                                                                         onClick={() => handleClick(song.song_id)} 
 
                                                                                     >

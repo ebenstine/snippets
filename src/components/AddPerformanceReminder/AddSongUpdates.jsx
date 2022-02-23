@@ -244,7 +244,7 @@ const AddSongUpdates = () => {
                                                 onClose={handleAlertClose}
                                                 
                                                 >
-                                              Song Details Entered!
+                                              Success! Updates viewable in performance guide.
                                               </Alert>
 
                                             </Dialog>
