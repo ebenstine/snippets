@@ -306,7 +306,8 @@ function PerformanceGuideInstrumentSpecs() {
 
                                 song.primary_instrument === 'keyboard' ?
 
-                                    <div>
+                                    <div className={instSpecs}>
+
                                         <Typography variant="overline" className={specText}>
                                             
                                             Updated Keyboard Type: {reviseDetails.instrument_specs} 
@@ -315,7 +316,7 @@ function PerformanceGuideInstrumentSpecs() {
                                     </div>
 
                                 :
-                                    <div>
+                                    <div className={instSpecs}>
                                         <Typography variant="overline" className={specText}>
                                             
                                             Updated Instrument or Software Type:  {reviseDetails.instrument_specs}

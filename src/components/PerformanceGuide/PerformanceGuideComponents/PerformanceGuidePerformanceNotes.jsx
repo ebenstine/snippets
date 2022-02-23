@@ -1,32 +1,78 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { Paper, TextField, MenuItem, Button, Typography, Select, FormControl } from '@material-ui/core';
+import { Paper, MenuItem, Button, Typography, Select, FormControl } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { CheckCircle } from '@material-ui/icons';
 import { Cancel } from '@material-ui/icons';
+import { TextField } from '@mui/material';
+import { DescriptionOutlined } from '@material-ui/icons';
 
 
 const useStyles = makeStyles(() => ({
 
     root: {
-
-        '& label.Mui-focused': {
+         
+      
+        '& .MuiTextField-root': {
+            marginLeft: '1em',
             color: '#2a4f64',
+            
+            '&:hover fieldset': {
+              borderColor: '#eb9148'
+            },
+
+            '&::placeholder':{
+              color: 'black'
+          }
+            //width: '25ch'
+        },
+        '& label.Mui-focused': {
+            color: '#3b95ac',
+            borderColor: '#eb9148',
         },
         '& .MuiInput-underline:after': {
-            borderBottomColor: '#3b95ac',
+            borderBottomColor: '#e45252',
+        }, 
+            
+            
+            
+        
+        "& .MuiOutlinedInput-input": {
+            color: "#2a4f64",
+           
+            
         },
+        //"& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
+            //border: "2px solid #3b95ac"
+          //},
+          "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+            border: "1.5px solid#3b95ac",
+            borderRadius: "3px 3px 3px 3px"
+          },
+        
+  
+          
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
-                borderColor: '#2a4f64',
+                color: '#3b95ac',
+                //paddingLeft: '4em'
                 
+            },
+            '& .Mui-selected': {
+  
+               borderColor: '3b95ac'
+  
             },
             '&:hover fieldset': {
-                borderColor: '#2a4f64',
-                
+                border:' 1.5px solid #3b95ac' 
+            },  
+            '&:fieldset.Mui-focused': {
+                border:' 1.5px solid #3b95ac'
+            
             },
-        },
+            
+      },
     },
 
     textField: {
@@ -61,6 +107,33 @@ const useStyles = makeStyles(() => ({
             cursor: 'pointer'
         }
     },
+
+    notesHover: {
+        color: "#233d4d"
+        
+    },
+    notesText: {
+        color:'#233d4d', 
+        borderBottom: '1px solid #1d778d',
+        
+        '&:hover': {
+            borderBottom: '1.5px solid #1d778d',
+            cursor: 'pointer'
+        },
+        
+        fontSize: 11,
+        whiteSpace: 'pre-wrap',
+        
+        
+    },
+
+    notesDiv: {
+
+        display: 'flex', 
+        flexWrap: 'wrap',
+        
+
+    }
 }));
         
         function PerformanceGuidePerformanceNotes() {
@@ -73,11 +146,15 @@ const useStyles = makeStyles(() => ({
                     textField, 
                     buttons, 
                     notes, 
+                    notesHover,
+                    notesDiv,
+                    notesText,
                     root, 
                     actions 
                 } = useStyles();
         
-            const [ editable, setEditable] = useState(true);
+            const [ editable, setEditable ] = useState(false);
+            const [ updated, setUpdated ] = useState(false);
             console.log(params);
             let song = {
                 performance_notes: songDetails.performance_notes
@@ -114,6 +191,7 @@ const useStyles = makeStyles(() => ({
                             });
                 
                             setEditable(editable => !editable);
+                            setUpdated(updated => !updated);
             }
             
             return (
@@ -135,7 +213,7 @@ const useStyles = makeStyles(() => ({
                                         
                                             <TextField
                      
-                                                label="Performance Notes" 
+                                                label="Update Performance Notes" 
                                                 name="performance_notes"
                                                 onDoubleClick={handleEditable}
                                                 margin="dense" 
@@ -158,11 +236,12 @@ const useStyles = makeStyles(() => ({
                             :
                         
                                 <div onDoubleClick={handleEditable}>
-        
+                                    {updated ?
+                                    <>
                                     <div>
                                     
-                                        <Typography variant="caption" style={{color:'#233d4d'}}>
-                                            Performance Notes:    
+                                        <Typography variant="caption" className={notesHover}>
+                                            Technique Notes:    
                                         </Typography>
                                     
                                     </div>
@@ -170,14 +249,42 @@ const useStyles = makeStyles(() => ({
                                     <Typography 
 
                                         component="span" 
-                                        className={notes}
+                                        className={notesText}
                                     >
 
-                                        {`${reviseDetails.instrument_specs}`}
+                                        {`${reviseDetails.performance_notes}`}
 
                                     </Typography>
+                                    </>
+                                    :
+                                    <>
+                                    <div>
+                                    
+                                        <Typography variant="caption" className={notesHover}>
+                                            Technique Notes:    
+                                        </Typography>
+                                    
+                                    </div>
+                                    <div className={notesDiv}>
+                                    <Typography 
+
+                                        className={notesText}
+                                        
+                                    >
+
+                                        <DescriptionOutlined style={{fontSize:15, color: '#1d778d'}}/>{song.performance_notes}
+
+                                    </Typography>
+                                    </div>
+                                    </>
+                                
+                                    }
+
+                                    
 
                                 </div>
+
+                                
         
                             }
                     

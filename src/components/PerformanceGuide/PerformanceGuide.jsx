@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PerformanceGuideInstrumentSpecs from './PerformanceGuideComponents/PerformanceGuideInstrumentSpecs'
+import PerformanceGuidePerformanceNotes from './PerformanceGuideComponents/PerformanceGuidePerformanceNotes';
 import { 
     Accordion, 
     AccordionSummary, 
@@ -286,34 +287,55 @@ const PerformanceGuide = () => {
 
                     <PerformanceGuideInstrumentSpecs/> 
                     
-                    {songDetails.map((song) => {
-
+                    {chordDiagrams.map((chordDiagram) => {
+                        //this conditional hides the chord diagrams heading if no images are present
+                        //and subsequently hides it if the primary instrument is not guitar or keyboard
                         return (
-                        <>
-                        
-                        
-                            {song.primary_instrument === 'guitar' || song.primary_instrument === 'keyboard' ?
                             
-                                <Typography variant="caption" className={starting}>
+                            <>
+                                
+                                {chordDiagram.id ?
+                        
+                                    songDetails.map((song) => {
+                        
 
-                                    &nbsp;&nbsp;
-                                        <span className={cuteStar}>*</span> 
-                                            Beginning Hand Position 
-                                                <span className={cuteStar}>*</span>
+                                        return (
+                                            <>
+                        
+                        
+                                                {song.primary_instrument === 'guitar' || song.primary_instrument === 'keyboard' ?
+                                
+                            
+                                                    <Typography variant="caption" className={starting}>
+
+                                                        &nbsp;&nbsp;
+                                                            <span className={cuteStar}>*</span> 
+                                                                Beginning Hand Position 
+                                                                    <span className={cuteStar}>*</span>
+                                                        
+                                                    </Typography>
+
+                                                :
+
+                                                    song.primary_instrument === 'other' ?
+
+                                                    null
+                                                :
+                                                    null
                                     
-                                </Typography>
-
-                            :
-
-                            song.primary_instrument === 'other' ?
-
-                                null
-                            :
-                                null
-                            }
+                                                }
                             
                         
-                        </>
+                                            </>
+                                        )
+                    
+                                    })
+                                :
+                    
+                                null
+                                
+                                }
+                            </>
                         )
                     })}
                                     
@@ -466,9 +488,11 @@ const PerformanceGuide = () => {
                                     </>
                                 )
                         })}
-
+                    
                     </Box>
-
+                    <br></br>
+                    <br></br>
+                    <PerformanceGuidePerformanceNotes/>
                 </Paper>
             
             </Drawer>
