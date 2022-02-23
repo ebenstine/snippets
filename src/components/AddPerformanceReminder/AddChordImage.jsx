@@ -10,8 +10,9 @@ import { FormControl } from '@material-ui/core';
 import { TextField } from '@mui/material'
 import { connect, useDispatch, useSelector } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
-import ChordImagesUploader from './ChordImagesUploader'
-import useStyles from './AddChordImageStyles'
+import ChordImagesUploader from './ChordImagesUploader';
+import useStyles from './AddChordImageStyles';
+import { Alert } from '@mui/material';
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
@@ -28,6 +29,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
   const [fileUrl, setFileUrl] = useState ('no file was dropped');
   const [open, setOpen] = useState(false);
   const [newImage, setNewImage] = useState({});
+  const [openAlert, setOpenAlert] = useState(false);
 
 
   
@@ -63,9 +65,17 @@ const AddChordImage = ({ song, handleMenuClose }) => {
       payload: newImage
 
     });
-   setOpen(false);
-  };
+   handleAlert();
+  }
 
+  const handleAlertClose = () => {
+    setOpenAlert(false);
+    setOpen(false)
+  }
+  
+  const handleAlert = () => {
+    setOpenAlert(true);
+  }
 
 
   console.log(newImage);
@@ -87,83 +97,100 @@ const AddChordImage = ({ song, handleMenuClose }) => {
 
     
     
-    <div>
-      
-      <MenuItem 
+      <div>
         
-        onClick={handleClickOpen} 
-        className={upload}>
-        <AddPhotoAlternateIcon/>
-        &nbsp;Upload Visual Aid
-        
-      </MenuItem>
-      
-        <Dialog 
+        <MenuItem 
           
-          PaperProps={{
+          onClick={handleClickOpen} 
+          className={upload}>
+          <AddPhotoAlternateIcon/>
+          &nbsp;Upload Visual Aid
           
-            style: { border: "1px solid #2a4f64" }
-
-          }}
-          open={open} 
-          onClose={handleCancel}
+        </MenuItem>
         
-        >
-      
-          <FormControl>
-        
-            <form className={root}>
-        
-              <DialogTitle className={dialogTitle} >
-                  Add a Chord Image
-              </DialogTitle>
-        
-                <DialogContent className={dialog}>
-        
-                    <ChordImagesUploader
-                
-                      uploadComplete={uploadComplete}
-
-                    />
-
-                </DialogContent>
-
-            </form>
-
-          </FormControl>
-        
-        
-            <DialogActions className={actionDiv}>
-          
-              <Button 
-                
-                onClick={handleCancel} 
-                variant="contained" 
-                size="small" 
-                className={dialogButtons}
-              >
+          <Dialog 
             
-                <Cancel/>
-
-              </Button>
-          
-              <Button 
-                
-                onClick={handleSave} 
-                variant="contained" 
-                size="small" 
-                className={dialogButtons}
-              >
+            PaperProps={{
             
-                <Backup/>
+              style: { border: "1px solid #2a4f64" }
 
-              </Button>
+            }}
+            open={open} 
+            onClose={handleCancel}
+          
+          >
+        
+            <FormControl>
+          
+              <form className={root}>
+          
+                <DialogTitle className={dialogTitle} >
+                    Add a Chord Image
+                </DialogTitle>
+          
+                  <DialogContent className={dialog}>
+          
+                      <ChordImagesUploader
+                  
+                        uploadComplete={uploadComplete}
 
-            </DialogActions>
+                      />
 
-        </Dialog>
-   
-    </div>
+                  </DialogContent>
+
+              </form>
+
+            </FormControl>
+          
+          
+              <DialogActions className={actionDiv}>
+            
+                <Button 
+                  
+                  onClick={handleCancel} 
+                  variant="contained" 
+                  size="small" 
+                  className={dialogButtons}
+                >
+              
+                  <Cancel/>
+
+                </Button>
+            
+                <Button 
+                  
+                  onClick={handleSave} 
+                  variant="contained" 
+                  size="small" 
+                  className={dialogButtons}
+                >
+              
+                  <Backup/>
+
+                </Button>
+
+                <Dialog
+                  open={openAlert}
+                  
+                >
+                  <Alert 
+                    severity="success" 
+                    variant="outlined"
+                    color="info"
+                    
+                    onClose={handleAlertClose}
+                    
+                    >
+                  Chord Image Uploaded!
+                  </Alert>
+
+                </Dialog>
+
+              </DialogActions>
+
+          </Dialog>
+    
+      </div>
         
     
     </>
