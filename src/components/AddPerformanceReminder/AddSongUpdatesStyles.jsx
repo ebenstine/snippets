@@ -115,7 +115,39 @@ const useStyles = makeStyles(() => ({
           },
         border: "1px solid #eb9148",
         borderRadius: "3px"
-    }
+    },
+
+    textField: {
+        
+        width: '35ch',
+        marginBottom: '1em',
+        marginTop: '1em',
+        color: '#1d778d'
+        //marginLeft: '2em',
+        //marginRight: '2em'
+    },
+
+    actions: {
+        
+        marginTop: '1em',
+        marginLeft: '4em',
+        //marginRight: '3em'
+    },
+
+    buttons:  {
+        background: "#fff099",
+        color: "#2a4f64",
+        border: "1px solid #3b95ac",
+        marginBottom: "2em",
+        marginTop: "3em",
+        marginLeft:'1em',
+        '&:hover': {
+            background:'#fde76c',
+            },
+        
+    
+    },
+
 
 }));
 

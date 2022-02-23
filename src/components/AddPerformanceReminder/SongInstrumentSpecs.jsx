@@ -172,6 +172,7 @@ function SongInstrumentSpecs() {
         type: 'REVISE_SONG',
         payload: revisedSong
       });
+      setOpen(false)
     }
     
   
