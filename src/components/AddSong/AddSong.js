@@ -365,7 +365,7 @@ const AddSong = () => {
                             value={'1'} 
                             className={setPriority1}>
                             <div style={{display:'flex', flexWrap:'wrap'}}>
-                            <img src='selectVinyl.png' style={{height:22, width:22}}></img>&nbsp;Group One
+                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group One
                             </div>
                           </MenuItem>
                   
@@ -373,7 +373,7 @@ const AddSong = () => {
                             value={'2'} 
                             className={setPriority2}>
                             <div style={{display:'flex', flexWrap:'wrap'}}>
-                            <img src='selectVinyl.png' style={{height:22, width:22}}></img>&nbsp;Group Two
+                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Two
                             </div>
                           </MenuItem>
                   
@@ -381,7 +381,7 @@ const AddSong = () => {
                             value={'3'} 
                             className={setPriority3}>
                             <div style={{display:'flex', flexWrap:'wrap'}}> 
-                            <img src='selectVinyl.png' style={{height:22, width:22}}></img>&nbsp;Group Three
+                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Three
                             </div>
                           </MenuItem>
                   

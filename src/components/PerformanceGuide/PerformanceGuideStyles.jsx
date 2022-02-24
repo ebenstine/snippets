@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
     drawerHeader: {
         display: "flex",
         justifyContent: "center",
-        paddingRight: "4.74em",
+        paddingRight: "4.54em",
         color: "#233d4d",
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 22,
@@ -167,18 +167,16 @@ const useStyles = makeStyles((theme) => ({
     },
 
     deletePrompt: {
-        marginLeft: '1em',
+        marginLeft: '2em',
         marginBottom: '.5em',
         marginRight: '2em',
         marginTop: '.5em',
         color: '#233d4d',
-        background: '#fff099',
-        border: '1px solid #3b95ac',
+        
+        
         paddingLeft: '1em',
         paddingRight: '1em',
-        '&:hover': {
-            background:'#fde76c',
-            },
+        
         
     },
 

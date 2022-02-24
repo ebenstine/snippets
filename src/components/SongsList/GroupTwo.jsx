@@ -114,7 +114,7 @@ function GroupTwo() {
                                                 
                                             >
 
-                                            <span className={playIcon}>▶</span> Active Songs
+                                            <img src='groupsVinyl.png' style={{height:18, width:18}}></img> Active, Group Two
 
 
                                             </Typography>

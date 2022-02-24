@@ -109,8 +109,9 @@ const useStyles = makeStyles(() => ({
     },
 
     notesHover: {
-        color: "#233d4d"
-        
+        color: "#233d4d",
+        display: 'flex',
+        justifyContent: 'center'
     },
     notesText: {
         color:'#233d4d', 
@@ -121,7 +122,7 @@ const useStyles = makeStyles(() => ({
             cursor: 'pointer'
         },
         
-        fontSize: 11,
+        fontSize: 10,
         whiteSpace: 'pre-wrap',
         
         
@@ -131,6 +132,7 @@ const useStyles = makeStyles(() => ({
 
         display: 'flex', 
         flexWrap: 'wrap',
+        justifyContent: 'center'
         
 
     }

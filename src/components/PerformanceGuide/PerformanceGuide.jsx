@@ -33,7 +33,7 @@ import HeadphonesRoundedIcon from '@mui/icons-material/HeadphonesRounded';
 import AudioPlayer from "react-modular-audio-player";
 import IconButton from "@material-ui/core/IconButton";
 import Feedback from '@material-ui/icons/Feedback';
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import useStyles from './PerformanceGuideStyles';
 import { Cancel } from '@material-ui/icons';
 import { Lightbulb } from '@mui/icons-material';
@@ -256,7 +256,7 @@ const PerformanceGuide = () => {
                             
                             >
                                 
-                                <ChevronLeftIcon/>
+                                <ChevronRightIcon/>
                                     
                                     </IconButton>
                             
@@ -271,7 +271,7 @@ const PerformanceGuide = () => {
                                             
                                             }}
                                             variant="overline" 
-                                            align="center" 
+                                             
 
                                         > 
                                         
@@ -374,7 +374,7 @@ const PerformanceGuide = () => {
                                                                 style={{ 
                                                                 
                                                                 color: '#eb9148',
-                                                                paddingRight: '.75em',
+                                                                paddingRight: '.1em',
                                                                 
                                                                 
                                                                 }}
