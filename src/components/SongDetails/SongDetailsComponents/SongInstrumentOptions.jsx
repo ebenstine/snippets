@@ -32,7 +32,8 @@ const useStyles = makeStyles((theme) => ({
       color: '#2a4f64',
       borderBottom: '1px solid #2a4f64',
       fontSize: 20,
-      paddingLeft: '.4em'
+      display: 'flex',
+      justifyContent:'center'
     }, 
 
     menuIcon: {
@@ -66,144 +67,143 @@ const SongInstrumentOptions = ({song}) => {
     const handleCancel = () => {
       setOpen(false);
     }
-return (
-<>
+  return (
+    <>
 
-{songDetails.map((song) => {
-  
-    return (
-      
-      <>
+      {songDetails.map((song) => {
         
-        
-        
-        {song.primary_instrument === 'keyboard' ? 
-          
-          
-            <IconButton
+          return (
             
-            
-            
-                className={menuIcon}
-                aria-controls="simple-menu" 
-                aria-haspopup="true"
-                fontSize={'inherit'}
-                onClick={handleClickOpen}
-
-            >
-
-            <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="technique.png"></img></b>
-            </IconButton>
-
-            :
-
-            song.primary_instrument === 'guitar' ?
-
-            <IconButton
-
-                className={menuIcon}
-                aria-controls="simple-menu" 
-                aria-haspopup="true"
-                fontSize={'inherit'}
-                onClick={handleClickOpen}
-
-            
-            >
-            
-            <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="technique.png"></img></b>
-            
-            </IconButton>
-
-            :
-            song.primary_instrument === 'other' ?
-            <IconButton
-
-                className={menuIcon}
-                aria-controls="simple-menu" 
-                aria-haspopup="true"
-                fontSize={'inherit'}
-                onClick={handleClickOpen}
-
-            
-            >
-            
-            <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="technique.png"></img></b>
-            </IconButton>
-            
-            :
-
-            null
-            
-            
-        }
-        
-          <MenuItem onClick={handleClickOpen}/>
-
-         
-          
-            <Dialog 
+            <>
+              
+              
+              
+              {song.primary_instrument === 'keyboard' ? 
                 
-              open={open} 
-              onClose={handleCancel} 
-              aria-labelledby="Rename song title input"
-              PaperProps={{
+                
+                  <IconButton
                   
-                style: { 
+                  
+                  
+                      className={menuIcon}
+                      aria-controls="simple-menu" 
+                      aria-haspopup="true"
+                      fontSize={'inherit'}
+                      onClick={handleClickOpen}
+
+                  >
+
+                  <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="technique.png"></img></b>
+                  </IconButton>
+
+                  :
+
+                  song.primary_instrument === 'guitar' ?
+
+                  <IconButton
+
+                      className={menuIcon}
+                      aria-controls="simple-menu" 
+                      aria-haspopup="true"
+                      fontSize={'inherit'}
+                      onClick={handleClickOpen}
+
+                  
+                  >
+                  
+                  <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="technique.png"></img></b>
+                  
+                  </IconButton>
+
+                  :
+                  song.primary_instrument === 'other' ?
+                  <IconButton
+
+                      className={menuIcon}
+                      aria-controls="simple-menu" 
+                      aria-haspopup="true"
+                      fontSize={'inherit'}
+                      onClick={handleClickOpen}
+
+                  
+                  >
+                  
+                  <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="technique.png"></img></b>
+                  </IconButton>
+                  
+                  :
+
+                  null
+                  
+                  
+              }
+              
+                <MenuItem onClick={handleClickOpen}/>
+
+              
+                
+                  <Dialog 
                       
-                  border: "1px solid #2a4f64",
-                  background: "rgb(199, 246, 252",
-                  
-                }
-                  
-              }}    
+                    open={open} 
+                    onClose={handleCancel} 
+                    aria-labelledby="Rename song title input"
+                    PaperProps={{
+                        
+                      style: { 
+                            
+                        border: "1px solid #2a4f64",
+                        background: "rgb(199, 246, 252",
+                        
+                      }
+                        
+                    }}    
+                      
+                  >
                 
-            >
-          
-              <DialogTitle>
-            
-                <Typography 
-              
-                  className={heading}>
-              
-                    Performance Assistance Options
-              
-                </Typography>
-           
-              </DialogTitle>
-          
-                  <DialogContent className={menuItems}>
-                    {/*this structure can stay the same but AddChordDiagram is only going to be one aspect of the broader 
-                    AddReminders component which will also include the instrumentSpecs and performanceNotes components; the reasoning for 
-                    this is to allow the post and update actions to be handled separately*/}
-                    <AddChordImage/>
+                    <DialogTitle>
+                  
+                      <Typography 
+                    
+                        className={heading}>
+                    
+                          Songwriter Help Options
+                    
+                      </Typography>
+                
+                    </DialogTitle>
+                
+                        <DialogContent className={menuItems}>
+                          {/*this structure can stay the same but AddChordDiagram is only going to be one aspect of the broader 
+                          AddReminders component which will also include the instrumentSpecs and performanceNotes components; the reasoning for 
+                          this is to allow the post and update actions to be handled separately*/}
+                          <AddChordImage/>
 
                         </DialogContent>
-                        
+                              
                         <DialogContent className={menuItems}>
-          
-                            <AddSongUpdates/>  
-          
-                            </DialogContent>
+                
+                          <AddSongUpdates/>  
+                
+                        </DialogContent>
 
-                      
+                            
+                
+                        <DialogContent className={menuItems}>
+                
+                          <PerformanceGuide/>  
+                
+                        </DialogContent>
+                
+                
+                
+                  </Dialog>
+            </>
           
-                      <DialogContent className={menuItems}>
-          
-                            <PerformanceGuide/>  
-          
-                            </DialogContent>
-          
-          
-          
-            </Dialog>
-        
+          );
+      })}
     </>
-    
-    );
-})}
-</>
 
-)
+  )
 }
   
   export default SongInstrumentOptions;

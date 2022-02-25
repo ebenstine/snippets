@@ -136,7 +136,7 @@ const AddSongUpdates = () => {
                       <div className={root}>
                   
                         <DialogTitle className={dialogTitle} >
-                            Instrument Specs and Notes
+                            Add Specifications and Notes
                         </DialogTitle>
 
                         
@@ -191,7 +191,7 @@ const AddSongUpdates = () => {
                                           label={<Lightbulb style={{color: '#1d778d'}}/>}
                                                   
                                           name="instrument_specs"
-                                          placeholder="enter instrument or software"
+                                          placeholder="Enter Performance Medium"
                                           
                                           value={reviseDetails.instrument_specs}
                                           margin="dense" 
@@ -244,7 +244,7 @@ const AddSongUpdates = () => {
                                                 onClose={handleAlertClose}
                                                 
                                                 >
-                                              Success! Updates viewable in performance guide.
+                                              Success! Updates viewable in your performance guide.
                                               </Alert>
 
                                             </Dialog>

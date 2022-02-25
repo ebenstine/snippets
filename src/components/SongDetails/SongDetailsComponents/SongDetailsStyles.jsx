@@ -99,14 +99,11 @@ const useStyles = makeStyles(() => ({
     cardText: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
-        borderBottom: '1px solid #6ca0ad',
+        //borderBottom: '1px solid #6ca0ad',
         marginTop: 'auto',
         whiteSpace: 'pre-wrap',
         color: '#233d4d',
-        '&:hover': {
-            borderBottom: '1.5px solid #1d778d',
-            cursor: 'pointer'
-            },
+        
     },
 
     lyricBlock1: {
@@ -185,9 +182,11 @@ const useStyles = makeStyles(() => ({
 
     notes: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 9.5,
+        fontSize: 12,
         borderBottom: '1px solid #6ca0ad',
-        whiteSpace: 'pre-wrap'
+        whiteSpace: 'pre-wrap',
+        color: '#233d4d',
+        
     },
 
     buttons: {
@@ -284,23 +283,68 @@ const useStyles = makeStyles(() => ({
         
     }, 
 
-    notes: {
-        color: '#233d4d',
-        
+    
+
+   notesBlock1: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#94d9eb',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em'
 
     },
 
-    notes1: {
+    notesBlock2: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#f8a058',
+            cursor: 'pointer',
+            //border: '1px solid #6ca0ad'
+            
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em'
+        //border: '1px solid #6ca0ad',
+  
+
 
     },
 
-    notes2: {
+    notesBlock3: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#fcca60',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em'
 
-    }, 
+    },
 
-    notes3:{
+    notesBlockUncertain: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#eb9292',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em'
 
-    }
+    },
 
 
 

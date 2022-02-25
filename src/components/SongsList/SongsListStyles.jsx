@@ -160,6 +160,7 @@ const useStyles = makeStyles(() => ({
             
             cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d',
+            
         }
         
     },
