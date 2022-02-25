@@ -114,15 +114,19 @@ function GroupOne() {
                                                 
                                             >
 
-                                            <img src='groupsVinyl.png' style={{height:18, width:18}}></img> Active, Group Uncertain
+                                            <img src='groupsVinyl.png' style={{height:18, width:18}}></img> ...
 
 
                                             </Typography>
                                         </div>
                                         <Box 
+
                                             display="flex"
                                             flexWrap="wrap"
                                             alignContent="flex-start"
+                                            
+                                            
+                                            
                                         >
                                         {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
                                                 {songs.map((song) => {
@@ -134,7 +138,6 @@ function GroupOne() {
                                                             {song.priority === 'Uncertain' ? 
                                                                 
                                                                 <Box
-                                                                    
                                                                     paddingTop={2}
                                                                     paddingRight={3.5}
                                                                 
@@ -171,7 +174,7 @@ function GroupOne() {
                                                             
                                                                             </section>
                                                                                 
-                                                                                <section className={player3}>
+                                                                                <section className={player}>
                                                                             
                                                                                     <AudioPlayer
 

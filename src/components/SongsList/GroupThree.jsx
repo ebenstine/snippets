@@ -114,7 +114,7 @@ function GroupOne() {
                                                 
                                             >
 
-                                                <img src='groupsVinyl.png' style={{height:18, width:18}}></img> Active, Group Three
+                                                <img src='groupsVinyl.png' style={{height:18, width:18}}></img> Three
 
 
                                             </Typography>
@@ -123,6 +123,7 @@ function GroupOne() {
                                             display="flex"
                                             flexWrap="wrap"
                                             alignContent="flex-start"
+                                                
                                         >
                                         {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
                                                 {songs.map((song) => {
@@ -134,9 +135,8 @@ function GroupOne() {
                                                             {song.priority === '3' ? 
                                                                 
                                                                 <Box
-                                                                    
-                                                                paddingTop={2}
-                                                                paddingRight={3.5}
+                                                                    paddingTop={2}
+                                                                    paddingRight={3.5}
                                                                 
                                                                 >
                                                                     <Card
@@ -156,7 +156,7 @@ function GroupOne() {
                                                                 
                                                                                     <Typography 
                                                                                         variant="overline" 
-                                                                                        className={title1}
+                                                                                        className={title3}
                                                                                         onClick={() => handleClick(song.song_id)} 
 
                                                                                     >

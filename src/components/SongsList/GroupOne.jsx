@@ -16,18 +16,10 @@ function GroupOne() {
 
     const { 
             
-            title, 
+            
             title1, 
-            title2, 
-            title3, 
-            player,
             player1,
-            player2,
-            player3, 
-            card, 
             card1, 
-            card2, 
-            card3, 
             paper, 
             menuDots,
             blankPage,
@@ -36,16 +28,15 @@ function GroupOne() {
             messageDiv,
             feedback,
             heading,
-            playIcon,
             hackButton
             
         } = useStyles();
 
     const dispatch = useDispatch();
     const history = useHistory();
-    const params = useParams();
+    
     const songs = useSelector((store) => store.songs);
-    const songDetails = useSelector((store) => store.songDetails)
+   
 
     const [listView, setListView] = useState(true);
     console.log(songs);
@@ -114,15 +105,17 @@ function GroupOne() {
                                                 
                                             >
 
-                                        <img src='groupsVinyl.png' style={{height:18, width:18}}></img> Active, Group One
+                                        <img src='groupsVinyl.png' style={{height:18, width:18}}></img> One
 
 
                                             </Typography>
                                         </div>
                                         <Box 
+
                                             display="flex"
                                             flexWrap="wrap"
-                                            justifyContent="space-between"
+                                            alignContent="flex-start"
+                                            
                                         >
                                         {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
                                                 {songs.map((song) => {
@@ -134,14 +127,15 @@ function GroupOne() {
                                                             {song.priority === '1' ? 
                                                                 
                                                                 <Box
-                                                                    
                                                                     paddingTop={2}
+                                                                    paddingRight={3.5} 
                                                                 
                                                                 >
                                                                     <Card
                                                                         
                                                                         raised={true}
                                                                         className={card1}
+                                                                        
                                                         
                                                                     > 
                                                                             <section>

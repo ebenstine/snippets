@@ -89,11 +89,13 @@ const useStyles = makeStyles(() => ({
     actions: {
         marginBottom: '2em',
         marginTop: '-.75em',
-        marginLeft: '7.5em',
+        marginLeft: '8.5em'
     },
 
     buttons:  {
-        color: '#2a4f64'
+        color: '#2a4f64',
+        marginTop:'.75em',
+       
     },
 
     notes: {
@@ -122,7 +124,7 @@ const useStyles = makeStyles(() => ({
             cursor: 'pointer'
         },
         
-        fontSize: 10,
+        fontSize: 11,
         whiteSpace: 'pre-wrap',
         
         
@@ -226,7 +228,7 @@ const useStyles = makeStyles(() => ({
                                     
                                         <div className={actions}> 
 
-                                            <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
+                                            <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
                                             <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
                                             
                                         </div>
