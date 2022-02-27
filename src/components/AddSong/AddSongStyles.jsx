@@ -412,7 +412,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '2.0em'
+        paddingLeft: '1.8em'
 
 
     },

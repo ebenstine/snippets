@@ -107,7 +107,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
                   <TextField
                   
                     label={<DescriptionOutlinedIcon style={{color: '#1d778d'}}/>}
-                    placeholder="Describe Recording"
+                    placeholder="Content Description"
                     onChange={enterNewRecording('description')}
                     value={newRecording.description}
                     multiline className={descriptionText}

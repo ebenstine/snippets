@@ -108,7 +108,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     view: {
-        paddingLeft: '1.75em',
+        display:'flex',
+        justifyContent:'center',
         background: 'rgb(230, 252, 255)',
         '&:hover': {
           background:'#94d9eb',
@@ -122,11 +123,8 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '.75em',
         marginLeft: '.75em',
         marginBottom: '.75em',
-        border: '1px solid #1a313f',
-        background: '#fff099',
-        '&:hover': {
-            background:'#fde76c',
-            }
+        
+        
 
        
         //border: '1px solid #233d4d',
@@ -160,18 +158,16 @@ const useStyles = makeStyles((theme) => ({
     },
 
     deletePrompt: {
-        marginLeft: '1em',
+        marginLeft: '23em',
         marginBottom: '.5em',
         marginRight: '2em',
         marginTop: '.5em',
         color: '#233d4d',
-        background: '#fff099',
-        border: '1px solid #3b95ac',
+        //background: '#fff099',
+        //border: '1px solid #3b95ac',
         paddingLeft: '1em',
         paddingRight: '1em',
-        '&:hover': {
-            background:'#fde76c',
-            },
+        
         
     },
 
@@ -181,12 +177,9 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             color:'#e45252',
             },
-        background: '#fff099',
-        border: '1px solid #3b95ac',
+        //background: '#fff099',
+        //border: '1px solid #3b95ac',
         alignItems: 'center',
-        '&:hover': {
-            background:'#fde76c',
-            },
         
     },
 
@@ -196,12 +189,10 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             color:'#77c568',
             },
-        background: '#fff099',
-        border: '1px solid #3b95ac',
+        //background: '#fff099',
+        //border: '1px solid #3b95ac',
         alignItems: 'center',
-        '&:hover': {
-            background:'#fde76c',
-            },
+       
         
     },
 

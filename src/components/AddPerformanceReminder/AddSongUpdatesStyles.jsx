@@ -74,7 +74,8 @@ const useStyles = makeStyles(() => ({
     dialogTitle: {
         background: "rgb(199, 246, 252)",
         color: "#2a4f64",
-        paddingLeft: '2.9em',
+        display:'flex',
+        justifyContent:'center',
         marginBottom: '1em'
         
         
@@ -107,7 +108,8 @@ const useStyles = makeStyles(() => ({
         
         marginLeft: '2em',
         marginRight: '2em',
-        paddingLeft: '1.6em',
+        display:'flex',
+        justifyContent:'center',
         
         background: 'rgb(230, 252, 255)',
         '&:hover': {
@@ -130,8 +132,8 @@ const useStyles = makeStyles(() => ({
     actions: {
         
         marginTop: '1em',
-        marginLeft: '4em',
-        //marginRight: '3em'
+        display:'flex',
+        justifyContent:'center'
     },
 
     buttons:  {
@@ -140,7 +142,7 @@ const useStyles = makeStyles(() => ({
         border: "1px solid #3b95ac",
         marginBottom: "2em",
         marginTop: "3em",
-        marginLeft:'1em',
+        marginLeft:'.5em',
         '&:hover': {
             background:'#fde76c',
             },

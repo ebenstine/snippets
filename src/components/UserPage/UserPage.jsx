@@ -62,7 +62,7 @@ const UserPage = () => {
           className = {songCount}>
           
             <span className={playIcon}>▶</span>
-             &nbsp;You are working on <span className={highlight}>{songs.length}</span> songs right now.
+             &nbsp;You are working on <span className={highlight}>{songs.length}</span> songs.
       
         </Typography>
       
@@ -75,7 +75,7 @@ const UserPage = () => {
           className = {recordingCount}>
           
             <span className={playIcon}>▶</span>
-            &nbsp;In total, you've uploaded <span className={highlight}>{allRecordings.length}</span> audio recordings. 
+          &nbsp;You've uploaded <span className={highlight}>{allRecordings.length}</span> audio recordings.
       
         </Typography>
       
@@ -87,13 +87,13 @@ const UserPage = () => {
       
       </div>
       
-        <section textAlign="center">
+        <div style={{display:'flex', justifyContent:'center'}}>
     
     
       
           <Button 
 
-            variant="contained" 
+            
             size="small" 
             className={button2} 
             onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out&nbsp;
@@ -101,7 +101,7 @@ const UserPage = () => {
 
           </Button>
 
-        </section>
+        </div>
 
       </Paper>
     

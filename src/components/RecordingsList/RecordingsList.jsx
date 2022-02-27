@@ -215,15 +215,7 @@ const RecordingsList = () => {
                             
                             <br></br>
                             
-                            <div>
-                        
-                                <Typography variant="overline" className={firstRecording}>
-
-                                    &nbsp;&nbsp;<span className={cuteStar}>*</span> original upload <span className={cuteStar}>*</span>
-                                    
-                                </Typography>
-                                
-                            </div>
+                            
                             
                         {recordings.map((recording) => {
                                 
@@ -305,7 +297,7 @@ const RecordingsList = () => {
 
                                                                 <Button 
                                                                     className={deletePrompt}
-                                                                    variant="contained"
+                                                                    
                                                                     onClick={handleDialogOpen}
                                                                 >
                                                                     <Delete/>
@@ -361,7 +353,7 @@ const RecordingsList = () => {
                                                                             <Button 
                                                                                 className={cancelButton} 
                                                                                 onClick={handleDialogClose} 
-                                                                                variant="contained"
+                                                                                
                                                                             >
                                                                                 <Cancel/>
                                                                             
@@ -369,7 +361,7 @@ const RecordingsList = () => {
                                                         
                                                                             <Button 
                                                                                 
-                                                                                variant="contained" 
+                                                                                 
                                                                                 onClick={() => handleDeleteAudio(recording.id)} 
                                                                                 className={deleteButton}>
                                                                                 <Delete/>

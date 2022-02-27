@@ -109,7 +109,7 @@ const AddSongUpdates = () => {
                   onClick={handleClickOpen} 
                   className={upload}>
                   <NoteAddOutlined/>
-                  &nbsp;Create Text Reminder
+                  &nbsp;Add Details
                   
                 </MenuItem>
               }
@@ -136,7 +136,7 @@ const AddSongUpdates = () => {
                       <div className={root}>
                   
                         <DialogTitle className={dialogTitle} >
-                            Add Specifications and Notes
+                            Performance Specs and Notes
                         </DialogTitle>
 
                         
@@ -204,7 +204,7 @@ const AddSongUpdates = () => {
                                         <TextField 
 
                                           label={<DescriptionOutlined style={{color: '#1d778d'}}/>}
-                                          placeholder="Enter Performance Notes" 
+                                          placeholder="Add Notes" 
                                           name="performance_notes"
                                           
                                           value={reviseDetails.performance_notes}

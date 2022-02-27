@@ -116,11 +116,13 @@ const useStyles = makeStyles(() => ({
     },
 
     instSpecs: {
-        borderRadius: '3px',
-        border:' 1.5px solid #3b95ac',
-        background: '#82bdcc',
+        
+       // border:' 1.5px solid #3b95ac',
+       // background: '#82bdcc',
         '&:hover': {
-            background:'#5294a5'
+            background:'#82bdcc',
+            borderRadius: '3px',
+            cursor: 'pointer'
         }
         
     },

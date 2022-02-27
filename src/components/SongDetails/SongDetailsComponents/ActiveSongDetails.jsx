@@ -504,9 +504,7 @@ export default function ActiveSongDetails(){
                                                     }
                             
                                                     <br></br>
-                                                    <br></br>
-                                                    <br></br>
-                                                    <br></br>
+                                                    
                             
                                                     {editINotes ?
                                                 
@@ -669,9 +667,7 @@ export default function ActiveSongDetails(){
                                                     }
                     
                                                     <br></br>
-                                                    <br></br>
-                                                    <br></br>
-                                                    <br></br>
+                                                    
                     
                                                     {editINotes ?
 

@@ -109,7 +109,7 @@ const SongAudioOptions = ({song}) => {
               
                   className={heading}>
               
-                    Audio File Options
+                    Audio Documentation
               
                 </Typography>
            

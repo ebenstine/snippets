@@ -117,12 +117,7 @@ const useStyles = makeStyles(() => ({
     },
     notesText: {
         color:'#233d4d', 
-        borderBottom: '1px solid #1d778d',
         
-        '&:hover': {
-            borderBottom: '1.5px solid #1d778d',
-            cursor: 'pointer'
-        },
         
         fontSize: 11,
         whiteSpace: 'pre-wrap',
@@ -134,7 +129,15 @@ const useStyles = makeStyles(() => ({
 
         display: 'flex', 
         flexWrap: 'wrap',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        paddingTop: '.3em',
+        paddingBottom:'.3em',
+        '&:hover': {
+            background:'#82bdcc',
+            borderRadius: '3px',
+            cursor:'pointer'
+            
+        },
         
 
     }
@@ -276,7 +279,7 @@ const useStyles = makeStyles(() => ({
                                         
                                     >
 
-                                        <DescriptionOutlined style={{fontSize:15, color: '#1d778d'}}/>{song.performance_notes}
+                                        {song.performance_notes}
 
                                     </Typography>
                                     </div>
