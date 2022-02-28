@@ -53,20 +53,12 @@ function InactiveArchive() {
     
     console.log(songs);
 
-    const handleState = () => {
-        
-        if (songs.length > 0) 
-            {setListView(true)}
-            
-            else 
-
-            {setListView(false)};
-        }
+    
 
 
     //get db info on page load
     useEffect(() => {
-        handleState();
+       
         dispatch({
             type: 'FETCH_SONGS'
         });
@@ -89,9 +81,18 @@ function InactiveArchive() {
     //because there is no color-coding involved in the inactive archive, 
     //there's much less code to deal with and thus no need to refactor.
     return (
-            <>
 
-                {listView ? 
+    <>
+    
+    {songs.map((song) => {
+                            
+        return (
+        
+                    <>
+        
+                        {song.is_active === false ?
+            
+                            
                     
                     <Paper className={paper} elevation={10}>
                         
@@ -123,15 +124,7 @@ function InactiveArchive() {
                             justifyContent="space-between"
                         >
                 
-                            {songs.map((song) => {
                             
-                                return (
-                                
-                                            <>
-                                
-                                                {song.is_active === false ?
-                                    
-                                                    <>
                                     
                                                         <Box paddingTop={2}>
                                             
@@ -179,22 +172,14 @@ function InactiveArchive() {
                                                         <br></br>
                                                         <br></br>
                                      
-                                                    </>
-                     
-                                                :
-                                                
-                                                null
-                                                
-                                                }
+                                                    
                         
-                                            </>
-                                        );
-
-                            })}
+                                            
 
                         </Box> 
 
                     </Paper>
+                    
 
                 :
                 
@@ -224,10 +209,10 @@ function InactiveArchive() {
                             
                                         >
                                         
-                                            The inactive archive page shows songs you've marked 
-                                            as such when uploading.  It offers the option to catalog unfinished 
+                                            This page will show songs you've marked as inactive
+                                            when uploading.  This offers the option to catalog unfinished 
                                             material that hasn't been abandoned, but that is dormant for the moment.
-                                            If you only see a blank page, there are currently no songs marked as inactive.
+                                            Currently you haven't uploaded any inactive work.
 
                                         </Typography>
                                     
@@ -235,12 +220,7 @@ function InactiveArchive() {
                             
                             </Card>
 
-                            <Button 
-                                onClick={goBack}
-                                className={hackButton}
-                                variant="outlined"
-                                >See Archive
-                            </Button>
+                           
 
                         </div>
 
@@ -250,8 +230,11 @@ function InactiveArchive() {
 
             </>
 
-    );
+    )
+            })}
 
+            </>
+    )
 }
 
 export default InactiveArchive;

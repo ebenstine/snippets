@@ -184,7 +184,7 @@ export default function ActiveSongDetails(){
                                                                 
                                                                 
                                                             >
-                                                                Writing Notes:
+                                                                Songwriting Notes:
 
                                                             </Typography>
 
@@ -354,7 +354,7 @@ export default function ActiveSongDetails(){
                                                                 variant="caption" 
                                                                 className={notes}
                                                             >
-                                                                Writing Notes:
+                                                                Songwriting Notes:
 
                                                             </Typography>
 
@@ -518,7 +518,7 @@ export default function ActiveSongDetails(){
                                                                 variant="caption" 
                                                                 className={notes}
                                                             >
-                                                                Writing Notes:
+                                                                Songwriting Notes:
 
                                                             </Typography>
 
@@ -680,7 +680,7 @@ export default function ActiveSongDetails(){
                                                                         variant="caption" 
                                                                         className={notes}
                                                                     >
-                                                                        Writing Notes:
+                                                                        Songwriting Notes:
 
                                                                     </Typography>
 

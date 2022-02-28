@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
     inputs: {
         
         margin: theme.spacing(1),
-        width: '12ch',
+        width: '10ch',
         marginBottom: '1.5em',
         marginTop: '4em',
         background: '#fff099',

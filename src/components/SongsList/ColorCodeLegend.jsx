@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Button from '@material-ui/core/Button';
 
 import Dialog from '@material-ui/core/Dialog';
@@ -147,8 +148,9 @@ const ColorCodeLegend = () => {
             
             >
             
-        </MoreHoriz>
-      </IconButton>
+          </MoreHoriz>
+        </IconButton>
+        
         <MenuItem onClick={handleClickOpen}>
                 
         </MenuItem>
@@ -177,7 +179,7 @@ const ColorCodeLegend = () => {
           </Typography>
           
         </DialogTitle>
-          
+       
           <MenuItem
           className={colorCode1}
           
@@ -197,6 +199,9 @@ const ColorCodeLegend = () => {
             <img src='menuVinyl.png' style={{height:22, width:22}}></img>
             </Link>
           </MenuItem>
+          
+
+         
 
           <MenuItem className={colorCode2}>
            
@@ -214,6 +219,7 @@ const ColorCodeLegend = () => {
             </Link>
          
           </MenuItem>
+          
           <MenuItem className={colorCode3}>
             
             <Link to="/groupThree"
@@ -231,6 +237,9 @@ const ColorCodeLegend = () => {
             </Link>
         
           </MenuItem>
+          
+
+          
           <MenuItem className={colorCode}>
             
             <Link to="/groupUncertain"
@@ -248,6 +257,7 @@ const ColorCodeLegend = () => {
             </Link>
         
           </MenuItem>
+          
         
         </Dialog>
         

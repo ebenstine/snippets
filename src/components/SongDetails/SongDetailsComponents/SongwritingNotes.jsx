@@ -186,7 +186,7 @@ function SongWritingNotes() {
 
                     <div>
                     <Typography variant="caption" style={{color:'#233d4d'}}>
-                            Writing Notes:
+                            Songwriting Notes:
                     </Typography>
 
 
