@@ -117,6 +117,7 @@ const useStyles = makeStyles((theme) => ({
 const ColorCodeLegend = () => {
     const {colorCode, colorCode1, colorCode2, colorCode3, menu, dialogTitle, titleText} = useStyles();
     const [open, setOpen] = useState(false);
+    const songs = useSelector((store) => store.songs)
    
   
     const handleClickOpen = () => {
@@ -131,6 +132,8 @@ const ColorCodeLegend = () => {
 
   
     return (
+      <>
+      {songs.length ? 
       <div>
         <IconButton>
           <MoreHoriz
@@ -249,6 +252,10 @@ const ColorCodeLegend = () => {
         </Dialog>
         
       </div>
+      :
+      null
+      }
+      </>
     );
   }
   

@@ -47,7 +47,7 @@ function SongsList() {
     const songs = useSelector((store) => store.songs);
     const songDetails = useSelector((store) => store.songDetails)
 
-    const [listView, setListView] = useState(true);
+    //const [listView, setListView] = useState(true);
     console.log(songs);
 
 
@@ -56,16 +56,16 @@ function SongsList() {
     /*const handleState = () => {
         setListView(listView = !listView)
     }*/
-    const handleState = () => {
+    /*const handleState = () => {
         
         if (songs.length === 0) 
             {setListView(false)}
             
-        }   
+        }  */ 
 
     //get db info on page load
     useEffect(() => {
-        handleState();
+       // handleState();
         dispatch({
             type: 'FETCH_SONGS', 
         
@@ -96,7 +96,7 @@ function SongsList() {
 
             <>
 
-            {listView ?  
+            {songs.length ?  
                                     
                                     <Paper className={paper} elevation={10}>
                                         
