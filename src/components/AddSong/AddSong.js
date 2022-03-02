@@ -205,7 +205,7 @@ const AddSong = () => {
     
                         labelId="demo-controlled-open-select-label"
                         id="demo-controlled-open-select"
-                        label="is_active"
+                        label="Status"
                         name="is_active"
                         onChange={enterNewSong('is_active')}
                         className=
@@ -258,7 +258,7 @@ const AddSong = () => {
                         
                         labelId="demo-controlled-open-select-label"
                         id="demo-controlled-open-select"
-                        label="primary_instrument"
+                        label="Instrument"
                         name="primary_instrument"
                         onChange={enterNewSong('primary_instrument')}
                         className=
