@@ -36,7 +36,8 @@ const RecordingsList = () => {
             paper, 
             description, 
             player, 
-            card1, 
+            card1,
+            card2,
             drawer, 
             drawerHeader, 
             background, 
@@ -56,7 +57,7 @@ const RecordingsList = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const recordings = useSelector((store) => store.recordings);
-    const songs = useSelector ((store) => store.songs)
+    const songDetails = useSelector ((store) => store.songDetails)
     const params = useParams();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [showHeading, setShowHeading] = useState(false);
@@ -226,13 +227,39 @@ const RecordingsList = () => {
                                         
                                         <div className={background}>
                                         
-                                            <Accordion
+                                        {songDetails.map((song) => {
+                                
+                            
+                                            return (
+                                    
                                                 
-                                                raised={true}
-                                                className={card1}
+                                               
+                                                    
+                                                        <Accordion
+                                                            
+                                                            raised={true}
+                                                        
+                                                            className=
+
+                                                                {song.priority === '1' ? 
+                                                                
+                                                                    card1
+                                                                    :
+                                                                    card2
+                                                                    
+                                                                }
+                                                                
+                                                                
+                                                            
+                                                            
+                                                        >
+                                                    
+                                        
+                                                        
                                                 
-                                            >
-                                                
+                                            
+                                            
+                                               
                                                 <AccordionSummary
                                                     
                                                     expandIcon=
@@ -373,6 +400,8 @@ const RecordingsList = () => {
                                                                     </Dialog>
                                                 
                                             </Accordion>
+                                            )
+                                        })}
 
                                         </div>
                                         
