@@ -169,7 +169,7 @@ const AddSong = () => {
                       >
                     </img>
                     }
-                  placeholder = "Production Notes"
+                  placeholder = "Production Ideas"
                   onChange={enterNewSong('production_ideas')}
                   value={newSong.production_ideas}
                   multiline className={textField}

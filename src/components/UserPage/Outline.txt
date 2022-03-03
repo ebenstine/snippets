@@ -1,0 +1,20 @@
+*** Plan for Albums Feature ***
+
+The value of this feature is less what the feature does for the user than what it eliminates.
+As the app exists now, the user is given the choice of 4 priority tiers, because that's what I 
+need in my personal usage of it.  For many users such a range would never come in to play.  Therefore,
+letting the user add the song collection (or album) at the start, and then subsequently add songs and recordings to 
+it allows them to control the scale at which they interact with the app.  Conditional rendering can then be built in 
+that accurately reflects that scale - for example, the color code legend in songsList would not render if only one album 
+(or priority tier, in the app's present state) has been inputted, but if two or more were present, each option would be shown
+in that menu.
+
+Ultimately, it's true that this is a long and better way of accomplishing something the app is kind of already doing 
+with the distinct endpoints for different priority groups.  It reveals that the current solution is definitely a workaround with 
+major shortcomings. It will be a huge pain, but all the conditional rendering of priority status can go away with this planned 
+
+
+
+1. SQL query will create a new table for Albums 
+    - The relationship of songs to albums will mirror the recordings-songs relationship
+    - There could be a join which connects the priority designation of album and song

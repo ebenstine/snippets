@@ -268,7 +268,7 @@ const RecordingsList = () => {
                                                 </AccordionSummary>
                                             
                                                             <div>
-                                                                {/*the way this conditional is set up turns off the state when the array has more than one item*/}
+                                                                
                                                                 {recording === recordings[0] ?
 
                                                                     <Typography 
