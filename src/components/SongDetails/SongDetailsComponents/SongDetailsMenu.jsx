@@ -103,27 +103,13 @@ const SongDetailsMenu = ({song}) => {
                 
             >
           
-              
-           
-            
+              <SongAudioOptions/>
           
-                  <DialogContent className={menuItems}>
-          
-                    <SongAudioOptions/>
-          
-                      </DialogContent>
-          
-                        <DialogContent className={menuItems}>
-          
-                          <SongInstrumentOptions/>
-          
-                            </DialogContent>
-          
-          
+              <SongInstrumentOptions/>
           
             </Dialog>
         
-    </>
+      </>
     
   );
 

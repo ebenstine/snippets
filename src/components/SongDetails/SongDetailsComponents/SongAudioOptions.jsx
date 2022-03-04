@@ -35,7 +35,11 @@ const useStyles = makeStyles((theme) => ({
       color: '#3b95ac',
       '&:hover': {
         color:'#2a4f64'
-      }
+      },
+      paddingTop: '2em',
+      paddingBottom: '2em',
+      paddingRight: '2em',
+      paddingLeft:'2em'
 
     }
 
@@ -66,12 +70,15 @@ const SongAudioOptions = ({song}) => {
   return (
       
       <>
-        
+        <div className={menuIcon}>
         <IconButton>
           
           <HeadphonesRoundedIcon 
 
-            className={menuIcon}
+            style={{ color: '#3b95ac',
+            '&:hover': {
+              color:'#2a4f64'
+            },}}
             aria-controls="simple-menu" 
             aria-haspopup="true"
             fontSize={'inherit'}
@@ -80,8 +87,9 @@ const SongAudioOptions = ({song}) => {
           </HeadphonesRoundedIcon>
           
         </IconButton>
+        </div>
         
-          <MenuItem onClick={handleClickOpen}/>
+          
 
          
           

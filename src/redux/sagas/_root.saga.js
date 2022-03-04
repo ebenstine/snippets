@@ -2,6 +2,8 @@ import { all } from 'redux-saga/effects';
 import loginSaga from './login.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
+import getAlbum from './setAlbumSelection.saga'
+import getAlbums from './getAlbums.saga'
 import getSong from './setSongSelection.saga';
 import getRecording from './setAudioSelection.saga';
 import getAllRecordings from './getRecordings.saga';
@@ -13,7 +15,7 @@ import postChordDiagram from './postChordDiagram.saga';
 import getSongDetails from './getSongDetails.saga';
 import songDelete from './deleteSong.saga';
 import audioDelete from './deleteRecording.saga';
-import reviseSong from './reviseSong.saga';
+import songRevise from './reviseSong.saga';
 import imageDelete from './deleteChordDiagram.saga';
 
 // rootSaga is the primary saga.
@@ -30,6 +32,7 @@ export default function* rootSaga() {
     userSaga(),
     getSong(),
     getSongs(),
+    getAlbums(),
     getRecording(),
     getChordDiagrams(),
     getAllRecordings(),
@@ -40,7 +43,7 @@ export default function* rootSaga() {
     songDelete(),
     audioDelete(),
     imageDelete(),
-    reviseSong()
+    songRevise()
 
   ]);
 }

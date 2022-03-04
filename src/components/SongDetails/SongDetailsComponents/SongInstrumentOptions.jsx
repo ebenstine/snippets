@@ -37,10 +37,10 @@ const useStyles = makeStyles((theme) => ({
     }, 
 
     menuIcon: {
-      color: '#3b95ac',
-      '&:hover': {
-        color:'#2a4f64'
-      }
+      paddingTop: '2em',
+      paddingRight:'2em',
+      paddingLeft:'2em',
+      paddingBottom: '2em'
 
     }
 
@@ -71,7 +71,7 @@ const SongInstrumentOptions = ({song}) => {
     <>
 
       {songDetails.map((song) => {
-        
+        //the following conditional render is unused and needs cleaning up
           return (
             
             <>
@@ -80,12 +80,15 @@ const SongInstrumentOptions = ({song}) => {
               
               {song.primary_instrument === 'keyboard' ? 
                 
-                
+                  <div className={menuIcon}>
                   <IconButton
                   
                   
                   
-                      className={menuIcon}
+                      style={{ color: '#3b95ac',
+                      '&:hover': {
+                        color:'#2a4f64'
+                      },}}
                       aria-controls="simple-menu" 
                       aria-haspopup="true"
                       fontSize={'inherit'}
@@ -93,16 +96,20 @@ const SongInstrumentOptions = ({song}) => {
 
                   >
 
-                  <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="technique.png"></img></b>
+                  <b><img style={{width:22, height:22, paddingBottom:'.05em' }} src="technique.png"></img></b>
                   </IconButton>
-
+                  </div>
                   :
-
+                  
                   song.primary_instrument === 'guitar' ?
-
+                  
+                  <div className={menuIcon}>
                   <IconButton
 
-                      className={menuIcon}
+                      style={{ color: '#3b95ac',
+                      '&:hover': {
+                        color:'#2a4f64'
+                      },}}
                       aria-controls="simple-menu" 
                       aria-haspopup="true"
                       fontSize={'inherit'}
@@ -111,15 +118,20 @@ const SongInstrumentOptions = ({song}) => {
                   
                   >
                   
-                  <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="technique.png"></img></b>
+                  <b><img style={{width:22, height:22, paddingBottom:'.05em' }} src="technique.png"></img></b>
                   
                   </IconButton>
-
+                  </div>
                   :
                   song.primary_instrument === 'other' ?
+
+                  <div className={menuIcon}>
                   <IconButton
 
-                      className={menuIcon}
+                      style={{ color: '#3b95ac',
+                      '&:hover': {
+                        color:'#2a4f64'
+                      },}}
                       aria-controls="simple-menu" 
                       aria-haspopup="true"
                       fontSize={'inherit'}
@@ -128,17 +140,15 @@ const SongInstrumentOptions = ({song}) => {
                   
                   >
                   
-                  <b><img style={{width:22, height:25, paddingBottom:'.05em' }} src="technique.png"></img></b>
+                  <b><img style={{width:22, height:22, paddingBottom:'.05em' }} src="technique.png"></img></b>
                   </IconButton>
-                  
+                  </div>
                   :
 
                   null
                   
                   
               }
-              
-                <MenuItem onClick={handleClickOpen}/>
 
               
                 

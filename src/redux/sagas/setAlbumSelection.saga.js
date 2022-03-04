@@ -2,7 +2,7 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 
-function* getRecording(action) {
+function* getAlbum(action) {
     try {
         const config = {
             headers: { 'Content-Type': 'application/json' },
@@ -12,18 +12,18 @@ function* getRecording(action) {
         if (id === 1.1){
             return 
         } else {
-            const response = yield axios.get(`/api/recording/${id}`, config);
+            const response = yield axios.get(`/api/album/${id}`, config);
         
-            yield put({ type: 'SET_SELECTED_RECORDING', payload: response.data})
+            yield put({ type: 'SET_SELECTED_ALBUM', payload: response.data})
         }
     } catch (error) {
         console.log('recordings GET request failed', error)
     }
 }
 
-function* setRecordingSaga() {
-    yield takeLatest('FETCH_RECORDINGS', getRecording);
+function* setAlbumSaga() {
+    yield takeLatest('FETCH_ALBUMS', getAlbum);
 
 }
 
-export default setRecordingSaga;
+export default setAlbumSaga;
