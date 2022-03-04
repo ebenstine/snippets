@@ -11,9 +11,14 @@ CREATE TABLE "user" (
     "password" VARCHAR (1000) NOT NULL
 );
 
-CREATE TABLE "songs" (
+CREATE TABLE "albums"
 	"id" SERIAL PRIMARY KEY,
 	"user_id" INT NOT NULL REFERENCES "user",
+	"title" TEXT NOT NULL
+
+CREATE TABLE "songs" (
+	"id" SERIAL PRIMARY KEY,
+	"album_id" INT NOT NULL REFERENCES "albums",
 	"date" DATE DEFAULT CURRENT_DATE,
 	"title" TEXT NOT NULL,
 	"primary_instrument" TEXT NOT NULL,
