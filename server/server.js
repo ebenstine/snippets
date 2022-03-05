@@ -9,6 +9,7 @@ const passport = require('./strategies/user.strategy');
 
 // Route includes
 const userRouter = require('./routes/user.router');
+const albumRouter = require('./routes/album.router');
 const songRouter = require('./routes/song.router');
 const recordingRouter = require('./routes/recording.router');
 const chordDiagramRouter = require('./routes/chordDiagram.router');
@@ -27,6 +28,7 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
+app.use('/api/album', albumRouter);
 app.use('/api/song', songRouter);
 app.use('/api/recording', recordingRouter);
 app.use('/api/chord_diagram', chordDiagramRouter);

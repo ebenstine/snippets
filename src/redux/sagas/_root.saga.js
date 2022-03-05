@@ -9,6 +9,7 @@ import getRecording from './setAudioSelection.saga';
 import getAllRecordings from './getRecordings.saga';
 import getChordDiagrams from './getChordDiagrams.saga'
 import getSongs from './getSongs.saga';
+import postAlbum from './postAlbum.saga'
 import postSong from './postSong.saga';
 import postRecording from './postRecording.saga';
 import postChordDiagram from './postChordDiagram.saga';
@@ -38,6 +39,7 @@ export default function* rootSaga() {
     getChordDiagrams(),
     getAllRecordings(),
     getSongDetails(),
+    postAlbum(),
     postSong(),
     postRecording(),
     postChordDiagram(),

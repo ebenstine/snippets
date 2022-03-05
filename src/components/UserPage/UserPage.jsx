@@ -4,6 +4,7 @@ import { Paper, Button, Typography, Card } from '@material-ui/core'
 import useStyles from '../UserPage/UserPageStyles'
 import ExitToApp from '@material-ui/icons/ExitToApp';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import AddAlbum from './AddAlbum';
 
 const UserPage = () => {
   
@@ -88,6 +89,8 @@ const UserPage = () => {
       </div>
       
         <div style={{display:'flex', justifyContent:'center'}}>
+
+        <AddAlbum/>
     
     
       

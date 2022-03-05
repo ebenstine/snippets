@@ -41,63 +41,38 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
 
 //post route new Song from AddSong component
 
-router.post('/', rejectUnauthenticated, async (req, res) => {
-    const client = await pool.connect();
-    const userId = req.user.id;
-    const { title, 
-            length
-             } 
-            
-            = req.body;
-
-    try {
-        await client.query('BEGIN');
-        const firstQuery = `
-                            INSERT INTO "albums" (
-                            "user_id", 
-                            "title", 
-                            "length",
-                            
-                            )
-                            VALUES($1, $2, $3)
-                            RETURNING "id"`;
-
-        const result = await client.query
-        
-        (
-            
-            firstQuery, 
-                [userId, 
-                    title, 
-                    length
-                ]
-        );
-
-        const newAlbumId = result.rows[0].id;
-        
-        await client.query(secondQuery, [newAlbumId, title, length]);
-
-        await client.query('COMMIT'); 
-
+router.post('/', rejectUnauthenticated, (req, res) => {
+    const album= req.body;
+    const userId= req.user.id
+  
+    let queryText = `INSERT INTO "albums" (
+                          user_id, title, length
+                       )
+                       
+                       VALUES ($1, $2, $3);
+                       
+                       `;
+    pool.query(queryText, [userId, album.title, album.length])
+   
+  
+      .then(result => {
         res.sendStatus(201);
-
-    } catch (error) {
-        await client.query('ROLLBACK')
-        console.log('Error posting album', error)
+        console.log(result);
+  
+      }).catch(error => {
+        // catch for second query
+        console.log(error);
         res.sendStatus(500)
-    } finally {
-        //ends pool.connect
-        client.release();
-    }
-})
+      })
+    })
 
 
 router.put('/:id', rejectUnauthenticated, (req, res) => {
     const id = req.params.id;
-    const songInfo = req.body
+    const albumInfo = req.body
   
     // get key : value pairs out of songInfo
-    const songValuePairs = Object.entries(songInfo);
+    const songValuePairs = Object.entries(albumInfo);
   
     // loop over array to get keys and values for all items in songInfo 
     for (let [key, value] of songValuePairs) {
@@ -119,3 +94,5 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
 
 
 module.exports = router;
+
+

@@ -61,10 +61,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
 
   console.log(newRecording);
 
-  const uploadComplete = (fileUrl) => {
-    console.log('fileUrl upload complete', fileUrl);
-      setNewRecording({...newRecording, id:params.id, src: fileUrl})
-  }
+
 
   const toUserHome = () => {
     history.push('/songsList')

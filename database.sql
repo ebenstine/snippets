@@ -14,7 +14,8 @@ CREATE TABLE "user" (
 CREATE TABLE "albums"
 	"id" SERIAL PRIMARY KEY,
 	"user_id" INT NOT NULL REFERENCES "user",
-	"title" TEXT NOT NULL
+	"title" TEXT NOT NULL,
+	"length" TEXT 
 
 CREATE TABLE "songs" (
 	"id" SERIAL PRIMARY KEY,
