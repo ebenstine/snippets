@@ -5,20 +5,9 @@ const { rejectUnauthenticated } = require('../modules/authentication-middleware'
 
 //route to get all albums
 router.get('/', rejectUnauthenticated, (req, res) => {
-    const queryText = 
-    `SELECT album_id, 
-            title,
-            length
-       
-        FROM albums
-        JOIN "songs" 
-        ON "songs".album_id = "album".id
-        WHERE user_id = $1
-        GROUP BY album_id,
-                 title,
-                 length
-        ORDER BY album_id ASC
-    `;
+    
+    const queryText = `SELECT * FROM albums ORDER BY "id" ASC`;
+    
     pool.query(queryText, [req.user.id])
     .then((result) => {
         console.log(result.rows);
@@ -29,7 +18,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
         res.sendStatus(500);
     })
 })
-//route to get a select song
+//route to get one album
 router.get('/:id', rejectUnauthenticated, (req, res) => {
     if (req.params.id === 'undefined') {
         return null

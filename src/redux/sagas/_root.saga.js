@@ -32,6 +32,7 @@ export default function* rootSaga() {
     userSaga(),
     getSong(),
     getSongs(),
+    getAlbum(),
     getAlbums(),
     getRecording(),
     getChordDiagrams(),
