@@ -5,12 +5,12 @@ import { Paper, MenuItem, Button, Typography, DialogTitle, Dialog} from '@materi
 import { TextField } from '@mui/material'
 import { Select, FormControl, InputLabel } from '@mui/material'
 import { useHistory } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import useStyles from './AddSongStyles'
 import Uploader from '../Uploader/Uploader';
 import Backup from '@material-ui/icons/Backup';
 import Cancel from '@material-ui/icons/Cancel';
-import { PlayArrowRounded } from '@material-ui/icons';
+import { PanoramaSharp, PlayArrowRounded } from '@material-ui/icons';
 import { PlayDisabledRounded } from '@mui/icons-material';
 import { Piano } from '@mui/icons-material';
 import { Lightbulb } from '@mui/icons-material';
@@ -57,8 +57,10 @@ const AddSong = () => {
           
           = useStyles();
 
+  const albums = useSelector((store) => store.albums);
+
   const [url , setUrl] = useState ('no file was dropped');
- 
+  
   const [errorState, setErrorState] = useState(false);
   const [helperText, setHelperText] = useState('');
   const [newSong, setNewSong] = useState({});
@@ -113,7 +115,8 @@ const AddSong = () => {
 
 
   return (
-    <div>
+    <>
+      
       
       <Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>
         
@@ -317,13 +320,17 @@ const AddSong = () => {
           
                   
                 <div>
+                
+                          
                   <FormControl sx={{ m: 1, minWidth: 120 }}>
                   
                     <InputLabel 
                       id="demo-controlled-open-select-label">
                       Priority
                     </InputLabel>
-            
+                    
+                    
+                       
                       <Select
               
                         labelId="demo-controlled-open-select-label"
@@ -354,13 +361,20 @@ const AddSong = () => {
                                 value={newSong.priority}
               
                       >
+
+
                 
                         <DialogTitle 
                           defaultValue={'  '}
                           className={selectTitle} >
                           &nbsp;&nbsp;Completion Priority&nbsp;&nbsp;
                         </DialogTitle>
+
                         
+
+
+                            
+                         
                           <MenuItem 
                             value={'1'} 
                             className={setPriority1}>
@@ -368,7 +382,10 @@ const AddSong = () => {
                             <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group One
                             </div>
                           </MenuItem>
-                  
+
+                          
+
+                         
                           <MenuItem 
                             value={'2'} 
                             className={setPriority2}>
@@ -376,6 +393,10 @@ const AddSong = () => {
                             <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Two
                             </div>
                           </MenuItem>
+
+                          
+
+                         
                   
                           <MenuItem 
                             value={'3'} 
@@ -384,6 +405,8 @@ const AddSong = () => {
                             <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Three
                             </div>
                           </MenuItem>
+
+                          
                   
                           <MenuItem 
                             value={'Uncertain'} 
@@ -392,10 +415,15 @@ const AddSong = () => {
                             <IndeterminateCheckBoxOutlined/>&nbsp;Uncertain
                             </div>
                             </MenuItem>
+                           
+                            
+                        
           
                       </Select> 
+                      
         
                   </FormControl>
+                  
           
                 </div>
           
@@ -439,10 +467,9 @@ const AddSong = () => {
         </FormControl>
 
       </Paper>
-
-    </div>
-
-  );
+      </>
+      )
+    
 
 }
 

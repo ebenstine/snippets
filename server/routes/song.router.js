@@ -92,7 +92,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
         await client.query('BEGIN');
         const firstQuery = `
                             INSERT INTO "songs" (
-                            "album_id", 
+                            "user_id", 
                             "title", 
                             "primary_instrument",
                             "instrument_specs", 
@@ -112,7 +112,7 @@ router.post('/', rejectUnauthenticated, async (req, res) => {
         (
             
             firstQuery, 
-                [ 
+                [userId, 
                     title, 
                     primary_instrument,
                     instrument_specs, 

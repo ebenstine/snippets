@@ -8,7 +8,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
     
     const queryText = `SELECT * FROM albums ORDER BY "id" ASC`;
     
-    pool.query(queryText, [req.user.id])
+    pool.query(queryText)
     .then((result) => {
         console.log(result.rows);
         res.send((result.rows))
@@ -43,16 +43,16 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
 
 router.post('/', rejectUnauthenticated, (req, res) => {
     const album= req.body;
-    const userId= req.user.id
+  
   
     let queryText = `INSERT INTO "albums" (
-                          user_id, title, length
+                           title, length
                        )
                        
-                       VALUES ($1, $2, $3);
+                       VALUES ($1, $2);
                        
                        `;
-    pool.query(queryText, [userId, album.title, album.length])
+    pool.query(queryText, [album.title, album.length])
    
   
       .then(result => {

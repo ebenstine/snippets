@@ -13,13 +13,12 @@ CREATE TABLE "user" (
 
 CREATE TABLE "albums"
 	"id" SERIAL PRIMARY KEY,
-	"user_id" INT NOT NULL REFERENCES "user",
 	"title" TEXT NOT NULL,
 	"length" TEXT 
 
 CREATE TABLE "songs" (
 	"id" SERIAL PRIMARY KEY,
-	"album_id" INT NOT NULL REFERENCES "albums",
+	"user_id" INT NOT NULL REFERENCES "users",
 	"date" DATE DEFAULT CURRENT_DATE,
 	"title" TEXT NOT NULL,
 	"primary_instrument" TEXT NOT NULL,
