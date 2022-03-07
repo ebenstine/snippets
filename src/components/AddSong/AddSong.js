@@ -322,10 +322,7 @@ const AddSong = () => {
 
                   </FormControl>
                 </div>
-                
-              
-              
-                
+
 
           
                   
@@ -381,38 +378,30 @@ const AddSong = () => {
                           &nbsp;&nbsp;Completion Priority&nbsp;&nbsp;
                         </DialogTitle>
 
-                        {albums.map((album) => {
-
-                          return (
                         
-                          <div>
-
-                          {album.id === 1 ?
+                        
+                        
                          
                           <MenuItem 
                             value={'1'} 
                             className={setPriority1}>
                             <div style={{display:'flex', flexWrap:'wrap'}}>
-                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;{album.title}
+                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group One
                             </div>
                           </MenuItem>
 
-                          :
-
-                          album.id === 2 ?
+                         
 
                          
                           <MenuItem 
                             value={'2'} 
                             className={setPriority2}>
                             <div style={{display:'flex', flexWrap:'wrap'}}>
-                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;{album.title}
+                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Two
                             </div>
                           </MenuItem>
 
-                          :
-
-                          album.id === 3 ?
+                         
 
                          
                   
@@ -420,11 +409,11 @@ const AddSong = () => {
                             value={'3'} 
                             className={setPriority3}>
                             <div style={{display:'flex', flexWrap:'wrap'}}> 
-                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;{album.title}
+                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Three
                             </div>
                           </MenuItem>
 
-                          :
+                          
                   
                           <MenuItem 
                             value={'Uncertain'} 
@@ -433,15 +422,7 @@ const AddSong = () => {
                             <IndeterminateCheckBoxOutlined/>&nbsp;Uncertain
                             </div>
                             </MenuItem>
-
-                        }
-                            
-                            </div>
-                          ) 
-                        })} 
-
-                          
-          
+                         
                       </Select> 
                       
         
@@ -450,6 +431,7 @@ const AddSong = () => {
           
                 </div>
                
+
           
 
           
