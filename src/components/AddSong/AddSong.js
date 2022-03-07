@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { Paper, MenuItem, Button, Typography, DialogTitle, Dialog} from '@material-ui/core';
@@ -10,7 +10,7 @@ import useStyles from './AddSongStyles'
 import Uploader from '../Uploader/Uploader';
 import Backup from '@material-ui/icons/Backup';
 import Cancel from '@material-ui/icons/Cancel';
-import { PanoramaSharp, PlayArrowRounded } from '@material-ui/icons';
+import { PlayArrowRounded } from '@material-ui/icons';
 import { PlayDisabledRounded } from '@mui/icons-material';
 import { Piano } from '@mui/icons-material';
 import { Lightbulb } from '@mui/icons-material';
@@ -65,7 +65,14 @@ const AddSong = () => {
   const [helperText, setHelperText] = useState('');
   const [newSong, setNewSong] = useState({});
   
-  
+  useEffect(() => {
+    
+     dispatch({
+         type: 'FETCH_ALBUMS', 
+     
+     });
+     
+ },[]);
 
   
 
@@ -116,6 +123,8 @@ const AddSong = () => {
 
   return (
     <>
+
+
       
       
       <Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>
@@ -317,6 +326,7 @@ const AddSong = () => {
               
               
                 
+
           
                   
                 <div>
@@ -362,6 +372,7 @@ const AddSong = () => {
               
                       >
 
+                      
 
                 
                         <DialogTitle 
@@ -370,31 +381,38 @@ const AddSong = () => {
                           &nbsp;&nbsp;Completion Priority&nbsp;&nbsp;
                         </DialogTitle>
 
+                        {albums.map((album) => {
+
+                          return (
                         
+                          <div>
 
-
-                            
+                          {album.id === 1 ?
                          
                           <MenuItem 
                             value={'1'} 
                             className={setPriority1}>
                             <div style={{display:'flex', flexWrap:'wrap'}}>
-                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group One
+                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;{album.title}
                             </div>
                           </MenuItem>
 
-                          
+                          :
+
+                          album.id === 2 ?
 
                          
                           <MenuItem 
                             value={'2'} 
                             className={setPriority2}>
                             <div style={{display:'flex', flexWrap:'wrap'}}>
-                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Two
+                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;{album.title}
                             </div>
                           </MenuItem>
 
-                          
+                          :
+
+                          album.id === 3 ?
 
                          
                   
@@ -402,11 +420,11 @@ const AddSong = () => {
                             value={'3'} 
                             className={setPriority3}>
                             <div style={{display:'flex', flexWrap:'wrap'}}> 
-                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Three
+                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;{album.title}
                             </div>
                           </MenuItem>
 
-                          
+                          :
                   
                           <MenuItem 
                             value={'Uncertain'} 
@@ -415,9 +433,14 @@ const AddSong = () => {
                             <IndeterminateCheckBoxOutlined/>&nbsp;Uncertain
                             </div>
                             </MenuItem>
-                           
+
+                        }
                             
-                        
+                            </div>
+                          ) 
+                        })} 
+
+                          
           
                       </Select> 
                       
@@ -426,6 +449,7 @@ const AddSong = () => {
                   
           
                 </div>
+               
           
 
           
@@ -467,7 +491,9 @@ const AddSong = () => {
         </FormControl>
 
       </Paper>
-      </>
+      
+  </>
+      
       )
     
 
