@@ -53,11 +53,11 @@ function InactiveArchive({song}) {
     const [listView, setListView] = useState();
     
     console.log(songs);
-    //having tried a bunch of dumb ideas it's obvious that to conditionally render the groups,
-    //
+    
+    
     const handleState = () => {
-        
-        if (songs.length > 0) 
+        //checks for any occurrence of an inactive song
+        if (songs.filter(e => e.is_active === false).length > 0) 
             {setListView(true)}
         
             else 
@@ -68,12 +68,12 @@ function InactiveArchive({song}) {
 
     //get db info on page load
     useEffect(() => {
-        handleState();
+        
         dispatch({
             type: 'FETCH_SONGS',
             
         });
-        
+        handleState();
     }, []);
     //push forward to details page on click
 
