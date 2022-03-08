@@ -5,12 +5,15 @@ const useStyles = makeStyles((theme) => ({
     card: {
         flexDirection: 'column',
         backgroundColor:  '#f0a1a1',
-        width: 100 
+        color: 'rgb(250, 250, 175)',
+        marginLeft: '.5em',
+        marginRight: '.5em',
+        border: '1px solid #1d778d'
     },
     
     card1: {
         flexDirection: 'column',
-        backgroundColor: '#82bdcc',
+        backgroundColor: '#afe4f1',
         color: 'rgb(250, 250, 175)',
         marginLeft: '.5em',
         marginRight: '.5em',
@@ -20,7 +23,17 @@ const useStyles = makeStyles((theme) => ({
 
     card2: {
         flexDirection: 'column',
-        backgroundColor: 'orange',
+        backgroundColor: '#ffb171',
+        color: 'rgb(250, 250, 175)',
+        marginLeft: '.5em',
+        marginRight: '.5em',
+        border: '1px solid #1d778d'
+        
+    },
+
+    card3: {
+        flexDirection: 'column',
+        backgroundColor: '#fdd377',
         color: 'rgb(250, 250, 175)',
         marginLeft: '.5em',
         marginRight: '.5em',

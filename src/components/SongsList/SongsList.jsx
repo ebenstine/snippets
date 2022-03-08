@@ -296,8 +296,9 @@ function SongsList() {
                                             
                                                                 </Box>
                                                             : 
-
-                                                            song.priority === 'Uncertain' ?
+                                                            /*this little update allows for the possibility that a user transfers an inactive song with 
+                                                            no priority input into the active category */
+                                                            song.priority === 'Uncertain' || song.priority === null ?
                                                     
                                                                 <Box
                                                             

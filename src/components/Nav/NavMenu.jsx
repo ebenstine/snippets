@@ -32,7 +32,9 @@ const useStyles = makeStyles((theme) => ({
             },
         margin: theme.spacing(1),
         border: "1px solid #eb9148",
-        borderRadius: "3px"
+        borderRadius: "3px",
+        display: 'flex',
+        justifyContent: 'center'
     },
 
     menu: {
@@ -66,6 +68,7 @@ const NavMenu = ({user}) => {
       dispatch({
         
         type: 'FETCH_SONGS',
+        type: 'FETCH_SONG_DETAILS'
         
       });
       handleState();
@@ -140,7 +143,8 @@ const NavMenu = ({user}) => {
             
                   color: '#233d4d',
                   display:'flex',
-                  flexWrap: 'wrap'
+                  flexWrap: 'wrap',
+                  
 
                 }}
                 onClick={handleClose}
@@ -169,7 +173,7 @@ const NavMenu = ({user}) => {
                   color: '#233d4d',
                   display:'flex',
                   flexWrap: 'wrap',
-                
+                  justifyContent: 'center'
                 }}
                 onClick={handleClose}  
 

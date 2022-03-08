@@ -48,6 +48,11 @@ const AddRecording = ({ song, handleMenuClose }) => {
   
   } 
 
+  const uploadComplete = (fileUrl) => {
+    console.log('fileUrl upload complete', fileUrl);
+      setNewRecording({...newRecording, src: fileUrl})
+  }
+
   const handleSave = (event) => {
     event.preventDefault();
     dispatch({ 
