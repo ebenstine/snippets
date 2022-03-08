@@ -11,6 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { PlayArrowRounded } from '@mui/icons-material';
 
 
+import { useDispatch, useSelector } from 'react-redux';
 
 import QueueMusic from '@material-ui/icons/QueueMusic';
 import MenuBook from '@material-ui/icons/MenuBook';
@@ -49,8 +50,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 const NavMenu = ({user}) => {
+    const dispatch = useDispatch();
     const {navLinks, menu, menuSwitch} = useStyles();
     const [open, setOpen] = useState(false);
+    const [showArchiveLink, setShowArchiveLink]= useState(false)
+    const songs = useSelector((store) => store.songs);
    
   
     const handleClickOpen = () => {
@@ -58,8 +62,27 @@ const NavMenu = ({user}) => {
         setOpen(false)
       } else
       setOpen(true);
-      
+
+      dispatch({
+        
+        type: 'FETCH_SONGS',
+        
+      });
+      handleState();
     };
+
+    const handleState = () => {
+      //checks for any occurrence of an inactive song
+      if (songs.filter(e => e.is_active === false).length > 0) 
+          {setShowArchiveLink(true)}
+      
+          else 
+
+          {setShowArchiveLink(false)};
+      }
+
+    
+    
     const handleClose = () => {
       setOpen(false);
     }
@@ -159,12 +182,12 @@ const NavMenu = ({user}) => {
               </Link>
 
             </MenuItem>
-
+            {showArchiveLink ?
             <MenuItem
               className={navLinks}
           
             >
-          
+              
               <Link 
                 to="/InactiveArchive"
                 style = {{
@@ -186,8 +209,12 @@ const NavMenu = ({user}) => {
                   </Typography>
 
                 </Link>
+              
           
             </MenuItem>
+            :
+            null 
+          }
 
           <MenuItem 
             className={navLinks}

@@ -48,7 +48,7 @@ function InactiveArchive({song}) {
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
-    const songDetails = useSelector((store) => store.songDetails)
+   
 
     const [listView, setListView] = useState();
     
