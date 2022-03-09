@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
@@ -14,18 +14,25 @@ import Backup from '@material-ui/icons/Backup';
 
 
 
+
 const AddAlbum = ({ album }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const {  root, dialogButtons, textfield, cardContent  } = useStyles();
   const params = useParams();
-
+  const albums = useSelector((store) => store.albums)
   const [newAlbum, setNewAlbum] = useState({});
 
+  useEffect(() => {
+    
+     dispatch({
+         type: 'FETCH_ALBUMS', 
+     
+     });
+     
+ },[]);
   
-  const handleCancel = () => {
-   
-  }
+ 
   const enterNewAlbum = (key) => (event) => {
     setNewAlbum({ ...newAlbum, id:params.id, [key]: event.target.value });
   };
@@ -61,85 +68,90 @@ const AddAlbum = ({ album }) => {
           
           <form className={root} onSubmit={handleSave} noValidate autoComplete="off" >
       
-        <div className={cardContent}>
+              <div className={cardContent}>
+                {albums.length ?
+                  <Typography
+                    align="center"
+                  >
 
-          <Typography
-           align="center"
-          >
+                    Add a new album
 
-            Start by adding an album
-          </Typography>
-        
-      
-          <FormControl>
-        
-            <TextField
-                  
-              label="Album Title"
-              placeholder="i.e. 'The White Album'"
-              onChange={enterNewAlbum('title')}
-              value={newAlbum.title}
-              multiline className={textfield}
-            />
-        
-            <TextField
-            
-              label="Release Range"
-              placeholder="i.e. 'summer 2022'"
-              onChange={enterNewAlbum('release_range')}
-              value={newAlbum.release_range}
-              multiline className={textfield}
-            />
+                  </Typography>
+                :
 
-            <TextField
-            
-            label="Primary Style"
-            placeholder="i.e. 'Indie Rock'"
-            onChange={enterNewAlbum('primary_style')}
-            value={newAlbum.primary_style}
-            multiline className={textfield}
-          />    
+                  <Typography>
                     
-        </FormControl> 
-          
-        <FormControl>
-          <div>
-          
-            <Button 
-              
-              onClick={handleCancel} 
-              variant="contained" 
-              size="small" 
-              className={dialogButtons}
-            >
-          
-              <Cancel/>
+                    Begin by adding an album
 
-            </Button>
-            
-            <Button 
-              
-              onClick={handleSave}
-              variant="contained" 
-              size="small" 
-              className={dialogButtons}
-            >
-          
-              <Backup/>
+                  </Typography>
 
-            </Button>
-          </div>
-        </FormControl> 
-      
-        </div>
-
+                }
         
+      
+                  <FormControl>
+        
+                    <TextField
+                  
+                      label="Album Title"
+                      placeholder="i.e. 'The White Album'"
+                      onChange={enterNewAlbum('title')}
+                      value={newAlbum.title}
+                      multiline className={textfield}
+                    />
+        
+                    <TextField
+                    
+                      label="Release Range"
+                      placeholder="i.e. 'summer 2022'"
+                      onChange={enterNewAlbum('release_range')}
+                      value={newAlbum.release_range}
+                      multiline className={textfield}
+                    />
 
-      </form>
+                    <TextField
+                    
+                    label="Primary Style"
+                    placeholder="i.e. 'Indie Rock'"
+                    onChange={enterNewAlbum('primary_style')}
+                    value={newAlbum.primary_style}
+                    multiline className={textfield}
+                    />    
+                    
+                  </FormControl> 
+          
+                  <FormControl>
+                    <div>
+          
+                      <Button 
+                        
+                        //onClick={handleCancel} 
+                        variant="contained" 
+                        size="small" 
+                        className={dialogButtons}
+                      >
+          
+                        <Cancel/>
 
-    </FormControl>
-  </>
-    
+                      </Button>
+            
+                      <Button 
+              
+                        onClick={handleSave}
+                        variant="contained" 
+                        size="small" 
+                        className={dialogButtons}
+                      >
+          
+                        <Backup/>
+
+                      </Button>
+                    </div>
+                  </FormControl> 
+      
+              </div>
+          </form>
+      </FormControl>
+    </>
   );
 }
 
