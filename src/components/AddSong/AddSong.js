@@ -5,7 +5,7 @@ import { Paper, MenuItem, Button, Typography, DialogTitle, Dialog} from '@materi
 import { TextField } from '@mui/material'
 import { Select, FormControl, InputLabel } from '@mui/material'
 import { useHistory } from 'react-router-dom';
-import { connect, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import useStyles from './AddSongStyles'
 import Uploader from '../Uploader/Uploader';
 import Backup from '@material-ui/icons/Backup';
@@ -124,9 +124,6 @@ const AddSong = () => {
   return (
     <>
 
-
-      
-      
       <Paper className={paper} onDoubleClick={e => e.stopPropagation()} elevation={10}>
         
         <FormControl >
@@ -474,12 +471,10 @@ const AddSong = () => {
 
       </Paper>
       
-  </>
+    </>
       
-      )
-    
-
+  )
 }
 
 
-export default connect() (AddSong);
+export default AddSong;

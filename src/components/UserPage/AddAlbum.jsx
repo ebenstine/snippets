@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
-import { FormControl } from '@material-ui/core';
+import { FormControl, Typography } from '@material-ui/core';
 import { TextField } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -10,14 +10,14 @@ import MenuItem from '@material-ui/core/MenuItem';
 import useStyles from './AddAlbumStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
-import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
+
 
 
 
 const AddAlbum = ({ album }) => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const {  root, dialogButtons, descriptionText  } = useStyles();
+  const {  root, dialogButtons, textfield, cardContent  } = useStyles();
   const params = useParams();
 
   const [newAlbum, setNewAlbum] = useState({});
@@ -49,80 +49,95 @@ const AddAlbum = ({ album }) => {
 
   console.log(newAlbum);
 
-  const uploadComplete = (fileUrl) => {
-    console.log('fileUrl upload complete', fileUrl);
-      setNewRecording({...newRecording, id:params.id, src: fileUrl})
-  }
-
-  const toUserHome = () => {
-    history.push('/songsList')
-}
-
+  
+  
   return (
     
     
-    <div>
+    <>
+
+      <FormControl >
+          
+          <form className={root} onSubmit={handleSave} noValidate autoComplete="off" >
       
-      
+        <div className={cardContent}>
+
+          <Typography
+           align="center"
+          >
+
+            Start by adding an album
+          </Typography>
         
       
           <FormControl>
         
-            <form className={root}>
-        
-             
-        
-                  <TextField
+            <TextField
                   
-                    label={<DescriptionOutlinedIcon style={{color: '#1d778d'}}/>}
-                    placeholder="Title"
-                    onChange={enterNewAlbum('title')}
-                    value={newAlbum.title}
-                    multiline className={descriptionText}
+              label="Album Title"
+              placeholder="i.e. 'The White Album'"
+              onChange={enterNewAlbum('title')}
+              value={newAlbum.title}
+              multiline className={textfield}
+            />
+        
+            <TextField
+            
+              label="Release Range"
+              placeholder="i.e. 'summer 2022'"
+              onChange={enterNewAlbum('release_range')}
+              value={newAlbum.release_range}
+              multiline className={textfield}
+            />
+
+            <TextField
+            
+            label="Primary Style"
+            placeholder="i.e. 'Indie Rock'"
+            onChange={enterNewAlbum('primary_style')}
+            value={newAlbum.primary_style}
+            multiline className={textfield}
+          />    
                     
+        </FormControl> 
+          
+        <FormControl>
+          <div>
+          
+            <Button 
               
-                  />
-        
-                    
-
-               
-
-            </form>
-
-          </FormControl>
-        
-        
-            
+              onClick={handleCancel} 
+              variant="contained" 
+              size="small" 
+              className={dialogButtons}
+            >
           
-              <Button 
-                
-                onClick={handleCancel} 
-                variant="contained" 
-                size="small" 
-                className={dialogButtons}
-              >
-            
-                <Cancel/>
+              <Cancel/>
 
-              </Button>
+            </Button>
+            
+            <Button 
+              
+              
+              variant="contained" 
+              size="small" 
+              className={dialogButtons}
+            >
           
-              <Button 
-                
-                onClick={handleSave} 
-                variant="contained" 
-                size="small" 
-                className={dialogButtons}
-              >
-            
-                <Backup/>
+              <Backup/>
 
-              </Button>
-
-            
+            </Button>
+          </div>
+        </FormControl> 
+      
+        </div>
 
         
-   
-    </div>
+
+      </form>
+
+    </FormControl>
+  </>
     
   );
 }

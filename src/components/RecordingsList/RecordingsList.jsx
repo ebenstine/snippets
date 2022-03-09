@@ -45,8 +45,6 @@ const RecordingsList = () => {
             background, 
             view, 
             bye,
-            firstRecording,
-            cuteStar,
             deletePrompt,
             dialog,
             dialogContent,

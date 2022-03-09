@@ -6,8 +6,10 @@ const useStyles = makeStyles((theme) => ({
          
       
           '& .MuiTextField-root': {
-              marginLeft: '3em',
+              //marginLeft: '3em',
               color: '#2a4f64',
+              marginTop: '1em',
+              marginBottom: '1em',
               
               '&:hover fieldset': {
                 borderColor: '#ffab5c'
@@ -101,10 +103,29 @@ const useStyles = makeStyles((theme) => ({
         border: "1px solid #3b95ac",
         marginBottom: "2em",
         marginTop: "1em",
+        marginLeft:'.5em',
+        marginRight:'.5em',
         '&:hover': {
             background:'#fde76c',
             },
         
+    },
+
+    textfield: {
+        margin: theme.spacing(3),
+        width: '40ch',
+        marginBottom: '1em',
+        display: 'flex',
+        justifyContent:'center',
+        marginTop: '1em'
+    },
+
+    cardContent: {
+        display: 'flex',
+        flexDirection : 'column', 
+        alignItems: "center", 
+        justifyContent:'center',
+        paddingTop: '1em'
     },
 
     upload: {

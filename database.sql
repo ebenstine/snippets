@@ -11,10 +11,12 @@ CREATE TABLE "user" (
     "password" VARCHAR (1000) NOT NULL
 );
 
-CREATE TABLE "albums"
+CREATE TABLE "albums"(
 	"id" SERIAL PRIMARY KEY,
 	"title" TEXT NOT NULL,
-	"length" TEXT 
+	"primary_style" TEXT,
+	"release_range" TEXT 
+);
 
 CREATE TABLE "songs" (
 	"id" SERIAL PRIMARY KEY,

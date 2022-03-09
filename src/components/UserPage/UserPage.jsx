@@ -87,22 +87,21 @@ const UserPage = () => {
 
       
       </div>
+      <div style={{display:'flex', justifyContent:'center'}}>
+      <AddAlbum/>
+      </div>
       
         <div style={{display:'flex', justifyContent:'center'}}>
 
-        <AddAlbum/>
-    
-    
-      
-          <Button 
+         <Button 
 
-            
-            size="small" 
-            className={button2} 
-            onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out&nbsp;
-            <ExitToApp/>
+          
+          size="small" 
+          className={button2} 
+          onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out&nbsp;
+          <ExitToApp/>
 
-          </Button>
+        </Button>
 
         </div>
 
