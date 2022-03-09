@@ -43,16 +43,17 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
 
 router.post('/', rejectUnauthenticated, (req, res) => {
     const album= req.body;
+    const userId= req.user.id
   
   
     let queryText = `INSERT INTO "albums" (
-                           title, length
+                           user_id, title, release_range, primary_style
                        )
                        
-                       VALUES ($1, $2);
+                       VALUES ($1, $2, $3, $4);
                        
                        `;
-    pool.query(queryText, [album.title, album.length])
+    pool.query(queryText, [userId, album.title, album.release_range, album.primary_style])
    
   
       .then(result => {
@@ -72,10 +73,10 @@ router.put('/:id', rejectUnauthenticated, (req, res) => {
     const albumInfo = req.body
   
     // get key : value pairs out of songInfo
-    const songValuePairs = Object.entries(albumInfo);
+    const albumValuePairs = Object.entries(albumInfo);
   
     // loop over array to get keys and values for all items in songInfo 
-    for (let [key, value] of songValuePairs) {
+    for (let [key, value] of albumValuePairs) {
       let sqlText = `UPDATE albums 
                      SET ${key} = $2 
                      WHERE id = $1;`

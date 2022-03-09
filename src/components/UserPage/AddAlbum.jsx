@@ -32,7 +32,7 @@ const AddAlbum = ({ album }) => {
 
   if (newAlbum.title === '') {
     
-    alert('You must enter a description and upload an audio file!')
+    alert('Please include a title')
   
   } 
 
@@ -44,6 +44,7 @@ const AddAlbum = ({ album }) => {
       payload: newAlbum
 
     });
+    history.push('/addSong')
    
   };
 
@@ -118,7 +119,7 @@ const AddAlbum = ({ album }) => {
             
             <Button 
               
-              
+              onClick={handleSave}
               variant="contained" 
               size="small" 
               className={dialogButtons}
