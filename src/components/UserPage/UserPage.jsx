@@ -42,121 +42,117 @@ const handleClose = () => {
 }
 
   return (
+    
     <>
     
-    <Paper className={paper} elevation={10}>
+      <Paper className={paper} elevation={10}>
     
-    
-    {songs.length ?  
+        {songs.length ?  
 
-      <>
-        <div style={{display:'flex', justifyContent:'center' }}>
+          <>
+            <div style={{display:'flex', justifyContent:'center', marginTop: '1em' }}>
         
-        <IconButton
-          onClick={handleClickOpen}
-        >
-        <AccountCircle style={{color: '#233d4d', width:30, height:30}}/>
-        </IconButton>
-        </div>
+              <IconButton
+                onClick={handleClickOpen}
+              >
+                <AccountCircle style={{color: '#233d4d', width:30, height:30}}/>
+              </IconButton>
+            </div>
         
-        <br></br>
-
-        <Typography 
+            <br></br>
+            
+            <div>
+              <Typography 
           
-          align="center" 
-          variant = "h4" 
-          className = {welcome} 
-        >
+                align="center" 
+                variant = "h4" 
+                className = {welcome} 
+              >
           
-          Hey, {user.username}!
-        </Typography>
+                Hey, {user.username}!
+              </Typography>
+            </div>
 
-        <br></br>
-        <Dialog
-        PaperProps={{
-          
-          style: { border: "1px solid #2a4f64" }
-
-        }}
-        open={open} 
-        onClose={handleClose}
-       
+            <br></br>
         
-        >
-        <Typography 
+              <Dialog
+                PaperProps={{
+                  
+                  style: { border: "1px solid #2a4f64" }
+
+                }}
+                open={open} 
+                onClose={handleClose}
+              >
+                <Typography 
         
-          align="center" 
-          variant = "h6" 
-          className = {songCount}>
+                  align="center" 
+                  variant = "h6" 
+                  className = {songCount}>
           
-            <span className={playIcon}>▶</span>
-             &nbsp;You are working on <span className={highlight}>{songs.length}</span> songs.
+                    <span className={playIcon}>▶</span>
+             
+                  &nbsp;You are working on <span className={highlight}>{songs.length}</span> songs.
       
-        </Typography>
+                </Typography>
       
-        <br></br>
+                <br></br>
       
-        <Typography 
+                <Typography 
+                  
+                  align="center" 
+                  variant = "h6" 
+                  className = {recordingCount}>
+                  
+                    <span className={playIcon}>▶</span>
+
+                  &nbsp;You've uploaded <span className={highlight}>{allRecordings.length}</span> audio recordings.
+              
+                </Typography>
+              </Dialog>
+          </>
+        :
+          <>
+            <div style={{display:'flex', justifyContent:'center', marginTop:'1.5em' }}>
+              <AccountCircle style={{color: '#233d4d', width:30, height:30}}/>
+              </div>
+
+              <Typography 
+                
+                align="center" 
+                variant = "h4" 
+                className = {welcome} 
+              >
+                
+                Hey, {user.username}!
+              </Typography>
+
+          </>
+            
+        }
+
+          <div style={{display:'flex', justifyContent:'center'}}>
+      
+            <AddAlbum/>
           
-          align="center" 
-          variant = "h6" 
-          className = {recordingCount}>
+          </div>
           
-            <span className={playIcon}>▶</span>
-          &nbsp;You've uploaded <span className={highlight}>{allRecordings.length}</span> audio recordings.
-      
-        </Typography>
-        </Dialog>
-      </>
-        
+          <div style={{display:'flex', justifyContent:'center'}}>
 
-      :
+            <Button 
 
-      
-      <>
-      <div style={{display:'flex', justifyContent:'center' }}>
-        <AccountCircle style={{color: '#233d4d', width:30, height:30}}/>
-        </div>
+              size="small" 
+              className={button2} 
+              onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out&nbsp;
+              
+              <ExitToApp/>
 
-        <Typography 
-          
-          align="center" 
-          variant = "h4" 
-          className = {welcome} 
-        >
-          
-          Hey, {user.username}!
-        </Typography>
-
-      </>
-      
-      }
-
-    
-
-      
-      
-      <div style={{display:'flex', justifyContent:'center'}}>
-      <AddAlbum/>
-      </div>
-      
-        <div style={{display:'flex', justifyContent:'center'}}>
-
-         <Button 
+            </Button>
+          </div>
 
           
-          size="small" 
-          className={button2} 
-          onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out&nbsp;
-          <ExitToApp/>
-
-        </Button>
-        </div>
-
-       
 
       </Paper>
-    
     </>
   );
 }

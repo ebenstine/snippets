@@ -18,7 +18,7 @@ import Backup from '@material-ui/icons/Backup';
 const AddAlbum = ({ album }) => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const {  root, dialogButtons, textfield, cardContent  } = useStyles();
+  const {  root, dialogButtons, textfield, cardContent, formHeader  } = useStyles();
   const params = useParams();
   const albums = useSelector((store) => store.albums)
   const [newAlbum, setNewAlbum] = useState({});
@@ -72,16 +72,18 @@ const AddAlbum = ({ album }) => {
                 {albums.length ?
                   <Typography
                     align="center"
+                    variant="h6"
+                    className={formHeader}
                   >
 
-                    Add a new album
+                    Add Another Future Release 
 
                   </Typography>
                 :
 
                   <Typography>
                     
-                    Begin by adding an album
+                    First, Add a Future Release
 
                   </Typography>
 

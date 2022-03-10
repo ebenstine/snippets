@@ -136,7 +136,7 @@ const AddSong = () => {
                 variant="h5" 
                 
                 className={title}>
-                Add a New Song
+                Add a Song
               </Typography>
                 
                 <TextField
@@ -325,105 +325,108 @@ const AddSong = () => {
                   
                 <div>
                 
-                          
-                  <FormControl sx={{ m: 1, minWidth: 120 }}>
-                  
-                    <InputLabel 
-                      id="demo-controlled-open-select-label">
-                      Priority
-                    </InputLabel>
+                  {newSong.is_active === true ?       
+                    <FormControl sx={{ m: 1, minWidth: 120 }}>
                     
-                    
-                       
-                      <Select
-              
-                        labelId="demo-controlled-open-select-label"
-                        id="demo-controlled-open-select"
-                        label="priority"
-                        name="priority"
-                        onChange={enterNewSong('priority')}
-                        className=
-                          {newSong.priority === '1' ? 
-                                  
-                            priority1 :
-
-                              newSong.priority ===  '2' ?
-                                 
-                                priority2 :
-
-                                  newSong.priority === '3' ?
-
-                                    priority3 :
-
-                                      newSong.priority === 'Uncertain' ?
-
-                                        priorityUncertain :
-
-                                          blankPriority
-                                
-                          }
-                                value={newSong.priority}
-              
-                      >
-
+                      <InputLabel 
+                        id="demo-controlled-open-select-label">
+                        Priority
+                      </InputLabel>
                       
-
+                      
+                        
+                        <Select
                 
-                        <DialogTitle 
-                          defaultValue={'  '}
-                          className={selectTitle} >
-                          &nbsp;&nbsp;Completion Priority&nbsp;&nbsp;
-                        </DialogTitle>
+                          labelId="demo-controlled-open-select-label"
+                          id="demo-controlled-open-select"
+                          label="priority"
+                          name="priority"
+                          onChange={enterNewSong('priority')}
+                          className=
+                            {newSong.priority === '1' ? 
+                                    
+                              priority1 :
+
+                                newSong.priority ===  '2' ?
+                                  
+                                  priority2 :
+
+                                    newSong.priority === '3' ?
+
+                                      priority3 :
+
+                                        newSong.priority === 'Uncertain' ?
+
+                                          priorityUncertain :
+
+                                            blankPriority
+                                  
+                            }
+                                  value={newSong.priority}
+                
+                        >
 
                         
-                        
-                        
-                         
-                          <MenuItem 
-                            value={'1'} 
-                            className={setPriority1}>
-                            <div style={{display:'flex', flexWrap:'wrap'}}>
-                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group One
-                            </div>
-                          </MenuItem>
 
-                         
-
-                         
-                          <MenuItem 
-                            value={'2'} 
-                            className={setPriority2}>
-                            <div style={{display:'flex', flexWrap:'wrap'}}>
-                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Two
-                            </div>
-                          </MenuItem>
-
-                         
-
-                         
                   
-                          <MenuItem 
-                            value={'3'} 
-                            className={setPriority3}>
-                            <div style={{display:'flex', flexWrap:'wrap'}}> 
-                            <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Three
-                            </div>
-                          </MenuItem>
+                          <DialogTitle 
+                            defaultValue={'  '}
+                            className={selectTitle} >
+                            &nbsp;&nbsp;Completion Priority&nbsp;&nbsp;
+                          </DialogTitle>
 
                           
-                  
-                          <MenuItem 
-                            value={'Uncertain'} 
-                            className={setPriorityUncertain}>
-                            <div style={{display:'flex', flexWrap:'wrap'}}> 
-                            <IndeterminateCheckBoxOutlined/>&nbsp;Uncertain
-                            </div>
+                          
+                          
+                          
+                            <MenuItem 
+                              value={'1'} 
+                              className={setPriority1}>
+                              <div style={{display:'flex', flexWrap:'wrap'}}>
+                              <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group One
+                              </div>
                             </MenuItem>
-                         
-                      </Select> 
-                      
-        
-                  </FormControl>
+
+                          
+
+                          
+                            <MenuItem 
+                              value={'2'} 
+                              className={setPriority2}>
+                              <div style={{display:'flex', flexWrap:'wrap'}}>
+                              <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Two
+                              </div>
+                            </MenuItem>
+
+                          
+
+                          
+                    
+                            <MenuItem 
+                              value={'3'} 
+                              className={setPriority3}>
+                              <div style={{display:'flex', flexWrap:'wrap'}}> 
+                              <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Three
+                              </div>
+                            </MenuItem>
+
+                            
+                    
+                            <MenuItem 
+                              value={'Uncertain'} 
+                              className={setPriorityUncertain}>
+                              <div style={{display:'flex', flexWrap:'wrap'}}> 
+                              <IndeterminateCheckBoxOutlined/>&nbsp;Uncertain
+                              </div>
+                              </MenuItem>
+                          
+                        </Select> 
+                        
+          
+                    </FormControl>
+                  :
+                    null
+                  }
                   
           
                 </div>

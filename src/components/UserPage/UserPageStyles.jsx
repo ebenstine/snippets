@@ -18,7 +18,10 @@ const useStyles = makeStyles((theme) => ({
         //borderBottom: '1.5px solid #6ca0ad',
         fontSize: 24,
         paddingBottom: '1em',
-        borderBottom: '1.5px solid #6ca0ad'
+        paddingTop: '1em',
+        borderBottom: '1.5px solid #6ca0ad',
+        width: 400,
+        margin: 'auto'
         
         
     },
