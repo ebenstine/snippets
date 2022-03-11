@@ -321,7 +321,7 @@ const AddSong = () => {
                 </div>
 
 
-          
+              {albums.length >= 2 ?
                   
                 <div>
                 
@@ -366,8 +366,6 @@ const AddSong = () => {
                 
                         >
 
-                        
-
                   
                           <DialogTitle 
                             defaultValue={'  '}
@@ -387,9 +385,6 @@ const AddSong = () => {
                               </div>
                             </MenuItem>
 
-                          
-
-                          
                             <MenuItem 
                               value={'2'} 
                               className={setPriority2}>
@@ -398,8 +393,7 @@ const AddSong = () => {
                               </div>
                             </MenuItem>
 
-                          
-
+                          {albums.length >= 3 ?
                           
                     
                             <MenuItem 
@@ -410,6 +404,10 @@ const AddSong = () => {
                               </div>
                             </MenuItem>
 
+                            :
+                              null
+                            }
+
                             
                     
                             <MenuItem 
@@ -419,6 +417,7 @@ const AddSong = () => {
                               <IndeterminateCheckBoxOutlined/>&nbsp;Uncertain
                               </div>
                               </MenuItem>
+                              
                           
                         </Select> 
                         
@@ -430,6 +429,12 @@ const AddSong = () => {
                   
           
                 </div>
+
+                :
+
+                  null
+
+                }
                
 
           
