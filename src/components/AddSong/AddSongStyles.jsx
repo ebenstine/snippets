@@ -273,7 +273,9 @@ const useStyles = makeStyles((theme) => ({
     },
 
     setPriority: {
-        
+
+        display: 'flex',
+        justifyContent:'center',
         color: "#2a4f64",
         background: "rgb(230, 252, 255)",
         '&:hover': {
@@ -284,11 +286,13 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         //border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '3.4em'
+        //paddingLeft: '3.4em'
         
     },
     setPriorityUncertain: {
         
+        display: 'flex',
+        justifyContent:'center',
         color: "#2a4f64",
         background: "rgb(230, 252, 255)",
         '&:hover': {
@@ -299,12 +303,14 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '1.5em'
+        //paddingLeft: '1.5em'
         
     },
 
     setPriority1: {
         
+        display: 'flex',
+        justifyContent:'center',
         color: "#2a4f64",
         background: "rgb(230, 252, 255)",
         '&:hover': {
@@ -315,12 +321,14 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '1.5em'
+        //paddingLeft: '1.5em'
         
     },
 
     setPriority2: {
         
+        display: 'flex',
+        justifyContent:'center',
         color: "#2a4f64",
         background: "rgb(230, 252, 255)",
         '&:hover': {
@@ -331,12 +339,14 @@ const useStyles = makeStyles((theme) => ({
         marginRight: '3em',
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '1.5em'
+        //paddingLeft: '1.5em'
         
     },
 
     setPriority3: {
         
+        display: 'flex',
+        justifyContent:'center',
         color: "#2a4f64",
         background: "rgb(230, 252, 255)",
         '&:hover': {
@@ -348,7 +358,7 @@ const useStyles = makeStyles((theme) => ({
         
         border: '1px solid #3b95ac',
         borderRadius: '3px',
-        paddingLeft: '1.3em'
+        //paddingLeft: '1.3em'
         
     },
 

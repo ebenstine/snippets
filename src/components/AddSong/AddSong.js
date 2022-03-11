@@ -321,7 +321,7 @@ const AddSong = () => {
                 </div>
 
 
-              {albums.length >= 2 ?
+              
                   
                 <div>
                 
@@ -381,17 +381,21 @@ const AddSong = () => {
                               value={'1'} 
                               className={setPriority1}>
                               <div style={{display:'flex', flexWrap:'wrap'}}>
-                              <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group One
+                              <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;First
                               </div>
                             </MenuItem>
-
+                          
+                          {albums.length >= 2 ?
                             <MenuItem 
                               value={'2'} 
                               className={setPriority2}>
                               <div style={{display:'flex', flexWrap:'wrap'}}>
-                              <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Two
+                              <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Second
                               </div>
                             </MenuItem>
+                          :
+                            null
+                          }   
 
                           {albums.length >= 3 ?
                           
@@ -400,7 +404,7 @@ const AddSong = () => {
                               value={'3'} 
                               className={setPriority3}>
                               <div style={{display:'flex', flexWrap:'wrap'}}> 
-                              <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Group Three
+                              <img src='selectVinyl.png' style={{height:20, width:20}}></img>&nbsp;Third
                               </div>
                             </MenuItem>
 
@@ -430,11 +434,7 @@ const AddSong = () => {
           
                 </div>
 
-                :
-
-                  null
-
-                }
+                
                
 
           
