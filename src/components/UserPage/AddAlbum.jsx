@@ -76,7 +76,7 @@ const AddAlbum = ({ album }) => {
                     className={formHeader}
                   >
 
-                    Add Another Future Release 
+                    Add A Future Release 
 
                   </Typography>
                 :

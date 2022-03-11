@@ -113,7 +113,7 @@ const handleClose = () => {
           </>
         :
           <>
-            <div style={{display:'flex', justifyContent:'center', marginTop:'1.5em' }}>
+            <div style={{display:'flex', justifyContent:'center', marginTop:'1em' }}>
               <AccountCircle style={{color: '#233d4d', width:30, height:30}}/>
               </div>
 

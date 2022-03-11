@@ -36,6 +36,7 @@ function GroupTwo() {
     const history = useHistory();
     
     const songs = useSelector((store) => store.songs);
+    const albums = useSelector((store) => store.albums);
 
     const [listView, setListView] = useState(true);
     console.log(songs);
@@ -58,6 +59,7 @@ function GroupTwo() {
         handleState();
         dispatch({
             type: 'FETCH_SONGS', 
+            type: 'FETCH_ALBUMS'
         
         });
         
@@ -96,19 +98,29 @@ function GroupTwo() {
 
                                         </div>
 
-                                        <div>
-                                            <Typography 
-                                                
-                                                variant="overline"
-                                                className={heading}
-                                                
-                                            >
+                                        {albums.map((album) => {
+                                            return (
+                                                <>
+                                                    {album === albums[1] ?
+                                                        <div>
+                                                            <Typography 
+                                                                
+                                                                variant="overline"
+                                                                className={heading}
+                                                                
+                                                            >
+                                                        
+                                                        <img src='groupsVinyl.png' style={{height:18, width:18}}></img>&nbsp;{album.title}
 
-                                            <img src='groupsVinyl.png' style={{height:18, width:18}}></img>Two
 
-
-                                            </Typography>
-                                        </div>
+                                                            </Typography>
+                                                        </div>
+                                                    :
+                                                        null
+                                                    }
+                                            </>
+                                            )
+                                        })}
                                         <Box 
                                             display="flex"
                                             flexWrap="wrap"

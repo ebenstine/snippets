@@ -81,7 +81,7 @@ const SongDetailsMenu = ({song}) => {
       
         </IconButton>
         
-          <MenuItem onClick={handleClickOpen}/>
+          
 
          
           

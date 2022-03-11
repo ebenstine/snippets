@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         backgroundColor:  '#f0a1a1',
         color: 'rgb(250, 250, 175)',
+        marginTop: '1em',
         marginLeft: '.5em',
         marginRight: '.5em',
         border: '1px solid #1d778d'
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         backgroundColor: '#afe4f1',
         color: 'rgb(250, 250, 175)',
+        marginTop: '1em',
         marginLeft: '.5em',
         marginRight: '.5em',
         border: '1px solid #1d778d'
@@ -25,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         backgroundColor: '#ffb171',
         color: 'rgb(250, 250, 175)',
+        marginTop: '1em',
         marginLeft: '.5em',
         marginRight: '.5em',
         border: '1px solid #1d778d'
@@ -35,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         backgroundColor: '#fdd377',
         color: 'rgb(250, 250, 175)',
+        marginTop: '1em',
         marginLeft: '.5em',
         marginRight: '.5em',
         border: '1px solid #1d778d'

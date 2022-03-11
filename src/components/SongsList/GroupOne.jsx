@@ -36,6 +36,7 @@ function GroupOne() {
     const history = useHistory();
     
     const songs = useSelector((store) => store.songs);
+    const albums = useSelector((store) => store.albums);
    
 
     const [listView, setListView] = useState(true);
@@ -59,6 +60,7 @@ function GroupOne() {
         handleState();
         dispatch({
             type: 'FETCH_SONGS', 
+            type: 'FETCH_ALBUMS'
         
         });
         
@@ -96,20 +98,29 @@ function GroupOne() {
                                             <ColorCodeLegend/>
 
                                         </div>
+                                        {albums.map((album) => {
+                                            return (
+                                                <>
+                                                    {album === albums[0] ?
+                                                        <div>
+                                                            <Typography 
+                                                                
+                                                                variant="overline"
+                                                                className={heading}
+                                                                
+                                                            >
+                                                        
+                                                        <img src='groupsVinyl.png' style={{height:18, width:18}}></img>&nbsp;{album.title}
 
-                                        <div>
-                                            <Typography 
-                                                
-                                                variant="overline"
-                                                className={heading}
-                                                
-                                            >
 
-                                        <img src='groupsVinyl.png' style={{height:18, width:18}}></img> One
-
-
-                                            </Typography>
-                                        </div>
+                                                            </Typography>
+                                                        </div>
+                                                    :
+                                                        null
+                                                    }
+                                            </>
+                                            )
+                                        })}
                                         <Box 
 
                                             display="flex"
