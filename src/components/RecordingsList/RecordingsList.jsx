@@ -292,7 +292,7 @@ const RecordingsList = () => {
                                                                                 
                                                                                     variant="h6" 
                                                                                     className={description}>
-                                                                                    The original, preview recording for {''}
+                                                                                    The most complete, selected preview recording for {''}
                                                                                     {recording.description} 
                                                                                     
                                                                                     

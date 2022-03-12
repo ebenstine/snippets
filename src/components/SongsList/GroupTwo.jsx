@@ -84,184 +84,130 @@ function GroupTwo() {
     //conditionally render cards with different background colors according to priority
     return (
        
-    
+        <>
 
-            <>
+                <Paper className={paper} elevation={10}>
+                        
+                        <div className={menuDots}>
 
-            {listView ?  
-                                    
-                                    <Paper className={paper} elevation={10}>
-                                        
-                                        <div className={menuDots}>
+                            <ColorCodeLegend/>
 
-                                            <ColorCodeLegend/>
+                        </div>
 
-                                        </div>
-
-                                        {albums.map((album) => {
-                                            return (
-                                                <>
-                                                    {album === albums[1] ?
-                                                        <div>
-                                                            <Typography 
-                                                                
-                                                                variant="overline"
-                                                                className={heading}
-                                                                
-                                                            >
-                                                        
-                                                        <img src='groupsVinyl.png' style={{height:18, width:18}}></img>&nbsp;{album.title}
-
-
-                                                            </Typography>
-                                                        </div>
-                                                    :
-                                                        null
-                                                    }
-                                            </>
-                                            )
-                                        })}
-                                        <Box 
-                                            display="flex"
-                                            flexWrap="wrap"
-                                            alignContent="flex-start"
-                                           
-                                        
-                                        >
-                                        {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
-                                                {songs.map((song) => {
-                                                    return (
-                                                        <>
-                                                        {song.is_active == true ?
-                                                        <>
-                                                    
-                                                            {song.priority === '2' ? 
-                                                                
-                                                                <Box
-                                                                 paddingTop={2}
-                                                                 paddingRight={3.5}
-
-                                                                >
-                                                                    <Card
-                                                                        
-                                                                        raised={true}
-                                                                        className={card2}
-                                                        
-                                                                    > 
-                                                                            <section>
-
-                                                                                <CardContent 
-                                                                
-                                                                                    item xs={1} key={song} 
-                                                                                    
-                                                            
-                                                                                >  
-                                                                
-                                                                                    <Typography 
-                                                                                        variant="overline" 
-                                                                                        className={title2}
-                                                                                        onClick={() => handleClick(song.song_id)} 
-
-                                                                                    >
-                                                                                        
-                                                                                        {song.title}
-                                                                                        
-                                                                                    </Typography>
-                                                                    
-                                                                
-
-                                                                                </CardContent>
-                                                            
-                                                                            </section>
-                                                                                
-                                                                                <section className={player2}>
-                                                                            
-                                                                                    <AudioPlayer
-
-                                                                                        audioFiles={[{ src: song.preview_audio }]}
-
-                                                                                    />
-                                                                                </section>
-
-                                                                    </Card> 
-                                                                </Box>
-                                                            : 
-                                                    
-                                                            null
-                                                            
-
-                                                            }
-                                                    
-                                                    <br></br>
-                                                    <br></br>
+                        {albums.map((album) => {
+                            return (
+                                <>
+                                    {album === albums[1] ?
+                                        <div>
+                                            <Typography 
                                                 
-                                                </>
-                                            :
-                                           null
+                                                variant="overline"
+                                                className={heading}
+                                                
+                                            >
+                                        
+                                        <img src='groupsVinyl.png' style={{height:18, width:18}}></img>&nbsp;{album.title}
 
-                                            }  
-                                            </> 
-                                            );
 
-                                        })}
-
-                                </Box> 
-
-                            </Paper>
-                    :
-                    //this conditional render is meant essentially as a welcome/here's what to do
-                    //message for when the user might explore the app before uploading anything.
-
-                    <Paper className={blankPage}>
-                    
-                    <div>
-
-                        <Card 
-                            className={messageCard}
-                            raised={true}
-                        >
-                        
-                            <div>
-                                
-                                <Feedback className={feedback}/>
-                                
-                            </div>
-                        
-                                <div className={messageDiv}>
-                                    
-                                    <Typography
-                        
-                                        align="center"
-                                        variant="h6"
-                                        className={message}
-                        
-                                    >
-                                    
-                                        This page will contain a compartmentalized view of songs in the second priority tier only.
-
-                                    </Typography>
-                                
-                                </div>
-                        
-                        </Card>
+                                            </Typography>
+                                        </div>
+                                    :
+                                        null
+                                    }
+                            </>
+                            )
+                        })}
+                        <Box 
+                            display="flex"
+                            flexWrap="wrap"
+                            alignContent="flex-start"
                             
-                            <Button 
-                                onClick={goBack}
-                                className={hackButton}
-                                variant="outlined"
-                                >See List
-                            </Button>
-
-                    </div>
-
-                </Paper>
+                        
+                        >
+                        {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
+                                {songs.map((song) => {
+                                    return (
+                                        <>
+                                        {song.is_active == true ?
+                                        <>
                                     
-            }
+                                            {song.priority === '2' ? 
+                                                
+                                                <Box
+                                                    paddingTop={2}
+                                                    paddingRight={3.5}
 
+                                                >
+                                                    <Card
+                                                        
+                                                        raised={true}
+                                                        className={card2}
+                                        
+                                                    > 
+                                                            <section>
 
+                                                                <CardContent 
+                                                
+                                                                    item xs={1} key={song} 
+                                                                    
+                                            
+                                                                >  
+                                                
+                                                                    <Typography 
+                                                                        variant="overline" 
+                                                                        className={title2}
+                                                                        onClick={() => handleClick(song.song_id)} 
+
+                                                                    >
+                                                                        
+                                                                        {song.title}
+                                                                        
+                                                                    </Typography>
+                                                    
+                                                
+
+                                                                </CardContent>
+                                            
+                                                            </section>
+                                                                
+                                                                <section className={player2}>
+                                                            
+                                                                    <AudioPlayer
+
+                                                                        audioFiles={[{ src: song.preview_audio }]}
+
+                                                                    />
+                                                                </section>
+
+                                                    </Card> 
+                                                </Box>
+                                            : 
+                                    
+                                            null
+                                            
+
+                                            }
+                                    
+                                    <br></br>
+                                    <br></br>
+                                
+                                </>
+                            :
+                            null
+
+                            }  
+                            </> 
+                            );
+
+                        })}
+
+                </Box> 
+
+            </Paper>
+                        
         </>
-            
-);
+                
+    );
 
 }
 

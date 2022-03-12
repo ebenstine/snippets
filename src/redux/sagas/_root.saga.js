@@ -47,6 +47,7 @@ export default function* rootSaga() {
     audioDelete(),
     imageDelete(),
     songRevise()
+   
 
   ]);
 }
