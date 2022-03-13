@@ -177,7 +177,8 @@ const PerformanceGuide = () => {
                                             display:'flex', 
                                             justifyContent: 'center', 
                                             paddingBottom: '2em'
-                                        }}>
+                                        }}
+                                >
                         
                         {song.primary_instrument === 'guitar' ?
                         
@@ -286,6 +287,7 @@ const PerformanceGuide = () => {
                         <br></br>
 
                     <PerformanceGuideInstrumentSpecs/> 
+                    <PerformanceGuidePerformanceNotes/>
                     
                     {chordDiagrams.map((chordDiagram) => {
                         //this conditional hides the chord diagrams heading if no images are present
@@ -492,7 +494,7 @@ const PerformanceGuide = () => {
                     </Box>
                     <br></br>
                     <br></br>
-                    <PerformanceGuidePerformanceNotes/>
+                    
                 </Paper>
             
             </Drawer>

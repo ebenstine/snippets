@@ -17,13 +17,14 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { Paper, MenuItem, Button, Typography, Select, FormControl } from '@material-ui/core';
+import { Paper, MenuItem, Button, Typography, Select, Accordion, AccordionSummary, FormControl } from '@material-ui/core';
 import { TextField } from '@mui/material'
 import { makeStyles } from '@material-ui/core/styles';
 import { CheckCircle } from '@material-ui/icons';
 import { Cancel } from '@material-ui/icons';
 import { Piano } from '@mui/icons-material';
 import { Lightbulb } from '@mui/icons-material';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 
 const useStyles = makeStyles(() => ({
@@ -144,7 +145,20 @@ const useStyles = makeStyles(() => ({
         color:'#233d4d', 
         display:'flex', 
         justifyContent:'center'
-    }
+    },
+
+    card1: {
+        flexDirection: 'column',
+        backgroundColor: '#afe4f1',
+        color: 'rgb(250, 250, 175)',
+        marginTop: '1em',
+        marginBottom: '1em',
+        marginLeft: '.5em',
+        marginRight: '.5em',
+        border: '1px solid #1d778d',
+        borderRadius: '3px'
+        
+    },
 }));
 
 function PerformanceGuideInstrumentSpecs() {
@@ -160,7 +174,8 @@ function PerformanceGuideInstrumentSpecs() {
             root, 
             actions,
             instSpecs,
-            specText
+            specText,
+            card1
 
         } = useStyles();
 
@@ -217,6 +232,62 @@ function PerformanceGuideInstrumentSpecs() {
                 return (
                 
                     <>
+                    
+                    <Accordion
+                                                    
+                    raised={true}
+                    className={card1}
+                    
+                    >
+                
+                    <AccordionSummary
+                        
+                        expandIcon=
+                            
+                            {<ExpandMoreIcon 
+                            
+                                style={{ 
+                                
+                                color: '#eb9148',
+                                paddingRight: '.1em',
+                                
+                                
+                                }}
+                                
+                                
+                            />}
+
+                        aria-controls="panel1a-content"
+                        id="panel1a-header"
+                        item xs={1} 
+                        
+                    >
+                    <div
+
+                    style={{
+                        color:'#233d4d',  
+                        
+                        display:'flex',
+                        justifyContent:'center'
+                    }}
+                    
+                    >
+                    <Typography 
+                        variant="overline"
+                       
+                     >
+                                Specs:
+                    </Typography>
+                    </div>
+                        
+                    </AccordionSummary>
+            
+                         
+
+                        
+                
+                
+
                 
                         {editable ?
                     
@@ -416,6 +487,7 @@ function PerformanceGuideInstrumentSpecs() {
                         
                             </div>
                         }
+                    </Accordion>
                     
                     </>
             
