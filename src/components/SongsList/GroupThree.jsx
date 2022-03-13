@@ -12,7 +12,7 @@ import Feedback from '@material-ui/icons/Feedback';
 
 
 
-function GroupOne() {
+function GroupThree() {
 
     const { 
             
@@ -45,7 +45,7 @@ function GroupOne() {
     const history = useHistory();
     const params = useParams();
     const songs = useSelector((store) => store.songs);
-    const songDetails = useSelector((store) => store.songDetails)
+    const albums = useSelector((store) => store.albums);
 
     const [listView, setListView] = useState(true);
     console.log(songs);
@@ -68,6 +68,7 @@ function GroupOne() {
         handleState();
         dispatch({
             type: 'FETCH_SONGS', 
+            type: 'FETCH_ALBUMS'
         
         });
         
@@ -95,13 +96,18 @@ function GroupOne() {
        <>
 
                      
-                    <Paper className={paper} elevation={10}>
-                        
-                        <div className={menuDots}>
+            <Paper className={paper} elevation={10}>
+                
+                <div className={menuDots}>
 
-                            <ColorCodeLegend/>
+                    <ColorCodeLegend/>
 
-                        </div>
+                </div>
+
+                    {albums.map((album) => {
+                        return (
+                            <>
+                                {album === albums[2] ?
 
                         <div>
                             <Typography 
@@ -111,11 +117,19 @@ function GroupOne() {
                                 
                             >
 
-                                <img src='groupsVinyl.png' style={{height:18, width:18}}></img> Three
+                                <img src='groupsVinyl.png' style={{height:18, width:18}}></img> {album.title}
 
 
                             </Typography>
                         </div>
+                        :
+
+                        null
+                        }
+
+                        </>
+                            )
+                        })}                     
                         <Box 
                             display="flex"
                             flexWrap="wrap"
@@ -210,4 +224,4 @@ function GroupOne() {
 
 }
 
-export default GroupOne;
+export default GroupThree;
