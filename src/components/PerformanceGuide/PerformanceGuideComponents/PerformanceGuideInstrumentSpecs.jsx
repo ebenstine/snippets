@@ -118,8 +118,13 @@ const useStyles = makeStyles(() => ({
 
     instSpecs: {
         
-       // border:' 1.5px solid #3b95ac',
-       // background: '#82bdcc',
+        paddingTop: '1em',
+        paddingBottom:'1em',
+        marginRight: '1.5em',
+        marginLeft: '1.5em',
+        marginBottom: '.5em',
+        paddingLeft: '.75em',
+        paddingRight:'.75em',
         '&:hover': {
             background:'#82bdcc',
             borderRadius: '3px',
@@ -233,65 +238,58 @@ function PerformanceGuideInstrumentSpecs() {
                 
                     <>
                     
-                    <Accordion
-                                                    
-                    raised={true}
-                    className={card1}
-                    
-                    >
-                
-                    <AccordionSummary
+                        <Accordion
+                                                        
+                        raised={true}
+                        className={card1}
                         
-                        expandIcon=
-                            
-                            {<ExpandMoreIcon 
-                            
-                                style={{ 
+                        >
+                
+                            <AccordionSummary
                                 
-                                color: '#eb9148',
-                                paddingRight: '.1em',
+                                expandIcon=
+                                    
+                                    {<ExpandMoreIcon 
+                                    
+                                        style={{ 
+                                        
+                                        color: '#eb9148',
+                                        paddingRight: '.1em',
+                                        
+                                        
+                                        }}
+                                        
+                                        
+                                    />}
+
+                                aria-controls="panel1a-content"
+                                id="panel1a-header"
+                                item xs={1} 
                                 
-                                
+                            >
+                                <div
+
+                                style={{
+                                    color:'#233d4d',  
+                                    
+                                    display:'flex',
+                                    justifyContent:'center'
                                 }}
                                 
-                                
-                            />}
-
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                        item xs={1} 
+                                >
+                                    <Typography 
+                                        variant="overline"
+                                    
+                                    >
+                                                Specs:
+                                    </Typography>
+                                </div>
                         
-                    >
-                    <div
-
-                    style={{
-                        color:'#233d4d',  
-                        
-                        display:'flex',
-                        justifyContent:'center'
-                    }}
-                    
-                    >
-                    <Typography 
-                        variant="overline"
-                       
-                     >
-                                Specs:
-                    </Typography>
-                    </div>
-                        
-                    </AccordionSummary>
+                            </AccordionSummary>
             
-                         
-
-                        
-                
-                
-
-                
                         {editable ?
                     
-                            <FormControl  >
+                            <FormControl>
                         
                                 <form className={root} onSubmit={handleSubmit} autoComplete="off" >
                             

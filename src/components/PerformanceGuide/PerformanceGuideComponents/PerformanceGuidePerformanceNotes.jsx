@@ -122,6 +122,7 @@ const useStyles = makeStyles(() => ({
         
         fontSize: 11,
         whiteSpace: 'pre-wrap',
+        alignItems:'center'
         
         
     },
@@ -131,8 +132,13 @@ const useStyles = makeStyles(() => ({
         display: 'flex', 
         flexWrap: 'wrap',
         justifyContent: 'center',
-        paddingTop: '.3em',
-        paddingBottom:'.3em',
+        paddingTop: '1em',
+        paddingBottom:'1em',
+        marginRight: '1.5em',
+        marginLeft: '1.5em',
+        marginBottom: '.5em',
+        paddingLeft: '.75em',
+        paddingRight:'.75em',
         '&:hover': {
             background:'#82bdcc',
             borderRadius: '3px',
@@ -225,138 +231,123 @@ const useStyles = makeStyles(() => ({
                     return (
                     
                         <>
-                        <Accordion
+                            <Accordion
                                                     
-                            raised={true}
-                            className={card1}
-                            
+                                raised={true}
+                                className={card1}
+                                
                             >
                         
-                            <AccordionSummary
-                                
-                                expandIcon=
+                                <AccordionSummary
                                     
-                                    {<ExpandMoreIcon 
-                                    
-                                        style={{ 
+                                    expandIcon=
                                         
-                                        color: '#eb9148',
-                                        paddingRight: '.1em',
+                                        {<ExpandMoreIcon 
                                         
-                                        
-                                        }}
-                                        
-                                        
-                                    />}
-        
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                item xs={1} 
-                                
-                            >
-                            <div
-        
-                            style={{
-                                color:'#233d4d',  
-                                
-                                display:'flex',
-                                justifyContent:'center'
-                            }}
-                            
-                            >
-                            <Typography 
-                                variant="overline"
-                                
-                                >
-                                        Notes:
-                            </Typography>
-                            </div>
-                                
-                            </AccordionSummary>
-                    
-                            {editable ?
-                        
-                                <FormControl  >
-                            
-                                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
-                                
-                                        
-                                            <TextField
-                     
-                                                label="Update Performance Notes" 
-                                                name="performance_notes"
-                                                onDoubleClick={handleEditable}
-                                                margin="dense" 
-                                                multiline className={textField} 
-                                                onChange={handleChange}
-                                            /> 
-                                    
-                                    
-                                        <div className={actions}> 
-
-                                            <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
-                                            <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
+                                            style={{ 
                                             
-                                        </div>
-                            
-                                    </form>
-                                
-                                </FormControl>
-                        
-                            :
-                        
-                                <div onDoubleClick={handleEditable}>
-                                    {updated ?
-                                    <>
-                                    <div>
-                                    
-                                        <Typography variant="caption" className={notesHover}>
-                                            Technique Notes:    
-                                        </Typography>
-                                    
-                                    </div>
-
-                                    <Typography 
-
-                                        component="span" 
-                                        className={notesText}
-                                    >
-
-                                        {`${reviseDetails.performance_notes}`}
-
-                                    </Typography>
-                                    </>
-                                    :
-                                    <>
-                                    <div>
-                                    
-                                        <Typography variant="caption" className={notesHover}>
-                                            Technique Notes:    
-                                        </Typography>
-                                    
-                                    </div>
-                                    <div className={notesDiv}>
-                                    <Typography 
-
-                                        className={notesText}
-                                        
-                                    >
-
-                                        {song.performance_notes}
-
-                                    </Typography>
-                                    </div>
-                                    </>
-                                
-                                    }
-
-                                    
-
-                                </div>
-
-                                
+                                            color: '#eb9148',
+                                            paddingRight: '.1em',
+                                            
+                                            
+                                            }}
+                                            
+                                            
+                                        />}
         
-                            }
+                                            aria-controls="panel1a-content"
+                                            id="panel1a-header"
+                                            item xs={1} 
+                                
+                                        >
+                                            <div
+                        
+                                            style={{
+                                                color:'#233d4d',  
+                                                
+                                                display:'flex',
+                                                justifyContent:'center'
+                                            }}
+                                            
+                                            >
+                                                <Typography 
+                                                    variant="overline"
+                                                    
+                                                    >
+                                                            Notes:
+                                                </Typography>
+                                            </div>
+                                
+                                </AccordionSummary>
+                    
+                                {editable ?
+                            
+                                    <FormControl>
+                                
+                                        <form className={root} onSubmit={handleSubmit} autoComplete="off" >
+                                    
+                                            
+                                                <TextField
+                        
+                                                    label="Update Performance Notes" 
+                                                    name="performance_notes"
+                                                    onDoubleClick={handleEditable}
+                                                    margin="dense" 
+                                                    multiline className={textField} 
+                                                    onChange={handleChange}
+                                                /> 
+                                        
+                                        
+                                            <div className={actions}> 
+
+                                                <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
+                                                <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
+                                                
+                                            </div>
+                                
+                                        </form>
+                                    
+                                    </FormControl>
+                            
+                                :
+                            
+                                    <div onDoubleClick={handleEditable}>
+                                        {updated ?
+                                            <>
+                                            
+                                                <div className={notesDiv}>
+                                                    <Typography 
+
+                                                        component="span" 
+                                                        className={notesText}
+                                                    >
+
+                                                    {`${reviseDetails.performance_notes}`}
+
+                                                    </Typography>
+                                                </div>
+                                            </>
+                                        :
+                                            <>
+                                            
+                                                <div className={notesDiv}>
+                                                    <Typography 
+
+                                                        className={notesText}
+                                                        
+                                                    >
+
+                                                        {song.performance_notes}
+
+                                                    </Typography>
+                                                </div>
+                                            </>
+                                    
+                                        }
+
+                                    </div>
+
+                                }
 
                             </Accordion>
                     
