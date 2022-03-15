@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 
 import useStyles from './InactiveSongDetailsStyles';
-import SongAudioOptions from '../SongDetails/SongDetailsComponents/SongAudioOptions';
+import InactiveAudioOptions from './InactiveAudioOptions';
 import Delete from '@material-ui/icons/Delete';
 import InactiveArchiveStatus from './InactiveArchiveStatus';
 
@@ -69,14 +69,14 @@ return (
                                     
                         
                                         <Card 
-                                            spacing={1} 
+                                            //spacing={1} 
                                             className={card}  
                                             raised={true}
                                         >
                         
                                             <div className={menuDots}>
                     
-                                                <SongAudioOptions/>
+                                                <InactiveAudioOptions/>
                             
                                             </div>
                     

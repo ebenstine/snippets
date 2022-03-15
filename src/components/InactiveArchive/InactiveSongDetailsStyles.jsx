@@ -11,9 +11,9 @@ const useStyles = makeStyles(() => ({
         maxHeight: 900,
         minHeight: 200,
         flexDirection: 'column',
-        position: 'relative',
+        //position: 'relative',
         alignItems: 'center',
-        paddingTop: '3em',
+        paddingTop: '0em',
         //backgroundColor: '#c8ecf5'
     },
 
@@ -68,7 +68,7 @@ const useStyles = makeStyles(() => ({
         fontSize: 20,
         color: '#233d4d',
         marginLeft: 'auto',
-        marginTop: 'auto',
+        //marginTop: 'auto',
         borderBottom: '1px solid #6ca0ad',
         
 
@@ -79,6 +79,7 @@ const useStyles = makeStyles(() => ({
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
         borderBottom: '1px solid #6ca0ad',
+        paddingLeft: '1em',
         whiteSpace: 'pre-wrap',
         color: '#233d4d',
         
