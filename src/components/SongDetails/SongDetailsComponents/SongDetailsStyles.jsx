@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { SignalCellularConnectedNoInternet1BarSharp } from '@mui/icons-material';
+
 
 const useStyles = makeStyles(() => ({
     cardContent: {

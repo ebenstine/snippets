@@ -13,7 +13,7 @@ const useStyles = makeStyles(() => ({
         flexDirection: 'column',
         //position: 'relative',
         alignItems: 'center',
-        paddingTop: '0em',
+        paddingTop: '1em',
         //backgroundColor: '#c8ecf5'
     },
 
