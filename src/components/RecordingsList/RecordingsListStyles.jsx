@@ -79,12 +79,12 @@ const useStyles = makeStyles((theme) => ({
     paper: {
        
         background: 'linear-gradient(to right,  #9c9e9f 0%, #e7e7e7 100%)',
-        paddingBottom: '6em',
+        //paddingBottom: '6em',
         paddingTop: '6em',
         paddingLeft: '1.5em',
         paddingRight: '1.5em',
         width: 400,
-        height: 500
+        height: 1200
         
     },
 
@@ -99,10 +99,54 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: '.5em',
         paddingBottom: '.5em',
         '&:hover': {
-            background:'#5294a5',
-            },
-        
-        
+            background:'#eb9292',
+            },   
+    },
+
+    player1: {
+       
+        marginBottom: '.5em',
+        marginLeft: '.85em',
+        marginRight: '-.35em',
+        color: '#1a313f',
+        border: '1.5px solid #1d778d',
+        borderRadius: '.25em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em',
+        '&:hover': {
+            background:'#94d9eb',
+            },   
+    },
+
+    player2: {
+       
+        marginBottom: '.5em',
+        marginLeft: '.85em',
+        marginRight: '-.35em',
+        color: '#1a313f',
+        border: '1.5px solid #1d778d',
+        borderRadius: '.25em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em',
+        '&:hover': {
+            background:'#f8a058',
+            
+            },   
+    },
+
+    player3: {
+       
+        marginBottom: '.5em',
+        marginLeft: '.85em',
+        marginRight: '-.35em',
+        color: '#1a313f',
+        border: '1.5px solid #1d778d',
+        borderRadius: '.25em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em',
+        '&:hover': {
+            background:'#fcca60',
+            },   
     },
 
     drawerHeader: {

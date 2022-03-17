@@ -6,7 +6,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
 import AddRecording from '../AddRecording/AddRecording';
-import RecordingsList from '../RecordingsList/RecordingsList';
+import InactiveRecordingsList from './InactiveRecordingsList'
 import HeadphonesRoundedIcon from '@mui/icons-material/HeadphonesRounded';
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from '@material-ui/core/styles';
@@ -131,7 +131,7 @@ const InactiveAudioOptions = ({song}) => {
           
                         <DialogContent className={menuItems}>
           
-                          <RecordingsList/>
+                          <InactiveRecordingsList/>
           
                             </DialogContent>
           

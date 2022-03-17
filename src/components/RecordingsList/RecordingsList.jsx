@@ -36,6 +36,9 @@ const RecordingsList = () => {
             paper, 
             description, 
             player, 
+            player1,
+            player2,
+            player3,
             card1,
             card2,
             card3,
@@ -272,8 +275,29 @@ const RecordingsList = () => {
                                                                 item xs={1} key={recording.id}
                                                         
                                                             >
+                                                                
+                                                                <section className=
 
-                                                                <section className={player}>
+                                                                    {song.priority === '1' ?
+                                                                        player1
+                                                                    :
+
+                                                                    song.priority === '2' ?
+                                                                       player2
+                                                                       
+                                                                    : 
+
+                                                                    song.priority === '3' ?
+                                                                        player3
+                                                                    
+                                                                    :
+
+                                                                        player
+                                                                    }
+
+            
+                                                                
+                                                                >
                                                                 
                                                                     <AudioPlayer
 

@@ -451,7 +451,7 @@ const PerformanceGuide = () => {
                                                                             
                                                                             <DialogContentText className={dialogText}>
                                                                                 
-                                                                                Deleting a recording cannot be undone.  Do you want to do this?
+                                                                                Deleting an image cannot be undone.  Do you want to do this?
 
                                                                             </DialogContentText>
                                                                         
