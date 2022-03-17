@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 24,
         paddingBottom: '1em',
         paddingTop: '.5em',
-        borderBottom: '1.5px solid #6ca0ad',
+        //borderBottom: '1.5px solid #6ca0ad',
         width: 400,
         margin: 'auto'
         
@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: '3.5em',
         paddingBottom: '2em',
         fontSize: 17,
-        borderBottom: '1.5px solid #6ca0ad'
+        //borderBottom: '1.5px solid #6ca0ad'
     },
 
     button1: {
