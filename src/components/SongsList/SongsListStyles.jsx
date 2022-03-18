@@ -5,7 +5,7 @@ const useStyles = makeStyles(() => ({
     card: {
       
         
-        backgroundColor:  '#f0a1a1',
+        background:'#f0a1a1',
         border: '1px solid #1d778d',
         width: 345
         

@@ -176,89 +176,84 @@ export default function ActiveSongDetails(){
                                                         <SongWritingNotes/> :
 
                                                         <>
-                                                        <div>
-                                                            
-                                                            <Typography 
-                                                                variant="caption" 
-                                                                className={notes}
-                                                                
-                                                                
-                                                            >
-                                                                Songwriting Notes:
+                                                            <div style={{display:'flex', flexWrap: 'wrap'}}>
 
-                                                            </Typography>
-
-
-                                                        </div>
-                                                        
-                                                        <div onDoubleClick={handleEditINotes}
-                                                             className={notesBlock1}
-                                                        >
-                                                        
-                                                            
-                                                            <b>
-                                                                <img 
-                                                                    style={{width:12, height:12, paddingTop:'-.5em' }} 
-                                                                    src="quill.png">
-                                                                </img>
-                                                            </b> 
+                                                                <b>
+                                                                    <img 
+                                                                        style={{width:12, height:12, paddingTop:'-.5em' }} 
+                                                                        src="quill.png">
+                                                                    </img>
+                                                                </b> &nbsp;
                                                                 
-                                                                &nbsp;
-                                                                        
-                                                                    <Typography 
+                                                                <Typography 
+                                                                    variant="caption" 
+                                                                    className={notes}
                                                                     
-                                                                        component = "span" 
-                                                                        className={cardText}
-                                                                    >
-                                                                        
-                                                                        {' '}
-                                                                        {song.songwriting_notes}
+                                                                    
+                                                                >
+                                                                    Songwriting Notes:
 
-                                                                    </Typography>
+                                                                </Typography>
 
-                                                        </div>
-                                                    </>
-                                                }
+
+                                                            </div>
+                                                        
+                                                            <div onDoubleClick={handleEditINotes}
+                                                                className={notesBlock1}
+                                                            >
+
+                                                                            
+                                                                <Typography 
+                                                                
+                                                                    component = "p" 
+                                                                    className={cardText}
+                                                                >
+                                                                    
+                                                                    {' '}
+                                                                    {song.songwriting_notes}
+
+                                                                </Typography>
+
+                                                            </div>
+                                                        </>
+                                                    }
 
                                             <br></br>
 
-                                            {editPNotes ?
+                                                {editPNotes ?
 
-                                                <SongProductionIdeas/> :
-                                                
-                                                    <>
-                                                        <div>
-                                                
-                                                            <Typography 
-                                                                variant="caption" 
-                                                                className={notes}
-                                                            >
-                                                            
-                                                            Production Ideas:
-                                                        
-                                                            </Typography>
-
-
-                                                        </div>
-
-
-                                                        <div onDoubleClick={handleEditPNotes}
-                                                            className={notesBlock1}
-                                                        >
-
-                                                        
-                                                            <b>
-                                                                <img 
-                                                                    style={{width:12, height:12}} 
-                                                                    src="sound-faders.png">
-                                                                </img>
-                                                            </b> 
-                                                            
-                                                            &nbsp;
+                                                    <SongProductionIdeas/> :
+                                                    
+                                                        <>
+                                                            <div style={{display:'flex', flexWrap:'wrap'}}>
+                                                                <b>
+                                                                    <img 
+                                                                        style={{width:12, height:12}} 
+                                                                        src="sound-faders.png">
+                                                                    </img>
+                                                                </b> &nbsp;
                                                                 
+                                                    
+                                                                <Typography 
+                                                                    variant="caption" 
+                                                                    className={notes}
+                                                                >
+                                                                
+                                                                Production Ideas:
+                                                            
+                                                                </Typography>
+
+
+                                                            </div>
+
+
+                                                            <div onDoubleClick={handleEditPNotes}
+                                                                className={notesBlock1}
+                                                            >
+                                                                    
                                                                 <Typography
 
-                                                                    component = "span" 
+                                                                    component = "p" 
                                                                     className={cardText}
                                                                 >
                                                                 
@@ -266,9 +261,9 @@ export default function ActiveSongDetails(){
                                                                     {song.production_ideas}
 
                                                                 </Typography>
-                                                        </div>
-                                                    </>
-                                                            
+                                                            </div>
+                                                        </>
+                                                                
                                                     }
                                             
 
@@ -345,100 +340,98 @@ export default function ActiveSongDetails(){
                             
                                                     {editINotes ?
                                                 
-                                                        <SongWritingNotes/> :
+                                                <SongWritingNotes/> :
 
-                                                        <>
-                                                        <div>
-                                                            
-                                                            <Typography 
-                                                                variant="caption" 
-                                                                className={notes}
-                                                            >
-                                                                Songwriting Notes:
+                                                <>
+                                                    <div style={{display:'flex', flexWrap: 'wrap'}}>
 
-                                                            </Typography>
-
-
-                                                        </div>
+                                                        <b>
+                                                            <img 
+                                                                style={{width:12, height:12, paddingTop:'-.5em' }} 
+                                                                src="quill.png">
+                                                            </img>
+                                                        </b> &nbsp;
                                                         
-                                                        <div onDoubleClick={handleEditINotes}
-                                                            className={notesBlock2}
+                                                        <Typography 
+                                                            variant="caption" 
+                                                            className={notes}
+                                                            
+                                                            
                                                         >
-                                                        
-                                                            
-                                                            <b>
-                                                                <img 
-                                                                    style={{width:12, height:12, paddingTop:'-.5em' }} 
-                                                                    src="quill.png">
-                                                                </img>
-                                                            </b> 
-                                                                
-                                                                &nbsp;
-                                                                        
-                                                                    <Typography 
+                                                            Songwriting Notes:
+
+                                                        </Typography>
+
+
+                                                    </div>
+                                                
+                                                    <div onDoubleClick={handleEditINotes}
+                                                        className={notesBlock2}
+                                                    >
+
                                                                     
-                                                                        component = "span" 
-                                                                        className={cardText}
-                                                                    >
-                                                                        
-                                                                        {' '}
-                                                                        {song.songwriting_notes}
-
-                                                                    </Typography>
-
-                                                        </div>
-                                                    </>
-                                                }
-
-                                            <br></br>
-
-                                            {editPNotes ?
-
-                                                <SongProductionIdeas/> :
-                                                
-                                                    <>
-                                                        <div>
-                                                
-                                                            <Typography 
-                                                                variant="caption" 
-                                                                className={notes}
-                                                            >
-                                                            
-                                                            Production Ideas:
+                                                        <Typography 
                                                         
-                                                            </Typography>
-
-
-                                                        </div>
-
-
-                                                        <div onDoubleClick={handleEditPNotes}
-                                                            className={notesBlock2}
+                                                            component = "p" 
+                                                            className={cardText}
                                                         >
-
-                                                        
-                                                            <b>
-                                                                <img 
-                                                                    style={{width:12, height:12}} 
-                                                                    src="sound-faders.png">
-                                                                </img>
-                                                            </b> 
                                                             
-                                                            &nbsp;
-                                                                
-                                                                <Typography
+                                                            {' '}
+                                                            {song.songwriting_notes}
 
-                                                                    component = "span" 
-                                                                    className={cardText}
-                                                                >
-                                                                
-                                                                    {' '}
-                                                                    {song.production_ideas}
+                                                        </Typography>
 
-                                                                </Typography>
-                                                        </div>
-                                                    </>
-                                                }
+                                                    </div>
+                                                </>
+                                            }
+
+                                    <br></br>
+
+                                        {editPNotes ?
+
+                                            <SongProductionIdeas/> :
+                                            
+                                                <>
+                                                    <div style={{display:'flex', flexWrap:'wrap'}}>
+                                                        <b>
+                                                            <img 
+                                                                style={{width:12, height:12}} 
+                                                                src="sound-faders.png">
+                                                            </img>
+                                                        </b> &nbsp;
+                                                        
+                                            
+                                                        <Typography 
+                                                            variant="caption" 
+                                                            className={notes}
+                                                        >
+                                                        
+                                                        Production Ideas:
+                                                    
+                                                        </Typography>
+
+
+                                                    </div>
+
+
+                                                    <div onDoubleClick={handleEditPNotes}
+                                                        className={notesBlock2}
+                                                    >
+                                                            
+                                                        <Typography
+
+                                                            component = "p" 
+                                                            className={cardText}
+                                                        >
+                                                        
+                                                            {' '}
+                                                            {song.production_ideas}
+
+                                                        </Typography>
+                                                    </div>
+                                                </>
+                                                        
+                                            }
                                             
 
                                                     <br></br>
@@ -508,100 +501,98 @@ export default function ActiveSongDetails(){
                             
                                                     {editINotes ?
                                                 
-                                                        <SongWritingNotes/> :
-                                                            
+                                                <SongWritingNotes/> :
 
-                                                        <>
-                                                        <div>
-                                                            
-                                                            <Typography 
-                                                                variant="caption" 
-                                                                className={notes}
-                                                            >
-                                                                Songwriting Notes:
+                                                <>
+                                                    <div style={{display:'flex', flexWrap: 'wrap'}}>
 
-                                                            </Typography>
-
-
-                                                        </div>
+                                                        <b>
+                                                            <img 
+                                                                style={{width:12, height:12, paddingTop:'-.5em' }} 
+                                                                src="quill.png">
+                                                            </img>
+                                                        </b> &nbsp;
                                                         
-                                                        <div onDoubleClick={handleEditINotes}
-                                                            className={notesBlock3}
+                                                        <Typography 
+                                                            variant="caption" 
+                                                            className={notes}
+                                                            
+                                                            
                                                         >
-                                                        
-                                                            
-                                                            <b>
-                                                                <img 
-                                                                    style={{width:12, height:12, paddingTop:'-.5em' }} 
-                                                                    src="quill.png">
-                                                                </img>
-                                                            </b> 
-                                                                
-                                                                &nbsp;
-                                                                        
-                                                                    <Typography 
+                                                            Songwriting Notes:
+
+                                                        </Typography>
+
+
+                                                    </div>
+                                                
+                                                    <div onDoubleClick={handleEditINotes}
+                                                        className={notesBlock3}
+                                                    >
+
                                                                     
-                                                                        component = "span" 
-                                                                        className={cardText}
-                                                                    >
-                                                                        
-                                                                        {' '}
-                                                                        {song.songwriting_notes}
-
-                                                                    </Typography>
-
-                                                        </div>
-                                                    </>
-                                                }
-
-                                            <br></br>
-
-                                            {editPNotes ?
-
-                                                <SongProductionIdeas/> :
-                                                
-                                                    <>
-                                                        <div>
-                                                
-                                                            <Typography 
-                                                                variant="caption" 
-                                                                className={notes}
-                                                            >
-                                                            
-                                                            Production Ideas:
+                                                        <Typography 
                                                         
-                                                            </Typography>
-
-
-                                                        </div>
-
-
-                                                        <div onDoubleClick={handleEditPNotes}
-                                                            className={notesBlock3}
+                                                            component = "p" 
+                                                            className={cardText}
                                                         >
-
-                                                        
-                                                            <b>
-                                                                <img 
-                                                                    style={{width:12, height:12}} 
-                                                                    src="sound-faders.png">
-                                                                </img>
-                                                            </b> 
                                                             
-                                                            &nbsp;
-                                                                
-                                                                <Typography
+                                                            {' '}
+                                                            {song.songwriting_notes}
 
-                                                                    component = "span" 
-                                                                    className={cardText}
-                                                                >
-                                                                
-                                                                    {' '}
-                                                                    {song.production_ideas}
-                                                                </Typography>
-                                                        </div>
-                                                    </>
-                                                }
+                                                        </Typography>
+
+                                                    </div>
+                                                </>
+                                            }
+
+                                    <br></br>
+
+                                        {editPNotes ?
+
+                                            <SongProductionIdeas/> :
+                                            
+                                                <>
+                                                    <div style={{display:'flex', flexWrap:'wrap'}}>
+                                                        <b>
+                                                            <img 
+                                                                style={{width:12, height:12}} 
+                                                                src="sound-faders.png">
+                                                            </img>
+                                                        </b> &nbsp;
+                                                        
+                                            
+                                                        <Typography 
+                                                            variant="caption" 
+                                                            className={notes}
+                                                        >
+                                                        
+                                                        Production Ideas:
+                                                    
+                                                        </Typography>
+
+
+                                                    </div>
+
+
+                                                    <div onDoubleClick={handleEditPNotes}
+                                                        className={notesBlock3}
+                                                    >
+                                                            
+                                                        <Typography
+
+                                                            component = "p" 
+                                                            className={cardText}
+                                                        >
+                                                        
+                                                            {' '}
+                                                            {song.production_ideas}
+
+                                                        </Typography>
+                                                    </div>
+                                                </>
+                                                        
+                                            }
                                             
 
                                                     <br></br>
@@ -670,101 +661,99 @@ export default function ActiveSongDetails(){
                                                     
                     
                                                     {editINotes ?
+                                                
+                                                <SongWritingNotes/> :
 
-                                                        <SongWritingNotes/> :
+                                                <>
+                                                    <div style={{display:'flex', flexWrap: 'wrap'}}>
+
+                                                        <b>
+                                                            <img 
+                                                                style={{width:12, height:12, paddingTop:'-.5em' }} 
+                                                                src="quill.png">
+                                                            </img>
+                                                        </b> &nbsp;
+                                                        
+                                                        <Typography 
+                                                            variant="caption" 
+                                                            className={notes}
                                                             
-                                                            <>
-                                                                <div>
+                                                            
+                                                        >
+                                                            Songwriting Notes:
+
+                                                        </Typography>
+
+
+                                                    </div>
+                                                
+                                                    <div onDoubleClick={handleEditINotes}
+                                                        className={notesBlockUncertain}
+                                                    >
+
                                                                     
-                                                                    <Typography 
-                                                                        variant="caption" 
-                                                                        className={notes}
-                                                                    >
-                                                                        Songwriting Notes:
-
-                                                                    </Typography>
-
-
-                                                                </div>
-                                                                
-                                                                <div onDoubleClick={handleEditINotes}
-                                                                    className={notesBlockUncertain}
-                                                                >
-                                                                
-                                                                    
-                                                                    <b>
-                                                                        <img 
-                                                                            style={{width:12, height:12, paddingTop:'-.5em' }} 
-                                                                            src="quill.png">
-                                                                        </img>
-                                                                    </b> 
-                                                                        
-                                                                        &nbsp;
-                                                                                
-                                                                            <Typography 
-                                                                            
-                                                                                component = "span" 
-                                                                                className={cardText}
-                                                                            >
-                                                                                
-                                                                                {' '}
-                                                                                {song.songwriting_notes}
-
-                                                                            </Typography>
-
-                                                                </div>
-                                                            </>
-                                                        }
-
-                                                    <br></br>
-
-                                                    {editPNotes ?
-
-                                                        <SongProductionIdeas/> :
+                                                        <Typography 
                                                         
-                                                            <>
-                                                                <div>
+                                                            component = "p" 
+                                                            className={cardText}
+                                                        >
+                                                            
+                                                            {' '}
+                                                            {song.songwriting_notes}
+
+                                                        </Typography>
+
+                                                    </div>
+                                                </>
+                                            }
+
+                                    <br></br>
+
+                                        {editPNotes ?
+
+                                            <SongProductionIdeas/> :
+                                            
+                                                <>
+                                                    <div style={{display:'flex', flexWrap:'wrap'}}>
+                                                        <b>
+                                                            <img 
+                                                                style={{width:12, height:12}} 
+                                                                src="sound-faders.png">
+                                                            </img>
+                                                        </b> &nbsp;
                                                         
-                                                                    <Typography 
-                                                                        variant="caption" 
-                                                                        className={notes}
-                                                                    >
-                                                                    
-                                                                    Production Ideas:
-                                                                
-                                                                    </Typography>
+                                            
+                                                        <Typography 
+                                                            variant="caption" 
+                                                            className={notes}
+                                                        >
+                                                        
+                                                        Production Ideas:
+                                                    
+                                                        </Typography>
 
 
-                                                                </div>
+                                                    </div>
 
 
-                                                                <div onDoubleClick={handleEditPNotes}
-                                                                    className={notesBlockUncertain}   
-                                                                >
+                                                    <div onDoubleClick={handleEditPNotes}
+                                                        className={notesBlockUncertain}
+                                                    >
+                                                            
+                                                        <Typography
 
-                                                                
-                                                                    <b>
-                                                                        <img 
-                                                                            style={{width:12, height:12}} 
-                                                                            src="sound-faders.png">
-                                                                        </img>
-                                                                    </b> 
-                                                                    
-                                                                    &nbsp;
-                                                                        
-                                                                        <Typography
+                                                            component = "p" 
+                                                            className={cardText}
+                                                        >
+                                                        
+                                                            {' '}
+                                                            {song.production_ideas}
 
-                                                                            component = "span" 
-                                                                            className={cardText}
-                                                                        >
-                                                                        
-                                                                            {' '}
-                                                                            {song.production_ideas}
-
-                                                                        </Typography>
-                                                                </div>
-                                                            </>
-                                                        }
+                                                        </Typography>
+                                                    </div>
+                                                </>
+                                                        
+                                            }
                                     
 
                                                     <br></br>
@@ -791,7 +780,7 @@ export default function ActiveSongDetails(){
                         </>    
                     )
 
-                })}
-            </>
-        )
+            })}
+        </>
+    )
 }

@@ -295,7 +295,9 @@ const useStyles = makeStyles(() => ({
         paddingRight: '.5em',
         paddingLeft: '.5em',
         paddingBottom: '.3em',
-        paddingTop: '.3em'
+        paddingTop: '.3em',
+        display:'flex',
+        flexWrap: 'wrap'
 
     },
 
