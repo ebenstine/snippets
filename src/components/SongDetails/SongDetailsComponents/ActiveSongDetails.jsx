@@ -209,7 +209,7 @@ export default function ActiveSongDetails(){
                                                                     className={cardText}
                                                                 >
                                                                     
-                                                                    {' '}
+                                                                    
                                                                     {song.songwriting_notes}
 
                                                                 </Typography>
@@ -257,7 +257,7 @@ export default function ActiveSongDetails(){
                                                                     className={cardText}
                                                                 >
                                                                 
-                                                                    {' '}
+                                                                    
                                                                     {song.production_ideas}
 
                                                                 </Typography>
@@ -376,7 +376,7 @@ export default function ActiveSongDetails(){
                                                             className={cardText}
                                                         >
                                                             
-                                                            {' '}
+                                                            
                                                             {song.songwriting_notes}
 
                                                         </Typography>
@@ -424,7 +424,7 @@ export default function ActiveSongDetails(){
                                                             className={cardText}
                                                         >
                                                         
-                                                            {' '}
+                                                            
                                                             {song.production_ideas}
 
                                                         </Typography>
@@ -537,7 +537,7 @@ export default function ActiveSongDetails(){
                                                             className={cardText}
                                                         >
                                                             
-                                                            {' '}
+                                                            
                                                             {song.songwriting_notes}
 
                                                         </Typography>
@@ -585,7 +585,7 @@ export default function ActiveSongDetails(){
                                                             className={cardText}
                                                         >
                                                         
-                                                            {' '}
+                                                            
                                                             {song.production_ideas}
 
                                                         </Typography>
@@ -698,7 +698,7 @@ export default function ActiveSongDetails(){
                                                             className={cardText}
                                                         >
                                                             
-                                                            {' '}
+                                                            
                                                             {song.songwriting_notes}
 
                                                         </Typography>
@@ -746,7 +746,7 @@ export default function ActiveSongDetails(){
                                                             className={cardText}
                                                         >
                                                         
-                                                            {' '}
+                                                            
                                                             {song.production_ideas}
 
                                                         </Typography>

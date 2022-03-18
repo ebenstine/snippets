@@ -95,14 +95,83 @@ const useStyles = makeStyles((theme) => ({
     notes: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
-        borderBottom: '1.25px solid #6ca0ad',
+        //borderBottom: '1.25px solid #6ca0ad',
         whiteSpace: 'pre-wrap',
         color: '#233d4d',
-        '&:hover': {
-            borderBottom: '1.5px solid #1d778d',
-            cursor: 'pointer'
-        }
+        
     },
+
+    notesDiv1: {
+
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#94d9eb',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em',
+        display:'flex',
+        flexWrap: 'wrap'
+
+
+    },
+
+    notesDiv2: {
+
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#f8a058',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em',
+        display:'flex',
+        flexWrap: 'wrap'
+
+
+    },
+
+    notesDiv3: {
+
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#fcca60',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em',
+        display:'flex',
+        flexWrap: 'wrap'
+
+
+    },
+
+    notesDivUncertain: {
+
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#eb9292',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em',
+        display:'flex',
+        flexWrap: 'wrap'
+
+
+    }
 }));
 
 function SongProductionIdeas() {
@@ -115,6 +184,10 @@ function SongProductionIdeas() {
             textField, 
             buttons, 
             notes, 
+            notesDiv1,
+            notesDiv2,
+            notesDiv3,
+            notesDivUncertain,
             root, 
             actions 
         } = useStyles();
@@ -158,6 +231,7 @@ function SongProductionIdeas() {
   
     return (
         <>
+
             {editable ?
                 <FormControl  >
                     <form className={root} onSubmit={handleSubmit} autoComplete="off" >
@@ -183,24 +257,50 @@ function SongProductionIdeas() {
                 <div onDoubleClick={handleEditable}>
 
 
-                        <div>
-                        <Typography variant="caption" style={{color:'#233d4d'}}>
-                                Production Ideas:
-                        </Typography>
+                        <div style={{display:'flex', flexWrap: 'wrap'}}>
+                            <b><img style={{width:12, height:12}} src="sound-faders.png"></img></b> &nbsp;
+                                <Typography variant="caption" style={{color:'#233d4d', borderBottom: '1px solid #6ca0ad'}}>
+                                        Production Ideas:
+                                </Typography>
 
 
                         </div>
-                    <b><img style={{width:12, height:12}} src="sound-faders.png"></img></b> &nbsp;
-                    
-                    <Typography 
-                         
-                        component="span" 
-                        className={notes}>
-                    
-                    
-                    {`${reviseDetails.production_ideas}`}
+                   {songDetails.map((item) => {
+                       return (
+                       <>
+                       
+                            <div className=
+                                {item.priority === '1' ?
+                                    notesDiv1 :
+                                        item.priority === '2' ?
+                                            notesDiv2 :
+                                                item.priority === '3' ?
+                                                    notesDiv3 :
+                                                        notesDivUncertain
+                                }
+                                    
+                            >
+                        
+                   
+                                <Typography 
+                                    
+                                    component="p" 
+                                    className={notes}>
+                                
+                                
+                                {`${reviseDetails.production_ideas}`}
 
-                    </Typography>
+                                </Typography>
+                            </div>
+                        </>
+                       )
+                    })}
+                        
+                            
+                        
+                        
+                   
+                   
                 </div>
 
             }

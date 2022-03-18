@@ -95,14 +95,83 @@ const useStyles = makeStyles((theme) => ({
     notes: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
-        borderBottom: '1px solid #6ca0ad',
+        
         whiteSpace: 'pre-wrap',
         color: '#2a4f64', 
-        '&:hover': {
-            borderBottom: '1.5px solid #1d778d',
-            cursor: 'pointer'
-        }
+        
     },
+
+    notesDiv1: {
+
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#94d9eb',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em',
+        display:'flex',
+        flexWrap: 'wrap'
+
+
+    },
+
+    notesDiv2: {
+
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#f8a058',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em',
+        display:'flex',
+        flexWrap: 'wrap'
+
+
+    },
+
+    notesDiv3: {
+
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#fcca60',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em',
+        display:'flex',
+        flexWrap: 'wrap'
+
+
+    },
+
+    notesDivUncertain: {
+
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#eb9292',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em',
+        display:'flex',
+        flexWrap: 'wrap'
+
+
+    }
 }));
 
 function SongWritingNotes() {
@@ -116,6 +185,10 @@ function SongWritingNotes() {
             textField, 
             buttons, 
             notes, 
+            notesDiv1,
+            notesDiv2,
+            notesDiv3,
+            notesDivUncertain,
             root, 
             actions 
         
@@ -184,24 +257,46 @@ function SongWritingNotes() {
                 
                 <div onDoubleClick={handleEditable}>
 
-                    <div>
-                    <Typography variant="caption" style={{color:'#233d4d'}}>
-                            Songwriting Notes:
-                    </Typography>
+                    <div style={{display:'flex', flexWrap: 'wrap'}}>
+                        <b><img style={{width:12, height:12, paddingTop:'-.5em' }} src="quill.png"></img></b> &nbsp;
+                            <Typography variant="caption" style={{color:'#233d4d', borderBottom: '1px solid #6ca0ad' }}>
+                                    Songwriting Notes:
+                            </Typography>
 
 
-                </div>
-                    <b><img style={{width:12, height:12, paddingTop:'-.5em' }} src="quill.png"></img></b> &nbsp;
-                    <Typography 
+                    </div>
+                    
+                    
+                    {songDetails.map((item) => {
+                       return (
+                       <>
+                       
+                            <div className=
+                                {item.priority === '1' ?
+                                    notesDiv1 :
+                                        item.priority === '2' ?
+                                            notesDiv2 :
+                                                item.priority === '3' ?
+                                                    notesDiv3 :
+                                                        notesDivUncertain
+                                }
+                                    
+                            >
                         
-                        component="span" 
-                        className={notes}>
+                   
+                                <Typography 
+                                    
+                                    component="p" 
+                                    className={notes}>
+                                
+                                
+                                {`${reviseDetails.songwriting_notes}`}
 
-                        
-                        
-                        {`${reviseDetails.songwriting_notes}`}
-
-                    </Typography>
+                                </Typography>
+                            </div>
+                        </>
+                       )
+                    })}
                 </div>
             }
             

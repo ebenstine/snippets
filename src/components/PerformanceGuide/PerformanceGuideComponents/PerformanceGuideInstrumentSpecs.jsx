@@ -362,39 +362,39 @@ function PerformanceGuideInstrumentSpecs() {
                                 
                                 {updated ?
 
-                                song.primary_instrument === 'guitar' ?
-                                    
-                                    <div className={instSpecs}>
+                                    song.primary_instrument === 'guitar' ?
                                         
-                                        <Typography variant= "overline" className={specText}>
+                                        <div className={instSpecs}>
                                             
+                                            <Typography variant= "overline" className={specText}>
+                                                
+                                                
+                                                Updated Tuning: {reviseDetails.instrument_specs} 
+                                                
+                                            </Typography>
+                                        </div>
+
+                                    :
+
+                                    song.primary_instrument === 'keyboard' ?
+
+                                        <div className={instSpecs}>
+
+                                            <Typography variant="overline" className={specText}>
+                                                
+                                                Updated Keyboard Type: {reviseDetails.instrument_specs} 
                                             
-                                            Updated Tuning: {reviseDetails.instrument_specs} 
-                                            
-                                        </Typography>
-                                    </div>
+                                            </Typography>
+                                        </div>
 
-                                :
+                                    :
+                                        <div className={instSpecs}>
+                                            <Typography variant="overline" className={specText}>
+                                                
+                                                Updated Instrument or Software Type:  {reviseDetails.instrument_specs}
 
-                                song.primary_instrument === 'keyboard' ?
-
-                                    <div className={instSpecs}>
-
-                                        <Typography variant="overline" className={specText}>
-                                            
-                                            Updated Keyboard Type: {reviseDetails.instrument_specs} 
-                                        
-                                        </Typography>
-                                    </div>
-
-                                :
-                                    <div className={instSpecs}>
-                                        <Typography variant="overline" className={specText}>
-                                            
-                                            Updated Instrument or Software Type:  {reviseDetails.instrument_specs}
-
-                                        </Typography>
-                                    </div>
+                                            </Typography>
+                                        </div>
                                 :
                                 //this element probably needs all the conditional rendering for instrument type and language
                                     <>
@@ -473,7 +473,7 @@ function PerformanceGuideInstrumentSpecs() {
                                             
                                             </>
 
-                                            }
+                                        }
                                 
                                 
 
