@@ -126,7 +126,58 @@ const useStyles = makeStyles(() => ({
         paddingLeft: '.75em',
         paddingRight:'.75em',
         '&:hover': {
-            background:'#82bdcc',
+            background:'#eb9292',
+            borderRadius: '3px',
+            cursor: 'pointer'
+        }
+        
+    },
+
+    instSpecs1: {
+        
+        paddingTop: '1em',
+        paddingBottom:'1em',
+        marginRight: '1.5em',
+        marginLeft: '1.5em',
+        marginBottom: '.5em',
+        paddingLeft: '.75em',
+        paddingRight:'.75em',
+        '&:hover': {
+            background:'#94d9eb',
+            borderRadius: '3px',
+            cursor: 'pointer'
+        }
+        
+    },
+
+    instSpecs2: {
+        
+        paddingTop: '1em',
+        paddingBottom:'1em',
+        marginRight: '1.5em',
+        marginLeft: '1.5em',
+        marginBottom: '.5em',
+        paddingLeft: '.75em',
+        paddingRight:'.75em',
+        '&:hover': {
+            background:'#f8a058',
+            borderRadius: '3px',
+            cursor: 'pointer'
+        }
+        
+    },
+
+    instSpecs3: {
+        
+        paddingTop: '1em',
+        paddingBottom:'1em',
+        marginRight: '1.5em',
+        marginLeft: '1.5em',
+        marginBottom: '.5em',
+        paddingLeft: '.75em',
+        paddingRight:'.75em',
+        '&:hover': {
+            background:'#fcca60',
             borderRadius: '3px',
             cursor: 'pointer'
         }
@@ -152,9 +203,46 @@ const useStyles = makeStyles(() => ({
         justifyContent:'center'
     },
 
+    card: {
+        flexDirection: 'column',
+        backgroundColor:  '#f0a1a1',
+        color: 'rgb(250, 250, 175)',
+        marginTop: '1em',
+        marginBottom: '1em',
+        marginLeft: '.5em',
+        marginRight: '.5em',
+        border: '1px solid #1d778d'
+    },
+    
     card1: {
         flexDirection: 'column',
         backgroundColor: '#afe4f1',
+        color: 'rgb(250, 250, 175)',
+        marginTop: '1em',
+        marginBottom: '1em',
+        marginLeft: '.5em',
+        marginRight: '.5em',
+        border: '1px solid #1d778d',
+        borderRadius: '3px'
+        
+    },
+
+    card2: {
+        flexDirection: 'column',
+        backgroundColor: '#ffb171',
+        color: 'rgb(250, 250, 175)',
+        marginTop: '1em',
+        marginBottom: '1em',
+        marginLeft: '.5em',
+        marginRight: '.5em',
+        border: '1px solid #1d778d',
+        borderRadius: '3px'
+        
+    },
+
+    card3: {
+        flexDirection: 'column',
+        backgroundColor: '#fdd377',
         color: 'rgb(250, 250, 175)',
         marginTop: '1em',
         marginBottom: '1em',
@@ -178,9 +266,15 @@ function PerformanceGuideInstrumentSpecs() {
             notes, 
             root, 
             actions,
+            instSpecs1,
+            instSpecs2,
+            instSpecs3,
             instSpecs,
             specText,
-            card1
+            card1,
+            card2,
+            card3,
+            card,
 
         } = useStyles();
 
@@ -241,7 +335,16 @@ function PerformanceGuideInstrumentSpecs() {
                         <Accordion
                                                         
                         raised={true}
-                        className={card1}
+                        className=
+                            {song.priority === '1' ?
+                                card1 : 
+                            song.priority === '2' ?
+                                card2 :
+                            song.priority === '3' ?
+                                card3 :
+
+                                card
+                            }
                         
                         >
                 
@@ -364,7 +467,18 @@ function PerformanceGuideInstrumentSpecs() {
 
                                     song.primary_instrument === 'guitar' ?
                                         
-                                        <div className={instSpecs}>
+                                        <div className=
+                                        {song.priority === '1' ?
+                                            instSpecs1 : 
+                                        song.priority === '2' ?
+                                            instSpecs2 :
+                                        song.priority === '3' ?
+                                            instSpecs3 :
+
+                                            instSpecs
+                                        }
+                                        
+                                        >
                                             
                                             <Typography variant= "overline" className={specText}>
                                                 
@@ -378,7 +492,18 @@ function PerformanceGuideInstrumentSpecs() {
 
                                     song.primary_instrument === 'keyboard' ?
 
-                                        <div className={instSpecs}>
+                                        <div className=
+                                            {song.priority === '1' ?
+                                                instSpecs1 : 
+                                            song.priority === '2' ?
+                                                instSpecs2 :
+                                            song.priority === '3' ?
+                                                instSpecs3 :
+
+                                                instSpecs
+                                            }
+                                        
+                                        >
 
                                             <Typography variant="overline" className={specText}>
                                                 
@@ -388,7 +513,18 @@ function PerformanceGuideInstrumentSpecs() {
                                         </div>
 
                                     :
-                                        <div className={instSpecs}>
+                                        <div className=
+                                            {song.priority === '1' ?
+                                                instSpecs1 : 
+                                            song.priority === '2' ?
+                                                instSpecs2 :
+                                            song.priority === '3' ?
+                                                instSpecs3 :
+
+                                                instSpecs
+                                            }
+                                        
+                                        >
                                             <Typography variant="overline" className={specText}>
                                                 
                                                 Updated Instrument or Software Type:  {reviseDetails.instrument_specs}
@@ -401,7 +537,18 @@ function PerformanceGuideInstrumentSpecs() {
                                 
                                         {song.primary_instrument === 'guitar' && song.instrument_specs !== 'standard' ? 
                                             <>
-                                                <div className={instSpecs}>
+                                                <div className=
+                                                    {song.priority === '1' ?
+                                                        instSpecs1 : 
+                                                    song.priority === '2' ?
+                                                        instSpecs2 :
+                                                    song.priority === '3' ?
+                                                        instSpecs3 :
+        
+                                                        instSpecs
+                                            }
+                                                
+                                                >
 
                                                     <Typography variant="overline" className={specText}>
 
@@ -421,7 +568,19 @@ function PerformanceGuideInstrumentSpecs() {
                                                 
                                                 <>
                                                 
-                                                    <div className={instSpecs}>
+                                                    <div className=
+
+                                                        {song.priority === '1' ?
+                                                            instSpecs1 : 
+                                                        song.priority === '2' ?
+                                                            instSpecs2 :
+                                                        song.priority === '3' ?
+                                                            instSpecs3 :
+
+                                                            instSpecs
+                                                        }
+                                                    
+                                                    >
                                                 
                                                         <Typography variant="overline" className={specText}>
 
@@ -441,7 +600,20 @@ function PerformanceGuideInstrumentSpecs() {
                                                 
                                                 <>
                                                 
-                                                    <div className={instSpecs}>
+                                                    <div className=
+                                                        {song.priority === '1' ?
+                                                            instSpecs1 : 
+                                                        song.priority === '2' ?
+                                                            instSpecs2 :
+                                                        song.priority === '3' ?
+                                                            instSpecs3 :
+
+                                                            instSpecs
+                                                        }
+                                                    >
+
+                                                
+                                                    >
                                                 
                                                         <Typography variant="overline" className={specText}>
 
@@ -459,7 +631,18 @@ function PerformanceGuideInstrumentSpecs() {
                                         : 
                                                 
                                             <>
-                                                <div className={instSpecs}>
+                                                <div className=
+                                                {song.priority === '1' ?
+                                                    instSpecs1 : 
+                                                song.priority === '2' ?
+                                                    instSpecs2 :
+                                                song.priority === '3' ?
+                                                    instSpecs3 :
+
+                                                    instSpecs
+                                            }
+                                                    
+                                                >
                                                 
                                                     <Typography variant="overline">
                                                         

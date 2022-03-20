@@ -287,6 +287,7 @@ const PerformanceGuide = () => {
                         <br></br>
 
                     <PerformanceGuideInstrumentSpecs/> 
+
                     <PerformanceGuidePerformanceNotes/>
                     
                     {chordDiagrams.map((chordDiagram) => {
@@ -319,10 +320,6 @@ const PerformanceGuide = () => {
 
                                                 :
 
-                                                    song.primary_instrument === 'other' ?
-
-                                                    null
-                                                :
                                                     null
                                     
                                                 }
