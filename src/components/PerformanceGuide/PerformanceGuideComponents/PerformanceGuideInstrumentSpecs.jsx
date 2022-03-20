@@ -356,7 +356,7 @@ function PerformanceGuideInstrumentSpecs() {
                                     
                                         style={{ 
                                         
-                                        color: '#eb9148',
+                                        color: '#1d778d',
                                         paddingRight: '.1em',
                                         
                                         

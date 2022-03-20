@@ -127,28 +127,18 @@ const useStyles = makeStyles(() => ({
         
     },
 
-    notesDiv: {
 
-        display: 'flex', 
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        paddingTop: '1em',
-        paddingBottom:'1em',
-        marginRight: '1.5em',
-        marginLeft: '1.5em',
-        marginBottom: '.5em',
-        paddingLeft: '.75em',
-        paddingRight:'.75em',
-        '&:hover': {
-            background:'#82bdcc',
-            borderRadius: '3px',
-            cursor:'pointer'
-            
-        },
-        
-
+    card: {
+        flexDirection: 'column',
+        backgroundColor:  '#f0a1a1',
+        color: 'rgb(250, 250, 175)',
+        marginTop: '1em',
+        marginBottom: '1em',
+        marginLeft: '.5em',
+        marginRight: '.5em',
+        border: '1px solid #1d778d'
     },
-
+    
     card1: {
         flexDirection: 'column',
         backgroundColor: '#afe4f1',
@@ -159,6 +149,100 @@ const useStyles = makeStyles(() => ({
         marginRight: '.5em',
         border: '1px solid #1d778d',
         borderRadius: '3px'
+        
+    },
+
+    card2: {
+        flexDirection: 'column',
+        backgroundColor: '#ffb171',
+        color: 'rgb(250, 250, 175)',
+        marginTop: '1em',
+        marginBottom: '1em',
+        marginLeft: '.5em',
+        marginRight: '.5em',
+        border: '1px solid #1d778d',
+        borderRadius: '3px'
+        
+    },
+
+    card3: {
+        flexDirection: 'column',
+        backgroundColor: '#fdd377',
+        color: 'rgb(250, 250, 175)',
+        marginTop: '1em',
+        marginBottom: '1em',
+        marginLeft: '.5em',
+        marginRight: '.5em',
+        border: '1px solid #1d778d',
+        borderRadius: '3px'
+        
+    },
+
+    notesDiv: {
+        
+        paddingTop: '1em',
+        paddingBottom:'1em',
+        marginRight: '1.5em',
+        marginLeft: '1.5em',
+        marginBottom: '.5em',
+        paddingLeft: '.75em',
+        paddingRight:'.75em',
+        '&:hover': {
+            background:'#eb9292',
+            borderRadius: '3px',
+            cursor: 'pointer'
+        }
+        
+    },
+
+    notesDiv1: {
+        
+        paddingTop: '1em',
+        paddingBottom:'1em',
+        marginRight: '1.5em',
+        marginLeft: '1.5em',
+        marginBottom: '.5em',
+        paddingLeft: '.75em',
+        paddingRight:'.75em',
+        '&:hover': {
+            background:'#94d9eb',
+            borderRadius: '3px',
+            cursor: 'pointer'
+        }
+        
+    },
+
+    notesDiv2: {
+        
+        paddingTop: '1em',
+        paddingBottom:'1em',
+        marginRight: '1.5em',
+        marginLeft: '1.5em',
+        marginBottom: '.5em',
+        paddingLeft: '.75em',
+        paddingRight:'.75em',
+        '&:hover': {
+            background:'#f8a058',
+            borderRadius: '3px',
+            cursor: 'pointer'
+        }
+        
+    },
+
+    notesDiv3: {
+        
+        paddingTop: '1em',
+        paddingBottom:'1em',
+        marginRight: '1.5em',
+        marginLeft: '1.5em',
+        marginBottom: '.5em',
+        paddingLeft: '.75em',
+        paddingRight:'.75em',
+        '&:hover': {
+            background:'#fcca60',
+            borderRadius: '3px',
+            cursor: 'pointer'
+        }
         
     },
 }));
@@ -174,7 +258,13 @@ const useStyles = makeStyles(() => ({
                     buttons, 
                     notes, 
                     card1,
+                    card2,
+                    card3,
+                    card,
                     notesHover,
+                    notesDiv1,
+                    notesDiv2,
+                    notesDiv3,
                     notesDiv,
                     notesText,
                     root, 
@@ -234,8 +324,16 @@ const useStyles = makeStyles(() => ({
                             <Accordion
                                                     
                                 raised={true}
-                                className={card1}
-                                
+                                className=
+                                    {song.priority === '1' ?
+                                        card1 : 
+                                    song.priority === '2' ?
+                                        card2 :
+                                    song.priority === '3' ?
+                                        card3 :
+
+                                        card
+                                    }
                             >
                         
                                 <AccordionSummary
@@ -246,7 +344,7 @@ const useStyles = makeStyles(() => ({
                                         
                                             style={{ 
                                             
-                                            color: '#eb9148',
+                                            color: '#1d778d',
                                             paddingRight: '.1em',
                                             
                                             
@@ -315,7 +413,17 @@ const useStyles = makeStyles(() => ({
                                         {updated ?
                                             <>
                                             
-                                                <div className={notesDiv}>
+                                                <div className=
+                                                    {song.priority === '1' ?
+                                                        notesDiv1 : 
+                                                    song.priority === '2' ?
+                                                        notesDiv2 :
+                                                    song.priority === '3' ?
+                                                        notesDiv3 :
+        
+                                                        notesDiv
+                                                    }
+                                                >
                                                     <Typography 
 
                                                         component="span" 
@@ -330,7 +438,18 @@ const useStyles = makeStyles(() => ({
                                         :
                                             <>
                                             
-                                                <div className={notesDiv}>
+                                                <div className=
+                                                    {song.priority === '1' ?
+                                                        notesDiv1 : 
+                                                    song.priority === '2' ?
+                                                        notesDiv2 :
+                                                    song.priority === '3' ?
+                                                        notesDiv3 :
+
+                                                        notesDiv
+                                                    }
+                                                
+                                                >
                                                     <Typography 
 
                                                         className={notesText}

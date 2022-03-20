@@ -251,7 +251,7 @@ const PerformanceGuide = () => {
                                 onClick={handleCancel}
                                 style={{
                                     
-                                    color:"#eb9148"
+                                    color:"#1d778d"
                                 
                                 }}
                             
@@ -372,7 +372,7 @@ const PerformanceGuide = () => {
                                                             
                                                                 style={{ 
                                                                 
-                                                                color: '#eb9148',
+                                                                color: '#1d778d',
                                                                 paddingRight: '.1em',
                                                                 
                                                                 
