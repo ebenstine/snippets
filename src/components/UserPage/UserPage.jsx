@@ -60,7 +60,9 @@ const handleCancel = () => {
 
 
   return (
-    
+    //render the account icon as a button which when clicked provides user stats
+    //if any songs have been uploaded
+    //otherwise, just show the icon
     <>
     
       <Paper className={paper} elevation={10}>
@@ -78,18 +80,7 @@ const handleCancel = () => {
             </div>
         
             <br></br>
-            
-            <div>
-              <Typography 
           
-                align="center" 
-                variant = "h4" 
-                className = {welcome} 
-              >
-          
-                Hey, {user.username}!
-              </Typography>
-            </div>
 
             <br></br>
         
@@ -132,18 +123,15 @@ const handleCancel = () => {
         :
           <>
             <div style={{display:'flex', justifyContent:'center', marginTop:'1em' }}>
-              <AccountCircle style={{color: '#233d4d', width:30, height:30}}/>
-              </div>
-
-              <Typography 
-                
-                align="center" 
-                variant = "h4" 
-                className = {welcome} 
-              >
-                
-                Hey, {user.username}!
-              </Typography>
+              <AccountCircle 
+                style=
+                  {{
+                    color: '#233d4d', 
+                    width:30, 
+                    height:30
+                  }}
+              />
+            </div>
 
           </>
             
@@ -151,10 +139,21 @@ const handleCancel = () => {
 
         {showPrompt ? 
           <>
+
+            <Typography 
+              
+              align="center" 
+              variant = "h4" 
+              className = {welcome} 
+            >
+              
+              Hey, {user.username}!
+            </Typography>
+            
             <Typography variant='h4'>
               Do you have an album release to plan?
             </Typography>
-
+            
             <Button onClick={ () => { handleFormRender(); handlePrompt();} }>
               Yes
             </Button>
