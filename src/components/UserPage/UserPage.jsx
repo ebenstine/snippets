@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { Paper, Button, Typography, IconButton, Dialog} from '@material-ui/core'
 import useStyles from '../UserPage/UserPageStyles'
 import ExitToApp from '@material-ui/icons/ExitToApp';
@@ -11,6 +12,7 @@ const UserPage = () => {
   const user = useSelector((store) => store.user);
   const songs = useSelector((store) => store.songs);
   const allRecordings = useSelector((store) => store.allRecordings)
+  
   
   const { paper, 
           welcome, 
@@ -25,7 +27,10 @@ const UserPage = () => {
 
 
   const dispatch = useDispatch();
+  const history = useHistory();
   const [open, setOpen] = useState(false);
+  const [showForm, setShowForm] = useState(false)
+  const [showPrompt, setShowPrompt] = useState(true)
 
  
   useEffect(() => {
@@ -40,6 +45,19 @@ const handleClickOpen = () => {
 const handleClose = () => {
   setOpen(false)
 }
+
+const handleFormRender = () => {
+  setShowForm(true)
+}
+
+const handlePrompt = () => {
+  setShowPrompt(false)
+}
+
+const handleCancel = () => {
+  history.push('/songsList')
+}
+
 
   return (
     
@@ -131,13 +149,40 @@ const handleClose = () => {
             
         }
 
-          <div style={{display:'flex', justifyContent:'center'}}>
-      
-            <AddAlbum/>
+        {showPrompt ? 
+          <>
+            <Typography variant='h4'>
+              Do you have an album release to plan?
+            </Typography>
+
+            <Button onClick={ () => { handleFormRender(); handlePrompt();} }>
+              Yes
+            </Button>
+
+            <Button onClick={handleCancel}>
+              Not Now
+            </Button>
+          </>
+        :
+        
+          null
+        }
           
-          </div>
+        {showForm ?
+            <div style={{display:'flex', justifyContent:'center'}}>
+            
+              <AddAlbum/>
+            
+            </div>
+          
+          :
+
+          null
+        }
+        
           
           <div style={{display:'flex', justifyContent:'center'}}>
+            
 
             <Button 
 
