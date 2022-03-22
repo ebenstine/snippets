@@ -6,6 +6,8 @@ import useStyles from '../UserPage/UserPageStyles'
 import ExitToApp from '@material-ui/icons/ExitToApp';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import AddAlbum from './AddAlbum';
+import HourglassTopIcon from '@mui/icons-material/HourglassTop';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 const UserPage = () => {
   
@@ -21,6 +23,9 @@ const UserPage = () => {
           button2, 
           playIcon, 
           highlight,
+          prompt,
+          yesButton,
+          laterButton
           
         
         } = useStyles();
@@ -55,7 +60,7 @@ const handlePrompt = () => {
 }
 
 const handleCancel = () => {
-  history.push('/songsList')
+  history.push('/addSong')
 }
 
 
@@ -150,17 +155,38 @@ const handleCancel = () => {
               Hey, {user.username}!
             </Typography>
             
-            <Typography variant='h4'>
+            <Typography 
+              align="center"
+              variant='h6' 
+              className={prompt}
+            >
               Do you have an album release to plan?
             </Typography>
-            
-            <Button onClick={ () => { handleFormRender(); handlePrompt();} }>
-              Yes
-            </Button>
 
-            <Button onClick={handleCancel}>
-              Not Now
-            </Button>
+            <div style={{display:'flex', justifyContent:'center', paddingTop:'2em' }}>
+                <Button 
+                  onClick={ () => { handleFormRender(); handlePrompt();} }
+                  size="small"
+                  variant="contained"
+                  className={yesButton}
+                >
+                  
+                  Yes &nbsp;<CheckCircleOutlineIcon/>
+                  
+                </Button>
+                
+
+                <Button 
+                  onClick={handleCancel}
+                  size="small"
+                  variant="contained"
+                  className={laterButton} 
+                >
+                  
+                 Later &nbsp;<HourglassTopIcon/>
+                  
+                </Button>
+              </div>
           </>
         :
         
@@ -178,7 +204,8 @@ const handleCancel = () => {
 
           null
         }
-        
+        <br></br>
+        <br></br>
           
           <div style={{display:'flex', justifyContent:'center'}}>
             
@@ -187,6 +214,7 @@ const handleCancel = () => {
 
               size="small" 
               className={button2} 
+              variant="contained"
               onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out&nbsp;
               
               <ExitToApp/>

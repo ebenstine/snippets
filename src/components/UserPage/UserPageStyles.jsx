@@ -25,6 +25,12 @@ const useStyles = makeStyles((theme) => ({
         
         
     },
+
+    prompt: {
+        color: '#233d4d',
+        margin:'auto'
+        
+    },
     songCount: {
         color: '#233d4d',
         
@@ -61,12 +67,13 @@ const useStyles = makeStyles((theme) => ({
     button2: {
         
         marginBottom: '-2em',
+        marginTop:'5em',
         //marginLeft: '21em',
         color: '#233d4d',
         background: '#fff099',
         border: '1px solid #6ca0ad',
-        paddingLeft: '1em',
-        paddingRight: '1em',
+        paddingLeft: '.5em',
+        paddingRight: '.5em',
         '&:hover': {
             background:'#fde76c',
             },
@@ -74,6 +81,43 @@ const useStyles = makeStyles((theme) => ({
             
 
     },
+
+    yesButton: {
+
+        color: '#233d4d',
+        background: '#fff099',
+        border: '1px solid #6ca0ad',
+        paddingLeft: '.5em',
+        paddingRight: '.5em',
+        '&:hover': {
+            background:'#fde76c',
+            },
+
+        marginRight:'.5em'
+        
+
+        
+        
+        
+
+    },
+
+    laterButton: {
+
+        color: '#233d4d',
+        background: '#fff099',
+        border: '1px solid #6ca0ad',
+        paddingLeft: '.5em',
+        paddingRight: '.5em',
+        '&:hover': {
+            background:'#fde76c',
+            },
+       marginLeft:'.5em'
+  
+        
+
+    },
+
     genrePrompt: {
         color: '#233d4d',
         paddingBottom:'1em',
