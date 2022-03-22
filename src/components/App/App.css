@@ -2,12 +2,13 @@ html,
 body,
 #react-root {
   height: 100%;
+  
 }
 
 body {
   font-family: Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
-  background-color: rgb(230, 252, 255);
+  background:rgb(230, 252, 255);
 }
 
 img {

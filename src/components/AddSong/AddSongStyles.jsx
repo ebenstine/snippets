@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
         width: '10ch',
         marginBottom: '1.5em',
         marginTop: '4em',
-        background: '#fff099',
+        background: '#f4f8d3',
         color: '#2a4f64',
         border: '1px solid #3b95ac',
         '&:hover': {
@@ -175,7 +175,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         //margin: '1ch',
         borderRadius: '2px',
-        background: "#EBEBEB",
+        background: "transparent",
         color: '#2a4f64',
     
     },
@@ -221,7 +221,7 @@ const useStyles = makeStyles((theme) => ({
 
     paper: {
         margin: '4em auto',
-        background: 'linear-gradient(20deg, #94d9eb 37%, transparent 38%)',
+        background: 'linear-gradient(20deg, #94d9eb 37%, transparent 38%), linear-gradient(280deg, #f4f8d3 37%, transparent 38%)',
         paddingBottom: '4em',
         width: 650,
         border: '1.25px solid #eb9148'
@@ -266,7 +266,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         //margin: '1ch',
         borderRadius: '2px',
-        background: "#EBEBEB",
+        background: "transparent",
         color: '#2a4f64',
 
 
@@ -398,7 +398,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         //margin: '1ch',
         borderRadius: '2px',
-        background: "#EBEBEB",
+        background: "transparent",
         color: '#2a4f64',
 
     },

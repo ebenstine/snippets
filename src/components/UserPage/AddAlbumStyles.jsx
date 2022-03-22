@@ -98,8 +98,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     dialogButtons: {
-        background: "#fff099",
-        color: "#2a4f64",
+        background: "#f4f8d3",
         border: "1px solid #3b95ac",
         marginBottom: "2em",
         marginTop: "1em",

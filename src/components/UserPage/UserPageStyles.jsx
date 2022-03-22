@@ -5,9 +5,7 @@ const useStyles = makeStyles((theme) => ({
     
     paper: {
         margin: '4em auto',
-        background: 'linear-gradient(20deg, #94d9eb 37%, transparent 38%)',
-        // 'linear-gradient(-45deg, #94d9eb 37%, #fff 37%)':
-        //'linear-gradient(to bottom, #ccc, #000)',
+        background: 'linear-gradient(20deg, #94d9eb 37%, transparent 38%), linear-gradient(280deg, #f4f8d3 37%, transparent 38%)',
         border: '1px solid #ffb171',
         paddingBottom: '2em',
         width: 650,
@@ -72,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop:'5em',
         //marginLeft: '21em',
         color: '#233d4d',
-        background: '#fff099',
+        background: '#f4f8d3',
         border: '1px solid #6ca0ad',
         paddingLeft: '.5em',
         paddingRight: '.5em',
@@ -87,7 +85,7 @@ const useStyles = makeStyles((theme) => ({
     yesButton: {
 
         color: '#233d4d',
-        background: '#fff099',
+        background: '#f4f8d3',
         border: '1px solid #6ca0ad',
         paddingLeft: '.5em',
         paddingRight: '.5em',
@@ -107,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
     laterButton: {
 
         color: '#233d4d',
-        background: '#fff099',
+        background: '#f4f8d3',
         border: '1px solid #6ca0ad',
         paddingLeft: '.5em',
         paddingRight: '.5em',

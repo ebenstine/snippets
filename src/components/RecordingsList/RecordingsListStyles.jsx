@@ -78,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
 
     paper: {
        
-        background: 'linear-gradient(to right,  #9c9e9f 0%, #e7e7e7 100%)',
+        background: 'linear-gradient(to top right,  #1d778d 0%, transparent 60%)',
         //paddingBottom: '6em',
         paddingTop: '6em',
         paddingLeft: '1.5em',

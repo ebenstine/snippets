@@ -68,14 +68,14 @@ const handleCancel = () => {
     //render the account icon as a button which when clicked provides user stats
     //if any songs have been uploaded
     //otherwise, just show the icon
-    <>
+    <div>
     
       <Paper className={paper} elevation={10}>
-    
+        
         {songs.length ?  
 
-          <>
-            <div style={{display:'flex', justifyContent:'center', marginTop: '1em' }}>
+          <div style={{display:'flex', justifyContent:'center', marginTop: '1em' }}>
+            <div>
         
               <IconButton
                 onClick={handleClickOpen}
@@ -124,7 +124,7 @@ const handleCancel = () => {
               
                 </Typography>
               </Dialog>
-          </>
+          </div>
         :
           <>
             <div style={{display:'flex', justifyContent:'center', marginTop:'1em' }}>
@@ -223,9 +223,9 @@ const handleCancel = () => {
           </div>
 
           
-
+        
       </Paper>
-    </>
+    </div>
   );
 }
 

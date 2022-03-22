@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
         margin: '0 1.5em',
         width: 650,
         justifyContent: 'center',
-        background: 'linear-gradient(20deg, #94d9eb 37%, transparent 38%)',
+        background: 'linear-gradient(20deg, #94d9eb 37%, transparent 38%), linear-gradient(280deg, #f4f8d3 37%, transparent 38%)',
         marginTop: '5em',
         marginBottom: '6em',
         color: '#1a313f',
