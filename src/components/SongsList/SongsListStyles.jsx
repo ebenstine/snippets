@@ -160,6 +160,7 @@ const useStyles = makeStyles(() => ({
             
             cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d',
+            background:'linear-gradient(9deg, #eb9292 37%, transparent 38%)'
             
         }
         
@@ -180,6 +181,7 @@ const useStyles = makeStyles(() => ({
             
             cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d',
+            background:'linear-gradient(9deg, #94d9eb 37%, transparent 38%)'
             
            
     }
@@ -196,6 +198,7 @@ const useStyles = makeStyles(() => ({
             //color:'#1d778d',
             cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d',
+            background:'linear-gradient(9deg, #f8a058 37%, transparent 38%)'
             
         }
         
@@ -209,8 +212,8 @@ const useStyles = makeStyles(() => ({
         color: '#233d4d',
         '&:hover': {
             //color:'#1d778d',
-            cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d',
+            background:'linear-gradient(9deg, #fcca60 37%, transparent 38%)'
           
         }
         

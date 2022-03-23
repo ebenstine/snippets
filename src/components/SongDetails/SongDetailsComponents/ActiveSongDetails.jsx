@@ -22,7 +22,10 @@ export default function ActiveSongDetails(){
 
     const { 
                 
-        title, 
+        title,
+        title1,
+        title2,
+        title3, 
         root, 
         card, 
         card1, 
@@ -137,7 +140,7 @@ export default function ActiveSongDetails(){
                                 
                                                                 <Typography 
                                                                     variant="overline" 
-                                                                    className={title}>
+                                                                    className={title1}>
                                                                     {song.title}
 
                                                                 </Typography>
@@ -304,7 +307,7 @@ export default function ActiveSongDetails(){
                                 
                                                                 <Typography 
                                                                     variant="overline" 
-                                                                    className={title}>
+                                                                    className={title2}>
                                                                     {song.title}
 
                                                                 </Typography>
@@ -468,7 +471,7 @@ export default function ActiveSongDetails(){
                                 
                                                                 <Typography 
                                                                     variant="overline" 
-                                                                    className={title}>
+                                                                    className={title3}>
                                                                     {song.title}
 
                                                                 </Typography>
