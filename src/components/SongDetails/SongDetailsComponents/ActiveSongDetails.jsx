@@ -197,7 +197,7 @@ export default function ActiveSongDetails(){
 
 
                                                             </div>
-                                                        
+                                                            
                                                             <div onDoubleClick={handleEditINotes}
                                                                 className={notesBlock1}
                                                             >
@@ -245,7 +245,7 @@ export default function ActiveSongDetails(){
 
 
                                                             </div>
-
+                                                            
 
                                                             <div onDoubleClick={handleEditPNotes}
                                                                 className={notesBlock1}
@@ -335,7 +335,6 @@ export default function ActiveSongDetails(){
                                                             </div>
                                                     }
                             
-                                                    <br></br>
                                                     
                             
                                                     {editINotes ?
@@ -364,7 +363,7 @@ export default function ActiveSongDetails(){
 
 
                                                     </div>
-                                                
+                                                    
                                                     <div onDoubleClick={handleEditINotes}
                                                         className={notesBlock2}
                                                     >
@@ -412,7 +411,7 @@ export default function ActiveSongDetails(){
 
 
                                                     </div>
-
+                                                   
 
                                                     <div onDoubleClick={handleEditPNotes}
                                                         className={notesBlock2}

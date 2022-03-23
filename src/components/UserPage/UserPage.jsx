@@ -171,7 +171,7 @@ const handleCancel = () => {
                   className={yesButton}
                 >
                   
-                  Yes &nbsp;<CheckCircleOutlineIcon/>
+                  Start &nbsp;<CheckCircleOutlineIcon/>
                   
                 </Button>
                 

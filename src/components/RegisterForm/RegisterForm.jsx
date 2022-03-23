@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) => ({
    btn: {
      marginTop: 30,
      marginBottom: 25,
-     background: '#fff099',
+     background: 'transparent',
          color: '#2a4f64',
          border: '1px solid #3b95ac',
          '&:hover': {

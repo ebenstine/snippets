@@ -131,7 +131,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '.75em',
         marginBottom: '.75em',
         border: '1px solid #1a313f',
-        background: '#fff099',
+        background: 'transparent',
         '&:hover': {
             background:'#fde76c',
             }
@@ -187,7 +187,7 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             color:'#e45252',
             },
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac',
         alignItems: 'center',
         '&:hover': {
@@ -202,7 +202,7 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             color:'#77c568',
             },
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac',
         alignItems: 'center',
         '&:hover': {

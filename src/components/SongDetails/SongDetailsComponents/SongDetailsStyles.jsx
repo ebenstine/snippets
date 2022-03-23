@@ -31,7 +31,7 @@ const useStyles = makeStyles(() => ({
 
     card2: {
         
-        backgroundColor: '#ffb171',
+        background: '#ffb171',
         border: '1px solid #4d8aaa'
         
     },
@@ -72,7 +72,7 @@ const useStyles = makeStyles(() => ({
         paddingTop: '1em',
         width: 650,
         alignItems: 'center',
-        border: '1px solid #ffcdd2'
+        border: '1px solid #ffb171'
        
     },
 
@@ -100,7 +100,7 @@ const useStyles = makeStyles(() => ({
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
         //borderBottom: '1px solid #6ca0ad',
-        marginTop: 'auto',
+        paddingTop: '.5em',
         whiteSpace: 'pre-wrap',
         color: '#233d4d',
         
@@ -214,7 +214,7 @@ const useStyles = makeStyles(() => ({
         marginBottom: '.3em',
         marginRight: '2em',
         color: '#233d4d',
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac',
         paddingLeft: '1em',
         paddingRight: '1em',
@@ -245,7 +245,7 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
             color:'#e45252',
             },
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac',
         alignItems: 'center',
         '&:hover': {
@@ -260,7 +260,7 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
             color:'#77c568',
             },
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac',
         alignItems: 'center',
         '&:hover': {

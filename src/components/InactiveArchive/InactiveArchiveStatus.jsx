@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
         marginBottom: '.3em',
         marginRight: '2em',
         color: '#233d4d',
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac',
         paddingLeft: '1em',
         paddingRight: '1em',
@@ -38,7 +38,7 @@ const useStyles = makeStyles(() => ({
         marginBottom: '.3em',
         marginRight: '2em',
         color: '#233d4d',
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac',
         paddingLeft: '1em',
         paddingRight: '1em',
@@ -66,7 +66,7 @@ const useStyles = makeStyles(() => ({
     deleteButton: {
         
         color: '#233d4d',
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac',
         marginLeft: '1em',
         '&:hover': {
@@ -97,7 +97,7 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
             color:'#e45252',
             },
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac',
         alignItems: 'center',
         '&:hover': {

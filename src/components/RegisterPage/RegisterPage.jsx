@@ -11,7 +11,7 @@ const useStyles = makeStyles({
   },
 
   signIn: {
-    background: '#fff099',
+    background: 'transparent',
         color: '#2a4f64',
         border: '1px solid #3b95ac',
         '&:hover': {

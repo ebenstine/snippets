@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
             color:'#e45252',
             },
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac',
         alignItems: 'center',
         '&:hover': {
@@ -29,7 +29,7 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
             color:'#77c568',
             },
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac',
         alignItems: 'center',
         '&:hover': {
@@ -59,7 +59,7 @@ const useStyles = makeStyles(() => ({
         marginBottom: '.3em',
         marginRight: '2em',
         color: '#233d4d',
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac',
         paddingLeft: '1em',
         paddingRight: '1em',

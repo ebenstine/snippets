@@ -32,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
             
         },
 
+        
+
         '& .MuiInput-underline:after': {
             borderBottomColor: '#3b95ac',
         }, 
@@ -60,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
 
             },
             '&:hover fieldset': {
-                border:' 1.5px solid #3b95ac' 
+                border:' 1.5px solid #ffb171' 
             },  
             '&:fieldset.Mui-focused': {
                 border:' 1.5px solid #3b95ac'
@@ -82,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
         width: '10ch',
         marginBottom: '1.5em',
         marginTop: '4em',
-        background: '#f4f8d3',
+        background: 'transparent',
         color: '#2a4f64',
         border: '1px solid #3b95ac',
         '&:hover': {
@@ -221,7 +223,7 @@ const useStyles = makeStyles((theme) => ({
 
     paper: {
         margin: '4em auto',
-        background: 'linear-gradient(20deg, #94d9eb 37%, transparent 38%), linear-gradient(280deg, #f4f8d3 37%, transparent 38%)',
+        background: 'linear-gradient(20deg, #94d9eb 37%, transparent 38%), linear-gradient(280deg, #fdf0ef 37%, transparent 39%)',
         paddingBottom: '4em',
         width: 650,
         border: '1.25px solid #eb9148'
@@ -377,7 +379,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     dialog: {
-        background: '#fff099',
+        background: 'transparent',
         border: '1px solid #3b95ac' 
     },
 
