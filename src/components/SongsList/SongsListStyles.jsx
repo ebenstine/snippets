@@ -63,7 +63,7 @@ const useStyles = makeStyles(() => ({
 
     paper: {
         margin: '3em auto',
-        background: 'linear-gradient(to right,  #1d778d 0%, transparent 100%)',
+        background: 'linear-gradient(to right,  #1d778d 0%, transparent 100%), linear-gradient(-5deg, #fff7ac 10%, #94d9eb 2%, transparent 11%), linear-gradient(273deg, #fdf0ef 8%, #ffd59e 1%, transparent 9%)',
         paddingBottom: '6em',
         paddingTop: '6em',
         paddingLeft: '4.2em',
@@ -212,6 +212,7 @@ const useStyles = makeStyles(() => ({
         color: '#233d4d',
         '&:hover': {
             //color:'#1d778d',
+            cursor:'pointer',
             borderBottom: '1.5px solid #1d778d',
             background:'linear-gradient(9deg, #fcca60 37%, transparent 38%)'
           

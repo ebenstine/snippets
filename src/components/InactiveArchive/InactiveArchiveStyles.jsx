@@ -47,7 +47,7 @@ const useStyles = makeStyles(() => ({
         paddingLeft: '4.2em',
         paddingRight: '3em',
         width: 750,
-        border: '1px solid #eb9148',
+        border: '1px solid #ffb171',
     
         
     },

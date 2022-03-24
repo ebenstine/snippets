@@ -54,7 +54,7 @@ const useStyles = makeStyles(() => ({
         paddingTop: '1em',
         width: 650,
         alignItems: 'center',
-        border: '1px solid #ffcdd2'
+        border: '1px solid #ffb171'
        
     },
 
