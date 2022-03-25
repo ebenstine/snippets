@@ -57,6 +57,10 @@ const AddAlbum = ({ album }) => {
 
   console.log(newAlbum);
 
+  const handleCancel = () => {
+    history.push('/user')
+  }
+
   
   
   return (
@@ -126,7 +130,7 @@ const AddAlbum = ({ album }) => {
           
                       <Button 
                         
-                        //onClick={handleCancel} 
+                        onClick={handleCancel} 
                         variant="contained" 
                         size="small" 
                         className={dialogButtons}
