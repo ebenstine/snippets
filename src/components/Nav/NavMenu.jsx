@@ -154,7 +154,7 @@ const NavMenu = ({user}) => {
                 
                 <Typography component="h5">
                   
-                  &nbsp;View Active Songs
+                  &nbsp;Active Songs
 
                 </Typography> 
               
@@ -181,7 +181,7 @@ const NavMenu = ({user}) => {
             
                 <PlaylistAdd/>  
             
-                &nbsp;Add a New Song
+                &nbsp;Add a Song
             
               </Link>
 
@@ -208,7 +208,7 @@ const NavMenu = ({user}) => {
             
                   <Typography component="h5">
               
-                    &nbsp;View Inactive Archive
+                    &nbsp;Inactive Archive
             
                   </Typography>
 
@@ -238,7 +238,7 @@ const NavMenu = ({user}) => {
             
               <AccountCircle/> 
             
-                &nbsp;Account Details
+                &nbsp;Account
             
             </Link>
         

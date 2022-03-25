@@ -206,24 +206,27 @@ const handleCancel = () => {
         }
         <br></br>
         <br></br>
+        {showForm ?  
           
-          <div style={{display:'flex', justifyContent:'center'}}>
-            
+          null
 
-            <Button 
+          :
 
-              size="small" 
-              className={button2} 
-              variant="contained"
-              onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out&nbsp;
-              
-              <ExitToApp/>
+            <div style={{display:'flex', justifyContent:'center'}}>
 
-            </Button>
-          </div>
+              <Button 
 
-          
-        
+                size="small" 
+                className={button2} 
+                variant="contained"
+                onClick={() => dispatch({ type: 'LOGOUT' })}>Sign Out&nbsp;
+                
+                <ExitToApp/>
+
+              </Button>
+            </div>
+          }
+    
       </Paper>
     </div>
   );

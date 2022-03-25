@@ -223,7 +223,7 @@ const useStyles = makeStyles((theme) => ({
 
     paper: {
         margin: '4em auto',
-        background: 'linear-gradient(20deg, #94d9eb 37%, transparent 38%), linear-gradient(280deg, #fdf0ef 37%, transparent 37%), linear-gradient(-188deg, #fff7ac 14%, transparent 15% ), linear-gradient(67deg, #ffd59e 37%, transparent 37%)',
+        background: 'linear-gradient(20deg, #94d9eb 37%, transparent 38%), linear-gradient(280deg, #fdf0ef 37%, transparent 37%), linear-gradient(-188deg, #fff7ac 14%, transparent 15% ), linear-gradient(77deg, #ffd59e 37%, transparent 37%)',
         paddingBottom: '4em',
         width: 650,
         border: '1.25px solid #ffb171'
