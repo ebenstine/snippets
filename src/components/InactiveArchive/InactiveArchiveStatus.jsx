@@ -19,8 +19,9 @@ const useStyles = makeStyles(() => ({
 
     activateButton: {
         
-        marginBottom: '.3em',
+        marginBottom: '.02em',
         marginRight: '2em',
+        
         color: '#233d4d',
         background: 'transparent',
         border: '1px solid #3b95ac',
@@ -35,8 +36,8 @@ const useStyles = makeStyles(() => ({
 
     deletePrompt: {
         marginLeft: '1.5em',
-        marginBottom: '.3em',
-       
+        marginBottom: '.02em',
+        
         color: '#233d4d',
         background: 'transparent',
         border: '1px solid #3b95ac',

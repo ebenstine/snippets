@@ -118,28 +118,29 @@ return (
                         
                                                     <>
                                                     
-                                                        <div>
+                                                        <div style={{display:'flex', flex: 'flexWrap'}}>
+                                                            <b>
+                                                                <img 
+                                                                    style={{width:12, height:12}} 
+                                                                    src="quill.png">
+                                                                </img>
+                                                            </b> &nbsp;
                                                             
-                                                            <Typography 
-                                                                variant="caption" 
-                                                                style={{color:'#233d4d'}}
-                                                            >
-                                                                    
-                                                                    Writing Notes:
-                                                            
-                                                            </Typography>
+                                                                <Typography 
+                                                                    variant="caption" 
+                                                                    style={{color:'#233d4d', borderBottom:'1px solid #6ca0ad'}}
+                                                                >
+                                                                        
+                                                                        Writing Notes:
+                                                                
+                                                                </Typography>
 
 
                                                         </div>
                                                         
                                                         <div>
                                                             
-                                                            <b>
-                                                                <img 
-                                                                    style={{width:12, height:12}} 
-                                                                    src="quill.png">
-                                                                </img>
-                                                            </b> 
+                                                            
                                                             
                                                             &nbsp;
 
@@ -159,11 +160,17 @@ return (
 
                                                     <>
                                                     
-                                                        <div>
-                                                            
+                                                        <div style={{display:'flex', flexWrap:'wrap'}}>
+                                                            <b>
+                                                                <img 
+                                                                    style={{width:12, height:12}} 
+                                                                    src="sound-faders.png">
+                                                                </img>
+                                                            </b> 
+                                                            &nbsp;
                                                             <Typography 
                                                                 variant="caption" 
-                                                                style={{color:'#233d4d'}}
+                                                                style={{color:'#233d4d', borderBottom:'1px solid #6ca0ad'}}
                                                             >
                                                                     
                                                                     Production Ideas:
@@ -175,12 +182,7 @@ return (
                                                         
                                                         <div>
                                                             
-                                                            <b>
-                                                                <img 
-                                                                    style={{width:12, height:12}} 
-                                                                    src="sound-faders.png">
-                                                                </img>
-                                                            </b> 
+                                                            
                                                             
                                                             &nbsp;
 

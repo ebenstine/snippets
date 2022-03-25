@@ -49,7 +49,7 @@ const useStyles = makeStyles(() => ({
 
     paper: {
         margin: '4em auto',
-        background: 'linear-gradient(to right,  #1d778d 0%,#e7e7e7 100%)',
+        background: 'linear-gradient(to right,  #1d778d 0%, transparent 100%), linear-gradient(-7deg, #dbdbdb 18%, #1d778d 2%, transparent 18.15%), linear-gradient(278deg, transparent 14.5%, #c7c7c7 2%, transparent 14.75%)',
         paddingBottom: '1em',
         paddingTop: '1em',
         width: 650,
@@ -78,7 +78,7 @@ const useStyles = makeStyles(() => ({
     cardText: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 9.5,
-        borderBottom: '1px solid #6ca0ad',
+        //borderBottom: '1px solid #6ca0ad',
         paddingLeft: '1em',
         whiteSpace: 'pre-wrap',
         color: '#233d4d',
