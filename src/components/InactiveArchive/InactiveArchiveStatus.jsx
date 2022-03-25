@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
 
 
     activateButton: {
-        marginLeft: '10em',
+        
         marginBottom: '.3em',
         marginRight: '2em',
         color: '#233d4d',
@@ -36,7 +36,7 @@ const useStyles = makeStyles(() => ({
     deletePrompt: {
         marginLeft: '1.5em',
         marginBottom: '.3em',
-        marginRight: '2em',
+       
         color: '#233d4d',
         background: 'transparent',
         border: '1px solid #3b95ac',
@@ -212,7 +212,7 @@ function InactiveArchiveStatus(){
         
         <>
             
-            <div>
+            <div style={{display:'flex', justifyContent: 'center'}}>
             
                 <Button 
                     

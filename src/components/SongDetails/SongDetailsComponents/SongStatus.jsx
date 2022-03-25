@@ -55,9 +55,10 @@ const useStyles = makeStyles(() => ({
     },
 
     button: {
-        marginLeft: '1em',
+        
         marginBottom: '.3em',
-        marginRight: '2em',
+        display: 'flex',
+        justifyContent: 'center',
         color: '#233d4d',
         background: 'transparent',
         border: '1px solid #3b95ac',

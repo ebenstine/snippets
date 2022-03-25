@@ -67,7 +67,42 @@ const useStyles = makeStyles(() => ({
 
     paper: {
         margin: '4em auto',
-        background: 'linear-gradient(to right,  #1d778d 0%, transparent 100%)',
+        background: 'linear-gradient(to right,  #1d778d 0%, transparent 100%), linear-gradient(-10deg, #fdf0ef 18%, #1d778d 2%, transparent 18.15%), linear-gradient(278deg, transparent 14.5%, #f0a1a1 2%, transparent 14.75%)',
+        paddingBottom: '1em',
+        paddingTop: '1em',
+        width: 650,
+        alignItems: 'center',
+        border: '1px solid #ffb171'
+       
+    },
+
+
+
+    paper1: {
+        margin: '4em auto',
+        background: 'linear-gradient(to right,  #1d778d 0%, transparent 100%), linear-gradient(-10deg, #c8e5ec 18%, #1d778d 2%, transparent 18.15%), linear-gradient(278deg, transparent 14.5%, #94d9eb 2%, transparent 14.75%)',
+        paddingBottom: '1em',
+        paddingTop: '1em',
+        width: 650,
+        alignItems: 'center',
+        border: '1px solid #ffb171'
+       
+    },
+
+    paper2: {
+        margin: '4em auto',
+        background: 'linear-gradient(to right,  #1d778d 0%, transparent 100%), linear-gradient(-10deg, #ffd59e 18%, #1d778d 2%, transparent 18.15%), linear-gradient(278deg, transparent 14.5%, #ffd59e 2%, transparent 14.75%)',
+        paddingBottom: '1em',
+        paddingTop: '1em',
+        width: 650,
+        alignItems: 'center',
+        border: '1px solid #ffb171'
+       
+    },
+
+    paper3: {
+        margin: '4em auto',
+        background: 'linear-gradient(to right,  #1d778d 0%, transparent 100%), linear-gradient(-10deg, #fff7ac 18%, #1d778d 2%, transparent 18.15%), linear-gradient(278deg, transparent 14.5%, #fdd377 2%, transparent 14.75%)',
         paddingBottom: '1em',
         paddingTop: '1em',
         width: 650,

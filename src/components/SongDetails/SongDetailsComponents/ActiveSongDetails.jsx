@@ -31,7 +31,10 @@ export default function ActiveSongDetails(){
         card1, 
         card2, 
         card3, 
-        paper, 
+        paper,
+        paper1,
+        paper2,
+        paper3, 
         cardText, 
         lyricText,
         lyricBlock1,
@@ -109,7 +112,18 @@ export default function ActiveSongDetails(){
                         <>
 
                                 
-                            <Paper className={paper} elevation={10}>
+                            <Paper 
+                                className=
+                                    {song.priority === '1' ?
+                                        paper1:
+                                    song.priority === '2' ?
+                                        paper2:
+                                    song.priority === '3' ?
+                                        paper3:
+
+                                        paper
+                                    } 
+                                elevation={10}>
                 
                                 <section className={root}>
                                     <div key={song.id}>
