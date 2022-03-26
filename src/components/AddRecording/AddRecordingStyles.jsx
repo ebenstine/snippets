@@ -82,8 +82,9 @@ const useStyles = makeStyles((theme) => ({
 
     actionDiv: {
         background: "rgb(199, 246, 252)",
-        paddingRight: "6.5em",
-        paddingTop: "1em",
+        display:'flex',
+        justifyContent:'center',
+        paddingTop: "2em",
         
         
     },

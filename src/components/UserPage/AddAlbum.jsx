@@ -10,6 +10,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import useStyles from './AddAlbumStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
+import { CheckCircle } from '@mui/icons-material';
 
 
 
@@ -135,7 +136,7 @@ const AddAlbum = ({ album }) => {
                         size="small" 
                         className={dialogButtons}
                       >
-          
+                        Cancel &nbsp;
                         <Cancel/>
 
                       </Button>
@@ -147,8 +148,8 @@ const AddAlbum = ({ album }) => {
                         size="small" 
                         className={dialogButtons}
                       >
-          
-                        <Backup/>
+                        Save &nbsp;
+                        <CheckCircle/>
 
                       </Button>
                     </div>

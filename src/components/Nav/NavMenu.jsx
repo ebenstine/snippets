@@ -204,7 +204,7 @@ const NavMenu = ({user}) => {
                 onClick={handleClose}
               >
             
-            <img src="archiveSong.png" style={{width:26, height:26}} ></img>
+            <img src="archive.png" style={{width:26, height:26}} ></img>
             
                   <Typography component="h5">
               

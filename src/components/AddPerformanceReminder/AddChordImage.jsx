@@ -14,6 +14,7 @@ import ChordImagesUploader from './ChordImagesUploader';
 import useStyles from './AddChordImageStyles';
 import { Alert } from '@mui/material';
 import Cancel from '@material-ui/icons/Cancel';
+import { CheckCircle } from '@mui/icons-material';
 import Backup from '@material-ui/icons/Backup';
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 
@@ -152,7 +153,7 @@ const AddChordImage = ({ song, handleMenuClose }) => {
                   size="small" 
                   className={dialogButtons}
                 >
-              
+                  Cancel &nbsp;
                   <Cancel/>
 
                 </Button>
@@ -164,8 +165,8 @@ const AddChordImage = ({ song, handleMenuClose }) => {
                   size="small" 
                   className={dialogButtons}
                 >
-              
-                  <Backup/>
+                  Save &nbsp;
+                  <CheckCircle/>
 
                 </Button>
 

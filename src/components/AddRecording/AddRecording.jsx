@@ -13,6 +13,7 @@ import RecordingsUploader from './RecordingsUploader'
 import useStyles from './AddRecordingStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
+import { CheckCircle } from '@mui/icons-material';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 
 
@@ -139,7 +140,7 @@ const AddRecording = ({ song, handleMenuClose }) => {
                 size="small" 
                 className={dialogButtons}
               >
-            
+                Cancel &nbsp;
                 <Cancel/>
 
               </Button>
@@ -151,8 +152,8 @@ const AddRecording = ({ song, handleMenuClose }) => {
                 size="small" 
                 className={dialogButtons}
               >
-            
-                <Backup/>
+                Save &nbsp;
+                <CheckCircle/>
 
               </Button>
 

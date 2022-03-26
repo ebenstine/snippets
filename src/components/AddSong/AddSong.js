@@ -15,6 +15,7 @@ import { PlayDisabledRounded } from '@mui/icons-material';
 import { Piano } from '@mui/icons-material';
 import { Lightbulb } from '@mui/icons-material';
 import { IndeterminateCheckBoxOutlined } from '@mui/icons-material';
+import { CheckCircle } from '@mui/icons-material';
 import { Album } from '@mui/icons-material';
 
 
@@ -454,17 +455,22 @@ const AddSong = () => {
             
                       <Button 
                         variant="contained" 
-                        onClick={toUserHome} 
-                        className={inputs}>
-                        <Cancel/>
+                          onClick={toUserHome} 
+                            className={inputs}
+                      >
+                              Cancel
+                                &nbsp;
+                                  <Cancel/>
                       </Button>
             
                       <Button 
                         variant="contained" 
-                        type="submit" 
-                        /*onClick={toUserHome}*/ 
-                        className={inputs}>
-                        <Backup/>
+                          type="submit" 
+                            className={inputs}
+                      >
+                              Save
+                                &nbsp;
+                                  <CheckCircle/>
                       </Button>
                     
                     </div>

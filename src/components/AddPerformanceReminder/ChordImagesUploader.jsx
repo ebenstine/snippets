@@ -6,16 +6,17 @@ import { Button } from '@material-ui/core';
 import DropzoneS3Uploader from 'react-dropzone-s3-uploader';
 import ChordImageProgressBar from './ChordImageProgressBar';
 import { makeStyles } from "@material-ui/core/styles";
+import Backup from '@material-ui/icons/Backup';
 
 const useStyles = makeStyles(() => ({
   dropZone: {
 
     color: '#233d4d', 
-    paddingLeft: '3em', 
-    paddingRight: '3em', 
+    paddingLeft: '.5em', 
+    paddingRight: '.5em', 
     border: '1.5px solid #3b95ac',
     
-    background: '#82bdcc',
+    background: 'transparent',
     '&:hover': {
       border: '1.5px solid #233d4d',
       background: '#5fbdd4'
@@ -74,9 +75,11 @@ const ChordImagesUploader = ({uploadComplete}) => {
         <div
             style={{
 
-              paddingTop: '1.25em', 
-              paddingLeft: '1.5em', 
-              paddingRight: '1.5em',
+              paddingTop: '1.75em', 
+              paddingLeft: '.5em', 
+              paddingRight: '.5em',
+              display:'flex',
+              justifyContent:'center'
                     
             }}
         >
@@ -86,8 +89,9 @@ const ChordImagesUploader = ({uploadComplete}) => {
               className={dropZone}
             >
               
-              Click to Select, or Drag and Drop File
-            
+              Upload File &nbsp;
+              <Backup/>
+
             </Button>
 
         </div>

@@ -150,7 +150,7 @@ return (
                                                                     className={cardText}
                                                                 >
 
-                                                                    {song.production_ideas}
+                                                                    {song.songwriting_notes}
 
                                                                 </Typography>
                                                         </div>
