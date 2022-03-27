@@ -18,27 +18,27 @@ const useStyles = makeStyles(() => ({
 
     card: {
         
-        backgroundColor:  '#f0a1a1',
+        background:  'linear-gradient(to bottom right, #f0a1a1 60%, #fdf0ef 100%)',
         border: '1px solid #4d8aaa'
         
     },
     
     card1: {
         
-        backgroundColor: '#afe4f1', 
+        background:  'linear-gradient(to bottom right, #afe4f1 60%, #c8e5ec 100%)', 
         border: '1px solid #4d8aaa'
     },
 
     card2: {
         
-        background: '#ffb171',
+        background: 'linear-gradient(to bottom right, #ffb171 60%, #ffd59e 100%)',
         border: '1px solid #4d8aaa'
         
     },
     
     card3: {
         
-        backgroundColor: '#fdd377',
+        background: 'linear-gradient(to bottom right, #fdd377 60%, #fff7ac 100%)',
         border: '1px solid #4d8aaa'
         
     },

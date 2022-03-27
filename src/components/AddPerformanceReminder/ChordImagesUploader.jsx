@@ -75,7 +75,7 @@ const ChordImagesUploader = ({uploadComplete}) => {
         <div
             style={{
 
-              paddingTop: '1.75em', 
+              paddingTop: '2.1em', 
               paddingLeft: '.5em', 
               paddingRight: '.5em',
               display:'flex',
