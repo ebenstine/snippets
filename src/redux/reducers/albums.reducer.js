@@ -1,4 +1,4 @@
-const songs = (state = [], action) => {
+const albums = (state = [], action) => {
     switch (action.type) {
         case 'SET_ALBUMS':
             return action.payload;
@@ -7,4 +7,4 @@ const songs = (state = [], action) => {
     }
 }
 
-export default songs;
+export default albums;
