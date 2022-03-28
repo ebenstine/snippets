@@ -6,7 +6,7 @@ import { Box, Paper, Typography, Card, CardContent, Button } from '@material-ui/
 import useStyles from './SongsListStyles';
 import ColorCodeLegend from './ColorCodeLegend'
 import Feedback from '@material-ui/icons/Feedback';
-import AlbumTitle from './SongsList'
+import AlbumTitle from './AlbumTitle'
 
 
 
