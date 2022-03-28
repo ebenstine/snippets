@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     
     card1: {
         flexDirection: 'column',
-        backgroundColor: '#82bdcc',
+        backgroundColor: 'transparent',
         color: 'rgb(250, 250, 175)',
         marginLeft: '.5em',
         marginRight: '.5em',

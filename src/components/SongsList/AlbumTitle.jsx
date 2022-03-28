@@ -107,20 +107,21 @@ const useStyles = makeStyles((theme) => ({
     
 }));
 
-function SongTitle() {
-    const songDetails = useSelector(store => store.songDetails);
+function AlbumTitle() {
+    const albumDetails = useSelector(store => store.albumDetails);
     const dispatch = useDispatch();
     const params = useParams();
     const history = useHistory();
     const { textField, buttons, titleTitle, root, actions } = useStyles();
     const [ editable, setEditable] = useState(true);
+  
     console.log(params);
-    let song = {
-      title: songDetails.title
+    let album = {
+      title: albumDetails.title
   
     };
   
-    const [reviseDetails, setReviseDetails] = useState(song);
+    const [reviseDetails, setReviseDetails] = useState(album);
   
   
     const handleChange = (event) => {
@@ -195,4 +196,4 @@ function SongTitle() {
 
 
 
-export default SongTitle;
+export default AlbumTitle;
