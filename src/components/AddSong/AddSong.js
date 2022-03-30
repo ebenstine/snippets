@@ -61,9 +61,6 @@ const AddSong = () => {
   const albums = useSelector((store) => store.albums);
 
   const [url , setUrl] = useState ('no file was dropped');
-  
-  const [errorState, setErrorState] = useState(false);
-  const [helperText, setHelperText] = useState('');
   const [newSong, setNewSong] = useState({});
   
   useEffect(() => {
@@ -151,7 +148,6 @@ const AddSong = () => {
                   placeholder= "Title"
                   onChange={enterNewSong('title')}
                   value={newSong.title}
-                  error={errorState}
                   multiline className={textField}
                 />
           
@@ -444,7 +440,7 @@ const AddSong = () => {
                   <Uploader 
                     elevated={10}  
                     uploadComplete={uploadComplete}
-                    error={errorState}
+                   
             
                   />
          

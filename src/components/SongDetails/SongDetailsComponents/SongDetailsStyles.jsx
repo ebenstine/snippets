@@ -285,7 +285,7 @@ const useStyles = makeStyles(() => ({
     },
 
     menuDots: {
-        paddingLeft: '25em',
+        paddingLeft: '26em',
         color: '#233d4d'
     },
 

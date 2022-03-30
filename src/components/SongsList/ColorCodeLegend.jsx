@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
@@ -108,6 +109,7 @@ const useStyles = makeStyles((theme) => ({
 const ColorCodeLegend = () => {
     const {colorCode, colorCode1, colorCode2, colorCode3, menu, dialogTitle, titleText} = useStyles();
     const dispatch = useDispatch();
+    const history = useHistory();
     const [open, setOpen] = useState(false);
     const songs = useSelector((store) => store.songs)
     const albums = useSelector((store) => store.albums)
@@ -131,6 +133,11 @@ const ColorCodeLegend = () => {
     const handleCancel = () => {
       setOpen(false);
     }
+
+    const handleClick = (id) => {
+      history.push(`/albumPreview/${id}`)
+      //setOpen(false)
+  }
 
   
     return (
@@ -156,9 +163,9 @@ const ColorCodeLegend = () => {
             null
           }
           
-          <MenuItem onClick={handleClickOpen}>
+          
                   
-          </MenuItem>
+          
             <Dialog 
                   
                   open={open}
@@ -184,55 +191,62 @@ const ColorCodeLegend = () => {
               </Typography>
               
             </DialogTitle>
-        
-            <MenuItem
-              className={colorCode1}
-              
-              >
-              
-              <Link 
-                  to="/groupOne"
-                  style = {{color: '#1d778d',}}
-                  onClick={handleCancel}
-              >
-                
-                <img src='menuVinyl.png' style={{height:22, width:22}}></img>
-              </Link>
-            </MenuItem>
-            
+            {albums.map((album) => {
 
-          
+              return (
 
-            <MenuItem className={colorCode2}>
-            
-              <Link 
-                  to="/groupTwo"
-                  style = {{color: '#1d778d',}}
-                  onClick={handleCancel}
-                >
+
+                <>
+                  {album.id === 1 ? 
+                    <MenuItem
+                      className={colorCode1}
+                      onClick={handleClick}
+                    >
+                      
+                    <img src='menuVinyl.png' style={{height:22, width:22}}></img>
+                      
+                    </MenuItem>
+                  
+                  :
+
+                  album.id === 2 ?
+                    
+
                 
-                <img src='menuVinyl.png' style={{height:22, width:22}}></img>
-              
-              </Link>
-          
-            </MenuItem>
-            
-            {albums.length >= 3 ?
-              <MenuItem className={colorCode3}>
+
+                  <MenuItem 
+                    className={colorCode2}
+                    onClick={handleClick}
+
+                  >
+                  
+                      
+                    <img src='menuVinyl.png' style={{height:22, width:22}}></img>
+                    
+                    
                 
-                <Link 
-                    to="/groupThree"
-                    style = {{color: '#1d778d',}}
-                    onClick={handleCancel}
-                > 
-                
-                  <img src='menuVinyl.png' style={{height:22, width:22}}></img>
-                </Link>
-            
-              </MenuItem>
+                  </MenuItem>
+                  
+                  :
+
+                  album.id === 3 ?
+                    <MenuItem 
+                      className={colorCode3}
+                      onClick={handleClick}
+                      
+                    >
+                      
+                    <img src='menuVinyl.png' style={{height:22, width:22}}></img>
+                      
+                  
+                    </MenuItem>
             :
               null
             }
+              </>
+            )
+
+          })}
           
           </Dialog>
           

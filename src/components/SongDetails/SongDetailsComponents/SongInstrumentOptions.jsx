@@ -188,17 +188,17 @@ const SongInstrumentOptions = ({song}) => {
 
                         </DialogContent>
                               
-                        <DialogContent className={menuItems}>
-                
-                          <AddSongUpdates/>  
-                
-                        </DialogContent>
+                          <DialogContent className={menuItems}>
+                  
+                            <AddSongUpdates/>  
+                  
+                          </DialogContent>
 
-                        <DialogContent className={menuItems}>
-                
-                          <PerformanceGuide/>  
-                
-                        </DialogContent>
+                            <DialogContent className={menuItems}>
+                    
+                              <PerformanceGuide/>  
+                    
+                            </DialogContent>
                 
                 
                 

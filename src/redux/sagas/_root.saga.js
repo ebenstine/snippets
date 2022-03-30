@@ -4,6 +4,7 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import getAlbum from './setAlbumSelection.saga'
 import getAlbums from './getAlbums.saga'
+import getAlbumDetails from './getAlbumDetails.saga'
 import getSong from './setSongSelection.saga';
 import getRecording from './setAudioSelection.saga';
 import getAllRecordings from './getRecordings.saga';
@@ -35,6 +36,7 @@ export default function* rootSaga() {
     getSongs(),
     getAlbum(),
     getAlbums(),
+    getAlbumDetails(),
     getRecording(),
     getChordDiagrams(),
     getAllRecordings(),

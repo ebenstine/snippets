@@ -22,6 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import AddSong from '../AddSong/AddSong';
 import SongsList from '../SongsList/SongsList';
 import SongDetails from '../SongDetails/SongDetails';
+import AlbumPreview from '../SongsList/AlbumPreview';
 import GroupOne from '../SongsList/GroupOne';
 import GroupTwo from '../SongsList/GroupTwo';
 import GroupThree from '../SongsList/GroupThree';
@@ -130,6 +131,14 @@ function App() {
           path="/InactiveSongDetails/:id"
           >
           <InactiveSongDetails/>
+          </ProtectedRoute>
+
+          <ProtectedRoute
+          //logged in shows songDetails page else shows LoginPage
+          exact
+          path="/albumPreview/:id"
+          >
+          <AlbumPreview/>
           </ProtectedRoute>
 
           <ProtectedRoute

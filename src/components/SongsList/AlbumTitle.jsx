@@ -135,7 +135,7 @@ function AlbumTitle() {
   
   
     const handleCancel = () => {
-        history.push(`/songDetails/${params.id}`)
+        history.push(`/songsList`)
     }
   
   
