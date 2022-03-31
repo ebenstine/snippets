@@ -3,10 +3,11 @@ import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom'
 import { Box, Paper, Typography, Card, CardContent, Button } from '@material-ui/core';
-import useStyles from './SongsListStyles';
-import ColorCodeLegend from './ColorCodeLegend'
+import useStyles from './AlbumPreviewStyles';
+//import ColorCodeLegend from './ColorCodeLegend'
 import Feedback from '@material-ui/icons/Feedback';
 import AlbumTitle from './AlbumTitle'
+import ColorCodeLegend from '../SongsList/ColorCodeLegend';
 
 
 
@@ -107,8 +108,8 @@ function AlbumPreview() {
 
                                 <div key={album.id}>
 
-                                {album === albums[0] ?
-                                    editTitle ?
+                                
+                                    {editTitle ?
 
                                     <AlbumTitle/>
 
@@ -133,9 +134,7 @@ function AlbumPreview() {
                                             </Typography>
                                         </div>
                                         
-                                    :
-
-                                    null
+                                    
                                     }
                                         
                                         

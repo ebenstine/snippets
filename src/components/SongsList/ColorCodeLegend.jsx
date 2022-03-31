@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory, useParams } from 'react-router-dom';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
@@ -109,38 +108,36 @@ const useStyles = makeStyles((theme) => ({
 const ColorCodeLegend = () => {
     const {colorCode, colorCode1, colorCode2, colorCode3, menu, dialogTitle, titleText} = useStyles();
     const dispatch = useDispatch();
-    const history = useHistory();
-    const params = useParams();
     const [open, setOpen] = useState(false);
     const songs = useSelector((store) => store.songs)
     const albums = useSelector((store) => store.albums)
 
+    useEffect(() => {
     
+      dispatch({
+          type: 'FETCH_ALBUMS', 
+      
+      });
+      
+  },[]);
    
   
     const handleClickOpen = () => {
       
         setOpen(true)
-        dispatch({
-          type: 'FETCH_ALBUMS',
 
-        })
+      
     };
     const handleCancel = () => {
       setOpen(false);
     }
-
-    const handleGroups = (id) => {
-      history.push(`/albumPreview/${id}`)
-      //setOpen(false)
-  }
 
   
     return (
       <>
        
         <div>
-          
+          {albums.length >= 2 ?
             <IconButton>
               <MoreHoriz
 
@@ -155,12 +152,13 @@ const ColorCodeLegend = () => {
                 
               </MoreHoriz>
             </IconButton>
+          :
+            null
+          }
           
-          
-          
-          
+          <MenuItem onClick={handleClickOpen}>
                   
-          
+          </MenuItem>
             <Dialog 
                   
                   open={open}
@@ -186,62 +184,55 @@ const ColorCodeLegend = () => {
               </Typography>
               
             </DialogTitle>
-            {albums.map((album) => {
-
-              return (
-
-
-                <>
-                  {album.id === 1 ? 
-                    <MenuItem
-                      className={colorCode1}
-                      onClick={handleGroups(album.id)}
-                    >
-                      
-                    <img src='menuVinyl.png' style={{height:22, width:22}}></img>
-                      
-                    </MenuItem>
-                  
-                  :
-
-                  album.id === 2 ?
-                    
-
+        
+            <MenuItem
+              className={colorCode1}
+              
+              >
+              
+              <Link 
+                  to="/groupOne"
+                  style = {{color: '#1d778d',}}
+                  onClick={handleCancel}
+              >
                 
+                <img src='menuVinyl.png' style={{height:22, width:22}}></img>
+              </Link>
+            </MenuItem>
+            
 
-                  <MenuItem 
-                    className={colorCode2}
-                    onClick={handleGroups(album.id)}
+          
 
-                  >
-                  
-                      
-                    <img src='menuVinyl.png' style={{height:22, width:22}}></img>
-                    
-                    
+            <MenuItem className={colorCode2}>
+            
+              <Link 
+                  to="/groupTwo"
+                  style = {{color: '#1d778d',}}
+                  onClick={handleCancel}
+                >
                 
-                  </MenuItem>
-                  
-                  :
-
-                  album.id === 3 ?
-                    <MenuItem 
-                      className={colorCode3}
-                      onClick={handleGroups(album.id)}
-                      
-                    >
-                      
-                    <img src='menuVinyl.png' style={{height:22, width:22}}></img>
-                      
-                  
-                    </MenuItem>
+                <img src='menuVinyl.png' style={{height:22, width:22}}></img>
+              
+              </Link>
+          
+            </MenuItem>
+            
+            {albums.length >= 3 ?
+              <MenuItem className={colorCode3}>
+                
+                <Link 
+                    to="/groupThree"
+                    style = {{color: '#1d778d',}}
+                    onClick={handleCancel}
+                > 
+                
+                  <img src='menuVinyl.png' style={{height:22, width:22}}></img>
+                </Link>
+            
+              </MenuItem>
             :
               null
             }
-              </>
-            )
-
-          })}
           
           </Dialog>
           
