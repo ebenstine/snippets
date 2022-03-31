@@ -76,6 +76,11 @@ function GroupOne() {
 
     const handleClick = (songId) => {
         history.push(`/songDetails/${songId}`)
+
+    }
+
+    const handleAlbumDetails = (id) => {
+        history.push(`/albumPreview/${id}`)
     }
 
     const goBack = () => {
@@ -124,6 +129,7 @@ function GroupOne() {
                                                 
                                                 variant="overline"
                                                 className={heading}
+                                                onClick={handleAlbumDetails(album.id)}
                                                 
                                             >
                                         

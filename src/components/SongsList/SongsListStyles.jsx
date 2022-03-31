@@ -290,7 +290,10 @@ const useStyles = makeStyles(() => ({
         //borderRadius: '2px',
         paddingTop: '.2em',
         paddingBottom: '.2em',
-        fontSize: 15
+        fontSize: 15,
+        '&:hover': {
+            cursor:'pointer'
+        }
     },
 
     playIcon: {
