@@ -40,7 +40,7 @@ function AlbumPreview() {
     const songs = useSelector((store) => store.songs);
     const [ editTitle, setEditTitle] = useState(false);
     const [listView, setListView] = useState(true);
-   
+    console.log(params);
 
 
     
@@ -58,18 +58,18 @@ function AlbumPreview() {
 
     //get db info on page load
     useEffect(() => {
-        handleState();
+        
         dispatch({
             
             type: 'FETCH_ALBUM_DETAILS',
-            //payload: params.id,
+            payload: params.id
             
             //type: 'FETCH_SONGS'
 
         
         });
         
-    },[]);
+    },[dispatch]);
     //push forward to details page on click
 
     const handleEditTitle = () => {
@@ -80,9 +80,7 @@ function AlbumPreview() {
         history.push(`/songDetails/${songId}`)
     }
 
-    const goBack = () => {
-        history.push(`/groupOne`)
-    }
+    
 
     
     
@@ -101,13 +99,13 @@ function AlbumPreview() {
                         
                         <div className={menuDots}>
 
-                            <ColorCodeLegend/>
+                            {/*<ColorCodeLegend/>*/}
 
                         </div>
-                        {albums.map((album) => {
+                        {albumDetails.map((album) => {
                             return (
 
-                                <>
+                                <div key={album.id}>
 
                                 {album === albums[0] ?
                                     editTitle ?
@@ -144,7 +142,7 @@ function AlbumPreview() {
                                         
                                     
                                     
-                            </>
+                            </div>
                             )
                         })}
                         <Box 

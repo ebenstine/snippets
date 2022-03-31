@@ -34,7 +34,7 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
             res.send(result.rows)
         })
         .catch(error => {
-            console.log('error getting selected song', error);
+            console.log('error getting selected album', error);
         })
     }
 })

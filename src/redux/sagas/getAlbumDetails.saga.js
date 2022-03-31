@@ -13,7 +13,7 @@ function* getAlbumDetails(action) {
         yield put({ type: 'SET_ALBUM_DETAILS', payload: response.data})
 
     } catch (error) {
-        console.log('Song GET request failed', error)
+        console.log('Album GET request failed', error)
     }
 }
 

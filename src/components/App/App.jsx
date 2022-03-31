@@ -22,7 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import AddSong from '../AddSong/AddSong';
 import SongsList from '../SongsList/SongsList';
 import SongDetails from '../SongDetails/SongDetails';
-import AlbumPreview from '../SongsList/AlbumPreview';
+import AlbumPreview from '../AlbumPreview/AlbumPreview';
 import GroupOne from '../SongsList/GroupOne';
 import GroupTwo from '../SongsList/GroupTwo';
 import GroupThree from '../SongsList/GroupThree';

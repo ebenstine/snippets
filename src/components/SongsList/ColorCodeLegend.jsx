@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
@@ -110,31 +110,27 @@ const ColorCodeLegend = () => {
     const {colorCode, colorCode1, colorCode2, colorCode3, menu, dialogTitle, titleText} = useStyles();
     const dispatch = useDispatch();
     const history = useHistory();
+    const params = useParams();
     const [open, setOpen] = useState(false);
     const songs = useSelector((store) => store.songs)
     const albums = useSelector((store) => store.albums)
 
-    useEffect(() => {
     
-      dispatch({
-          type: 'FETCH_ALBUMS', 
-      
-      });
-      
-  },[]);
    
   
     const handleClickOpen = () => {
       
         setOpen(true)
+        dispatch({
+          type: 'FETCH_ALBUMS',
 
-      
+        })
     };
     const handleCancel = () => {
       setOpen(false);
     }
 
-    const handleClick = (id) => {
+    const handleGroups = (id) => {
       history.push(`/albumPreview/${id}`)
       //setOpen(false)
   }
@@ -144,7 +140,7 @@ const ColorCodeLegend = () => {
       <>
        
         <div>
-          {albums.length >= 2 ?
+          
             <IconButton>
               <MoreHoriz
 
@@ -159,9 +155,8 @@ const ColorCodeLegend = () => {
                 
               </MoreHoriz>
             </IconButton>
-          :
-            null
-          }
+          
+          
           
           
                   
@@ -200,7 +195,7 @@ const ColorCodeLegend = () => {
                   {album.id === 1 ? 
                     <MenuItem
                       className={colorCode1}
-                      onClick={handleClick}
+                      onClick={handleGroups(album.id)}
                     >
                       
                     <img src='menuVinyl.png' style={{height:22, width:22}}></img>
@@ -216,7 +211,7 @@ const ColorCodeLegend = () => {
 
                   <MenuItem 
                     className={colorCode2}
-                    onClick={handleClick}
+                    onClick={handleGroups(album.id)}
 
                   >
                   
@@ -232,7 +227,7 @@ const ColorCodeLegend = () => {
                   album.id === 3 ?
                     <MenuItem 
                       className={colorCode3}
-                      onClick={handleClick}
+                      onClick={handleGroups(album.id)}
                       
                     >
                       

@@ -5,6 +5,7 @@ import songs from './songs.reducer'
 import songState from './settingSong.reducer'
 import recordings from './selectedRecording.reducer';
 import songDetails from './songDetails.reducer';
+import albumDetails from './albumDetails.reducer';
 import allRecordings from './recordings.reducer'
 import chordDiagrams from './chordDiagrams.reducer';
 import albums from './albums.reducer'
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   songs,
   recordings,
   albums,
+  albumDetails,
   chordDiagrams,
   allRecordings,
   songDetails,
