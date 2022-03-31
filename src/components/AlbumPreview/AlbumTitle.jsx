@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function AlbumTitle() {
-    const albums = useSelector(store => store.albums);
+    const albumDetails = useSelector(store => store.albumDetails);
     const dispatch = useDispatch();
     const params = useParams();
     const history = useHistory();
@@ -117,7 +117,7 @@ function AlbumTitle() {
   
     console.log(params);
     let album = {
-      title: albums.title
+      title: albumDetails.title
   
     };
   

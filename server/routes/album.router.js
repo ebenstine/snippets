@@ -42,8 +42,9 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
 //post route new Song from AddSong component
 
 router.post('/', rejectUnauthenticated, (req, res) => {
-    const album= req.body;
-    const userId= req.user.id
+    
+    const userId= req.user.id;
+    const {title, release_range, primary_style } = req.body
   
   
     let queryText = `INSERT INTO "albums" (
@@ -53,7 +54,7 @@ router.post('/', rejectUnauthenticated, (req, res) => {
                        VALUES ($1, $2, $3, $4);
                        
                        `;
-    pool.query(queryText, [userId, album.title, album.release_range, album.primary_style])
+    pool.query(queryText, [userId, title, release_range, primary_style])
    
   
       .then(result => {

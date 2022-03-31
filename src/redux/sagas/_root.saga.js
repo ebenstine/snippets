@@ -11,6 +11,7 @@ import getAllRecordings from './getRecordings.saga';
 import getChordDiagrams from './getChordDiagrams.saga'
 import getSongs from './getSongs.saga';
 import postAlbum from './postAlbum.saga'
+import albumRevise from './reviseAlbum.saga';
 import postSong from './postSong.saga';
 import postRecording from './postRecording.saga';
 import postChordDiagram from './postChordDiagram.saga';
@@ -36,6 +37,7 @@ export default function* rootSaga() {
     getSongs(),
     getAlbum(),
     getAlbums(),
+    albumRevise(),
     getAlbumDetails(),
     getRecording(),
     getChordDiagrams(),
