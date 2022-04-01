@@ -46,6 +46,7 @@ function GroupThree() {
     const params = useParams();
     const songs = useSelector((store) => store.songs);
     const albums = useSelector((store) => store.albums);
+    const [ editTitle, setEditTitle] = useState(false);
 
     const [listView, setListView] = useState(true);
     console.log(songs);
@@ -75,6 +76,14 @@ function GroupThree() {
     },[]);
     //push forward to details page on click
 
+    const handleEditTitle = () => {
+        setEditTitle(editTitle => !editTitle)
+    }
+
+
+    const handleAlbumDetails = (id) => {
+        history.push(`/albumPreview/${id}`)
+    }
 
     const handleClick = (songId) => {
         history.push(`/songDetails/${songId}`)
@@ -108,28 +117,45 @@ function GroupThree() {
                         return (
                             <>
                                 {album === albums[2] ?
+                                    editTitle ?
 
-                        <div>
-                            <Typography 
-                                
-                                variant="overline"
-                                className={heading}
-                                
-                            >
+                                    <AlbumTitle/>
 
-                                <img src='groupsVinyl.png' style={{height:18, width:18}}></img> {album.title}
+                                    :
+                                    
+                                    
+                                    
+
+                                        
+                                        
+                                        <div onDoubleClick={handleEditTitle}>
+                                            <Typography 
+                                                
+                                                variant="overline"
+                                                className={heading}
+                                                onClick={handleAlbumDetails(album.id)}
+                                                
+                                            >
+                                        
+                                        <img src='groupsVinyl.png' style={{height:18, width:18}}></img>&nbsp;{album.title}
 
 
-                            </Typography>
-                        </div>
-                        :
+                                            </Typography>
+                                        </div>
+                                        
+                                    :
 
-                        null
-                        }
-
-                        </>
+                                    null
+                                    }
+                                        
+                                        
+                                        
+                                    
+                                    
+                            </>
                             )
-                        })}                     
+                        })}
+                                       
                         <Box 
                             display="flex"
                             flexWrap="wrap"

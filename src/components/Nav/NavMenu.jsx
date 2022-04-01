@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '-.45em',
         color: 'rgb(230, 252, 255)',
         '&:hover': {
-        color:'#67a2b1'
+        color:'#fff7ac'
         }
 
     },
