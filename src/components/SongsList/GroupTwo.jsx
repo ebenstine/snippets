@@ -37,6 +37,7 @@ function GroupTwo() {
     
     const songs = useSelector((store) => store.songs);
     const albums = useSelector((store) => store.albums);
+    const [ editTitle, setEditTitle] = useState(false);
 
     const [listView, setListView] = useState(true);
     console.log(songs);
@@ -69,6 +70,16 @@ function GroupTwo() {
 
     const handleClick = (songId) => {
         history.push(`/songDetails/${songId}`)
+
+    }
+
+    const handleEditTitle = () => {
+        setEditTitle(editTitle => !editTitle)
+    }
+
+
+    const handleAlbumDetails = (id) => {
+        history.push(`/albumPreview/${id}`)
     }
 
     const goBack = () => {
@@ -96,13 +107,27 @@ function GroupTwo() {
 
                         {albums.map((album) => {
                             return (
+
                                 <>
-                                    {album === albums[1] ?
-                                        <div>
+
+                                {album === albums[1] ?
+                                    editTitle ?
+
+                                    <AlbumTitle/>
+
+                                    :
+                                    
+                                    
+                                    
+
+                                        
+                                        
+                                        <div onDoubleClick={handleEditTitle}>
                                             <Typography 
                                                 
                                                 variant="overline"
                                                 className={heading}
+                                                onClick={handleAlbumDetails(album.id)}
                                                 
                                             >
                                         
@@ -111,9 +136,16 @@ function GroupTwo() {
 
                                             </Typography>
                                         </div>
+                                        
                                     :
-                                        null
+
+                                    null
                                     }
+                                        
+                                        
+                                        
+                                    
+                                    
                             </>
                             )
                         })}

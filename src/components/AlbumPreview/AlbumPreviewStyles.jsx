@@ -175,7 +175,7 @@ const useStyles = makeStyles(() => ({
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 16,
         marginLeft: '-.4em',
-        marginTop: 'auto',
+        marginTop: '3em',
         color: '#233d4d',
         '&:hover': {
             
@@ -288,7 +288,7 @@ const useStyles = makeStyles(() => ({
         borderBottom: '1px solid #2a4f64',
         color: '#2a4f64',
         //borderRadius: '2px',
-        paddingTop: '.2em',
+        marginTop: '3em',
         paddingBottom: '.2em',
         fontSize: 15
     },

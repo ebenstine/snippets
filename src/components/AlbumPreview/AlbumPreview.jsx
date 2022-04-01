@@ -19,8 +19,14 @@ function AlbumPreview() {
             
             
             title1, 
+            title2,
+            title3,
             player1,
+            player2,
+            player3,
             card1, 
+            card2,
+            card3,
             paper, 
             menuDots,
             blankPage,
@@ -61,11 +67,11 @@ function AlbumPreview() {
     useEffect(() => {
         
         dispatch({
-            
+            type: 'FETCH_SONGS',
             type: 'FETCH_ALBUM_DETAILS',
-            payload: params.id
+            payload: params.id,
             
-            //type: 'FETCH_SONGS'
+            
 
         
         });
@@ -94,7 +100,7 @@ function AlbumPreview() {
        
         <>
 
-            {listView ?  
+             
                                     
                     <Paper className={paper} elevation={10}>
                         
@@ -103,8 +109,10 @@ function AlbumPreview() {
                             {/*<ColorCodeLegend/>*/}
 
                         </div>
+                        
                         {albumDetails.map((album) => {
                             return (
+                                <>
 
                                 <div key={album.id}>
 
@@ -120,7 +128,11 @@ function AlbumPreview() {
 
                                         
                                         
-                                        <div onDoubleClick={handleEditTitle}>
+                                        <div 
+                                            onDoubleClick={handleEditTitle}
+                                            style={{marginTop:'3.3em'}}
+                                        
+                                        >
                                             <Typography 
                                                 
                                                 variant="overline"
@@ -141,9 +153,8 @@ function AlbumPreview() {
                                         
                                     
                                     
-                            </div>
-                            )
-                        })}
+                            
+                            
                         <Box 
 
                             display="flex"
@@ -151,7 +162,9 @@ function AlbumPreview() {
                             alignContent="flex-start"
                             
                         >
-                        {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
+                        {album.id === 1 ?
+                            <>
+                            
                                 {songs.map((song) => {
                                     return (
                                         <>
@@ -221,68 +234,203 @@ function AlbumPreview() {
                                 
                                 </>
                             :
+                            
                             null
-
+                            
                             }  
+                            
                             </> 
                             );
 
                         })}
+                    </>
+
+                    :
+                    
+                    album.id === 2 ?
+                        <>
+
+                            {songs.map((song) => {
+                                return (
+                                    <>
+                                        {song.is_active == true ?
+                                            <>
+                                
+                                                {song.priority === '2' ? 
+                                                    
+                                                    <Box
+                                                        paddingTop={2}
+                                                        paddingRight={3.5} 
+                                                    
+                                                    >
+                                                        <Card
+                                                            
+                                                            raised={true}
+                                                            className={card2}
+                                                            
+                                            
+                                                        > 
+                                                                <section>
+
+                                                                    <CardContent 
+                                                    
+                                                                        item xs={1} key={song} 
+                                                                        
+                                                
+                                                                    >  
+                                                    
+                                                                        <Typography 
+                                                                            variant="overline" 
+                                                                            className={title2}
+                                                                            onClick={() => handleClick(song.song_id)} 
+
+                                                                        >
+                                                                            
+                                                                            {song.title}
+                                                                            
+                                                                        </Typography>
+                                                        
+                                                    
+
+                                                                    </CardContent>
+                                                
+                                                                </section>
+                                                                    
+                                                                    <section className={player2}>
+                                                                
+                                                                        <AudioPlayer
+
+                                                                            audioFiles={[{ src: song.preview_audio }]}
+
+                                                                        />
+                                                                    </section>
+
+                                                        </Card> 
+                                                    </Box>
+                                                : 
+                                        
+                                                null
+                                                
+
+                                                }
+                                
+                                                <br></br>
+                                                <br></br>
+                            
+                                            </>
+                                        :
+                        
+                                        null
+                        
+                                        }  
+                        
+                                    </> 
+                                );
+
+                            })}
+
+                        </>
+                    :
+
+                    album.id === 3 ?
+
+                        <>
+
+                            {songs.map((song) => {
+                                return (
+                                    <>
+                                        {song.is_active == true ?
+                                            <>
+                                
+                                                {song.priority === '3' ? 
+                                                    
+                                                    <Box
+                                                        paddingTop={2}
+                                                        paddingRight={3.5} 
+                                                    
+                                                    >
+                                                        <Card
+                                                            
+                                                            raised={true}
+                                                            className={card3}
+                                                            
+                                            
+                                                        > 
+                                                                <section>
+
+                                                                    <CardContent 
+                                                    
+                                                                        item xs={1} key={song} 
+                                                                        
+                                                
+                                                                    >  
+                                                    
+                                                                        <Typography 
+                                                                            variant="overline" 
+                                                                            className={title3}
+                                                                            onClick={() => handleClick(song.song_id)} 
+
+                                                                        >
+                                                                            
+                                                                            {song.title}
+                                                                            
+                                                                        </Typography>
+                                                        
+                                                    
+
+                                                                    </CardContent>
+                                                
+                                                                </section>
+                                                                    
+                                                                    <section className={player3}>
+                                                                
+                                                                        <AudioPlayer
+
+                                                                            audioFiles={[{ src: song.preview_audio }]}
+
+                                                                        />
+                                                                    </section>
+
+                                                        </Card> 
+                                                    </Box>
+                                                : 
+                                        
+                                                null
+                                                
+
+                                                }
+                                
+                                                <br></br>
+                                                <br></br>
+                            
+                                            </>
+                                        :
+                        
+                                        null
+                        
+                                        }  
+                        
+                                    </> 
+                                );
+
+                            })}
+
+                        </>
+                    :
+
+                    null
+
+                    }
+                        
 
                 </Box> 
+                </div>
+            </>
+                )
+            })}
 
             </Paper>
-    :
-                    //this conditional render is meant essentially as a welcome/here's what to do
-                    //message for when the user might explore the app before uploading anything.
-
-                    <Paper className={blankPage}>
-                    
-                    <div>
-
-                        <Card 
-                            className={messageCard}
-                            raised={true}
-                        >
-                        
-                            <div>
-                                
-                                <Feedback className={feedback}/>
-                                
-                            </div>
-                        
-                                <div className={messageDiv}>
-                                    
-                                    <Typography
-                        
-                                        align="center"
-                                        variant="h6"
-                                        className={message}
-                        
-                                    >
-                                    
-                                        This page will contain a compartmentalized view of songs in the first priority tier only.
-
-                                    </Typography>
-                                
-                                </div>
-                        
-                        </Card>
-                            
-                            <Button 
-                                onClick={goBack}
-                                className={hackButton}
-                                variant="outlined"
-                                >See List
-                            </Button>
-
-                    </div>
-
-                </Paper>
-                                    
-            }
-
-
+    
         </>
             
 );

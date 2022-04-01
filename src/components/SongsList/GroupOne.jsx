@@ -158,7 +158,7 @@ function GroupOne() {
                             alignContent="flex-start"
                             
                         >
-                        {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
+                            
                                 {songs.map((song) => {
                                     return (
                                         <>
