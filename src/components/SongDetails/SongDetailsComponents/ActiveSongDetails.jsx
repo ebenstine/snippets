@@ -352,7 +352,7 @@ export default function ActiveSongDetails(){
                                                             </div>
                                                     }
                             
-                                                    
+                                                    <br></br>
                             
                                                     {editINotes ?
                                                 

@@ -69,14 +69,18 @@ const useStyles = makeStyles((theme) => ({
                 border:' 1.5px solid #3b95ac'
             
             },
+
+           
         },
     },
 
     textField: {
         
-        width: '34ch',
+        width: '31ch',
         marginBottom: '1em',
-        fontSize: 20
+        marginTop: '3em',
+        fontSize: 20,
+        paddingLeft:'10em'
     },
 
     subheading: {
@@ -163,6 +167,7 @@ function AlbumTitle() {
                 
                 
                 <FormControl  >
+                    <div style={{marginTop: '3em', marginRight:'3em'}}>
                     <form className={root} onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
                             label="Update Title" 
@@ -179,6 +184,7 @@ function AlbumTitle() {
                         <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
                         </div>
                     </form>
+                    </div>
                 </FormControl>
                 :
                 

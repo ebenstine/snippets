@@ -17,7 +17,7 @@ function Nav() {
       
       <Link to="/about">
         
-        <Typography variant="overline" style={{fontSize:19}} className="nav-title">▶ SNIPPETS</Typography>
+        <Typography style={{fontSize:19}} className="nav-title">/|| Snippets</Typography>
         
       </Link>
       <div>

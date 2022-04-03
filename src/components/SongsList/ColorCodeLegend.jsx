@@ -156,9 +156,7 @@ const ColorCodeLegend = () => {
             null
           }
           
-          <MenuItem onClick={handleClickOpen}>
-                  
-          </MenuItem>
+          
             <Dialog 
                   
                   open={open}
