@@ -117,6 +117,7 @@ const useStyles = makeStyles(() => ({
         marginLeft: '.65em',
         marginRight: '.45em',
         color: '#1a313f',
+        rhapThemeColor: '#blue',
         border: '1.5px solid #1d778d',
         borderRadius: '.25em',
         paddingTop: '.5em',
