@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom'
-import { Box, Paper, Typography, Card, CardContent, Button } from '@material-ui/core';
+import { Box, Paper, Typography, Card, CardContent, Dialog, Button } from '@material-ui/core';
 import useStyles from './AlbumPreviewStyles';
 //import ColorCodeLegend from './ColorCodeLegend'
 import Feedback from '@material-ui/icons/Feedback';
@@ -28,7 +28,8 @@ function AlbumPreview() {
             card2,
             card3,
             paper, 
-            heading
+            heading,
+            summary
             
             
         } = useStyles();
@@ -40,7 +41,8 @@ function AlbumPreview() {
     const albums = useSelector((store) => store.albums);
     const songs = useSelector((store) => store.songs);
     const [ editTitle, setEditTitle] = useState(false);
-    const [listView, setListView] = useState(true);
+    const [ open, setOpen ] = useState(false);
+
     console.log(params);
 
     //get db info on page load
@@ -55,6 +57,14 @@ function AlbumPreview() {
         });
         
     },[dispatch]);
+
+    const handleClickOpen = () => {
+        setOpen(true)
+    }
+
+    const handleClose = () => {
+        setOpen(false)
+      }
   
 
     const handleEditTitle = () => {
@@ -87,10 +97,10 @@ function AlbumPreview() {
                                     <div 
 
                                         onDoubleClick={handleEditTitle}
-                                        style={{marginTop:'3.3em'}}
+                                        style={{marginTop:'-1em'}}
                                         
                                     >
-                                        <Typography variant="overline" className={heading}>
+                                        <Typography variant="overline" className={heading} onClick={handleClickOpen}>
                                                 
                                             <img src='groupsVinyl.png' style={{height:18, width:18}}></img>&nbsp;{album.title}
 
@@ -100,6 +110,48 @@ function AlbumPreview() {
                                         
                                     
                                 }
+
+                                <Dialog
+                                    PaperProps={{
+                    
+                                        style: { border: "1px solid #2a4f64", background: "rgb(199, 246, 252)" }
+                    
+                                    }}
+                                    open={open} 
+                                    
+                                    onClose={handleClose}
+                                
+                                >
+                                <div className={summary}>
+                                    <Typography 
+        
+                                        align="center" 
+                                        variant = "h6" 
+
+                                    >
+
+                                        
+                                        Targeting release for:&nbsp;
+                                       {album.release_range}
+
+                                    </Typography>
+
+                                    <Typography 
+        
+                                        align="center" 
+                                        variant = "h6" 
+                                    >
+
+                                        
+                                        The primary style of these songs is:&nbsp;
+                                       {album.primary_style}
+
+                                    </Typography>
+                                </div>
+
+
+
+                                </Dialog>
 
                                     <Box 
 

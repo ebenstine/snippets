@@ -288,7 +288,7 @@ const useStyles = makeStyles(() => ({
         borderBottom: '1px solid #2a4f64',
         color: '#2a4f64',
         //borderRadius: '2px',
-        marginTop: '3em',
+        //marginTop: '1em',
         paddingBottom: '.2em',
         fontSize: 15
     },
@@ -297,21 +297,11 @@ const useStyles = makeStyles(() => ({
         color: '#fde76c'
     },
 
-    hackButton: {
-        color: '#233d4d',
-        '&:hover': {
-            color:'#77c568',
-            },
-        background: 'transparent',
-        marginLeft: '20em',
-        border: '1px solid #3b95ac',
-        alignItems: 'center',
-        '&:hover': {
-            
-            background:'#fde76c',
-            
-            },
-        
+    summary:{
+        paddingLeft: '3em',
+        paddingRight: '3em',
+        paddingTop: '2em',
+        paddingBottom:'2em'
     }
 
     

@@ -167,7 +167,7 @@ function AlbumTitle() {
                 
                 
                 <FormControl  >
-                    <div style={{marginTop: '3em', marginRight:'3em'}}>
+                    <div style={{}}>
                     <form className={root} onSubmit={handleSubmit} autoComplete="off" >
                         <TextField 
                             label="Update Title" 

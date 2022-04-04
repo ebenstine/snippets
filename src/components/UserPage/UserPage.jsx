@@ -93,7 +93,7 @@ const handleCancel = () => {
               <Dialog
                 PaperProps={{
                   
-                  style: { border: "1px solid #2a4f64" }
+                  style: { border: "1px solid #2a4f64", background: "rgb(199, 246, 252)" }
 
                 }}
                 open={open} 
