@@ -8,6 +8,7 @@ import useStyles from './AlbumPreviewStyles';
 import Feedback from '@material-ui/icons/Feedback';
 import AlbumTitle from './AlbumTitle'
 import ColorCodeLegend from '../SongsList/ColorCodeLegend';
+import './slider.css'
 
 
 
@@ -29,7 +30,8 @@ function AlbumPreview() {
             card3,
             paper, 
             heading,
-            summary
+            summary,
+            slider
             
             
         } = useStyles();
@@ -215,6 +217,18 @@ function AlbumPreview() {
                                                                                             <AudioPlayer
 
                                                                                                 audioFiles={[{ src: song.preview_audio }]}
+                                                                                                hideForward="true"
+                                                                                                hideLoop="true"
+                                                                                                hideRewind="true"
+                                                                                                playIcon="playIcon.png"
+                                                                                                playHoverIcon="playIcon.png"
+                                                                                                pauseIcon="pauseIcon.png"
+                                                                                                pauseHoverIcon="pauseIcon.png"
+                                                                                                volumeIcon="volume.png"
+                                                                                                volumeEngagedIcon="volume.png"
+                                                                                                muteIcon="volume.png"
+                                                                                                muteEngagedIcon="volume.png"
+                                                                                                sliderClass="slider"
 
                                                                                             />
                                                                                         </section>
@@ -297,6 +311,17 @@ function AlbumPreview() {
                                                                                             <AudioPlayer
 
                                                                                                 audioFiles={[{ src: song.preview_audio }]}
+                                                                                                hideForward="true"
+                                                                                                hideLoop="true"
+                                                                                                hideRewind="true"
+                                                                                                playIcon="playIcon.png"
+                                                                                                playHoverIcon="playIcon.png"
+                                                                                                pauseIcon="pauseIcon.png"
+                                                                                                pauseHoverIcon="pauseIcon.png"
+                                                                                                volumeIcon="volume.png"
+                                                                                                volumeEngagedIcon="volume.png"
+                                                                                                muteIcon="volume.png"
+                                                                                                muteEngagedIcon="volume.png"
 
                                                                                             />
                                                                                         </section>
@@ -383,6 +408,18 @@ function AlbumPreview() {
                                                                                             <AudioPlayer
 
                                                                                                 audioFiles={[{ src: song.preview_audio }]}
+                                                                                                hideForward="true"
+                                                                                                hideLoop="true"
+                                                                                                hideRewind="true"
+                                                                                                playIcon="playIcon.png"
+                                                                                                playHoverIcon="playIcon.png"
+                                                                                                pauseIcon="pauseIcon.png"
+                                                                                                pauseHoverIcon="pauseIcon.png"
+                                                                                                volumeIcon="volume.png"
+                                                                                                volumeEngagedIcon="volume.png"
+                                                                                                muteIcon="volume.png"
+                                                                                                muteEngagedIcon="volume.png"
+                                                                                                
 
                                                                                             />
                                                                                         </section>

@@ -302,6 +302,18 @@ const RecordingsList = () => {
                                                                     <AudioPlayer
 
                                                                         audioFiles={[{ src:recording.src}]}
+                                                                        hideForward="true"
+                                                                        hideLoop="true"
+                                                                        hideRewind="true"
+                                                                        playIcon="playIcon.png"
+                                                                        playHoverIcon="playIcon.png"
+                                                                        pauseIcon="pauseIcon.png"
+                                                                        pauseHoverIcon="pauseIcon.png"
+                                                                        volumeIcon="volume.png"
+                                                                        volumeEngagedIcon="volume.png"
+                                                                        muteIcon="volume.png"
+                                                                        muteEngagedIcon="volume.png"
+                                                                        
 
                                                                     />
                                                                 </section>

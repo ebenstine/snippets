@@ -302,6 +302,10 @@ const useStyles = makeStyles(() => ({
         paddingRight: '3em',
         paddingTop: '2em',
         paddingBottom:'2em'
+    },
+
+    slider: {
+        color:'#2a4f64'
     }
 
     
