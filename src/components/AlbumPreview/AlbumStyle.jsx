@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { Paper, MenuItem, Button, Typography, Select } from '@material-ui/core';
+import { Paper, MenuItem, Button, Typography } from '@material-ui/core';
 import { TextField } from '@mui/material';
 import { FormControl } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { CheckCircle } from '@material-ui/icons';
 import { Cancel } from '@material-ui/icons';
+import StyleIcon from '@mui/icons-material/Style';
 
 
 
@@ -107,6 +108,36 @@ const useStyles = makeStyles((theme) => ({
         align: 'center'
         
     },
+    albumSpec:{
+        marginLeft: '3em',
+        marginRight: '3em',
+        //marginTop: '2em',
+        marginBottom:'1em',
+        color: '#2a4f64',
+        display: 'flex',
+        justifyContent:'center',
+        background: 'rgb(230, 252, 255)',
+        '&:hover': {
+          background:'#94d9eb',
+          cursor: 'pointer'
+          },
+        border: "1px solid #eb9148",
+        borderRadius: "3px",
+        paddingLeft:'1em',
+        paddingRight:'1em',
+        
+        
+        
+    },
+    detailHeading:{
+        marginLeft: '3em',
+        marginRight: '3em',
+        //marginTop: '2em',
+        //marginBottom:'2em',
+        color: '#2a4f64',
+        
+        
+    },
 
     
 }));
@@ -116,8 +147,9 @@ function AlbumStyle() {
     const dispatch = useDispatch();
     const params = useParams();
     const history = useHistory();
-    const { textField, buttons, titleTitle, root, actions } = useStyles();
-    const [ editable, setEditable] = useState(true);
+    const { textField, buttons, titleTitle, root, actions, detailHeading, albumSpec } = useStyles();
+    const [ editable, setEditable] = useState(false);
+    const [ updated, setUpdated] = useState(false);
   
     console.log(params);
     let album = {
@@ -153,47 +185,89 @@ function AlbumStyle() {
         payload: revisedAlbum
       });
       setEditable(editable => !editable);
+      setUpdated(updated => !updated);
     }
   
     return (
         <>
-                 
-                {/*<div onDoubleClick={handleEditable}>
-                    <Typography variant="h5" component="h5" className={titleTitle}>
-                        Change the title?  I know this is hard.
-                        </div>
-                    </Typography>*/}
-                {editable? 
+
+            {albumDetails.map((album) => {
+                
+                return (    
+                    <>
+                    
+                        {editable? 
                 
                 
-                <FormControl  >
-                    <div style={{}}>
-                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
-                        <TextField 
-                            label="Update Primary Style" 
-                            name="primary_style"
-                            
-                            onDoubleClick={handleEditable}
-                            margin="dense" 
-                            multiline className={textField} 
-                            onChange={handleChange}
-                            
-                            />
-                        <div className={actions}> 
-                        <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
-                        <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
-                        </div>
-                    </form>
-                    </div>
-                </FormControl>
-                :
-                
-                <div onDoubleClick={handleEditable}>
-                    <Typography variant="overline" className={titleTitle}>
-                    {`${reviseDetails.primary_style}`}
-                    </Typography>
-                </div>
-            }
+                            <FormControl  >
+                                <div style={{}}>
+                                <form className={root} onSubmit={handleSubmit} autoComplete="off" >
+                                    <TextField 
+                                        label="Update Primary Style" 
+                                        name="primary_style"
+                                        
+                                        onDoubleClick={handleEditable}
+                                        margin="dense" 
+                                        multiline className={textField} 
+                                        onChange={handleChange}
+                                        
+                                        />
+                                    <div className={actions}> 
+                                    <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
+                                    <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
+                                    </div>
+                                </form>
+                                </div>
+                            </FormControl>
+                        :
+
+                            <div onDoubleClick={handleEditable}>
+
+                                {updated ?
+                                    
+                                    <Typography variant="overline" className={titleTitle}>
+                                    {`${reviseDetails.primary_style}`}
+                                    </Typography>
+                                :
+                                    <>
+                                                    
+                                        <div className={detailHeading}>
+                                            
+                                            <Typography align='center'>
+
+                                                Style:
+                                                
+                                            </Typography>
+
+                                        </div>
+                                        
+
+                                        <div className={albumSpec}>
+                                            <div style={{display:'flex', flexWrap:'wrap', marginTop:'.2em'}}>
+                                                <StyleIcon/>
+                                            </div>
+
+                                            <Typography 
+
+                                                align="center" 
+                                                variant="h6"
+
+                                            >
+                                            
+                                            &nbsp;{album.primary_style}
+                                           
+                                            
+                                            </Typography>
+                                        </div>
+
+                                    </>
+                                }
+
+                            </div>
+                        }
+                    </>
+                )
+            })}
             
         </>
    

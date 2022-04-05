@@ -304,16 +304,52 @@ const useStyles = makeStyles(() => ({
         color: '#fde76c'
     },
 
-    summary:{
+    detailHeading:{
         marginLeft: '3em',
         marginRight: '3em',
-        marginTop: '2em',
-        marginBottom:'2em'
+        //marginTop: '2em',
+        //marginBottom:'2em',
+        color: '#2a4f64',
+        
     },
 
     slider: {
         color:'#2a4f64'
-    }
+    },
+
+    editField: {
+        display:'flex',
+        justifyContent:'center'
+    },
+
+    dialogHeading: {
+        color: '#2a4f64',
+        borderBottom: '1px solid #2a4f64',
+        fontSize: 20,
+        display:'flex',
+        justifyContent:'center'
+        
+      }, 
+    albumSpec:{
+        marginLeft: '3em',
+        marginRight: '3em',
+        //marginTop: '2em',
+        marginBottom:'1em',
+        color: '#2a4f64',
+        display: 'flex',
+        justifyContent:'center',
+        background: 'rgb(230, 252, 255)',
+        '&:hover': {
+          background:'#94d9eb',
+          cursor: 'pointer'
+          },
+        border: "1px solid #eb9148",
+        borderRadius: "3px",
+        paddingLeft:'1em',
+        paddingRight:'1em',
+        
+        
+    },
 
     
     

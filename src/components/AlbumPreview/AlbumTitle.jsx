@@ -8,6 +8,7 @@ import { FormControl } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { CheckCircle } from '@material-ui/icons';
 import { Cancel } from '@material-ui/icons';
+import AlbumIcon from '@mui/icons-material/Album';
 
 
 
@@ -107,6 +108,34 @@ const useStyles = makeStyles((theme) => ({
         align: 'center'
         
     },
+    albumSpec:{
+        marginLeft: '3em',
+        marginRight: '3em',
+        //marginTop: '2em',
+        marginBottom:'1em',
+        color: '#2a4f64',
+        display: 'flex',
+        justifyContent:'center',
+        background: 'rgb(230, 252, 255)',
+        '&:hover': {
+          background:'#94d9eb',
+          cursor: 'pointer'
+          },
+        border: "1px solid #eb9148",
+        borderRadius: "3px",
+        paddingLeft:'1em',
+        paddingRight:'1em',
+        
+        
+    },
+    detailHeading:{
+        marginLeft: '3em',
+        marginRight: '3em',
+        //marginTop: '2em',
+        //marginBottom:'2em',
+        color: '#2a4f64',
+        
+    },
 
     
 }));
@@ -116,8 +145,9 @@ function AlbumTitle() {
     const dispatch = useDispatch();
     const params = useParams();
     const history = useHistory();
-    const { textField, buttons, titleTitle, root, actions } = useStyles();
-    const [ editable, setEditable] = useState(true);
+    const { textField, buttons, titleTitle, root, actions, albumSpec, detailHeading } = useStyles();
+    const [ editable, setEditable] = useState(false);
+    const [ updated, setUpdated] = useState(false);
   
     console.log(params);
     let album = {
@@ -152,48 +182,88 @@ function AlbumTitle() {
         type: 'REVISE_ALBUM',
         payload: revisedAlbum
       });
-      setEditable(editable => !editable);
+        setEditable(editable => !editable);
+        setUpdated(updated => !updated);
     }
   
     return (
         <>
-                 
-                {/*<div onDoubleClick={handleEditable}>
-                    <Typography variant="h5" component="h5" className={titleTitle}>
-                        Change the title?  I know this is hard.
-                        </div>
-                    </Typography>*/}
-                {editable? 
+
+            {albumDetails.map((album) => {
+                
+                return (    
+                    <>
+                    
+                        {editable? 
                 
                 
-                <FormControl  >
-                    <div style={{}}>
-                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
-                        <TextField 
-                            label="Update Title" 
-                            name="title"
-                            
-                            onDoubleClick={handleEditable}
-                            margin="dense" 
-                            multiline className={textField} 
-                            onChange={handleChange}
-                            
-                            />
-                        <div className={actions}> 
-                        <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
-                        <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
-                        </div>
-                    </form>
-                    </div>
-                </FormControl>
-                :
-                
-                <div onDoubleClick={handleEditable}>
-                    <Typography variant="overline" className={titleTitle}>
-                    {`${reviseDetails.title}`}
-                    </Typography>
-                </div>
-            }
+                            <FormControl  >
+                                <div style={{}}>
+                                <form className={root} onSubmit={handleSubmit} autoComplete="off" >
+                                    <TextField 
+                                        label="Update Title" 
+                                        name="title"
+                                        
+                                        onDoubleClick={handleEditable}
+                                        margin="dense" 
+                                        multiline className={textField} 
+                                        onChange={handleChange}
+                                        
+                                        />
+                                    <div className={actions}> 
+                                    <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
+                                    <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
+                                    </div>
+                                </form>
+                                </div>
+                            </FormControl>
+                        :
+
+                            <div onDoubleClick={handleEditable}>
+
+                                {updated ?
+                                    
+                                    <Typography variant="overline" className={titleTitle}>
+                                    {`${reviseDetails.title}`}
+                                    </Typography>
+                                :
+                                    <>
+                                                    
+                                        <div className={detailHeading}>
+                                            
+                                            <Typography align='center'>
+
+                                                Working Title:
+                                                
+                                            </Typography>
+
+                                        </div>
+                                        
+
+                                        <div className={albumSpec}>
+                                            <div style={{display:'flex', flexWrap:'wrap', marginTop:'.2em'}}>
+                                                <AlbumIcon/>
+                                            </div>
+                                            <Typography 
+
+                                                align="center" 
+                                                variant="h6"
+
+                                            >
+
+                                                &nbsp;{album.title}
+
+                                            </Typography>
+                                        </div>
+
+                                    </>
+                                }
+
+                            </div>
+                        }
+                    </>
+                )
+            })}
             
         </>
    

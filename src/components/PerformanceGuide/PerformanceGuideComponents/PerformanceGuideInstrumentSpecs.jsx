@@ -613,7 +613,7 @@ function PerformanceGuideInstrumentSpecs() {
                                                     >
 
                                                 
-                                                    >
+                                                    
                                                 
                                                         <Typography variant="overline" className={specText}>
 
