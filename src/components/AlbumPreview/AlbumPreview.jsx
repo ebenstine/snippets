@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom'
-import { Box, Paper, Typography, Card, CardContent, Dialog, Button } from '@material-ui/core';
+import { Box, Paper, Typography, Card, CardContent, Dialog, DialogTitle, Button } from '@material-ui/core';
 import useStyles from './AlbumPreviewStyles';
 //import ColorCodeLegend from './ColorCodeLegend'
 import Feedback from '@material-ui/icons/Feedback';
 import AlbumTitle from './AlbumTitle'
+import AlbumStyle from './AlbumStyle'
+import AlbumReleaseRange from './AlbumReleaseRange'
 import ColorCodeLegend from '../SongsList/ColorCodeLegend';
 import './slider.css'
 
@@ -42,6 +44,8 @@ function AlbumPreview() {
     const albumDetails = useSelector((store) => store.albumDetails);
     const albums = useSelector((store) => store.albums);
     const songs = useSelector((store) => store.songs);
+    const [ editRange, setEditRange] = useState(false);
+    const [ editStyle, setEditStyle] = useState(false);
     const [ editTitle, setEditTitle] = useState(false);
     const [ open, setOpen ] = useState(false);
 
@@ -72,6 +76,12 @@ function AlbumPreview() {
     const handleEditTitle = () => {
         setEditTitle(editTitle => !editTitle)
     }
+    const handleEditRange = () => {
+        setEditRange(editRange => !editRange)
+    }
+    const handleEditStyle = () => {
+        setEditStyle(editStyle => !editStyle)
+    }
 
     const handleClick = (songId) => {
         history.push(`/songDetails/${songId}`)
@@ -88,30 +98,24 @@ function AlbumPreview() {
                         
                         <>
 
-                            <div key={album.id}>
+                        <div key ={album.id}>
 
-                                {editTitle ?
+                           
+                            <div 
 
-                                    <AlbumTitle/>
-
-                                :
-                                    
-                                    <div 
-
-                                        onDoubleClick={handleEditTitle}
-                                        style={{marginTop:'-1em'}}
+                                //onDoubleClick={handleEditTitle}
+                                style={{marginTop:'-1em'}}
+                                
+                            >
+                                <Typography variant="overline" className={heading} onClick={handleClickOpen}>
                                         
-                                    >
-                                        <Typography variant="overline" className={heading} onClick={handleClickOpen}>
-                                                
-                                            <img src='groupsVinyl.png' style={{height:18, width:18}}></img>&nbsp;{album.title}
+                                    <img src='groupsVinyl.png' style={{height:18, width:18}}></img>&nbsp;{album.title}
 
-                                        </Typography>
+                                </Typography>
+                                
                                         
-                                    </div>
-                                        
-                                    
-                                }
+                            </div>        
+                                
 
                                 <Dialog
                                     PaperProps={{
@@ -124,7 +128,16 @@ function AlbumPreview() {
                                     onClose={handleClose}
                                 
                                 >
-                                <div className={summary}>
+
+                                {editRange ? 
+
+                                <AlbumReleaseRange/> 
+                                
+                                :
+                                    
+
+                                
+                                <div className={summary} onDoubleClick={handleEditRange}>
                                     <Typography 
         
                                         align="center" 
@@ -137,6 +150,16 @@ function AlbumPreview() {
                                        {album.release_range}
 
                                     </Typography>
+                                </div>
+                                
+                                
+                                }
+
+                                {editStyle ?
+
+                                <AlbumStyle/> :
+
+                                <div className={summary} onDoubleClick={handleEditStyle}>
 
                                     <Typography 
         
@@ -149,8 +172,10 @@ function AlbumPreview() {
                                        {album.primary_style}
 
                                     </Typography>
-                                </div>
 
+                                </div>
+                                
+                                }
 
 
                                 </Dialog>

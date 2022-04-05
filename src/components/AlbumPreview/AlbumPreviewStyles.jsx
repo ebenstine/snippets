@@ -290,7 +290,14 @@ const useStyles = makeStyles(() => ({
         //borderRadius: '2px',
         //marginTop: '1em',
         paddingBottom: '.2em',
-        fontSize: 15
+        fontSize: 15,
+        '&:hover': {
+            
+            cursor:'pointer',
+            borderBottom:'1px solid #fde76c'
+            
+          
+        }
     },
 
     playIcon: {
@@ -298,10 +305,10 @@ const useStyles = makeStyles(() => ({
     },
 
     summary:{
-        paddingLeft: '3em',
-        paddingRight: '3em',
-        paddingTop: '2em',
-        paddingBottom:'2em'
+        marginLeft: '3em',
+        marginRight: '3em',
+        marginTop: '2em',
+        marginBottom:'2em'
     },
 
     slider: {
