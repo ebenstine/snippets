@@ -103,7 +103,7 @@ const AddAlbum = ({ album }) => {
                     <TextField
                   
                       label={<AlbumIcon/>}
-                      placeholder="i.e. 'The White Album'"
+                      placeholder="Working Title"
                       onChange={enterNewAlbum('title')}
                       value={newAlbum.title}
                       multiline className={textfield}
@@ -111,8 +111,8 @@ const AddAlbum = ({ album }) => {
         
                     <TextField
                     
-                      label="Release Range"
-                      placeholder="i.e. 'summer 2022'"
+                      label={<DateRangeIcon/>}
+                      placeholder="Release Timeframe"
                       onChange={enterNewAlbum('release_range')}
                       value={newAlbum.release_range}
                       multiline className={textfield}
@@ -120,8 +120,8 @@ const AddAlbum = ({ album }) => {
 
                     <TextField
                     
-                    label="Primary Style"
-                    placeholder="i.e. 'Indie Rock'"
+                    label={<StyleIcon/>}
+                    placeholder="Primary Style"
                     onChange={enterNewAlbum('primary_style')}
                     value={newAlbum.primary_style}
                     multiline className={textfield}
