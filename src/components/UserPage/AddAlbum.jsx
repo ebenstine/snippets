@@ -11,6 +11,9 @@ import useStyles from './AddAlbumStyles'
 import Cancel from '@material-ui/icons/Cancel';
 import Backup from '@material-ui/icons/Backup';
 import { CheckCircle } from '@mui/icons-material';
+import StyleIcon from '@mui/icons-material/Style';
+import DateRangeIcon from '@mui/icons-material/DateRange';
+import AlbumIcon from '@mui/icons-material/Album';
 
 
 
@@ -99,7 +102,7 @@ const AddAlbum = ({ album }) => {
         
                     <TextField
                   
-                      label="Album Title"
+                      label={<AlbumIcon/>}
                       placeholder="i.e. 'The White Album'"
                       onChange={enterNewAlbum('title')}
                       value={newAlbum.title}

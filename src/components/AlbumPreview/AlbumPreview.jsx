@@ -27,6 +27,7 @@ import './slider.css'
 
 
 
+
 function AlbumPreview() {
 
     const { 
@@ -239,7 +240,7 @@ function AlbumPreview() {
                                                                                                 
                                                                         
                                                                                             >  
-                                                                            
+                                                                                                
                                                                                                 <Typography 
                                                                                                     variant="overline" 
                                                                                                     className={title1}

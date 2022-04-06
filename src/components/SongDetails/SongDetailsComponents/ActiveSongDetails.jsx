@@ -198,7 +198,7 @@ export default function ActiveSongDetails(){
                                                                 <b>
                                                                     <img 
                                                                         style={{width:12, height:12, paddingTop:'-.5em' }} 
-                                                                        src="quill.png">
+                                                                        src="writingNotes.png">
                                                                     </img>
                                                                 </b> &nbsp;
                                                                 
@@ -246,7 +246,7 @@ export default function ActiveSongDetails(){
                                                                 <b>
                                                                     <img 
                                                                         style={{width:12, height:12}} 
-                                                                        src="sound-faders.png">
+                                                                        src="productionIdeas.png">
                                                                     </img>
                                                                 </b> &nbsp;
                                                                 
@@ -364,7 +364,7 @@ export default function ActiveSongDetails(){
                                                         <b>
                                                             <img 
                                                                 style={{width:12, height:12, paddingTop:'-.5em' }} 
-                                                                src="quill.png">
+                                                                src="writingNotes.png">
                                                             </img>
                                                         </b> &nbsp;
                                                         
@@ -412,7 +412,7 @@ export default function ActiveSongDetails(){
                                                         <b>
                                                             <img 
                                                                 style={{width:12, height:12}} 
-                                                                src="sound-faders.png">
+                                                                src="productionIdeas.png">
                                                             </img>
                                                         </b> &nbsp;
                                                         
@@ -525,7 +525,7 @@ export default function ActiveSongDetails(){
                                                         <b>
                                                             <img 
                                                                 style={{width:12, height:12, paddingTop:'-.5em' }} 
-                                                                src="quill.png">
+                                                                src="writingNotes.png">
                                                             </img>
                                                         </b> &nbsp;
                                                         
@@ -573,7 +573,7 @@ export default function ActiveSongDetails(){
                                                         <b>
                                                             <img 
                                                                 style={{width:12, height:12}} 
-                                                                src="sound-faders.png">
+                                                                src="productionIdeas.png">
                                                             </img>
                                                         </b> &nbsp;
                                                         
@@ -686,7 +686,7 @@ export default function ActiveSongDetails(){
                                                         <b>
                                                             <img 
                                                                 style={{width:12, height:12, paddingTop:'-.5em' }} 
-                                                                src="quill.png">
+                                                                src="writingNotes.png">
                                                             </img>
                                                         </b> &nbsp;
                                                         
@@ -734,7 +734,7 @@ export default function ActiveSongDetails(){
                                                         <b>
                                                             <img 
                                                                 style={{width:12, height:12}} 
-                                                                src="sound-faders.png">
+                                                                src="productionIdeas.png">
                                                             </img>
                                                         </b> &nbsp;
                                                         

@@ -16,7 +16,8 @@ import { Piano } from '@mui/icons-material';
 import { Lightbulb } from '@mui/icons-material';
 import { IndeterminateCheckBoxOutlined } from '@mui/icons-material';
 import { CheckCircle } from '@mui/icons-material';
-import { Album } from '@mui/icons-material';
+
+
 
 
 
@@ -141,7 +142,7 @@ const AddSong = () => {
                   label=
                   {<img 
                     style={{width:21, height:21}} 
-                    src='top.png'
+                    src='title.png'
                     >
                   </img>
                   }
@@ -152,10 +153,9 @@ const AddSong = () => {
                 />
           
                 <TextField
-                  label=
-                  {<img 
+                  label={<img 
                     style={{width:16, height:16}} 
-                    src='quill.png'
+                    src='writingNotes.png'
                     >
                   </img>
                   }
@@ -171,7 +171,7 @@ const AddSong = () => {
                   label=
                     {<img 
                       style={{width:16, height:16}} 
-                      src='sound-faders.png'
+                      src='productionIdeas.png'
                       >
                     </img>
                     }
@@ -186,10 +186,11 @@ const AddSong = () => {
                   label=
                   {<img 
                     style={{width:21, height:21}} 
-                    src='lyrics.png'
+                    src='lyrics2.png'
                     >
-                  </img>
-                  }
+                  </img> 
+                  } 
+                  
                   placeholder = "Lyrics"
                   onChange={enterNewSong('lyrics')}
                   value={newSong.lyrics}
