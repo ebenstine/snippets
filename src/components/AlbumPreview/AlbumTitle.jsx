@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { Paper, MenuItem, Button, Typography, Select } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import { TextField } from '@mui/material';
 import { FormControl } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
@@ -125,6 +124,8 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "3px",
         paddingLeft:'1em',
         paddingRight:'1em',
+        paddingTop:'.5em',
+        paddingBottom:'.5em'
         
         
     },

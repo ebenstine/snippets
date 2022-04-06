@@ -61,9 +61,35 @@ const useStyles = makeStyles(() => ({
 
     },
 
-    paper: {
+    paper1: {
         margin: '3em auto',
-        background: 'linear-gradient(to right,  #1d778d 0%, transparent 100%), linear-gradient(-5deg, #fff7ac 10%, #94d9eb 1%, transparent 10%), linear-gradient(273deg, #fdf0ef 8%, #ffd59e 1%, transparent 8%)',
+        background: 'linear-gradient(to right,  #1d778d 0%, transparent 100%), linear-gradient(-10deg, #c8e5ec 18%, #1d778d 2%, transparent 18.15%), linear-gradient(279deg, #d4f3f7 11.5%, #94d9eb 2%, transparent 11.75%)',
+        paddingBottom: '6em',
+        paddingTop: '6em',
+        paddingLeft: '4.2em',
+        paddingRight: '3em',
+        width: 750,
+        border: '1px solid #eb9148',
+    
+        
+    },
+
+    paper2: {
+        margin: '3em auto',
+        background: 'linear-gradient(to right,  #1d778d 0%, transparent 100%), linear-gradient(-10deg, #ffb171 18%, #1d778d 2%, transparent 18.15%), linear-gradient(279deg, #ffd59e 11.5%, #94d9eb 2%, transparent 11.75%)',
+        paddingBottom: '6em',
+        paddingTop: '6em',
+        paddingLeft: '4.2em',
+        paddingRight: '3em',
+        width: 750,
+        border: '1px solid #eb9148',
+    
+        
+    },
+
+    paper3: {
+        margin: '3em auto',
+        background: 'linear-gradient(to right,  #1d778d 0%, transparent 100%), linear-gradient(-10deg, #fdd377 18%, #1d778d 2%, transparent 18.15%), linear-gradient(279deg, #fff7ac 11.5%, #94d9eb 2%, transparent 11.75%)',
         paddingBottom: '6em',
         paddingTop: '6em',
         paddingLeft: '4.2em',
@@ -284,7 +310,7 @@ const useStyles = makeStyles(() => ({
 
     },
 
-    heading: {
+    heading1: {
         borderBottom: '1px solid #2a4f64',
         color: '#2a4f64',
         //borderRadius: '2px',
@@ -294,7 +320,39 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
             
             cursor:'pointer',
-            borderBottom:'1px solid #fde76c'
+            borderBottom:'1px solid #afe4f1'
+            
+          
+        }
+    },
+
+    heading2: {
+        borderBottom: '1px solid #2a4f64',
+        color: '#2a4f64',
+        //borderRadius: '2px',
+        //marginTop: '1em',
+        paddingBottom: '.2em',
+        fontSize: 15,
+        '&:hover': {
+            
+            cursor:'pointer',
+            borderBottom:'1px solid #ffb171'
+            
+          
+        }
+    },
+
+    heading3: {
+        borderBottom: '1px solid #2a4f64',
+        color: '#2a4f64',
+        //borderRadius: '2px',
+        //marginTop: '1em',
+        paddingBottom: '.2em',
+        fontSize: 15,
+        '&:hover': {
+            
+            cursor:'pointer',
+            borderBottom:'1px solid #fdd377'
             
           
         }
