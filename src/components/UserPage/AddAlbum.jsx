@@ -102,7 +102,7 @@ const AddAlbum = ({ album }) => {
         
                     <TextField
                   
-                      label={<AlbumIcon/>}
+                      label={<AlbumIcon style={{color: '#233d4d'}}/>}
                       placeholder="Working Title"
                       onChange={enterNewAlbum('title')}
                       value={newAlbum.title}
@@ -111,7 +111,7 @@ const AddAlbum = ({ album }) => {
         
                     <TextField
                     
-                      label={<DateRangeIcon/>}
+                      label={<DateRangeIcon style={{color: '#233d4d'}}/>}
                       placeholder="Release Timeframe"
                       onChange={enterNewAlbum('release_range')}
                       value={newAlbum.release_range}
@@ -120,7 +120,7 @@ const AddAlbum = ({ album }) => {
 
                     <TextField
                     
-                    label={<StyleIcon/>}
+                    label={<StyleIcon style={{color: '#233d4d'}}/>}
                     placeholder="Primary Style"
                     onChange={enterNewAlbum('primary_style')}
                     value={newAlbum.primary_style}

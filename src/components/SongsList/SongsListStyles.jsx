@@ -87,6 +87,7 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
             
             backgroundColor: '#eb9292',
+            
     }
         
         
@@ -105,6 +106,7 @@ const useStyles = makeStyles(() => ({
         '&:hover': {
            
             backgroundColor: '#94d9eb',
+            
             
         }
         
@@ -146,6 +148,7 @@ const useStyles = makeStyles(() => ({
             
             
             backgroundColor: '#fcca60',
+            
             
         }
         
