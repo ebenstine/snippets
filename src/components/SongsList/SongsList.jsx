@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom'
@@ -6,6 +6,7 @@ import { Box, Paper, Typography, Card, CardContent, Button } from '@material-ui/
 import useStyles from './SongsListStyles';
 import ColorCodeLegend from './ColorCodeLegend'
 import Feedback from '@material-ui/icons/Feedback';
+import Pagination from '../Pagination/Pagination';
 
 //import songDetails from '../../redux/reducers/songDetails.reducer';
 
@@ -37,7 +38,7 @@ function SongsList() {
             feedback,
             heading,
             playIcon,
-            hackButton
+           
             
         } = useStyles();
 
@@ -46,24 +47,21 @@ function SongsList() {
     const params = useParams();
     const songs = useSelector((store) => store.songs);
     const songDetails = useSelector((store) => store.songDetails)
+    const [currentPage, setCurrentPage] = useState(1);
 
     //const [listView, setListView] = useState(true);
     console.log(songs);
 
+    let PageSize = 12
 
+    const songsList = useMemo(() => {
+        const firstPageIndex = (currentPage - 1) * PageSize;
+        const lastPageIndex = firstPageIndex + PageSize;
+        return songs.slice(firstPageIndex, lastPageIndex);
+      }, [currentPage]);
     
     
-    /*const handleState = () => {
-        setListView(listView = !listView)
-    }*/
-    /*const handleState = () => {
-        
-        if (songs.length === 0) 
-            {setListView(false)}
-            
-        }  */ 
-
-    //get db info on page load
+   
     useEffect(() => {
        
         dispatch({
@@ -115,7 +113,7 @@ function SongsList() {
                         justifyContent="space-between"
                     >
                     {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
-                            {songs.map((song) => {
+                            {songsList.map((song) => {
                                 return (
                                     <>
                                         {song.is_active == true ?
@@ -450,10 +448,21 @@ function SongsList() {
                 </Paper>
                                     
             }
+               
+                <Pagination
+                    className="pagination-bar"
+                    currentPage={currentPage}
+                    totalCount={songs.length}
+                    pageSize={PageSize}
+                    onPageChange={page => setCurrentPage(page)}
+
+                />
 
 
         </>
-            
+        
+        
+        
     );
 
 }

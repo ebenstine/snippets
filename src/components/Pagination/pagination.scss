@@ -7,7 +7,7 @@
       height: 32px;
       text-align: center;
       margin: auto 4px;
-      color: rgba(0, 0, 0, 0.87);
+      color: #2a4f64;
       display: flex;
       box-sizing: border-box;
       align-items: center;
@@ -27,7 +27,7 @@
       }
   
       &.selected {
-        background-color: rgba(0, 0, 0, 0.08);
+        background-color: rgba(255, 0, 0, 0.08);
       }
   
       .arrow {
@@ -39,8 +39,8 @@
           display: inline-block;
           width: 0.4em;
           height: 0.4em;
-          border-right: 0.12em solid rgba(0, 0, 0, 0.87);
-          border-top: 0.12em solid rgba(0, 0, 0, 0.87);
+          border-right: 0.12em solid #2a4f64;
+          border-top: 0.12em solid #2a4f64;
         }
   
         &.left {
