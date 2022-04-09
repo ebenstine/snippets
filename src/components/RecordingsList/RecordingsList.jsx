@@ -30,6 +30,8 @@ import Feedback from '@material-ui/icons/Feedback';
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import useStyles from './RecordingsListStyles';
 import { Cancel } from '@material-ui/icons';
+import QueueMusic from '@material-ui/icons/QueueMusic';
+import MicIcon from '@mui/icons-material/Mic';
 
 const RecordingsList = () => {
     const { 
@@ -143,7 +145,8 @@ const RecordingsList = () => {
                 className={view}
             >
                 
-                <HeadphonesRoundedIcon/>
+                <MicIcon style={{color:'#233d4d'}}/>
+                
                 &nbsp;Manage All
             
             </MenuItem>
@@ -166,12 +169,18 @@ const RecordingsList = () => {
                         elevation={10}
                     >
                         <div style={{display:'flex', justifyContent: 'center', paddingBottom: '2em'}}>
+                            <MicIcon
+                                style=
+                                {{
+                                    width:50, 
+                                    height:50, 
+                                    display:'flex', 
+                                    color: '#1d778d', 
+                                    justifyContent: 'center'
+                                }} 
+                            
+                            />
 
-                            <img 
-                                style={{width:50, height:50, display:'flex', justifyContent: 'center'}} 
-                                src='listSoundwaves.png'
-                            >
-                            </img>
                         </div>
                         
                         <div className={drawerHeader}>
@@ -326,10 +335,10 @@ const RecordingsList = () => {
 
                                                                                 <Typography 
                                                                                 
-                                                                                    variant="h6" 
+                                                                                     
                                                                                     className={description}>
-                                                                                    The most complete, selected preview recording for {''}
-                                                                                    {recording.description} 
+                                                                                    The selected preview recording for {''}
+                                                                                    {recording.description};{''} this is the most complete current version of the song.
                                                                                     
                                                                                     
                                                                                 </Typography>
@@ -337,7 +346,7 @@ const RecordingsList = () => {
 
                                                                                 <Typography 
                                                                                 
-                                                                                    variant="h6" 
+                                                                                     
                                                                                     className={description}>
                                                                                     {recording.description} 
                                                                                     

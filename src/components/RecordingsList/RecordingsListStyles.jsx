@@ -163,7 +163,7 @@ const useStyles = makeStyles((theme) => ({
 
     description: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 12,
+        fontSize: 10.5,
         marginLeft: '1.5em',
         marginRight: '1.5em',
         borderBottom: '1.5px solid #1d778d',

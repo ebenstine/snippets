@@ -85,10 +85,7 @@ const SongInstrumentOptions = ({song}) => {
                   
                   
                   
-                      style={{ color: '#3b95ac',
-                      '&:hover': {
-                        color:'#2a4f64'
-                      },}}
+                      style={{color:'#233d4d'}}
                       aria-controls="simple-menu" 
                       aria-haspopup="true"
                       fontSize={'inherit'}
@@ -96,7 +93,7 @@ const SongInstrumentOptions = ({song}) => {
 
                   >
 
-                  <b><img style={{width:22, height:22, paddingBottom:'.05em' }} src="technique.png"></img></b>
+                  <b><img style={{width:26, height:26, paddingBottom:'.05em' }} src="performance.png"></img></b>
                   </IconButton>
                   </div>
                   :
@@ -106,10 +103,7 @@ const SongInstrumentOptions = ({song}) => {
                   <div className={menuIcon}>
                   <IconButton
 
-                      style={{ color: '#3b95ac',
-                      '&:hover': {
-                        color:'#2a4f64'
-                      },}}
+                      
                       aria-controls="simple-menu" 
                       aria-haspopup="true"
                       fontSize={'inherit'}
@@ -118,7 +112,7 @@ const SongInstrumentOptions = ({song}) => {
                   
                   >
                   
-                  <b><img style={{width:22, height:22, paddingBottom:'.05em' }} src="technique.png"></img></b>
+                  <b><img style={{width:26, height:26, paddingBottom:'.05em', color:'#233d4d' }} src="performance.png"></img></b>
                   
                   </IconButton>
                   </div>
@@ -128,10 +122,7 @@ const SongInstrumentOptions = ({song}) => {
                   <div className={menuIcon}>
                   <IconButton
 
-                      style={{ color: '#3b95ac',
-                      '&:hover': {
-                        color:'#2a4f64'
-                      },}}
+                      
                       aria-controls="simple-menu" 
                       aria-haspopup="true"
                       fontSize={'inherit'}
@@ -140,7 +131,7 @@ const SongInstrumentOptions = ({song}) => {
                   
                   >
                   
-                  <b><img style={{width:22, height:22, paddingBottom:'.05em' }} src="technique.png"></img></b>
+                  <b><img style={{width:26, height:26, paddingBottom:'.05em', color:'#233d4d' }} src="performance.png"></img></b>
                   </IconButton>
                   </div>
                   :

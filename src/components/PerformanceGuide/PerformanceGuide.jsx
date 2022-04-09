@@ -68,8 +68,6 @@ const PerformanceGuide = () => {
     const songDetails = useSelector ((store) => store.songDetails);
     const params = useParams();
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-    const [editingNotes, setEditingNotes] = useState(false);
-    const [editingSpecs, setEditingSpecs] = useState(false);
     const [isDialogOpen, setIsDialogOpen] = useState(false)
     //going to need an editing state for conditional render like in detailsPage
 
@@ -115,14 +113,6 @@ const PerformanceGuide = () => {
         //hiding the lack of live updating here but whatev
         setIsDrawerOpen(false);
         setIsDialogOpen(false);
-    }
-
-    const handleEditingSpecs = () => {
-        setEditingSpecs(editingSpecs => !editingSpecs)
-    }
-
-    const handleEditingNotes = () => {
-        setEditingNotes(editingNotes => !editingNotes)
     }
 
     return (

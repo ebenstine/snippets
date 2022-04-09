@@ -75,10 +75,7 @@ const SongAudioOptions = ({song}) => {
           
           <HeadphonesRoundedIcon 
 
-            style={{ color: '#3b95ac',
-            '&:hover': {
-              color:'#2a4f64'
-            },}}
+            style={{color:'#233d4d'}}
             aria-controls="simple-menu" 
             aria-haspopup="true"
             fontSize={'inherit'}
