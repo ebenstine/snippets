@@ -122,7 +122,7 @@ return (
                                                             <b>
                                                                 <img 
                                                                     style={{width:12, height:12}} 
-                                                                    src="quill.png">
+                                                                    src="writingNotes.png">
                                                                 </img>
                                                             </b> &nbsp;
                                                             
@@ -164,7 +164,7 @@ return (
                                                             <b>
                                                                 <img 
                                                                     style={{width:12, height:12}} 
-                                                                    src="sound-faders.png">
+                                                                    src="productionIdeas.png">
                                                                 </img>
                                                             </b> 
                                                             &nbsp;

@@ -117,27 +117,27 @@ const PerformanceGuide = () => {
 
     return (
         <>
-        {songDetails.map((song) => {
-            return (
-            <>
-            
-            {song.instrument_specs ?
-            <MenuItem 
-                
-                onClick={handleClickOpen}
-                className={view}
-            >
-                 <b><img style={{width:22, height:22, paddingBottom:'.05em' }} src="musicStandMenu.png"></img></b>
-                
-                &nbsp;Full Performance Guide
-            
-            </MenuItem>
-            :
-            null
-        }
-            </>
-            )
-        })}
+            {songDetails.map((song) => {
+                return (
+                    <>
+                    
+                        {song.instrument_specs ?
+                            <MenuItem 
+                                
+                                onClick={handleClickOpen}
+                                className={view}
+                            >
+                                <b><img style={{width:22, height:22, paddingBottom:'.05em' }} src="musicStandMenu.png"></img></b>
+                                
+                                &nbsp;Full Performance Guide
+                            
+                            </MenuItem>
+                        :
+                            null
+                        }
+                    </>
+                )
+            })}
 
          
             <Drawer
@@ -170,68 +170,69 @@ const PerformanceGuide = () => {
                                         }}
                                 >
                         
-                        {song.primary_instrument === 'guitar' ?
-                        
-                            <img 
-                            
-                                style=
-                                    {{
-                                        width:50, 
-                                        height:50, 
-                                        display:'flex', 
-                                        justifyContent: 'center'
-                                    }} 
-                            
-                                src='finalHeadstock.png'
-                            >
-                        
-                            </img>
+                                    {song.primary_instrument === 'guitar' ?
+                                    
+                                        <img 
+                                        
+                                            style=
+                                                {{
+                                                    width:50, 
+                                                    height:50, 
+                                                    display:'flex', 
+                                                    justifyContent: 'center'
+                                                }} 
+                                        
+                                            src='finalHeadstock.png'
+                                        >
+                                    
+                                        </img>
 
-                        :
-                        
-                        song.primary_instrument === 'keyboard' ?
-                        
-                            <Piano
-                            
-                                style=
-                                    {{
-                                        width:50, 
-                                        height:50, 
-                                        display:'flex', 
-                                        color: '#1d778d', 
-                                        justifyContent: 'center'
-                                    }} 
-                            
-                            >
-                            </Piano>
+                                    :
+                                    
+                                    song.primary_instrument === 'keyboard' ?
+                                    
+                                        <Piano
+                                        
+                                            style=
+                                                {{
+                                                    width:50, 
+                                                    height:50, 
+                                                    display:'flex', 
+                                                    color: '#1d778d', 
+                                                    justifyContent: 'center'
+                                                }} 
+                                        
+                                        >
+                                        </Piano>
 
-                        :
+                                    :
+                                    
+                                    song.primary_instrument === 'other' ?
+
+                                        <Lightbulb
+                                        
+                                            style=
+                                                {{
+                                                    width:50, 
+                                                    height:50, 
+                                                    display:'flex', 
+                                                    color: '#1d778d', 
+                                                    justifyContent: 'center'
+                                                }} 
+                                        
+                                        >
+                                        </Lightbulb>
+                                    :
+
+                                    null
+                                    
+
+
+                                    }
+                                
+                                </div>
                         
-                        song.primary_instrument === 'other' ?
-
-                            <Lightbulb
-                            
-                                style=
-                                    {{
-                                        width:50, 
-                                        height:50, 
-                                        display:'flex', 
-                                        color: '#1d778d', 
-                                        justifyContent: 'center'
-                                    }} 
-                            
-                            >
-                            </Lightbulb>
-                        :
-
-                        null
-                        
-
-
-                        }
-                        </div>
-                        
-                        </>
+                            </>
                         )
                     })}
                         <div className={drawerHeader}>
@@ -275,6 +276,7 @@ const PerformanceGuide = () => {
                         </div>
                             
                         <br></br>
+                    {/*refactored components*/}
 
                     <PerformanceGuideInstrumentSpecs/> 
 
@@ -426,7 +428,8 @@ const PerformanceGuide = () => {
                                                                                 paddingTop: '-1em',
                                                                                 display: 'flex',
                                                                                 flexWrap: 'wrap',
-                                                                                textStroke: '2px black'
+                                                                                backgroundColor: '#dddddd',
+                                                                                borderRadius:'2px'
                                                                             }}
                                                                         />
                                                             

@@ -4,10 +4,13 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import { Button, Paper, Grid, Container, Typography, Card, CardHeader, CardContent, makeStyles, ThemeProvider } from '@material-ui/core';
 import { TextField, FormControl } from '@mui/material'
+import StartIcon from '@mui/icons-material/Start';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 //change of styling with MUI components
 const useStyles = makeStyles((theme) => ({
 
   root: {
+    
     paddingTop: '5em',
   
       '& .MuiTextField-root': {
@@ -35,13 +38,11 @@ const useStyles = makeStyles((theme) => ({
          
           
       },
-      //"& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
-          //border: "2px solid #3b95ac"
-        //},
-        "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+        
+      "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
           border: "1.5px solid#3b95ac",
           borderRadius: "3px 3px 3px 3px"
-        },
+      },
       
 
         
@@ -62,16 +63,7 @@ const useStyles = makeStyles((theme) => ({
           '&:fieldset.Mui-focused': {
               border:' 1.5px solid #3b95ac'
           
-          },
-          
-          
-          
-          
-          
-        
-          
-          
-          
+          }
       },
   },
  
@@ -100,10 +92,8 @@ const useStyles = makeStyles((theme) => ({
      
      
    },
- 
-   
- 
- }))
+
+}))
 
 
 
@@ -156,7 +146,12 @@ function LoginForm() {
 
           <Grid item lg={2} xs={6} sm={3} md={3}>
             {/* login inputs / button */}
-            <Typography variant="h5" className={classes.signIn}>Sign In</Typography>
+            <Typography 
+              variant="h5" 
+              className={classes.signIn}>
+                
+                Sign In
+            </Typography>
           </Grid>
           {errors.loginMessage && (
             <h3 className="alert" role="alert">
@@ -165,19 +160,43 @@ function LoginForm() {
           )}
 
           <Grid item lg={2} xs={6} sm={3} md={3}>
-            <TextField noValidate autoComplete="off" required variant="outlined" label="Username"  value={username}
-              onChange={(event) => setUsername(event.target.value)} />
+
+            <TextField 
+              noValidate autoComplete="off" 
+              required variant="outlined" 
+              label="Username"  
+              value={username}
+              onChange={(event) => setUsername(event.target.value)} 
+            />
+
           </Grid>
+
           <Grid item lg={2} xs={6} sm={3} md={3}>
-            <TextField className={classes.password} required label="Password" variant="outlined"  value={password}
-              type="password" noValidate autoComplete="off" onChange={(event) => setPassword(event.target.value)} />
+            
+            <TextField 
+              className={classes.password} 
+              required label="Password" 
+              variant="outlined"  
+              value={password}
+              type="password" 
+              noValidate autoComplete="off" 
+              onChange={(event) => setPassword(event.target.value)} 
+            />
+
           </Grid>
           
             <Grid item lg={2} xs={6} sm={3} md={3}>
-              <Button variant="contained" className={classes.btn} align="center" onClick={login}>Go!</Button>
-            </Grid>
-          
+              <Button 
+                variant="contained" 
+                className={classes.btn} 
+                align="center" 
+                onClick={login}>
 
+                <StartIcon style={{color:'2a4f64'}}/> 
+                Go!
+              </Button>
+            </Grid>
+        
         </Grid>
       
       </Container>

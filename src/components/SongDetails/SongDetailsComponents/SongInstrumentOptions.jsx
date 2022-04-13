@@ -112,7 +112,7 @@ const SongInstrumentOptions = ({song}) => {
                   
                   >
                   
-                  <b><img style={{width:26, height:26, paddingBottom:'.05em', color:'#233d4d' }} src="performance.png"></img></b>
+                  <b><img style={{width:26, height:26, paddingBottom:'.05em', color:'#2a4f64' }} src="performance.png"></img></b>
                   
                   </IconButton>
                   </div>
@@ -167,7 +167,7 @@ const SongInstrumentOptions = ({song}) => {
                     
                         className={heading}>
                     
-                          Performance Documentation
+                          Performance Options
                     
                       </Typography>
                 

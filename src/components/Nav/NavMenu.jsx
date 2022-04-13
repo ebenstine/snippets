@@ -1,22 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
-
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
-import { PlayArrowRounded } from '@mui/icons-material';
-
-
 import { useDispatch, useSelector } from 'react-redux';
-
 import QueueMusic from '@material-ui/icons/QueueMusic';
-import MenuBook from '@material-ui/icons/MenuBook';
 import PlaylistAdd from '@material-ui/icons/PlaylistAdd';
-import Info from '@material-ui/icons/Info';
 import Menu from '@material-ui/icons/Menu'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import IconButton from "@material-ui/core/IconButton";
@@ -25,28 +14,25 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
 
     navLinks: {
-        color: '#2a4f64',
-        background:  'rgb(230, 252, 255)',
-        '&:hover': {
-            background:'#94d9eb',
-            },
-        margin: theme.spacing(1),
-        border: "1px solid #eb9148",
-        borderRadius: "3px",
-        display: 'flex',
-        justifyContent: 'center'
+      color: '#2a4f64',
+      background:  'rgb(230, 252, 255)',
+      '&:hover': {
+          background:'#94d9eb',
+          },
+      margin: theme.spacing(1),
+      border: "1px solid #eb9148",
+      borderRadius: "3px",
+      display: 'flex',
+      justifyContent: 'center'
     },
 
     menu: {
-        marginBottom: '-.45em',
-        color: 'rgb(230, 252, 255)',
-        '&:hover': {
-        color:'#3b95ac'
-        }
-
+      marginBottom: '-.45em',
+      color: 'rgb(230, 252, 255)',
+      '&:hover': {
+      color:'#3b95ac'
+      }
     },
-
-    
 
 }))
 

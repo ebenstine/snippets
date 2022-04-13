@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Typography, makeStyles } from '@material-ui/core'
 import { useHistory } from 'react-router-dom';
 import RegisterForm from '../RegisterForm/RegisterForm';
+import StartIcon from '@mui/icons-material/Start';
 
 const useStyles = makeStyles({
 
@@ -46,6 +47,7 @@ function RegisterPage() {
             history.push('/login');
           }}
         >
+          <StartIcon style={{color:'2a4f64'}}/>
           Sign In
         </Button>
       </center>

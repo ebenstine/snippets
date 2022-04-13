@@ -224,7 +224,9 @@ function InactiveArchiveStatus(){
                     onClick={handleStatus}
                         
                 >
+                    
                     <QueueMusic/>
+                    
                 
                 </Button>
 
@@ -234,7 +236,9 @@ function InactiveArchiveStatus(){
                     variant="contained" 
                     onClick={handleClickOpen}
                 >
+                    
                     <Delete/>
+                    
 
                 </Button>
 

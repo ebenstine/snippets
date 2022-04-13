@@ -28,7 +28,9 @@ const useStyles = makeStyles((theme) => ({
     heading: {
       color: '#2a4f64',
       borderBottom: '1px solid #2a4f64',
-      fontSize: 20
+      fontSize: 20,
+      display: 'flex',
+      justifyContent: "center"
     }, 
 
     menuIcon: {
@@ -75,7 +77,7 @@ const SongAudioOptions = ({song}) => {
           
           <HeadphonesRoundedIcon 
 
-            style={{color:'#233d4d'}}
+            style={{color:'#2a4f64'}}
             aria-controls="simple-menu" 
             aria-haspopup="true"
             fontSize={'inherit'}
@@ -114,7 +116,7 @@ const SongAudioOptions = ({song}) => {
               
                   className={heading}>
               
-                    Audio Documentation
+                    Audio Options
               
                 </Typography>
            

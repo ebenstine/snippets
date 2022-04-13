@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Grid, Container, Typography,  makeStyles } from '@material-ui/core';
 import { TextField } from '@mui/material'
+import PersonAddIcon from '@mui/icons-material/PersonAdd'; 
 // change styling for MUI components
 const useStyles = makeStyles((theme) => ({
 
@@ -136,7 +137,9 @@ function RegisterForm() {
 
             variant="h5" 
             className={classes.signUp}
-            >Create Account
+            >
+            
+            Create Account
 
           </Typography>
 
@@ -183,7 +186,10 @@ function RegisterForm() {
               align="center" 
               onClick={registerUser}
 
-            >Sign Up</Button>
+            >
+              <PersonAddIcon style={{color:'#2a4f64'}}/> 
+              Sign Up
+            </Button>
 
           </Grid>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import { useHistory } from 'react-router-dom';
 import { Button, Paper, Typography, makeStyles } from '@material-ui/core';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 
 const useStyles = makeStyles({
 
@@ -12,11 +13,11 @@ const useStyles = makeStyles({
 
   signUp: {
     background: 'transparent',
-        color: '#2a4f64',
-        border: '1px solid #3b95ac',
-        '&:hover': {
-            background:'#fde76c',
-            },
+    color: '#2a4f64',
+    border: '1px solid #3b95ac',
+    '&:hover': {
+      background:'#fde76c',
+    },
     paddingLeft: '1em',
     paddingRight: '1em',
     color: '#2a4f64',
@@ -40,7 +41,7 @@ const useStyles = makeStyles({
 
 function LoginPage() {
   const history = useHistory();
-  const {invite, signUp, paper} = useStyles();
+  const {invite, signUp} = useStyles();
 
   return (
     <>
@@ -58,6 +59,7 @@ function LoginPage() {
             history.push('/registration');
           }}
         >
+          <PersonAddIcon style={{color:'#2a4f64'}}/>
           Make One!
         </Button>
       </center>
