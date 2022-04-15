@@ -43,12 +43,14 @@ function RegisterPage() {
         <Button
           variant="contained"
           className={signIn}
+          size="small"
           onClick={() => {
             history.push('/login');
           }}
         >
+          
+          Sign In &nbsp;
           <StartIcon style={{color:'2a4f64'}}/>
-          Sign In
         </Button>
       </center>
     </div>

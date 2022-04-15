@@ -183,12 +183,14 @@ function RegisterForm() {
               
               variant="contained" 
               className={classes.btn} 
+              size="small"
               align="center" 
               onClick={registerUser}
 
             >
+              
+              Sign Up &nbsp;
               <PersonAddIcon style={{color:'#2a4f64'}}/> 
-              Sign Up
             </Button>
 
           </Grid>

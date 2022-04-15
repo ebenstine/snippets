@@ -55,12 +55,14 @@ function LoginPage() {
         <Button
           variant="contained"
           className={signUp}
+          size="small"
           onClick={() => {
             history.push('/registration');
           }}
         >
+          
+          Make One &nbsp;
           <PersonAddIcon style={{color:'#2a4f64'}}/>
-          Make One!
         </Button>
       </center>
      

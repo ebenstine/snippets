@@ -190,10 +190,13 @@ function LoginForm() {
                 variant="contained" 
                 className={classes.btn} 
                 align="center" 
-                onClick={login}>
+                onClick={login}
+                size="small"
+              >
 
-                <StartIcon style={{color:'2a4f64'}}/> 
-                Go!
+                 
+                Go &nbsp;
+                <StartIcon style={{color:'2a4f64'}}/>
               </Button>
             </Grid>
         
