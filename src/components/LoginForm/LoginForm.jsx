@@ -193,9 +193,6 @@ function LoginForm() {
                 onClick={login}
                 size="small"
               >
-
-                 
-                Go &nbsp;
                 <StartIcon style={{color:'2a4f64'}}/>
               </Button>
             </Grid>

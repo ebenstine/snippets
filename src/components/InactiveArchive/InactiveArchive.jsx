@@ -7,7 +7,7 @@
 
 /// it would seem that a POST to a new endpoint would make sense
 // but that probably isn't really necessary here.  these are all just songs, just differentiated by completion status
-// so the finished archive just needs to conditionally render what's false
+// so the finished archive just needs to conditionally render what's not active (false)
 // while the songsList component might need to get updated to conditionally render what's true
 // or the other way around if the boolean we use is "finished" - which makes the most sense, probably.
 import React, { useEffect, useState } from 'react';
@@ -20,12 +20,9 @@ import Feedback from '@material-ui/icons/Feedback';
 
 
 
-//import songDetails from '../../redux/reducers/songDetails.reducer';
 
 
-
-
-function InactiveArchive({song}) {
+function InactiveArchive() {
 
     const { 
              
@@ -34,28 +31,20 @@ function InactiveArchive({song}) {
             card,  
             paper, 
             menuDots,
-            blankPage,
-            message,
-            messageCard,
-            messageDiv,
-            feedback,
             heading,
-            playIcon, 
-            hackButton
+            playIcon
+            
             
         } = useStyles();
 
     const dispatch = useDispatch();
     const history = useHistory();
     const songs = useSelector((store) => store.songs);
-   
-
-    const [listView, setListView] = useState();
     
     console.log(songs);
     
     
-    const handleState = () => {
+    /*const handleState = () => {
         //checks for any occurrence of an inactive song
         if (songs.filter(e => e.is_active === false).length > 0) 
             {setListView(true)}
@@ -63,7 +52,7 @@ function InactiveArchive({song}) {
             else 
 
             {setListView(false)};
-        }
+        }*/
 
 
     //get db info on page load
@@ -73,7 +62,7 @@ function InactiveArchive({song}) {
             type: 'FETCH_SONGS',
             
         });
-        handleState();
+        //handleState();
     }, []);
     //push forward to details page on click
 
@@ -92,177 +81,122 @@ function InactiveArchive({song}) {
     //because there is no color-coding involved in the inactive archive, 
     //there's much less code to deal with and thus no need to refactor.
     return (
-            <>
-
-                {listView ? 
+        <> 
+            <Paper className={paper} elevation={10}>
+                
+                <div 
                     
-                    <Paper className={paper} elevation={10}>
+                    className={menuDots}>
+
+                </div>
+
+                    <div style={{marginTop:'-2.5em'}}>
                         
-                        <div 
+                        <Typography 
+                            className={heading}
+                            variant="overline"
                             
-                            className={menuDots}>
-
-                        </div>
-
-                            <div>
-                                
-                                <Typography 
-                                    
-                                    variant="overline"
-                                    className={heading}
-                                >
-
-                                    <span className={playIcon}>▶</span>     
-                                    Inactive Songs
-                                            
-                                </Typography>
-                                        
-                            </div>
-                        
-                        <Box 
-                        
-                            display="flex"
-                            flexWrap="wrap"
-                            justifyContent="space-between"
                         >
-                
-                            {songs.map((song) => {
-                            
-                                return (
+
+                            <span className={playIcon}>▶</span>     
+                            Inactive Songs
+                                    
+                        </Typography>
                                 
+                    </div>
+                
+                <Box 
+                
+                    display="flex"
+                    flexWrap="wrap"
+                    justifyContent="space-between"
+                >
+        
+                    {songs.map((song) => {
+                    
+                        return (
+                        
+                                    <>
+                        
+                                        {song.is_active === false ?
+                            
                                             <>
-                                
-                                                {song.is_active === false ?
+                            
+                                                <Box paddingTop={2}>
                                     
-                                                    <>
-                                    
-                                                        <Box paddingTop={2}>
-                                            
-                                                            <Card
-                                                
-                                                                raised={true}
-                                                                className={card}
-                                
-                                                            > 
-                                                
-                                                                <section>
-
-                                                                    <CardContent 
+                                                    <Card
                                         
-                                                                        item xs={1} key={song} 
-                                                                        onClick={() => handleClick(song.song_id)} 
-                                    
-                                                                    >  
-                                        
-                                                                        <Typography 
-                                                                            
-                                                                            variant="overline" 
-                                                                            className={title1}>{song.title}
-                                                        
-                                                                        </Typography>
-                                            
-                                                                    </CardContent>
-                                    
-                                                                </section>
-                                                        
-                                                                <section className={player}>
-                                                    
-                                                                    <AudioPlayer
-
-                                                                        audioFiles={[{ src: song.preview_audio }]}
-                                                                        hideForward="true"
-                                                                        hideLoop="true"
-                                                                        hideRewind="true"
-                                                                        playIcon="playIcon.png"
-                                                                        playHoverIcon="playIcon.png"
-                                                                        pauseIcon="pauseIcon.png"
-                                                                        pauseHoverIcon="pauseIcon.png"
-                                                                        volumeIcon="volume.png"
-                                                                        volumeEngagedIcon="volume.png"
-                                                                        muteIcon="volume.png"
-                                                                        muteEngagedIcon="volume.png"
-
-                                                                    />
-                                                        
-                                                                </section>
-
-                                                            </Card> 
-
-                                                        </Box>
-                                    
-                                                        <br></br>
-                                                        <br></br>
-                                     
-                                                    </>
-                     
-                                                :
-                                                
-                                                null
-                                                
-                                                }
+                                                        raised={true}
+                                                        className={card}
                         
+                                                    > 
+                                        
+                                                        <section>
+
+                                                            <CardContent 
+                                
+                                                                item xs={1} key={song} 
+                                                                onClick={() => handleClick(song.song_id)} 
+                            
+                                                            >  
+                                
+                                                                <Typography 
+                                                                    
+                                                                    variant="overline" 
+                                                                    className={title1}>{song.title}
+                                                
+                                                                </Typography>
+                                    
+                                                            </CardContent>
+                            
+                                                        </section>
+                                                
+                                                        <section className={player}>
+                                            
+                                                            <AudioPlayer
+
+                                                                audioFiles={[{ src: song.preview_audio }]}
+                                                                hideForward="true"
+                                                                hideLoop="true"
+                                                                hideRewind="true"
+                                                                playIcon="playIcon.png"
+                                                                playHoverIcon="playIcon.png"
+                                                                pauseIcon="pauseIcon.png"
+                                                                pauseHoverIcon="pauseIcon.png"
+                                                                volumeIcon="volume.png"
+                                                                volumeEngagedIcon="volume.png"
+                                                                muteIcon="volume.png"
+                                                                muteEngagedIcon="volume.png"
+
+                                                            />
+                                                
+                                                        </section>
+
+                                                    </Card> 
+
+                                                </Box>
+                            
+                                                <br></br>
+                                                <br></br>
+                                
                                             </>
-                                        );
-
-                            })}
-
-                        </Box> 
-
-                    </Paper>
-
-                :
                 
+                                        :
+                                        
+                                        null
+                                        
+                                        }
                 
-                    <Paper className={blankPage}>
-                        
-                        <div>
+                                    </>
+                                );
 
-                            <Card 
-                                className={messageCard}
-                                raised={true}
-                            >
-                            
-                                <div>
-                                    
-                                    <Feedback className={feedback}/>
-                                    
-                                </div>
-                            
-                                    <div className={messageDiv}>
-                                        
-                                        <Typography
-                            
-                                            align="center"
-                                            variant="h6"
-                                            className={message}
-                            
-                                        >
-                                        
-                                            The inactive archive page shows songs you've marked 
-                                            as such when uploading.  It offers the option to catalog unfinished 
-                                            material that hasn't been abandoned, but that is dormant for the moment.
-                                            If you only see a blank page, there are currently no songs marked as inactive.
+                    })}
 
-                                        </Typography>
-                                    
-                                    </div>
-                            
-                            </Card>
+                </Box> 
 
-                            <Button 
-                                onClick={goBack}
-                                className={hackButton}
-                                variant="outlined"
-                                >See Archive
-                            </Button>
+            </Paper>
 
-                        </div>
-
-                    </Paper>
-
-                }
-
-            </>
+        </>
 
     );
 
