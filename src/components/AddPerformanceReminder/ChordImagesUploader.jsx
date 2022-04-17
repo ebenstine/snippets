@@ -19,7 +19,7 @@ const useStyles = makeStyles(() => ({
     background: 'transparent',
     '&:hover': {
       border: '1.5px solid #233d4d',
-      background: '#5fbdd4'
+      background: '#fde76c'
     }
 
     }

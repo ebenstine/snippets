@@ -417,7 +417,7 @@ const useStyles = makeStyles((theme) => ({
         color: "#2a4f64",
         background: "rgb(230, 252, 255)",
         '&:hover': {
-            background:'#82bdcc',
+            background:'#94d9eb',
             },
         margin: theme.spacing(1),
         marginLeft: '3em',
@@ -434,7 +434,7 @@ const useStyles = makeStyles((theme) => ({
         color: "#2a4f64",
         background: "rgb(230, 252, 255)",
         '&:hover': {
-            background:'#82bdcc',
+            background:'#94d9eb',
             },
         margin: theme.spacing(1),
         marginLeft: '3em',
@@ -451,7 +451,7 @@ const useStyles = makeStyles((theme) => ({
         color: "#2a4f64",
         background: "rgb(230, 252, 255)",
         '&:hover': {
-            background:'#82bdcc',
+            background:'#94d9eb',
             },
         margin: theme.spacing(1),
         marginLeft: '3em',
