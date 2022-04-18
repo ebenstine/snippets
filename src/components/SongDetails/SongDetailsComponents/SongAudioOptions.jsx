@@ -103,7 +103,7 @@ const SongAudioOptions = ({song}) => {
                       
                   border: "1px solid #2a4f64",
                   background: "rgb(199, 246, 252",
-                  
+                  height:"250px"
                 }
                   
               }}    

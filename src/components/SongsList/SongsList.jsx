@@ -49,8 +49,6 @@ function SongsList() {
     const songDetails = useSelector((store) => store.songDetails)
     const [currentPage, setCurrentPage] = useState(1);
     
-
-    //const [listView, setListView] = useState(true);
     console.log(songs);
 
     //allows for the homepage to render aesthetically right even if there
@@ -59,8 +57,8 @@ function SongsList() {
     
     let PageSize = 10
 
-    //if there's any instance of an inactive song, change the page size to 13
-    //this will keep the view of active songs at 12
+    //if there's any instance of an inactive song, change the page size to 11
+    //this will keep the view of active songs at 10
     
     if (songs.filter(e => e.is_active === false).length > 0){
          PageSize = 11
@@ -95,381 +93,336 @@ function SongsList() {
     
     return (
         
-        <>
-
-            {songs.length ?  
+        <> 
                                     
-                <Paper className={paper} elevation={10}>
-                    
-                    <div className={menuDots}>
+            <Paper className={paper} elevation={10}>
+                
+                <div className={menuDots}>
 
-                        <ColorCodeLegend/>
+                    <ColorCodeLegend/>
 
-                    </div>
+                </div>
 
-                    <div>
-                        <Typography 
-                            
-                            variant="overline"
-                            className={heading}
-                            
-                        >
-
-                        <span className={playIcon}>▶</span>All Active Songs
-
-
-                        </Typography>
-                    </div>
-                    <Box 
-                        display="flex"
-                        flexWrap="wrap"
-                        justifyContent="space-between"
+                <div>
+                    <Typography 
+                        
+                        variant="overline"
+                        className={heading}
+                        
                     >
-                    {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
-                            {songsList.map((song) => {
-                                return (
-                                    <>
-                                        {song.is_active == true ?
-                                            <>
-                                
-                                                {song.priority === '1' ? 
+
+                    <span className={playIcon}>▶</span>All Active Songs
+
+
+                    </Typography>
+                </div>
+                <Box 
+                    display="flex"
+                    flexWrap="wrap"
+                    justifyContent="space-between"
+                >
+                {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
+                        {songsList.map((song) => {
+                            return (
+                                <>
+                                    {song.is_active == true ?
+                                        <>
+                            
+                                            {song.priority === '1' ? 
+                                        
+                                                <Box
+                                                    
+                                                    paddingTop={2}
+                                                
+                                                >
+                                                    <Card
+                                                        
+                                                        raised={true}
+                                                        className={card1}
+                                        
+                                                    > 
+                                                            <section>
+
+                                                                <CardContent 
+                                                
+                                                                    item xs={1} key={song} 
+                                                                    
                                             
+                                                                >  
+                                                
+                                                                    <Typography 
+                                                                        variant="overline" 
+                                                                        className={title1}
+                                                                        onClick={() => handleClick(song.song_id)} 
+
+                                                                    >
+                                                                        
+                                                                        {song.title}
+                                                                        
+                                                                    </Typography>
+                                                    
+                                                
+
+                                                                </CardContent>
+                                            
+                                                            </section>
+                                                                
+                                                                <section className={player1}>
+                                                            
+                                                                    <AudioPlayer
+
+                                                                        audioFiles={[{ src: song.preview_audio }]}
+                                                                        hideForward="true"
+                                                                        hideLoop="true"
+                                                                        hideRewind="true"
+                                                                        playIcon="playIcon.png"
+                                                                        playHoverIcon="playIcon.png"
+                                                                        pauseIcon="pauseIcon.png"
+                                                                        pauseHoverIcon="pauseIcon.png"
+                                                                        volumeIcon="volume.png"
+                                                                        volumeEngagedIcon="volume.png"
+                                                                        muteIcon="volume.png"
+                                                                        muteEngagedIcon="volume.png"
+                                                                        
+                                                                    />
+                                                                </section>
+
+                                                    </Card> 
+                                                </Box>
+                                            : 
+                            
+                                                song.priority === '2' ?
+                                        
                                                     <Box
                                                         
                                                         paddingTop={2}
-                                                    
+                                        
                                                     >
                                                         <Card
-                                                            
+                                            
                                                             raised={true}
-                                                            className={card1}
-                                            
+                                                            className={card2}
+                                                        
                                                         > 
-                                                                <section>
-
-                                                                    <CardContent 
+                                                            <section> 
                                                     
-                                                                        item xs={1} key={song} 
+                                                                <CardContent 
+                    
+                                                                    item xs={1} key={song} 
                                                                         
-                                                
-                                                                    >  
-                                                    
+                
+                                                                >  
+                    
+                                                                    <div>
+                                                        
                                                                         <Typography 
+                                                                                
                                                                             variant="overline" 
-                                                                            className={title1}
-                                                                            onClick={() => handleClick(song.song_id)} 
-
+                                                                            className={title2}
+                                                                            onClick={() => handleClick(song.song_id)}
                                                                         >
-                                                                            
                                                                             {song.title}
-                                                                            
+
+                                                                        
                                                                         </Typography>
-                                                        
-                                                    
+                        
+                                                                    </div>
 
-                                                                    </CardContent>
+                                                                </CardContent>
+                
+                                                            </section>
+                                            
+                                                                <section className={player2}>
                                                 
-                                                                </section>
-                                                                    
-                                                                    <section className={player1}>
+                                                                    <AudioPlayer
+
+                                                                        audioFiles={[{ src: song.preview_audio }]}
+                                                                        hideForward="true"
+                                                                        hideLoop="true"
+                                                                        hideRewind="true"
+                                                                        playIcon="playIcon.png"
+                                                                        playHoverIcon="playIcon.png"
+                                                                        pauseIcon="pauseIcon.png"
+                                                                        pauseHoverIcon="pauseIcon.png"
+                                                                        volumeIcon="volume.png"
+                                                                        volumeEngagedIcon="volume.png"
+                                                                        muteIcon="volume.png"
+                                                                        muteEngagedIcon="volume.png"
+                                                                    />
                                                                 
-                                                                        <AudioPlayer
+                                                                </section>
 
-                                                                            audioFiles={[{ src: song.preview_audio }]}
-                                                                            hideForward="true"
-                                                                            hideLoop="true"
-                                                                            hideRewind="true"
-                                                                            playIcon="playIcon.png"
-                                                                            playHoverIcon="playIcon.png"
-                                                                            pauseIcon="pauseIcon.png"
-                                                                            pauseHoverIcon="pauseIcon.png"
-                                                                            volumeIcon="volume.png"
-                                                                            volumeEngagedIcon="volume.png"
-                                                                            muteIcon="volume.png"
-                                                                            muteEngagedIcon="volume.png"
-                                                                            
-                                                                        />
-                                                                    </section>
-
-                                                        </Card> 
+                                                        </Card>
+                                        
                                                     </Box>
-                                                : 
+                                        
+                                            : 
+
+                                                song.priority === '3' ?
+                                                
+                                                    <Box
+                                                        
+                                                        paddingTop={2}
                                 
-                                                    song.priority === '2' ?
-                                            
-                                                        <Box
-                                                            
-                                                            paddingTop={2}
-                                            
-                                                        >
-                                                            <Card
-                                                
-                                                                raised={true}
-                                                                className={card2}
-                                                            
-                                                            > 
-                                                                <section> 
-                                                        
-                                                                    <CardContent 
-                        
-                                                                        item xs={1} key={song} 
-                                                                            
-                    
-                                                                    >  
-                        
-                                                                        <div>
-                                                            
-                                                                            <Typography 
-                                                                                    
-                                                                                variant="overline" 
-                                                                                className={title2}
-                                                                                onClick={() => handleClick(song.song_id)}
-                                                                            >
-                                                                                {song.title}
-
-                                                                            
-                                                                            </Typography>
-                            
-                                                                        </div>
-
-                                                                    </CardContent>
-                    
-                                                                </section>
-                                                
-                                                                    <section className={player2}>
+                                                    >
                                                     
-                                                                        <AudioPlayer
-
-                                                                            audioFiles={[{ src: song.preview_audio }]}
-                                                                            hideForward="true"
-                                                                            hideLoop="true"
-                                                                            hideRewind="true"
-                                                                            playIcon="playIcon.png"
-                                                                            playHoverIcon="playIcon.png"
-                                                                            pauseIcon="pauseIcon.png"
-                                                                            pauseHoverIcon="pauseIcon.png"
-                                                                            volumeIcon="volume.png"
-                                                                            volumeEngagedIcon="volume.png"
-                                                                            muteIcon="volume.png"
-                                                                            muteEngagedIcon="volume.png"
-                                                                        />
-                                                                    
-                                                                    </section>
-
-                                                            </Card>
-                                            
-                                                        </Box>
-                                            
-                                                : 
-
-                                                    song.priority === '3' ?
-                                                    
-                                                        <Box
-                                                            
-                                                            paddingTop={2}
+                                                        <Card
                                     
-                                                        >
-                                                        
-                                                            <Card
-                                        
-                                                                raised={true}
-                                                                className={card3}
-                                                    
-                                                            > 
-                                                                
-                                                                <section> 
+                                                            raised={true}
+                                                            className={card3}
                                                 
-                                                                    <CardContent 
-
-                                                                        item xs={1} key={song} 
-                                                                            
-
-                                                                    >  
-
-                                                                        <div>
-                                                    
-                                                                            <Typography 
-                                                                            
-                                                                                variant="overline" 
-                                                                                className={title3}
-                                                                                onClick={() => handleClick(song.song_id)}
-                                                                            >
-                                                                                {song.title}
-                                                                    
-                                                                            </Typography>
-                    
-                                                                        </div>
-
-                                                                    </CardContent>
-
-                                                                </section>
-                                        
-                                                                    <section className={player3}>
+                                                        > 
+                                                            
+                                                            <section> 
                                             
-                                                                        <AudioPlayer
+                                                                <CardContent 
 
-                                                                            audioFiles={[{ src: song.preview_audio }]}
-                                                                            hideForward="true"
-                                                                            hideLoop="true"
-                                                                            hideRewind="true"
-                                                                            playIcon="playIcon.png"
-                                                                            playHoverIcon="playIcon.png"
-                                                                            pauseIcon="pauseIcon.png"
-                                                                            pauseHoverIcon="pauseIcon.png"
-                                                                            volumeIcon="volume.png"
-                                                                            volumeEngagedIcon="volume.png"
-                                                                            muteIcon="volume.png"
-                                                                            muteEngagedIcon="volume.png"
-
-                                                                        />
-                                                            
-                                                                </section>
-
-                                                            </Card>
-                                    
-                                                        </Box>
-                                                : 
-                                                    /*this little update allows for the possibility that a user transfers an inactive song with 
-                                                    no priority input into the active category */
-                                                    song.priority === 'Uncertain' || song.priority === null ?
-                                            
-                                                        <Box
-                                                    
-                                                            paddingTop={2}
-                                                        
-                                                        >
-                                                
-                                                            <Card
-                                        
-                                                                raised={true}
-                                                                className={card}
-                                                            
-                                                            > 
-                                                                
-                                                                <section> 
-                                                            
-                                                                    <CardContent 
-                
-                                                                        item xs={1} key={song} 
-                                                                            
-
-                                                                    >  
-                
-                                                                        <div>
-                                                                
-                                                                            <Typography 
+                                                                    item xs={1} key={song} 
                                                                         
-                                                                                variant="overline" 
-                                                                                className={title}
-                                                                                onClick={() => handleClick(song.song_id)}
-                                                                            >
-                                                                                {song.title}
+
+                                                                >  
+
+                                                                    <div>
+                                                
+                                                                        <Typography 
                                                                         
-                                                                            </Typography>
-                    
-                                                                        </div>
-
-                                                                    </CardContent>
-
-                                                                </section>
-                                        
-                                                                    <section className={player}>
-                                            
-                                                                        <AudioPlayer
-
-                                                                            audioFiles={[{ src: song.preview_audio }]}
-                                                                            hideForward="true"
-                                                                            hideLoop="true"
-                                                                            hideRewind="true"
-                                                                            playIcon="playIcon.png"
-                                                                            playHoverIcon="playIcon.png"
-                                                                            pauseIcon="pauseIcon.png"
-                                                                            pauseHoverIcon="pauseIcon.png"
-                                                                            volumeIcon="volume.png"
-                                                                            volumeEngagedIcon="volume.png"
-                                                                            muteIcon="volume.png"
-                                                                            muteEngagedIcon="volume.png"
-
-                                                                        />
-                                                                    </section>
-
-                                                            </Card>
-                                                        </Box>
-
-                                                    :
-
-                                                        null
-                                                    }
-                                            
-                                                    <br></br>
-                                                    <br></br>
-                                        
-                                            </>
-                                        :
-                                            null
-
-                                        }  
-                                    </> 
-                                );
-
-                            })}
-
-                    </Box> 
-
-                </Paper>
-            :
-                    //this conditional render is meant essentially as a welcome/here's what to do
-                    //message for when the user might explore the app before uploading anything.
-
-                <Paper className={blankPage}>
+                                                                            variant="overline" 
+                                                                            className={title3}
+                                                                            onClick={() => handleClick(song.song_id)}
+                                                                        >
+                                                                            {song.title}
+                                                                
+                                                                        </Typography>
                 
-                    <div>
+                                                                    </div>
 
-                        <Card 
-                            className={messageCard}
-                            raised={true}
-                        >
-                        
-                            <div>
-                                
-                                <Feedback className={feedback}/>
-                                
-                            </div>
-                        
-                                <div className={messageDiv}>
-                                    
-                                    <Typography
-                        
-                                        align="center"
-                                        variant="h6"
-                                        className={message}
-                        
-                                    >
-                                    
-                                        This is where all your active songs will live.  You can upload music and song information
-                                        by following the navigation bar prompts. 
+                                                                </CardContent>
 
-                                    </Typography>
-                                
-                                </div>
-                        
-                        </Card>
-                            
-                            
-                    </div>
-
-                </Paper>
+                                                            </section>
                                     
-            }
+                                                                <section className={player3}>
+                                        
+                                                                    <AudioPlayer
+
+                                                                        audioFiles={[{ src: song.preview_audio }]}
+                                                                        hideForward="true"
+                                                                        hideLoop="true"
+                                                                        hideRewind="true"
+                                                                        playIcon="playIcon.png"
+                                                                        playHoverIcon="playIcon.png"
+                                                                        pauseIcon="pauseIcon.png"
+                                                                        pauseHoverIcon="pauseIcon.png"
+                                                                        volumeIcon="volume.png"
+                                                                        volumeEngagedIcon="volume.png"
+                                                                        muteIcon="volume.png"
+                                                                        muteEngagedIcon="volume.png"
+
+                                                                    />
+                                                        
+                                                            </section>
+
+                                                        </Card>
+                                
+                                                    </Box>
+                                            : 
+                                                /*this little update allows for the possibility that a user transfers an inactive song with 
+                                                no priority input into the active category */
+                                                song.priority === 'Uncertain' || song.priority === null ?
+                                        
+                                                    <Box
+                                                
+                                                        paddingTop={2}
+                                                    
+                                                    >
+                                            
+                                                        <Card
+                                    
+                                                            raised={true}
+                                                            className={card}
+                                                        
+                                                        > 
+                                                            
+                                                            <section> 
+                                                        
+                                                                <CardContent 
+            
+                                                                    item xs={1} key={song} 
+                                                                        
+
+                                                                >  
+            
+                                                                    <div>
+                                                            
+                                                                        <Typography 
+                                                                    
+                                                                            variant="overline" 
+                                                                            className={title}
+                                                                            onClick={() => handleClick(song.song_id)}
+                                                                        >
+                                                                            {song.title}
+                                                                    
+                                                                        </Typography>
+                
+                                                                    </div>
+
+                                                                </CardContent>
+
+                                                            </section>
+                                    
+                                                                <section className={player}>
+                                        
+                                                                    <AudioPlayer
+
+                                                                        audioFiles={[{ src: song.preview_audio }]}
+                                                                        hideForward="true"
+                                                                        hideLoop="true"
+                                                                        hideRewind="true"
+                                                                        playIcon="playIcon.png"
+                                                                        playHoverIcon="playIcon.png"
+                                                                        pauseIcon="pauseIcon.png"
+                                                                        pauseHoverIcon="pauseIcon.png"
+                                                                        volumeIcon="volume.png"
+                                                                        volumeEngagedIcon="volume.png"
+                                                                        muteIcon="volume.png"
+                                                                        muteEngagedIcon="volume.png"
+
+                                                                    />
+                                                                </section>
+
+                                                        </Card>
+                                                    </Box>
+
+                                                :
+
+                                                    null
+                                                }
+                                        
+                                                <br></br>
+                                                <br></br>
+                                    
+                                        </>
+                                    :
+                                        null
+
+                                    }  
+                                </> 
+                            );
+
+                        })}
+
+                </Box> 
+
+            </Paper>
+           
                
-                <Pagination
-                    className="pagination-bar"
-                    currentPage={currentPage}
-                    totalCount={songs.length}
-                    pageSize={PageSize}
-                    onPageChange={page => setCurrentPage(page)}
+            <Pagination
+                className="pagination-bar"
+                currentPage={currentPage}
+                totalCount={songs.length}
+                pageSize={PageSize}
+                onPageChange={page => setCurrentPage(page)}
 
-                />
+            />
 
 
         </>

@@ -39,9 +39,10 @@ const useStyles = makeStyles((theme) => ({
 
 const NavMenu = ({user}) => {
     const dispatch = useDispatch();
-    const {navLinks, menu, menuSwitch} = useStyles();
+    const {navLinks, menu} = useStyles();
     const [open, setOpen] = useState(false);
-    const [showArchiveLink, setShowArchiveLink]= useState(false)
+    const [showArchiveLink, setShowArchiveLink]= useState(false);
+    const [showSongsListLink, setShowSongsListLink]= useState(false);
     const songs = useSelector((store) => store.songs);
    
   
@@ -57,17 +58,27 @@ const NavMenu = ({user}) => {
         type: 'FETCH_SONG_DETAILS'
         
       });
-      handleState();
+      handleLinksState();
     };
 
-    const handleState = () => {
-      //checks for any occurrence of an inactive song
-      if (songs.filter(e => e.is_active === false).length > 0) 
-          {setShowArchiveLink(true)}
-      
-          else 
+    const handleLinksState = () => {
+      //checks for any occurrence of an inactive song - if any are found, show the link
+      songs.filter(e => e.is_active === false).length ?
 
-          {setShowArchiveLink(false)};
+          setShowArchiveLink(true)
+      
+          : 
+
+          setShowArchiveLink(false)
+          
+      //simpler check for any songs - if any are found, show the link
+      songs.length ? 
+
+          setShowSongsListLink(true)
+
+          :
+
+          setShowSongsListLink(false)
       }
 
     
@@ -116,12 +127,11 @@ const NavMenu = ({user}) => {
                 onClose={handleClose}
 
             >
-          
+          {showSongsListLink ?
             <MenuItem
               className={navLinks}
           
             >
-          
               <Link 
                 
                 to="/songsList"
@@ -145,8 +155,12 @@ const NavMenu = ({user}) => {
                 </Typography> 
               
               </Link>
+                
             
             </MenuItem>
+          :
+            null
+          }     
 
             <MenuItem 
               className={navLinks}
@@ -172,7 +186,7 @@ const NavMenu = ({user}) => {
               </Link>
 
             </MenuItem>
-            {showArchiveLink ?
+          {showArchiveLink ?
             <MenuItem
               className={navLinks}
           
@@ -202,7 +216,7 @@ const NavMenu = ({user}) => {
               
           
             </MenuItem>
-            :
+          :
             null 
           }
 
