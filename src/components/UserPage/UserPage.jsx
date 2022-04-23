@@ -8,6 +8,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import AddAlbum from './AddAlbum';
 import HourglassTopIcon from '@mui/icons-material/HourglassTop';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 
 const UserPage = () => {
@@ -161,7 +162,7 @@ const handleCancel = () => {
               variant='h6' 
               className={prompt}
             >
-              Do you have an album release to plan?
+              Do you have a release to plan?
             </Typography>
 
             <div style={{display:'flex', justifyContent:'center', paddingTop:'2em' }}>
@@ -172,7 +173,7 @@ const handleCancel = () => {
                   className={yesButton}
                 >
                   
-                  Start &nbsp;<CheckCircleOutlineIcon/>
+                  Add Album &nbsp;<AddCircleIcon style={{color:'#233d4d'}}/>
                   
                 </Button>
                 

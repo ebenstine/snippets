@@ -220,7 +220,9 @@ const AddSongUpdates = () => {
                                                 className={buttons} 
                                                 onClick={handleCancel} 
                                                 variant="outlined">
+                                                Cancel &nbsp;
                                                 <Cancel/>
+
                                               </Button>
                                               
                                               <Button 
@@ -228,6 +230,7 @@ const AddSongUpdates = () => {
                                                 onClick={handleAlert}
                                                 variant="outlined" 
                                                 type="submit">
+                                                Save &nbsp;
                                                 <CheckCircle/>
                                                 
                                               </Button>
