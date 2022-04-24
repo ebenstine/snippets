@@ -332,16 +332,28 @@ const RecordingsList = () => {
                                                                         <div>
                                                                             
                                                                             {recording === recordings[0] ?
+                                                                                <>
+                                                                                    {song.priority === '1' || '2' ?
+                                                                                        <Typography 
+                                                                                            
+                                                                                            className={description}>
+                                                                                            The selected preview recording for {''}
+                                                                                            {recording.description};{''} this is the most complete current version of the song.
+                                                                                            
+                                                                                            
+                                                                                        </Typography>
+                                                                                        :
 
-                                                                                <Typography 
-                                                                                
-                                                                                     
-                                                                                    className={description}>
-                                                                                    The selected preview recording for {''}
-                                                                                    {recording.description};{''} this is the most complete current version of the song.
-                                                                                    
-                                                                                    
-                                                                                </Typography>
+                                                                                        <Typography 
+                                                                                            
+                                                                                            className={description}>
+                                                                                            The best take of the original idea for{''}
+                                                                                            {recording.description}.
+                                                                                            
+                                                                                            
+                                                                                        </Typography>
+                                                                                    }
+                                                                                </>
                                                                             :
 
                                                                                 <Typography 
@@ -352,6 +364,7 @@ const RecordingsList = () => {
                                                                                     
                                                                                     
                                                                                 </Typography>
+                                                                                
                                                                             
                                                                             }
                                                                     

@@ -7,6 +7,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import SupportIcon from '@mui/icons-material/Support';
 import PerformanceGuideInstrumentSpecs from './PerformanceGuideComponents/PerformanceGuideInstrumentSpecs'
 import PerformanceGuidePerformanceNotes from './PerformanceGuideComponents/PerformanceGuidePerformanceNotes';
 import { 
@@ -127,9 +128,9 @@ const PerformanceGuide = () => {
                                 onClick={handleClickOpen}
                                 className={view}
                             >
-                                <b><img style={{width:22, height:22, paddingBottom:'.05em' }} src="musicStandMenu.png"></img></b>
+                                <SupportIcon style={{color:'#233d4d'}}/>
                                 
-                                &nbsp;Full Performance Guide
+                                &nbsp;Support
                             
                             </MenuItem>
                         :

@@ -136,7 +136,7 @@ const useStyles = makeStyles((theme) => ({
 
     highlight: {
 
-        color: '#1d778d',
+        color: '#233d4d',
         borderBottom: '1.5px solid #eb9148',
         fontSize: 17
 
