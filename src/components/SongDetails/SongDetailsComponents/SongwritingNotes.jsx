@@ -94,10 +94,10 @@ const useStyles = makeStyles((theme) => ({
 
     notes: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 9.5,
-        
+        fontSize: 12,
+        borderBottom: '1px solid #6ca0ad',
         whiteSpace: 'pre-wrap',
-        color: '#2a4f64', 
+        color: '#233d4d',
         
     },
 
@@ -171,7 +171,80 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: 'wrap'
 
 
-    }
+    },
+
+    notesBlock1: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#94d9eb',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em',
+        display:'flex',
+        flexWrap: 'wrap'
+
+    },
+
+    notesBlock2: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#f8a058',
+            cursor: 'pointer',
+            //border: '1px solid #6ca0ad'
+            
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em'
+        //border: '1px solid #6ca0ad',
+  
+
+
+    },
+
+    notesBlock3: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#fcca60',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em'
+
+    },
+
+    notesBlock: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#eb9292',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em'
+
+    },
+
+    cardText: {
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 9.5,
+        //borderBottom: '1px solid #6ca0ad',
+        paddingTop: '.5em',
+        whiteSpace: 'pre-wrap',
+        color: '#233d4d',
+        
+    },
 }));
 
 function SongWritingNotes() {
@@ -189,12 +262,18 @@ function SongWritingNotes() {
             notesDiv2,
             notesDiv3,
             notesDivUncertain,
+            notesBlock1,
+            notesBlock2,
+            notesBlock3,
+            notesBlock,
             root, 
-            actions 
+            actions,
+            cardText
         
         } = useStyles();
 
-    const [ editable, setEditable] = useState(true);
+    const [ editable, setEditable] = useState(false);
+    const [ updated, setUpdated ] = useState(false);
     console.log(params);
 
     let song = {
@@ -230,76 +309,136 @@ function SongWritingNotes() {
         payload: revisedSong
       });
       setEditable(editable => !editable);
+      setUpdated(updated => !updated);
     }
   
     return (
         <>
-            {editable ?
-                <FormControl  >
-                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
-                        <TextField 
-                            label="Update Songwriting Notes" 
-                            name="songwriting_notes"
+
+            {songDetails.map((song) => {
+
+                return (
+
+                    <>
+                        {editable ?
+                            <FormControl  >
+                                <form className={root} onSubmit={handleSubmit} autoComplete="off" >
+                                    <TextField 
+                                        label="Update Songwriting Notes" 
+                                        name="songwriting_notes"
+                                        
+                                        onDoubleClick={handleEditable}
+                                        margin="dense" 
+                                        multiline className={textField} 
+                                        onChange={handleChange}
+                                        
+                                        />
+                                    <div className={actions}> 
+                                    <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
+                                    <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
+                                    </div>
+                                </form>
+                            </FormControl>
+                        :
                             
-                            onDoubleClick={handleEditable}
-                            margin="dense" 
-                            multiline className={textField} 
-                            onChange={handleChange}
+                            <div onDoubleClick={handleEditable}>
+
+                                {updated ?
+                                    <>
+                                        <div style={{display:'flex', flexWrap: 'wrap'}}>
+                                            <b><img style={{width:12, height:12, paddingTop:'-.5em' }} src="quill.png"></img></b> &nbsp;
+                                                <Typography variant="caption" style={{color:'#233d4d', borderBottom: '1px solid #6ca0ad' }}>
+                                                        Songwriting Notes:
+                                                </Typography>
+
+
+                                        </div>
+
+                                            <div className=
+                                            {song.priority === '1' ?
+                                                notesDiv1 :
+                                            song.priority === '2' ?
+                                                notesDiv2 :
+                                            song.priority === '3' ?
+                                                notesDiv3 :
+                                            notesDivUncertain
+                                            }
+                                                    
+                                            >
+                                    
                             
-                            />
-                        <div className={actions}> 
-                        <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
-                        <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
-                        </div>
-                    </form>
-                </FormControl>
-                :
-                
-                <div onDoubleClick={handleEditable}>
+                                            <Typography 
+                                                
+                                                component="p" 
+                                                className={notes}>
+                                            
+                                            
+                                            {`${reviseDetails.songwriting_notes}`}
 
-                    <div style={{display:'flex', flexWrap: 'wrap'}}>
-                        <b><img style={{width:12, height:12, paddingTop:'-.5em' }} src="quill.png"></img></b> &nbsp;
-                            <Typography variant="caption" style={{color:'#233d4d', borderBottom: '1px solid #6ca0ad' }}>
-                                    Songwriting Notes:
-                            </Typography>
+                                            </Typography>
+                                        </div>
+                                    </>
+                                :
+
+                                    <>
+                                        <div style={{display:'flex', flexWrap: 'wrap'}}>
+
+                                            <b>
+                                                <img 
+                                                    style={{width:12, height:12, paddingTop:'-.5em' }} 
+                                                    src="writingNotes.png">
+                                                </img>
+                                            </b> &nbsp;
+                                            
+                                            <Typography 
+                                                variant="caption" 
+                                                className={notes}
+                                                
+                                                
+                                            >
+                                                Songwriting Notes:
+
+                                            </Typography>
 
 
-                    </div>
-                    
-                    
-                    {songDetails.map((item) => {
-                       return (
-                       <>
-                       
-                            <div className=
-                                {item.priority === '1' ?
-                                    notesDiv1 :
-                                        item.priority === '2' ?
-                                            notesDiv2 :
-                                                item.priority === '3' ?
-                                                    notesDiv3 :
-                                                        notesDivUncertain
+                                        </div>
+                                        
+                                        <div 
+                                            className={
+                                                song.priority === '1' ? 
+                                                    notesBlock1 :
+                                                song.priority === '2' ?
+                                                    notesBlock2 :
+                                                song.priority === '3' ?
+                                                    notesBlock3 :
+
+                                                    notesBlock
+                                                 }
+                                        >
+
+                                                        
+                                            <Typography 
+                                            
+                                                component = "p" 
+                                                className={cardText}
+                                            >
+                                                
+                                                
+                                                {song.songwriting_notes}
+
+                                            </Typography>
+
+                                        </div>
+                                    </>
                                 }
-                                    
-                            >
-                        
-                   
-                                <Typography 
-                                    
-                                    component="p" 
-                                    className={notes}>
-                                
-                                
-                                {`${reviseDetails.songwriting_notes}`}
 
-                                </Typography>
+
                             </div>
-                        </>
-                       )
-                    })}
-                </div>
-            }
-            
+        
+                        }
+                    </>
+                )
+            })}
         </>
    
     )

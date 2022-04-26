@@ -94,13 +94,12 @@ const useStyles = makeStyles((theme) => ({
 
     notes: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 9.5,
-        //borderBottom: '1.25px solid #6ca0ad',
+        fontSize: 12,
+        borderBottom: '1px solid #6ca0ad',
         whiteSpace: 'pre-wrap',
         color: '#233d4d',
         
     },
-
     notesDiv1: {
 
         '&:hover': {
@@ -171,7 +170,79 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: 'wrap'
 
 
-    }
+    },
+
+    notesBlock1: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#94d9eb',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em',
+        display:'flex',
+        flexWrap: 'wrap'
+
+    },
+
+    notesBlock2: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#f8a058',
+            cursor: 'pointer',
+            //border: '1px solid #6ca0ad'
+            
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em'
+        //border: '1px solid #6ca0ad',
+  
+
+
+    },
+
+    notesBlock3: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#fcca60',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em'
+
+    },
+
+    notesBlockUncertain: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#eb9292',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '.3em',
+        paddingTop: '.3em'
+
+    },
+    cardText: {
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 9.5,
+        //borderBottom: '1px solid #6ca0ad',
+        paddingTop: '.5em',
+        whiteSpace: 'pre-wrap',
+        color: '#233d4d',
+        
+    },
 }));
 
 function SongProductionIdeas() {
@@ -188,11 +259,18 @@ function SongProductionIdeas() {
             notesDiv2,
             notesDiv3,
             notesDivUncertain,
+            notesBlock1,
+            notesBlock2,
+            notesBlock3,
+            notesBlockUncertain,
             root, 
-            actions 
+            actions,
+            cardText 
+
         } = useStyles();
 
-    const [ editable, setEditable] = useState(true);
+    const [ editable, setEditable] = useState(false);
+    const [ updated, setUpdated ] = useState(false);
     console.log(params);
     let song = {
       performance_notes: songDetails.performance_notes
@@ -210,13 +288,6 @@ function SongProductionIdeas() {
         setEditable(editable => !editable)
     }
   
-  
-  
-    const handleCancel = () => {
-        history.push(`/songDetails/${params.id}`)
-    }
-  
-  
     const handleSubmit = (event) => {
       event.preventDefault();
       let revisedSong = reviseDetails;
@@ -227,84 +298,140 @@ function SongProductionIdeas() {
         payload: revisedSong
       });
       setEditable(editable => !editable);
+      setUpdated(updated => !updated);
     }
   
     return (
+        
         <>
 
-            {editable ?
-                <FormControl  >
-                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
-                        <TextField 
-                            label="Update Production Ideas" 
-                            name="production_ideas"
+            {songDetails.map((song) => {
+
+                return (
+
+                    <>
+
+                        {editable ?
+                            <FormControl  >
+                                <form className={root} onSubmit={handleSubmit} autoComplete="off" >
+                                    <TextField 
+                                        label="Update Production Ideas" 
+                                        name="production_ideas"
+                                        
+                                        onDoubleClick={handleEditable}
+                                        margin="dense" 
+                                        multiline className={textField} 
+                                        onChange={handleChange}
+                                        
+                                    />
+                                        <div className={actions}> 
+                                            <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
+                                            <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
+                                        </div>
+                                </form>
+                            </FormControl>
                             
-                            onDoubleClick={handleEditable}
-                            margin="dense" 
-                            multiline className={textField} 
-                            onChange={handleChange}
+                            :
                             
-                        />
-                            <div className={actions}> 
-                                <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
-                                <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
-                            </div>
-                    </form>
-                </FormControl>
-                
-                :
-                
-                <div onDoubleClick={handleEditable}>
+                            <div onDoubleClick={handleEditable}>
+                                {updated ?
+
+                                    <>
+                                        <div style={{display:'flex', flexWrap: 'wrap'}}>
+                                            <b><img style={{width:12, height:12}} src="sound-faders.png"></img></b> &nbsp;
+                                                <Typography variant="caption" style={{color:'#233d4d', borderBottom: '1px solid #6ca0ad'}}>
+                                                        Production Ideas:
+                                                </Typography>
 
 
-                        <div style={{display:'flex', flexWrap: 'wrap'}}>
-                            <b><img style={{width:12, height:12}} src="sound-faders.png"></img></b> &nbsp;
-                                <Typography variant="caption" style={{color:'#233d4d', borderBottom: '1px solid #6ca0ad'}}>
-                                        Production Ideas:
-                                </Typography>
+                                        </div>
+                                
+                                        
+                                    
+                                            <div className=
+                                                {song.priority === '1' ?
+                                                    notesDiv1 :
+                                                        song.priority === '2' ?
+                                                            notesDiv2 :
+                                                                song.priority === '3' ?
+                                                                    notesDiv3 :
+                                                                        notesDivUncertain
+                                                }
+                                                    
+                                            >
+                                        
+                                
+                                                <Typography 
+                                                    
+                                                    component="p" 
+                                                    className={notes}>
+                                                
+                                                
+                                                {`${reviseDetails.production_ideas}`}
+
+                                                </Typography>
+                                            </div>
+                                    </>
+                                    
+                                :
+
+                                    <>
+                                        <div style={{display:'flex', flexWrap:'wrap'}}>
+                                            <b>
+                                                <img 
+                                                    style={{width:12, height:12}} 
+                                                    src="productionIdeas.png">
+                                                </img>
+                                            </b> &nbsp;
+                                            
+                                
+                                            <Typography 
+                                                variant="caption" 
+                                                className={notes}
+                                            >
+                                            
+                                            Production Ideas:
+                                        
+                                            </Typography>
 
 
-                        </div>
-                   {songDetails.map((item) => {
-                       return (
-                       <>
-                       
-                            <div className=
-                                {item.priority === '1' ?
-                                    notesDiv1 :
-                                        item.priority === '2' ?
-                                            notesDiv2 :
-                                                item.priority === '3' ?
-                                                    notesDiv3 :
-                                                        notesDivUncertain
+                                        </div>
+                                        
+
+                                        <div 
+                                            className=
+                                            {song.priority === '1' ?
+                                            notesBlock1 :
+                                                song.priority === '2' ?
+                                                    notesBlock2 :
+                                                        song.priority === '3' ?
+                                                            notesBlock3 :
+                                                                notesBlockUncertain
+                                            }
+                                        >
+                                                
+                                            <Typography
+
+                                                component = "p" 
+                                                className= {cardText}
+                                                
+                                            >
+                                            
+                                                
+                                                {song.production_ideas}
+
+                                            </Typography>
+                                        </div>
+                                    </>
                                 }
-                                    
-                            >
-                        
-                   
-                                <Typography 
-                                    
-                                    component="p" 
-                                    className={notes}>
-                                
-                                
-                                {`${reviseDetails.production_ideas}`}
 
-                                </Typography>
-                            </div>
-                        </>
-                       )
-                    })}
-                        
                             
-                        
-                        
-                   
-                   
-                </div>
+                            </div>
 
-            }
-            
+                        }
+                    </>
+                )
+            })}
         </>
    
     )

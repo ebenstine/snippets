@@ -152,7 +152,80 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: '.5em',
         paddingBottom: '1em'
         
-    }
+    },
+
+    lyricBlock1: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#94d9eb',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '1em',
+        paddingTop: '1em'
+
+    },
+
+    lyricBlock2: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#f8a058',
+            cursor: 'pointer',
+            //border: '1px solid #6ca0ad'
+            
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '1em',
+        paddingTop: '1em'
+        //border: '1px solid #6ca0ad',
+  
+
+
+    },
+
+    lyricBlock3: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#fcca60',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '1em',
+        paddingTop: '1em'
+
+    },
+
+    lyricBlockUncertain: {
+        '&:hover': {
+            //border: '1px solid #1d778d',
+            backgroundColor: '#eb9292',
+            cursor: 'pointer'
+            },
+        borderRadius: '3px',
+        paddingRight: '.5em',
+        paddingLeft: '.5em',
+        paddingBottom: '1em',
+        paddingTop: '1em'
+
+    },
+
+    lyricText: {
+
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 9.5,
+        //borderBottom: '1px solid #6ca0ad',
+        marginTop: 'auto',
+        whiteSpace: 'pre-wrap',
+        color: '#233d4d',
+        
+        
+    },
 }));
 
 function SongLyrics() {
@@ -167,14 +240,20 @@ function SongLyrics() {
             words, 
             root, 
             actions,
+            lyricBlock1,
+            lyricBlock2,
+            lyricBlock3,
+            lyricBlock,
             editedLyricBlock1,
             editedLyricBlock2,
             editedLyricBlock3,
-            editedLyricBlockUncertain
+            editedLyricBlockUncertain,
+            lyricText
 
         } = useStyles();
 
-    const [ editable, setEditable] = useState(true);
+    const [ editable, setEditable ] = useState(false);
+    const [ updated, setUpdated ] = useState(false);
     console.log(params);
 
     let song = {
@@ -209,165 +288,131 @@ function SongLyrics() {
         payload: revisedSong
       });
       setEditable(editable => !editable);
+      setUpdated(updated => !updated);
     }
   
     return (
+        
         <>
-            {editable ?
-                
-                <FormControl>
-                    
-                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
-                        
-                        <TextField 
-                            label="Update Lyrics" 
-                            name="lyrics"
-                            onDoubleClick={handleEditable}
-                            margin="dense" 
-                            multiline className={textField} 
-                            onChange={handleChange}
-                            
-                        />
-                        
-                            <div className={actions}> 
-                        
-                                <Button 
-                                    
-                                    className={buttons} 
-                                    onClick={handleCancel}>
-                                    <Cancel/>
 
-                                </Button>
+            {songDetails.map((song) => {
                         
-                                <Button 
-                                    
-                                    className={buttons} 
-                                    variant="filled" 
-                                    type="submit">
-                                    <CheckCircle/>
-                                
-                                </Button>
-                        
-                            </div>
+                return (
 
-                    </form>
-                
-                </FormControl>
-                
-                
-            :
-
-                <>
+                    <>
             
-                    {songDetails.map((song) => {
-                     
-                        return (
-
-                            <div key={song.id}>
-                    
-                                {song.priority === '1' ?
-
-                                    <div 
-                                        
-                                        onDoubleClick={handleEditable} 
-                                        className={editedLyricBlock1}
+                        {editable ?
+                            
+                            <FormControl>
+                                
+                                <form className={root} onSubmit={handleSubmit} autoComplete="off" >
                                     
-                                    >
-                        
-                                        <Typography 
+                                    <TextField 
+                                        label="Update Lyrics" 
+                                        name="lyrics"
+                                        onDoubleClick={handleEditable}
+                                        margin="dense" 
+                                        multiline className={textField} 
+                                        onChange={handleChange}
+                                        
+                                    />
+                                    
+                                        <div className={actions}> 
+                                    
+                                            <Button 
+                                                
+                                                className={buttons} 
+                                                onClick={handleEditable}>
+                                                <Cancel/>
+
+                                            </Button>
+                                    
+                                            <Button 
+                                                
+                                                className={buttons} 
+                                                variant="filled" 
+                                                type="submit">
+                                                <CheckCircle/>
                                             
-                                            //variant="caption" 
-                                            component="span" 
-                                            className={words}
-                        
-                                        >
-                        
-                                            {`${reviseDetails.lyrics}`}
-                            
-                                        </Typography>
-
-                                    </div>
-
-                                :
-                                
-                                song.priority === '2' ?
-                    
-                                    <div 
-                                        
-                                        onDoubleClick={handleEditable} 
-                                        className={editedLyricBlock2}
+                                            </Button>
                                     
-                                    >
+                                        </div>
+
+                                </form>
+                            
+                            </FormControl>
+                            
+                            
+                        :
+
+                            <div onDoubleClick={handleEditable}>
+                            
+                                {updated ?
+
+                                    <div key={song.id}>
+
+                                            <div 
+
+                                                className={
+                                                    song.priority === '1' ?
+                                                        editedLyricBlock1:
+                                                    song.priority === '2' ?
+                                                        editedLyricBlock2:
+                                                    song.priority === '3' ?
+                                                        editedLyricBlock3:
+
+                                                        lyricBlock
+                                                }
+                                            
+                                            >
                                 
-                                        <Typography 
-                            
-                                            component="span" 
-                                            className={words}
-                        
-                                        >
-                        
-                                            {`${reviseDetails.lyrics}`}
-                        
-                                        </Typography>
-                    
-                                    </div>
-
-                                :
-                    
-                                song.priority === '3' ?
-                    
-                                    <div 
+                                                <Typography 
+                                                    
+                                                    //variant="caption" 
+                                                    component="span" 
+                                                    className={words}
+                                
+                                                >
+                                
+                                                    {`${reviseDetails.lyrics}`}
                                     
-                                        onDoubleClick={handleEditable} 
-                                        className={editedLyricBlock3}
-                                    >
-                        
-                                        <Typography 
-                            
-                                            component="span" 
-                                            className={words}
-                        
-                                        >
-                                        
-                                            {`${reviseDetails.lyrics}`}
-                        
-                                        </Typography>
-                    
-                                    </div>
+                                                </Typography>
 
+                                            </div>
+
+                                    </div>    
                                 :
-
                                     <div 
                                         
-                                        onDoubleClick={handleEditable} 
-                                        className={editedLyricBlockUncertain}
+                                        className=
+                                            {song.priority === '1' ?
+                                                lyricBlock1:
+                                            song.priority === '2' ?
+                                                lyricBlock2:
+                                            song.priority === '3' ?
+                                                lyricBlock3:
+
+                                                lyricBlock
+                                            }
                                     >
-                        
+
                                         <Typography 
-                            
-                                            component="span" 
-                                            className={words}
-                        
-                                        >
-                                        
-                                            {`${reviseDetails.lyrics}`}
-                        
+                                            component="p"
+                                            
+                                            className={lyricText}>
+                                            {song.lyrics}
+
                                         </Typography>
-                    
-                                    </div> 
-                    
+                                    </div>
+                                    
                                 }
-
                             </div>
-                   
-                        )
+                        }
+        
+                    </>
+                )
 
-                    })}
-            
-                </>
-        
-            }
-        
+            })}
         </>
     )
 }
