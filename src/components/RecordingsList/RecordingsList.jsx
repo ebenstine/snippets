@@ -333,7 +333,7 @@ const RecordingsList = () => {
                                                                             
                                                                             {recording === recordings[0] ?
                                                                                 <>
-                                                                                    {song.priority === '1' || '2' ?
+                                                                                    {song.priority === '1' || song.priority === '2' ?
                                                                                         <Typography 
                                                                                             
                                                                                             className={description}>
@@ -343,15 +343,17 @@ const RecordingsList = () => {
                                                                                             
                                                                                         </Typography>
                                                                                         :
+                                                                                    
 
                                                                                         <Typography 
                                                                                             
                                                                                             className={description}>
-                                                                                            The best take of the original idea for{''}
+                                                                                            The best take of the original idea for {''}
                                                                                             {recording.description}.
                                                                                             
                                                                                             
                                                                                         </Typography>
+
                                                                                     }
                                                                                 </>
                                                                             :

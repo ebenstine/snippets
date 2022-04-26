@@ -58,7 +58,7 @@ export default function ActiveSongDetails(){
     const params = useParams();
     const dispatch = useDispatch();
     const history = useHistory();
-    const [ editTitle, setEditTitle] = useState(false);
+    
     const [ editLyrics, setEditLyrics] = useState(false);
     const [ editINotes, setEditINotes] = useState(false);
     const [ editPNotes, setEditPNotes] = useState(false);
@@ -78,9 +78,7 @@ export default function ActiveSongDetails(){
     const songs = useSelector((store) => store.songs)
 
 
-    const handleEditTitle = () => {
-        setEditTitle(editTitle => !editTitle)
-    }
+    
     const handleEditLyrics = () => {
         setEditLyrics(editLyrics => !editLyrics)
     }
@@ -146,23 +144,9 @@ export default function ActiveSongDetails(){
 
                                                 <CardContent className={cardContent}>
                                                     
-                                                    {editTitle ?
+                                                    
                                             
-                                                        <SongTitle/> :
-                                            
-                                                            <div onDoubleClick={handleEditTitle}>
-                                
-                                                                <Typography 
-                                                                    variant="overline" 
-                                                                    className={title1}>
-                                                                    {song.title}
-
-                                                                </Typography>
-                                                                
-                                                                
-
-                                                            </div>
-                                                    }
+                                                        <SongTitle/> 
                             
                                                     <br></br>
 
@@ -311,26 +295,11 @@ export default function ActiveSongDetails(){
 
                                                 <CardContent className={cardContent}>
                                         
-                                                    {editTitle ?
+                                                    
                                             
-                                                        <SongTitle/> :
+                                                        <SongTitle/> 
                                             
-                                                            <div onDoubleClick={handleEditTitle}
-                                                                
-                                                            >
-                                
-                                                                <Typography 
-                                                                    variant="overline" 
-                                                                    className={title2}>
-                                                                    {song.title}
-
-                                                                </Typography>
-                                                                
-
-                                                                
-
-                                                            </div>
-                                                    }
+                                                            
                             
                                                     <br></br>
 
@@ -476,22 +445,9 @@ export default function ActiveSongDetails(){
 
                                                 <CardContent className={cardContent}>
                                         
-                                                    {editTitle ?
+                                                   
                                             
-                                                        <SongTitle/> :
-                                                        
-                                            
-                                                            <div onDoubleClick={handleEditTitle}>
-                                
-                                                                <Typography 
-                                                                    variant="overline" 
-                                                                    className={title3}>
-                                                                    {song.title}
-
-                                                                </Typography>
-                                                                
-                                                            </div>
-                                                    }
+                                                        <SongTitle/> 
                             
                                                     <br></br>
 
@@ -635,23 +591,13 @@ export default function ActiveSongDetails(){
 
                                                 <CardContent className={cardContent}>
                                                     
-                                                    {editTitle ?
+                                                   
                                     
-                                                        <SongTitle/> :
-                                    
-                                                            <div onDoubleClick={handleEditTitle}>
-                        
-                                                                <Typography 
-                                                                    variant="overline" 
-                                                                    className={title}>
-                                                                    {song.title}
-
-                                                                </Typography>
+                                                        <SongTitle/> 
                                                                 
                                                                 
-                                                                
-                                                            </div>
-                                                    }
+                                                
+                                                            
                     
                                                     <br></br>
 

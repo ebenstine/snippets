@@ -116,69 +116,7 @@ const useStyles = makeStyles(() => ({
         bottom: '4em',
         border: '1px solid snow'
     },
-    title: {
-        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 20,
-        color: '#233d4d',
-        
-        marginLeft: 'auto',
-        marginTop: 'auto',
-        borderBottom: '1px solid #6ca0ad',
-        '&:hover': {
-            borderBottom: '1.5px solid #1d778d',
-            background:'linear-gradient(6deg, #eb9292 37%, transparent 38%)',
-            cursor: 'pointer'
-            },
-
-     },
-
-     title1: {
-        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 20,
-        color: '#233d4d',
-        
-        marginLeft: 'auto',
-        marginTop: 'auto',
-        borderBottom: '1px solid #6ca0ad',
-        '&:hover': {
-            borderBottom: '1.5px solid #1d778d',
-            background:'linear-gradient(6deg, #94d9eb 37%, transparent 38%)',
-            cursor: 'pointer'
-            },
-
-     },
-
-     title2: {
-        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 20,
-        color: '#233d4d',
-        
-        marginLeft: 'auto',
-        marginTop: 'auto',
-        borderBottom: '1px solid #6ca0ad',
-        '&:hover': {
-            borderBottom: '1.5px solid #1d778d',
-            background:'linear-gradient(6deg, #f8a058 37%, transparent 38%)',
-            cursor: 'pointer'
-            },
-
-     },
-
-     title3: {
-        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
-        fontSize: 20,
-        color: '#233d4d',
-        
-        marginLeft: 'auto',
-        marginTop: 'auto',
-        borderBottom: '1px solid #6ca0ad',
-        '&:hover': {
-            borderBottom: '1.5px solid #1d778d',
-            background:'linear-gradient(6deg, #fcca60 37%, transparent 38%)',
-            cursor: 'pointer'
-            },
-
-     },
+    
 
     cardText: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',

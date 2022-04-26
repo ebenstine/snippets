@@ -94,15 +94,69 @@ const useStyles = makeStyles((theme) => ({
         color: '#2a4f64'
     },
 
-    titleTitle: {
+    title: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 20,
-        borderBottom: '1.25px solid #6ca0ad',
-        whiteSpace: 'pre-wrap',
-        color: '#2a4f64',
-        align: 'center'
+        color: '#233d4d',
         
-    },
+        marginLeft: 'auto',
+        marginTop: 'auto',
+        borderBottom: '1px solid #6ca0ad',
+        '&:hover': {
+            borderBottom: '1.5px solid #1d778d',
+            background:'linear-gradient(6deg, #eb9292 37%, transparent 38%)',
+            cursor: 'pointer'
+            },
+
+     },
+
+     title1: {
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 20,
+        color: '#233d4d',
+        
+        marginLeft: 'auto',
+        marginTop: 'auto',
+        borderBottom: '1px solid #6ca0ad',
+        '&:hover': {
+            borderBottom: '1.5px solid #1d778d',
+            background:'linear-gradient(6deg, #94d9eb 37%, transparent 38%)',
+            cursor: 'pointer'
+            },
+
+     },
+
+     title2: {
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 20,
+        color: '#233d4d',
+        
+        marginLeft: 'auto',
+        marginTop: 'auto',
+        borderBottom: '1px solid #6ca0ad',
+        '&:hover': {
+            borderBottom: '1.5px solid #1d778d',
+            background:'linear-gradient(6deg, #f8a058 37%, transparent 38%)',
+            cursor: 'pointer'
+            },
+
+     },
+
+     title3: {
+        fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
+        fontSize: 20,
+        color: '#233d4d',
+        
+        marginLeft: 'auto',
+        marginTop: 'auto',
+        borderBottom: '1px solid #6ca0ad',
+        '&:hover': {
+            borderBottom: '1.5px solid #1d778d',
+            background:'linear-gradient(6deg, #fcca60 37%, transparent 38%)',
+            cursor: 'pointer'
+            },
+
+     },
 
     
 }));
@@ -112,8 +166,9 @@ function SongTitle() {
     const dispatch = useDispatch();
     const params = useParams();
     const history = useHistory();
-    const { textField, buttons, titleTitle, root, actions } = useStyles();
-    const [ editable, setEditable] = useState(true);
+    const { textField, buttons, title, title1, title2, title3, root, actions } = useStyles();
+    const [ editable, setEditable] = useState(false);
+    const [ updated, setUpdated ] = useState(false);
     console.log(params);
     let song = {
       title: songDetails.title
@@ -132,12 +187,6 @@ function SongTitle() {
     }
   
   
-  
-    const handleCancel = () => {
-        history.push(`/songDetails/${params.id}`)
-    }
-  
-  
     const handleSubmit = (event) => {
       event.preventDefault();
       let revisedSong = reviseDetails;
@@ -148,48 +197,97 @@ function SongTitle() {
         payload: revisedSong
       });
       setEditable(editable => !editable);
+      setUpdated(updated => !updated);
     }
   
     return (
+        
         <>
                  
-                {/*<div onDoubleClick={handleEditable}>
-                    <Typography variant="h5" component="h5" className={titleTitle}>
-                        Change the title?  I know this is hard.
-                        </div>
-                    </Typography>*/}
-                {editable? 
+            {songDetails.map((song) => {
+
+                return (
                 
+                    <>
                 
-                <FormControl  >
-                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
-                        <TextField 
-                            label="Update Title" 
-                            name="title"
-                            
-                            onDoubleClick={handleEditable}
-                            margin="dense" 
-                            multiline className={textField} 
-                            onChange={handleChange}
-                            
-                            />
-                        <div className={actions}> 
-                        <Button className={buttons} onClick={handleCancel}><Cancel/></Button>
-                        <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
-                        </div>
-                    </form>
-                </FormControl>
-                :
-                
-                <div onDoubleClick={handleEditable}>
-                    <Typography variant="overline" className={titleTitle}>
-                    {`${reviseDetails.title}`}
-                    </Typography>
-                </div>
-            }
-            
+                        {editable ? 
+                        
+                        
+                            <FormControl>
+                                <form className={root} onSubmit={handleSubmit} autoComplete="off" >
+                                    <TextField 
+                                        label="Update Title" 
+                                        name="title"
+                                        
+                                        onDoubleClick={handleEditable}
+                                        margin="dense" 
+                                        multiline className={textField} 
+                                        onChange={handleChange}
+                                        
+                                        />
+                                    <div className={actions}> 
+                                    <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
+                                    <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
+                                    </div>
+                                </form>
+                            </FormControl>
+                        :
+                        
+                            <div onDoubleClick={handleEditable}>
+                                {updated ?
+                                
+                                    <>
+                                        <Typography 
+                                            variant="overline" 
+                                            className=
+                                            {song.priority === '1' ?
+                                                title1 :
+                                             song.priority === '2' ?
+                                                title2 :
+                                             song.priority === '3' ?
+                                                title3 :
+
+                                                title 
+                                            }
+                                        >
+                                            
+                                        {`${reviseDetails.title}`}
+                                        </Typography>
+                                    </>
+
+                                :
+
+                                    <>
+                                                    
+                                        <Typography 
+                                            variant="overline" 
+                                            className=
+                                                {song.priority === '1' ?
+                                                    title1 :
+                                                 song.priority === '2' ?
+                                                    title2 :
+                                                 song.priority === '3' ?
+                                                    title3 :
+
+                                                    title 
+                                                }
+                                            >
+                                            {song.title}
+
+                                        </Typography>
+                                        
+                                        
+
+                                    </>
+
+                                }
+                            </div>
+                        }
+
+                    </>
+                )
+            })}
         </>
-   
     )
 }
 
