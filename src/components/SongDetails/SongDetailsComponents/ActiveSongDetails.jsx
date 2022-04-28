@@ -1,6 +1,6 @@
-import { useHistory, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { Paper, Card, CardContent, Typography, Button, HelperText } from '@material-ui/core';
+import { Paper, Card, CardContent } from '@material-ui/core';
 import { useEffect, useState } from 'react';
 import useStyles from './SongDetailsStyles';
 import SongDetailsMenu from './SongDetailsMenu';
@@ -28,19 +28,8 @@ export default function ActiveSongDetails(){
 
     } = useStyles();
 
-
-
     const params = useParams();
     const dispatch = useDispatch();
-    const history = useHistory();
-    
-    const [ editLyrics, setEditLyrics] = useState(false);
-    const [ editINotes, setEditINotes] = useState(false);
-    const [ editPNotes, setEditPNotes] = useState(false);
-    //add state handler for status? 
-
-    console.log(params);
-
 
     useEffect(() => {
         
@@ -50,25 +39,7 @@ export default function ActiveSongDetails(){
         });
     }, []);
     const songDetails = useSelector((store) => store.songDetails)
-    const songs = useSelector((store) => store.songs)
 
-
-    
-    
-    const handleEditINotes = () => {
-        setEditINotes(editINotes=> !editINotes)
-    }
-    const handleEditPNotes = () => {
-        setEditPNotes(editPNotes => !editPNotes)
-    }
-    //the structure of this conditional rendering is:
-    /*1. if the song's priority is x, show that song's accordant background color.
-    2. if the edit mode for song property x is on, pull in the component for that property, which,
-    3. itself asks if edit mode is turned on, and if it is, shows the input form,
-    4. or otherwise, shows the edited text.
-    5. if the edit mode for the property is off, the original inputted data is shown.
-    */
-    //the conditional rendering for each song component and whether it is being edited, or has been edited, is pulled in from refactored components
 
     return (
             
@@ -118,12 +89,8 @@ export default function ActiveSongDetails(){
                                                     <SongDetailsMenu/>
                                 
                                                 </div>
-                        
-                    
 
                                                 <CardContent className={cardContent}>
-                                                    
-                                                    
                                             
                                                         <SongTitle/> 
                                                             <br></br>
@@ -137,13 +104,12 @@ export default function ActiveSongDetails(){
                                                 </CardContent>
                         
                                             </Card> 
-                                    </div>
+                                        </div>
                                     
                                         <br></br>
                                         
                                         <SongStatus/>
                                     
-                        
                                 </section>
 
                             </Paper> 

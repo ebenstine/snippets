@@ -141,7 +141,7 @@ function SongLyrics() {
                                                     song.priority === '3' ?
                                                         editedLyricBlock3:
 
-                                                        lyricBlock
+                                                        editedLyricBlockUncertain
                                                 }
                                             
                                             >

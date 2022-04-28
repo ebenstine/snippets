@@ -14,7 +14,6 @@ function SongProductionIdeas() {
     const songDetails = useSelector(store => store.songDetails);
     const dispatch = useDispatch();
     const params = useParams();
-    const history = useHistory();
    
     const { 
             textField, 
@@ -96,7 +95,7 @@ function SongProductionIdeas() {
                                 </form>
                             </FormControl>
                             
-                            :
+                        :
                             
                             <div onDoubleClick={handleEditable}>
                                 {updated ?

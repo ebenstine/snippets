@@ -192,7 +192,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
-    lyricBlockUncertain: {
+    lyricBlock: {
         '&:hover': {
             //border: '1px solid #1d778d',
             backgroundColor: '#eb9292',
