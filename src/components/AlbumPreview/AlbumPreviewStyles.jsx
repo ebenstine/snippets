@@ -5,9 +5,10 @@ const useStyles = makeStyles(() => ({
     card: {
       
         
-        background:'#f0a1a1',
-        border: '1px solid #1d778d',
-        width: 345
+        background:'transparent',
+        
+        width: 700,
+        paddingTop:'1em'
         
     },
     
@@ -16,7 +17,8 @@ const useStyles = makeStyles(() => ({
         
         backgroundColor: '#afe4f1',
         border: '1px solid #1d778d',
-        width: 345
+        display:'flex',
+        
         
     },
 
@@ -25,7 +27,7 @@ const useStyles = makeStyles(() => ({
        
         backgroundColor: '#ffb171',
         border: '1px solid #1d778d',
-        width: 345
+        display:'flex'
     },
     
     card3: {
@@ -33,7 +35,7 @@ const useStyles = makeStyles(() => ({
         
         backgroundColor: '#fdd377',
         border: '1px solid #1d778d',
-        width: 345
+        display:'flex'
     },
 
     cardContent: {
@@ -128,11 +130,15 @@ const useStyles = makeStyles(() => ({
         borderRadius: '.25em',
         paddingTop: '.5em',
         paddingBottom: '.5em',
+        backgroundColor:'#afe4f1',
         '&:hover': {
            
             backgroundColor: '#94d9eb',
             
-        }
+        },
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
         
         
     },
@@ -147,12 +153,17 @@ const useStyles = makeStyles(() => ({
         borderRadius: '.25em',
         paddingTop: '.5em',
         paddingBottom: '.5em',
+        backgroundColor:'#ffb171',
         '&:hover': {
             
             
             backgroundColor: '#f8a058',
             
-        }
+        },
+
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
         
         
     },
@@ -167,12 +178,17 @@ const useStyles = makeStyles(() => ({
         borderRadius: '.25em',
         paddingTop: '.5em',
         paddingBottom: '.5em',
+        backgroundColor: '#fdd377',
         '&:hover': {
             
             
             backgroundColor: '#fcca60',
             
-        }
+        },
+
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
         
     },
 
@@ -200,49 +216,27 @@ const useStyles = makeStyles(() => ({
     title1: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 16,
-        marginLeft: '-.4em',
-        marginTop: '3em',
+        paddingRight: '1em',
+        paddingLeft:'1em',
         color: '#233d4d',
-        '&:hover': {
-            
-            cursor: 'pointer',
-            borderBottom: '1.5px solid #1d778d',
-            background:'linear-gradient(9deg, #94d9eb 37%, transparent 38%)'
-            
-           
-    }
-        
+
     },
 
     title2: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 16,
-        marginLeft: '-.4em',
-        marginTop: 'auto',
+        paddingRight: '1em',
+        paddingLeft:'1em',
         color: '#233d4d',
-        '&:hover': {
-            //color:'#1d778d',
-            cursor: 'pointer',
-            borderBottom: '1.5px solid #1d778d',
-            background:'linear-gradient(9deg, #f8a058 37%, transparent 38%)'
-            
-        }
-        
+
     },
 
     title3: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 16,
-        marginLeft: '-.4em',
-        marginTop: 'auto',
+        paddingRight: '1em',
+        paddingLeft:'1em',
         color: '#233d4d',
-        '&:hover': {
-            //color:'#1d778d',
-            cursor:'pointer',
-            borderBottom: '1.5px solid #1d778d',
-            background:'linear-gradient(9deg, #fcca60 37%, transparent 38%)'
-          
-        }
         
     },
 
@@ -311,51 +305,58 @@ const useStyles = makeStyles(() => ({
     },
 
     heading1: {
-        borderBottom: '1px solid #2a4f64',
+       
         color: '#2a4f64',
         //borderRadius: '2px',
         //marginTop: '1em',
         paddingBottom: '.2em',
-        fontSize: 15,
+        fontSize: 18,
         '&:hover': {
             
             cursor:'pointer',
-            borderBottom:'1px solid #afe4f1'
+            color:'#afe4f1'
             
           
-        }
+        },
+        display:'flex',
+        justifyContent:'center'
+
     },
 
     heading2: {
-        borderBottom: '1px solid #2a4f64',
+       
         color: '#2a4f64',
         //borderRadius: '2px',
         //marginTop: '1em',
         paddingBottom: '.2em',
-        fontSize: 15,
+        fontSize: 18,
         '&:hover': {
             
             cursor:'pointer',
-            borderBottom:'1px solid #ffb171'
+            color: '#ffb171'
             
           
-        }
+        },
+        display:'flex',
+        justifyContent:'center'
     },
 
     heading3: {
-        borderBottom: '1px solid #2a4f64',
+        
         color: '#2a4f64',
         //borderRadius: '2px',
         //marginTop: '1em',
         paddingBottom: '.2em',
-        fontSize: 15,
+        fontSize: 18,
         '&:hover': {
             
             cursor:'pointer',
-            borderBottom:'1px solid #fdd377'
+            color:'#fdd377'
             
           
-        }
+        },
+        display:'flex',
+        justifyContent:'center'
     },
 
     playIcon: {
@@ -371,9 +372,6 @@ const useStyles = makeStyles(() => ({
         
     },
 
-    slider: {
-        color:'#2a4f64'
-    },
 
     editField: {
         display:'flex',

@@ -6,27 +6,15 @@ import {
         Box, 
         Paper, 
         Typography, 
-        Card, 
-        CardContent, 
         Dialog, 
         DialogTitle, 
-        DialogContent,  
-        Button 
+        
     } 
         from '@material-ui/core';
 import useStyles from './AlbumPreviewStyles';
-//import ColorCodeLegend from './ColorCodeLegend'
-import Feedback from '@material-ui/icons/Feedback';
 import AlbumTitle from './AlbumTitle'
 import AlbumStyle from './AlbumStyle'
 import AlbumReleaseRange from './AlbumReleaseRange'
-import ColorCodeLegend from '../SongsList/ColorCodeLegend';
-import './slider.css'
-
-
-
-
-
 
 function AlbumPreview() {
 
@@ -39,23 +27,15 @@ function AlbumPreview() {
             player1,
             player2,
             player3,
-            card1, 
-            card2,
-            card3,
+            card,
             paper1,
             paper2,
             paper3,
             heading1,
             heading2,
             heading3,
-            summary,
-            editField,
-            detailHeading,
             dialogHeading,
-            albumSpec,
-            
-            
-            
+   
         } = useStyles();
 
     const dispatch = useDispatch();
@@ -125,10 +105,6 @@ function AlbumPreview() {
 
                                         <Typography variant="overline" className={heading1} onClick={handleClickOpen}>
 
-                                        
-                                                
-                                            <img src='album1.png' style={{height:18, width:18}}></img>
-
                                             &nbsp;{album.title}
 
                                         </Typography>
@@ -136,10 +112,6 @@ function AlbumPreview() {
                                     album.id === 2 ?
                                     
                                         <Typography variant="overline" className={heading2} onClick={handleClickOpen}>
-
-                                            
-                                                    
-                                            <img src='album2.png' style={{height:18, width:18}}></img>
 
                                             &nbsp;{album.title}
 
@@ -149,9 +121,6 @@ function AlbumPreview() {
 
                                         <Typography variant="overline" className={heading3} onClick={handleClickOpen}>
 
-                                                
-                                                        
-                                            <img src='album3.png' style={{height:18, width:18}}></img>
 
                                             &nbsp;{album.title}
 
@@ -201,200 +170,161 @@ function AlbumPreview() {
 
                                     </Dialog>
 
-                                        <Box 
-
-                                            display="flex"
-                                            flexWrap="wrap"
-                                            alignContent="flex-start"
-                                
+                                        <Box sx =
+                                            {{
+                                            display: "flex",
+                                            flexWrap: "wrap",
+                                            justifyContent: "center"
+                                            }}
                                         >
                                             {album.id === 1 ?
                                 
                                                 <>
-                                
-                                                    {songs.map((song) => {
-                                                        return (
-                                                            <>
-                                                                {song.is_active == true ?
-                                                                    <>
-                                                            
-                                                                        {song.priority === '1' ? 
-                                                                            
-                                                                            <Box
-                                                                                paddingTop={2}
-                                                                                paddingRight={3.5} 
-                                                                            
-                                                                            >
-                                                                                <Card
-                                                                                    
-                                                                                    raised={true}
-                                                                                    className={card1}
-                                                                                    
-                                                                    
-                                                                                > 
-                                                                                        <section>
+                                                    <div className={card}>
+                                                        {songs.map((song) => {
+                                                            return (
+                                                                <>
+                                                                    {song.is_active == true ?
+                                                                        <>
+                                                                            {song.priority === '1' ? 
 
-                                                                                            <CardContent 
-                                                                            
-                                                                                                item xs={1} key={song} 
-                                                                                                
-                                                                        
-                                                                                            >  
-                                                                                                
-                                                                                                <Typography 
-                                                                                                    variant="overline" 
-                                                                                                    className={title1}
-                                                                                                    onClick={() => handleClick(song.song_id)} 
+                                                                                <div>
 
-                                                                                                >
-                                                                                                    
-                                                                                                    {song.title}
-                                                                                                    
-                                                                                                </Typography>
-                                                                                
-                                                                            
+                                                                                        <section className={player1}>
 
-                                                                                            </CardContent>
-                                                                        
-                                                                                        </section>
+                                                                                        <Typography 
+                                                                                            variant="overline" 
+                                                                                            className={title1}
+                                                                                            onClick={() => handleClick(song.song_id)} 
+
+                                                                                        >
                                                                                             
-                                                                                            <section className={player1}>
-                                                                                        
-                                                                                                <AudioPlayer
+                                                                                            {song.title}
+                                                                                            
+                                                                                        </Typography>
 
-                                                                                                    audioFiles={[{ src: song.preview_audio }]}
-                                                                                                    hideForward="true"
-                                                                                                    hideLoop="true"
-                                                                                                    hideRewind="true"
-                                                                                                    playIcon="playIcon.png"
-                                                                                                    playHoverIcon="playIcon.png"
-                                                                                                    pauseIcon="pauseIcon.png"
-                                                                                                    pauseHoverIcon="pauseIcon.png"
-                                                                                                    volumeIcon="volume.png"
-                                                                                                    volumeEngagedIcon="volume.png"
-                                                                                                    muteIcon="volume.png"
-                                                                                                    muteEngagedIcon="volume.png"
-                                                                                                    sliderClass="slider"
+                                                                                            
+                                                                                
+                                                                                        <AudioPlayer
 
-                                                                                                />
-                                                                                            </section>
+                                                                                            audioFiles={[{ src: song.preview_audio }]}
+                                                                                            hideForward="true"
+                                                                                            hideLoop="true"
+                                                                                            hideRewind="true"
+                                                                                            hideName="true"
+                                                                                            playIcon="playIcon.png"
+                                                                                            playHoverIcon="playIcon.png"
+                                                                                            pauseIcon="pauseIcon.png"
+                                                                                            pauseHoverIcon="pauseIcon.png"
+                                                                                            volumeIcon="volume.png"
+                                                                                            volumeEngagedIcon="volume.png"
+                                                                                            muteIcon="volume.png"
+                                                                                            muteEngagedIcon="volume.png"
+                                                                                            sliderClass="slider"
 
-                                                                                </Card> 
-                                                                            </Box>
-                                                                        : 
-                                                                
-                                                                            null
+                                                                                        />
+                                                                                    </section>
+                                                                        
+                                                                    
 
-                                                                        }
-                                                    
-                                                                    </>
+                                                                                    
+                                                                                </div>
+                                                        
+                                                                            : 
+                                                                    
+                                                                                null
+
+                                                                            }
+                                                        
+                                                                        </>
+                                                
+                                                                    :
+                                                
+                                                                        null
+                                                
+                                                                    }  
                                             
-                                                                :
-                                            
-                                                                    null
-                                            
-                                                                }  
-                                        
-                                                            </> 
-                                                        );
+                                                                </> 
+                                                            );
 
-                                                    })}
+                                                        })}
+                                                    </div>
+
                                                 </>
 
                                             :
                         
                                             album.id === 2 ?
                                                 <>
+                                                    <div className={card}>
+                                                        {songs.map((song) => {
+                                                            return (
+                                                                <>
+                                                                    {song.is_active == true ?
+                                                                        <>
+                                                                            {song.priority === '2' ? 
 
-                                                    {songs.map((song) => {
-                                                        return (
-                                                            <>
-                                                                {song.is_active == true ?
-                                                                    <>
-                                                        
-                                                                        {song.priority === '2' ? 
-                                                                            
-                                                                            <Box
-                                                                                paddingTop={2}
-                                                                                paddingRight={3.5} 
-                                                                            
-                                                                            >
-                                                                                <Card
-                                                                                    
-                                                                                    raised={true}
-                                                                                    className={card2}
-                                                                                    
-                                                                    
-                                                                                > 
-                                                                                        <section>
+                                                                                <div>
 
-                                                                                            <CardContent 
-                                                                            
-                                                                                                item xs={1} key={song} 
-                                                                                                
-                                                                        
-                                                                                            >  
-                                                                            
-                                                                                                <Typography 
-                                                                                                    variant="overline" 
-                                                                                                    className={title2}
-                                                                                                    onClick={() => handleClick(song.song_id)} 
+                                                                                        <section className={player2}>
 
-                                                                                                >
-                                                                                                    
-                                                                                                    {song.title}
-                                                                                                    
-                                                                                                </Typography>
-                                                                                
-                                                                            
+                                                                                        <Typography 
+                                                                                            variant="overline" 
+                                                                                            className={title2}
+                                                                                            onClick={() => handleClick(song.song_id)} 
 
-                                                                                            </CardContent>
-                                                                        
-                                                                                        </section>
+                                                                                        >
                                                                                             
-                                                                                            <section className={player2}>
-                                                                                        
-                                                                                                <AudioPlayer
+                                                                                            {song.title}
+                                                                                            
+                                                                                        </Typography>
 
-                                                                                                    audioFiles={[{ src: song.preview_audio }]}
-                                                                                                    hideForward="true"
-                                                                                                    hideLoop="true"
-                                                                                                    hideRewind="true"
-                                                                                                    playIcon="playIcon.png"
-                                                                                                    playHoverIcon="playIcon.png"
-                                                                                                    pauseIcon="pauseIcon.png"
-                                                                                                    pauseHoverIcon="pauseIcon.png"
-                                                                                                    volumeIcon="volume.png"
-                                                                                                    volumeEngagedIcon="volume.png"
-                                                                                                    muteIcon="volume.png"
-                                                                                                    muteEngagedIcon="volume.png"
+                                                                                            
+                                                                                
+                                                                                        <AudioPlayer
 
-                                                                                                />
-                                                                                            </section>
+                                                                                            audioFiles={[{ src: song.preview_audio }]}
+                                                                                            hideForward="true"
+                                                                                            hideLoop="true"
+                                                                                            hideRewind="true"
+                                                                                            hideName="true"
+                                                                                            playIcon="playIcon.png"
+                                                                                            playHoverIcon="playIcon.png"
+                                                                                            pauseIcon="pauseIcon.png"
+                                                                                            pauseHoverIcon="pauseIcon.png"
+                                                                                            volumeIcon="volume.png"
+                                                                                            volumeEngagedIcon="volume.png"
+                                                                                            muteIcon="volume.png"
+                                                                                            muteEngagedIcon="volume.png"
+                                                                                            sliderClass="slider"
 
-                                                                                </Card> 
-                                                                            </Box>
-                                                                        : 
-                                                                
-                                                                        null
+                                                                                        />
+                                                                                    </section>
                                                                         
+                                                                    
 
-                                                                        }
+                                                                                    
+                                                                                </div>
                                                         
-                                                                        <br></br>
-                                                                        <br></br>
-                                                    
-                                                                    </>
-                                                                :
-                                                
-                                                                null
-                                                
-                                                                }  
-                                                
-                                                            </> 
-                                                        );
+                                                                            : 
+                                                                    
+                                                                                null
 
-                                                    })}
+                                                                            }
+                                                        
+                                                                        </>
+                                                
+                                                                    :
+                                                
+                                                                        null
+                                                
+                                                                    }  
+                                            
+                                                                </> 
+                                                            );
+
+                                                        })}
+                                                    </div>
 
                                                 </>
                                             :
@@ -403,96 +333,75 @@ function AlbumPreview() {
 
                                                 <>
 
-                                                    {songs.map((song) => {
-                                                        return (
-                                                            <>
-                                                                {song.is_active == true ?
-                                                                    <>
-                                                        
-                                                                        {song.priority === '3' ? 
-                                                                            
-                                                                            <Box
-                                                                                paddingTop={2}
-                                                                                paddingRight={3.5} 
-                                                                            
-                                                                            >
-                                                                                <Card
-                                                                                    
-                                                                                    raised={true}
-                                                                                    className={card3}
-                                                                                    
-                                                                    
-                                                                                > 
-                                                                                        <section>
+                                                    <div className={card}>
+                                                        {songs.map((song) => {
+                                                            return (
+                                                                <>
+                                                                    {song.is_active == true ?
+                                                                        <>
+                                                                            {song.priority === '3' ? 
 
-                                                                                            <CardContent 
-                                                                            
-                                                                                                item xs={1} key={song} 
-                                                                                                
-                                                                        
-                                                                                            >  
-                                                                            
-                                                                                                <Typography 
-                                                                                                    variant="overline" 
-                                                                                                    className={title3}
-                                                                                                    onClick={() => handleClick(song.song_id)} 
+                                                                                <div>
 
-                                                                                                >
-                                                                                                    
-                                                                                                    {song.title}
-                                                                                                    
-                                                                                                </Typography>
-                                                                                
-                                                                            
+                                                                                        <section className={player3}>
 
-                                                                                            </CardContent>
-                                                                        
-                                                                                        </section>
+                                                                                        <Typography 
+                                                                                            variant="overline" 
+                                                                                            className={title3}
+                                                                                            onClick={() => handleClick(song.song_id)} 
+
+                                                                                        >
                                                                                             
-                                                                                            <section className={player3}>
-                                                                                        
-                                                                                                <AudioPlayer
+                                                                                            {song.title}
+                                                                                            
+                                                                                        </Typography>
 
-                                                                                                    audioFiles={[{ src: song.preview_audio }]}
-                                                                                                    hideForward="true"
-                                                                                                    hideLoop="true"
-                                                                                                    hideRewind="true"
-                                                                                                    playIcon="playIcon.png"
-                                                                                                    playHoverIcon="playIcon.png"
-                                                                                                    pauseIcon="pauseIcon.png"
-                                                                                                    pauseHoverIcon="pauseIcon.png"
-                                                                                                    volumeIcon="volume.png"
-                                                                                                    volumeEngagedIcon="volume.png"
-                                                                                                    muteIcon="volume.png"
-                                                                                                    muteEngagedIcon="volume.png"
-                                                                                                    
+                                                                                            
+                                                                                
+                                                                                        <AudioPlayer
 
-                                                                                                />
-                                                                                            </section>
+                                                                                            audioFiles={[{ src: song.preview_audio }]}
+                                                                                            hideForward="true"
+                                                                                            hideLoop="true"
+                                                                                            hideRewind="true"
+                                                                                            hideName="true"
+                                                                                            playIcon="playIcon.png"
+                                                                                            playHoverIcon="playIcon.png"
+                                                                                            pauseIcon="pauseIcon.png"
+                                                                                            pauseHoverIcon="pauseIcon.png"
+                                                                                            volumeIcon="volume.png"
+                                                                                            volumeEngagedIcon="volume.png"
+                                                                                            muteIcon="volume.png"
+                                                                                            muteEngagedIcon="volume.png"
+                                                                                            sliderClass="slider"
 
-                                                                                </Card> 
-                                                                            </Box>
-                                                                        : 
-                                                                
-                                                                        null
+                                                                                        />
+                                                                                    </section>
                                                                         
+                                                                    
 
-                                                                        }
+                                                                                    
+                                                                                </div>
                                                         
-                                                                        <br></br>
-                                                                        <br></br>
-                                                    
-                                                                    </>
-                                                                :
-                                                
-                                                                null
-                                                
-                                                                }  
-                                                
-                                                            </> 
-                                                        );
+                                                                            : 
+                                                                    
+                                                                                null
 
-                                                    })}
+                                                                            }
+                                                        
+                                                                        </>
+                                                
+                                                                    :
+                                                
+                                                                        null
+                                                
+                                                                    }  
+                                            
+                                                                </> 
+                                                            );
+
+                                                        })}
+                                                    </div>
 
                                                 </>
                                             :

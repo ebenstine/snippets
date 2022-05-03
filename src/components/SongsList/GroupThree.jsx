@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
@@ -57,16 +58,11 @@ function GroupThree() {
     /*const handleState = () => {
         setListView(listView = !listView)
     }*/
-    const handleState = () => {
-        
-        if (songs.length === 0) 
-            {setListView(false)}
-            
-        }   
+    
 
     //get db info on page load
     useEffect(() => {
-        handleState();
+       
         dispatch({
             type: 'FETCH_SONGS', 
             type: 'FETCH_ALBUMS'
@@ -122,11 +118,6 @@ function GroupThree() {
                                     <AlbumTitle/>
 
                                     :
-                                    
-                                    
-                                    
-
-                                        
                                         
                                         <div onDoubleClick={handleEditTitle}>
                                             <Typography 
@@ -155,13 +146,16 @@ function GroupThree() {
                             </>
                             )
                         })}
-                                       
+
                         <Box 
                             display="flex"
                             flexWrap="wrap"
                             alignContent="flex-start"
-                                
+                            
+                        
                         >
+                                       
+                        
                         {/*if no distinction for what group to show is made, show all ternary statement would start here*/}
                                 {songs.map((song) => {
                                     return (
@@ -239,7 +233,7 @@ function GroupThree() {
 
                         })}
 
-                </Box> 
+                </Box>
 
             </Paper>
                    

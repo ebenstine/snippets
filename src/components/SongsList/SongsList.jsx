@@ -3,11 +3,8 @@ import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom'
 import { Box, Paper, Typography, Card, CardContent, Button } from '@material-ui/core';
-import VolumeUpIcon from '@mui/icons-material/VolumeUp';
-import VolumeOffIcon from '@mui/icons-material/VolumeOff';
 import useStyles from './SongsListStyles';
 import ColorCodeLegend from './ColorCodeLegend'
-import Feedback from '@material-ui/icons/Feedback';
 import Pagination from '../Pagination/Pagination';
 
 //import songDetails from '../../redux/reducers/songDetails.reducer';
@@ -33,11 +30,6 @@ function SongsList() {
             card3, 
             paper, 
             menuDots,
-            blankPage,
-            message,
-            messageCard,
-            messageDiv,
-            feedback,
             heading,
             playIcon,
            
