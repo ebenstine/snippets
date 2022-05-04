@@ -80,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '1em',
         marginTop: '3em',
         fontSize: 20,
-        paddingLeft:'10em'
+        //paddingLeft:'10em'
     },
 
     subheading: {
@@ -138,6 +138,61 @@ const useStyles = makeStyles((theme) => ({
         
     },
 
+    heading1: {
+       
+        color: '#2a4f64',
+        //borderRadius: '2px',
+        //marginTop: '1em',
+        paddingBottom: '.2em',
+        fontSize: 18,
+        '&:hover': {
+            
+            cursor:'pointer',
+            color:'#afe4f1'
+            
+          
+        },
+        display:'flex',
+        justifyContent:'center'
+
+    },
+
+    heading2: {
+       
+        color: '#2a4f64',
+        //borderRadius: '2px',
+        //marginTop: '1em',
+        paddingBottom: '.2em',
+        fontSize: 18,
+        '&:hover': {
+            
+            cursor:'pointer',
+            color: '#ffb171'
+            
+          
+        },
+        display:'flex',
+        justifyContent:'center'
+    },
+
+    heading3: {
+        
+        color: '#2a4f64',
+        //borderRadius: '2px',
+        //marginTop: '1em',
+        paddingBottom: '.2em',
+        fontSize: 18,
+        '&:hover': {
+            
+            cursor:'pointer',
+            color:'#fdd377'
+            
+          
+        },
+        display:'flex',
+        justifyContent:'center'
+    },
+
     
 }));
 
@@ -146,7 +201,7 @@ function AlbumTitle() {
     const dispatch = useDispatch();
     const params = useParams();
     const history = useHistory();
-    const { textField, buttons, titleTitle, root, actions, albumSpec, detailHeading } = useStyles();
+    const { textField, buttons, titleTitle, root, actions, albumSpec, heading1, heading2, heading3 } = useStyles();
     const [ editable, setEditable] = useState(false);
     const [ updated, setUpdated] = useState(false);
   
@@ -199,10 +254,10 @@ function AlbumTitle() {
                 
                 
                             <FormControl  >
-                                <div style={{}}>
+                                <div style={{display:'flex', justifyContent:'center'}}>
                                 <form className={root} onSubmit={handleSubmit} autoComplete="off" >
                                     <TextField 
-                                        label="Update Title" 
+                                        label="Update Album Title" 
                                         name="title"
                                         
                                         onDoubleClick={handleEditable}
@@ -229,32 +284,35 @@ function AlbumTitle() {
                                     </Typography>
                                 :
                                     <>
-                                                    
-                                        <div className={detailHeading}>
-                                            
-                                            <Typography align='center'>
+                                        <div>
+                                            {album.id === 1 ?
 
-                                                Working Title:
-                                                
-                                            </Typography>
+                                                <Typography variant="overline" className={heading1} onClick={handleEditable}>
 
-                                        </div>
-                                        
+                                                    &nbsp;{album.title}
 
-                                        <div className={albumSpec}>
-                                            <div style={{display:'flex', flexWrap:'wrap', marginTop:'.2em'}}>
-                                                <AlbumIcon/>
-                                            </div>
-                                            <Typography 
+                                                </Typography>
+                                            :
+                                                album.id === 2 ?
 
-                                                align="center" 
-                                                variant="h6"
+                                                <Typography variant="overline" className={heading2} onClick={handleEditable}>
 
-                                            >
+                                                    &nbsp;{album.title}
 
-                                                &nbsp;{album.title}
+                                                </Typography>
+                                            :
+                                                album.id === 3? 
 
-                                            </Typography>
+                                                <Typography variant="overline" className={heading3} onClick={handleEditable}>
+
+
+                                                    &nbsp;{album.title}
+
+                                                </Typography>
+                                            :
+
+                                                null 
+                                                }
                                         </div>
 
                                     </>

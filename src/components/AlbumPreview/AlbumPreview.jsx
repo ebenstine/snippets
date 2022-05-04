@@ -99,77 +99,15 @@ function AlbumPreview() {
                             <div key ={album.id}>
 
                             
-                                <div style={{marginTop:'-1em'}}>
+                                <div style={{marginTop:'-1em', display:'flex', justifyContent:'center'}}>
 
-                                    {album.id === 1 ?
-
-                                        <Typography variant="overline" className={heading1} onClick={handleClickOpen}>
-
-                                            &nbsp;{album.title}
-
-                                        </Typography>
-                                    :
-                                    album.id === 2 ?
-                                    
-                                        <Typography variant="overline" className={heading2} onClick={handleClickOpen}>
-
-                                            &nbsp;{album.title}
-
-                                        </Typography>
-                                    :
-                                    album.id === 3? 
-
-                                        <Typography variant="overline" className={heading3} onClick={handleClickOpen}>
-
-
-                                            &nbsp;{album.title}
-
-                                        </Typography>
-                                    :
-
-                                    null 
-                                    }
+                                    <AlbumTitle/>
                                     
                                             
                                 </div>        
                                     
 
-                                    <Dialog
-                                        
-                                        PaperProps={{
-                        
-                                            style: { border: "1px solid #2a4f64", background: "rgb(199, 246, 252)" }
-                        
-                                        }}
-                                        open={open} 
-                                        
-                                        onClose={handleClose}
                                     
-                                    >
-                                        <DialogTitle>
-                                            <Typography 
-                        
-                                                className={dialogHeading}>
-                                            
-                                                    Album Details
-                                            
-                                            </Typography>
-
-                                        </DialogTitle>
-                                        {/*refactored components*/}
-
-                                            <AlbumTitle/>
-                                        
-                                                <br></br>
-                                        
-                                                    <AlbumReleaseRange/>
-                                        
-                                                        <br></br>
-                                        
-                                                            <AlbumStyle/>
-
-                                    </Dialog>
-
                                         <Box sx =
                                             {{
                                             display: "flex",
