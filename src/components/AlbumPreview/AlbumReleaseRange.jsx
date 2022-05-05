@@ -108,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
         align: 'center'
         
     },
-    albumSpec:{
+    albumSpec1:{
         marginLeft: '3em',
         marginRight: '3em',
         //marginTop: '2em',
@@ -116,21 +116,47 @@ const useStyles = makeStyles((theme) => ({
         color: '#2a4f64',
         display: 'flex',
         justifyContent:'center',
-        background: 'rgb(230, 252, 255)',
         '&:hover': {
-          background:'#94d9eb',
-          cursor: 'pointer'
-          },
-        border: "1px solid #eb9148",
-        borderRadius: "3px",
-        paddingLeft:'1em',
-        paddingRight:'1em',
-        paddingTop:'.5em',
-        paddingBottom:'.5em'
-
-        
-        
+            
+            cursor:'pointer',
+            color:'#afe4f1'
+            
+          
+        },   
     },
+    albumSpec2:{
+        marginLeft: '3em',
+        marginRight: '3em',
+        //marginTop: '2em',
+        marginBottom:'1em',
+        color: '#2a4f64',
+        display: 'flex',
+        justifyContent:'center',
+        '&:hover': {
+            
+            cursor:'pointer',
+            color: '#ffb171'
+            
+          
+        },
+    },
+    albumSpec3:{
+        marginLeft: '3em',
+        marginRight: '3em',
+        //marginTop: '2em',
+        marginBottom:'1em',
+        color: '#2a4f64',
+        display: 'flex',
+        justifyContent:'center',
+        '&:hover': {
+            
+            cursor:'pointer',
+            color:'#fdd377'
+            
+          
+        },
+    },
+
     detailHeading:{
         marginLeft: '3em',
         marginRight: '3em',
@@ -148,7 +174,7 @@ function AlbumReleaseRange() {
     const dispatch = useDispatch();
     const params = useParams();
     const history = useHistory();
-    const { textField, buttons, titleTitle, root, actions, albumSpec, detailHeading } = useStyles();
+    const { textField, buttons, titleTitle, root, actions, albumSpec1, albumSpec2, albumSpec3 } = useStyles();
     const [ editable, setEditable] = useState(false);
     const [ updated, setUpdated] = useState(false)
   
@@ -201,23 +227,23 @@ function AlbumReleaseRange() {
                 
                 
                             <FormControl  >
-                                <div>
-                                <form className={root} onSubmit={handleSubmit} autoComplete="off" >
-                                    <TextField 
-                                        label="Update Release Range" 
-                                        name="release_range"
-                                        
-                                        onDoubleClick={handleEditable}
-                                        margin="dense" 
-                                        multiline className={textField} 
-                                        onChange={handleChange}
-                                        
-                                        />
-                                    <div className={actions}> 
-                                    <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
-                                    <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
-                                    </div>
-                                </form>
+                                <div style={{display:'flex', justifyContent:'center'}}>
+                                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
+                                        <TextField 
+                                            label="Update Release Range" 
+                                            name="release_range"
+                                            
+                                            onDoubleClick={handleEditable}
+                                            margin="dense" 
+                                            multiline className={textField} 
+                                            onChange={handleChange}
+                                            
+                                            />
+                                        <div className={actions}> 
+                                        <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
+                                        <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
+                                        </div>
+                                    </form>
                                 </div>
                             </FormControl>
                         :
@@ -231,26 +257,25 @@ function AlbumReleaseRange() {
                                     </Typography>
                                 :
                                     <>
-                                                    
-                                        <div className={detailHeading}>
-                                            
-                                            <Typography align='center'>
-
-                                                Release:
-                                                
-                                            </Typography>
-
-                                        </div>
                                         
+                                        <div className={
+                                            album.id === 1 ?
+                                            albumSpec1 :
+                                            album.id === 2 ?
+                                            albumSpec2 :
+                                            album.id === 3 ?
+                                            albumSpec3 
 
-                                        <div className={albumSpec}>
-                                            <div style={{display:'flex', flexWrap:'wrap', marginTop:'.2em'}}>
-                                                <DateRangeIcon/>
-                                            </div>
+                                            : 
+
+                                            null
+                                        
+                                        }>
+                                            
                                             <Typography 
 
                                                 align="center" 
-                                                variant="h6"
+                                                variant="overline"
 
                                             >
 

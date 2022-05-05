@@ -255,22 +255,22 @@ function AlbumTitle() {
                 
                             <FormControl  >
                                 <div style={{display:'flex', justifyContent:'center'}}>
-                                <form className={root} onSubmit={handleSubmit} autoComplete="off" >
-                                    <TextField 
-                                        label="Update Album Title" 
-                                        name="title"
-                                        
-                                        onDoubleClick={handleEditable}
-                                        margin="dense" 
-                                        multiline className={textField} 
-                                        onChange={handleChange}
-                                        
-                                        />
-                                    <div className={actions}> 
-                                    <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
-                                    <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
-                                    </div>
-                                </form>
+                                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
+                                        <TextField 
+                                            label="Update Album Title" 
+                                            name="title"
+                                            
+                                            onDoubleClick={handleEditable}
+                                            margin="dense" 
+                                            multiline className={textField} 
+                                            onChange={handleChange}
+                                            
+                                            />
+                                        <div className={actions}> 
+                                        <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
+                                        <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
+                                        </div>
+                                    </form>
                                 </div>
                             </FormControl>
                         :

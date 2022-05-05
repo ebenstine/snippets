@@ -163,7 +163,7 @@ function AlbumPreview() {
                                                                                         />
                                                                                     </section>
                                                                         
-                                                                    
+
 
                                                                                     
                                                                                 </div>
@@ -351,6 +351,11 @@ function AlbumPreview() {
 
                                         </Box> 
                                 </div>
+                            
+                            <div style={{display:'flex', justifyContent:'center'}}>
+                                <AlbumReleaseRange/>
+                            </div>
+                            
                         </Paper>
                     </>
                 )
