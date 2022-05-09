@@ -43,30 +43,12 @@ function SongsList() {
     const songDetails = useSelector((store) => store.songDetails)
     const [currentPage, setCurrentPage] = useState(1);
     
-    console.log(songs);
+  
 
     //allows for the homepage to render aesthetically right even if there
     //is one inactive song in the array.  should solve this but it's fine like this.
     //most users would focus on what they're doing currently and not even use the inactive archive feature.
-    
-    let PageSize = 10
 
-    //if there's any instance of an inactive song, change the page size to 11
-    //this will keep the view of active songs at 10
-    
-    if (songs.filter(e => e.is_active === false).length > 0){
-         PageSize = 11
-    }
-     
-
-    const songsList = useMemo(() => {
-        const firstPageIndex = (currentPage - 1) * PageSize;
-        const lastPageIndex = firstPageIndex + PageSize;
-        return songs.slice(firstPageIndex, lastPageIndex);
-      }, [currentPage]);
-    
-    
-   
     useEffect(() => {
        
         dispatch({
@@ -75,8 +57,30 @@ function SongsList() {
         });
         
     },[]);
-    //push forward to details page on click
+    
+    let PageSize = 10
 
+    
+    //snip out any inactive songs from the array to display
+    const removeInactive = () => {
+        for (let i = songs.length - 1; i >= 0; --i) {
+            if (songs[i].is_active == false) {
+                songs.splice(i, 1);
+            }
+        }
+    }
+     
+
+    const songsList = useMemo(() => {
+
+        removeInactive();
+        const firstPageIndex = (currentPage - 1) * PageSize;
+        const lastPageIndex = firstPageIndex + PageSize;
+        return songs.slice(firstPageIndex, lastPageIndex);
+        
+      }, [currentPage]);
+
+      console.log(songs);
 
     const handleClick = (songId) => {
         history.push(`/songDetails/${songId}`)
@@ -169,6 +173,7 @@ function SongsList() {
                                                                         hideForward="true"
                                                                         hideLoop="true"
                                                                         hideRewind="true"
+                                                                        hideName="true"
                                                                         playIcon="playIcon.png"
                                                                         playHoverIcon="playIcon.png"
                                                                         pauseIcon="pauseIcon.png"
@@ -234,6 +239,7 @@ function SongsList() {
                                                                         hideForward="true"
                                                                         hideLoop="true"
                                                                         hideRewind="true"
+                                                                        hideName="true"
                                                                         playIcon="playIcon.png"
                                                                         playHoverIcon="playIcon.png"
                                                                         pauseIcon="pauseIcon.png"
@@ -302,6 +308,7 @@ function SongsList() {
                                                                         hideForward="true"
                                                                         hideLoop="true"
                                                                         hideRewind="true"
+                                                                        hideName="true"
                                                                         playIcon="playIcon.png"
                                                                         playHoverIcon="playIcon.png"
                                                                         pauseIcon="pauseIcon.png"
@@ -371,6 +378,7 @@ function SongsList() {
                                                                         hideForward="true"
                                                                         hideLoop="true"
                                                                         hideRewind="true"
+                                                                        hideName="true"
                                                                         playIcon="playIcon.png"
                                                                         playHoverIcon="playIcon.png"
                                                                         pauseIcon="pauseIcon.png"

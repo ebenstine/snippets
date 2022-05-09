@@ -14,10 +14,10 @@
 
 //!!! This will actually be the editable version of the performance guide text view for instrument_specs
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import { Paper, MenuItem, Button, Typography, Select, Accordion, AccordionSummary, FormControl } from '@material-ui/core';
+import { Button, Typography, Accordion, AccordionSummary, FormControl } from '@material-ui/core';
 import { TextField } from '@mui/material'
 import { makeStyles } from '@material-ui/core/styles';
 import { CheckCircle } from '@material-ui/icons';
@@ -263,7 +263,6 @@ function PerformanceGuideInstrumentSpecs() {
     const { 
             textField, 
             buttons, 
-            notes, 
             root, 
             actions,
             instSpecs1,

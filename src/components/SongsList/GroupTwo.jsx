@@ -113,7 +113,7 @@ function GroupTwo() {
                                 {album === albums[1] ?
                                     editTitle ?
 
-                                    <AlbumTitle/>
+                                        <AlbumTitle/>
 
                                     :
                                     
@@ -139,7 +139,7 @@ function GroupTwo() {
                                         
                                     :
 
-                                    null
+                                        null
                                     }
                                         
                                         
@@ -215,7 +215,7 @@ function GroupTwo() {
                                                 </Box>
                                             : 
                                     
-                                            null
+                                                null
                                             
 
                                             }
@@ -225,7 +225,7 @@ function GroupTwo() {
                                 
                                 </>
                             :
-                            null
+                                null
 
                             }  
                             </> 

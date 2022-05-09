@@ -5,9 +5,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Typography } from '@material-ui/core';
 import MenuItem from '@material-ui/core/MenuItem';
-import AddRecording from '../AddRecording/AddRecording';
 import InactiveRecordingsList from './InactiveRecordingsList'
-import HeadphonesRoundedIcon from '@mui/icons-material/HeadphonesRounded';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -73,7 +72,7 @@ const InactiveAudioOptions = ({song}) => {
         <div className={menuIcon}>
         <IconButton>
           
-          <HeadphonesRoundedIcon 
+          <MoreHorizIcon 
 
             style={{ color: '#2a4f64'}}
             aria-controls="simple-menu" 
@@ -81,7 +80,7 @@ const InactiveAudioOptions = ({song}) => {
             fontSize={'inherit'}
             onClick={handleClickOpen}>
 
-          </HeadphonesRoundedIcon>
+          </MoreHorizIcon>
           
         </IconButton>
         </div>
@@ -114,7 +113,7 @@ const InactiveAudioOptions = ({song}) => {
               
                   className={heading}>
               
-                    Audio Documentation
+                    Audio Options
               
                 </Typography>
            
@@ -122,7 +121,7 @@ const InactiveAudioOptions = ({song}) => {
           
                   <DialogContent className={menuItems}>
           
-                    <AddRecording/>
+               
           
                       </DialogContent>
           

@@ -22,7 +22,7 @@ function* getRecording(action) {
 }
 
 function* setRecordingSaga() {
-    yield takeLatest('FETCH_RECORDINGS', getRecording);
+    yield takeLatest('FETCH_SONGS', getRecording);
 
 }
 

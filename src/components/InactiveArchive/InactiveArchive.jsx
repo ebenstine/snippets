@@ -159,6 +159,7 @@ function InactiveArchive() {
                                                                 hideForward="true"
                                                                 hideLoop="true"
                                                                 hideRewind="true"
+                                                                hideName="true"
                                                                 playIcon="playIcon.png"
                                                                 playHoverIcon="playIcon.png"
                                                                 pauseIcon="pauseIcon.png"

@@ -14,6 +14,9 @@ import DateRangeIcon from '@mui/icons-material/DateRange';
 
 const useStyles = makeStyles((theme) => ({
     root: {
+
+        paddingTop: '3em', 
+
         '& .MuiTextField-root': {
             margin: theme.spacing(1),
             color: '#2a4f64',
@@ -79,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
         
         width: '31ch',
         marginBottom: '1em',
-        marginTop: '3em',
+        marginTop: '10em',
         fontSize: 20,
         //paddingLeft:'10em'
     },
@@ -105,7 +108,8 @@ const useStyles = makeStyles((theme) => ({
         borderBottom: '1.25px solid #6ca0ad',
         whiteSpace: 'pre-wrap',
         color: '#2a4f64',
-        align: 'center'
+        align: 'center',
+        marginTop: '3em'
         
     },
     albumSpec1:{
@@ -234,7 +238,7 @@ function AlbumReleaseRange() {
                                             name="release_range"
                                             
                                             onDoubleClick={handleEditable}
-                                            margin="dense" 
+                                            //margin="dense" 
                                             multiline className={textField} 
                                             onChange={handleChange}
                                             
@@ -248,7 +252,7 @@ function AlbumReleaseRange() {
                             </FormControl>
                         :
 
-                            <div onDoubleClick={handleEditable}>
+                            <div onDoubleClick={handleEditable} style={{marginTop:'3em'}}>
 
                                 {updated ?
                                     
@@ -260,15 +264,15 @@ function AlbumReleaseRange() {
                                         
                                         <div className={
                                             album.id === 1 ?
-                                            albumSpec1 :
+                                                albumSpec1 :
                                             album.id === 2 ?
-                                            albumSpec2 :
+                                                albumSpec2 :
                                             album.id === 3 ?
-                                            albumSpec3 
+                                                albumSpec3 
 
                                             : 
 
-                                            null
+                                                null
                                         
                                         }>
                                             

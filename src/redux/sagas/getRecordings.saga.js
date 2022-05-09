@@ -19,7 +19,7 @@ function* getAllRecordings() {
 
 
 function* getRecordingsSaga() {
-    yield takeLatest('FETCH_SONGS', getAllRecordings);
+    yield takeLatest('FETCH_RECORDINGS', getAllRecordings);
     // yield takeLatest('FETCH_SONG', getSong);
 }
 
