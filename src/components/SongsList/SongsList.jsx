@@ -38,16 +38,8 @@ function SongsList() {
 
     const dispatch = useDispatch();
     const history = useHistory();
-    const params = useParams();
     const songs = useSelector((store) => store.songs);
-    const songDetails = useSelector((store) => store.songDetails)
     const [currentPage, setCurrentPage] = useState(1);
-    
-  
-
-    //allows for the homepage to render aesthetically right even if there
-    //is one inactive song in the array.  should solve this but it's fine like this.
-    //most users would focus on what they're doing currently and not even use the inactive archive feature.
 
     useEffect(() => {
        
@@ -60,8 +52,7 @@ function SongsList() {
     
     let PageSize = 10
 
-    
-    //snip out any inactive songs from the array to display
+    //snip out any inactive songs from the array to uphold display integrity
     const removeInactive = () => {
         for (let i = songs.length - 1; i >= 0; --i) {
             if (songs[i].is_active == false) {
@@ -79,8 +70,6 @@ function SongsList() {
         return songs.slice(firstPageIndex, lastPageIndex);
         
       }, [currentPage]);
-
-      console.log(songs);
 
     const handleClick = (songId) => {
         history.push(`/songDetails/${songId}`)
