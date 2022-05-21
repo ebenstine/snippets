@@ -8,8 +8,7 @@ const useStyles = makeStyles(() => ({
         backgroundColor:  '#c7c7c7',
         border: '1px solid #1d778d',
         width: 345,
-        
-        
+
     },
     
  
@@ -62,6 +61,11 @@ const useStyles = makeStyles(() => ({
         borderRadius: '.25em',
         paddingTop: '.5em',
         paddingBottom: '.5em',
+        '&:hover': {
+            
+            cursor: 'pointer',
+            backgroundColor:'#bdbdbd'
+        }
         
         
     },
@@ -74,8 +78,13 @@ const useStyles = makeStyles(() => ({
         color: '#233d4d',
         '&:hover': {
             
-            cursor: 'pointer',
-            borderBottom: '1.5px solid #1d778d'
+            '&:hover': {
+            
+                cursor: 'pointer',
+                borderBottom: '1.5px solid #1d778d',
+                background:'linear-gradient(9deg, #94d9eb 37%, transparent 38%)'
+     
+            }
     }
         
     },
@@ -90,6 +99,7 @@ const useStyles = makeStyles(() => ({
             //color:'#1d778d',
             cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d',
+            background:'linear-gradient(9deg, #bdbdbd 37%, transparent 38%)'
            
     }
         

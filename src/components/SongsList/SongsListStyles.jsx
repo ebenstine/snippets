@@ -186,9 +186,8 @@ const useStyles = makeStyles(() => ({
             cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d',
             background:'linear-gradient(9deg, #94d9eb 37%, transparent 38%)'
-            
-           
-    }
+ 
+        }
         
     },
 

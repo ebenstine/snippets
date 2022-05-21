@@ -128,8 +128,8 @@ function AlbumPreview() {
 
                                                                                 <div>
 
-                                                                                        <section className={player1}>
-
+                                                                                        <div className={player1}>
+                                                                                        <div>
                                                                                         <Typography 
                                                                                             variant="overline" 
                                                                                             className={title1}
@@ -140,10 +140,11 @@ function AlbumPreview() {
                                                                                             {song.title}
                                                                                             
                                                                                         </Typography>
+                                                                                        </div>
 
                                                                                             
                                                                                 
-                                                                                        <AudioPlayer
+                                                                                        <AudioPlayer 
 
                                                                                             audioFiles={[{ src: song.preview_audio }]}
                                                                                             hideForward="true"
@@ -161,7 +162,7 @@ function AlbumPreview() {
                                                                                             sliderClass="slider"
 
                                                                                         />
-                                                                                    </section>
+                                                                                    </div>
                                                                         
 
 
@@ -205,7 +206,7 @@ function AlbumPreview() {
                                                                                 <div>
 
                                                                                         <section className={player2}>
-
+                                                                                        <div>
                                                                                         <Typography 
                                                                                             variant="overline" 
                                                                                             className={title2}
@@ -216,6 +217,7 @@ function AlbumPreview() {
                                                                                             {song.title}
                                                                                             
                                                                                         </Typography>
+                                                                                        </div>
 
                                                                                             
                                                                                 
@@ -282,7 +284,7 @@ function AlbumPreview() {
                                                                                 <div>
 
                                                                                         <section className={player3}>
-
+                                                                                        <div>
                                                                                         <Typography 
                                                                                             variant="overline" 
                                                                                             className={title3}
@@ -293,6 +295,7 @@ function AlbumPreview() {
                                                                                             {song.title}
                                                                                             
                                                                                         </Typography>
+                                                                                        </div>
 
                                                                                             
                                                                                 

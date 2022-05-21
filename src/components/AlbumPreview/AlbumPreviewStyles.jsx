@@ -202,7 +202,7 @@ const useStyles = makeStyles(() => ({
             
             cursor: 'pointer',
             borderBottom: '1.5px solid #1d778d',
-            background:'linear-gradient(9deg, #eb9292 37%, transparent 38%)'
+            background:'linear-gradient(9deg, #afe4f1 37%, transparent 38%)'
             
         }
         
@@ -219,6 +219,13 @@ const useStyles = makeStyles(() => ({
         paddingRight: '1em',
         paddingLeft:'1em',
         color: '#233d4d',
+        '&:hover': {
+            
+            cursor: 'pointer',
+            borderBottom: '1.5px solid #1d778d',
+            background:'linear-gradient(9deg, #afe4f1 37%, transparent 38%)'
+            
+        }
 
     },
 
@@ -228,6 +235,13 @@ const useStyles = makeStyles(() => ({
         paddingRight: '1em',
         paddingLeft:'1em',
         color: '#233d4d',
+        '&:hover': {
+            
+            cursor: 'pointer',
+            borderBottom: '1.5px solid #1d778d',
+            background:'linear-gradient(9deg, #ffb171 37%, transparent 38%)'
+            
+        }
 
     },
 
@@ -237,6 +251,13 @@ const useStyles = makeStyles(() => ({
         paddingRight: '1em',
         paddingLeft:'1em',
         color: '#233d4d',
+        '&:hover': {
+            
+            cursor: 'pointer',
+            borderBottom: '1.5px solid #1d778d',
+            background:'linear-gradient(9deg, #fdd377 37%, transparent 38%)'
+            
+        }
         
     },
 
