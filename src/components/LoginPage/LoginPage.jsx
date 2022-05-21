@@ -60,8 +60,6 @@ function LoginPage() {
             history.push('/registration');
           }}
         >
-          
-          Make One &nbsp;
           <PersonAddIcon style={{color:'#2a4f64'}}/>
         </Button>
       </center>
