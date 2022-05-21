@@ -13,8 +13,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const useStyles = makeStyles(() => ({
 
     root: {
-         
-      
+
         '& .MuiTextField-root': {
             marginLeft: '1em',
             color: '#2a4f64',
@@ -28,32 +27,26 @@ const useStyles = makeStyles(() => ({
           }
             //width: '25ch'
         },
+
         '& label.Mui-focused': {
             color: '#3b95ac',
             borderColor: '#eb9148',
         },
+
         '& .MuiInput-underline:after': {
             borderBottomColor: '#e45252',
         }, 
-            
-            
-            
-        
+
         "& .MuiOutlinedInput-input": {
             color: "#2a4f64",
-           
-            
+
         },
-        //"& .Mui-disabled .MuiOutlinedInput-notchedOutline": {
-            //border: "2px solid #3b95ac"
-          //},
-          "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+
+        "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
             border: "1.5px solid#3b95ac",
             borderRadius: "3px 3px 3px 3px"
-          },
-        
-  
-          
+        },
+
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
                 color: '#3b95ac',
@@ -72,8 +65,7 @@ const useStyles = makeStyles(() => ({
                 border:' 1.5px solid #3b95ac'
             
             },
-            
-      },
+        },
     },
 
     textField: {
@@ -126,7 +118,6 @@ const useStyles = makeStyles(() => ({
         
         
     },
-
 
     card: {
         flexDirection: 'column',
@@ -280,8 +271,7 @@ const useStyles = makeStyles(() => ({
             };
             
             const [reviseDetails, setReviseDetails] = useState(song);
-            
-            
+
             const handleChange = (event) => {
                 setReviseDetails({ ...reviseDetails, [event.target.name]: event.target.value })
             };
@@ -289,14 +279,7 @@ const useStyles = makeStyles(() => ({
             const handleEditable = () => {
                 setEditable(editable => !editable)
             }
-            
-            
-            
-            const handleCancel = () => {
-                history.push(`/songDetails/${params.id}`)
-            }
-            
-            
+
             const handleSubmit = (event) => {
                 event.preventDefault();
                     let revisedSong = reviseDetails;
@@ -349,8 +332,7 @@ const useStyles = makeStyles(() => ({
                                             
                                             
                                             }}
-                                            
-                                            
+
                                         />}
         
                                             aria-controls="panel1a-content"

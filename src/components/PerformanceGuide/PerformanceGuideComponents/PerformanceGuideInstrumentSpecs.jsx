@@ -346,291 +346,127 @@ function PerformanceGuideInstrumentSpecs() {
                             }
                         
                         >
-                
-                            <AccordionSummary
-                                
-                                expandIcon=
+                    
+                                <AccordionSummary
                                     
-                                    {<ExpandMoreIcon 
-                                    
-                                        style={{ 
+                                    expandIcon=
                                         
-                                        color: '#1d778d',
-                                        paddingRight: '.1em',
+                                        {<ExpandMoreIcon 
                                         
-                                        
-                                        }}
-                                        
-                                        
-                                    />}
+                                            style={{ 
+                                            
+                                            color: '#1d778d',
+                                            paddingRight: '.1em',
+                                            
+                                            
+                                            }}
+                                            
+                                            
+                                        />}
 
-                                aria-controls="panel1a-content"
-                                id="panel1a-header"
-                                item xs={1} 
-                                
-                            >
-                                <div
-
-                                style={{
-                                    color:'#233d4d',  
+                                    aria-controls="panel1a-content"
+                                    id="panel1a-header"
+                                    item xs={1} 
                                     
-                                    display:'flex',
-                                    justifyContent:'center'
-                                }}
-                                
                                 >
-                                    <Typography 
-                                        variant="overline"
+                                    <div
+
+                                    style={{
+                                        color:'#233d4d',  
+                                        
+                                        display:'flex',
+                                        justifyContent:'center'
+                                    }}
                                     
                                     >
-                                                Specs:
-                                    </Typography>
-                                </div>
-                        
-                            </AccordionSummary>
-            
-                        {editable ?
-                    
-                            <FormControl>
-                        
-                                <form className={root} onSubmit={handleSubmit} autoComplete="off" >
-                            
-                                    {song.primary_instrument === 'guitar' ?
-            
-                                        <TextField
-                                        // IMPORTANT! 'THE ORIGINAL ENTRY', WHILE ALSO AN UPDATE, IS IN addReminder
-                                            
-                                            label={
-                                                <img 
-                                                    style={{width:22, height:22}} 
-                                                    src='finalHeadstock.png'
-                                                >
-                                                </img>
-                                            } 
-                                            placeholder="Update Guitar Tuning"
-                                            name="instrument_specs"
-                                            onDoubleClick={handleEditable}
-                                            margin="dense" 
-                                            multiline className={textField} 
-                                            onChange={handleChange}
-                                        /> 
-
-                                    :
-
-                                    song.primary_instrument === 'keyboard' ?
-
-                                        <TextField
-                                            
-                                            label={<Piano/>} 
-                                            placeholder="Update Keyboard Type"
-                                            name="instrument_specs"
-                                            onDoubleClick={handleEditable}
-                                            margin="dense" 
-                                            multiline className={textField} 
-                                            onChange={handleChange}
-                                    
-                                        />
-                                    :
-
-                                
+                                        <Typography 
+                                            variant="overline"
                                         
-                                        <TextField
-                                            
-                                            label={<Lightbulb/>}
-                                            placeholder="Update Instrument or Software"
-                                            name="instrument_specs"
-                                            onDoubleClick={handleEditable}
-                                            margin="dense" 
-                                            multiline className={textField} 
-                                            onChange={handleChange}
-                                        />
-                                    }
-                                
-                                
-                                    <div className={actions}> 
-
-                                        <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
-                                        <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
-                                        
+                                        >
+                                                    Specs:
+                                        </Typography>
                                     </div>
+                            
+                                </AccordionSummary>
+                
+                            {editable ?
                         
-                                </form>
+                                <FormControl>
                             
-                            </FormControl>
-                    
-                        :
-                            
-                            <div onDoubleClick={handleEditable}>
+                                    <form className={root} onSubmit={handleSubmit} autoComplete="off" >
                                 
-                                {updated ?
+                                        {song.primary_instrument === 'guitar' ?
+                
+                                            <TextField
+                                            // IMPORTANT! 'THE ORIGINAL ENTRY', WHILE ALSO AN UPDATE, IS IN addReminder
+                                                
+                                                label={
+                                                    <img 
+                                                        style={{width:22, height:22}} 
+                                                        src='finalHeadstock.png'
+                                                    >
+                                                    </img>
+                                                } 
+                                                placeholder="Update Guitar Tuning"
+                                                name="instrument_specs"
+                                                onDoubleClick={handleEditable}
+                                                margin="dense" 
+                                                multiline className={textField} 
+                                                onChange={handleChange}
+                                            /> 
 
-                                    song.primary_instrument === 'guitar' ?
+                                        :
+
+                                        song.primary_instrument === 'keyboard' ?
+
+                                            <TextField
+                                                
+                                                label={<Piano/>} 
+                                                placeholder="Update Keyboard Type"
+                                                name="instrument_specs"
+                                                onDoubleClick={handleEditable}
+                                                margin="dense" 
+                                                multiline className={textField} 
+                                                onChange={handleChange}
                                         
-                                        <div className=
-                                        {song.priority === '1' ?
-                                            instSpecs1 : 
-                                        song.priority === '2' ?
-                                            instSpecs2 :
-                                        song.priority === '3' ?
-                                            instSpecs3 :
+                                            />
+                                        :
 
-                                            instSpecs
+                                    
+                                            
+                                            <TextField
+                                                
+                                                label={<Lightbulb/>}
+                                                placeholder="Update Instrument or Software"
+                                                name="instrument_specs"
+                                                onDoubleClick={handleEditable}
+                                                margin="dense" 
+                                                multiline className={textField} 
+                                                onChange={handleChange}
+                                            />
                                         }
-                                        
-                                        >
+                                    
+                                    
+                                        <div className={actions}> 
+
+                                            <Button className={buttons} onClick={handleEditable}><Cancel/></Button>
+                                            <Button className={buttons} variant="filled" type="submit"><CheckCircle/></Button>
                                             
-                                            <Typography variant= "overline" className={specText}>
-                                                
-                                                
-                                                Updated Tuning: {reviseDetails.instrument_specs} 
-                                                
-                                            </Typography>
                                         </div>
-
-                                    :
-
-                                    song.primary_instrument === 'keyboard' ?
-
-                                        <div className=
-                                            {song.priority === '1' ?
-                                                instSpecs1 : 
-                                            song.priority === '2' ?
-                                                instSpecs2 :
-                                            song.priority === '3' ?
-                                                instSpecs3 :
-
-                                                instSpecs
-                                            }
-                                        
-                                        >
-
-                                            <Typography variant="overline" className={specText}>
-                                                
-                                                Updated Keyboard Type: {reviseDetails.instrument_specs} 
-                                            
-                                            </Typography>
-                                        </div>
-
-                                    :
-                                        <div className=
-                                            {song.priority === '1' ?
-                                                instSpecs1 : 
-                                            song.priority === '2' ?
-                                                instSpecs2 :
-                                            song.priority === '3' ?
-                                                instSpecs3 :
-
-                                                instSpecs
-                                            }
-                                        
-                                        >
-                                            <Typography variant="overline" className={specText}>
-                                                
-                                                Updated Instrument or Software Type:  {reviseDetails.instrument_specs}
-
-                                            </Typography>
-                                        </div>
-                                :
-                                //this element probably needs all the conditional rendering for instrument type and language
-                                    <>
+                            
+                                    </form>
                                 
-                                        {song.primary_instrument === 'guitar' && song.instrument_specs !== 'standard' ? 
-                                            <>
-                                                <div className=
-                                                    {song.priority === '1' ?
-                                                        instSpecs1 : 
-                                                    song.priority === '2' ?
-                                                        instSpecs2 :
-                                                    song.priority === '3' ?
-                                                        instSpecs3 :
-        
-                                                        instSpecs
-                                            }
-                                                
-                                                >
+                                </FormControl>
+                        
+                            :
+                                
+                                <div onDoubleClick={handleEditable}>
+                                    
+                                    {updated ?
 
-                                                    <Typography variant="overline" className={specText}>
-
-                                                        Custom Tuning: {song.instrument_specs}
-
-                                                    </Typography>
-
-                                                </div> 
-                                                
-                                                <br></br> 
-                                                
+                                        song.primary_instrument === 'guitar' ?
                                             
-                                            </>
-                                        :
-
-                                            song.primary_instrument === 'guitar' && song.instrument_specs === 'standard' ?
-                                                
-                                                <>
-                                                
-                                                    <div className=
-
-                                                        {song.priority === '1' ?
-                                                            instSpecs1 : 
-                                                        song.priority === '2' ?
-                                                            instSpecs2 :
-                                                        song.priority === '3' ?
-                                                            instSpecs3 :
-
-                                                            instSpecs
-                                                        }
-                                                    
-                                                    >
-                                                
-                                                        <Typography variant="overline" className={specText}>
-
-                                                            Tuning: {song.instrument_specs} 
-
-                                                        </Typography>
-                                                
-                                                    </div>
-                                                
-                                                    <br></br>
-                                                
-                                                    
-                                                </>
-                                        :
-
-                                            song.primary_instrument === 'keyboard' ?
-                                                
-                                                <>
-                                                
-                                                    <div className=
-                                                        {song.priority === '1' ?
-                                                            instSpecs1 : 
-                                                        song.priority === '2' ?
-                                                            instSpecs2 :
-                                                        song.priority === '3' ?
-                                                            instSpecs3 :
-
-                                                            instSpecs
-                                                        }
-                                                    >
-
-                                                
-                                                    
-                                                
-                                                        <Typography variant="overline" className={specText}>
-
-                                                            Keyboard Model: {song.instrument_specs}
-                                                        
-                                                        </Typography>
-                                                
-                                                    </div>
-                                                
-                                                    <br></br>
-                                                
-                                                    
-                                                </>
-
-                                        : 
-                                                
-                                            <>
-                                                <div className=
+                                            <div className=
                                                 {song.priority === '1' ?
                                                     instSpecs1 : 
                                                 song.priority === '2' ?
@@ -639,35 +475,193 @@ function PerformanceGuideInstrumentSpecs() {
                                                     instSpecs3 :
 
                                                     instSpecs
-                                            }
-                                                    
-                                                >
-                                                
-                                                    <Typography variant="overline">
-                                                        
-                                                        Instrument or Software Used: {song.instrument_specs}
-                                                
-                                                    </Typography>
-                                                
-                                                </div>
-                                                
-                                                
+                                                }
                                             
-                                            </>
+                                            >
+                                                
+                                                <Typography variant= "overline" className={specText}>
+                                                    
+                                                    
+                                                    Updated Tuning: {reviseDetails.instrument_specs} 
+                                                    
+                                                </Typography>
+                                            </div>
 
-                                        }
-                                
-                                
+                                        :
 
-                                    </>
+                                        song.primary_instrument === 'keyboard' ?
+
+                                            <div className=
+                                                {song.priority === '1' ?
+                                                    instSpecs1 : 
+                                                song.priority === '2' ?
+                                                    instSpecs2 :
+                                                song.priority === '3' ?
+                                                    instSpecs3 :
+
+                                                    instSpecs
+                                                }
+                                            
+                                            >
+
+                                                <Typography variant="overline" className={specText}>
+                                                    
+                                                    Updated Keyboard Type: {reviseDetails.instrument_specs} 
+                                                
+                                                </Typography>
+                                            </div>
+
+                                        :
+                                            <div className=
+                                                {song.priority === '1' ?
+                                                    instSpecs1 : 
+                                                song.priority === '2' ?
+                                                    instSpecs2 :
+                                                song.priority === '3' ?
+                                                    instSpecs3 :
+
+                                                    instSpecs
+                                                }
+                                            
+                                            >
+                                                <Typography variant="overline" className={specText}>
+                                                    
+                                                    Updated Instrument or Software Type:  {reviseDetails.instrument_specs}
+
+                                                </Typography>
+                                            </div>
+                                    :
+                                
+                                        <>
+                                    
+                                            {song.primary_instrument === 'guitar' && song.instrument_specs !== 'standard' ? 
+                                                <>
+                                                    <div className=
+                                                        {song.priority === '1' ?
+                                                            instSpecs1 : 
+                                                        song.priority === '2' ?
+                                                            instSpecs2 :
+                                                        song.priority === '3' ?
+                                                            instSpecs3 :
+            
+                                                            instSpecs
+                                                }
+                                                    
+                                                    >
+
+                                                        <Typography variant="overline" className={specText}>
+
+                                                            Custom Tuning: {song.instrument_specs}
+
+                                                        </Typography>
+
+                                                    </div> 
+                                                    
+                                                    <br></br> 
+                                                    
+                                                
+                                                </>
+                                            :
+
+                                                song.primary_instrument === 'guitar' && song.instrument_specs === 'standard' ?
+                                                    
+                                                    <>
+                                                    
+                                                        <div className=
+
+                                                            {song.priority === '1' ?
+                                                                instSpecs1 : 
+                                                            song.priority === '2' ?
+                                                                instSpecs2 :
+                                                            song.priority === '3' ?
+                                                                instSpecs3 :
+
+                                                                instSpecs
+                                                            }
+                                                        
+                                                        >
+                                                    
+                                                            <Typography variant="overline" className={specText}>
+
+                                                                Tuning: {song.instrument_specs} 
+
+                                                            </Typography>
+                                                    
+                                                        </div>
+                                                    
+                                                        <br></br>
+                                                    
+                                                        
+                                                    </>
+                                            :
+
+                                                song.primary_instrument === 'keyboard' ?
+                                                    
+                                                    <>
+                                                    
+                                                        <div className=
+                                                            {song.priority === '1' ?
+                                                                instSpecs1 : 
+                                                            song.priority === '2' ?
+                                                                instSpecs2 :
+                                                            song.priority === '3' ?
+                                                                instSpecs3 :
+
+                                                                instSpecs
+                                                            }
+                                                        >
+
+                                                    
+                                                        
+                                                    
+                                                            <Typography variant="overline" className={specText}>
+
+                                                                Keyboard Model: {song.instrument_specs}
+                                                            
+                                                            </Typography>
+                                                    
+                                                        </div>
+                                                    
+                                                        <br></br>
+                                                    
+                                                        
+                                                    </>
+
+                                            : 
+                                                    
+                                                <>
+                                                    <div className=
+                                                        {song.priority === '1' ?
+                                                            instSpecs1 : 
+                                                        song.priority === '2' ?
+                                                            instSpecs2 :
+                                                        song.priority === '3' ?
+                                                            instSpecs3 :
+
+                                                            instSpecs
+                                                        }
+                                                    >
+                                                    
+                                                        <Typography variant="overline">
+                                                            
+                                                            Instrument or Software Used: {song.instrument_specs}
+                                                    
+                                                        </Typography>
+                                                    
+                                                    </div>
+
+                                                </>
+
+                                            }
+
+                                        </>
+
+                                    }
+                            
+                                </div>
+                            }
                         
-                                
-
-                                }
-                        
-                            </div>
-                        }
-                    </Accordion>
+                        </Accordion>
                     
                     </>
             

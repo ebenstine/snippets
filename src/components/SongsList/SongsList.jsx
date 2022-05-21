@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import AudioPlayer from "react-modular-audio-player";
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { Box, Paper, Typography, Card, CardContent, Button } from '@material-ui/core';
 import useStyles from './SongsListStyles';
 import ColorCodeLegend from './ColorCodeLegend'

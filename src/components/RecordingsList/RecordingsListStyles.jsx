@@ -166,7 +166,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 10.5,
         marginLeft: '1.5em',
         marginRight: '1.5em',
-        borderBottom: '1.5px solid #1d778d',
+        borderBottom: '1px solid #1d778d',
         marginTop: 'auto',
         color: '#233d4d',
     },

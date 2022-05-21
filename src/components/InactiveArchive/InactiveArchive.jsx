@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom'
 import { Box, Paper, Typography, Card, CardContent, Button } from '@material-ui/core';
 import useStyles from './InactiveArchiveStyles';
-import Feedback from '@material-ui/icons/Feedback';
+
 
 
 
@@ -42,6 +42,17 @@ function InactiveArchive() {
     const songs = useSelector((store) => store.songs);
     
     console.log(songs);
+    
+    
+    /*const handleState = () => {
+        //checks for any occurrence of an inactive song
+        if (songs.filter(e => e.is_active === false).length > 0) 
+            {setListView(true)}
+        
+            else 
+            {setListView(false)};
+        }*/
+
 
     //get db info on page load
     useEffect(() => {
@@ -50,29 +61,9 @@ function InactiveArchive() {
             type: 'FETCH_SONGS',
             
         });
-        
+        //handleState();
     }, []);
-    
-    let PageSize = 10
-
-    //snip out any inactive songs from the array to uphold display integrity
-    const removeActive = () => {
-        for (let i = songs.length - 1; i >= 0; --i) {
-            if (songs[i].is_active == true) {
-                songs.splice(i, 1);
-            }
-        }
-    }
-     
-
-    const inactiveArchive = useMemo(() => {
-
-        removeActive();
-        const firstPageIndex = (currentPage - 1) * PageSize;
-        const lastPageIndex = firstPageIndex + PageSize;
-        return songs.slice(firstPageIndex, lastPageIndex);
-        
-      }, [currentPage]);
+    //push forward to details page on click
 
     const handleClick = (songId) => {
         history.push(`/InactiveSongDetails/${songId}`)
@@ -120,7 +111,7 @@ function InactiveArchive() {
                     justifyContent="space-between"
                 >
         
-                    {inactiveArchive.map((song) => {
+                    {songs.map((song) => {
                     
                         return (
                         
