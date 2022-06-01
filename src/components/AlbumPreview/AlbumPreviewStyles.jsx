@@ -130,6 +130,7 @@ const useStyles = makeStyles(() => ({
         borderRadius: '.25em',
         paddingTop: '.5em',
         paddingBottom: '.5em',
+       
         backgroundColor:'#afe4f1',
         '&:hover': {
            
@@ -216,8 +217,8 @@ const useStyles = makeStyles(() => ({
     title1: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 16,
-        paddingRight: '1em',
-        paddingLeft:'1em',
+        marginRight: '.5em',
+        
         color: '#233d4d',
         '&:hover': {
             
@@ -232,8 +233,7 @@ const useStyles = makeStyles(() => ({
     title2: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 16,
-        paddingRight: '1em',
-        paddingLeft:'1em',
+        marginRight: '.5em',
         color: '#233d4d',
         '&:hover': {
             
@@ -248,8 +248,7 @@ const useStyles = makeStyles(() => ({
     title3: {
         fontFamily: 'Noto Sans TC, Tahoma, Geneva, Verdana, sans-serif',
         fontSize: 16,
-        paddingRight: '1em',
-        paddingLeft:'1em',
+        marginRight: '.5em',
         color: '#233d4d',
         '&:hover': {
             

@@ -137,15 +137,15 @@ function AlbumPreview() {
 
                                                                                         >
                                                                                             
-                                                                                            {song.title}
+                                                                                            {song.title} <br></br>
                                                                                             
                                                                                         </Typography>
                                                                                         </div>
 
                                                                                             
-                                                                                
+                                                                                        
                                                                                         <AudioPlayer 
-
+                                                                                            
                                                                                             audioFiles={[{ src: song.preview_audio }]}
                                                                                             hideForward="true"
                                                                                             hideLoop="true"
@@ -162,6 +162,8 @@ function AlbumPreview() {
                                                                                             sliderClass="slider"
 
                                                                                         />
+                                                                                        
+                                                                                       
                                                                                     </div>
                                                                         
 
@@ -281,7 +283,7 @@ function AlbumPreview() {
                                                                         <>
                                                                             {song.priority === '3' ? 
 
-                                                                                <div>
+                                                                                <>
 
                                                                                         <section className={player3}>
                                                                                         <div>
@@ -322,7 +324,7 @@ function AlbumPreview() {
                                                                     
 
                                                                                     
-                                                                                </div>
+                                                                                </>
                                                         
                                                                             : 
                                                                     
