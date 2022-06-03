@@ -162,7 +162,7 @@ const handleCancel = () => {
               variant='h6' 
               className={prompt}
             >
-              Do you have a release to plan?
+              Do you have an album release to plan?
             </Typography>
 
             <div style={{display:'flex', justifyContent:'center', paddingTop:'2em' }}>

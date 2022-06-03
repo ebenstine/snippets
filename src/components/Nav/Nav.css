@@ -6,7 +6,8 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #c8ecf5;
-  margin: 0 0 20px;
+  /*margin: 0 0 ;*/
+  padding: -15em 0;
   background-color: #2a4f64;
   overflow: hidden;
   box-shadow: 2px 2px 8px rgb(112, 111, 111);
@@ -38,7 +39,7 @@
   color: #233d4d;
   background-color: #ff8c8c;
   text-align: center;
-  padding: 12px 6px;
+  padding: 8px 4px;
   text-decoration: none;
   font-size: 14px;
   /* these last two make the logout button in

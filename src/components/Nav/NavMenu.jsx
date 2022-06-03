@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     menu: {
-      marginBottom: '-.45em',
+      
       color: 'rgb(230, 252, 255)',
       '&:hover': {
       color:'#3b95ac'
@@ -90,7 +90,7 @@ const NavMenu = ({user}) => {
   
     return (
       <div>
-        <IconButton>
+        <IconButton style={{marginTop: '.5em'}} size="small">
           <Menu 
 
             aria-controls="simple-menu" 
