@@ -137,71 +137,7 @@ const AddSong = () => {
                 className={title}>
                 Add a Song
               </Typography>
-                
-                <TextField
-                  label=
-                  {<img 
-                    style={{width:21, height:21}} 
-                    src='title.png'
-                    >
-                  </img>
-                  }
-                  placeholder= "Title"
-                  onChange={enterNewSong('title')}
-                  value={newSong.title}
-                  multiline className={textField}
-                />
-          
-                <TextField
-                  label={<img 
-                    style={{width:16, height:16}} 
-                    src='writingNotes.png'
-                    >
-                  </img>
-                  }
-                  placeholder = "Songwriting Notes"
-                  onChange={enterNewSong('songwriting_notes')}
-                  value={newSong.songwriting_notes}
-                  multiline className={textField}
-
-                />
-         
-                <TextField
-                
-                  label=
-                    {<img 
-                      style={{width:16, height:16}} 
-                      src='productionIdeas.png'
-                      >
-                    </img>
-                    }
-                  placeholder = "Production Ideas"
-                  onChange={enterNewSong('production_ideas')}
-                  value={newSong.production_ideas}
-                  multiline className={textField}
-
-                />
-
-                <TextField
-                  label=
-                  {<img 
-                    style={{width:21, height:21}} 
-                    src='lyrics2.png'
-                    >
-                  </img> 
-                  } 
-                  
-                  placeholder = "Lyrics"
-                  onChange={enterNewSong('lyrics')}
-                  value={newSong.lyrics}
-                  multiline className={textField}
-                />
-              
-                <br></br>
-              
-                <div>
-
-                  <FormControl sx={{ m: 1, minWidth: 120 }}>
+              <FormControl sx={{ m: 1, minWidth: 120 }}>
           
                     <InputLabel 
                       id="demo-controlled-open-select-label">
@@ -253,6 +189,85 @@ const AddSong = () => {
                         </Select> 
 
                   </FormControl>
+                
+                <TextField
+                  label=
+                  {<img 
+                    style={{width:21, height:21}} 
+                    src='title.png'
+                    >
+                  </img>
+                  }
+                  placeholder= "Title"
+                  onChange={enterNewSong('title')}
+                  value={newSong.title}
+                  multiline className={textField}
+                />
+                
+                {newSong.is_active == true ? 
+                
+                  <>
+                    <TextField
+                      label={<img 
+                        style={{width:16, height:16}} 
+                        src='writingNotes.png'
+                        >
+                      </img>
+                      }
+                      placeholder = "Songwriting Notes"
+                      onChange={enterNewSong('songwriting_notes')}
+                      value={newSong.songwriting_notes}
+                      multiline className={textField}
+
+                    />
+            
+                    <TextField
+                    
+                      label=
+                        {<img 
+                          style={{width:16, height:16}} 
+                          src='productionIdeas.png'
+                          >
+                        </img>
+                        }
+                      placeholder = "Production Ideas"
+                      onChange={enterNewSong('production_ideas')}
+                      value={newSong.production_ideas}
+                      multiline className={textField}
+
+                    />
+
+                    <TextField
+                      label=
+                      {<img 
+                        style={{width:21, height:21}} 
+                        src='lyrics2.png'
+                        >
+                      </img> 
+                      } 
+                      
+                      placeholder = "Lyrics"
+                      onChange={enterNewSong('lyrics')}
+                      value={newSong.lyrics}
+                      multiline className={textField}
+                    />
+
+                  </>
+                :
+
+                  null
+}
+                <br></br>
+              
+                <div>
+                
+                
+
+                
+
+                
+
+                  
 
                   <FormControl sx={{ m: 1, minWidth: 120 }}>
           
