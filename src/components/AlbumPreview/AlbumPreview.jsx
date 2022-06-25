@@ -31,10 +31,6 @@ function AlbumPreview() {
             paper1,
             paper2,
             paper3,
-            heading1,
-            heading2,
-            heading3,
-            dialogHeading,
    
         } = useStyles();
 
@@ -58,14 +54,6 @@ function AlbumPreview() {
         });
         
     },[dispatch]);
-
-    const handleClickOpen = () => {
-        setOpen(true)
-    }
-
-    const handleClose = () => {
-        setOpen(false)
-      }
   
     const handleClick = (songId) => {
         history.push(`/songDetails/${songId}`)

@@ -260,14 +260,6 @@ const AddSong = () => {
                 <br></br>
               
                 <div>
-                
-                
-
-                
-
-                
-
-                  
 
                   <FormControl sx={{ m: 1, minWidth: 120 }}>
           
@@ -333,9 +325,6 @@ const AddSong = () => {
                   </FormControl>
                 </div>
 
-
-              
-                  
                 <div>
                 
                   {newSong.is_active === true ?       
@@ -345,8 +334,6 @@ const AddSong = () => {
                         id="demo-controlled-open-select-label">
                         Priority
                       </InputLabel>
-                      
-                      
                         
                         <Select
                 
@@ -386,10 +373,6 @@ const AddSong = () => {
                             &nbsp;&nbsp;Completion Priority&nbsp;&nbsp;
                           </DialogTitle>
 
-                          
-                          
-                          
-                          
                             <MenuItem 
                               value={'1'} 
                               className={setPriority1}>
@@ -425,8 +408,6 @@ const AddSong = () => {
                               null
                             }
 
-                            
-                    
                             <MenuItem 
                               value={'Uncertain'} 
                               className={setPriorityUncertain}>
@@ -437,8 +418,7 @@ const AddSong = () => {
                               
                           
                         </Select> 
-                        
-          
+
                     </FormControl>
                   :
                     null
@@ -446,12 +426,6 @@ const AddSong = () => {
                   
           
                 </div>
-
-                
-               
-
-          
-
           
                   <Uploader 
                     elevated={10}  
@@ -459,8 +433,7 @@ const AddSong = () => {
                    
             
                   />
-         
-          
+
                   <FormControl>
                 
                     <div>

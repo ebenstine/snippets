@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     card: {
         flexDirection: 'column',
         backgroundColor:  '#f0a1a1',
@@ -282,11 +282,6 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: '.5em'
         
     }
-    
 
-
-    
-    
-    
 }));
 export default useStyles;
