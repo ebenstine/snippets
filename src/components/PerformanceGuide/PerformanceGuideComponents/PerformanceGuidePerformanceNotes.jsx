@@ -114,7 +114,7 @@ const useStyles = makeStyles(() => ({
         
         fontSize: 11,
         whiteSpace: 'pre-wrap',
-        alignItems:'center'
+        textAlign:'center'
         
         
     },

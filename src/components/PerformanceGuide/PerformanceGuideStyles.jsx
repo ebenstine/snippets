@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: '.5em',
         marginRight: '.5em',
         border: '1px solid #1d778d',
-        width: 150
+        width: 100
         
     },
 
@@ -65,9 +65,9 @@ const useStyles = makeStyles((theme) => ({
     
     player: {
        
-        marginBottom: '.5em',
-        marginLeft: '.85em',
-        marginRight: '-.35em',
+        paddingBottom: '5px',
+        display: 'flex',
+        justifyContent: 'center',
         color: '#1a313f',
         border: '1.5px solid #1d778d',
         borderRadius: '.25em',
@@ -169,15 +169,11 @@ const useStyles = makeStyles((theme) => ({
     },
 
     deletePrompt: {
-        marginLeft: '2em',
-        marginBottom: '.5em',
-        marginRight: '2em',
-        marginTop: '.5em',
+        marginLeft: '1.25em',
+        marginRight: '1em',
+        marginTop: '3px',
         color: '#233d4d',
         
-        
-        paddingLeft: '1em',
-        paddingRight: '1em',
         
         
     },

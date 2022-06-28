@@ -11,8 +11,8 @@ import SupportIcon from '@mui/icons-material/Support';
 import PerformanceGuideInstrumentSpecs from './PerformanceGuideComponents/PerformanceGuideInstrumentSpecs'
 import PerformanceGuidePerformanceNotes from './PerformanceGuideComponents/PerformanceGuidePerformanceNotes';
 import { 
-    Accordion, 
-    AccordionSummary, 
+    Card,
+    CardContent, 
     Box,
     Paper, 
     Typography, 
@@ -28,10 +28,7 @@ import {
 } 
     
 from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Delete from '@material-ui/icons/Delete';
-import HeadphonesRoundedIcon from '@mui/icons-material/HeadphonesRounded';
-import AudioPlayer from "react-modular-audio-player";
 import IconButton from "@material-ui/core/IconButton";
 import Feedback from '@material-ui/icons/Feedback';
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
@@ -350,29 +347,14 @@ const PerformanceGuide = () => {
                                         > 
                                             <div className={background}>
                                         
-                                                <Accordion
+                                                <Card
                                                     
                                                     raised={true}
                                                     className={card1}
                                                     
                                                 >
                                                 
-                                                    <AccordionSummary
-                                                        
-                                                        expandIcon=
-                                                            
-                                                            {<ExpandMoreIcon 
-                                                            
-                                                                style={{ 
-                                                                
-                                                                color: '#1d778d',
-                                                                paddingRight: '.1em',
-                                                                
-                                                                
-                                                                }}
-                                                                
-                                                                
-                                                            />}
+                                                    <CardContent
 
                                                         aria-controls="panel1a-content"
                                                         id="panel1a-header"
@@ -384,11 +366,11 @@ const PerformanceGuide = () => {
 
                                                             <img 
                                                                 src={chordDiagram.image_path} 
-                                                                style={{height: 55, width: 60}}
+                                                                style={{height: 55, width: 55, marginLeft:'5px'}}
                                                             />
                                                         </section>
                                                         
-                                                    </AccordionSummary>
+                                                    </CardContent>
                                             
                                                          
 
@@ -429,7 +411,7 @@ const PerformanceGuide = () => {
                                                                                 paddingTop: '-1em',
                                                                                 display: 'flex',
                                                                                 flexWrap: 'wrap',
-                                                                                backgroundColor: '#dddddd',
+                                                                                
                                                                                 borderRadius:'2px'
                                                                             }}
                                                                         />
@@ -472,7 +454,7 @@ const PerformanceGuide = () => {
 
                                                             </Dialog>
                                                 
-                                                </Accordion>
+                                                </Card>
 
                                             </div>
                                         </Box>
