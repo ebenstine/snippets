@@ -41,7 +41,10 @@ const PerformanceGuide = () => {
     const { 
             paper, 
             description, 
-            player, 
+            imageCard,
+            imageCard1, 
+            imageCard2,
+            imageCard3,
             card1, 
             drawer, 
             drawerHeader, 
@@ -283,6 +286,7 @@ const PerformanceGuide = () => {
                     {chordDiagrams.map((chordDiagram) => {
                         //this conditional hides the chord diagrams heading if no images are present
                         //and subsequently hides it if the primary instrument is not guitar or keyboard
+                        //PROBABLY GET RID OF THIS DUMB THING
                         return (
                             
                             <>
@@ -335,10 +339,8 @@ const PerformanceGuide = () => {
                     >
                             
                         {chordDiagrams.map((chordDiagram) => {
-                                
-                            
-                                return (
-                                    
+
+                                        return (  
                                     <>
                                        <Box
                                             paddingTop={2}
@@ -362,7 +364,7 @@ const PerformanceGuide = () => {
                                                 
                                                     >
 
-                                                        <section className={player}>
+                                                        <section className={imageCard1}>
 
                                                             <img 
                                                                 src={chordDiagram.image_path} 
@@ -376,7 +378,6 @@ const PerformanceGuide = () => {
 
                                                         <Button 
                                                             className={deletePrompt}
-                                                            
                                                             onClick={handleDialogOpen}
                                                         >
                                                             
@@ -458,13 +459,16 @@ const PerformanceGuide = () => {
 
                                             </div>
                                         </Box>
+                                        </>
+                                        )
+                                    })} 
                                         
                                         <br></br>
-                                    </>
-                                )
-                        })}
+                    
                     
                     </Box>
+
+                    
                     <br></br>
                     <br></br>
                     

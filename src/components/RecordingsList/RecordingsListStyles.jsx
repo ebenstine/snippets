@@ -250,11 +250,12 @@ const useStyles = makeStyles(() => ({
 
         color: '#233d4d',
         '&:hover': {
-            color:'#e45252',
+            background:'#fde76c',
             },
-        //background: 'transparent',
+        background: 'transparent',
         //border: '1px solid #3b95ac',
         alignItems: 'center',
+        border: '1px solid #3b95ac',
         
     },
 
@@ -262,11 +263,12 @@ const useStyles = makeStyles(() => ({
 
         color: '#233d4d',
         '&:hover': {
-            color:'#77c568',
+            background:'#fde76c',
             },
-        //background: 'transparent',
+        background: 'transparent',
         //border: '1px solid #3b95ac',
         alignItems: 'center',
+        border: '1px solid #3b95ac',
        
         
     },

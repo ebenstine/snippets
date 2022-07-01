@@ -61,25 +61,74 @@ const useStyles = makeStyles((theme) => ({
         height: 1000
         
     },
-
-    
-    player: {
+    imageCard: {
        
         paddingBottom: '5px',
         display: 'flex',
         justifyContent: 'center',
         color: '#1a313f',
-        border: '1.5px solid #1d778d',
+        border: '1px solid #1d778d',
         borderRadius: '.25em',
         paddingTop: '.5em',
         paddingBottom: '.5em',
         '&:hover': {
-            background:'#5294a5',
+            background:'#f0a1a1',
             },
         
         
     },
 
+    
+    imageCard1: {
+       
+        paddingBottom: '5px',
+        display: 'flex',
+        justifyContent: 'center',
+        color: '#1a313f',
+        border: '1px solid #1d778d',
+        borderRadius: '.25em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em',
+        '&:hover': {
+            background:'#afe4f1',
+            },
+        
+        
+    },
+
+    imageCard2: {
+       
+        paddingBottom: '5px',
+        display: 'flex',
+        justifyContent: 'center',
+        color: '#1a313f',
+        border: '1px solid #1d778d',
+        borderRadius: '.25em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em',
+        '&:hover': {
+            background:'#ffb171',
+            },
+        
+        
+    },
+
+    imageCard3: {
+       
+        paddingBottom: '5px',
+        display: 'flex',
+        justifyContent: 'center',
+        color: '#1a313f',
+        border: '1px solid #1d778d',
+        borderRadius: '.25em',
+        paddingTop: '.5em',
+        paddingBottom: '.5em',
+        '&:hover': {
+            background:'#afe4f1',
+            },
+        
+        
+    },
     drawerHeader: {
         display: "flex",
         justifyContent: "center",
@@ -171,6 +220,7 @@ const useStyles = makeStyles((theme) => ({
     deletePrompt: {
         marginLeft: '1.25em',
         marginRight: '1em',
+        marginBottom: '.25em',
         marginTop: '3px',
         color: '#233d4d',
         
